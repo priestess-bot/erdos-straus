@@ -13,7 +13,8 @@ statement: >-
   固定 kappa 的 primitive fiber 满足 A|9(27 kappa^2+8 kappa+1)。特别地
   actual m=3 receipt 必有 k≡21 mod72、k≥93 与 W-eta≥13。若
   d=(W-eta,k)，则 d|(p^2-p+1)、gcd(d,h(p^2+p+1)D)=1，且其 natural gap
-  s_d 满足 d|(s_d^2+s_d+1)。所以 d 是 Phi_6(p) carrier，不是 root-height
+  s_d 满足 d|(s_d^2+s_d+1)。若 d>1，则其 natural fan cofactor 必有 C_d>=8。
+  所以 d 是 Phi_6(p) carrier，不是 root-height
   Phi_3(p) carrier。kappa 有一个 canonical q≡7 mod12 素因子；它确定地落入
   q|u 的 root-supported、q|d 的 Phi_6 cancellation，或两者皆不整除的 primitive
   quotient-only residual 三类之一。该约化不证明这些互锁 divisor fibers 为空，不构造
@@ -43,7 +44,7 @@ sources:
   - claim: type-I-root-capacity-stutter-actual-small-root-exclusion
     role: actual-mod-three-parity-and-low-coefficient-bounds
   - claim: type-I-root-capacity-stutter-complementary-eisenstein-coordinate-gap
-    role: eta-lower-bound-and-D-visible-resonance-resultant
+    role: complementary-gap-whole-d-identities-and-natural-fan-bounds
   - claim: type-I-root-capacity-stutter-eisenstein-support
     role: oddness-of-the-actual-Eisenstein-quotient
   - claim: type-I-root-capacity-stutter-primitive-quotient-normalization
@@ -720,6 +721,148 @@ s_d\equiv\delta\equiv-p\pmod d,
 这把 whole-\(d\) Type II fan 的 gap 定向成 \(\Phi_3(s_d)\) root。它仍未证明该
 fan 必命中，所以 (37) 是下一条 identity-lifted terminal/adaptor 引理的输入，不能直接当作
 terminal 或 E1--E5 edge。
+
+### 8.1 \(m=3\) 的 whole-\(d\) branch 排除 \(C_d=7\)
+
+现在额外假设 \(d>1\)，并使用既有 natural fan cofactor
+
+\[
+C_d=\frac{p+s_d}{4d}\ge7.
+\]
+
+若 \(C_d=7\)，写
+
+\[
+\eta+1=d\sigma,
+\qquad
+s_d=\lambda d-a.
+\tag{37a}
+\]
+
+第二式是 general natural-gap identity 在 \(m=3\) 的专化。其 parity gate 给出
+\(\lambda\equiv0\pmod2\)。又 \(d\equiv1\pmod3\)、\(\eta=3\rho\)、
+\(a\equiv0\pmod3\) 及 \(p\equiv1\pmod3\) 分别给出
+
+\[
+\sigma\equiv1\pmod3,
+\qquad
+\lambda\equiv0\pmod3.
+\tag{37b}
+\]
+
+因为 \(s_d>0\) 且 \(a>0\)，还有 \(\lambda>0\)。
+
+在 \(C_d=7\) 时，(37a) 化为
+
+\[
+p=(28-\lambda)d+a,
+\qquad
+h=2a+3d\sigma,
+\tag{37c}
+\]
+
+而 \(h<p\)、\(1\le s_d\le4d\) 强制
+
+\[
+a+3d\sigma<(28-\lambda)d,
+\qquad
+(\lambda-4)d\le a<\lambda d.
+\tag{37d}
+\]
+
+由 (37b)--(37d)，唯一可能的 \((\sigma,\lambda)\) 是
+
+\[
+\begin{array}{c|c}
+\sigma&\lambda\\
+\hline
+1&6,12,18,24\\
+4&6,12\\
+7&6.
+\end{array}
+\tag{37e}
+\]
+
+把 (37c) 代回 \(pa+(e-1)=eh\)，其中 \(e=a+d\sigma\)，得到每一行共同的
+二次门
+
+\[
+a^2+(5\sigma-28+\lambda)ad-a+3\sigma^2d^2-d\sigma+1=0.
+\tag{37f}
+\]
+
+四行 \((\sigma,\lambda)=(1,18),(1,24),(4,12),(7,6)\) 已由 (37d) 直接矛盾：
+前两行分别要求 \(a<7d,a<d\)，但 gap bound 要求 \(a\ge14d,a\ge20d\)；后两行
+分别要求 \(a<4d,a<d\)，但 gap bound 要求 \(a\ge8d,a\ge2d\)。
+
+对 \((1,6)\)，(37f) 是
+
+\[
+f_{1,6}(a)=a^2-17ad-a+3d^2-d+1=0.
+\]
+
+此时 \(2d\le a<6d\)，而
+\(f'_{1,6}(a)=2a-17d-1<0\)；同时
+\(f_{1,6}(2d)=-27d^2-3d+1<0\)。故这一行也不可能。
+
+对 \((4,6)\)，(37f) 的 \(a\)-判别式为
+
+\[
+-188d^2+20d-3<0,
+\]
+
+所以没有实根。唯一留下的 \((1,12)\) 行满足
+
+\[
+f_{1,12}(a)=a^2-11ad-a+3d^2-d+1=0,
+\tag{37g}
+\]
+
+并有 \(8d\le a<12d\)、\(h=2a+3d\)、\(\delta=13d-a\)。利用 (37g)，
+
+\[
+\delta^2+\delta+1=d(166d-15a+14).
+\tag{37h}
+\]
+
+第 8 节已证明 \((h,d)=1\)，而 actual root gate 给出
+\(h\mid\delta^2+\delta+1\)。故存在正整数 \(q\) 使
+
+\[
+166d-15a+14=q(2a+3d).
+\tag{37i}
+\]
+
+由 \(a\ge8d\) 和 \(d>1\)，右边商严格小于 \(3\)，所以 \(q\in\{1,2\}\)。
+若 \(q=1\)，则 \(17a=163d+14\)；代入 (37g) 并乘以 \(17^2\) 后得到
+
+\[
+-3045d^2-1114d+247=0,
+\]
+
+这对正 \(d\) 不可能。若 \(q=2\)，则 \(19a=160d+14\)；同样代入得到
+
+\[
+-6757d^2-1847d+291=0,
+\]
+
+也不可能。因此 \(C_d=7\) 无 actual \(m=3\) whole-\(d\) receipt，结合既有
+\(C_d\ge7\)，有
+
+\[
+\boxed{d>1\quad\Longrightarrow\quad C_d\ge8\quad(m=3).}
+\tag{37j}
+\]
+
+于是既有 canonical-gap bound 在这个 slice 中收紧为
+
+\[
+\boxed{s_d\le\frac{p-8}{7}.}
+\tag{37k}
+\]
+
+这仍只压缩 Type II fan 的 cofactor/gap；它没有证明某个
+\(t\mid dC_d\) 满足 \(t\equiv-1\pmod{s_d}\)，所以不能作为 terminal 或 selector edge。
 
 ## 9. 一个 canonical \(7\pmod {12}\) quotient carrier
 
