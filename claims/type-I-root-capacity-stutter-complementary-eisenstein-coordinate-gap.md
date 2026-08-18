@@ -14,7 +14,8 @@ statement: >-
   C=w^2-wt+t^2+n(w-t)。若 C=0，则 t=w+r，其中 r>0、r|w^2，且
   n=w^2/r+w+r。原始 stutter 等式进一步排空全部 C=0 例外子纤维，
   故每个固定 w 的子纤维完全由显式有限整除门控制。并且 gcd(eta,W)=1，
-  故剩余坐标分支必为 primitive。该结论不 physicalize k 或 D_* 因子，
+  故剩余坐标分支必为 primitive。若 gamma=W-eta、d=gcd(gamma,k)，则
+  d|gcd(W+1,a^2-a+1) 且 3不整除d。该结论不 physicalize k 或 D_* 因子，
   不构造 E1--E5 edge，也不闭合 QC1、TR1 或 T6 totality。
 claim_status: established
 proof_provenance: repository_derivation
@@ -58,6 +59,11 @@ core domain:
 
 \[
 p\equiv1\pmod {24},\qquad 2\le h<p,\qquad h\mid P:=p^2+p+1,
+\]
+
+\[
+h=3u,\qquad 3\nmid u,
+\tag{1a}
 \]
 
 \[
@@ -812,7 +818,73 @@ Together with (45), this also gives \(\gcd(\eta,\gamma)=1\).  This is a
 primitivity theorem, not a terminal theorem: it does not produce an E1--E5
 successor or physicalize a quotient factor.
 
-## 9. Boundary
+## 9. Difference--quotient cyclotomic resonance
+
+Put
+
+\[
+d:=\gcd(\gamma,k).
+\]
+
+Equation (45), together with \(\gcd(\eta,\gamma)=1\), gives
+
+\[
+\eta(\eta+1)\equiv0\pmod d,
+\qquad
+\eta\in(\mathbb Z/d\mathbb Z)^\times.
+\]
+
+Hence
+
+\[
+\boxed{d\mid\eta+1,\qquad d\mid W+1.}
+\tag{47}
+\]
+
+Modulo \(d\), one has \(\gamma\equiv0\), \(\eta\equiv-1\), and
+therefore \(W\equiv-1\), \(b=a+\eta\equiv a-1\), and \(e\equiv a\).
+The identity (44) gives \(h\equiv p+a\).  Reduce \(pa+b=eh\) with
+these substitutions:
+
+\[
+pa+a-1\equiv a(p+a)\pmod d,
+\]
+
+so
+
+\[
+\boxed{d\mid a^2-a+1.}
+\tag{48}
+\]
+
+The actual three-adic split excludes \(3\mid d\).  Indeed, if
+\(m\equiv0\pmod3\), then \(a\equiv0\pmod3\).  Since \(3\mid h\mid N\),
+the congruence \(N\equiv b^2\pmod3\) gives \(b\equiv0\pmod3\).  Hence
+\(e\equiv p\equiv1\pmod3\), \(W\equiv1\pmod3\), and
+\(\gamma\equiv1\pmod3\).  If \(m\equiv1\pmod3\), then
+\(a\equiv2\), \(b\equiv1\pmod3\).  Write \(a=-b+3z\); then
+
+\[
+N=3\bigl(b^2-3bz+3z^2\bigr),
+\]
+
+whose parenthesis is a unit modulo \(3\).  The actual root height has
+\(v_3(h)=1\), so \(3\nmid k=N/h\).  Therefore
+
+\[
+\boxed{
+d\mid\gcd(W+1,a^2-a+1),
+\qquad 3\nmid d.
+}
+\tag{49}
+\]
+
+Every prime factor of a nontrivial \(d\) is consequently \(1\pmod3\).
+This is a tight local condition on a quotient factor, not a physical carrier:
+it does not show \(d\mid D_*\), construct a terminal, or provide an E1--E5
+successor.
+
+## 10. Boundary
 
 This is a structural reduction inside the actual proper-root stutter domain.
 It proves that the fixed-\(W\) exceptional shapes are empty, but it does not
