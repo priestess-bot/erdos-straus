@@ -13,7 +13,8 @@ statement: >-
   固定 kappa 的 primitive fiber 满足 A|9(27 kappa^2+8 kappa+1)。特别地
   actual m=3 receipt 必有 k≡21 mod72、k≥93 与 W-eta≥13。若
   d=(W-eta,k)，则 d|(p^2-p+1)、gcd(d,h(p^2+p+1)D)=1，且其 natural gap
-  s_d 满足 d|(s_d^2+s_d+1)。若 d>1，则其 natural fan cofactor 必有 C_d>=8。
+  s_d 满足 d|(s_d^2+s_d+1)。若 d>1，则其 natural fan cofactor 必有 C_d>=25，且
+  natural gap 满足 s_d<=(p-25)/24。
   所以 d 是 Phi_6(p) carrier，不是 root-height
   Phi_3(p) carrier。kappa 有一个 canonical q≡7 mod12 素因子；它确定地落入
   q|u 的 root-supported、q|d 的 Phi_6 cancellation，或两者皆不整除的 primitive
@@ -730,32 +731,41 @@ terminal 或 E1--E5 edge。
 C_d=\frac{p+s_d}{4d}\ge7.
 \]
 
-若 \(C_d=7\)，写
+为避免与 (27) 中 fixed-\(\kappa\) fiber 的 \(\lambda\) 混淆，本节起将 natural-gap
+商系数记为 \(\ell\)。若 \(C_d=7\)，写
 
 \[
 \eta+1=d\sigma,
 \qquad
-s_d=\lambda d-a.
+s_d=\ell d-a.
 \tag{37a}
 \]
 
 第二式是 general natural-gap identity 在 \(m=3\) 的专化。其 parity gate 给出
-\(\lambda\equiv0\pmod2\)。又 \(d\equiv1\pmod3\)、\(\eta=3\rho\)、
+\(\ell\equiv0\pmod2\)。又 \(d\equiv1\pmod3\)、\(\eta=3\rho\)、
 \(a\equiv0\pmod3\) 及 \(p\equiv1\pmod3\) 分别给出
 
 \[
 \sigma\equiv1\pmod3,
 \qquad
-\lambda\equiv0\pmod3.
+\ell\equiv0\pmod3.
 \tag{37b}
 \]
 
-因为 \(s_d>0\) 且 \(a>0\)，还有 \(\lambda>0\)。
+由 (27b) 的 \(\rho\) 偶性，\(\eta=3\rho\) 为偶数；又 \(d\) 为奇数，故
+\(\sigma=(\eta+1)/d\) 为奇数。于是实际上
+
+\[
+\boxed{\sigma\equiv1\pmod6.}
+\tag{37b-1}
+\]
+
+因为 \(s_d>0\) 且 \(a>0\)，还有 \(\ell>0\)。
 
 在 \(C_d=7\) 时，(37a) 化为
 
 \[
-p=(28-\lambda)d+a,
+p=(28-\ell)d+a,
 \qquad
 h=2a+3d\sigma,
 \tag{37c}
@@ -764,20 +774,19 @@ h=2a+3d\sigma,
 而 \(h<p\)、\(1\le s_d\le4d\) 强制
 
 \[
-a+3d\sigma<(28-\lambda)d,
+a+3d\sigma<(28-\ell)d,
 \qquad
-(\lambda-4)d\le a<\lambda d.
+(\ell-4)d\le a<\ell d.
 \tag{37d}
 \]
 
-由 (37b)--(37d)，唯一可能的 \((\sigma,\lambda)\) 是
+由 (37b)--(37d)，唯一可能的 \((\sigma,\ell)\) 是
 
 \[
 \begin{array}{c|c}
-\sigma&\lambda\\
+\sigma&\ell\\
 \hline
 1&6,12,18,24\\
-4&6,12\\
 7&6.
 \end{array}
 \tag{37e}
@@ -787,13 +796,13 @@ a+3d\sigma<(28-\lambda)d,
 二次门
 
 \[
-a^2+(5\sigma-28+\lambda)ad-a+3\sigma^2d^2-d\sigma+1=0.
+a^2+(5\sigma-28+\ell)ad-a+3\sigma^2d^2-d\sigma+1=0.
 \tag{37f}
 \]
 
-四行 \((\sigma,\lambda)=(1,18),(1,24),(4,12),(7,6)\) 已由 (37d) 直接矛盾：
-前两行分别要求 \(a<7d,a<d\)，但 gap bound 要求 \(a\ge14d,a\ge20d\)；后两行
-分别要求 \(a<4d,a<d\)，但 gap bound 要求 \(a\ge8d,a\ge2d\)。
+三行 \((\sigma,\ell)=(1,18),(1,24),(7,6)\) 已由 (37d) 直接矛盾：
+前两行分别要求 \(a<7d,a<d\)，但 gap bound 要求 \(a\ge14d,a\ge20d\)；最后一行
+要求 \(a<d\)，但 gap bound 要求 \(a\ge2d\)。
 
 对 \((1,6)\)，(37f) 是
 
@@ -805,13 +814,7 @@ f_{1,6}(a)=a^2-17ad-a+3d^2-d+1=0.
 \(f'_{1,6}(a)=2a-17d-1<0\)；同时
 \(f_{1,6}(2d)=-27d^2-3d+1<0\)。故这一行也不可能。
 
-对 \((4,6)\)，(37f) 的 \(a\)-判别式为
-
-\[
--188d^2+20d-3<0,
-\]
-
-所以没有实根。唯一留下的 \((1,12)\) 行满足
+唯一留下的 \((1,12)\) 行满足
 
 \[
 f_{1,12}(a)=a^2-11ad-a+3d^2-d+1=0,
@@ -863,6 +866,271 @@ f_{1,12}(a)=a^2-11ad-a+3d^2-d+1=0,
 
 这仍只压缩 Type II fan 的 cofactor/gap；它没有证明某个
 \(t\mid dC_d\) 满足 \(t\equiv-1\pmod{s_d}\)，所以不能作为 terminal 或 selector edge。
+
+### 8.2 actual cofactor 的同余锁与 \(C_d\ge22\)
+
+继续固定 \(d>1\)，令 \(C=C_d\)，并保留 (37a) 的 \(\ell\)。由
+\(p+s_d=4Cd\) 与 \(s_d=\ell d-a\)，有
+
+\[
+p-a=(4C-\ell)d.
+\tag{37l}
+\]
+
+另一方面，(27d) 给出 \(a=3A\equiv9\pmod {24}\)，而 \(p\equiv1\pmod {24}\)。
+所以右侧为 \(16\pmod {24}\)。设 \(M=4C-\ell\)。因为 \(d\) 为奇数，
+\(Md\equiv16\pmod {24}\) 先强制 \(8\mid M\)。写 \(M=8M_0\)；再模 \(3\)
+使用 \(d\equiv1\pmod3\)，便有
+
+\[
+2M_0\equiv1\pmod3,
+\qquad
+\boxed{4C-\ell\equiv16\pmod {24}.}
+\tag{37m}
+\]
+
+结合 \(\ell\equiv0\pmod6\)，这还给出
+
+\[
+\boxed{C\equiv1\pmod3.}
+\tag{37n}
+\]
+
+同时，(37d) 在一般 \(C\) 下成为
+
+\[
+(\ell-4)d\le a<\ell d,
+\qquad
+a<(4C-\ell-3\sigma)d.
+\]
+
+所以任何非空参数区间都满足
+
+\[
+2\ell+3\sigma<4C+4,
+\qquad
+\ell>0,
+\qquad
+\sigma\equiv1\pmod3.
+\tag{37o}
+\]
+
+由第 8.1 节已有的 \(C\ge8\) 和 (37n)，若 \(C<22\)，只需处理
+\(C=10,13,16,19\)。式 (37b-1)、(37m)--(37o) 分别将它们压缩为
+
+\[
+\begin{array}{c|c}
+C&\text{唯一仍可能的 }(\ell,\sigma)\\
+\hline
+10&\varnothing\\
+13&(12,1),(12,7)\\
+16&(24,1)\\
+19&(12,1),(12,7),(12,13),(36,1).
+\end{array}
+\tag{37p}
+\]
+
+这里 \(C=10\) 时 \(\ell\equiv0\pmod {24}\) 强制 \(\ell\ge24\)，却与
+\(2\ell+3\sigma<44\) 矛盾。其余各行仍服从由原线性 stutter equation 给出的
+一般二次门
+
+\[
+F_{C,\sigma,\ell}(a):=
+a^2+(5\sigma-4C+\ell)ad-a+3\sigma^2d^2-d\sigma+1=0.
+\tag{37q}
+\]
+
+对 \(C=13\)，\(8d\le a<12d\)：\(\sigma=1\) 时 \(F\) 递减且
+\(F(8d)=-213d^2-9d+1<0\)，而 \(\sigma=7\) 时 \(F>0\)。对 \(C=16\)，
+\(20d\le a<24d\)：\(\sigma=1\) 时 \(F<0\)。对 \(C=19\) 的
+\(\ell=12\) 行，\(8d\le a<12d\)：\(\sigma=1,7\) 时 \(F<0\)，
+\(\sigma=13\) 时 \(F>0\)。这些符号断言只用 \(d>1\)；例如
+\(C=19,\sigma=7\) 的递减起点值为 \(-21d^2-15d+1<0\)。
+
+只剩 (37p) 的 \((C,\ell,\sigma)=(19,36,1)\)。此时
+
+\[
+32d\le a<36d,
+\qquad
+F=a^2-35ad-a+3d^2-d+1,
+\]
+
+且 \(\delta=37d-a\)、\(h=2a+3d\)。由 \(h\mid\delta^2+\delta+1\) 以及
+\((h,d)=1\)，存在正整数 \(q\) 使
+
+\[
+1366d-39a+38=q(2a+3d).
+\tag{37r}
+\]
+
+左侧至多为 \(118d+38\)，右侧至少为 \(67d\)，故 \(q<3\)。若 \(q=2\)，则
+\(43a=1360d+38\)，这与 \(a\ge32d\) 和奇数 \(d>1\) 矛盾。若 \(q=1\)，则
+\(41a=1363d+38\)。把它代回 \(F=0\) 并乘以 \(41^2\)，得到
+
+\[
+-93093d^2-8506d+1567=0,
+\]
+
+这对正 \(d\) 不可能。因此所有 \(C<22\) 的情形均被排除，故
+
+\[
+\boxed{d>1\quad\Longrightarrow\quad C_d\ge22\quad(m=3).}
+\tag{37s}
+\]
+
+第一个仍与 (37n) 相容的 cofactor 是 \(C=22\)。此时 (37m)、(37o) 和
+(37b-1) 只留下
+
+\[
+(\ell,\sigma)=(24,1),(24,7),(24,13).
+\]
+
+在 \(20d\le a<24d\) 上，\(\sigma=1\) 时 (37q) 递减且
+\(F(20d)=-777d^2-21d+1<0\)，\(\sigma=13\) 时 \(F>0\)。剩下的
+\(\sigma=7\) 满足
+
+\[
+F=a^2-29ad-a+147d^2-7d+1,
+\qquad
+\delta=43d-a,
+\qquad
+h=2a+21d.
+\]
+
+由同一 \(h\mid\delta^2+\delta+1\) gate，存在正整数 \(q\) 使
+
+\[
+1702d-57a+50=q(2a+21d).
+\tag{37s-1}
+\]
+
+左侧至多为 \(562d+50\)，右侧至少为 \(61d\)，故 \(q\le9\)。若 \(q\le4\)，
+则 (37s-1) 直接给出 \(a>24d\)。因此 \(5\le q\le9\)。令
+
+\[
+P_q=57+2q,
+\qquad
+R_q=1702-21q,
+\qquad
+a=\frac{R_qd+50}{P_q}.
+\]
+
+代回 \(F=0\) 后，\(P_q^2F\) 依次为
+
+\[
+\begin{array}{c|c}
+q&P_q^2F\\
+\hline
+5&107321d^2-75872d+3639\\
+6&30067d^2-84521d+3811\\
+7&-42693d^2-93142d+3991\\
+8&-110959d^2-101735d+4179\\
+9&-174731d^2-110300d+4375.
+\end{array}
+\tag{37s-2}
+\]
+
+前两行在所需的奇数 \(d>1\) 上严格为正：第一行从 \(d=1\) 起递增且值为
+\(35088\)，第二行从 \(d=3\) 起递增且值为 \(20851\)。后三行从 \(d=1\) 起
+严格递减且已经为负。因此 \(C=22\) 也不可能。与 (37n) 合并，得到更强的
+
+\[
+\boxed{d>1\quad\Longrightarrow\quad C_d\ge25\quad(m=3).}
+\tag{37s-3}
+\]
+
+最后，\(s_d\equiv3\pmod4\) 与 \(1\le s_d\le4d\) 给出 \(4d-s_d\ge1\)。因此
+
+\[
+p-(C_d-1)s_d=C_d(4d-s_d)\ge C_d.
+\]
+
+由 (37s-3) 立即有
+
+\[
+p-24s_d=
+\bigl[p-(C_d-1)s_d\bigr]+(C_d-25)s_d\ge25,
+\]
+
+从而
+
+\[
+\boxed{s_d\le\frac{p-25}{24}.}
+\tag{37t}
+\]
+
+这仍是 actual gap/capacity 收缩。它没有令 natural fan 必命中，不能构造 terminal 或
+E1--E5 edge。
+
+### 8.3 即使加入 cofactor congruence lock，\(\Phi_6\) envelope 也不会强制 fan hit
+
+上一节的结论不能被错误加强为“所有满足已使用的 \(\Phi_6\) carrier package 和
+cofactor congruence lock 的整数都命中 natural fan”。事实上，下面给出一个完全手算的
+formal countermodel：
+
+\[
+p=4729,\qquad d=13,\qquad s=3,\qquad C=91,
+\qquad \ell=12,\qquad a=153.
+\tag{37u}
+\]
+
+这里 \(4729\equiv1\pmod {24}\)，且因 \(\sqrt {4729}<69\)，逐一排除不超过
+\(67\) 的素数后可知 \(4729\) 为素数。并且
+
+\[
+p+s=4732=4dC,\qquad
+s\equiv-p\pmod d,\qquad
+s\equiv3\pmod4,
+\qquad
+s=\ell d-a,\qquad
+p-a=(4C-\ell)d,
+\tag{37v}
+\]
+
+\[
+13\mid4729^2-4729+1,
+\qquad
+13\mid3^2+3+1.
+\tag{37w}
+\]
+
+它还满足
+
+\[
+C\ge25,\qquad s\le\frac{p-25}{24},\qquad
+C\equiv1\pmod3,\qquad
+4C-\ell\equiv16\pmod {24},
+\tag{37x}
+\]
+
+并有 \(a\equiv9\pmod {24}\)、\(\ell\equiv0\pmod6\)。但 natural fan 的完整因子
+\(x=dC=1183=7\cdot13^2\) 的除子只有
+
+\[
+1,7,13,91,169,1183,
+\]
+
+它们模 \(3\) 全部为 \(1\)，没有一个为 \(-1\)。故
+
+\[
+\nexists\,t\mid1183\quad t\equiv-1\pmod {3}.
+\tag{37y}
+\]
+
+这个六元组没有被声称为 actual stutter receipt：它没有重建 \(A,u,\rho,\kappa\)、
+(37q) 的 double-norm gate、maximality 或 E1 provenance。因此它不反驳 O2、T6 或任何
+actual terminal theorem。它严格说明的是，任何想从
+
+\[
+d\mid\Phi_6(p),\qquad
+d\mid\Phi_3(s_d),\qquad
+C_d\ge25,
+\qquad
+4C_d-\ell\equiv16\pmod {24}
+\]
+
+**单独**推导 natural-fan hit 的证明都会失败；下一条全称引理必须使用尚未消费的
+actual double-norm gates、receipt-capacity 或构造一条新的 physical adapter。
 
 ## 9. 一个 canonical \(7\pmod {12}\) quotient carrier
 
