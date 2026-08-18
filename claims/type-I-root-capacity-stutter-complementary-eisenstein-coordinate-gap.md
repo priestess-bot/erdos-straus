@@ -23,7 +23,8 @@ statement: >-
   (eta+1)、W-eta、n、k 同时除以 d 后，得到 primitive Eisenstein norm。
   在 Z[omega] 中，gcd(d,delta+omega) 有范数 d，并给出一个 exact factor-level
   cancellation。对每个 d>1，由 a-h mod d 定义的 natural gap 有完整的 linear-divisor
-  Type II fan；D-overlap 的子因子还定向整除 Phi(h) 与 Psi(p) 的指定 Eisenstein 因子。
+  Type II fan，且其 cofactor 满足 C_d>=4、gap 不超过 (p-4)/3；D-overlap 的子因子还定向整除
+  Phi(h) 与 Psi(p) 的指定 Eisenstein 因子。
   因而由 sh=1 mod g、s=3 mod4 确定的最小正 variable gap 总在自然范围内；令
   C=(p+s)/(4g)、x=gC，则 C>=2、m<=4C、p<1024C^5，且当 p>=2^15 时 s<8p^(4/5)，
   并有 gcd(s,x)=1。
@@ -1383,6 +1384,209 @@ p^2-p+1\ge eD
 \]
 
 which is impossible.
+
+The apparent endpoint \(C_d=2\) is also absent from the actual
+proper-root domain.  Suppose otherwise.  Write
+
+\[
+\eta+1=d\sigma.
+\]
+
+Every prime factor of \(d>1\) is \(1\pmod3\), so \(d\equiv1\pmod3\).
+As \(p=8d-s_d\equiv1\pmod3\), one has \(s_d\equiv1\pmod3\).  Moreover,
+
+\[
+h=a(m-1)+md\sigma<8d,
+\]
+
+so \(m\sigma<8\).  The actual modulo-\(3\) split used in the proof of
+(49) says
+
+\[
+\begin{array}{c|c|c}
+m\pmod3&a\pmod3&\sigma\pmod3\\
+\hline
+0&0&1\\
+1&2&0.
+\end{array}
+\tag{54s-1}
+\]
+
+Together with \(m\ge3\) and \(m\not\equiv2\pmod3\), this leaves only
+
+\[
+(m,\sigma)=(3,1)\quad\text{or}\quad(6,1).
+\tag{54s-2}
+\]
+
+For \(m=3\), write \(s_d=\lambda d-a\).  Positivity of \(s_d\) and
+\(h<p\) give \(1\le\lambda\le4\).  The congruence
+\(s_d\equiv1\pmod3\), together with \(a\equiv0\pmod3\), leaves
+\(\lambda=1\) or \(4\).  Here
+
+\[
+p=(8-\lambda)d+a,
+\qquad h=3d+2a,
+\qquad e=a+d,
+\qquad b=a+d-1.
+\]
+
+The exact relation \(pa+b=eh\) becomes
+
+\[
+a^2+(\lambda-3)ad-a+3d^2-d+1=0.
+\tag{54s-3}
+\]
+
+For \(\lambda=4\), every grouped summand in
+
+\[
+(a^2-a+1)+ad+(3d^2-d)
+\]
+
+is positive.  For \(\lambda=1\), (54s-3), viewed as a quadratic in
+\(a\), has discriminant
+
+\[
+(2d+1)^2-4(3d^2-d+1)=-8d^2+8d-3<0.
+\]
+
+Both cases are impossible.  For \(m=6\), write
+\(s_d=\lambda d-4a\).  Positivity and \(h<p\) force \(\lambda=1\), so
+
+\[
+p=7d+4a,
+\qquad h=6d+5a.
+\]
+
+The same exact linear relation now reads
+
+\[
+a^2+4ad-a+6d^2-d+1=0,
+\]
+
+again impossible because
+
+\[
+a^2+4ad-a+6d^2-d+1
+=(a^2-a+1)+4ad+(6d^2-d)>0.
+\]
+
+Consequently
+
+\[
+\boxed{C_d\ge3.}
+\tag{54s-4}
+\]
+
+The next value \(C_d=3\) is absent as well.  Suppose it occurs.  Then
+\(h<p=12d-s_d<12d\), so \(\eta+1=d\sigma\) gives \(m\sigma<12\).
+The split (54s-1) leaves only
+
+\[
+(m,\sigma)\in\{(3,1),(6,1),(9,1)\}.
+\tag{54s-5}
+\]
+
+Write \(s_d=\lambda d-(m-2)a\).  The congruence
+\(p=12d-s_d\equiv1\pmod3\) gives \(\lambda\equiv2\pmod3\), while
+\(h<p\) gives \(\lambda\le11-m\).  Direct substitution in \(pa+b=eh\)
+gives
+
+\[
+a^2+(2m-13+\lambda)ad-a+md^2-d+1=0.
+\tag{54s-6}
+\]
+
+For \(m=6,9\), every permitted \(\lambda\) makes (54s-6) a sum of
+positive grouped terms.  For \(m=3\), the permitted values are
+\(\lambda=2,5,8\); the last is positive, and \(\lambda=5\) has
+discriminant \(-8d^2+8d-3<0\).  The only remaining formal shape is
+
+\[
+m=3,\quad \sigma=1,\quad \lambda=2,\quad
+s_d=2d-a,\quad p=10d+a,\quad h=3d+2a,\quad\delta=7d-a,
+\tag{54s-7}
+\]
+
+\[
+a^2-5ad-a+3d^2-d+1=0.
+\tag{54s-8}
+\]
+
+Equation (54s-8) yields
+
+\[
+a^2-a+1=d(5a-3d+1),
+\tag{54s-9}
+\]
+
+so \(a>(3d-1)/5\), while \(s_d>0\) gives \(a<2d\).  Reducing
+\(\delta^2+\delta+1\) by (54s-8) gives
+
+\[
+\delta^2+\delta+1=d(46d-9a+8).
+\tag{54s-10}
+\]
+
+Here \((h,d)=1\), because \(h=3d+2a\), \(d\) is odd, and \((a,d)=1\).
+Thus \(h\mid\delta^2+\delta+1\) gives a positive integer \(q\) with
+
+\[
+46d-9a+8=q(3d+2a).
+\tag{54s-11}
+\]
+
+The bounds above and \(d\ge7\) give
+
+\[
+4<q<\frac{203d+49}{21d-2}\le\frac{1470}{145}<11.
+\]
+
+Thus \(q\in\{5,6,7,8,9,10\}\).  Solving (54s-11) for \(a\), substituting
+in (54s-8), and multiplying by \((9+2q)^2\), gives
+
+\[
+\bigl(51q^2-493q+289\bigr)d^2
++\bigl(2q^2-229q-119\bigr)d
++\bigl((9+2q)^2-8(9+2q)+64\bigr)=0.
+\tag{54s-12}
+\]
+
+For \(q=5,6,7,8,9\), the quadratic, linear, and constant coefficients in
+(54s-12) are respectively
+
+\[
+\begin{array}{c|rrr|r}
+q&A_2&A_1&A_0&A_2+A_1+A_0\\
+\hline
+5&-901&-1214&273&-1842\\
+6&-833&-1421&337&-1917\\
+7&-663&-1624&409&-1878\\
+8&-391&-1823&489&-1725\\
+9&-17&-2018&577&-1458.
+\end{array}
+\]
+
+Thus the left side is negative at \(d=1\) and strictly decreases thereafter.
+For \(q=10\), it becomes
+\(459d^2-2209d+673=0\), whose discriminant is \(5\pmod8\), not a square.
+This excludes the last shape.  Hence
+
+\[
+\boxed{C_d\ge4.}
+\tag{54s-13}
+\]
+
+Combining \(p=4dC_d-s_d\) with \(s_d\le4d-1\) now sharpens the
+canonical-gap range to
+
+\[
+\boxed{
+s_d\le\frac{p-1}{C_d-1}-1\le\frac{p-4}{3}.
+}
+\tag{54s-14}
+\]
 
 The two factors in (54r) are coprime to the gap:
 
