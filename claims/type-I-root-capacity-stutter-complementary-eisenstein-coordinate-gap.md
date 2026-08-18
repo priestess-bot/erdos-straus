@@ -13,7 +13,9 @@ statement: >-
   1≤n<(8/3)(w+1)^2，且 L 整除
   C=w^2-wt+t^2+n(w-t)。若 C=0，则 t=w+r，其中 r>0、r|w^2，且
   n=w^2/r+w+r。原始 stutter 等式进一步排空全部 C=0 例外子纤维，
-  故每个固定 w 的子纤维完全由显式有限整除门控制。该结论不 physicalize k 或 D_* 因子，
+  故每个固定 w 的子纤维完全由显式有限整除门控制。又若 g=gcd(eta,W)，则
+  g 为奇数、3不整除g 且 g|gcd(h/3,k)，故非平凡坐标重叠给出 actual root-capacity
+  source 的输入资格。该结论不 physicalize k 或 D_* 因子，
   不构造 E1--E5 edge，也不闭合 QC1、TR1 或 T6 totality。
 claim_status: established
 proof_provenance: repository_derivation
@@ -24,6 +26,7 @@ depends_on:
   - type-I-root-capacity-stutter-eisenstein-support
   - type-I-root-capacity-stutter-actual-small-root-exclusion
   - type-I-root-capacity-stutter-k-one-universal-exclusion
+  - type-I-root-capacity-stutter-common-divisor-alignment
 topics:
   - type-I
   - root-capacity
@@ -44,6 +47,8 @@ sources:
     role: actual-m-mod-three-classification
   - claim: type-I-root-capacity-stutter-k-one-universal-exclusion
     role: k-is-not-one-in-the-actual-proper-root-domain
+  - claim: type-I-root-capacity-stutter-common-divisor-alignment
+    role: shared-eisenstein-coordinate-provenance
 visibility: public
 last_checked: '2026-08-18'
 ---
@@ -778,7 +783,50 @@ Its right side is odd, so both \(a\) and \(\gamma\) are odd.  Since
 }
 \]
 
-## 8. Boundary
+## 8. Coordinate-overlap provenance
+
+Put
+
+\[
+g:=\gcd(\eta,W).
+\]
+
+By (45), \(W-\eta\) is odd.  Thus \(W\) and \(\eta\) have opposite
+parity, and \(g\) is odd.  Equation (44) shows that \(g\mid a\): both
+\(hW\) and \(p\eta\) are divisible by \(g\).  Hence \(g\mid b=a+\eta\).
+The common-divisor alignment theorem now gives
+
+\[
+g\mid\gcd(h,k).
+\tag{46}
+\]
+
+It remains to identify the only possible exceptional prime in \(h=3u\).
+The actual modulo-\(3\) alternatives in (4) are \(m\equiv0,1\pmod3\).
+If \(m\equiv0\pmod3\), then \(a\equiv0\pmod3\); since \(3\mid h\mid N\),
+the norm \(N\equiv b^2\pmod3\) also gives \(b\equiv0\pmod3\).  Therefore
+\(e\equiv1\pmod3\) and
+
+\[
+W=ep-av\equiv1\pmod3.
+\]
+
+If \(m\equiv1\pmod3\), then \(a\equiv2\) and \(b\equiv1\pmod3\), so
+\(\eta\equiv2\pmod3\).  In either case \(3\nmid g\).  Combining this
+with (46) and \(h=3u\) proves
+
+\[
+\boxed{g\mid\gcd(u,k),\qquad g\text{ odd},\qquad3\nmid g.}
+\tag{47}
+\]
+
+Consequently a nontrivial coordinate overlap supplies a non-\(3\) prime
+factor \(q\mid u\) from the actual receipt, hence an eligible input to the
+existing root-capacity external-source menu.  This is a provenance split,
+not a terminal theorem: it does not prove that the finite menu hits, and it
+does not produce an E1--E5 successor.
+
+## 9. Boundary
 
 This is a structural reduction inside the actual proper-root stutter domain.
 It proves that the fixed-\(W\) exceptional shapes are empty, but it does not
