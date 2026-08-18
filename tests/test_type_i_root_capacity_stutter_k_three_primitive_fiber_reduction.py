@@ -23,6 +23,14 @@ class TypeIRootCapacityStutterKThreePrimitiveFiberReductionTests(unittest.TestCa
         self.assertEqual((row.A, row.B, row.p, row.d), (1, 7, 939, 1))
         self.assertEqual(row.p % 24, 3)
 
+    def test_fixed_gap_fiber_recovers_the_same_a_one_boundary(self):
+        self.assertEqual(fiber.fixed_gap_fiber(1), ())
+        rows = fiber.fixed_gap_fiber(6)
+        self.assertEqual(len(rows), 1)
+        row = rows[0]
+        self.assertEqual((row.A, row.B, row.M, row.m, row.p), (1, 7, 2, 6, 939))
+        fiber.verify_gap_reduction(row)
+
     def test_core_congruent_shadow_is_not_a_proper_root(self):
         row = fiber.reconstruct(991, 87)
         self.assertIsNotNone(row)

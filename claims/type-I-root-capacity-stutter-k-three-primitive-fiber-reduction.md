@@ -10,7 +10,10 @@ statement: >-
   A divides 3B^2+B-1，e divides (3A+2)^2-3。定义
   d=((3A+2)^2-3)/e，则 d≡1 mod3、gcd(A,d)=1、
   4≤d≤3A-2，并且 A divides 3d^2+d-1。故每个固定 d 只留下有限个
-  A-divisor fiber，再由 B、M、p 的闭式唯一重建。特别地 d=1 fiber 只给出
+  A-divisor fiber，再由 B、M、p 的闭式唯一重建。对 gap rho=B-A 还有对偶的
+  固定-rho fiber：A divides 3rho^2+rho-1，且 3(A+rho)+1 divides
+  9rho^2-6rho-2；若 s 是第二式的商，则 m=A+(s+2)/3 且
+  d=3(m-rho)+1。特别地 A=1（等价地这里的 d=1）只给出
   (A,B,p)=(1,7,939)，不满足核心同余；这精确重现既有 actual-small-root
   theorem 的 (m,a)=(6,3) 排除行，而不是一项额外 T6 closure。该约化不
   physicalize 任意 q|k，不构造 E1--E5 edge，也不关闭 k>1 或 T6 totality。
@@ -41,7 +44,7 @@ sources:
   - claim: type-I-root-capacity-stutter-actual-small-root-exclusion
     role: actual-mod-three-classification
   - reproduction: reproductions/type_i_root_capacity_stutter_k_three_primitive_fiber_reduction.py
-    role: exact-reduction-and-d-one-boundary-controls
+    role: exact-fixed-d-fixed-gap-reduction-and-shared-boundary-controls
 visibility: public
 last_checked: '2026-08-18'
 ---
@@ -164,6 +167,8 @@ and \((3B+1,9)=1\) give
 \boxed{3B+1\mid(3A+2)^2-3.}
 \tag{10}
 
+\]
+
 Thus the two integrality gates have the Pell-type forms
 
 \[
@@ -177,11 +182,15 @@ and
 (3A+2)^2-(3B+1)d=3,
 \tag{12}
 
+\]
+
 where
 
 \[
 \boxed{d:=\frac{(3A+2)^2-3}{3B+1}\in\mathbb Z_{>0}.}
 \tag{13}
+
+\]
 
 The name "Pell-type" only describes these exact norm-style equations; no
 Pell equation is asserted to have been globally solved.
@@ -194,11 +203,15 @@ Because both factors in (13) are \(1\pmod3\),
 d\equiv1\pmod3.
 \tag{14}
 
+\]
+
 Also \((3B+1)d=(3A+2)^2-3\equiv1\pmod A\), so
 
 \[
 \boxed{(A,d)=1.}
 \tag{15}
+
+\]
 
 Use \((3B+1)d=9A^2+12A+1\) to eliminate \(B\) from (8). The following
 integer identity results:
@@ -210,11 +223,15 @@ integer identity results:
 \end{aligned}
 \tag{16}
 
+\]
+
 Since (8) makes the first term on the left divisible by \(A\), (16) gives
 
 \[
 \boxed{A\mid C_d:=3d^2+d-1.}
 \tag{17}
+
+\]
 
 For fixed \(d\), this is a genuine finite divisor fiber: choose a positive
 divisor \(A\) of \(C_d\), then recover at most one candidate
@@ -223,6 +240,8 @@ divisor \(A\) of \(C_d\), then recover at most one candidate
 3B+1=\frac{9A^2+12A+1}{d},
 \tag{18}
 
+\]
+
 followed by
 
 \[
@@ -230,6 +249,8 @@ M=\frac{A+H}{3B+1},
 \qquad
 p=\frac{(3B+1)H-B}{A}.
 \tag{19}
+
+\]
 
 The divisibilities, positivity, core primality, actual maximal-receipt guards,
 terminal-first status, and E1--E5 remain separate checks. Equation (17)
@@ -248,7 +269,113 @@ Combining this with (14) gives
 \boxed{d\le3A-2.}
 \tag{20}
 
-## 5. The \(d=1\) fiber rederives an already excluded core row
+\]
+
+## 5. Dual fixed-gap fibers
+
+The fixed-\(d\) reduction is not the only finite one-parameter view of the
+primitive system. Put
+
+\[
+\rho=B-A>0,
+\qquad
+E=3B+1=3(A+\rho)+1,
+\tag{G1}
+\]
+
+so that
+
+\[
+H=A^2+A\rho+\rho^2.
+\tag{G2}
+\]
+
+Two exact identities isolate the two integrality gates in these coordinates:
+
+\[
+9(A+H)=E(3A+2)+F_\rho,
+\qquad
+F_\rho:=9\rho^2-6\rho-2,
+\tag{G3}
+\]
+
+and
+
+\[
+eH-B\equiv \rho\,G_\rho\pmod A,
+\qquad
+G_\rho:=3\rho^2+\rho-1.
+\tag{G4}
+\]
+
+Because \((E,9)=1\) and \((A,\rho)=(A,B)=1\), the two primitive
+integrality conditions in (6) are equivalently
+
+\[
+\boxed{
+E\mid F_\rho,
+\qquad
+A\mid G_\rho.}
+\tag{G5}
+\]
+
+The converse is equally exact at the integer-curve level: given positive
+\(A,\rho\) with \((A,\rho)=1\) satisfying (G5), set \(B=A+\rho\),
+\(H=A^2+A\rho+\rho^2\), \(M=(A+H)/E\), and
+\(p=(EH-B)/A\). Then \(M,p\) are positive integers and, after scaling by
+three, they reconstruct the primitive \(k=3\) stutter equations. This is
+not a converse to actual maximality, terminal-first, or core primality.
+
+For each fixed \(\rho\), (G5) is a finite divisor fiber: enumerate the
+positive divisors \(E\) of \(F_\rho\), recover
+
+\[
+A=\frac{E-3\rho-1}{3},
+\tag{G6}
+\]
+
+and retain exactly those values with \(A>0\), \((A,\rho)=1\), and
+\(A\mid G_\rho\). There is no parameter scan in this statement: it is a
+finite exact reconstruction for one specified \(\rho\), parallel to the
+fixed-\(d\) fiber in Section 4.
+
+Let \(s=F_\rho/E\). Since \(E\equiv F_\rho\equiv1\pmod3\), one has
+\(s\equiv1\pmod3\), and (G3) gives
+
+\[
+9M=3A+2+s,
+\qquad
+m=A+\frac{s+2}{3}.
+\tag{G7}
+\]
+
+Long division of \((3A+2)^2-3\) by \(E\), followed by (G7), gives the
+precise bridge between the two fibers:
+
+\[
+\boxed{d=3(m-\rho)+1.}
+\tag{G8}
+\]
+
+In particular \(d>0\) gives \(\rho\le m\). After the already-excluded
+\(d=1\) row, every remaining actual core candidate has
+\(\rho\le m-1\). This is a localization of the primitive curve, not a
+physical successor or a proof that the variable \(\rho\) is globally bounded.
+
+The shared first fiber can now be recovered directly. If \(A=1\), then
+\(E=3\rho+4\), while
+
+\[
+F_\rho=(3\rho+4)(3\rho-6)+22.
+\tag{G9}
+\]
+
+Condition (G5) forces \(3\rho+4\mid22\). The positive integral solution is
+only \(\rho=6\), giving \((A,B,M,m,p,d)=(1,7,2,6,939,1)\). Thus the
+gap coordinate independently recovers exactly the same non-core boundary as
+the fixed-\(d\) coordinate.
+
+## 6. The \(d=1\) fiber rederives an already excluded core row
 
 Suppose \(d=1\). Equation (13) gives
 
@@ -256,6 +383,8 @@ Suppose \(d=1\). Equation (13) gives
 3B+1=9A^2+12A+1,
 \qquad B=3A^2+4A.
 \tag{21}
+
+\]
 
 But then \(B\equiv0\pmod A\), so (8) becomes
 
@@ -269,12 +398,16 @@ Hence \(A=1\), and (21) gives \(B=7\). Formula (19) now uniquely gives
 H=43,\qquad e=22,\qquad M=2,\qquad p=939.
 \tag{22}
 
+\]
+
 Since \(939\equiv3\pmod {24}\), it is not a core prime. Therefore
 
 \[
 \boxed{
 \text{no actual core proper-root stutter with }k=3\text{ has }d=1.}
 \tag{23}
+
+\]
 
 Here \(a=3\) and \(m=6\), so this is exactly the \((m,a)=(6,3)\) row
 already excluded by the actual-small-root theorem. The value of this card is
@@ -288,7 +421,9 @@ Together with (14), every remaining actual \(k=3\) candidate satisfies
 \boxed{4\le d\le3A-2,\qquad d\equiv1\pmod3,\qquad A\mid C_d.}
 \tag{24}
 
-## 6. Cyclotomic gate and proof boundary
+\]
+
+## 7. Cyclotomic gate and proof boundary
 
 The primitive equations also show why the bare cyclotomic divisibility is not
 an additional \(k=3\) elimination. Since \((A,H)=1\) and
@@ -298,14 +433,16 @@ an additional \(k=3\) elimination. Since \((A,H)=1\) and
 A^2(p^2+p+1)\equiv A^2-AB+B^2=H\equiv0\pmod H.
 \tag{25}
 
+\]
+
 Thus \(H\mid p^2+p+1\); when \(p\equiv1\pmod3\) and \(3\nmid H\), this
 recovers \(3H\mid p^2+p+1\). The cyclotomic root condition therefore does
 not by itself clear the remaining fibers.
 
-This card supplies a finite-fiber parameterization for fixed \(d\) and
-rederives the already excluded \(k=3,d=1\) row. It does not prove that every
-\(k=3\) fiber is empty, does not physicalize a divisor of \(k\), and does not
-provide a terminal or a verified successor. QC1, TR1, and
+This card supplies finite-fiber parameterizations for fixed \(d\) and fixed
+\(\rho=B-A\), and rederives the already excluded \(k=3,d=1\) row in both
+coordinates. It does not prove that every \(k=3\) fiber is empty, does not
+physicalize a divisor of \(k\), and does not provide a terminal or a verified successor. QC1, TR1, and
 `T6_GLOBAL_SELECTOR_TOTALITY` remain `OPEN`.
 
 ## Focused reproduction

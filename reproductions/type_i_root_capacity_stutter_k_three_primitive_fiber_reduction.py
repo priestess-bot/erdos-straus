@@ -2,9 +2,9 @@
 """Verify the exact k=3 proper-root primitive-fiber reduction.
 
 The stored controls are arithmetic shadows, deliberately not actual recursive
-states. This program checks the reduction, the d=1 boundary, and the
-core-congruent/non-proper distinction. It does not scan fibers, primes,
-sources, certificates, or selector history.
+states. This program checks the fixed-d and fixed-gap reductions, the shared
+A=1/d=1 boundary, and the core-congruent/non-proper distinction. It does not
+scan fibers, primes, sources, certificates, or selector history.
 """
 
 from __future__ import annotations
@@ -170,6 +170,53 @@ def fixed_d_fiber(d: int) -> tuple[KThreeFiber, ...]:
     return tuple(candidates)
 
 
+def verify_gap_reduction(data: KThreeFiber) -> None:
+    """Check the dual finite fiber indexed by rho=B-A for a proper curve point."""
+    if not data.A < data.B:
+        raise ValueError("gap reduction requires the proper A<B branch")
+    rho = data.B - data.A
+    e = 3 * (data.A + rho) + 1
+    F_rho = 9 * rho * rho - 6 * rho - 2
+    G_rho = 3 * rho * rho + rho - 1
+    if F_rho <= 0 or F_rho % e:
+        raise AssertionError("gap fiber lost its M-integrality divisor gate")
+    s = F_rho // e
+    if not (
+        rho >= 2
+        and data.H == data.A * data.A + data.A * rho + rho * rho
+        and data.e == e
+        and G_rho % data.A == 0
+        and gcd(data.A, rho) == 1
+        and s % 3 == 1
+        and 9 * data.M == 3 * data.A + 2 + s
+        and data.m == data.A + (s + 2) // 3
+        and data.d == 3 * (data.m - rho) + 1
+    ):
+        raise AssertionError("k=3 dual gap-fiber identities changed")
+
+
+def fixed_gap_fiber(rho: int) -> tuple[KThreeFiber, ...]:
+    """Enumerate the exact finite primitive fiber for one fixed gap rho=B-A."""
+    if rho <= 0:
+        raise ValueError("rho must be positive")
+    F_rho = 9 * rho * rho - 6 * rho - 2
+    if F_rho <= 0:
+        return ()
+    G_rho = 3 * rho * rho + rho - 1
+    candidates: list[KThreeFiber] = []
+    for e in divisors(F_rho):
+        if e <= 3 * rho + 1 or (e - 3 * rho - 1) % 3:
+            continue
+        A = (e - 3 * rho - 1) // 3
+        if A <= 0 or gcd(A, rho) != 1 or G_rho % A:
+            continue
+        data = reconstruct(A, A + rho)
+        if data is not None and data.A < data.B:
+            verify_gap_reduction(data)
+            candidates.append(data)
+    return tuple(candidates)
+
+
 def verify_d_one_boundary() -> None:
     """Replay the sole d=1 curve point and its core-congruence failure."""
     rows = fixed_d_fiber(1)
@@ -186,6 +233,23 @@ def verify_d_one_boundary() -> None:
         and cyclotomic % data.h == 43
     ):
         raise AssertionError("d=1 core-boundary control changed")
+
+
+def verify_gap_boundary() -> None:
+    """Replay the dual gap fiber and the exact A=1 boundary without a scan."""
+    if fixed_gap_fiber(1):
+        raise AssertionError("rho=1 cannot carry a positive primitive curve point")
+    rows = fixed_gap_fiber(6)
+    if len(rows) != 1:
+        raise AssertionError("rho=6 gap fiber no longer has one curve point")
+    data = rows[0]
+    if not (
+        (data.A, data.B, data.M, data.m, data.p, data.d)
+        == (1, 7, 2, 6, 939, 1)
+        and 9 * 6 * 6 - 6 * 6 - 2 == data.e * 13
+        and (3 * 6 * 6 + 6 - 1) % data.A == 0
+    ):
+        raise AssertionError("A=1 dual gap boundary changed")
 
 
 def verify_core_congruent_shadow() -> None:
@@ -209,10 +273,12 @@ def verify_core_congruent_shadow() -> None:
 
 def verify() -> None:
     verify_d_one_boundary()
+    verify_gap_boundary()
     verify_core_congruent_shadow()
     print(
-        "verified k=3 primitive Pell-fiber reduction: d=1 is non-core, "
-        "and a core-congruent shadow still fails the proper-root guard"
+        "verified k=3 primitive fixed-d/fixed-gap reduction: the shared "
+        "A=1,d=1 point is non-core, and a core-congruent shadow still fails "
+        "the proper-root guard"
     )
     print("no fiber, prime, source, certificate, or selector search is performed")
 

@@ -289,9 +289,18 @@ A\mid3d^2+d-1.
 \]
 
 所以每个固定 \(d\) 只留下有限个 \(A\) 候选，然后 \(B,m,p\) 均可由闭式重建。
-其中 \(d=1\) 唯一恢复 \((A,B,p)=(1,7,939)\)，非核心；这与已有的
-\((m,a)=(6,3)\) small-root 排除行相同，用于交叉验证而不另计一个 closure。但 \(d\) 没有全局上界，这不是 \(k=3\) 的全称排空，更不是
-QC1 的 physicalization。完整约化见
+对偶地令 \(\rho=B-A\)，则同一 primitive system 还等价地给出
+
+\[
+A\mid3\rho^2+\rho-1,
+\qquad
+3(A+\rho)+1\mid9\rho^2-6\rho-2,
+\]
+
+所以固定 \(\rho\) 也是有限 divisor fiber。共享的 \(A=1\) fiber 唯一恢复
+\(\rho=6\)、\(p=939\)，非核心；这与已有的 \((m,a)=(6,3)\) small-root 排除行
+相同，用于交叉验证而不另计一个 closure。\(d\) 与 \(\rho\) 都没有全局上界，这不是
+\(k=3\) 的全称排空，更不是 QC1 的 physicalization。完整约化见
 [\(k=3\) primitive fiber reduction](../claims/type-I-root-capacity-stutter-k-three-primitive-fiber-reduction.md)。
 
 ## 4. 最小开放量词
