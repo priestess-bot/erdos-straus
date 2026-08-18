@@ -23,7 +23,7 @@ statement: >-
   (eta+1)、W-eta、n、k 同时除以 d 后，得到 primitive Eisenstein norm。
   在 Z[omega] 中，gcd(d,delta+omega) 有范数 d，并给出一个 exact factor-level
   cancellation。对每个 d>1，由 a-h mod d 定义的 natural gap 有完整的 linear-divisor
-  Type II fan，且其 cofactor 满足 C_d>=6、gap 不超过 (p-6)/5；D-overlap 的子因子还定向整除
+  Type II fan，且其 cofactor 满足 C_d>=7、gap 不超过 (p-7)/6；D-overlap 的子因子还定向整除
   Phi(h) 与 Psi(p) 的指定 Eisenstein 因子。
   因而由 sh=1 mod g、s=3 mod4 确定的最小正 variable gap 总在自然范围内；令
   C=(p+s)/(4g)、x=gC，则 C>=2、m<=4C、p<1024C^5，且当 p>=2^15 时 s<8p^(4/5)，
@@ -1934,14 +1934,222 @@ Therefore
 \tag{54s-39}
 \]
 
+There is a parity gate in every fixed-cofactor reduction which shortens the
+next case.  Write \(\eta+1=d\sigma\), and use
+\[
+s_d=\lambda d-(m-2)a.
+\]
+This is possible because \(s_d\equiv a-h\equiv-(m-2)a\pmod d\).
+Since \(a,d,s_d\) are all odd, it gives
+
+\[
+\boxed{\lambda\equiv m-1\pmod2.}
+\tag{54s-41}
+\]
+
+Now suppose \(C_d=6\).  Then \(p=24d-s_d\), so \(s_d\equiv2\pmod3\),
+and \(h<p\) gives \(m\sigma<24\).  Combining the actual split (54s-1)
+with (54s-41), the complete permitted list is
+
+\[
+\begin{array}{c|c|c}
+m&\sigma&\lambda\\
+\hline
+3&1&2,8,14,20\\
+3&4&2,8\\
+3&7&2\\
+4&3&3,9\\
+6&1&5,11,17\\
+9&1&2,8,14\\
+12&1&5,11\\
+15&1&2,8\\
+18&1&5\\
+21&1&2 .
+\end{array}
+\tag{54s-42}
+\]
+
+The nominal pair \((m,\sigma)=(7,3)\) permits no positive \(\lambda\).
+For every row in (54s-42), one has \(\lambda\le23-m\sigma\), and the
+exact relation is
+
+\[
+a^2+\bigl((2m-1)\sigma-24+\lambda\bigr)ad-a
++m\sigma^2d^2-d\sigma+1=0.
+\tag{54s-43}
+\]
+
+The rows \((3,4,2)\) and \((6,1,11)\) have negative discriminants
+\[
+-188d^2+20d-3,\qquad -20d^2+8d-3,
+\]
+respectively.  For \((3,1,8)\), the gap bounds give
+\(4d+1\le a<8d\), while
+\[
+a^2-11ad-a+3d^2-d+1
+\]
+is negative at both endpoints \(4d\) and \(8d\).  For \((3,1,14)\),
+the gap gives \(a\ge10d+1\), where
+\[
+a^2-5ad-a+3d^2-d+1
+\]
+is increasing and positive.  Finally, \((9,1,2)\) has discriminant
+\(-11d^2+14d-3<0\).  Every remaining row has nonnegative
+\(ad\)-coefficient in (54s-43), and is positive after the usual grouping.
+Only
+
+\[
+\begin{array}{c|c|c|c|c}
+m&\sigma&\lambda&s_d&(p,\delta)\\
+\hline
+3&1&2&2d-a&(22d+a,19d-a)\\
+6&1&5&5d-4a&(19d+4a,13d-a)
+\end{array}
+\tag{54s-44}
+\]
+
+remain.
+
+For the first row, set
+
+\[
+f_3(a):=a^2-17ad-a+3d^2-d+1.
+\tag{54s-45}
+\]
+
+The allowed root has
+
+\[
+f_3(d/6)=\frac{7d^2-42d+36}{36}>0,
+\qquad
+f_3(d/5)<0,
+\qquad
+f_3(2d)<0,
+\]
+and hence
+
+\[
+\frac d6<a<\frac d5.
+\tag{54s-46}
+\]
+
+As \((h,d)=1\), reducing \(\delta^2+\delta+1\) by (54s-45) gives
+
+\[
+\delta^2+\delta+1=d(358d-21a+20),
+\tag{54s-47}
+\]
+
+so
+
+\[
+358d-21a+20=q(3d+2a)
+\tag{54s-48}
+\]
+
+for a positive integer \(q\).  The bounds (54s-46) give
+
+\[
+q>\frac{1769}{17}>104,
+\qquad
+q<\frac{2127}{20}+\frac6d<108.
+\]
+
+Thus \(q\in\{105,106,107\}\).  Solving (54s-48) for \(a\), substituting
+in (54s-45), and multiplying by \((21+2q)^2\), gives
+
+\[
+(123q^2-12997q+1681)d^2+(2q^2-1537q-779)d
++(4q^2+44q+421)=0.
+\tag{54s-49}
+\]
+
+For \(q=105\), the left side is
+\[
+-6929d^2-140114d+49141,
+\]
+which is negative for \(d\ge1\).  For \(q=106\), it is
+\[
+6027d^2-141229d+50029,
+\]
+which is impossible modulo \(2\).  For \(q=107\), it is
+\[
+19229d^2-142340d+50925=0.
+\]
+Modulo \(5\) this forces \(5\mid d\), contrary to every prime factor of
+\(d\) being \(1\pmod3\).  The first row is impossible.
+
+For the second row, set
+
+\[
+f_6(a):=a^2-8ad-a+6d^2-d+1.
+\tag{54s-50}
+\]
+
+The signs at \(4d/5\), \(6d/7\), and \(5d/4\) show that the root allowed
+by \(0<s_d=5d-4a\le4d-1\) satisfies
+
+\[
+\begin{aligned}
+f_6(4d/5)&=\frac{6d^2-45d+25}{25}>0,\\
+f_6(6d/7)&=\frac{-6d^2-91d+49}{49}<0,\\
+f_6(5d/4)&=\frac{-39d^2-36d+16}{16}<0,
+\end{aligned}
+\]
+
+\[
+\frac{4d}{5}<a<\frac{6d}{7}.
+\tag{54s-51}
+\]
+
+Here \((h,d)=1\), because \(h=6d+5a\), \((a,d)=1\), and \(5\nmid d\).
+The reduction of \(\delta^2+\delta+1\) is
+
+\[
+\delta^2+\delta+1=d(163d-18a+14),
+\tag{54s-52}
+\]
+
+so
+
+\[
+163d-18a+14=q(6d+5a).
+\tag{54s-53}
+\]
+
+The bounds (54s-51) give
+\[
+q>\frac{1033}{72}>14,
+\qquad
+q<\frac{743}{50}+\frac7{5d}<16,
+\]
+hence \(q=15\).  Substituting
+\[
+a=\frac{73d+14}{93}
+\]
+in (54s-50) and multiplying by \(93^2\) gives
+
+\[
+2911d^2-23810d+7543=0.
+\tag{54s-54}
+\]
+
+Modulo \(5\), this would say \(d^2\equiv2\pmod5\), impossible.  The
+second row is excluded, and therefore
+
+\[
+\boxed{C_d\ge7.}
+\tag{54s-55}
+\]
+
 Combining \(p=4dC_d-s_d\) with \(s_d\le4d-1\) now sharpens the
 canonical-gap range to
 
 \[
 \boxed{
-s_d\le\frac{p-1}{C_d-1}-1\le\frac{p-6}{5}.
+s_d\le\frac{p-1}{C_d-1}-1\le\frac{p-7}{6}.
 }
-\tag{54s-40}
+\tag{54s-56}
 \]
 
 The two factors in (54r) are coprime to the gap:
