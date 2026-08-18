@@ -333,6 +333,21 @@ physicalization。完整约化见
 QC1 closure，详见
 [Vieta companion obstruction](../claims/type-I-root-capacity-stutter-k-three-vieta-companion-obstruction.md)。
 
+actual cyclotomic root gate 还给出一个与所有四个 fiber 兼容的必要同余筛。一般地，
+除去 \(g=(a,e-1)\) 后，primitive system 的 \(\kappa=k/g\) 承载所有不被 \(h\)
+支持的 quotient-only 因子；在 \(k=3\) 时 \(g=3\)、\(\kappa=1\)，从而
+
+\[
+B\equiv2A+1\pmod3,
+\qquad
+t=B-m\equiv2A+1\pmod3.
+\]
+
+这些结论来自 \(h\mid p^2+p+1\)，不能由抽象曲线点替代。它们只删除不满足 root
+gate 的 fiber residue，并未给出 \(d,\rho,j,t\) 的全局上界，也没有把任何 \(q\mid k\)
+physicalize。见
+[primitive quotient normalization](../claims/type-I-root-capacity-stutter-primitive-quotient-normalization.md)。
+
 ## 4. 最小开放量词
 
 令 \(\mathcal S_{\mathrm{pr}}\) 表示所有实际可达、terminal-first 后仍非终端的
@@ -407,7 +422,8 @@ divisibility，又被 gap-3 Type II terminal 抢占；详见
 ## 6. 结论边界
 
 本页严格完成了 \(k=1\) 的参数化与 actual 全称排除；\(k=3\) 现有
-fixed-\(d\)、fixed-\(\rho\)、fixed-\(j\)、fixed-\(t\) 四个有限 fiber 坐标，并排除了保持
-\(A,M\) 的直接 Vieta companion。它们收紧整数曲线和后续候选路线，但不 physicalize
+fixed-\(d\)、fixed-\(\rho\)、fixed-\(j\)、fixed-\(t\) 四个有限 fiber 坐标、一个
+actual-root saturation 同余筛，并排除了保持 \(A,M\) 的直接 Vieta companion。它们收紧
+整数曲线和后续候选路线，但不 physicalize
 \(q\mid k\)，也不为 \(q\mid D_*\) 构造全称 successor。(PR-T6) 的 quotient 剩余仍
 精确位于 \(k>1\) 的 (QC1)。因此 (QC0) 已闭合，但 proper-root 子域和 T6 仍保持开放。

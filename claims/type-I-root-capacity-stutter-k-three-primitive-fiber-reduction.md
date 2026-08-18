@@ -6,7 +6,8 @@ statement: >-
   对核心素数 p≡1 mod24 的 terminal-first 后 actual proper-root stutter receipt，令
   b=e-1、N=a^2-ab+b^2=hk。若 Eisenstein quotient k=3，则 gcd(a,b)=3。
   写 A=a/3、B=b/3、H=h/3、M=m/3，则 A,B 互素、1≤A<B，且
-  H=A^2-AB+B^2、e=3B+1、A+H=eM、pA+B=eH。因而
+  H=A^2-AB+B^2、e=3B+1、A+H=eM、pA+B=eH。actual cyclotomic root gate
+  进一步强制 B≡2A+1 mod3；对 t=B-m 也有 t≡2A+1 mod3。因而
   A divides 3B^2+B-1，e divides (3A+2)^2-3。定义
   d=((3A+2)^2-3)/e，则 d≡1 mod3、gcd(A,d)=1、
   4≤d≤3A-2，并且 A divides 3d^2+d-1。故每个固定 d 只留下有限个
@@ -29,6 +30,7 @@ depends_on:
   - type-I-root-capacity-stutter-finite-curve-constraint
   - type-I-root-capacity-stutter-positive-definite-norm-bound
   - type-I-root-capacity-stutter-common-divisor-alignment
+  - type-I-root-capacity-stutter-primitive-quotient-normalization
   - type-I-root-capacity-stutter-actual-small-root-exclusion
 topics:
   - type-I
@@ -47,6 +49,8 @@ sources:
     role: proper-root-range-a-less-than-e
   - claim: type-I-root-capacity-stutter-common-divisor-alignment
     role: gcd-a-b-divides-gcd-h-k
+  - claim: type-I-root-capacity-stutter-primitive-quotient-normalization
+    role: actual-root-cyclotomic-saturation-gate
   - claim: type-I-root-capacity-stutter-actual-small-root-exclusion
     role: actual-mod-three-classification
   - reproduction: reproductions/type_i_root_capacity_stutter_k_three_primitive_fiber_reduction.py
@@ -149,6 +153,52 @@ The proper-root bound \(a<e\) yields \(A\le B\). Equality would force
 \boxed{1\le A<B.}
 \tag{7}
 \]
+
+### 2.1 Actual cyclotomic saturation gate
+
+The preceding primitive system is an integer-curve description. The actual
+root condition yields one further gate that is absent from a formal curve
+point. Apply the primitive quotient normalization to this \(k=3\) case:
+
+\[
+g=3,
+\qquad \alpha=H,
+\qquad \kappa=1.
+\]
+
+Since \(h\mid C_p:=p^2+p+1\), its cyclotomic identity gives
+
+\[
+e^2H+e(A-2B)+1
+=3A^2\frac{C_p}{h}.
+\tag{7a}
+\]
+
+As \(e=3B+1\equiv1\pmod3\), reduction of (7a) modulo \(3\) gives
+
+\[
+H+A-2B+1\equiv0\pmod3.
+\tag{7b}
+\]
+
+The core congruence has \(p\equiv1\pmod3\), and the final identity in
+(6) then gives \(H\equiv A+B\pmod3\). Substitution into (7b) yields
+
+\[
+\boxed{B\equiv2A+1\pmod3.}
+\tag{7c}
+\]
+
+Moreover \(m=3M\), so the later Vieta-gap coordinate \(t=B-m\) obeys
+
+\[
+\boxed{t\equiv2A+1\pmod3.}
+\tag{7d}
+\]
+
+These are necessary actual-root filters on every primitive fiber. They do
+not bound \(d\), \(\rho\), \(j\), or \(t\), and do not establish a
+physical quotient carrier.
 
 ## 3. Two Pell-type divisibility gates
 

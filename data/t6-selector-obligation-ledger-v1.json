@@ -176,6 +176,7 @@
       "evidence": [
         "docs/T6-proper-root-minimal-gap-audit-2026-08-17.md",
         "type-I-root-capacity-stutter-common-divisor-alignment",
+        "type-I-root-capacity-stutter-primitive-quotient-normalization",
         "type-I-root-capacity-stutter-k-three-primitive-fiber-reduction",
         "type-I-root-capacity-stutter-k-three-vieta-companion-obstruction"
       ],
@@ -609,7 +610,7 @@
       "quantifier": "For every actual terminal-first-surviving proper-root state with k>1, terminal(S) or QC1(S) or TR1(S).",
       "allowed_closure_modes": ["family_empty_proof", "universal_terminal", "universal_verified_successor"],
       "status": "OPEN",
-      "why_current_evidence_is_insufficient": "A formal quotient chart q divides K_q has no actual E1 provenance or E4 lift."
+      "why_current_evidence_is_insufficient": "Primitive quotient normalization localizes quotient-only factors and adds an actual-root saturation gate, but a formal quotient chart q divides K_q still has no actual E1 provenance or E4 lift."
     },
     {
       "id": "GAP-O3-C8-OUTGOING",

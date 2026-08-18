@@ -59,7 +59,10 @@ Neither a no-go for one candidate action nor a finite scan is a fourth mode.
 
 The current `k=3` Vieta-companion obstruction is such a no-go: it removes the
 same-`M` rechart attempt before a target exists, but does not alter the O2
-quantifier or its `OPEN` status.
+quantifier or its `OPEN` status. The later primitive quotient normalization
+is also structural only: it isolates all quotient-only factors in
+\(\kappa=k/\gcd(a,e-1)\) and adds an actual-root cyclotomic saturation gate,
+but creates no E1 provenance or E4 lift.
 
 ## Reproduction
 
