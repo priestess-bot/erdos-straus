@@ -431,8 +431,53 @@ n=\frac{w^2}{r}+w+r.
 \tag{28}
 \]
 
+The exceptional shapes admit a further exact normal form.  Put
+
+\[
+A=w^2+wr+r^2,\qquad R=r^2-r+1.
+\]
+
+Solving (26) and the defining equation for \(t\) gives
+
+\[
+\boxed{
+\begin{aligned}
+Ab&=r(w+1)^2m+wR,\\
+Aa&=(w+1)(w+r-r^2)m-rR,\\
+A\eta&=(w+1)\bigl(w(r-1)+r^2\bigr)m+(w+r)R.
+\end{aligned}
+}
+\tag{29}
+\]
+
+Since \(a>0\), every exceptional shape must satisfy
+
+\[
+\boxed{r^2<w+r.}
+\tag{30}
+\]
+
+For the universal subcase \(r=1\), \(\gcd(w^2+w+1,w+1)=1\), so there is
+a positive integer \(s\) with
+
+\[
+\boxed{
+\begin{aligned}
+A&=w^2+w+1,\qquad m=As-1,\\
+e&=(w+1)^2s,\qquad
+a=w(w+1)s-1,\qquad
+\eta=(w+1)s,\\
+\delta&=(w+1)(As-1),\\
+p&=(w+1)^2As^2+(w+1)w(w-1)s-w.
+\end{aligned}
+}
+\tag{31}
+\]
+
 Thus each fixed complementary coordinate has finitely many ordinary divisor
-fibers and finitely many explicitly named exceptional shapes.
+fibers and finitely many explicitly named exceptional shapes; (29)--(31)
+are available for the latter rather than treating them as an unspecified
+infinite remainder.
 
 ## 5. The \(W=4\) fiber
 
@@ -442,7 +487,7 @@ and (9) would make \(k=e\eta-4a\) even.  Hence
 
 \[
 e,\eta\text{ are odd},\qquad m\text{ is even}.
-\tag{29}
+\tag{32}
 \]
 
 The parity of \(p=h+\delta\), together with (13), makes \(t\) odd.
@@ -454,7 +499,7 @@ m\pmod3&t\\ \hline
 0&3\ \text{or}\ 9\\
 1&1\ \text{or}\ 7 .
 \end{array}
-\tag{30}
+\tag{33}
 \]
 
 For the four rows, the root divisor (14) has the following explicit form:
@@ -468,7 +513,7 @@ F=\delta^2+\delta+1&\text{bound on }n=F/h\\ \hline
 7&7h=5m^2+2m+(4m+3)\eta&25m^2+25m+7&n<35\\
 9&9h=5m^2+4m+(4m+5)\eta&25m^2+45m+21&n<45.
 \end{array}
-\tag{31}
+\tag{34}
 \]
 
 For \(t=3,9\), the \(m\equiv0\pmod3\) branch has
@@ -485,7 +530,7 @@ t&L& C_{4,t,n}\\ \hline
 7&4m+3&37-3n\\
 9&4m+5&61-5n .
 \end{array}
-\tag{32}
+\tag{35}
 \]
 
 For \(t=1\), the only possible even \(m\equiv1\pmod3\) with
@@ -518,14 +563,14 @@ m&\text{forced }n&F\bmod n\\ \hline
 30&\text{none}&-\\
 36&42&21 .
 \end{array}
-\tag{33}
+\tag{36}
 \]
 
-No listed \(n\) divides \(F\).  All four branches in (30) are empty, so
+No listed \(n\) divides \(F\).  All four branches in (33) are empty, so
 
 \[
 \boxed{W\ge5.}
-\tag{34}
+\tag{37}
 \]
 
 ## 6. The companion gap \(\eta\ge5\)
@@ -534,7 +579,7 @@ The \(k=1\) domain is already empty, and \(k\) is odd.  Hence
 
 \[
 k\ge3.
-\tag{35}
+\tag{38}
 \]
 
 Together with (9), \(W\ge5\), and \(a=e-1-\eta\), this reduces the four
@@ -557,7 +602,7 @@ But \(h=4m-1\) being divisible by \(3\) gives \(m\equiv1\pmod3\), whereas
 the actual \(m\equiv1\pmod3\) branch requires \(a\equiv2\pmod3\).
 
 For \(\eta=3\), parity forces \(e\) odd and \(W\) even.  Positivity and
-(35) leave \(e=5\) or \(7\).  The \(e=5,a=1\) cases violate the actual
+(38) leave \(e=5\) or \(7\).  The \(e=5,a=1\) cases violate the actual
 modulo-\(3\) classification.  The remaining case is
 
 \[
@@ -584,7 +629,7 @@ modulo-\(3\) conditions force \(m\equiv0\pmod3\) and
 
 \[
 (e,W)\in\{(20,5),(14,5),(8,5),(8,7),(8,9)\}.
-\tag{36}
+\tag{39}
 \]
 
 In each case, (13) and \(3\mid m\) force the following parametrization:
@@ -598,7 +643,7 @@ In each case, (13) and \(3\mid m\) force the following parametrization:
 (8,7)&21r&360r-7\\
 (8,9)&9+21r&167+408r .
 \end{array}
-\tag{37}
+\tag{40}
 \]
 
 The second row is divisible by \(7\).  The first row is
@@ -609,7 +654,7 @@ Thus \(\eta=4\) is impossible.  Combining the four cases,
 
 \[
 \boxed{\eta\ge5.}
-\tag{38}
+\tag{41}
 \]
 
 ## 7. Boundary
