@@ -22,7 +22,8 @@ statement: >-
   此外，若 n=(delta^2+delta+1)/h、d=gcd(W-eta,k)，则 d|n；把
   (eta+1)、W-eta、n、k 同时除以 d 后，得到 primitive Eisenstein norm。
   在 Z[omega] 中，gcd(d,delta+omega) 有范数 d，并给出一个 exact factor-level
-  cancellation；D-overlap 的子因子还定向整除 Phi(h) 与 Psi(p) 的指定 Eisenstein 因子。
+  cancellation。对每个 d>1，由 a-h mod d 定义的 natural gap 有完整的 linear-divisor
+  Type II fan；D-overlap 的子因子还定向整除 Phi(h) 与 Psi(p) 的指定 Eisenstein 因子。
   因而由 sh=1 mod g、s=3 mod4 确定的最小正 variable gap 总在自然范围内；令
   C=(p+s)/(4g)、x=gC，则 C>=2、m<=4C、p<1024C^5，且当 p>=2^15 时 s<8p^(4/5)，
   并有 gcd(s,x)=1。
@@ -1311,6 +1312,133 @@ The remaining realization problem is precisely to turn this canonical,
 state-computable oriented quotient into either a direct certificate or a
 legal E1--E5 successor; without that step, (54m) does not close QC1, TR1,
 or T6.
+
+### 10.3 A natural full divisor fan for every nontrivial \(d\)
+
+The same whole \(d\)-carrier also supplies a direct terminal family, without
+requiring the additional \(D\)-intersection.  First, the proper-root norm
+range gives a useful size bound.  Since \(m\ge3\), \(1\le a\le e-1\), and
+\(b=e-1\),
+
+\[
+0<k=\frac{a^2-ab+b^2}{h}
+<\frac{e^2}{h}
+<\frac e{m-1}
+<\frac h{(m-1)^2}
+\le\frac h4<\frac p4.
+\tag{54p}
+\]
+
+Thus \(d\le k<p/4\).  The divisor \(d\) is odd because
+\(a^2-a+1\) is odd.  Assume \(d>1\), and let \(s_d\) be the unique
+integer satisfying
+
+\[
+s_d\equiv a-h\pmod d,
+\qquad
+s_d\equiv3\pmod4,
+\qquad
+1\le s_d\le4d.
+\tag{54q}
+\]
+
+The congruence \(h\equiv p+a\pmod d\) from (54j) gives
+\(d\mid p+s_d\).  Since \(4d<p\), (54q) therefore gives the natural
+gap range and an integral cofactor
+
+\[
+\boxed{
+3\le s_d\le p-2,
+\qquad
+C_d:=\frac{p+s_d}{4d}\in\mathbb Z_{>0},
+\qquad
+x_d:=dC_d=\frac{p+s_d}{4}.
+}
+\tag{54r}
+\]
+
+In fact \(C_d\ge2\).  Otherwise \(p=4d-s_d\le4d-3\), contrary to
+\(4d<p\).  The actual divisor relation gives a second useful bound:
+
+\[
+\boxed{m\le4C_d.}
+\tag{54s}
+\]
+
+Indeed, \(d\mid\eta+1\le e-1\) gives \(e\ge d+1\), while
+\(D\ge(m-1)p+2\) and \(eD\le p^2-p+1\).  If \(m\ge4C_d+1\), then
+
+\[
+p^2-p+1\ge eD
+\ge(d+1)(4C_dp+2)
+=\frac{p+s_d+4C_d}{4C_d}(4C_dp+2)>p^2,
+\]
+
+which is impossible.
+
+The two factors in (54r) are coprime to the gap:
+
+\[
+\boxed{(s_d,d)=(s_d,C_d)=(s_d,x_d)=1.}
+\tag{54t}
+\]
+
+For the first equality, a common prime would divide both \(d\) and
+\(p+s_d\), hence \(p\), but it is smaller than \(p\) by (54p).  For the
+second, a common prime would divide \(C_d\), \(s_d\), and
+\(p=4dC_d-s_d\), while it is at most \(s_d\le p-2\).
+
+Now let \(t\mid x_d\) satisfy \(t\equiv-1\pmod {s_d}\), and put
+\(y=x_d/t\).  Then
+
+\[
+y\mid x_d^2,
+\qquad y\le x_d,
+\qquad s_d\mid x_d+y=y(t+1).
+\]
+
+The short-certificate equivalence therefore gives a direct Type II terminal.
+Conversely, if \(y\mid x_d\) is a Type II certificate at this same gap,
+then \(t=x_d/y\) is integral and (54t) forces
+\(t\equiv-1\pmod {s_d}\).  Hence the full linear divisor layer is exactly
+
+\[
+\boxed{
+\left\{y\mid x_d:s_d\mid x_d+y\right\}
+=\left\{\frac{x_d}{t}:t\mid x_d,\ t\equiv-1\pmod {s_d}\right\}.
+}
+\tag{54u}
+\]
+
+Its whole-\(d\) subfan takes \(y=rC_d\) for \(r\mid d\); by (54t), its
+hit condition is simply
+
+\[
+\boxed{r\mid d,\qquad s_d\mid d+r.}
+\tag{54v}
+\]
+
+When \(d=g\), this is exactly the earlier canonical \(g\)-gap construction:
+the extra relation \(ph\equiv-1\pmod g\) makes
+\(a-h\equiv h^{-1}\pmod g\).  For general \(d\), (54u) is strictly
+broader because it remains available even when \((D,d)=1\).
+
+This is a direct-terminal expansion, not a totality proof.  After explicitly
+applying (54u), its nonterminal residual is the decidable but still-open
+divisor-residue condition
+
+\[
+\boxed{
+d=1
+\quad\text{or}\quad
+\{t\mid x_d:t\equiv-1\pmod {s_d}\}=\varnothing.
+}
+\tag{54w}
+\]
+
+No argument here proves that the displayed divisor set is nonempty.  Until
+such a proof is found, (54u) supplies additional terminal candidates but
+does not close QC1, TR1, or T6.
 
 There are two useful local consequences.  From (50) and (52), a prime of
 \((g,m)\) would force \(h\equiv1\) and hence divide \(\Phi(1)=3\), so
