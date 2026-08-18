@@ -27,6 +27,9 @@ topics:
   - transverse-residual
   - composite-divisor
   - quadratic-shift
+  - root-residue
+  - bounded-gap
+  - two-tail-lift
   - terminal-dispatch
   - proof-boundary
 sources:
@@ -42,7 +45,7 @@ visibility: public
 last_checked: '2026-08-18'
 ---
 
-# 横向 stutter 任意子除子 (Q) 的正支二次 Type II 终端扇
+# 横向 stutter 任意子除子 $Q$ 的正支二次 Type II 终端扇
 
 ## 1. 设置与菜单
 
@@ -172,6 +175,16 @@ Q\ge3K-A_0>K+A_0,
 \tag{12}
 \]
 
+由 (9) 和 (12) 得 $0<K<Q$。因此正支参数被实际根高度唯一强制为最小正剩余：
+
+\[
+\boxed{K=\langle A_0h\rangle_Q.}
+\tag{13a}
+\]
+
+所以这个 whole-divisor 菜单保留了先前素数 root-residue 构造的根高度 provenance；
+它不是任意选择的 raw-ray。
+
 另一方面，
 
 \[
@@ -267,7 +280,112 @@ x+d=A_0C(Q+A_0)=A_0CKs.
 
 这是一条 direct terminal；它不需要 E1--E5 或分母递降。
 
-## 5. 多因子增量与边界
+## 5. 低缺口切片的严格两尾提升
+
+再假设
+
+\[
+s\in\{3,7,11,23\}.
+\tag{LG1}
+\]
+
+由于 $s+1\mid24\mid p-1$，整数
+
+\[
+n=\frac{p+s}{s+1}
+\tag{LG2}
+\]
+
+满足 $0<n<p$。由 $Q+A_0=Ks$，
+
+\[
+\frac1{A_0QC}+\frac1{A_0CK}+\frac1{QCK}
+=\frac{K+Q+A_0}{A_0QCK}
+=\frac{s+1}{A_0QC}
+=\frac4n.
+\tag{LG3}
+\]
+
+保留首分母并将后两尾乘以 $p$，恰恢复 (22)。所以 low-gap whole-divisor hit
+还给出显式的 singleton two-tail lift
+
+\[
+\frac4n\longrightarrow\frac4p,
+\qquad n<p.
+\tag{LG4}
+\]
+
+这是先前 prime root-residue low-gap construction 的 arbitrary-divisor 版本。它只提升
+所写出的 $4/n$ 分解，不是全域的
+$\operatorname{Sol}(n)\to\operatorname{Sol}(p)$ E4 lift，因此不能单独登记为
+T6 recursive edge。
+
+## 6. (A_0=1) 的无选择 whole-divisor 因子门
+
+令
+
+\[
+\mathcal Q_s^{\mathrm{whole}}(D_*,h)
+=\left\{
+Q>1:
+Q\mid(D_*,sh-1),
+\quad Q\equiv-1\pmod {2s}
+\right\},
+\qquad s\in\{3,7,11,23\}.
+\tag{WG1}
+\]
+
+这里的 (Q) 不要求为素数。对任意
+
+\[
+Q\in\mathcal Q_s^{\mathrm{whole}}(D_*,h),
+\tag{WG2}
+\]
+
+令
+
+\[
+K=\frac{Q+1}{s}.
+\tag{WG3}
+\]
+
+由 (Q\equiv-1\pmod {2s})，(K) 是偶整数；又 (s\ge3)，所以
+
+\[
+1<K<Q.
+\tag{WG4}
+\]
+
+此外 ((Q,s)=1)，而 (Q\mid sh-1) 与 (sK=Q+1) 联立给出
+
+\[
+K\equiv h\pmod Q.
+\tag{WG5}
+\]
+
+因为 (Q\mid D_*\mid D\mid ph+1)，有 (Q\mid Kp+1)。最后，
+
+\[
+Q=Ks-1\equiv3K-1\pmod {4K},
+\tag{WG6}
+\]
+
+其中最后一个同余只使用 (s\equiv3\pmod4)。因此 (WG2) 自动满足本定理的
+
+\[
+A_0=1,
+\qquad K=\langle h\rangle_Q
+\tag{WG7}
+\]
+
+切片。每个 (Q\in\mathcal Q_s^{\mathrm{whole}}(D_*,h)) 所以给出第 4--5 节的
+Type II terminal 与 (n=(p+s)/(s+1)<p) 的 singleton two-tail lift。
+
+当 (Q=q) 为素数时，(WG1) 恰恢复既有 prime root-residue low-gap 因子门；
+这里额外允许完整的素数幂或复合 (Q)。剩余类 (Q\equiv-1\pmod {2s}) 不按
+素因子继承，因此这一 whole-divisor menu 不能化约为逐个素因子的重复检查。
+
+## 7. 多因子增量与边界
 
 当 (Q=q) 为素数时，已有一般二次扇的 shift gate 加正支正好导出 (3)--(4)，
 故它是本菜单的一个特例。这里允许整个 (Q) 同时作为 raw-ray 的 (B)-坐标。
