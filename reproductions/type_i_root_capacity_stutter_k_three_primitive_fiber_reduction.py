@@ -1,0 +1,230 @@
+#!/usr/bin/env python3
+"""Verify the exact k=3 proper-root primitive-fiber reduction.
+
+The stored controls are arithmetic shadows, deliberately not actual recursive
+states. This program checks the reduction, the d=1 boundary, and the
+core-congruent/non-proper distinction. It does not scan fibers, primes,
+sources, certificates, or selector history.
+"""
+
+from __future__ import annotations
+
+import argparse
+from dataclasses import dataclass
+from math import gcd
+
+
+@dataclass(frozen=True)
+class KThreeFiber:
+    """One integral k=3 stutter-curve point after primitive reduction."""
+
+    A: int
+    B: int
+    H: int
+    e: int
+    M: int
+    m: int
+    p: int
+    h: int
+    a: int
+    b: int
+    D: int
+    k: int
+    d: int
+    c: int
+
+
+def factor(value: int) -> dict[int, int]:
+    """Return the factorization of one positive fixed-fiber integer."""
+    if value < 1:
+        raise ValueError("value must be positive")
+    factors: dict[int, int] = {}
+    divisor = 2
+    while divisor * divisor <= value:
+        while value % divisor == 0:
+            factors[divisor] = factors.get(divisor, 0) + 1
+            value //= divisor
+        divisor = 3 if divisor == 2 else divisor + 2
+    if value > 1:
+        factors[value] = factors.get(value, 0) + 1
+    return factors
+
+
+def divisors(value: int) -> tuple[int, ...]:
+    """Enumerate positive divisors of one fixed finite-fiber constant."""
+    result = [1]
+    for prime, exponent in factor(value).items():
+        result = [
+            divisor * prime**power
+            for divisor in result
+            for power in range(exponent + 1)
+        ]
+    return tuple(sorted(result))
+
+
+def reconstruct(A: int, B: int) -> KThreeFiber | None:
+    """Recover an integral k=3 curve point, or reject a failed gate."""
+    if A <= 0 or B <= 0 or gcd(A, B) != 1:
+        return None
+
+    H = A * A - A * B + B * B
+    e = 3 * B + 1
+    if (A + H) % e:
+        return None
+    M = (A + H) // e
+    numerator_p = e * H - B
+    if numerator_p % A:
+        return None
+    p = numerator_p // A
+
+    m, h, a, b = 3 * M, 3 * H, 3 * A, 3 * B
+    D = m * p + 1 - h
+    norm = a * a - a * b + b * b
+    if norm % h:
+        return None
+    k = norm // h
+    numerator_d = (3 * A + 2) ** 2 - 3
+    if numerator_d % e:
+        return None
+    d = numerator_d // e
+    F = 3 * B * B + B - 1
+    if F % A:
+        return None
+    c = F // A
+
+    data = KThreeFiber(A, B, H, e, M, m, p, h, a, b, D, k, d, c)
+    verify_reduction(data)
+    return data
+
+
+def verify_reduction(data: KThreeFiber) -> None:
+    """Check all exact identities used by the k=3 fiber reduction."""
+    A, B, H, e, M, m, p, h, a, b, D, k, d, c = (
+        data.A,
+        data.B,
+        data.H,
+        data.e,
+        data.M,
+        data.m,
+        data.p,
+        data.h,
+        data.a,
+        data.b,
+        data.D,
+        data.k,
+        data.d,
+        data.c,
+    )
+    norm = a * a - a * b + b * b
+    C_d = 3 * d * d + d - 1
+    pell_left = (6 * B + 1) ** 2 - 12 * A * c
+    pell_right = (3 * A + 2) ** 2 - e * d
+
+    if not (
+        H == A * A - A * B + B * B
+        and e == 3 * B + 1
+        and A + H == e * M
+        and p * A + B == e * H
+        and a == 3 * A
+        and b == 3 * B
+        and h == 3 * H
+        and m == 3 * M
+        and a == e * m - h
+        and p * a + b == e * h
+        and D == m * p + 1 - h
+        and e * D == p * h + 1
+        and norm == h * k
+        and k == 3
+        and gcd(A, B) == 1
+        and A * c == 3 * B * B + B - 1
+        and e * d == (3 * A + 2) ** 2 - 3
+        and 9 * (A + H)
+        == (3 * A + 2) ** 2 - 3 - e * (3 * A - 3 * B + 1)
+        and pell_left == 13
+        and pell_right == 3
+        and gcd(A, d) == 1
+        and C_d % A == 0
+        and 3 * d * d * (3 * B * B + B - 1) + C_d
+        == 3 * A * (3 * A + 4) * (9 * A * A + 12 * A - d + 2)
+        and p == c * (B - A) + 3 * A * B + A - 1
+    ):
+        raise AssertionError("k=3 primitive-fiber identities changed")
+
+
+def fixed_d_fiber(d: int) -> tuple[KThreeFiber, ...]:
+    """Enumerate the necessary finite A-divisor fiber for one fixed d only."""
+    if d <= 0:
+        raise ValueError("d must be positive")
+    candidates: list[KThreeFiber] = []
+    for A in divisors(3 * d * d + d - 1):
+        numerator_e = (3 * A + 2) ** 2 - 3
+        if numerator_e % d:
+            continue
+        e = numerator_e // d
+        if (e - 1) % 3:
+            continue
+        B = (e - 1) // 3
+        data = reconstruct(A, B)
+        if data is not None and data.d == d and data.A < data.B:
+            candidates.append(data)
+    return tuple(candidates)
+
+
+def verify_d_one_boundary() -> None:
+    """Replay the sole d=1 curve point and its core-congruence failure."""
+    rows = fixed_d_fiber(1)
+    if len(rows) != 1:
+        raise AssertionError("d=1 fiber no longer has one primitive proper curve point")
+    data = rows[0]
+    cyclotomic = data.p * data.p + data.p + 1
+    if not (
+        (data.A, data.B, data.H, data.e, data.M, data.p, data.h, data.d)
+        == (1, 7, 43, 22, 2, 939, 129, 1)
+        and data.A < data.B
+        and data.a < data.e
+        and data.p % 24 == 3
+        and cyclotomic % data.h == 43
+    ):
+        raise AssertionError("d=1 core-boundary control changed")
+
+
+def verify_core_congruent_shadow() -> None:
+    """Keep root divisibility distinct from the actual proper-root guards."""
+    data = reconstruct(991, 87)
+    if data is None:
+        raise AssertionError("core-congruent k=3 shadow stopped reconstructing")
+    cyclotomic = data.p * data.p + data.p + 1
+    if not (
+        data.p == 238_849
+        and data.p % 24 == 1
+        and cyclotomic % data.h == 0
+        and data.A > data.B
+        and data.a > data.e
+        and data.h > data.p
+        and data.d == 33_781
+        and data.k == 3
+    ):
+        raise AssertionError("cyclotomic/proper-root boundary changed")
+
+
+def verify() -> None:
+    verify_d_one_boundary()
+    verify_core_congruent_shadow()
+    print(
+        "verified k=3 primitive Pell-fiber reduction: d=1 is non-core, "
+        "and a core-congruent shadow still fails the proper-root guard"
+    )
+    print("no fiber, prime, source, certificate, or selector search is performed")
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--verify", action="store_true", help="run focused exact checks")
+    args = parser.parse_args()
+    if not args.verify:
+        parser.error("pass --verify")
+    verify()
+
+
+if __name__ == "__main__":
+    main()

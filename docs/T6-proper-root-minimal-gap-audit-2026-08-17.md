@@ -271,6 +271,29 @@ terminal 或 E1--E5 edge。
 所以 \(q\mid k\) 与 \(q\mid D_*\) 不能互相替换：前者有 Eisenstein quotient 结构但缺
 physical occurrence，后者有 receipt occurrence 但缺可消费的 source provenance。
 
+### 3.3 \(k=3\) 的窄 fiber 收缩
+
+当 \(k=3\) 时，actual \(3\)-adic 条件强制 \((a,e-1)=3\)。写
+
+\[
+A=\frac a3,\qquad B=\frac{e-1}{3},\qquad
+d=\frac{(3A+2)^2-3}{3B+1},
+\]
+
+则 \(1\le A<B\)、\(d\equiv1\pmod3\)，并有 fixed-\(d\) 的有限除子门
+
+\[
+4\le d\le3A-2,
+\qquad
+A\mid3d^2+d-1.
+\]
+
+所以每个固定 \(d\) 只留下有限个 \(A\) 候选，然后 \(B,m,p\) 均可由闭式重建。
+其中 \(d=1\) 唯一恢复 \((A,B,p)=(1,7,939)\)，非核心；这与已有的
+\((m,a)=(6,3)\) small-root 排除行相同，用于交叉验证而不另计一个 closure。但 \(d\) 没有全局上界，这不是 \(k=3\) 的全称排空，更不是
+QC1 的 physicalization。完整约化见
+[\(k=3\) primitive fiber reduction](../claims/type-I-root-capacity-stutter-k-three-primitive-fiber-reduction.md)。
+
 ## 4. 最小开放量词
 
 令 \(\mathcal S_{\mathrm{pr}}\) 表示所有实际可达、terminal-first 后仍非终端的
@@ -344,7 +367,7 @@ divisibility，又被 gap-3 Type II terminal 抢占；详见
 
 ## 6. 结论边界
 
-本页严格完成的是 \(k=1\) 的参数化与 actual 全称排除，并把 (PR-T6) 的 quotient
-剩余精确收缩到 \(k>1\) 的 (QC1)。它仍没有 physicalize \(q\mid k\) 或为
+本页严格完成了 \(k=1\) 的参数化与 actual 全称排除；\(k=3\) 新增的是
+fixed-\(d\) fiber 坐标，其 \(d=1\) 行重现既有排除。(PR-T6) 的 quotient 剩余仍精确位于 \(k>1\) 的 (QC1)。它仍没有 physicalize \(q\mid k\) 或为
 \(q\mid D_*\) 构造全称 successor。因此 (QC0) 已闭合，但 proper-root 子域和 T6
 仍保持开放。
