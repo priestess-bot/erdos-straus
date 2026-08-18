@@ -15,8 +15,11 @@ statement: >-
   n=w^2/r+w+r。原始 stutter 等式进一步排空全部 C=0 例外子纤维，
   故每个固定 w 的子纤维完全由显式有限整除门控制。并且 gcd(eta,W)=1，
   故剩余坐标分支必为 primitive。若 gamma=W-eta、d=gcd(gamma,k)，则
-  d|gcd(W+1,a^2-a+1) 且 3不整除d。该结论不 physicalize k 或 D_* 因子，
-  不构造 E1--E5 edge，也不闭合 QC1、TR1 或 T6 totality。
+  d|gcd(W+1,a^2-a+1) 且 3不整除d。若 g=gcd(D,d)、
+  g^sharp=g/gcd(g,7)，则 g|Phi(h)=h^4-h^3+3h^2-h+1，且 g^sharp|D_*；
+  g^sharp 的每个素因子在 D、D_*、D_T=D/gcd(D,(p^2-1)/2) 中保持相同赋值，并避开 p^2-1。
+  唯一可能被 h^2-1 吸收的 resonant 素因子是至多一次的 7。该结论不证明
+  g>1，不构造 E1--E5 edge，也不闭合 QC1、TR1 或 T6 totality。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -26,6 +29,9 @@ depends_on:
   - type-I-root-capacity-stutter-eisenstein-support
   - type-I-root-capacity-stutter-actual-small-root-exclusion
   - type-I-root-capacity-stutter-k-one-universal-exclusion
+  - type-I-root-capacity-stutter-transverse-residual-capacity-map
+  - type-I-root-capacity-stutter-transverse-root-residue-low-gap-descent
+  - gap-three-criterion
 topics:
   - type-I
   - root-capacity
@@ -34,6 +40,9 @@ topics:
   - complementary-coordinate
   - infinite-family-reduction
   - divisor-fiber
+  - resonant-intersection
+  - transverse-allocation
+  - low-gap-obstruction
   - proof-boundary
 sources:
   - claim: type-I-root-capacity-stutter-finite-curve-constraint
@@ -46,8 +55,14 @@ sources:
     role: actual-m-mod-three-classification
   - claim: type-I-root-capacity-stutter-k-one-universal-exclusion
     role: k-is-not-one-in-the-actual-proper-root-domain
+  - claim: type-I-root-capacity-stutter-transverse-residual-capacity-map
+    role: D-star-to-T-side-capacity-allocation
+  - claim: type-I-root-capacity-stutter-transverse-root-residue-low-gap-descent
+    role: existing-positive-low-gap-adapter-being-tested
+  - claim: gap-three-criterion
+    role: terminal-first-gap-three-miss-for-the-general-A-exception
 visibility: public
-last_checked: '2026-08-18'
+last_checked: '2026-08-19'
 ---
 
 # proper-root stutter 的互补 Eisenstein 坐标缺口
@@ -884,10 +899,279 @@ This is a tight local condition on a quotient factor, not a physical carrier:
 it does not show \(d\mid D_*\), construct a terminal, or provide an E1--E5
 successor.
 
-## 10. Boundary
+## 10. The composite resonant intersection with the actual divisor
+
+Recall the actual stutter divisor identities
+
+\[
+D=mp+1-h,\qquad eD=ph+1,\qquad (D,h)=1,
+\]
+
+and write \(D_*=D/(D,h^2-1)\).  Set
+
+\[
+g:=(D,d).
+\]
+
+It is odd, \((g,3h)=1\), and the identities above can be used modulo the
+whole composite modulus \(g\), not merely a prime divisor.  Since \(g\mid
+D\), they give
+
+\[
+ph\equiv-1\pmod g,
+\qquad
+m\equiv h(1-h)\pmod g.
+\tag{50}
+\]
+
+Since \(g\mid d\), (47) gives \(e\equiv a\pmod g\).  Thus
+\(a=em-h\) gives
+
+\[
+h\equiv a(m-1)\pmod g.
+\]
+
+Put \(A:=h^2-h+1\).  Combining this with (50) gives
+
+\[
+m-1\equiv-A\pmod g,
+\qquad
+a\equiv-hA^{-1}\pmod g.
+\tag{51}
+\]
+
+Here \(A\) is a unit modulo \(g\): every prime common divisor of \(A\) and
+\(g\) would divide \(h\) by the preceding relation, contrary to
+\((D,h)=1\).  Substitute (51) into (48).  After multiplication by
+\(A^2\), this gives the composite divisibility
+
+\[
+\boxed{
+g\mid\Phi(h):=h^4-h^3+3h^2-h+1.
+}
+\tag{52}
+\]
+
+Let \(q\) be a prime divisor of \((g,h^2-1)\).  Then
+\(h\equiv1\) or \(-1\pmod q\), while \(\Phi(1)=3\) and
+\(\Phi(-1)=7\).  Because \(3\nmid g\), the only possibility is
+
+\[
+q=7,
+\qquad h\equiv-1\pmod7.
+\]
+
+This exceptional factor is at most simple.  Indeed, with \(x=h+1\),
+
+\[
+\Phi(-1+x)=7-14x+12x^2-5x^3+x^4.
+\]
+
+Thus \(7\mid x\) implies \(\Phi(h)\equiv7\pmod{49}\).  By (52),
+
+\[
+7\mid g\quad\Longrightarrow\quad v_7(g)=1.
+\tag{53}
+\]
+
+Define
+
+\[
+g^\sharp:=\frac{g}{(g,7)}.
+\]
+
+All its prime factors are disjoint from \(h^2-1\).  Since \(g^\sharp\mid
+D\), no valuation of \(g^\sharp\) is removed in forming \(D_*\).  Hence
+
+\[
+\boxed{
+g^\sharp\mid\gcd(D_*,\Phi(h)).
+}
+\tag{54}
+\]
+
+The same carrier is visible from the root prime alone.  The polynomial
+\(\Phi\) is reciprocal, and (50) gives \(-p\equiv h^{-1}\pmod g\).  Hence
+
+\[
+\boxed{
+g\mid\Psi(p):=\Phi(-p)
+=p^4+p^3+3p^2+p+1,
+\qquad
+g^\sharp\mid\gcd(D_*,\Psi(p)).
+}
+\tag{54a}
+\]
+
+Equivalently,
+
+\[
+\Psi(p)=N\bigl(p^2+1+p\omega\bigr),
+\qquad
+\Phi(h)=N\bigl(h^2+1-h\omega\bigr).
+\]
+
+This carrier has a precise transverse allocation.  Let \(q\) be a prime
+factor of \(g^\sharp\), and put \(\delta_q=v_q(D)\).  Since
+
+\[
+\Psi(1)=7,
+\qquad
+\Psi(-1)=3,
+\]
+
+the facts \(q\mid\Psi(p)\), \(q\ne7\), and \(q\ne3\) imply
+\(q\nmid p^2-1\).  By construction also \(q\nmid h^2-1\).  The actual
+\(C/T\) factor split, with
+\(D_T=D/(D,(p^2-1)/2)\), and the transverse residual map therefore give
+
+\[
+\boxed{
+v_q(D_*)=v_q(D_T)=v_q(D)=\delta_q,
+\qquad
+q^{\delta_q}\mid\gcd\!\left(\frac Tu,m+2r\right).
+}
+\tag{54b}
+\]
+
+Thus a nonexceptional resonant factor is fully allocated to the \(T\)-side
+of the actual receipt.  This is a valuation location theorem, not an
+invocation of the older low-gap negative-root relays.
+
+This is a composite conditional receipt bridge.  It does not prove \(g>1\),
+but if a non-\(7\) quotient resonance meets \(D\), its full multiplicity is
+an actual transverse \(D_*\) carrier rather than merely a quotient factor.
+
+There are two useful local consequences.  From (50) and (52), a prime of
+\((g,m)\) would force \(h\equiv1\) and hence divide \(\Phi(1)=3\), so
+
+\[
+\boxed{(g,m)=1.}
+\tag{55}
+\]
+
+Likewise, a prime of \((g,m+2)\) forces
+\(h^2-h-2\equiv0\), hence \(h\equiv2\) or \(-1\).  Equation (52) then
+leaves only \(19\) or \(7\), respectively.  After the exceptional factor
+has been removed,
+
+\[
+q\mid(g^\sharp,m+2)
+\quad\Longrightarrow\quad
+q=19,\quad h\equiv2\pmod{19},\quad p\equiv9\pmod{19}.
+\tag{56}
+\]
+
+Thus the resonant carrier cannot enter the existing \(m\)-side terminal
+branch; its only possible \(m+2\) contact is the specific \(19\)-adic
+\(2p+1\) branch, not the \(q\equiv5\pmod8\) terminal subcase.
+
+## 11. Existing fixed low-gap prime-carrier adapters miss the resonant carrier
+
+The established root-residue adapter has positive low gaps
+
+\[
+\mathcal G=\{3,7,11,23\}.
+\]
+
+Suppose a prime \(q\mid g^\sharp\) entered one of its positive branches.
+For its permitted odd \(A_0\mid p+3\), that branch has
+
+\[
+K\equiv A_0h\pmod q,
+\qquad
+s=\frac{q+A_0}{K}.
+\]
+
+Therefore \(sh\equiv1\pmod q\).  Combining this with (52) gives
+
+\[
+q\mid s^4\Phi(h)\equiv\Phi(s)\pmod q.
+\tag{57}
+\]
+
+The four fixed values factor as
+
+\[
+\begin{array}{c|c}
+s&\Phi(s)\\ \hline
+3&79\\
+7&3\cdot733\\
+11&13\cdot1051\\
+23&307\cdot877.
+\end{array}
+\tag{58}
+\]
+
+For \(s=7,11\), the adapter only allows \(A_0=1\), hence requires
+\(q\equiv-1\pmod{2s}\).  The possible nonzero residues from (58) are
+
+\[
+733\equiv5\pmod{14},\qquad
+13,1051\equiv13,17\pmod{22},
+\]
+
+none of which is \(-1\).  For \(s=23\), the allowed values are
+\(A_0=1,5\).  The corresponding conditions are
+\(q\equiv-1,-5\pmod{46}\), whereas
+
+\[
+307,877\equiv31,3\pmod{46}.
+\]
+
+It remains to consider the flexible \(s=3\) row.  Here (57) gives
+\(q=79\), and integrality of \(K=(q+A_0)/3\) forces
+\(A_0\equiv2\pmod3\).  But a terminal-first survivor has missed the exact
+gap-\(3\) predicate, so every odd divisor of
+\((p+3)/4\), and hence every eligible odd \(A_0\mid p+3\), is
+\(1\pmod3\).  This is impossible.
+
+Consequently, no prime factor of \(g^\sharp\) can by itself be consumed by
+the existing positive root-residue low-gap adapter.  This is an obstruction
+to one prime-carrier terminal/descent route, not a nonexistence theorem for
+direct certificates or a proof that \(g^\sharp\) is nontrivial.  In
+particular, it does not exclude a composite \(Q\mid D_*\) whose additional
+prime factors are not resonant.
+
+The negative low-gap relays are disjoint as well.  Their extra condition is
+
+\[
+q\mid s(h-1)+1,
+\qquad q\equiv-1\pmod {2s}.
+\]
+
+It makes \(h\equiv(s-1)s^{-1}\pmod q\), so (52) gives
+
+\[
+q\mid\Theta(s):=s^4\Phi\!\left(\frac{s-1}{s}\right)
+=3s^4-6s^3+6s^2-3s+1.
+\tag{59}
+\]
+
+For the same four gaps,
+
+\[
+\begin{array}{c|c}
+s&\Theta(s)\\ \hline
+3&127\\
+7&5419\\
+11&7\cdot5233\\
+23&769627.
+\end{array}
+\]
+
+Their possible nonexceptional prime residues modulo \(2s\) are respectively
+\(1\pmod6\), \(1\pmod{14}\), \(19\pmod{22}\), and \(1\pmod{46}\),
+never \(-1\).  Thus no prime factor of \(g^\sharp\) enters the existing
+low-gap negative-root relays by itself either.  This does not settle a
+future whole-divisor or mixed-carrier construction.
+
+## 12. Boundary
 
 This is a structural reduction inside the actual proper-root stutter domain.
-It proves that the fixed-\(W\) exceptional shapes are empty, but it does not
-bound \(W\) globally, physicalize a quotient or transverse factor, produce a
-terminal, or construct an E1--E5 edge.  QC1, TR1, and
+It proves that the fixed-\(W\) exceptional shapes are empty and locates a
+resonant \(k\)-factor precisely when it meets \(D\), but it does not prove
+that the intersection is nontrivial, bound \(W\) globally, produce a
+terminal, or construct an E1--E5 edge.  The low-gap result only removes the
+current prime-carrier adapter routes.  QC1, TR1, and
 T6_GLOBAL_SELECTOR_TOTALITY therefore remain open.
