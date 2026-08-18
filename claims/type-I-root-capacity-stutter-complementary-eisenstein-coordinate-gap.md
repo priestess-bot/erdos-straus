@@ -20,7 +20,8 @@ statement: >-
   g^sharp 的每个素因子在 D、D_*、D_T=D/gcd(D,(p^2-1)/2) 中保持相同赋值，并避开 p^2-1。
   唯一可能被 h^2-1 吸收的 resonant 素因子是至多一次的 7。若 g>1，则 4g<=p-2。
   因而由 sh=1 mod g、s=3 mod4 确定的最小正 variable gap 总在自然范围内；令
-  C=(p+s)/(4g)、x=gC，则 C>=2、m<=4C、p<1024C^5，且 gcd(s,x)=1。
+  C=(p+s)/(4g)、x=gC，则 C>=2、m<=4C、p<1024C^5，且当 p>=2^15 时 s<8p^(4/5)，
+  并有 gcd(s,x)=1。
   每个满足 t|x 且 t=-1 mod s 的 t 都确定给出一张直接 Type II 证书，取 d=x/t；
   这精确参数化了该 canonical gap 上所有满足 d|x 的 Type II 证书，并包含先前
   r|g、s|g+r 的 whole-carrier 子扇。
@@ -52,6 +53,7 @@ topics:
   - low-gap-obstruction
   - variable-gap
   - large-carrier-bound
+  - sublinear-gap
   - terminal-dispatch
   - proof-boundary
 sources:
@@ -1380,8 +1382,34 @@ Combining (74) and (74c) proves the useful growth barrier
 \tag{74d}
 \]
 
-This does not force a residue hit, but it rules out treating \(C\) as a
-bounded auxiliary factor in a putative all-\(p\) proof.
+The same estimate makes the canonical gap quantitatively sublinear.  From
+\(s\le4g-1\) and (74),
+
+\[
+p=4gC-s\ge4g(C-1)+1,
+\]
+
+so
+
+\[
+\boxed{
+s\le\frac{p-1}{C-1}-1.
+}
+\tag{74e}
+\]
+
+In particular, for \(p\ge2^{15}\), (74d) gives
+\(C-1>p^{1/5}/8\), and hence
+
+\[
+\boxed{s<8p^{4/5}.}
+\tag{74f}
+\]
+
+Thus any hit of the canonical full linear fan below supplies a genuinely
+sublinear-gap Type II certificate on the resonant branch.  This does not
+force a residue hit, but it rules out treating \(C\) as a bounded auxiliary
+factor in a putative all-\(p\) proof.
 
 For every divisor \(r\mid g\), define \(d_r=rC\).  Then
 
