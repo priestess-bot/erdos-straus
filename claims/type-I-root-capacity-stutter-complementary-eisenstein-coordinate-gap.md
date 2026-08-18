@@ -18,8 +18,11 @@ statement: >-
   d|gcd(W+1,a^2-a+1) 且 3不整除d。若 g=gcd(D,d)、
   g^sharp=g/gcd(g,7)，则 g|Phi(h)=h^4-h^3+3h^2-h+1，且 g^sharp|D_*；
   g^sharp 的每个素因子在 D、D_*、D_T=D/gcd(D,(p^2-1)/2) 中保持相同赋值，并避开 p^2-1。
-  唯一可能被 h^2-1 吸收的 resonant 素因子是至多一次的 7。该结论不证明
-  g>1，不构造 E1--E5 edge，也不闭合 QC1、TR1 或 T6 totality。
+  唯一可能被 h^2-1 吸收的 resonant 素因子是至多一次的 7。若 g>1，则 4g<=p-2。
+  因而由 sh=1 mod g、s=3 mod4 确定的最小正 variable gap 总在自然范围内；令
+  C=(p+s)/(4g)，每个满足 r|g 且 s|C(g+r) 的 r 都给出一张直接 Type II 证书。
+  该结论仍不证明 g>1 或该有限 divisor fan 必命中，不构造 E1--E5 edge，也不闭合
+  QC1、TR1 或 T6 totality。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -32,6 +35,7 @@ depends_on:
   - type-I-root-capacity-stutter-transverse-residual-capacity-map
   - type-I-root-capacity-stutter-transverse-root-residue-low-gap-descent
   - gap-three-criterion
+  - short-certificate-equivalence
 topics:
   - type-I
   - root-capacity
@@ -43,6 +47,9 @@ topics:
   - resonant-intersection
   - transverse-allocation
   - low-gap-obstruction
+  - variable-gap
+  - large-carrier-bound
+  - terminal-dispatch
   - proof-boundary
 sources:
   - claim: type-I-root-capacity-stutter-finite-curve-constraint
@@ -61,6 +68,8 @@ sources:
     role: existing-positive-low-gap-adapter-being-tested
   - claim: gap-three-criterion
     role: terminal-first-gap-three-miss-for-the-general-A-exception
+  - claim: short-certificate-equivalence
+    role: direct-Type-II-certificate-reconstruction-for-the-variable-gap-fan
 visibility: public
 last_checked: '2026-08-19'
 ---
@@ -1166,12 +1175,224 @@ never \(-1\).  Thus no prime factor of \(g^\sharp\) enters the existing
 low-gap negative-root relays by itself either.  This does not settle a
 future whole-divisor or mixed-carrier construction.
 
-## 12. Boundary
+## 12. The resonant carrier has a canonical natural variable gap
+
+The preceding fixed-gap obstruction does not mean that the resonant carrier
+has no natural gap at all.  In fact, its actual stutter relations force a
+canonical variable one.  First eliminate \(p\) between the two congruences
+
+\[
+m p^2+p+1\equiv0\pmod g,
+\qquad
+\Psi(p)\equiv0\pmod g.
+\tag{60}
+\]
+
+Put
+
+\[
+\begin{aligned}
+A_m&=m^3-4m^2+3m-1,\\
+B_m&=m^3-3m^2+2m-1,\\
+\chi(m)&=m^4-6m^3+12m^2-9m+3.
+\end{aligned}
+\tag{61}
+\]
+
+Reduction of \(m^3\Psi(p)\) by the first congruence in (60) gives
+
+\[
+m^3\Psi(p)\equiv A_mp+B_m\pmod g.
+\tag{62}
+\]
+
+Multiplying the first congruence in (60) by \(A_m^2\), then using (62),
+gives
+
+\[
+0\equiv mB_m^2-A_mB_m+A_m^2
+=m^3\chi(m)\pmod g.
+\tag{63}
+\]
+
+The earlier local consequence \((g,m)=1\) in (55) therefore upgrades this
+to the whole-composite carrier relation
+
+\[
+\boxed{g\mid\chi(m).}
+\tag{64}
+\]
+
+This is compatible with, but sharper in its coordinate interpretation than,
+the identity
+
+\[
+\chi\bigl(h(1-h)\bigr)=\Phi(h)\Phi(1-h),
+\tag{65}
+\]
+
+Indeed, (50) gives \(m\equiv h(1-h)\pmod g\), while (52) selects the
+actual \(\Phi(h)\)-oriented factor rather than the second factor in (65).
+
+There is also a useful global size consequence.  Suppose for contradiction
+that \(4g>p-2\).  Write \(p=4\lambda+1\).  Then \(g\ge\lambda\).  Since
+
+\[
+g\mid d\mid\eta+1,
+\qquad
+\eta+1\le e-1,
+\tag{66}
+\]
+
+we obtain \(e\ge\lambda+1=(p+3)/4\).  On the other hand,
+
+\[
+D\ge(m-1)p+2,
+\qquad
+eD=ph+1\le p^2-p+1.
+\tag{67}
+\]
+
+If \(m\ge5\), (67) gives the contradiction
+
+\[
+p^2-p+1\ge eD
+\ge\frac{p+3}{4}(4p+2)>p^2-p+1.
+\tag{68}
+\]
+
+Thus \(m=3\) or \(4\), because the actual domain has
+\(m\ge3\) and \(m\not\equiv2\pmod3\).  At \(m=3\), (64) gives
+\(g\mid\chi(3)=3\), contrary to \(3\nmid g\).  At \(m=4\), (64) gives
+\(g\mid\chi(4)=31\).  Since \(p\ge73\) and \(g\ge(p-1)/4\ge18\), this
+forces \(g=31\).  But (62) is then
+
+\[
+11p+23\equiv0\pmod{31},
+\qquad
+p\equiv12\pmod{31}.
+\tag{69}
+\]
+
+Together with \(p\equiv1\pmod{24}\), this gives
+
+\[
+p\equiv601\pmod{744},
+\tag{70}
+\]
+
+so \(p\ge601\), which contradicts \(4g=124>p-2\).  Therefore
+
+\[
+\boxed{g>1\Longrightarrow4g\le p-2.}
+\tag{71}
+\]
+
+Assume now that \(g>1\), and let \(s\) be the unique representative modulo
+\(4g\) satisfying
+
+\[
+sh\equiv1\pmod g,
+\qquad
+s\equiv3\pmod4,
+\qquad 1\le s\le4g.
+\tag{72}
+\]
+
+The modulus is valid because \(g\) is odd and \((g,h)=1\).  The second
+congruence makes \(3\le s\le4g-1\), and (71) yields the natural range
+
+\[
+3\le s\le p-2.
+\tag{73}
+\]
+
+Combining (50) with (72) gives \(g\mid p+s\).  Since also
+\(4\mid p+s\), put
+
+\[
+C=\frac{p+s}{4g}\in\mathbb Z_{>0},
+\qquad x=gC=\frac{p+s}{4}.
+\tag{74}
+\]
+
+For every divisor \(r\mid g\), define \(d_r=rC\).  Then
+
+\[
+d_r\mid x^2,
+\qquad d_r\le x,
+\qquad x+d_r=C(g+r).
+\tag{75}
+\]
+
+Consequently each actual divisor hit
+
+\[
+\boxed{r\mid g,
+\qquad s\mid C(g+r)}
+\tag{76}
+\]
+
+is a direct Type II certificate with gap \(s\) and divisor \(d_r\).  This
+is a whole-carrier variable-gap terminal fan: it uses the actual composite
+\(g\), not a synthetic prime factor or a fixed low-gap menu.  In particular,
+\(r=g\) gives a certificate whenever \(s\mid C\), because
+\((s,2g)=1\).
+
+The hit condition itself has a minimal divisor-residue form.  Put
+
+\[
+c=(s,C),
+\qquad
+s_0=\frac{s}{c}.
+\tag{77}
+\]
+
+Because \((s_0,C/c)=1\), condition (76) is exactly
+
+\[
+\boxed{s\mid C(g+r)
+\quad\Longleftrightarrow\quad
+s_0\mid g+r.}
+\tag{78}
+\]
+
+Moreover \(s_0\) is odd and \((s_0,g)=1\).  Thus the two endpoint divisors
+already give sharp failure constraints:
+
+\[
+r=g\Longleftrightarrow s_0=1,
+\qquad
+r=1\Longleftrightarrow s_0\mid g+1.
+\tag{79}
+\]
+
+Here each equivalence means that the indicated divisor satisfies (78).  In
+particular, terminal-first failure of the whole fan forces
+
+\[
+\boxed{s_0>1,\qquad s_0\nmid g+1,}
+\tag{80}
+\]
+
+and the only remaining question is whether some proper divisor
+\(r\mid g\) lies in the single residue class \(r\equiv-g\pmod{s_0}\).
+For prime \(g\), (80) is the complete description of failure of this fan.
+
+For a terminal-first survivor, the remaining resonant branch is now exact:
+either \(g=1\), or the finite divisor set in (76) is empty.  No assertion
+here says that the latter cannot happen.  Its nonemptiness, or an
+identity-lifted descent for its failure, is the still-open part of the
+proper-root physicalization problem.
+
+## 13. Boundary
 
 This is a structural reduction inside the actual proper-root stutter domain.
 It proves that the fixed-\(W\) exceptional shapes are empty and locates a
-resonant \(k\)-factor precisely when it meets \(D\), but it does not prove
-that the intersection is nontrivial, bound \(W\) globally, produce a
-terminal, or construct an E1--E5 edge.  The low-gap result only removes the
-current prime-carrier adapter routes.  QC1, TR1, and
+resonant \(k\)-factor precisely when it meets \(D\).  It additionally turns
+every nontrivial such intersection into a canonical natural-gap, finite
+whole-carrier Type II menu, but it does not prove that the intersection is
+nontrivial or that this menu always hits, bound \(W\) globally, or construct
+an E1--E5 edge.  The fixed low-gap result only removes the current
+prime-carrier adapter routes.  QC1, TR1, and
 T6_GLOBAL_SELECTOR_TOTALITY therefore remain open.
