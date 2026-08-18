@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 883 |
+| 数学状态 | `established` | 884 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 39 |
-| 证明来源 | `repository_derivation` | 713 |
+| 证明来源 | `repository_derivation` | 714 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 20 |
-| 审阅状态 | `internal_review` | 860 |
+| 审阅状态 | `internal_review` | 861 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -826,6 +826,7 @@
 | [根容量 stutter 的约化除子与双因子结果式约束](../claims/type-I-root-capacity-stutter-reduced-divisor-product.md) (`type-I-root-capacity-stutter-reduced-divisor-product`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
 | [T6 proper-root 数值线索的 root-provenance 失败与 gap-3 终端抢占](../claims/type-I-root-capacity-stutter-t6-numeric-clue-preemption.md) (`type-I-root-capacity-stutter-t6-numeric-clue-preemption`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [根容量实际 stutter 的 10000 系数排除带](../claims/type-I-root-capacity-stutter-ten-thousand-coefficient-barrier.md) (`type-I-root-capacity-stutter-ten-thousand-coefficient-barrier`) | `established` | `mixed` | `internal_review` | - | 2026-08-14 |
+| [横向 stutter 任意子除子 Q 的正支二次 Type II 终端扇](../claims/type-I-root-capacity-stutter-transverse-composite-divisor-positive-quadratic-type-II-fan.md) (`type-I-root-capacity-stutter-transverse-composite-divisor-positive-quadratic-type-II-fan`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-18 |
 | [横向 stutter 的一般 A 型二次移位 Type II 终端扇](../claims/type-I-root-capacity-stutter-transverse-general-quadratic-type-II-fan.md) (`type-I-root-capacity-stutter-transverse-general-quadratic-type-II-fan`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [横向 stutter 低缺口 m 多项式的正负根分派](../claims/type-I-root-capacity-stutter-transverse-low-gap-m-polynomial-root-split.md) (`type-I-root-capacity-stutter-transverse-low-gap-m-polynomial-root-split`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [根容量 stutter 回执除子的原生 Type II raw-ray 终端菜单](../claims/type-I-root-capacity-stutter-transverse-native-raw-type-II-menu.md) (`type-I-root-capacity-stutter-transverse-native-raw-type-II-menu`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |

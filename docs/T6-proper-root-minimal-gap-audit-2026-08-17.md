@@ -268,6 +268,19 @@ D_*=\frac{D}{(D,h^2-1)}.
 一般 \(L>1\) negative-root pure-\(T\) 分支，以及不命中这些有限多项式门的分支，仍没有
 terminal 或 E1--E5 edge。
 
+横向 carrier 现在还可作为**整个子除子**读取：若某个 (Q\mid D_*)（不必为素数）
+同时满足某个奇 (A_0\mid p+3)、偶 (K>A_0) 的
+
+\[
+Q\mid Kp+A_0,
+\qquad Q\equiv3K-A_0\pmod {4A_0K},
+\]
+
+则直接恢复一张 Type II terminal。这个 `whole-divisor` 正支菜单严格保留了素数
+二次扇的正支，但其剩余类不按 (Q) 的素因子继承；因此它是多因子结构而不是逐素因子
+菜单的重命名。关键边界仍是：没有证明 actual (D_*) 必命中该菜单，故它不改变 (TR1)
+的开放量词。详见[任意子除子 (Q) 的正支二次 Type II 终端扇](../claims/type-I-root-capacity-stutter-transverse-composite-divisor-positive-quadratic-type-II-fan.md)。
+
 所以 \(q\mid k\) 与 \(q\mid D_*\) 不能互相替换：前者有 Eisenstein quotient 结构但缺
 physical occurrence，后者有 receipt occurrence 但缺可消费的 source provenance。
 
