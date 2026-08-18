@@ -109,15 +109,18 @@ hit/F/G、Smith F witness、HNF-dual G separator、scope 和 Type-I local-drop�
 而 \(q\mid k,\ q\nmid h\) 的 quotient-only 因子不能被误投到旧 root-capacity source menu。
 这只是 provenance 收缩，不保证菜单命中或 physical edge。真正剩余的是 \(k>1\) quotient
 carrier 的 physicalization（QC1），或 transverse \(D_*\) carrier 的全称 E1--E5 出口（TR1）。
-其中 \(k=3\) 现在还有三个等价的严格 primitive fiber 坐标：写
+其中 \(k=3\) 现在还有四个等价的严格 primitive fiber 坐标：写
 \(A=a/3,B=(e-1)/3\) 后，fixed-\(d\) 候选满足
 \(A\mid3d^2+d-1\)；若 \(\rho=B-A\)，则同一整数曲线还满足
 \(A\mid3\rho^2+\rho-1\) 与 \(3(A+\rho)+1\mid9\rho^2-6\rho-2\)。每个
 固定 \(d\) 或固定 \(\rho\) 都只剩有限 divisor fiber。再令
 \(j=m-\rho\)，则 \(A\mid9j^2+7j+1\) 且
-\(\rho(3j+1)+j=3A(A-j+1)\)，所以固定 \(j\) 亦为精确有限 fiber；在已排除
-\(d=1\) 后 actual core candidate 还满足 \(1\le j\le A-1\)。三种坐标均唯一恢复
-\((A,B,p)=(1,7,939)\) 的非核心 \(A=1,d=1\) 边界。\(d\)、\(\rho\) 与 \(j\)
+\(\rho(3j+1)+j=3A(A-j+1)\)，所以固定 \(j\) 亦为精确有限 fiber。再写
+\(t=B-m=A-j\)，则严格 \(A<m<B\)，并有
+\(A\mid9t^2-7t+1\) 与 \(d\mid9t^2+6t-2\)，固定 \(t\) 亦只留下有限
+\(d\)-divisor fiber。\(t=1\) 仍唯一恢复
+\((A,B,p)=(1,7,939)\) 的非核心 \(A=1,d=1\) 边界，因而 actual core candidate 满足
+\(1\le j\le A-1\) 与 \(2\le t\le A-1\)。\(d\)、\(\rho\)、\(j\) 与 \(t\)
 都没有全局上界，不能把这一局部收缩误写成 QC1。见
 [\(k=3\) primitive fiber reduction](../claims/type-I-root-capacity-stutter-k-three-primitive-fiber-reduction.md)。
 此外，保持 \(A,M\) 并把 \(B\) 换为该方程另一 Vieta 根 \(j\) 的直接递降已经被
@@ -140,7 +143,7 @@ actual provenance、terminal-first 和 target receipt 都保留后，才应继�
 | \(c=h\) 奇距离 translated-square fan | named family 在 actual proper-root scope 内全称 no-go | `established`, `internal_review` |
 | proper-root \(k=1\) quotient | actual 子域全称为空；无有限扫描 | `established`, `internal_review` |
 | proper-root \(\gcd(a,e-1)\) 对齐 | 公共因子只可落在 \(\gcd(h,k)\)；拆开 h-supported 与 quotient-only residual | `established`, `internal_review`；不构成 edge |
-| proper-root \(k=3\) fixed-\(d\)/fixed-\(\rho\)/fixed-\(j\) fibers | 三种等价 primitive divisor 约化；fixed-\(j\) 消去旧 gate 的冗余因子 \(3\)，同-\(M\) Vieta companion 的第二整数门被排除，且共享 \(A=1,d=1\) 边界重现已排除的 \((m,a)=(6,3)\) 行 | `established`, `internal_review`；无全域 parameter bound，QC1 仍开放 |
+| proper-root \(k=3\) fixed-\(d\)/fixed-\(\rho\)/fixed-\(j\)/fixed-\(t\) fibers | 四种等价 primitive divisor 约化；fixed-\(j\) 消去旧 gate 的冗余因子 \(3\)，fixed-\(t\) 给出 \(A<m<B\) 与 \(2\le t\le A-1\)，同-\(M\) Vieta companion 的第二整数门被排除，且共享 \(A=1,d=1\) 边界重现已排除的 \((m,a)=(6,3)\) 行 | `established`, `internal_review`；无全域 parameter bound，QC1 仍开放 |
 | relative total-cofactor typed adapter | 已实现 source/target retyping、F/G/hit 与 local-drop receipt | `established`, `internal_review`；仅消费外部 registration，不证明 actual reachability |
 | Eisenstein quotient \(k\) 的 EQ1--EQ7 | 由已知 stutter 恒等式可推的代数包 | `analysis_evidence`；不构成 edge |
 | canonical low chart from \(k>1\) | 图表存在 | 缺 E1--E4/provenance，不构成 edge |

@@ -307,9 +307,24 @@ A\mid9j^2+7j+1,
 
 故固定 \(j\) 同样只留下有限个 \(A\)-divisor，再由该等式唯一恢复 \(\rho\)。这一步
 从旧的 \(A\mid3(9j^2+7j+1)\) 中消去了多余的因子 \(3\)；它仍不提供 \(j\) 的全局界。
-共享的 \(A=1\) fiber 唯一恢复 \(\rho=6\)、\(p=939\)，非核心；这与已有的
-\((m,a)=(6,3)\) small-root 排除行相同，用于交叉验证而不另计一个 closure。\(d\)、
-\(\rho\) 与 \(j\) 都没有全局上界，这不是 \(k=3\) 的全称排空，更不是 QC1 的
+还可以取 \(t=B-m=A-j\)。两条精确正性恒等式给出 \(A<m<B\)，且
+
+\[
+A\mid9t^2-7t+1,
+\qquad
+d\mid9t^2+6t-2.
+\]
+
+所以固定 \(t\) 是第四个精确有限 \(d\)-divisor fiber。\(t=1\) 纤维唯一恢复
+\((A,B,p)=(1,7,939)\)，仍为非核心的 \((m,a)=(6,3)\) 行；因而 actual core candidate 必有
+
+\[
+1\le j\le A-1,
+\qquad
+2\le t\le A-1.
+\]
+
+这是交叉约化而不另计一个 closure。\(d\)、\(\rho\)、\(j\) 与 \(t\) 都没有全局上界，这不是 \(k=3\) 的全称排空，更不是 QC1 的
 physicalization。完整约化见
 [\(k=3\) primitive fiber reduction](../claims/type-I-root-capacity-stutter-k-three-primitive-fiber-reduction.md)。
 一个看似自然的同-\(M\) Vieta 递降也已被精确排除：第一 primitive equation 的另一
@@ -392,7 +407,7 @@ divisibility，又被 gap-3 Type II terminal 抢占；详见
 ## 6. 结论边界
 
 本页严格完成了 \(k=1\) 的参数化与 actual 全称排除；\(k=3\) 现有
-fixed-\(d\)、fixed-\(\rho\)、fixed-\(j\) 三个有限 fiber 坐标，并排除了保持
+fixed-\(d\)、fixed-\(\rho\)、fixed-\(j\)、fixed-\(t\) 四个有限 fiber 坐标，并排除了保持
 \(A,M\) 的直接 Vieta companion。它们收紧整数曲线和后续候选路线，但不 physicalize
 \(q\mid k\)，也不为 \(q\mid D_*\) 构造全称 successor。(PR-T6) 的 quotient 剩余仍
 精确位于 \(k>1\) 的 (QC1)。因此 (QC0) 已闭合，但 proper-root 子域和 T6 仍保持开放。

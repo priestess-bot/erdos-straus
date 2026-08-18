@@ -39,6 +39,14 @@ class TypeIRootCapacityStutterKThreePrimitiveFiberReductionTests(unittest.TestCa
         self.assertEqual((row.A, row.B, row.M, row.m, row.p), (1, 7, 2, 6, 939))
         fiber.verify_defect_reduction(row)
 
+    def test_fixed_vieta_gap_fiber_recovers_the_same_a_one_boundary(self):
+        rows = fiber.fixed_vieta_gap_fiber(1)
+        self.assertEqual(len(rows), 1)
+        row = rows[0]
+        self.assertEqual((row.A, row.B, row.M, row.m, row.p), (1, 7, 2, 6, 939))
+        self.assertEqual(row.B - row.m, 1)
+        fiber.verify_vieta_gap_reduction(row)
+
     def test_vieta_companion_second_gate_hits_only_the_excluded_boundary(self):
         row = fiber.fixed_d_fiber(1)[0]
         self.assertEqual(fiber.verify_vieta_companion(row), (0, 1))

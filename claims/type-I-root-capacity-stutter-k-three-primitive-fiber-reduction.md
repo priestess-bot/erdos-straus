@@ -15,8 +15,10 @@ statement: >-
   9rho^2-6rho-2；若 s 是第二式的商，则 m=A+(s+2)/3 且
   d=3(m-rho)+1。再令 j=m-rho，则 actual core candidate 满足
   1≤j≤A-1、A divides 9j^2+7j+1，且
-  rho(3j+1)+j=3A(A-j+1)；故固定 j 也是精确有限 divisor fiber。特别地 A=1
-  （等价地这里的 d=1）只给出
+  rho(3j+1)+j=3A(A-j+1)；故固定 j 也是精确有限 divisor fiber。再令
+  t=B-m=A-j，则 A<m<B，并有 A divides 9t^2-7t+1 与
+  d divides 9t^2+6t-2；固定 t 是第四个精确有限 divisor fiber。其 t=1
+  纤维仍只给出
   (A,B,p)=(1,7,939)，不满足核心同余；这精确重现既有 actual-small-root
   theorem 的 (m,a)=(6,3) 排除行，而不是一项额外 T6 closure。该约化不
   physicalize 任意 q|k，不构造 E1--E5 edge，也不关闭 k>1 或 T6 totality。
@@ -36,6 +38,7 @@ topics:
   - k-three
   - pell-fiber
   - divisor-filter
+  - vieta-gap
   - proof-boundary
 sources:
   - claim: type-I-root-capacity-stutter-finite-curve-constraint
@@ -47,7 +50,7 @@ sources:
   - claim: type-I-root-capacity-stutter-actual-small-root-exclusion
     role: actual-mod-three-classification
   - reproduction: reproductions/type_i_root_capacity_stutter_k_three_primitive_fiber_reduction.py
-    role: exact-fixed-d-fixed-gap-fixed-j-reduction-and-shared-boundary-controls
+    role: exact-fixed-d-fixed-gap-fixed-j-fixed-vieta-gap-reduction-and-shared-boundary-controls
 visibility: public
 last_checked: '2026-08-18'
 ---
@@ -505,7 +508,107 @@ Together with (14), every remaining actual \(k=3\) candidate satisfies
 
 \]
 
-## 8. Cyclotomic gate and proof boundary
+## 8. Fixed-\(t\) Vieta-gap fibers
+
+The position of \(m\) between the two primitive coordinates supplies a fourth
+finite-fiber coordinate. First, the two exact identities
+
+\[
+e(m-A)=3\rho^2+2A,
+\tag{T1}
+\]
+
+and
+
+\[
+e(B-m)=B+3A(\rho-1)
+\tag{T2}
+\]
+
+follow from (G3) and (G7). Both right sides are positive when
+\(\rho=B-A\ge1\), so every proper primitive curve point obeys the strict
+ordering
+
+\[
+\boxed{A<m<B.}
+\tag{T3}
+\]
+
+Put
+
+\[
+t:=B-m=A-j>0.
+\tag{T4}
+\]
+
+The fixed-\(j\) gate (J3), reduced modulo \(A=t+j\), gives
+
+\[
+\boxed{A\mid C_t:=9t^2-7t+1.}
+\tag{T5}
+\]
+
+The second gate has the complementary exact form
+
+\[
+ed=(3A+2)^2-3
+=d(3A+3t+3)+P_t,
+\qquad
+P_t:=9t^2+6t-2,
+\tag{T6}
+\]
+
+and hence
+
+\[
+\boxed{d\mid P_t.}
+\tag{T7}
+\]
+
+Thus, for one specified \(t\ge1\), enumerate the positive divisors
+\(d\) of \(P_t\) with \(d\equiv1\pmod3\), set
+
+\[
+j=\frac{d-1}{3},
+\qquad
+A=t+j,
+\tag{T8}
+\]
+
+retain \(A\mid C_t\), and recover the only possible gap by
+
+\[
+\rho=\frac{3A(t+1)-j}{d}.
+\tag{T9}
+\]
+
+Equation (T9) is (J2) with \(j=A-t\). Positivity, integrality,
+\((A,\rho)=1\), and the primitive reconstruction gates are still retained
+explicitly. Consequently fixed \(t\) is an exact finite \(d\)-divisor
+fiber, not a search over an unbounded parameter range.
+
+Its first fiber is also exact. For \(t=1\),
+
+\[
+P_1=13,
+\qquad C_1=3.
+\]
+
+The positive \(1\pmod3\) divisors of \(P_1\) are \(1\) and \(13\),
+which make \(A=1\) and \(A=5\) in (T8), respectively. Gate (T5) leaves
+only \(A=1,d=1\), which is exactly the non-core row (22). Combining this
+with (23) and \(t=A-j\) yields the new local core restriction
+
+\[
+\boxed{2\le t\le A-1.}
+\tag{T10}
+\]
+
+This is a structural ordering and finite-fiber reduction. It gives no global
+bound on \(t\), no physical occurrence of a quotient factor, and no E1--E5
+edge.
+
+## 9. Cyclotomic gate and proof boundary
 
 The primitive equations also show why the bare cyclotomic divisibility is not
 an additional \(k=3\) elimination. Since \((A,H)=1\) and
@@ -522,8 +625,8 @@ recovers \(3H\mid p^2+p+1\). The cyclotomic root condition therefore does
 not by itself clear the remaining fibers.
 
 This card supplies finite-fiber parameterizations for fixed \(d\), fixed
-\(\rho=B-A\), and fixed \(j=m-\rho\), and rederives the already excluded
-\(k=3,d=1\) row in all three coordinates. It does not prove that every
+\(\rho=B-A\), fixed \(j=m-\rho\), and fixed \(t=B-m\), and rederives the
+already excluded \(k=3,d=1\) row in all four coordinates. It does not prove that every
 \(k=3\) fiber is empty, does not
 physicalize a divisor of \(k\), and does not provide a terminal or a verified successor. QC1, TR1, and
 `T6_GLOBAL_SELECTOR_TOTALITY` remain `OPEN`.
@@ -536,6 +639,6 @@ python3 -m unittest tests/test_type_i_root_capacity_stutter_k_three_primitive_fi
 ```
 
 The verifier replays the exact reduction on a deliberately non-core \(d=1\)
-curve point in all three coordinates and on a core-congruent but non-proper
+curve point in all four coordinates and on a core-congruent but non-proper
 composite shadow. It performs no parameter scan, no primality search, and no
 selector or certificate search.

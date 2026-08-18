@@ -2,8 +2,9 @@
 """Verify the exact k=3 proper-root primitive-fiber reduction.
 
 The stored controls are arithmetic shadows, deliberately not actual recursive
-states. This program checks the fixed-d, fixed-gap, and fixed-j reductions,
-the shared A=1/d=1 boundary, and the core-congruent/non-proper distinction.
+states. This program checks the fixed-d, fixed-gap, fixed-j, and fixed-t
+reductions, the shared A=1/d=1 boundary, and the core-congruent/non-proper
+distinction.
 It does not scan fibers, primes, sources, certificates, or selector history.
 """
 
@@ -256,6 +257,57 @@ def fixed_j_fiber(j: int) -> tuple[KThreeFiber, ...]:
     return tuple(candidates)
 
 
+def verify_vieta_gap_reduction(data: KThreeFiber) -> None:
+    """Check the fourth finite fiber indexed by the actual gap t=B-m."""
+    if not data.A < data.B:
+        raise ValueError("Vieta-gap reduction requires the proper A<B branch")
+    A, B, e, m = data.A, data.B, data.e, data.m
+    rho = B - A
+    t = B - m
+    j = m - rho
+    d = 3 * j + 1
+    C_t = 9 * t * t - 7 * t + 1
+    P_t = 9 * t * t + 6 * t - 2
+    if not (
+        A < m < B
+        and t >= 1
+        and t == A - j
+        and data.d == d
+        and C_t % A == 0
+        and P_t % d == 0
+        and rho * d + j == 3 * A * (t + 1)
+        and e * d == d * (3 * A + 3 * t + 3) + P_t
+    ):
+        raise AssertionError("k=3 fixed-t Vieta-gap identities changed")
+
+
+def fixed_vieta_gap_fiber(t: int) -> tuple[KThreeFiber, ...]:
+    """Enumerate the exact finite primitive fiber for one fixed t=B-m."""
+    if t <= 0:
+        raise ValueError("t must be positive")
+    P_t = 9 * t * t + 6 * t - 2
+    C_t = 9 * t * t - 7 * t + 1
+    candidates: list[KThreeFiber] = []
+    for d in divisors(P_t):
+        if d % 3 != 1:
+            continue
+        j = (d - 1) // 3
+        A = t + j
+        if C_t % A:
+            continue
+        numerator_rho = 3 * A * (t + 1) - j
+        if numerator_rho <= 0 or numerator_rho % d:
+            continue
+        rho = numerator_rho // d
+        if gcd(A, rho) != 1:
+            continue
+        data = reconstruct(A, A + rho)
+        if data is not None and data.A < data.B and data.B - data.m == t:
+            verify_vieta_gap_reduction(data)
+            candidates.append(data)
+    return tuple(candidates)
+
+
 def vieta_companion_second_gate_numerator(A: int, j: int) -> int:
     """Return the second primitive gate numerator at the B-Vieta companion."""
     e_j = 3 * j + 1
@@ -338,6 +390,20 @@ def verify_defect_boundary() -> None:
         raise AssertionError("fixed-j boundary controls changed")
 
 
+def verify_vieta_gap_boundary() -> None:
+    """Replay the same d=1 boundary through t=B-m without a scan."""
+    rows = fixed_vieta_gap_fiber(1)
+    if len(rows) != 1:
+        raise AssertionError("t=1 fiber no longer has one primitive proper curve point")
+    data = rows[0]
+    if not (
+        (data.A, data.B, data.M, data.m, data.p, data.d)
+        == (1, 7, 2, 6, 939, 1)
+        and data.B - data.m == 1
+    ):
+        raise AssertionError("fixed-t Vieta-gap boundary changed")
+
+
 def verify_vieta_companion_boundary() -> None:
     """Check the excluded j=0 endpoint and the sole forced core residue case."""
     data = fixed_d_fiber(1)[0]
@@ -381,12 +447,13 @@ def verify() -> None:
     verify_d_one_boundary()
     verify_gap_boundary()
     verify_defect_boundary()
+    verify_vieta_gap_boundary()
     verify_vieta_companion_boundary()
     verify_core_congruent_shadow()
     print(
-        "verified k=3 primitive fibers and the same-M Vieta companion gate: "
-        "the shared A=1,d=1 point is non-core, and a core-congruent shadow "
-        "still fails the proper-root guard"
+        "verified k=3 primitive fibers, the Vieta-gap ordering, and the "
+        "same-M Vieta companion gate: the shared A=1,d=1 point is non-core, "
+        "and a core-congruent shadow still fails the proper-root guard"
     )
     print("no fiber, prime, source, certificate, or selector search is performed")
 
