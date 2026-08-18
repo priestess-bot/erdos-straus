@@ -23,7 +23,7 @@ statement: >-
   (eta+1)、W-eta、n、k 同时除以 d 后，得到 primitive Eisenstein norm。
   在 Z[omega] 中，gcd(d,delta+omega) 有范数 d，并给出一个 exact factor-level
   cancellation。对每个 d>1，由 a-h mod d 定义的 natural gap 有完整的 linear-divisor
-  Type II fan，且其 cofactor 满足 C_d>=4、gap 不超过 (p-4)/3；D-overlap 的子因子还定向整除
+  Type II fan，且其 cofactor 满足 C_d>=5、gap 不超过 (p-5)/4；D-overlap 的子因子还定向整除
   Phi(h) 与 Psi(p) 的指定 Eisenstein 因子。
   因而由 sh=1 mod g、s=3 mod4 确定的最小正 variable gap 总在自然范围内；令
   C=(p+s)/(4g)、x=gC，则 C>=2、m<=4C、p<1024C^5，且当 p>=2^15 时 s<8p^(4/5)，
@@ -1578,14 +1578,152 @@ This excludes the last shape.  Hence
 \tag{54s-13}
 \]
 
+The remaining boundary value \(C_d=4\) is absent too.  If it occurred,
+then \(h<p=16d-s_d<16d\), hence \(m\sigma<16\).  Applying (54s-1) and
+the congruence \(p\equiv1\pmod3\) gives
+
+\[
+(m,\sigma)\in
+\{(3,1),(3,4),(4,3),(6,1),(9,1),(12,1),(15,1)\}.
+\tag{54s-14}
+\]
+
+Write \(s_d=\lambda d-(m-2)a\).  The exact relation \(pa+b=eh\) becomes
+
+\[
+a^2+\bigl((2m-1)\sigma-16+\lambda\bigr)ad-a
++m\sigma^2d^2-d\sigma+1=0.
+\tag{54s-15}
+\]
+
+Here \(\lambda\le15-m\sigma\); it is \(0\pmod3\) when \(m\equiv0\pmod3\)
+and \(1\pmod3\) when \(m\equiv1\pmod3\).  Thus the complete permitted
+list is (the nominal pair \((15,1)\) permits no positive \(\lambda\))
+
+\[
+\begin{array}{c|c|c}
+m&\sigma&\lambda\\
+\hline
+3&1&3,6,9,12\\
+3&4&3\\
+4&3&1\\
+6&1&3,6,9\\
+9&1&3,6\\
+12&1&3 .
+\end{array}
+\tag{54s-16}
+\]
+
+Directly grouping the positive terms in (54s-15), or taking its
+discriminant when the \(ad\)-coefficient is \(-2\), eliminates every
+entry of this list except
+
+\[
+\begin{array}{c|c|c|c|c}
+m&\sigma&\lambda&p&\delta\\
+\hline
+3&1&3&13d+a&10d-a\\
+3&1&6&10d+a&7d-a .
+\end{array}
+\tag{54s-17}
+\]
+
+For completeness, the discarded negative-coefficient cases are
+\((m,\sigma,\lambda)=(3,1,9)\) and \((6,1,3)\), with discriminants
+\(-8d^2+8d-3\) and \(-20d^2+8d-3\), respectively.  All other allowed
+cases have nonnegative \(ad\)-coefficient in (54s-15), so are positive
+after writing \(a^2-a+1\) as one group.
+
+Consider first the second row of (54s-17).  Its equation is (54s-8), and
+the canonical choice \(s_d\le4d-1\) gives \(a\ge2d+1\).  Since the
+left side of (54s-8) is negative at both \(2d\) and \(4d\), its lower
+root is below \(2d\) and its upper root is above \(4d\).  Hence an
+integral root with \(a\ge2d+1\) must satisfy \(a>4d\).  Formula
+(54s-10) still applies:
+
+\[
+\delta^2+\delta+1=dR,\qquad R=46d-9a+8.
+\tag{54s-18}
+\]
+
+As \((h,d)=1\), \(h\mid\delta^2+\delta+1\) implies \(h\mid R\).
+But \(R>0\), while \(a\ge4d+1\) and \(d\ge7\) give
+
+\[
+h-R=(3d+2a)-(46d-9a+8)=11a-43d-8>0.
+\]
+
+Thus \(0<R<h\), a contradiction.
+
+For the first row of (54s-17), the relation is
+
+\[
+a^2-8ad-a+3d^2-d+1=0.
+\tag{54s-19}
+\]
+
+Indeed, its values at \(d/3\), \(d/2\), and \(3d\) are respectively
+\((2d-3)^2/9>0\), a negative number, and a negative number.  Since
+\(s_d=3d-a>0\), the relevant root is therefore constrained by
+
+\[
+\frac d3<a<\frac d2.
+\tag{54s-20}
+\]
+
+Reducing \(\delta^2+\delta+1\) by (54s-18) now gives
+
+\[
+\delta^2+\delta+1=d(97d-12a+11).
+\tag{54s-21}
+\]
+
+Again \((h,d)=1\), so there is a positive integer \(q\) such that
+
+\[
+97d-12a+11=q(3d+2a).
+\tag{54s-22}
+\]
+
+The bounds (54s-19) and \(d\ge7\) imply
+
+\[
+22<q<\frac{279d+33}{11d}<26,
+\]
+
+so \(q\in\{23,24,25\}\).  Solving (54s-21) for \(a\), substituting into
+(54s-18), and multiplying by \((12+2q)^2\), gives
+
+\[
+(69q^2-1702q+529)d^2+(2q^2-448q-230)d
++(4q^2+26q+133)=0.
+\tag{54s-23}
+\]
+
+For \(q=23,24\), respectively, this is
+
+\[
+-2116d^2-9476d+2847=0,\qquad
+-575d^2-9830d+3061=0,
+\]
+
+whose left sides are negative for \(d\ge1\).  For \(q=25\), it is
+\(1104d^2-10180d+3283=0\), impossible modulo \(2\).  This excludes
+the first row and proves
+
+\[
+\boxed{C_d\ge5.}
+\tag{54s-24}
+\]
+
 Combining \(p=4dC_d-s_d\) with \(s_d\le4d-1\) now sharpens the
 canonical-gap range to
 
 \[
 \boxed{
-s_d\le\frac{p-1}{C_d-1}-1\le\frac{p-4}{3}.
+s_d\le\frac{p-1}{C_d-1}-1\le\frac{p-5}{4}.
 }
-\tag{54s-14}
+\tag{54s-25}
 \]
 
 The two factors in (54r) are coprime to the gap:
