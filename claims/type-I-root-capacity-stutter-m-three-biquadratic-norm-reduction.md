@@ -1,0 +1,773 @@
+---
+kind: claim
+claim_id: type-I-root-capacity-stutter-m-three-biquadratic-norm-reduction
+title: actual proper-root stutter 的 m=3 双二次范数约化
+statement: >-
+  对核心素数 p≡1 mod24 的 terminal-first 后 actual proper-root stutter receipt，若
+  m=3，写 h=3u、a=3A，则 e=u+A，且
+  D=(3u^2-u+1)/A、p=(D+3u-1)/3。这里 gcd(A,u)=1、A≡3 mod24、
+  A≥27、u≥2A+6，并同时有 A|(3u^2-u+1) 与 u|(7A^2+A+1)。令
+  r=(7A^2+A+1)/u，则 k=(u+r-A-2)/3。等价地，这一分支同时落在
+  discriminant -11 与 -27 的两条正定二次范数方程上。进一步令
+  B=(e-1)/3、k=3 kappa，则 gcd(a,e-1)=3、kappa≡7 mod24，且每个
+  固定 kappa 的 primitive fiber 满足 A|9(27 kappa^2+8 kappa+1)。特别地
+  actual m=3 receipt 必有 k≡21 mod72、k≥93 与 W-eta≥13。若
+  d=(W-eta,k)，则 d|(p^2-p+1)、gcd(d,h(p^2+p+1)D)=1，且其 natural gap
+  s_d 满足 d|(s_d^2+s_d+1)。所以 d 是 Phi_6(p) carrier，不是 root-height
+  Phi_3(p) carrier。kappa 有一个 canonical q≡7 mod12 素因子；它确定地落入
+  q|u 的 root-supported、q|d 的 Phi_6 cancellation，或两者皆不整除的 primitive
+  quotient-only residual 三类之一。该约化不证明这些互锁 divisor fibers 为空，不构造
+  terminal 或 E1--E5 successor，也不闭合 QC1、TR1 或 T6。
+claim_status: established
+proof_provenance: repository_derivation
+review_status: internal_review
+depends_on:
+  - type-I-root-capacity-stutter-finite-curve-constraint
+  - type-I-root-capacity-stutter-actual-small-root-exclusion
+  - type-I-root-capacity-stutter-positive-definite-norm-bound
+  - type-I-root-capacity-stutter-complementary-eisenstein-coordinate-gap
+  - type-I-root-capacity-stutter-eisenstein-support
+  - type-I-root-capacity-stutter-primitive-quotient-normalization
+topics:
+  - type-I
+  - root-capacity
+  - stutter
+  - m-three
+  - quadratic-norm
+  - divisor-fiber
+  - eisenstein-quotient
+  - proof-boundary
+sources:
+  - claim: type-I-root-capacity-stutter-finite-curve-constraint
+    role: actual-stutter-linear-identities
+  - claim: type-I-root-capacity-stutter-actual-small-root-exclusion
+    role: actual-mod-three-parity-and-low-coefficient-bounds
+  - claim: type-I-root-capacity-stutter-complementary-eisenstein-coordinate-gap
+    role: eta-lower-bound-and-D-visible-resonance-resultant
+  - claim: type-I-root-capacity-stutter-eisenstein-support
+    role: oddness-of-the-actual-Eisenstein-quotient
+  - claim: type-I-root-capacity-stutter-primitive-quotient-normalization
+    role: common-factor-normalization-and-primitive-system
+visibility: public
+last_checked: '2026-08-19'
+---
+
+# actual proper-root stutter 的 \(m=3\) 双二次范数约化
+
+## 1. 范围
+
+固定一个 terminal-first 后仍未终止的 actual proper-root stutter receipt：
+
+\[
+p\equiv1\pmod {24},\qquad h=3u<p,\qquad 3\nmid u,
+\]
+
+\[
+a=em-h,\qquad pa+(e-1)=eh,
+\qquad a^2-a(e-1)+(e-1)^2=hk,
+\]
+
+并额外假设
+
+\[
+\boxed{m=3.}
+\tag{1}
+\]
+
+本卡只约化这个固定 \(m\) slice。所有 `actual`、maximal-receipt、terminal-first 和
+source/path 前提都保留；反过来，下面的整数方程本身不恢复这些回执条件。
+
+## 2. 精确坐标重写
+
+actual 的模 \(3\) 分流在 \(m\equiv0\pmod3\) 时给出 \(3\mid a\)。写
+
+\[
+a=3A,\qquad h=3u.
+\tag{2}
+\]
+
+由 \(a=3e-h\) 立刻得到
+
+\[
+\boxed{e=u+A.}
+\tag{3}
+\]
+
+令 \(D=mp+1-h=3p+1-3u\)。将 (2)--(3) 代入
+\(pa+(e-1)=eh\)，得到
+
+\[
+3Ap=3u^2+3Au-u-A+1.
+\tag{4}
+\]
+
+将右边拆成 \((3u^2-u+1)+A(3u-1)\)，便有
+
+\[
+\boxed{
+AD=3u^2-u+1,
+\qquad
+3p=D+3u-1.
+}
+\tag{5}
+\]
+
+因此 \(m=3\) 的全部整数曲线条件先压成
+
+\[
+\boxed{
+A\mid3u^2-u+1,
+\qquad
+D=\frac{3u^2-u+1}{A},
+\qquad
+p=u+\frac{D-1}{3}.
+}
+\tag{6}
+\]
+
+原来的 \(eD=ph+1\) 在这些坐标中也可直接重放：
+
+\[
+ph+1=u(D+3u-1)+1
+=uD+(3u^2-u+1)=(u+A)D=eD.
+\tag{7}
+\]
+
+这说明 (5) 不是丢弃 \(D\)-receipt 的形式重参数化，而是原始两个线性 stutter
+等式在 \(m=3\) 的精确合并。
+
+## 3. cyclotomic 根条件给出的第二除子门
+
+由 (7)，任何同时整除 \(e\) 与 \(h\) 的素数也会整除 \(ph+1\)，而后者模该素数
+为 \(1\)。所以 \((e,h)=1\)。结合 (3) 和 \(h=3u\)，得到
+
+\[
+\boxed{(A,u)=1.}
+\tag{8}
+\]
+
+在模 \(u\) 下，(5) 给出 \(AD\equiv1\)，且
+\(3p\equiv D-1\)。因为 \(3A\) 在模 \(u\) 下可逆，
+
+\[
+p\equiv\frac{1-A}{3A}\pmod u.
+\tag{9}
+\]
+
+将其代入 \(u\mid p^2+p+1\)，再乘以 \(9A^2\)，得到
+
+\[
+\boxed{u\mid7A^2+A+1.}
+\tag{10}
+\]
+
+反过来，若 (5) 使 \(p\) 为整数、\((A,u)=1\)、\(3\nmid u\)，并且 (10) 成立，
+则 (9) 的同一计算反向给出 \(u\mid p^2+p+1\)。在额外保留
+\(p\equiv1\pmod3\) 时，便恢复 \(3u\mid p^2+p+1\)。所以 (5) 和 (10) 是
+这个 slice 的两条精确算术 divisor gates，而非只取其一的必要筛选。
+特别地，固定 \(A\) 时，\(u\) 必为 \(7A^2+A+1\) 的正除子；固定 \(u\) 时，
+\(A\) 必为 \(3u^2-u+1\) 的正除子。这给出双向的有限 divisor fiber，而不是
+对 \(p\) 或分母的范围扫描。
+
+## 4. actual proper-root 范围
+
+actual 根端点使 \(a\) 为奇数，故 \(A\) 为奇数。既有低系数排除给出
+\(a(m-1)\ge30\)，于是
+
+\[
+\boxed{A\ge5.}
+\tag{11}
+\]
+
+另一方面，互补坐标满足
+
+\[
+\eta=e-1-a=u-2A-1\ge5,
+\]
+
+所以
+
+\[
+\boxed{u\ge2A+6.}
+\tag{12}
+\]
+
+proper-root 的 \(h<p\) 与 (5) 等价于
+
+\[
+D>6u+1.
+\tag{13}
+\]
+
+故
+
+\[
+A=\frac{3u^2-u+1}{D}
+<\frac{3u^2-u+1}{6u+1}<\frac u2.
+\tag{14}
+\]
+
+式 (12) 比 (14) 更强，但 (13)--(14) 显示这个小 \(m\) slice 的 `D` carrier
+仍然处在严格的 \(u\)-尺度之外。最后，\(D=3p+1-3u\equiv1\pmod3\)，
+而 \(eD=ph+1\equiv1\pmod3\)，所以
+
+\[
+\boxed{u+A=e\equiv1\pmod3.}
+\tag{15}
+\]
+
+## 5. 两个范数与 quotient 大小
+
+定义第二个整数商
+
+\[
+r:=\frac{7A^2+A+1}{u}.
+\tag{16}
+\]
+
+将 (2)--(3) 代入 Eisenstein 范数，可得
+
+\[
+\begin{aligned}
+hk
+&=9A^2-3A(u+A-1)+(u+A-1)^2\\
+&=u^2-Au-2u+7A^2+A+1\\
+&=u(u+r-A-2).
+\end{aligned}
+\]
+
+因此
+
+\[
+\boxed{k=\frac{u+r-A-2}{3}.}
+\tag{17}
+\]
+
+这两个 gate 也有自然的二次范数解释。令
+
+\[
+\omega_{11}^2-\omega_{11}+3=0,
+\qquad
+\vartheta_{27}^2-\vartheta_{27}+7=0.
+\]
+
+相应范数分别为
+
+\[
+N_{11}(x+y\omega_{11})=x^2+xy+3y^2,
+\qquad
+N_{27}(x+y\vartheta_{27})=x^2+xy+7y^2.
+\]
+
+于是 (5) 和 (10) 精确成为
+
+\[
+\boxed{
+AD=N_{11}(1-u\omega_{11}),
+\qquad
+ur=N_{27}(1+A\vartheta_{27}).
+}
+\tag{18}
+\]
+
+它们的判别式分别为 \(-11\) 与 \(-27\)。例如，对任一不等于 \(11\) 的奇素数
+\(q\mid D\)，(5) 表明 \(-11\) 是模 \(q\) 的平方；等价地
+\[
+\left(\frac{-11}{q}\right)=\left(\frac q{11}\right)=1,
+\]
+所以 \(q\bmod11\) 是二次剩余。这个局部限制并不自动给出 Type I/II certificate，但它把
+\(m=3\) 的 transverse carrier 从一般因子问题变成一对互锁的二次范数问题。
+
+## 6. 与 Eisenstein difference carrier 的严格分离
+
+令
+
+\[
+\mathfrak d=(W-\eta,k),
+\qquad g=(D,\mathfrak d).
+\]
+
+已有的 shifted-resultant identity 给出 \(g\mid\chi(m)\)，其中
+
+\[
+\chi(X)=X^4-6X^3+12X^2-9X+3.
+\]
+
+在本卡的 \(m=3\) slice，\(\chi(3)=3\)。另一方面
+\(3\nmid\mathfrak d\)。故
+
+\[
+\boxed{(D,\mathfrak d)=1.}
+\tag{19}
+\]
+
+因此非平凡 Eisenstein difference carrier 即使存在，也不会经由 \(D\) 转化成已经有
+actual receipt provenance 的 transverse carrier。这一分离解释了为什么把 factor-level
+quotient cancellation 直接重命名为 \(D_*\)-edge 在本 slice 中不可能成立。
+
+此外，\(D(p+e)=3p^2+p+1\)，所以 \(D\) 的 native polynomial 是
+
+\[
+3X^2+X+1,
+\qquad \operatorname{disc}=-11.
+\tag{20}
+\]
+
+它在 \(\mathbb Q\) 上不可约。现有 even-\(K\) terminal fan 使用的是
+\(K(K-1)X^2-X-1\) 的整数线性因子分解；它不能把 (20) 作为同一个
+linear-factor instance。这个结论只排除该既有 factorization mechanism 的直接套用，
+不排除某个 \(D\) 因子额外命中其它 terminal menu。
+
+## 7. 根支撑强制的 primitive \(m=3\) quotient fiber
+
+这里还有一个比 (15) 更强的 actual-only 收缩。因为 \(h=3u\mid p^2+p+1\)，
+而 \(3\nmid u\)，\(u\) 的任一素因子 \(q\) 都满足 \(q\ne3\)。若
+\(p\equiv1\pmod q\)，则 \(p^2+p+1\equiv3\pmod q\)，矛盾；故 \(p\) 在
+模 \(q\) 下的乘法阶恰为 \(3\)，从而 \(q\equiv1\pmod3\)。因此
+
+\[
+\boxed{u\equiv1\pmod3.}
+\tag{21}
+\]
+
+式 (15) 随即给出 \(3\mid A\)。结合 \(A\) 为奇数和 (11)，有
+
+\[
+\boxed{A\equiv3\pmod6,\qquad A\ge9.}
+\tag{22}
+\]
+
+令 \(b=e-1\)，并写 \(g=(a,b)\)。这里 \(3\mid b\) 而 \(9\mid a\)，
+所以 \(3\mid g\)。实际 primitive-quotient normalization 给出 \(g\mid m=3\)，
+故
+
+\[
+\boxed{g=(a,e-1)=3.}
+\tag{23}
+\]
+
+置
+
+\[
+B=\frac{e-1}{3},\qquad \kappa=\frac{k}{3}.
+\]
+
+primitive system 在本 slice 中精确成为
+
+\[
+\boxed{
+(A,B)=1,qquad
+u=3B+1-A,qquad
+A^2-AB+B^2=u\kappa,qquad
+pA+B=(3B+1)u.
+}
+\tag{24}
+\]
+
+因为 \(3\mid A\) 而 \((A,B)=1\)，有 \(3\nmid B\)。将 (24) 的范数式模
+\(3\) 化简，并使用 \(u\equiv1\pmod3\)，得到 \(\kappa\equiv1\pmod3\)。actual
+Eisenstein quotient \(k\) 为奇数，故
+
+\[
+\boxed{\kappa\equiv1\pmod6.}
+\tag{25}
+\]
+
+同一范数式还给出
+
+\[
+\boxed{(A,\kappa)=1.}
+\tag{25a}
+\]
+
+事实上，若素数 \(q\) 同时整除 \(A\) 和 \(\kappa\)，则 (24) 的范数式模 \(q\)
+强制 \(q\mid B\)，与 \((A,B)=1\) 矛盾。
+
+为得到一个不依赖 \(p\) 范围的 fixed-\(\kappa\) fiber，令
+\(\rho=B-A\)。由 \(a<e\)、\((A,B)=1\) 和 (12)，有 \(\rho\ge2\)，并且 (24) 写成
+
+\[
+u=2A+3\rho+1,
+\qquad
+A^2+A\rho+\rho^2=(2A+3\rho+1)\kappa.
+\tag{26}
+\]
+
+最后一个 (24) 方程模 \(A\) 给出第一条整除门
+
+\[
+A\mid9\rho^2+5\rho+1.
+\tag{27}
+\]
+
+定义
+
+\[
+\lambda:=\frac{9\rho^2+5\rho+1}{A}.
+\]
+
+将 \(pA+B=(3B+1)u\) 展开后，得到精确的线性重写
+
+\[
+\boxed{p=6A+15\rho+4+\lambda.}
+\tag{27a}
+\]
+
+因为 \(u=2A+3\rho+1\) 为奇数，\(\rho\) 为偶数。又由 \(3\mid A\)、(27) 和
+\(p\equiv1\pmod3\)，依次得到
+
+\[
+\rho\equiv1\pmod3,
+\qquad
+\lambda\equiv0\pmod3.
+\]
+
+故 \(9\mid9\rho^2+5\rho+1\)。令 \(\rho=1+3z\) 后模 \(9\) 化简，得到
+\(z\equiv2\pmod3\)。再结合 \(\rho\) 为偶数，以及 \(A,\lambda\) 都为奇数，便有
+
+\[
+\rho\equiv16\pmod {18},
+\qquad
+\lambda\equiv3\pmod6.
+\tag{27b}
+\]
+
+核心模 \(8\) 条件还会收紧 \(A\)。由 (27a) 直接整理为
+
+\[
+\begin{aligned}
+A(p-1)
+={}&(A-3)(6A+21-\rho)+\rho(\rho+2)\\
+&+8(2A\rho+\rho^2+8).
+\end{aligned}
+\tag{27c}
+\]
+
+这里 \(\rho(\rho+2)\) 被 \(8\) 整除，而 \(6A+21-\rho\) 为奇数。因为
+\(p\equiv1\pmod8\) 且 \(A\) 为奇数，(27c) 强制 \(A\equiv3\pmod8\)。与 (22) 合并，
+
+\[
+\boxed{A\equiv3\pmod {24},\qquad A\ge27.}
+\tag{27d}
+\]
+
+把 (26) 模 \(8\) 化简，并使用 \(A\equiv3\pmod8\) 与 \(\rho\) 为偶数，得到
+
+\[
+A^2+A\rho+\rho^2
+\equiv7(2A+3\rho+1)\pmod8.
+\]
+
+右边括号就是 \(u\)，且 \(u\) 为奇数。由 (26) 可约去它，故
+
+\[
+\kappa\equiv7\pmod8.
+\]
+
+与 (25) 合并后，
+
+\[
+\boxed{\kappa\equiv7\pmod {24}.}
+\tag{27e}
+\]
+
+而 (26) 模 \(A\) 给出 \(\rho^2\equiv\kappa(3\rho+1)\pmod A\)。代入 (27) 后，
+
+\[
+A\mid(27\kappa+5)\rho+(9\kappa+1).
+\tag{28}
+\]
+
+不需要对 \(27\kappa+5\) 取逆：把 (27) 乘以它的平方，再用 (28) 消去 \(\rho\)，
+便得到 resultant gate
+
+\[
+\boxed{A\mid9\bigl(27\kappa^2+8\kappa+1\bigr).}
+\tag{29}
+\]
+
+实际上 (28) 与 \(u=2A+3\rho+1\) 还给出更有方向性的 cross-parameter bridge：
+
+\[
+\boxed{(27\kappa+5)u\equiv2\pmod A.}
+\tag{29a}
+\]
+
+所以 \((A,27\kappa+5)=1\)，并且 fixed-\(\kappa\) 时 \(u\) 的模 \(A\) 类已被
+确定。这条桥与 \(A\mid3u^2-u+1\) 联立后也重新给出 (29) 的同一 \(-11\) 判别式
+约束。
+
+所以固定 \(\kappa\) 后，\(A\) 是一个显式固定整数的除子，随后 (26) 至多给出两个
+整数 \(\rho\)。这是一条 exact finite divisor fiber，不是对 \(p\)、\(u\) 或分母的扫描。
+
+还有一个可直接排除的低 quotient 带。把 (26) 视为 \(\rho\) 的二次方程，其判别式必须是
+平方：
+
+\[
+\Delta_\kappa
+=-3A^2+2A\kappa+9\kappa^2+4\kappa.
+\tag{30}
+\]
+
+由 (27e)，唯一小于 \(31\) 的正 \(\kappa\) 是 \(7\)。但
+\(\Delta_7=-3A^2+14A+469<0\) 对所有 \(A\ge27\) 成立。故
+
+\[
+\boxed{
+m=3\text{ 的 actual proper-root stutter 必满足 }
+k\equiv21\pmod {72},\qquad k=3\kappa\ge93.
+}
+\tag{31}
+\]
+
+这排除了 \(m=3\) 与既有 \(k=3\) fiber 的交集，并排除了唯一更小的允许
+\(k=21\) 子纤维；它并不排空 \(\kappa\ge31\) 的无界参数域。
+
+### 7.1 bare difference gap 不能很小
+
+回到已有的 complementary coordinates，并置
+
+\[
+\gamma:=W-\eta.
+\]
+
+已建立的 actual 坐标不等式给出 \(\gamma>0\) 与 \((\eta,W)=1\)。在本 slice 中
+\(\eta=u-2A-1=3\rho\)。因为 \(\rho\) 为偶数，\(\eta\) 为偶数；而
+\(k=e\eta-aW\) 为奇数、\(a=3A\) 为奇数，所以 \(W\) 及 \(\gamma\) 都为奇数。
+再由 \((\eta,W)=1\)，有
+
+\[
+(\gamma,3\rho)=1.
+\tag{31a}
+\]
+
+将 \(W=3\rho+\gamma\) 代入 \(k=e\eta-aW\)，得到
+
+\[
+\boxed{\kappa=3\rho^2+\rho-A\gamma.}
+\tag{31b}
+\]
+
+结合 \(A\equiv3\pmod8\) 与 \(\kappa\equiv7\pmod8\)，这还给出
+
+\[
+\gamma\equiv\rho^2+3\rho+3\pmod8.
+\tag{31c}
+\]
+
+设 \(c=\gamma\)。把 (31b) 代回 (26)，便把 \(A\) 压到
+
+\[
+(2c+1)A^2-
+\bigl(6\rho^2+(1-3c)\rho-c\bigr)A-
+\rho(9\rho^2+5\rho+1)=0.
+\tag{31d}
+\]
+
+因此其判别式必须为平方。直接展开为
+
+\[
+\begin{aligned}
+\Delta_c={}&36\rho^4+(36c+48)\rho^3
++(9c^2+22c+21)\rho^2\\
+&+(6c^2+6c+4)\rho+c^2.
+\end{aligned}
+\tag{31e}
+\]
+
+令 \(L_c=6\rho^2+(3c+4)\rho\)。则
+
+\[
+\Delta_c-L_c^2
+=(5-2c)\rho^2+(6c^2+6c+4)\rho+c^2.
+\tag{31f}
+\]
+
+这足以不用搜索排除所有小的允许差距。对于 \(c=1\)，右边是
+\(3\rho^2+16\rho+1\)，严格介于 \(0\) 与 \(2L_1+1\) 之间；故
+\(\Delta_1\) 严格介于 \(L_1^2\) 与 \((L_1+1)^2\) 之间。
+
+由 (27b) 与 (31c)，若 \(c=5,7,11\)，则分别有
+
+\[
+\rho\equiv34,52,16\pmod {72}.
+\tag{31g}
+\]
+
+当 \(c=5\) 时，(31f) 的右边为
+\(R_5=-5\rho^2+184\rho+25\)。在唯一的小代表 \(\rho=34\) 处，
+\(0<R_5=501<2L_5+1\)；当 \(\rho\ge106\) 时，
+\(R_5<0<R_5+2L_5-1=7\rho^2+222\rho+24\)。故 \(\Delta_5\) 总在
+相邻平方之间。类似地，当 \(c=7\) 时
+
+\[
+R_7=-9\rho^2+340\rho+49<0,
+\qquad
+R_7+2L_7-1=3\rho^2+390\rho+48>0
+\]
+
+对全部 \(\rho\ge52\) 成立，也排除平方。
+
+最后 \(c=11\) 时
+
+\[
+R_{11}=-17\rho^2+796\rho+121.
+\]
+
+在 \(\rho=16\) 处有
+\(2L_{11}+1<R_{11}=8505<4L_{11}+4\)；在剩余的
+\(\rho=88,160\) 处有 \(-2L_{11}+1<R_{11}<0\)；而对
+\(\rho\ge232\)，有
+
+\[
+-4L_{11}+4<R_{11}<-2L_{11}+1,
+\]
+
+其中左侧严格不等式等价于
+\(R_{11}+4L_{11}-4=7\rho^2+944\rho+117>0\)。这些区间都严格夹在
+相邻平方之间。于是 (31d) 不可能在 \(c=1,5,7,11\) 有整数根。
+
+由 (31a)，\(\gamma\) 是不被 \(3\) 整除的正奇数；以上恰排除了小于 \(13\) 的全部
+可能值。因此
+
+\[
+\boxed{W-\eta=\gamma\ge13.}
+\tag{31h}
+\]
+
+这是一条 actual coordinate-gap 强化，而不是 terminal：它没有强制
+\((\gamma,k)>1\)，所以不能把下节的 \(d\)-cancellation 误写成每个 receipt 都存在的出口。
+
+## 8. whole \(d\)-carrier 的 \(\Phi_6(p)\) 定向
+
+继续令
+
+\[
+d=(\gamma,k).
+\]
+
+已有 whole-\(d\) identities 给出
+
+\[
+d\mid\eta+1,\qquad d\mid a^2-a+1,\qquad (a,d)=1,
+\qquad h\equiv p+a\pmod d,
+\tag{32}
+\]
+
+且 \(d\) 为奇数并满足 \(3\nmid d\)。但 \(m=3\) 坐标有额外的 exact identity
+
+\[
+h=3u=2a+3(\eta+1).
+\tag{33}
+\]
+
+故 (32) 给出 \(h\equiv2a\pmod d\)，与 \(h\equiv p+a\pmod d\) 比较后得到
+
+\[
+p\equiv a\pmod d.
+\]
+
+因此
+
+\[
+\boxed{d\mid p-a,\qquad d\mid p^2-p+1.}
+\tag{34}
+\]
+
+再结合 whole-\(d\) 的 \(e\equiv a\pmod d\)，actual receipt 的相关坐标在这个 carrier
+上满足
+
+\[
+\boxed{
+p\equiv a\equiv e,\qquad
+h\equiv2p,\qquad
+\delta=p-h\equiv-p,\qquad
+D\equiv p+1
+\pmod d.
+}
+\tag{34a}
+\]
+
+这里 \(p\) 在模 \(d\) 下是单位；又 \(d\) 为奇数，所以
+
+\[
+\boxed{(d,p^2+p+1)=1,\qquad(d,h)=1.}
+\tag{35}
+\]
+
+特别地，写 \(v=(p^2+p+1)/h\)，还有 \((d,v)=1\)。
+
+而 \(\gcd(p^2-p+1,p+1)\mid3\)，故
+
+\[
+\boxed{(d,D)=1.}
+\tag{36}
+\]
+
+这在本 slice 中独立重新导出了 (19)，并给出更精确的原因：\(d\) 是
+\(\Phi_6(p)=p^2-p+1\) 的实际 carrier，严格避开 root-height 的
+\(\Phi_3(p)=p^2+p+1\) 以及 \(D\)-carrier。
+
+已有 natural gap 定义满足 \(s_d\equiv a-h\pmod d\)。由 (33)--(34)，
+
+\[
+s_d\equiv\delta\equiv-p\pmod d,
+\qquad
+\boxed{d\mid s_d^2+s_d+1.}
+\tag{37}
+\]
+
+这把 whole-\(d\) Type II fan 的 gap 定向成 \(\Phi_3(s_d)\) root。它仍未证明该
+fan 必命中，所以 (37) 是下一条 identity-lifted terminal/adaptor 引理的输入，不能直接当作
+terminal 或 E1--E5 edge。
+
+## 9. 一个 canonical \(7\pmod {12}\) quotient carrier
+
+式 (24) 还决定了 \(\kappa\) 的素因子类型。若奇素数 \(q\mid\kappa\)，则
+\(q\nmid A\) 由 (25a) 给出；同样 \(q\nmid B\)，因为否则 (24) 的范数式模 \(q\)
+会给出 \(q\mid A\)。故可令 \(z=BA^{-1}\pmod q\)，并由 (24) 得
+
+\[
+z^2-z+1\equiv0\pmod q.
+\]
+
+这里 \(q\ne3\)，且 \(z\) 既不为 \(1\) 也不为 \(-1\)，所以 \(z\) 的阶恰为 \(6\)。
+因此
+
+\[
+\boxed{q\mid\kappa\Longrightarrow q\equiv1\pmod6.}
+\tag{38}
+\]
+
+另一方面 (27e) 给出 \(\kappa\equiv3\pmod4\)，故 \(\kappa\) 至少有一个
+\(3\pmod4\) 的素因子。结合 (38)，这样的素因子必为 \(7\pmod {12}\)。于是
+
+\[
+\boxed{
+q_\star:=\min\{q:q\mid\kappa,\ q\equiv7\pmod {12}\}
+\quad\text{is well-defined.}
+}
+\tag{39}
+\]
+
+这给出一个不依赖任意选择的 O2 carrier，并且第 8 节把它精确拆成三路。若
+\(q_\star\mid u\)，它已有 actual root-height occurrence，属于既有 root-supported source 的
+输入类型；若 \(q_\star\mid d\)，则它自动不整除 \(u\)，而是 whole-\(d\)
+\(\Phi_6(p)\) cancellation 与 natural Type II fan 的因子；若两者都不整除，则它是严格的
+primitive quotient-only residual，必须通过 QC1 的 physicalization 或 TR1 的独立出口处理。
+第三路是否还整除 \(v=(p^2+p+1)/h\)，仍由 primitive-normalization 的 \(q\mid e\) 或
+\(B\equiv(p+1)A\pmod q\) 分流精确决定；本卡没有抹去该信息。三路互斥且穷尽，但第二路的
+fan 是否命中仍未证明，故它们都尚未产生 terminal 或 E1--E5 edge。
+
+## 10. 边界与下一命题
+
+本卡没有证明 (5)、(10)、(11)--(15) 的正整数解为空，也没有证明这些解能成为 actual
+maximal receipt。更没有从 (18) 构造 Type I/II certificate、source replay、all-solution
+lift 或 T5 ticket。
+
+它把 \(m=3\) 的真正局部目标固定为：在 \(\kappa\ge31\) 的 fixed-\(\kappa\) fibers 上，
+分别处理 root-supported \(q_\star\)、whole-\(d\) 的 \(\Phi_6(p)\) terminal fan，和
+\(q_\star\nmid ud\) 的 primitive quotient-only residual。特别地，后两者不能再被错误地
+重命名为 \(D\)-carrier。需要证明某一 terminal fan 必命中，或构造一个不依赖 quotient
+rechart 的 actual E1--E5 adapter。没有完成这一步前，QC1、TR1 和
+`T6_GLOBAL_SELECTOR_TOTALITY` 都保持 `OPEN`。
