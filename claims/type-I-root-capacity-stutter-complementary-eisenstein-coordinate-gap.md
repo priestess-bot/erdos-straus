@@ -5,8 +5,8 @@ title: proper-root stutter 的互补 Eisenstein 坐标缺口与固定坐标约�
 statement: >-
   对核心素数 p≡1 mod24 的任意 terminal-first 后 actual proper-root stutter receipt，令
   v=(p^2+p+1)/h、b=e-1、U=e(p+1)-av、W=U-e=ep-av。则 W≥5。
-  更精确地，令 eta=b-a、delta=p-h，则 eta≥5，且
-  k=e eta-aW、h(W+1)=b delta+eta。令
+  更精确地，令 eta=b-a、delta=p-h，则 eta≥5、eta<W≤eta^2+2eta-3，且
+  k=e eta-aW=eta(eta+1)-a(W-eta)、h(W+1)=b delta+eta。令
   t=((W+1)m+W eta)/b，便有 t∈Z_{>0}、
   delta=(W+1)(m-1)+t 和 h|(delta^2+delta+1)。固定 w=W 后，令
   F=delta^2+delta+1=nh、L=w(m-1)+t，则 1≤t≤2w+1、
@@ -729,7 +729,56 @@ Thus \(\eta=4\) is impossible.  Combining the four cases,
 \tag{43}
 \]
 
-## 7. Boundary
+## 7. The strict coordinate order \(\eta<W\)
+
+The two complementary coordinates are not independent.  Since \(U=e+W\),
+(5) and \(pa+b=eh\) give
+
+\[
+\boxed{
+hW=hU-eh=(p+1)b-a-eh=p\eta-a.
+}
+\tag{44}
+\]
+
+The bounds in (4) give \(h=em-a>2e>a\).  As \(p>h\), (44) rules out
+\(W\le\eta-1\): that inequality would give
+
+\[
+hW\le h\eta-h<h\eta-a<p\eta-a=hW.
+\]
+
+If \(W=\eta\), then (44) gives \(a=\eta(p-h)\), and hence
+
+\[
+k=e\eta-aW=\eta(e-a)=\eta(\eta+1),
+\]
+
+which is even, contrary to the oddness of \(k\).  Therefore
+
+\[
+\boxed{W>\eta.}
+\]
+
+Writing \(\gamma:=W-\eta\), the exact norm quotient identity becomes
+
+\[
+\boxed{a\gamma=\eta(\eta+1)-k.}
+\tag{45}
+\]
+
+Its right side is odd, so both \(a\) and \(\gamma\) are odd.  Since
+\(a\ge1\) and \(k\ge3\) by (40), it also gives
+
+\[
+\boxed{
+1\le\gamma\le\eta(\eta+1)-3,
+\qquad
+\eta<W\le\eta^2+2\eta-3.
+}
+\]
+
+## 8. Boundary
 
 This is a structural reduction inside the actual proper-root stutter domain.
 It proves that the fixed-\(W\) exceptional shapes are empty, but it does not
