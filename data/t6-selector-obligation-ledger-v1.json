@@ -1,0 +1,651 @@
+{
+  "ledger_id": "t6_global_selector_obligation_ledger_v1",
+  "date": "2026-08-18",
+  "current_status": {
+    "t6_global_selector_totality": "OPEN",
+    "statement_boundary": "This ledger inventories the current verified transition surface and its quantified gaps. It is not a reachable-state exhaustion proof and it does not define a total selector."
+  },
+  "scope": {
+    "root_domain": "Every core prime p congruent to 1 modulo 24 and every actual recursively reachable legal state S.",
+    "selector_output": "terminal certificate or a verified E1--E5 successor with a strict T5 ticket",
+    "root_mark": "Sol(p)",
+    "current_named_graph_only": false,
+    "closure_modes": [
+      "family_empty_proof",
+      "universal_terminal",
+      "universal_verified_successor"
+    ]
+  },
+  "status_vocabulary": {
+    "family_coverage": [
+      "CLOSED_BY_EMPTY_PROOF",
+      "CLOSED_BY_UNIVERSAL_SUCCESSOR",
+      "TERMINAL",
+      "LOCAL_EDGE_ONLY",
+      "RELATIVE_EDGE_ONLY",
+      "OPEN",
+      "UNREACHABLE_IN_CURRENT_NAMED_GRAPH"
+    ],
+    "receipt_component": "established_under_written_claim_guard",
+    "controls": [
+      "actual",
+      "conditional_adapter_control",
+      "analysis_only"
+    ]
+  },
+  "initialization": {
+    "family_id": "initial_core_root",
+    "quantifier": "For every core prime p congruent to 1 modulo 24, construct a canonical legal root state and place it in a selector family without consulting an unknown Erdos-Straus decomposition.",
+    "known_contract_fields": [
+      "equation_target = 4/p",
+      "root_prime = p",
+      "marked_solution_set = Sol(p)"
+    ],
+    "coverage_status": "OPEN",
+    "reason_open": "The state contract fixes root-field guards, but the repository has no independent total root-to-selector-family serializer together with a non-circular reachable-state exhaustion proof.",
+    "evidence": [
+      "concepts/denominator-escape-state-contract.md",
+      "docs/T6-current-progress-2026-08-17.md"
+    ],
+    "minimal_gap_id": "GAP-O1-INITIAL-ROOT"
+  },
+  "state_families": [
+    {
+      "id": "initial_core_root",
+      "coverage_status": "OPEN",
+      "guard": "p is a core prime and the state is the canonical root for 4/p.",
+      "terminal_exit": "terminal-first certificate when one is registered",
+      "successor_exit": "not globally dispatched",
+      "evidence": [
+        "concepts/denominator-escape-state-contract.md",
+        "docs/T6-current-progress-2026-08-17.md"
+      ],
+      "minimal_gap_ids": [
+        "GAP-O1-INITIAL-ROOT",
+        "GAP-O1-GLOBAL-EXHAUSTION"
+      ]
+    },
+    {
+      "id": "type_ii_relation_f_endpoint",
+      "coverage_status": "CLOSED_BY_UNIVERSAL_SUCCESSOR",
+      "guard": "actual terminal-first-surviving ordinary Type II F endpoint in the declared q>1 endpoint downset",
+      "terminal_exit": "Type I/II hit at the reconstructed endpoint",
+      "successor_exit": "q-owned gcd-shadow endpoint descent to smaller F/G endpoint",
+      "evidence": [
+        "type-II-relation-reach-gcd-shadow-endpoint-descent"
+      ],
+      "minimal_gap_ids": []
+    },
+    {
+      "id": "type_ii_relation_g_endpoint",
+      "coverage_status": "RELATIVE_EDGE_ONLY",
+      "guard": "actual terminal-first-surviving ordinary Type II G endpoint with marked set Sol(p)",
+      "terminal_exit": "terminal-first hit before handoff",
+      "successor_exit": "fresh full-carrier Type I phase-root entry and first local edge",
+      "evidence": [
+        "type-II-q-one-full-carrier-phase-root-entry",
+        "type-II-positive-q-G-full-carrier-phase-root-entry"
+      ],
+      "minimal_gap_ids": [
+        "GAP-O1-POST-G-TYPE-I"
+      ]
+    },
+    {
+      "id": "type_i_full_carrier_post_g",
+      "coverage_status": "OPEN",
+      "guard": "fresh full-carrier Type I root or a state after its registered first local edge",
+      "terminal_exit": "registered terminal-first Type I certificate",
+      "successor_exit": "first local edge is established; later Type I dispatch is not total",
+      "evidence": [
+        "type-II-q-one-full-carrier-phase-root-entry",
+        "type-II-positive-q-G-full-carrier-phase-root-entry",
+        "docs/T6-current-progress-2026-08-17.md"
+      ],
+      "minimal_gap_ids": [
+        "GAP-O1-POST-G-TYPE-I"
+      ]
+    },
+    {
+      "id": "type_i_low_support_persistent_overflow",
+      "coverage_status": "CLOSED_BY_UNIVERSAL_SUCCESSOR",
+      "guard": "actual persistent overflow with determinant/source receipt, A divides M, and M/A at least 2",
+      "terminal_exit": "terminal-first check remains prior to recursive admission",
+      "successor_exit": "same-chart charged-support promotion",
+      "evidence": [
+        "type-I-overflow-unbounded-same-chart-promotion-persistence-boundary"
+      ],
+      "minimal_gap_ids": []
+    },
+    {
+      "id": "type_i_a_one_overflow",
+      "coverage_status": "CLOSED_BY_UNIVERSAL_SUCCESSOR",
+      "guard": "verified overflow with A=1, 1 <= d < p, and R_M > p",
+      "terminal_exit": "terminal-first check remains prior to recursive admission",
+      "successor_exit": "canonical dual outer-rank RESET",
+      "evidence": [
+        "type-I-overflow-a-one-dual-outer-rank-reset"
+      ],
+      "minimal_gap_ids": []
+    },
+    {
+      "id": "type_i_a_gt_one_overflow_residual",
+      "coverage_status": "OPEN",
+      "guard": "actual recursively reachable A>1 overflow not covered by a proven same-chart, joined-support, bounded-divisor, or terminal receipt",
+      "terminal_exit": "terminal-first certificate if available",
+      "successor_exit": "no total typed charged-chart adapter",
+      "evidence": [
+        "concepts/denominator-escape-state-contract.md",
+        "docs/T6-current-progress-2026-08-17.md"
+      ],
+      "minimal_gap_ids": [
+        "GAP-O1-A-GT-ONE-OVERFLOW"
+      ]
+    },
+    {
+      "id": "type_i_high_support_sink",
+      "coverage_status": "LOCAL_EDGE_ONLY",
+      "guard": "actual persistent F/G overflow with A>B_p whose bound source path reaches a finite sink SCC",
+      "terminal_exit": "terminal-first certificate if available",
+      "successor_exit": "rank-aware sink-bundle selector when its improvement set is nonempty",
+      "evidence": [
+        "type-I-high-support-rank-aware-sink-bundle-selector"
+      ],
+      "minimal_gap_ids": [
+        "GAP-O1-HIGH-SUPPORT-ROOT-CAPACITY"
+      ]
+    },
+    {
+      "id": "proper_root_stutter_k_one",
+      "coverage_status": "CLOSED_BY_EMPTY_PROOF",
+      "guard": "actual terminal-first-surviving proper-root stutter with Eisenstein quotient k=1",
+      "terminal_exit": "vacuous: the actual family is empty",
+      "successor_exit": "not needed",
+      "evidence": [
+        "type-I-root-capacity-stutter-k-one-universal-exclusion"
+      ],
+      "minimal_gap_ids": []
+    },
+    {
+      "id": "proper_root_stutter_k_gt_one",
+      "coverage_status": "OPEN",
+      "guard": "actual terminal-first-surviving proper-root stutter with Eisenstein quotient k>1",
+      "terminal_exit": "terminal-first certificate if available",
+      "successor_exit": "QC1 or TR1 physical E1--E5 edge is not established",
+      "evidence": [
+        "docs/T6-proper-root-minimal-gap-audit-2026-08-17.md",
+        "type-I-root-capacity-stutter-common-divisor-alignment"
+      ],
+      "minimal_gap_ids": [
+        "GAP-O2-PROPER-ROOT-K-GT-ONE"
+      ]
+    },
+    {
+      "id": "c8_terminal_first_surviving_parent",
+      "coverage_status": "OPEN",
+      "guard": "actual q=1 full-carrier d=1 parent that reaches the c=8 checkpoint after terminal-first misses",
+      "terminal_exit": "direct terminal when terminal-first succeeds",
+      "successor_exit": "double-low macro only after an actual qualifying V-side receipt",
+      "evidence": [
+        "type-I-q-one-full-carrier-d-one-c-eight-double-low-parent-anchored-atomic-macro",
+        "docs/T6-actual-reachable-coverage-audit-2026-08-17.md"
+      ],
+      "minimal_gap_ids": [
+        "GAP-O3-C8-OUTGOING"
+      ]
+    },
+    {
+      "id": "h4_non_v1_branch_or_descendant",
+      "coverage_status": "OPEN",
+      "guard": "actual H4 selector branch or its F/G descendant not covered by the registered a=1 clean-q atomic arm",
+      "terminal_exit": "terminal-first certificate if available",
+      "successor_exit": "no global selector-family allocation",
+      "evidence": [
+        "docs/T6-current-progress-2026-08-17.md"
+      ],
+      "minimal_gap_ids": [
+        "GAP-O1-H4-OTHER-BRANCHES"
+      ]
+    },
+    {
+      "id": "type_i_c2_19_macro_target",
+      "coverage_status": "OPEN",
+      "guard": "nonterminal target of the registered high-C=2 three-anchor macro",
+      "terminal_exit": "terminal-first certificate if available",
+      "successor_exit": "the macro gives one strict step but not a total later selector",
+      "evidence": [
+        "type-II-q-one-c-two-19-phase-three-anchor-persistent-macro"
+      ],
+      "minimal_gap_ids": [
+        "GAP-O1-POST-G-TYPE-I"
+      ]
+    },
+    {
+      "id": "t2_v1_atomic_pending_target",
+      "coverage_status": "OPEN",
+      "guard": "nonterminal target of a registered H4 a=1 or c=8 parent-anchored atomic macro",
+      "terminal_exit": "macro terminal branch when target classification hits",
+      "successor_exit": "no total recursive dispatch for every nonterminal target",
+      "evidence": [
+        "type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-atomic-macro-checkpoint-contraction",
+        "type-I-q-one-full-carrier-d-one-c-eight-double-low-parent-anchored-atomic-macro"
+      ],
+      "minimal_gap_ids": [
+        "GAP-O1-ATOMIC-TARGET-CLOSURE"
+      ]
+    },
+    {
+      "id": "generic_nontrivial_marked_state",
+      "coverage_status": "UNREACHABLE_IN_CURRENT_NAMED_GRAPH",
+      "guard": "nontrivial marked legal state",
+      "terminal_exit": "not a current named reachable family",
+      "successor_exit": "future marked constructor must reopen T3",
+      "evidence": [
+        "docs/T6-actual-reachable-coverage-audit-2026-08-17.md"
+      ],
+      "minimal_gap_ids": [
+        "GAP-O4-NEW-ATOMIC-OR-MARKED-FAMILY"
+      ]
+    },
+    {
+      "id": "direct_terminal_leaf",
+      "coverage_status": "TERMINAL",
+      "guard": "a terminal-first Type I or Type II certificate has been serialized and verified",
+      "terminal_exit": "direct certificate",
+      "successor_exit": "none",
+      "evidence": [
+        "concepts/denominator-escape-state-contract.md"
+      ],
+      "minimal_gap_ids": []
+    }
+  ],
+  "concrete_edge_families": [
+    {
+      "id": "type_ii_proper_endpoint_descent",
+      "claim_reference": "type-II-relation-reach-proper-endpoint-descent",
+      "source_family_ids": ["type_ii_relation_f_endpoint"],
+      "target_family_ids": ["type_ii_relation_f_endpoint", "type_ii_relation_g_endpoint", "direct_terminal_leaf"],
+      "guard_class": "conditional_adapter_control",
+      "receipt": {
+        "E1": "established_under_written_claim_guard",
+        "E2": "established_under_written_claim_guard",
+        "E3": "established_under_written_claim_guard",
+        "E4": "established_under_written_claim_guard",
+        "E5_ticket": "LOCAL_DROP or PHASE_DROP"
+      },
+      "verifier": "reproductions/type_ii_relation_scc_proper_endpoint_descent.py"
+    },
+    {
+      "id": "type_ii_gcd_shadow_endpoint_descent",
+      "claim_reference": "type-II-relation-reach-gcd-shadow-endpoint-descent",
+      "source_family_ids": ["type_ii_relation_f_endpoint"],
+      "target_family_ids": ["type_ii_relation_f_endpoint", "type_ii_relation_g_endpoint", "direct_terminal_leaf"],
+      "guard_class": "actual",
+      "receipt": {
+        "E1": "established_under_written_claim_guard",
+        "E2": "established_under_written_claim_guard",
+        "E3": "established_under_written_claim_guard",
+        "E4": "established_under_written_claim_guard",
+        "E5_ticket": "LOCAL_DROP or PHASE_DROP"
+      },
+      "verifier": "reproductions/type_ii_relation_reach_gcd_shadow_endpoint_descent.py"
+    },
+    {
+      "id": "q_one_g_full_carrier_phase_root",
+      "claim_reference": "type-II-q-one-full-carrier-phase-root-entry",
+      "source_family_ids": ["type_ii_relation_g_endpoint"],
+      "target_family_ids": ["type_i_full_carrier_post_g"],
+      "guard_class": "actual",
+      "receipt": {
+        "E1": "established_under_written_claim_guard",
+        "E2": "established_under_written_claim_guard",
+        "E3": "established_under_written_claim_guard",
+        "E4": "established_under_written_claim_guard",
+        "E5_ticket": "PHASE_DROP"
+      },
+      "verifier": "reproductions/type_ii_q_one_full_carrier_phase_root_entry.py"
+    },
+    {
+      "id": "positive_q_g_full_carrier_phase_root",
+      "claim_reference": "type-II-positive-q-G-full-carrier-phase-root-entry",
+      "source_family_ids": ["type_ii_relation_g_endpoint"],
+      "target_family_ids": ["type_i_full_carrier_post_g"],
+      "guard_class": "conditional_adapter_control",
+      "receipt": {
+        "E1": "established_under_written_claim_guard",
+        "E2": "established_under_written_claim_guard",
+        "E3": "established_under_written_claim_guard",
+        "E4": "established_under_written_claim_guard",
+        "E5_ticket": "PHASE_DROP"
+      },
+      "verifier": "reproductions/type_ii_positive_q_g_full_carrier_phase_root_entry.py"
+    },
+    {
+      "id": "q_one_g_c3_source_lineage_relay",
+      "claim_reference": "type-II-q-one-c3-source-lineage-phase-root-entry",
+      "source_family_ids": ["type_ii_relation_g_endpoint"],
+      "target_family_ids": ["type_i_full_carrier_post_g"],
+      "guard_class": "conditional_adapter_control",
+      "receipt": {
+        "E1": "established_under_written_claim_guard",
+        "E2": "established_under_written_claim_guard",
+        "E3": "established_under_written_claim_guard",
+        "E4": "established_under_written_claim_guard",
+        "E5_ticket": "PHASE_DROP then LOCAL_DROP"
+      },
+      "verifier": "reproductions/type_ii_q_one_c3_source_lineage_phase_root_entry.py"
+    },
+    {
+      "id": "same_chart_support_promotion",
+      "claim_reference": "type-I-overflow-unbounded-same-chart-promotion-persistence-boundary",
+      "source_family_ids": ["type_i_low_support_persistent_overflow"],
+      "target_family_ids": ["type_i_low_support_persistent_overflow"],
+      "guard_class": "actual",
+      "receipt": {
+        "E1": "established_under_written_claim_guard",
+        "E2": "established_under_written_claim_guard",
+        "E3": "established_under_written_claim_guard",
+        "E4": "established_under_written_claim_guard",
+        "E5_ticket": "LOCAL_DROP"
+      },
+      "verifier": "reproductions/type_i_overflow_unbounded_same_chart_promotion_persistence_boundary.py"
+    },
+    {
+      "id": "joined_support_outer_reset",
+      "claim_reference": "type-I-overflow-outer-rank-reset",
+      "source_family_ids": ["type_i_a_gt_one_overflow_residual"],
+      "target_family_ids": ["type_i_low_support_persistent_overflow", "type_i_a_gt_one_overflow_residual"],
+      "guard_class": "conditional_adapter_control",
+      "receipt": {
+        "E1": "established_under_written_claim_guard",
+        "E2": "established_under_written_claim_guard",
+        "E3": "established_under_written_claim_guard",
+        "E4": "established_under_written_claim_guard",
+        "E5_ticket": "LOCAL_DROP"
+      },
+      "verifier": "reproductions/type_i_representation_dual_capacity_selector.py"
+    },
+    {
+      "id": "a_one_dual_outer_reset",
+      "claim_reference": "type-I-overflow-a-one-dual-outer-rank-reset",
+      "source_family_ids": ["type_i_a_one_overflow"],
+      "target_family_ids": ["type_i_low_support_persistent_overflow"],
+      "guard_class": "actual",
+      "receipt": {
+        "E1": "established_under_written_claim_guard",
+        "E2": "established_under_written_claim_guard",
+        "E3": "established_under_written_claim_guard",
+        "E4": "established_under_written_claim_guard",
+        "E5_ticket": "LOCAL_DROP"
+      },
+      "verifier": "reproductions/type_i_representation_dual_capacity_selector.py"
+    },
+    {
+      "id": "high_carrier_fixed_n_descent",
+      "claim_reference": "type-I-overflow-high-carrier-fixed-n-R-descent",
+      "source_family_ids": ["type_i_a_gt_one_overflow_residual"],
+      "target_family_ids": ["type_i_low_support_persistent_overflow"],
+      "guard_class": "conditional_adapter_control",
+      "receipt": {
+        "E1": "established_under_written_claim_guard",
+        "E2": "established_under_written_claim_guard",
+        "E3": "established_under_written_claim_guard",
+        "E4": "established_under_written_claim_guard",
+        "E5_ticket": "LOCAL_DROP"
+      },
+      "verifier": "reproductions/type_i_representation_dual_capacity_selector.py"
+    },
+    {
+      "id": "high_support_rank_aware_sink_bundle",
+      "claim_reference": "type-I-high-support-rank-aware-sink-bundle-selector",
+      "source_family_ids": ["type_i_high_support_sink"],
+      "target_family_ids": ["type_i_high_support_sink", "type_i_low_support_persistent_overflow"],
+      "guard_class": "conditional_adapter_control",
+      "receipt": {
+        "E1": "established_under_written_claim_guard",
+        "E2": "established_under_written_claim_guard",
+        "E3": "established_under_written_claim_guard",
+        "E4": "established_under_written_claim_guard",
+        "E5_ticket": "LOCAL_DROP"
+      },
+      "verifier": "reproductions/type_i_high_support_rank_aware_sink_bundle_selector.py"
+    },
+    {
+      "id": "q_one_d_one_p_free_relay",
+      "claim_reference": "type-II-q-one-full-carrier-d-one-p-free-gate-exclusion-relay",
+      "source_family_ids": ["type_i_full_carrier_post_g"],
+      "target_family_ids": ["type_i_c2_19_macro_target", "type_i_high_support_sink", "direct_terminal_leaf"],
+      "guard_class": "actual",
+      "receipt": {
+        "E1": "established_under_written_claim_guard",
+        "E2": "established_under_written_claim_guard",
+        "E3": "established_under_written_claim_guard",
+        "E4": "established_under_written_claim_guard",
+        "E5_ticket": "LOCAL_DROP"
+      },
+      "verifier": "reproductions/type_ii_q_one_full_carrier_d_one_p_free_gate_exclusion_relay.py"
+    },
+    {
+      "id": "high_c_two_three_anchor_macro",
+      "claim_reference": "type-II-q-one-c-two-19-phase-three-anchor-persistent-macro",
+      "source_family_ids": ["type_i_c2_19_macro_target"],
+      "target_family_ids": ["type_i_c2_19_macro_target", "direct_terminal_leaf"],
+      "guard_class": "conditional_adapter_control",
+      "receipt": {
+        "E1": "established_under_written_claim_guard",
+        "E2": "established_under_written_claim_guard",
+        "E3": "established_under_written_claim_guard",
+        "E4": "established_under_written_claim_guard",
+        "E5_ticket": "LOCAL_DROP"
+      },
+      "verifier": "reproductions/type_ii_q_one_c2_19_phase_three_anchor_persistent_macro.py"
+    },
+    {
+      "id": "h4_a_one_atomic_macro",
+      "claim_reference": "type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-atomic-macro-checkpoint-contraction",
+      "source_family_ids": ["type_i_c2_19_macro_target"],
+      "target_family_ids": ["t2_v1_atomic_pending_target", "direct_terminal_leaf"],
+      "guard_class": "conditional_adapter_control",
+      "receipt": {
+        "E1": "established_under_written_claim_guard",
+        "E2": "established_under_written_claim_guard",
+        "E3": "established_under_written_claim_guard",
+        "E4": "established_under_written_claim_guard",
+        "E5_ticket": "LOCAL_DROP"
+      },
+      "verifier": "reproductions/type_ii_q_one_c2_19_phase_h4_a_one_q_bridge_atomic_macro_checkpoint_contraction.py"
+    },
+    {
+      "id": "c8_double_low_atomic_macro",
+      "claim_reference": "type-I-q-one-full-carrier-d-one-c-eight-double-low-parent-anchored-atomic-macro",
+      "source_family_ids": ["c8_terminal_first_surviving_parent"],
+      "target_family_ids": ["t2_v1_atomic_pending_target", "direct_terminal_leaf"],
+      "guard_class": "conditional_adapter_control",
+      "receipt": {
+        "E1": "established_under_written_claim_guard",
+        "E2": "established_under_written_claim_guard",
+        "E3": "established_under_written_claim_guard",
+        "E4": "established_under_written_claim_guard",
+        "E5_ticket": "LOCAL_DROP"
+      },
+      "verifier": "reproductions/type_i_q_one_full_carrier_d_one_c_eight_double_low_parent_anchored_atomic_macro.py"
+    }
+  ],
+  "obligations": [
+    {
+      "id": "O1-INITIAL-ROOT",
+      "status": "OPEN",
+      "family_ids": ["initial_core_root"],
+      "requirement": "Prove canonical legal root construction and the first non-circular selector-family classification for every core p.",
+      "minimal_gap_id": "GAP-O1-INITIAL-ROOT"
+    },
+    {
+      "id": "O1-GLOBAL-EXHAUSTION",
+      "status": "OPEN",
+      "family_ids": ["initial_core_root", "type_i_a_gt_one_overflow_residual", "type_i_high_support_sink", "t2_v1_atomic_pending_target"],
+      "requirement": "Give an independent constructor-and-successor case split for every actual reachable nonterminal state; current named taxonomy is not that proof.",
+      "minimal_gap_id": "GAP-O1-GLOBAL-EXHAUSTION"
+    },
+    {
+      "id": "O1-H4-OTHER-BRANCHES",
+      "status": "OPEN",
+      "family_ids": ["h4_non_v1_branch_or_descendant"],
+      "requirement": "Cover every H4 selector branch and every downstream F/G target, not only the a=1 clean-q atomic arm.",
+      "minimal_gap_id": "GAP-O1-H4-OTHER-BRANCHES"
+    },
+    {
+      "id": "O1-POST-G-TYPE-I",
+      "status": "OPEN",
+      "family_ids": ["type_ii_relation_g_endpoint", "type_i_full_carrier_post_g", "type_i_c2_19_macro_target"],
+      "requirement": "Close the complete Type I continuation after q=1 or positive-q ordinary G handoff, beyond the first registered strict segment.",
+      "minimal_gap_id": "GAP-O1-POST-G-TYPE-I"
+    },
+    {
+      "id": "O1-A-GT-ONE-OVERFLOW",
+      "status": "OPEN",
+      "family_ids": ["type_i_a_gt_one_overflow_residual"],
+      "requirement": "Supply a total terminal or typed verified successor for every actual A>1 overflow residual.",
+      "minimal_gap_id": "GAP-O1-A-GT-ONE-OVERFLOW"
+    },
+    {
+      "id": "O1-HIGH-SUPPORT-ROOT-CAPACITY",
+      "status": "OPEN",
+      "family_ids": ["type_i_high_support_sink"],
+      "requirement": "Prove a universal exit or family-empty result when the rank-aware improvement set is empty.",
+      "minimal_gap_id": "GAP-O1-HIGH-SUPPORT-ROOT-CAPACITY"
+    },
+    {
+      "id": "O1-ATOMIC-TARGET-CLOSURE",
+      "status": "OPEN",
+      "family_ids": ["t2_v1_atomic_pending_target"],
+      "requirement": "Classify every nonterminal target emitted by the current H4 and c=8 atomic macros into a recursively total selector family.",
+      "minimal_gap_id": "GAP-O1-ATOMIC-TARGET-CLOSURE"
+    },
+    {
+      "id": "O2-PROPER-ROOT-PHYSICALIZATION",
+      "status": "OPEN",
+      "family_ids": ["proper_root_stutter_k_gt_one"],
+      "requirement": "Prove QC1 or TR1 with actual source replay, deterministic target, full lift, and a T5 ticket for every k>1 proper-root residual.",
+      "minimal_gap_id": "GAP-O2-PROPER-ROOT-K-GT-ONE"
+    },
+    {
+      "id": "O3-C8-OUTGOING",
+      "status": "OPEN",
+      "family_ids": ["c8_terminal_first_surviving_parent"],
+      "requirement": "Prove the C8 terminal-or-double-low-or-other-verified-edge disjunction for every actual terminal-first-surviving parent.",
+      "minimal_gap_id": "GAP-O3-C8-OUTGOING"
+    },
+    {
+      "id": "O4-NEW-ATOMIC-OR-MARKED-FAMILY",
+      "status": "OPEN",
+      "family_ids": ["generic_nontrivial_marked_state"],
+      "requirement": "Any new atomic arm must extend T2; any new nontrivial marked generator must extend T3, serializer, and total lift before recursive admission.",
+      "minimal_gap_id": "GAP-O4-NEW-ATOMIC-OR-MARKED-FAMILY"
+    }
+  ],
+  "minimal_selector_gaps": [
+    {
+      "id": "GAP-O1-INITIAL-ROOT",
+      "family_ids": ["initial_core_root"],
+      "quantifier": "For every core p, a canonical legal root is serialized and independently classified into a selector family.",
+      "allowed_closure_modes": ["family_empty_proof", "universal_terminal", "universal_verified_successor"],
+      "status": "OPEN",
+      "why_current_evidence_is_insufficient": "Root field guards alone do not produce the first total selector dispatch."
+    },
+    {
+      "id": "GAP-O1-GLOBAL-EXHAUSTION",
+      "family_ids": ["initial_core_root", "type_i_a_gt_one_overflow_residual", "type_i_high_support_sink", "t2_v1_atomic_pending_target"],
+      "quantifier": "Every actual recursively reachable nonterminal legal state belongs to a listed family with a total exit.",
+      "allowed_closure_modes": ["family_empty_proof", "universal_terminal", "universal_verified_successor"],
+      "status": "OPEN",
+      "why_current_evidence_is_insufficient": "The T5 taxonomy lists registered edges, not an independent exhaustive construction of the reachable state space."
+    },
+    {
+      "id": "GAP-O1-H4-OTHER-BRANCHES",
+      "family_ids": ["h4_non_v1_branch_or_descendant"],
+      "quantifier": "Every actual H4 branch and every nonterminal descendant has a terminal or a verified successor.",
+      "allowed_closure_modes": ["family_empty_proof", "universal_terminal", "universal_verified_successor"],
+      "status": "OPEN",
+      "why_current_evidence_is_insufficient": "The a=1 clean-q macro is only one registered T2-v1 arm."
+    },
+    {
+      "id": "GAP-O1-POST-G-TYPE-I",
+      "family_ids": ["type_ii_relation_g_endpoint", "type_i_full_carrier_post_g", "type_i_c2_19_macro_target"],
+      "quantifier": "Every nonterminal state after an ordinary q=1 or positive-q G handoff has a recursively total Type I exit.",
+      "allowed_closure_modes": ["family_empty_proof", "universal_terminal", "universal_verified_successor"],
+      "status": "OPEN",
+      "why_current_evidence_is_insufficient": "The p-only root and first strict local edge do not prove later Type I totality."
+    },
+    {
+      "id": "GAP-O1-A-GT-ONE-OVERFLOW",
+      "family_ids": ["type_i_a_gt_one_overflow_residual"],
+      "quantifier": "Every actual A>1 overflow residual is terminal or has a complete E1--E5 successor.",
+      "allowed_closure_modes": ["family_empty_proof", "universal_terminal", "universal_verified_successor"],
+      "status": "OPEN",
+      "why_current_evidence_is_insufficient": "Current reset and bounded-divisor results are guarded constructors, not a total typed adapter."
+    },
+    {
+      "id": "GAP-O1-HIGH-SUPPORT-ROOT-CAPACITY",
+      "family_ids": ["type_i_high_support_sink"],
+      "quantifier": "Every actual high-support/root-capacity state is terminal or has a strict admissible output.",
+      "allowed_closure_modes": ["family_empty_proof", "universal_terminal", "universal_verified_successor"],
+      "status": "OPEN",
+      "why_current_evidence_is_insufficient": "A finite rank-aware selector proves an edge only when its improvement set is nonempty."
+    },
+    {
+      "id": "GAP-O1-ATOMIC-TARGET-CLOSURE",
+      "family_ids": ["t2_v1_atomic_pending_target"],
+      "quantifier": "Every nonterminal target of either current atomic macro is recursively classified and dispatched.",
+      "allowed_closure_modes": ["family_empty_proof", "universal_terminal", "universal_verified_successor"],
+      "status": "OPEN",
+      "why_current_evidence_is_insufficient": "Atomic admission and a one-step macro do not furnish a total continuation theorem."
+    },
+    {
+      "id": "GAP-O2-PROPER-ROOT-K-GT-ONE",
+      "family_ids": ["proper_root_stutter_k_gt_one"],
+      "quantifier": "For every actual terminal-first-surviving proper-root state with k>1, terminal(S) or QC1(S) or TR1(S).",
+      "allowed_closure_modes": ["family_empty_proof", "universal_terminal", "universal_verified_successor"],
+      "status": "OPEN",
+      "why_current_evidence_is_insufficient": "A formal quotient chart q divides K_q has no actual E1 provenance or E4 lift."
+    },
+    {
+      "id": "GAP-O3-C8-OUTGOING",
+      "family_ids": ["c8_terminal_first_surviving_parent"],
+      "quantifier": "For every actual terminal-first-surviving c=8 parent P, terminal(P) or a qualifying double-low receipt or another verified edge.",
+      "allowed_closure_modes": ["family_empty_proof", "universal_terminal", "universal_verified_successor"],
+      "status": "OPEN",
+      "why_current_evidence_is_insufficient": "The registered double-low macro is conditional on a receipt; finite terminal-preempted controls do not prove receipt existence."
+    },
+    {
+      "id": "GAP-O4-NEW-ATOMIC-OR-MARKED-FAMILY",
+      "family_ids": ["generic_nontrivial_marked_state"],
+      "quantifier": "Every future selector edge that creates a new atomic or nontrivial marked family supplies its T2/T3 closure before recursive admission.",
+      "allowed_closure_modes": ["family_empty_proof", "universal_terminal", "universal_verified_successor"],
+      "status": "OPEN",
+      "why_current_evidence_is_insufficient": "The current named graph has no nontrivial-mark seed, which is not a proof about future constructors."
+    }
+  ],
+  "acceptance_gates": [
+    {"id": "initial_state_serializer", "status": "OPEN"},
+    {"id": "reachable_state_exhaustion", "status": "OPEN"},
+    {"id": "all_nonterminal_leaves_closed", "status": "OPEN"},
+    {"id": "proper_root_qc1_or_tr1", "status": "OPEN"},
+    {"id": "c8_outgoing_totality", "status": "OPEN"},
+    {"id": "post_g_type_i_totality", "status": "OPEN"},
+    {"id": "new_atomic_or_marked_t2_t3", "status": "OPEN"},
+    {"id": "deterministic_computable_selector", "status": "OPEN"},
+    {"id": "edge_e1_to_e5_coverage", "status": "PARTIAL"},
+    {"id": "t5_strong_induction_termination", "status": "PARTIAL"},
+    {"id": "terminal_certificate_lifts", "status": "PARTIAL"},
+    {"id": "no_open_or_finite_only_in_closure", "status": "OPEN"},
+    {"id": "repository_artifact_consistency", "status": "PARTIAL"},
+    {"id": "independent_closure_audit", "status": "OPEN"}
+  ],
+  "taxonomy_cross_check": {
+    "taxonomy_id": "t5_full_transition_surface_v2",
+    "generic_contract_reference": "denominator-escape-state-contract",
+    "current_atomic_claim_references": [
+      "type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-atomic-macro-checkpoint-contraction",
+      "type-I-q-one-full-carrier-d-one-c-eight-double-low-parent-anchored-atomic-macro"
+    ]
+  }
+}

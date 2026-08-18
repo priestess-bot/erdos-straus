@@ -97,9 +97,11 @@ proper-root stutter 提供了较强的算术结构：正定 Eisenstein 范数、
 归入此分支。
 
 该子域已有两项全称收缩：\(c=h\) 的 named odd-distance fan 已严格排空；Eisenstein quotient
-的 \(k=1\) actual 子域也由 cyclotomic common-divisor 排除与 Vieta 无限下降严格排空。真正
-剩余的是 \(k>1\) quotient carrier 的 physicalization（QC1），或 transverse \(D_*\) carrier
-的全称 E1--E5 出口（TR1）。
+的 \(k=1\) actual 子域也由 cyclotomic common-divisor 排除与 Vieta 无限下降严格排空。另有
+\(\gcd(a,e-1)\mid\gcd(h,k)\) 的公共因子对齐：共享 Eisenstein 因子必是 \(h\)-supported，
+而 \(q\mid k,\ q\nmid h\) 的 quotient-only 因子不能被误投到旧 root-capacity source menu。
+这只是 provenance 收缩，不保证菜单命中或 physical edge。真正剩余的是 \(k>1\) quotient
+carrier 的 physicalization（QC1），或 transverse \(D_*\) carrier 的全称 E1--E5 出口（TR1）。
 
 ### 4.3 c=8 residual 只在实际可达且未被抢占时处理
 
@@ -115,6 +117,7 @@ actual provenance、terminal-first 和 target receipt 都保留后，才应继�
 | ordinary positive-\(q\) G universal handoff | 对 actual terminal-first ordinary source 相对闭合 | `established`, `internal_review` |
 | \(c=h\) 奇距离 translated-square fan | named family 在 actual proper-root scope 内全称 no-go | `established`, `internal_review` |
 | proper-root \(k=1\) quotient | actual 子域全称为空；无有限扫描 | `established`, `internal_review` |
+| proper-root \(\gcd(a,e-1)\) 对齐 | 公共因子只可落在 \(\gcd(h,k)\)；拆开 h-supported 与 quotient-only residual | `established`, `internal_review`；不构成 edge |
 | Eisenstein quotient \(k\) 的 EQ1--EQ7 | 由已知 stutter 恒等式可推的代数包 | `analysis_evidence`；不构成 edge |
 | canonical low chart from \(k>1\) | 图表存在 | 缺 E1--E4/provenance，不构成 edge |
 
@@ -145,4 +148,5 @@ gap-3 Type II terminal，被 terminal-first 抢占，故已从 proper-root evide
 - [当前 named graph 的 T2/T3 coverage audit](T6-actual-reachable-coverage-audit-2026-08-17.md)
 - [proper-root 最小缺口审计](T6-proper-root-minimal-gap-audit-2026-08-17.md)
 - [proper-root k=1 全称排除](../claims/type-I-root-capacity-stutter-k-one-universal-exclusion.md)
+- [proper-root 公共因子对齐](../claims/type-I-root-capacity-stutter-common-divisor-alignment.md)
 - [proper-root stutter 的 Eisenstein 支撑](../claims/type-I-root-capacity-stutter-eisenstein-support.md)

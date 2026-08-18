@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 878 |
+| 数学状态 | `established` | 879 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 39 |
-| 证明来源 | `repository_derivation` | 708 |
+| 证明来源 | `repository_derivation` | 709 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 20 |
-| 审阅状态 | `internal_review` | 855 |
+| 审阅状态 | `internal_review` | 856 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -810,6 +810,7 @@
 | [根容量实际 stutter 的低系数障碍与 30p 高度排除带](../claims/type-I-root-capacity-stutter-actual-small-root-exclusion.md) (`type-I-root-capacity-stutter-actual-small-root-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [proper-root stutter 的 c=h 奇距离偶源扇全称 no-go](../claims/type-I-root-capacity-stutter-c-equals-h-odd-distance-fan-no-go.md) (`type-I-root-capacity-stutter-c-equals-h-odd-distance-fan-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [proper-root stutter 的 C-side m 局部化与非平凡 T 余量](../claims/type-I-root-capacity-stutter-c-side-m-localization.md) (`type-I-root-capacity-stutter-c-side-m-localization`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
+| [proper-root stutter 的 Eisenstein 商公共因子对齐](../claims/type-I-root-capacity-stutter-common-divisor-alignment.md) (`type-I-root-capacity-stutter-common-divisor-alignment`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-18 |
 | [根容量 actual stutter 的立方高度墙](../claims/type-I-root-capacity-stutter-cubic-hard-root-wall.md) (`type-I-root-capacity-stutter-cubic-hard-root-wall`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [proper-root stutter 范数的 Eisenstein 素因子支撑限制](../claims/type-I-root-capacity-stutter-eisenstein-support.md) (`type-I-root-capacity-stutter-eisenstein-support`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [根容量 stutter 的三参数整数曲线约束](../claims/type-I-root-capacity-stutter-finite-curve-constraint.md) (`type-I-root-capacity-stutter-finite-curve-constraint`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
