@@ -877,6 +877,21 @@ Hence
 \tag{47}
 \]
 
+In fact these divisibilities identify the whole rational content exactly.
+Equation (45) gives \(k\equiv\eta(\eta+1)\pmod\gamma\), and (46) gives
+\((\eta,\gamma)=1\).  Therefore
+
+\[
+\boxed{
+d=(\gamma,k)=(\gamma,\eta+1)=(\eta+1,W+1).
+}
+\tag{47a}
+\]
+
+Thus \(d\) is precisely the integer coefficient content of
+\(\epsilon-\beta=(\eta+1)-(W+1)\omega\), not merely a selected divisor
+of that difference.
+
 Modulo \(d\), one has \(\gamma\equiv0\), \(\eta\equiv-1\), and
 therefore \(W\equiv-1\), \(b=a+\eta\equiv a-1\), and \(e\equiv a\).
 The identity (44) gives \(h\equiv p+a\).  Reduce \(pa+b=eh\) with
@@ -1152,15 +1167,8 @@ n_0k_0=\sigma^2+\sigma\tau+\tau^2
 \tag{54h}
 \]
 
-This norm is primitive in its two displayed coordinates.  Indeed,
-\((\tau,k_0)=1\) follows from \(d=(\gamma,k)\), while (9) gives
-
-\[
-k_0=(d\sigma-1)\sigma-a\tau.
-\]
-
-Any prime common to \(\sigma\) and \(\tau\) would therefore divide both
-\(\tau\) and \(k_0\), a contradiction.  Thus
+This norm is primitive in its two displayed coordinates: the exact content
+identity (47a) directly gives
 
 \[
 \boxed{(\sigma,\tau)=1.}
