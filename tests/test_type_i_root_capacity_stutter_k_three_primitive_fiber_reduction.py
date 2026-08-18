@@ -60,7 +60,7 @@ class TypeIRootCapacityStutterKThreePrimitiveFiberReductionTests(unittest.TestCa
         self.assertIsNotNone(row)
         assert row is not None
         self.assertEqual(row.p % 24, 1)
-        fiber.verify_cyclotomic_saturation_gate(row)
+        fiber.verify_core_cyclotomic_redundancy(row)
         self.assertGreater(row.a, row.e)
         self.assertGreater(row.h, row.p)
 

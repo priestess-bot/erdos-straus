@@ -152,20 +152,24 @@ def verify_reduction(data: KThreeFiber) -> None:
         raise AssertionError("k=3 primitive-fiber identities changed")
 
 
-def verify_cyclotomic_saturation_gate(data: KThreeFiber) -> None:
-    """Check the actual-root congruence gate for a core-congruent k=3 point."""
+def verify_core_cyclotomic_redundancy(data: KThreeFiber) -> None:
+    """Check that the k=3 core system itself recovers root divisibility."""
     cyclotomic = data.p * data.p + data.p + 1
     saturation = data.e * data.e * data.H + data.e * (data.A - 2 * data.B) + 1
     if not (
         data.k == 3
         and data.p % 24 == 1
+        and data.h == 3 * data.H
+        and data.H % 3 != 0
+        and gcd(data.A, data.H) == 1
+        and cyclotomic % data.H == 0
         and cyclotomic % data.h == 0
         and saturation == 3 * data.A * data.A * (cyclotomic // data.h)
         and (data.H + data.A - 2 * data.B + 1) % 3 == 0
         and data.B % 3 == (2 * data.A + 1) % 3
         and (data.B - data.m) % 3 == (2 * data.A + 1) % 3
     ):
-        raise AssertionError("k=3 cyclotomic saturation gate changed")
+        raise AssertionError("k=3 core cyclotomic redundancy changed")
 
 
 def fixed_d_fiber(d: int) -> tuple[KThreeFiber, ...]:
@@ -370,6 +374,7 @@ def verify_d_one_boundary() -> None:
         and data.A < data.B
         and data.a < data.e
         and data.p % 24 == 3
+        and cyclotomic % data.H == 0
         and cyclotomic % data.h == 43
     ):
         raise AssertionError("d=1 core-boundary control changed")
@@ -446,7 +451,7 @@ def verify_core_congruent_shadow() -> None:
     if data is None:
         raise AssertionError("core-congruent k=3 shadow stopped reconstructing")
     cyclotomic = data.p * data.p + data.p + 1
-    verify_cyclotomic_saturation_gate(data)
+    verify_core_cyclotomic_redundancy(data)
     if not (
         data.p == 238_849
         and data.p % 24 == 1

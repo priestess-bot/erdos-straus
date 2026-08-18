@@ -44,14 +44,23 @@ TR1-style adapter is required.
 The follow-up [primitive quotient normalization](../claims/type-I-root-capacity-stutter-primitive-quotient-normalization.md)
 keeps this split after dividing out the whole shared factor. In coordinates
 \(a=gA\), \(e-1=gB\), \(h=g\alpha\), and \(k=g\kappa\), it proves the
-actual-root-only saturation gate
+actual-root-only saturation identity
 
 \[
 e^2\alpha+e(A-2B)+\kappa
 =gA^2\frac{p^2+p+1}{h}.
 \]
 
+For a quotient-only prime \(q\mid\kappa,\ q\nmid h\), its cyclotomic
+complement satisfies
+
+\[
+q\mid\frac{p^2+p+1}{h}
+\quad\Longleftrightarrow\quad
+q\mid e\ \text{or}\ B\equiv(p+1)A\pmod q.
+\]
+
 Thus the unresolved quotient carrier is localized in the primitive
-\(\kappa\)-part, while shared factors remain only a source-menu input type.
-This refines the QC1 split; it still supplies neither menu nonemptiness nor a
-physical E1--E5 edge.
+\(\kappa\)-part and split by an exact arithmetic condition, while shared
+factors remain only a source-menu input type. This refines the QC1 split; it
+still supplies neither menu nonemptiness nor a physical E1--E5 edge.

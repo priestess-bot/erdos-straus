@@ -6,8 +6,9 @@ statement: >-
   对核心素数 p≡1 mod24 的 terminal-first 后 actual proper-root stutter receipt，令
   b=e-1、N=a^2-ab+b^2=hk。若 Eisenstein quotient k=3，则 gcd(a,b)=3。
   写 A=a/3、B=b/3、H=h/3、M=m/3，则 A,B 互素、1≤A<B，且
-  H=A^2-AB+B^2、e=3B+1、A+H=eM、pA+B=eH。actual cyclotomic root gate
-  进一步强制 B≡2A+1 mod3；对 t=B-m 也有 t≡2A+1 mod3。因而
+  H=A^2-AB+B^2、e=3B+1、A+H=eM、pA+B=eH。该 core primitive system
+  自动恢复 h|(p^2+p+1)，并推出 B≡2A+1 mod3；对 t=B-m 也有
+  t≡2A+1 mod3。因而
   A divides 3B^2+B-1，e divides (3A+2)^2-3。定义
   d=((3A+2)^2-3)/e，则 d≡1 mod3、gcd(A,d)=1、
   4≤d≤3A-2，并且 A divides 3d^2+d-1。故每个固定 d 只留下有限个
@@ -50,7 +51,7 @@ sources:
   - claim: type-I-root-capacity-stutter-common-divisor-alignment
     role: gcd-a-b-divides-gcd-h-k
   - claim: type-I-root-capacity-stutter-primitive-quotient-normalization
-    role: actual-root-cyclotomic-saturation-gate
+    role: k-three-core-cyclotomic-redundancy-and-congruence
   - claim: type-I-root-capacity-stutter-actual-small-root-exclusion
     role: actual-mod-three-classification
   - reproduction: reproductions/type_i_root_capacity_stutter_k_three_primitive_fiber_reduction.py
@@ -153,52 +154,6 @@ The proper-root bound \(a<e\) yields \(A\le B\). Equality would force
 \boxed{1\le A<B.}
 \tag{7}
 \]
-
-### 2.1 Actual cyclotomic saturation gate
-
-The preceding primitive system is an integer-curve description. The actual
-root condition yields one further gate that is absent from a formal curve
-point. Apply the primitive quotient normalization to this \(k=3\) case:
-
-\[
-g=3,
-\qquad \alpha=H,
-\qquad \kappa=1.
-\]
-
-Since \(h\mid C_p:=p^2+p+1\), its cyclotomic identity gives
-
-\[
-e^2H+e(A-2B)+1
-=3A^2\frac{C_p}{h}.
-\tag{7a}
-\]
-
-As \(e=3B+1\equiv1\pmod3\), reduction of (7a) modulo \(3\) gives
-
-\[
-H+A-2B+1\equiv0\pmod3.
-\tag{7b}
-\]
-
-The core congruence has \(p\equiv1\pmod3\), and the final identity in
-(6) then gives \(H\equiv A+B\pmod3\). Substitution into (7b) yields
-
-\[
-\boxed{B\equiv2A+1\pmod3.}
-\tag{7c}
-\]
-
-Moreover \(m=3M\), so the later Vieta-gap coordinate \(t=B-m\) obeys
-
-\[
-\boxed{t\equiv2A+1\pmod3.}
-\tag{7d}
-\]
-
-These are necessary actual-root filters on every primitive fiber. They do
-not bound \(d\), \(\rho\), \(j\), or \(t\), and do not establish a
-physical quotient carrier.
 
 ## 3. Two Pell-type divisibility gates
 
@@ -658,7 +613,7 @@ This is a structural ordering and finite-fiber reduction. It gives no global
 bound on \(t\), no physical occurrence of a quotient factor, and no E1--E5
 edge.
 
-## 9. Cyclotomic gate and proof boundary
+## 9. Cyclotomic redundancy, core congruence, and proof boundary
 
 The primitive equations also show why the bare cyclotomic divisibility is not
 an additional \(k=3\) elimination. Since \((A,H)=1\) and
@@ -673,6 +628,48 @@ A^2(p^2+p+1)\equiv A^2-AB+B^2=H\equiv0\pmod H.
 Thus \(H\mid p^2+p+1\); when \(p\equiv1\pmod3\) and \(3\nmid H\), this
 recovers \(3H\mid p^2+p+1\). The cyclotomic root condition therefore does
 not by itself clear the remaining fibers.
+
+It does expose one compact core congruence. In the primitive quotient
+normalization, this \(k=3\) case has
+
+\[
+g=3,
+\qquad \alpha=H,
+\qquad \kappa=1.
+\]
+
+Hence its saturation identity is
+
+\[
+e^2H+e(A-2B)+1
+=3A^2\frac{p^2+p+1}{h}.
+\tag{26}
+\]
+
+Because \(e=3B+1\equiv1\pmod3\), (26) gives
+
+\[
+H+A-2B+1\equiv0\pmod3.
+\tag{27}
+\]
+
+The core congruence and \(pA+B=eH\) give \(H\equiv A+B\pmod3\), so
+
+\[
+\boxed{B\equiv2A+1\pmod3.}
+\tag{28}
+\]
+
+Finally \(m=3M\), hence the Vieta-gap coordinate satisfies
+
+\[
+\boxed{t=B-m\equiv2A+1\pmod3.}
+\tag{29}
+\]
+
+This is a consequence of the core primitive system, not an additional
+admission condition. It does not bound \(d\), \(\rho\), \(j\), or \(t\),
+and does not establish a physical quotient carrier.
 
 This card supplies finite-fiber parameterizations for fixed \(d\), fixed
 \(\rho=B-A\), fixed \(j=m-\rho\), and fixed \(t=B-m\), and rederives the

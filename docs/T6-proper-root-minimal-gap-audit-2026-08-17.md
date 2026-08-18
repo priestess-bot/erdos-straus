@@ -333,7 +333,8 @@ physicalization。完整约化见
 QC1 closure，详见
 [Vieta companion obstruction](../claims/type-I-root-capacity-stutter-k-three-vieta-companion-obstruction.md)。
 
-actual cyclotomic root gate 还给出一个与所有四个 fiber 兼容的必要同余筛。一般地，
+primitive quotient normalization 在 \(k=3\) 的 specialization 给出一个与所有四个
+fiber 兼容的 core congruence。一般地，
 除去 \(g=(a,e-1)\) 后，primitive system 的 \(\kappa=k/g\) 承载所有不被 \(h\)
 支持的 quotient-only 因子；在 \(k=3\) 时 \(g=3\)、\(\kappa=1\)，从而
 
@@ -343,10 +344,24 @@ B\equiv2A+1\pmod3,
 t=B-m\equiv2A+1\pmod3.
 \]
 
-这些结论来自 \(h\mid p^2+p+1\)，不能由抽象曲线点替代。它们只删除不满足 root
-gate 的 fiber residue，并未给出 \(d,\rho,j,t\) 的全局上界，也没有把任何 \(q\mid k\)
+在这一特例中，\(pA+B=eH\)、\((A,H)=1\)、\(p\equiv1\pmod3\) 已自动恢复
+\(h=3H\mid p^2+p+1\)，所以该同余不是完整 core primitive system 之外的额外
+admission filter。它仍未给出 \(d,\rho,j,t\) 的全局上界，也没有把任何 \(q\mid k\)
 physicalize。见
 [primitive quotient normalization](../claims/type-I-root-capacity-stutter-primitive-quotient-normalization.md)。
+
+一般的 quotient-only 素因子也已有一个精确但纯算术的分流。对
+\(q\mid\kappa,\ q\nmid h\)，写 \(v=(p^2+p+1)/h\)，则
+
+\[
+q\mid v
+\quad\Longleftrightarrow\quad
+q\mid e\ \text{or}\ B\equiv(p+1)A\pmod q.
+\]
+
+故 \(q\nmid v\) 的分支同时排除这两个局部退化；\(q\mid v\) 的分支仍只是一条
+cyclotomic-complement 分类。二者均不提供 actual source replay、E4 lift 或 T5
+ticket，因而不改变 (QC1) 的开放量词。
 
 ## 4. 最小开放量词
 
@@ -423,7 +438,8 @@ divisibility，又被 gap-3 Type II terminal 抢占；详见
 
 本页严格完成了 \(k=1\) 的参数化与 actual 全称排除；\(k=3\) 现有
 fixed-\(d\)、fixed-\(\rho\)、fixed-\(j\)、fixed-\(t\) 四个有限 fiber 坐标、一个
-actual-root saturation 同余筛，并排除了保持 \(A,M\) 的直接 Vieta companion。它们收紧
+core cyclotomic congruence、generic quotient-only cyclotomic-complement 分流，并排除了
+保持 \(A,M\) 的直接 Vieta companion。它们收紧
 整数曲线和后续候选路线，但不 physicalize
 \(q\mid k\)，也不为 \(q\mid D_*\) 构造全称 successor。(PR-T6) 的 quotient 剩余仍
 精确位于 \(k>1\) 的 (QC1)。因此 (QC0) 已闭合，但 proper-root 子域和 T6 仍保持开放。

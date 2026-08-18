@@ -61,7 +61,10 @@ The current `k=3` Vieta-companion obstruction is such a no-go: it removes the
 same-`M` rechart attempt before a target exists, but does not alter the O2
 quantifier or its `OPEN` status. The later primitive quotient normalization
 is also structural only: it isolates all quotient-only factors in
-\(\kappa=k/\gcd(a,e-1)\) and adds an actual-root cyclotomic saturation gate,
+\(\kappa=k/\gcd(a,e-1)\) and gives a generic actual-root cyclotomic saturation
+identity. For a quotient-only prime \(q\), it further splits
+\(q\mid(p^2+p+1)/h\) exactly by \(q\mid e\) or
+\(B\equiv(p+1)A\pmod q\),
 but creates no E1 provenance or E4 lift.
 
 ## Reproduction

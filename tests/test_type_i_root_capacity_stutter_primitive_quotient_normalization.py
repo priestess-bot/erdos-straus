@@ -19,8 +19,13 @@ class TypeIRootCapacityStutterPrimitiveQuotientNormalizationTests(unittest.TestC
     def test_shared_factor_normalization_and_saturation(self):
         normalization.verify_shared_factor_control()
 
-    def test_primitive_quotient_and_missing_root_boundary(self):
+    def test_primitive_quotient_outside_cyclotomic_complement(self):
         normalization.verify_primitive_quotient_control()
+
+    def test_quotient_only_cyclotomic_complement_branch(self):
+        normalization.verify_cyclotomic_complement_control()
+
+    def test_missing_root_boundary(self):
         normalization.verify_missing_root_boundary()
 
 

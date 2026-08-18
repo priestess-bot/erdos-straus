@@ -1,7 +1,7 @@
 ---
 kind: claim
 claim_id: type-I-root-capacity-stutter-primitive-quotient-normalization
-title: proper-root stutter 的 primitive quotient 正规化与 cyclotomic 饱和门
+title: proper-root stutter 的 primitive quotient 正规化与 cyclotomic 饱和
 statement: >-
   对满足 actual proper-root stutter 算术条件的整数 p,h,m,e,a，令
   b=e-1、N=a^2-ab+b^2=hk、g=gcd(a,b)，并假设 h divides p^2+p+1。
@@ -10,7 +10,9 @@ statement: >-
   A^2-AB+B^2=alpha kappa、A+alpha=eM、pA+B=e alpha。
   进一步，令 C_p=p^2+p+1，则
   e^2 alpha+e(A-2B)+kappa=g A^2(C_p/h)，从而
-  g divides alpha+kappa+A-2B。故所有 quotient-only 素因子 q|k、q不整除h
+  g divides alpha+kappa+A-2B。若 q 是 q|kappa、q不整除h 的素数，并令
+  v=C_p/h，则 q不整除gA，且 q|v 当且仅当 q|e 或
+  B congruent to (p+1)A mod q。故所有 quotient-only 素因子 q|k、q不整除h
   必满足 q|kappa 且 q不整除g；所有 q|g 则同时整除 h,k,m,a,b，且 q not equal 3 时
   是既有 q|u root-capacity source-menu 的输入。此正规化不保证 menu 命中，不
   physicalize primitive kappa 因子，也不构造 E1--E5 successor。
@@ -28,6 +30,7 @@ topics:
   - eisenstein-quotient
   - primitive-normal-form
   - cyclotomic-saturation
+  - cyclotomic-complement
   - provenance
   - proof-boundary
 sources:
@@ -38,12 +41,12 @@ sources:
   - claim: type-I-root-capacity-stutter-provenance-dispatch
     role: h-supported-q-source-menu-boundary
   - reproduction: reproductions/type_i_root_capacity_stutter_primitive_quotient_normalization.py
-    role: exact-normalization-and-cyclotomic-saturation-controls
+    role: exact-normalization-saturation-and-quotient-split-controls
 visibility: public
 last_checked: '2026-08-18'
 ---
 
-# proper-root stutter 的 primitive quotient 正规化与 cyclotomic 饱和门
+# proper-root stutter 的 primitive quotient 正规化与 cyclotomic 饱和
 
 ## 1. Scope
 
@@ -166,13 +169,68 @@ Equation (11) is unavailable on an abstract stutter curve which fails
 \(h\mid C_p\). It is therefore an actual-root restriction rather than a
 formal reparameterization.
 
-## 4. Provenance partition of the quotient
+## 4. Quotient-only cyclotomic split
+
+Put
+
+\[
+v=\frac{C_p}{h}.
+\]
+
+Use \(e\alpha=pA+B\) from (7) in (10). This removes the normalized
+height from the left-hand side and gives the exact bridge
+
+\[
+\boxed{
+gA^2v=\kappa+e\bigl((p+1)A-B\bigr).}
+\tag{12}
+\]
+
+Now let \(q\) be a prime with
+
+\[
+q\mid\kappa,
+\qquad q\nmid h.
+\tag{13}
+\]
+
+The second condition gives \(q\nmid g\alpha\). Since
+
+\[
+A^2-AB+B^2=\alpha\kappa
+\]
+
+is divisible by \(q\), \(q\mid A\) would force \(q\mid B\), contrary to
+\((A,B)=1\). Thus \(gA^2\) is a \(q\)-unit. Reducing (12) modulo \(q\)
+therefore gives the exact dichotomy
+
+\[
+\boxed{
+q\mid v
+\quad\Longleftrightarrow\quad
+q\mid e
+\quad\text{or}\quad
+B\equiv(p+1)A\pmod q.}
+\tag{14}
+\]
+
+For the proper-root notation \(h=3u\) and
+\(C_p=3M_0\), this is a split according to whether \(q\mid M_0/u\).
+In particular, a quotient-only factor outside the cyclotomic complement
+must satisfy both \(q\nmid e\) and
+\(B\not\equiv(p+1)A\pmod q\).
+
+This is an arithmetic partition of the primitive quotient factor only. It
+does not turn either branch into a source occurrence, a terminal, a target,
+an E4 lift, or a T5-admissible successor.
+
+## 5. Provenance partition of the quotient
 
 Every prime factor of \(g\) divides all of
 
 \[
 g\mid(a,b,h,k,m).
-\tag{12}
+\tag{15}
 \]
 
 For a proper-root receipt with \(h=3u\), any such prime \(q\ne3\) divides
@@ -185,20 +243,20 @@ On the other hand, if
 \[
 q\mid k,
 \qquad q\nmid h,
-\tag{13}
+\tag{16}
 \]
 
 then \(q\nmid g\) by (4), and \(k=g\kappa\) gives
 
 \[
 \boxed{q\mid\kappa.}
-\tag{14}
+\tag{17}
 \]
 
 Thus every genuinely quotient-only carrier occurs in the primitive factor
 \(\kappa\), never in the shared coordinate factor \(g\). A prime of
 \(\kappa\) may still be \(h\)-supported when it also divides
-\(g\alpha=h\); (14) is a one-way localization, not a claim that all of
+\(g\alpha=h\); (17) is a one-way localization, not a claim that all of
 \(\kappa\) is quotient-only.
 
 This reduces the QC1 provenance problem to two explicitly different inputs:
@@ -206,14 +264,15 @@ the shared \(g\)-part has an existing source type, whereas primitive factors
 of \(\kappa\) outside \(h\) require an independent physicalization or a
 TR1-style exit. It supplies neither a terminal certificate nor E1--E5.
 
-## 5. Focused reproduction
+## 6. Focused reproduction
 
 ```bash
 python3 reproductions/type_i_root_capacity_stutter_primitive_quotient_normalization.py --verify
 python3 -m unittest tests/test_type_i_root_capacity_stutter_primitive_quotient_normalization.py
 ```
 
-The controls replay one shared-factor root-shape tuple, one primitive
-quotient-only root-shape tuple, and an abstract \(k=3\) curve point that
-fails the cyclotomic root gate. They do not search for actual receipts,
-terminals, sources, or selector paths.
+The controls replay one shared-factor root-shape tuple, a quotient-only
+control outside the cyclotomic complement, a quotient-only control in its
+\(q\mid e\) branch, and an abstract \(k=3\) curve point that fails the
+cyclotomic root gate. They do not search for actual receipts, terminals,
+sources, or selector paths.

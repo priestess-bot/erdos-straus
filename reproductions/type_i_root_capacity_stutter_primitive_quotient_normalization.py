@@ -109,6 +109,40 @@ def verify_cyclotomic_saturation(
         raise AssertionError("cyclotomic saturation identity changed")
 
 
+def is_prime(value: int) -> bool:
+    """Return whether a positive integer is prime for the fixed controls."""
+    if value < 2:
+        return False
+    divisor = 2
+    while divisor * divisor <= value:
+        if value % divisor == 0:
+            return False
+        divisor += 1
+    return True
+
+
+def verify_quotient_only_cyclotomic_split(
+    data: StutterData, normal: PrimitiveQuotient, q: int
+) -> None:
+    """Check the exact q|C_p/h split for one quotient-only prime."""
+    cyclotomic = data.p * data.p + data.p + 1
+    if cyclotomic % data.h:
+        raise AssertionError("control does not satisfy the cyclotomic root gate")
+    v = cyclotomic // data.h
+    linear = (data.p + 1) * normal.A - normal.B
+    bridge = normal.kappa + data.e * linear
+    right_branch = data.e % q == 0 or linear % q == 0
+    if not (
+        is_prime(q)
+        and normal.kappa % q == 0
+        and data.h % q != 0
+        and gcd(q, normal.g * normal.A * normal.B * normal.alpha) == 1
+        and bridge == normal.g * normal.A * normal.A * v
+        and (v % q == 0) == right_branch
+    ):
+        raise AssertionError("quotient-only cyclotomic split changed")
+
+
 def verify_shared_factor_control() -> None:
     """Replay a root-shape tuple with a nontrivial shared g=3 factor."""
     data = stutter_data(25_957, 9_327, 3, 3_532)
@@ -129,13 +163,38 @@ def verify_primitive_quotient_control() -> None:
     normal = normalize(data)
     verify_primitive_system(data, normal)
     verify_cyclotomic_saturation(data, normal)
+    verify_quotient_only_cyclotomic_split(data, normal, 61)
+    cyclotomic_complement = (data.p * data.p + data.p + 1) // data.h
+    linear = (data.p + 1) * normal.A - normal.B
     if not (
         (normal.g, normal.A, normal.B, normal.alpha, normal.kappa, normal.M)
         == (1, 209, 943, 12_063, 61, 13)
         and gcd(normal.kappa, data.h) == 1
         and data.k == normal.kappa
+        and cyclotomic_complement % 61 != 0
+        and data.e % 61 != 0
+        and linear % 61 != 0
     ):
         raise AssertionError("primitive quotient-only control changed")
+
+
+def verify_cyclotomic_complement_control() -> None:
+    """Replay the q|e branch of the quotient-only cyclotomic split."""
+    data = stutter_data(11, 19, 3, 14)
+    normal = normalize(data)
+    verify_primitive_system(data, normal)
+    verify_cyclotomic_saturation(data, normal)
+    verify_quotient_only_cyclotomic_split(data, normal, 7)
+    cyclotomic_complement = (data.p * data.p + data.p + 1) // data.h
+    linear = (data.p + 1) * normal.A - normal.B
+    if not (
+        (normal.g, normal.A, normal.B, normal.alpha, normal.kappa, normal.M)
+        == (1, 23, 13, 19, 21, 3)
+        and cyclotomic_complement == 7
+        and data.e % 7 == 0
+        and linear % 7 != 0
+    ):
+        raise AssertionError("cyclotomic-complement control changed")
 
 
 def verify_missing_root_boundary() -> None:
@@ -161,8 +220,9 @@ def verify_missing_root_boundary() -> None:
 def verify() -> None:
     verify_shared_factor_control()
     verify_primitive_quotient_control()
+    verify_cyclotomic_complement_control()
     verify_missing_root_boundary()
-    print("verified primitive quotient normalization and cyclotomic saturation")
+    print("verified primitive quotient normalization and cyclotomic split")
     print("no receipt, source, terminal, or selector search is performed")
 
 
