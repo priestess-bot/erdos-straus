@@ -19,6 +19,10 @@ statement: >-
   g^sharp=g/gcd(g,7)，则 g|Phi(h)=h^4-h^3+3h^2-h+1，且 g^sharp|D_*；
   g^sharp 的每个素因子在 D、D_*、D_T=D/gcd(D,(p^2-1)/2) 中保持相同赋值，并避开 p^2-1。
   唯一可能被 h^2-1 吸收的 resonant 素因子是至多一次的 7。若 g>1，则 4g<=p-2。
+  此外，若 n=(delta^2+delta+1)/h、d=gcd(W-eta,k)，则 d|n；把
+  (eta+1)、W-eta、n、k 同时除以 d 后，得到 primitive Eisenstein norm。
+  在 Z[omega] 中，gcd(d,delta+omega) 有范数 d，并给出一个 exact factor-level
+  cancellation；D-overlap 的子因子还定向整除 Phi(h) 与 Psi(p) 的指定 Eisenstein 因子。
   因而由 sh=1 mod g、s=3 mod4 确定的最小正 variable gap 总在自然范围内；令
   C=(p+s)/(4g)、x=gC，则 C>=2、m<=4C、p<1024C^5，且当 p>=2^15 时 s<8p^(4/5)，
   并有 gcd(s,x)=1。
@@ -50,6 +54,8 @@ topics:
   - divisor-fiber
   - resonant-intersection
   - transverse-allocation
+  - oriented-eisenstein-cancellation
+  - factor-level-descent
   - low-gap-obstruction
   - variable-gap
   - large-carrier-bound
@@ -1055,6 +1061,256 @@ invocation of the older low-gap negative-root relays.
 This is a composite conditional receipt bridge.  It does not prove \(g>1\),
 but if a non-\(7\) quotient resonance meets \(D\), its full multiplicity is
 an actual transverse \(D_*\) carrier rather than merely a quotient factor.
+
+### 10.1 The full difference carrier has a primitive norm quotient
+
+The preceding \(D\)-intersection is only a subcarrier of a stronger exact
+identity that is present for the whole quotient resonance \(d\).  Recall from
+(23) that
+
+\[
+\delta^2+\delta+1=nh.
+\]
+
+Expanding \(P=(h+\delta)^2+(h+\delta)+1=hv\) first gives
+
+\[
+v=h+2\delta+1+n.
+\tag{54c}
+\]
+
+Substitute this in \(U=e(p+1)-av\), use \(p=h+\delta\),
+\(eh=pa+b\), and \(e-a=\eta+1\).  The result is
+
+\[
+W=\eta+(\eta+1)\delta-an,
+\qquad
+\boxed{\gamma=(\eta+1)\delta-an.}
+\tag{54d}
+\]
+
+By (47), \(d\mid\eta+1\) and \(d\mid\gamma\).  Also
+\((a,d)=1\), since \(d\mid a^2-a+1\).  Hence (54d) proves the additional
+whole-divisor alignment
+
+\[
+\boxed{d\mid n.}
+\tag{54e}
+\]
+
+There is an equivalent norm form of this fact.  For this subsection put
+
+\[
+\beta:=a-b\omega,
+\qquad
+\epsilon:=e-U\omega,
+\qquad
+z:=\delta+\omega=p+\omega-h.
+\]
+
+Subtracting \(h\beta\) from the two sides of (6) gives the exact difference
+factorization
+
+\[
+\boxed{
+z\beta=h(\epsilon-\beta)
+=h\bigl((\eta+1)-(W+1)\omega\bigr).
+}
+\tag{54f}
+\]
+
+Because \(W+1=\eta+1+\gamma\), taking norms in (54f) gives
+
+\[
+\boxed{
+nk=(\eta+1)^2+(\eta+1)\gamma+\gamma^2.
+}
+\tag{54g}
+\]
+
+Write
+
+\[
+\sigma:=\frac{\eta+1}{d},
+\qquad
+\tau:=\frac{\gamma}{d},
+\qquad
+n_0:=\frac nd,
+\qquad
+k_0:=\frac kd.
+\]
+
+The quotients are integral by (54e) and the definition of \(d\), and (54g)
+becomes
+
+\[
+\boxed{
+n_0k_0=\sigma^2+\sigma\tau+\tau^2
+=N\bigl(\sigma-(\sigma+\tau)\omega\bigr).
+}
+\tag{54h}
+\]
+
+This norm is primitive in its two displayed coordinates.  Indeed,
+\((\tau,k_0)=1\) follows from \(d=(\gamma,k)\), while (9) gives
+
+\[
+k_0=(d\sigma-1)\sigma-a\tau.
+\]
+
+Any prime common to \(\sigma\) and \(\tau\) would therefore divide both
+\(\tau\) and \(k_0\), a contradiction.  Thus
+
+\[
+\boxed{(\sigma,\tau)=1.}
+\tag{54i}
+\]
+
+### 10.2 Oriented Eisenstein cancellation of the whole \(d\)-carrier
+
+The primitive quotient in (54h) is not merely a norm coincidence.  Let
+\(R:=\mathbb Z[\omega]\), with \(\bar\omega=1-\omega\).  Every prime
+factor \(q\) of \(d\) is \(1\pmod3\) by (49), so \(q\ne3\).  For
+\(q^\nu\Vert d\), the congruences in Section 9 and the original linear
+identity give
+
+\[
+\eta\equiv W\equiv-1,
+\quad b\equiv U\equiv a-1,
+\quad e\equiv a,
+\quad h\equiv p+a,
+\quad \delta\equiv-a
+\pmod {q^\nu}.
+\tag{54j}
+\]
+
+Here the fourth congruence follows from
+\(pa+a-1\equiv ah\) and \(a^2-a+1\equiv0\); the element \(a\) is a
+unit modulo \(q^\nu\).  Define the two conjugate Eisenstein ideals
+
+\[
+\mathfrak p_q=(q^\nu,\omega-a),
+\qquad
+\bar{\mathfrak p}_q=(q^\nu,\omega-(1-a)).
+\]
+
+The evaluation map \(\omega\mapsto a\) shows that
+\(N(\mathfrak p_q)=q^\nu\).  The two roots are distinct because
+\((2a-1)^2\equiv-3\not\equiv0\pmod q\).  Evaluating the three factors at
+their indicated roots gives
+
+\[
+\begin{array}{c|c}
+\mathfrak p_q & z=\delta+\omega\\
+\hline
+\bar{\mathfrak p}_q & \beta=a-b\omega,\quad \epsilon=e-U\omega .
+\end{array}
+\tag{54k}
+\]
+
+For example, \(z(a)=\delta+a=0\), while
+
+\[
+\beta(1-a)=\epsilon(1-a)
+=a-(a-1)(1-a)=a^2-a+1=0.
+\]
+
+The opposite evaluations are \(1-2a\) for \(z\), and \(a+1\) for
+\(\beta\) and \(\epsilon\); neither vanishes modulo \(q\), since
+\(q\ne3\).  Thus these are the exact, rather than merely lower-bounded,
+orientations at every prime power of \(d\).
+
+The Eisenstein ring \(R\) is norm-Euclidean.  Hence the product of the
+\(\mathfrak p_q\) has a generator \(\zeta_d\) with
+\(N(\zeta_d)=d\).  The preceding exact orientations say, at the ideal level,
+
+\[
+\boxed{
+(\zeta_d)=(d,z),
+\qquad
+(\bar\zeta_d)=(d,\beta)=(d,\epsilon).
+}
+\tag{54l}
+\]
+
+In particular \(\zeta_d\mid z\) and
+\(\bar\zeta_d\mid\beta,\epsilon\).  Define the integral quotient elements
+
+\[
+Z_d:=\frac z{\zeta_d},
+\qquad
+B_d:=\frac\beta{\bar\zeta_d},
+\qquad
+E_d:=\frac\epsilon{\bar\zeta_d},
+\qquad
+Q_d:=\sigma-(\sigma+\tau)\omega.
+\]
+
+Since \(\epsilon-\beta=dQ_d=\zeta_d\bar\zeta_dQ_d\), both (6) and
+(54f) reduce to the exact quotient identities
+
+\[
+\boxed{
+(p+\omega)B_d=hE_d,
+\qquad
+E_d-B_d=\zeta_dQ_d,
+\qquad
+Z_dB_d=hQ_d.
+}
+\tag{54m}
+\]
+
+Their norms are
+
+\[
+\boxed{
+N(Z_d)=\frac{hn}{d},
+\qquad
+N(B_d)=\frac{hk}{d},
+\qquad
+N(E_d)=\frac{vk}{d},
+\qquad
+N(Q_d)=\frac{nk}{d^2}=n_0k_0.
+}
+\tag{54n}
+\]
+
+Thus whenever \(d>1\), (54m) is a strict factor-level descent in both
+positive quotient coordinates \(n\) and \(k\).  It is defined entirely by
+the actual receipt: equivalently, \(\zeta_d\) is the Eisenstein gcd of the
+rational integer \(d\) and \(\delta+\omega\), unique up to a unit.
+
+The earlier carrier \(g=(D,d)\) is the \(D\)-visible subproduct of this
+whole \(d\)-orientation.  Choose its compatible factor \(\zeta_g\mid
+\zeta_d\).  For \(q^\nu\Vert g\), the additional congruence
+\(ph\equiv-1\pmod {q^\nu}\) gives, at \(\omega=a\),
+
+\[
+h^2+1-ha=h(h-a)+1=ph+1=0,
+\qquad
+p^2+1+pa=p(p+a)+1=ph+1=0.
+\]
+
+Consequently the two norm divisibilities in (54) and (54a) have a fixed
+Eisenstein orientation:
+
+\[
+\boxed{
+\zeta_g\mid h^2+1-h\omega,
+\qquad
+\zeta_g\mid p^2+1+p\omega.
+}
+\tag{54o}
+\]
+
+This is not yet an actual recursive descent.  The quotient elements in
+(54m) need not retain the ordinary stutter coordinate forms
+\(\delta'+\omega\) and \(a'-(e'-1)\omega\).  Nothing here supplies a
+source occurrence, a legal target, an all-solution lift, or a T5 ticket.
+The remaining realization problem is precisely to turn this canonical,
+state-computable oriented quotient into either a direct certificate or a
+legal E1--E5 successor; without that step, (54m) does not close QC1, TR1,
+or T6.
 
 There are two useful local consequences.  From (50) and (52), a prime of
 \((g,m)\) would force \(h\equiv1\) and hence divide \(\Phi(1)=3\), so
