@@ -13,8 +13,8 @@ statement: >-
   固定 kappa 的 primitive fiber 满足 A|9(27 kappa^2+8 kappa+1)。特别地
   actual m=3 receipt 必有 k≡21 mod72、k≥93 与 W-eta≥13。若
   d=(W-eta,k)，则 d|(p^2-p+1)、gcd(d,h(p^2+p+1)D)=1，且其 natural gap
-  s_d 满足 d|(s_d^2+s_d+1)。若 d>1，则其 natural fan cofactor 必有 C_d>=25，且
-  natural gap 满足 s_d<=(p-25)/24。
+  s_d 满足 d|(s_d^2+s_d+1)。若 d>1，则其 natural fan cofactor 必有 C_d>=40，且
+  natural gap 满足 s_d<=(p-40)/39。
   所以 d 是 Phi_6(p) carrier，不是 root-height
   Phi_3(p) carrier。kappa 有一个 canonical q≡7 mod12 素因子；它确定地落入
   q|u 的 root-supported、q|d 的 Phi_6 cancellation，或两者皆不整除的 primitive
@@ -1062,6 +1062,102 @@ p-24s_d=
 这仍是 actual gap/capacity 收缩。它没有令 natural fan 必命中，不能构造 terminal 或
 E1--E5 edge。
 
+### 8.2.1 完整二次门再排除 \(25\le C_d<37\)
+
+上一节只用了 \(C\ge25\) 后的同余锁。现在重新使用完整二次门 (37q)，可排除紧随其后的
+四个允许 cofactor。令
+
+\[
+x=\frac ad,\qquad
+f_{C,\ell,\sigma}(x)
+=x^2+(5\sigma-4C+\ell)x+3\sigma^2.
+\tag{37t-1}
+\]
+
+因为 \(d>1\) 为奇数且 \(d\equiv1\pmod3\)，有 \(d\ge7\)。由 (37q)，
+
+\[
+F_{C,\sigma,\ell}(a)
+=d^2f_{C,\ell,\sigma}(x)-d(x+\sigma)+1.
+\tag{37t-2}
+\]
+
+对 \(C\in\{25,28,31,34\}\)，式 (37m)、(37o) 和
+\(\sigma\equiv1\pmod6\) 给出的全部可能行如下。表中负号栏满足
+\(f_{C,\ell,\sigma}(x)<0\) 于整个区间
+\(\ell-4\le x<\ell\)；正号栏满足 \(f_{C,\ell,\sigma}(x)\ge87\)。
+
+\[
+\begin{array}{c|c|c|c}
+C&\ell& f<0& f\ge87\\
+\hline
+25&12&1,7&13,19,25\\
+25&36&1&7\\
+28&24&1,7&13,19\\
+28&48&1&\varnothing\\
+31&12&1,7&13,19,25,31\\
+31&36&1,7&13\\
+34&24&1,7,13&19,25\\
+34&48&1,7&13
+\end{array}
+\tag{37t-3}
+\]
+
+这是纯手算的二次区间表：例如每一行只需检查 \(f\) 的两个端点和其唯一顶点。负号栏使
+\(F<0\)；正号栏则由 \(d\ge7\)、\(x+\sigma<61\) 给出
+
+\[
+F\ge49\cdot87-7\cdot61+1>0.
+\tag{37t-4}
+\]
+
+故表中各行均与 \(F=0\) 矛盾。唯一未列入 (37t-3) 的允许行是
+
+\[
+(C,\ell,\sigma)=(31,60,1).
+\tag{37t-5}
+\]
+
+此时 \(56d\le a<60d\)，且 (37x) 化为
+
+\[
+3718d-63a+62=q(2a+3d).
+\tag{37t-6}
+\]
+
+左边必须为正，而其最大值小于 \(2(2a+3d)\)；所以正整数 \(q\) 只能为 \(1\)。
+于是
+
+\[
+65a=3715d+62,
+\tag{37t-7}
+\]
+
+但右边模 \(5\) 为 \(2\)，矛盾。至此 \(C=25,28,31,34\) 全部被排除。结合
+\(C\equiv1\pmod3\) 与 (37s-3)，得到
+
+\[
+\boxed{d>1\quad\Longrightarrow\quad C_d\ge37\quad(m=3).}
+\tag{37t-8}
+\]
+
+又 \(s_d\equiv3\pmod4\) 保证 \(4d-s_d\ge1\)。因此
+
+\[
+p-36s_d
+=C_d(4d-s_d)+(C_d-37)s_d
+\ge37,
+\]
+
+从而有更强的 natural-gap bound
+
+\[
+\boxed{s_d\le\frac{p-37}{36}.}
+\tag{37t-9}
+\]
+
+这仍是 actual cofactor/gap 收缩，不断言 natural fan 必命中。
+
 ### 8.3 whole-\(d\) residual 的 primitive norm kernel
 
 上面的低 cofactor 排除还没有用尽 actual quotient content。令
@@ -1118,6 +1214,224 @@ witness。式 (37q)、(37v)、(37w)、(37x) 将 \(m=3,d>1\) 的剩余问题压�
 互锁的 primitive Diophantine constraints。它仍没有把 Eisenstein factor quotient 变成
 ordinary state，也没有给出 E1 provenance、E4 lift 或 T5 ticket。
 
+### 8.3.1 fixed-cofactor primitive kernel 的二次消元
+
+这组 kernel 还给出一个不依赖 \(p\) 范围的 exact finite reduction。令
+
+\[
+M=4C_d-\ell,
+\qquad
+\mathcal D=M\tau-\bigl(\sigma^2+5\sigma\tau+3\tau^2\bigr).
+\tag{37x-0}
+\]
+
+由 \(a\gamma=\eta(\eta+1)-k\)、\(\eta+1=d\sigma\) 与 (37u)，有
+
+\[
+a\tau=\sigma^2d-\sigma-k_0.
+\tag{37x-0a}
+\]
+
+把它代入 (37q) 并乘以 \(\tau^2\)，得到只含 \(d\) 的精确二次方程
+
+\[
+\boxed{
+\begin{aligned}
+0={}&-\sigma^2\mathcal D\,d^2\\
+&+\bigl[(\sigma+k_0)(\mathcal D-\sigma^2+3\tau^2)
+-\sigma\tau(\sigma+\tau)\bigr]d\\
+&+(\sigma+k_0)^2+\tau(\sigma+k_0)+\tau^2.
+\end{aligned}}
+\tag{37x-0b}
+\]
+
+其常数项严格为正，所以它不可能退化为零多项式。由
+\(C_d\equiv1\pmod3\)、(37m) 与 \(\ell>0\)，有 \(\ell\equiv0\pmod {12}\)，
+故 \(\ell\ge12\)。固定 \(C_d\) 后，(37m)、(37o) 使
+\(\ell,\sigma\) 只有有限多个可能值；又由 (37x-0a) 和
+\(a\ge(\ell-4)d\)，有
+
+\[
+0<\tau<\frac{\sigma^2}{\ell-4}.
+\tag{37x-0c}
+\]
+
+最后 \(k_0\mid\sigma^2+\sigma\tau+\tau^2\) 由 (37v) 给出。因此每个固定
+\(C_d\) 的 actual whole-\(d\) packet 至多留下有限个
+\((\ell,\sigma,\tau,k_0,d)\)：对每个已定的前四元组，(37x-0b) 至多给出两个
+整数 \(d\)。这是 exact Diophantine reduction，不断言这些有限 packet 实际可达，
+也不提供 natural-fan hit。
+
+### 8.3.2 primitive norm kernel 排除 \(C_d=37\)
+
+现在假设 \(C=37\)。由 (37m)、(37o) 与
+\(\sigma\equiv1\pmod6\)，所有可能的 \((\ell,\sigma)\) 为
+
+\[
+\begin{array}{c|c}
+\ell&\sigma\\
+\hline
+12&1,7,13,19,25,31,37\\
+36&1,7,13,19,25\\
+60&1,7
+\end{array}
+\tag{37x-1}
+\]
+
+对这些有限行再次检查 (37t-1) 的端点和顶点，得到
+
+\[
+\begin{array}{c|c|c}
+\ell&f<0&f\ge27\\
+\hline
+12&1,7&19,25,31,37\\
+36&1,7&13,19,25\\
+60&1&7
+\end{array}
+\tag{37x-1a}
+\]
+
+唯一未列入两栏的是 \((\ell,\sigma)=(12,13)\)。负号栏在相应区间有
+\(f<0\)，正号栏有 \(f\ge27\)。
+前者给出 \(F<0\)；后者由 \(d\ge7\) 与 \(x+\sigma<67\) 给出
+
+\[
+F\ge49\cdot27-7\cdot67+1>0.
+\tag{37x-2}
+\]
+
+因此只须处理
+
+\[
+C=37,\qquad \ell=12,\qquad \sigma=13.
+\tag{37x-3}
+\]
+
+写 \(a=8d+t\)。由 \(a\) 为奇数、\(a\equiv9\pmod {24}\) 及
+\(d\equiv1\pmod3\)，有
+
+\[
+0<t<4d,\qquad t\equiv1\pmod {24}.
+\tag{37x-4}
+\]
+
+在 (37q) 中代入这条线得到
+
+\[
+F=t^2-(55d+1)t+3d^2-21d+1.
+\tag{37x-5}
+\]
+
+在 \(0\le t<4d\) 上，这个二次式对 \(t\) 严格递减；又 \(d\ge7\) 时
+\[
+F(0)=3d^2-21d+1>0,
+\]
+而
+\[
+F\!\left(\frac d{18}\right)
+=-\frac{17}{324}d^2-\frac{379}{18}d+1<0.
+\]
+所以若 \(F=0\)，必有
+
+\[
+\boxed{0<t<\frac d{18}.}
+\tag{37x-6}
+\]
+
+这时 \(\eta+1=d\sigma=13d\)。由
+\(k=e\eta-aW\)、\(e=a+\eta+1\) 与 \(W=\eta+\gamma\) 直接得到 complementary identity
+\[
+a\gamma=\eta(\eta+1)-k.
+\]
+结合 (37u)，得到
+
+\[
+a\tau=169d-13-k_0,
+\qquad
+\tau t=(169-8\tau)d-13-k_0.
+\tag{37x-7}
+\]
+
+因 \(k_0>0\)、\(a\ge8d\)、\(\tau\) 为奇数且 \((13,\tau)=1\)，
+
+\[
+\tau\in\{1,3,5,7,9,11,15,17,19,21\}.
+\tag{37x-8}
+\]
+
+另一方面，(37v) 给出
+
+\[
+qk_0=N_\tau:=\tau^2+13\tau+169,
+\qquad
+k_0\le N_\tau.
+\tag{37x-9}
+\]
+
+若 \(\tau\le19\)，由 (37x-6)--(37x-7) 有
+
+\[
+\left(169-\frac{145}{18}\tau\right)d
+<13+N_\tau.
+\tag{37x-10}
+\]
+
+相应的数值界为
+
+\[
+\begin{array}{c|ccccccccc}
+\tau&1&3&5&7&9&11&15&17&19\\
+\hline
+N_\tau&183&217&259&309&367&433&589&679&777\\
+d<&2&2&3&3&4&6&13&22&50
+\end{array}
+\tag{37x-11}
+\]
+
+而 (37x-6) 与 \(t\ge1\) 已给出 \(d>18\)。所以
+\(\tau\le15\) 不可能。若 \(\tau=17\)，则 \(d=19\) 且 \(t=1\)；若
+\(\tau=19\)，则同样 \(t=1\)。但 (37x-5) 在 \(t=1\) 时成为
+
+\[
+3d^2-76d+1=0,
+\]
+
+其判别式 \(5764\) 严格位于 \(75^2\) 与 \(76^2\) 之间，故两种情形均不可能。
+
+最后，若 \(\tau=21\)，则 (37x-7) 给出
+
+\[
+d=21t+13+k_0.
+\tag{37x-12}
+\]
+
+这里 \(k_0\mid N_{21}=883\)，故 \((k_0,6)=1\)。由
+\(t\equiv1\pmod {24}\) 得右端模 \(6\) 只能为 \(3\) 或 \(5\)，
+却与 \(d\equiv1\pmod6\) 矛盾。因此 \(C=37\) 也不可能。结合
+\(C\equiv1\pmod3\) 和 (37t-8)，有
+
+\[
+\boxed{d>1\quad\Longrightarrow\quad C_d\ge40\quad(m=3).}
+\tag{37x-13}
+\]
+
+同样地
+
+\[
+p-39s_d
+=C_d(4d-s_d)+(C_d-40)s_d
+\ge40,
+\]
+
+所以
+
+\[
+\boxed{s_d\le\frac{p-40}{39}.}
+\tag{37x-14}
+\]
+
+这仍只收缩 actual natural fan，不蕴涵 terminal hit 或 physical successor。
+
 ### 8.4 即使加入 cofactor congruence lock，\(\Phi_6\) envelope 也不会强制 fan hit
 
 上一节的结论不能被错误加强为“所有满足已使用的 \(\Phi_6\) carrier package 和
@@ -1153,7 +1467,7 @@ p-a=(4C-\ell)d,
 它还满足
 
 \[
-C\ge25,\qquad s\le\frac{p-25}{24},\qquad
+C\ge40,\qquad s\le\frac{p-40}{39},\qquad
 C\equiv1\pmod3,\qquad
 4C-\ell\equiv16\pmod {24},
 \tag{37ab}
@@ -1181,7 +1495,7 @@ actual terminal theorem。它严格说明的是，任何想从
 \[
 d\mid\Phi_6(p),\qquad
 d\mid\Phi_3(s_d),\qquad
-C_d\ge25,
+C_d\ge40,
 \qquad
 4C_d-\ell\equiv16\pmod {24}
 \]
