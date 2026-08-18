@@ -18,11 +18,14 @@ statement: >-
   d|gcd(W+1,a^2-a+1) 且 3不整除d。若 g=gcd(D,d)、
   g^sharp=g/gcd(g,7)，则 g|Phi(h)=h^4-h^3+3h^2-h+1，且 g^sharp|D_*；
   g^sharp 的每个素因子在 D、D_*、D_T=D/gcd(D,(p^2-1)/2) 中保持相同赋值，并避开 p^2-1。
+  对任意整数 c，gcd(g,m+c) 整除 c^4+6c^3+12c^2+9c+3；特别地，固定的
+  quadratic shift K(K-1) 只能与 Phi(K)Phi(1-K) 的素因子相交。
   唯一可能被 h^2-1 吸收的 resonant 素因子是至多一次的 7。若 g>1，则 4g<=p-2。
   此外，若 n=(delta^2+delta+1)/h、d=gcd(W-eta,k)，则 d|n；把
   (eta+1)、W-eta、n、k 同时除以 d 后，得到 primitive Eisenstein norm。
   在 Z[omega] 中，gcd(d,delta+omega) 有范数 d，并给出一个 exact factor-level
-  cancellation。对每个 d>1，由 a-h mod d 定义的 natural gap 有完整的 linear-divisor
+  cancellation；当 d>1 时，其所有 unit-normalization 都不能重回同一 (p,h) 的正 ordinary
+  stutter chart。对每个 d>1，由 a-h mod d 定义的 natural gap 有完整的 linear-divisor
   Type II fan，且其 cofactor 满足 C_d>=7、gap 不超过 (p-7)/6；D-overlap 的子因子还定向整除
   Phi(h) 与 Psi(p) 的指定 Eisenstein 因子。
   因而由 sh=1 mod g、s=3 mod4 确定的最小正 variable gap 总在自然范围内；令
@@ -58,6 +61,8 @@ topics:
   - transverse-allocation
   - oriented-eisenstein-cancellation
   - factor-level-descent
+  - unit-normal-form-obstruction
+  - shifted-resultant
   - low-gap-obstruction
   - variable-gap
   - large-carrier-bound
@@ -1290,6 +1295,145 @@ positive quotient coordinates \(n\) and \(k\).  It is defined entirely by
 the actual receipt: equivalently, \(\zeta_d\) is the Eisenstein gcd of the
 rational integer \(d\) and \(\delta+\omega\), unique up to a unit.
 
+### 10.2a Unit-normal-form obstruction for the factor quotient
+
+The unit ambiguity in \(\zeta_d\) cannot repair the missing ordinary
+stutter normal form.  More precisely, suppose \(d>1\).  Choose the unique
+associate of \(\zeta_d\) in the open Eisenstein sector
+
+\[
+\zeta_d=r-s\omega,
+\qquad r>s>0,
+\qquad d=r^2-rs+s^2.
+\tag{54n-1}
+\]
+
+Such an associate exists.  A boundary associate would be a unit times a
+rational integer.  Since \(\zeta_d\mid z=\delta+\omega\), that rational
+integer would divide the two primitive rational coordinates of a unit
+multiple of \(z\), hence would be \(1\); this contradicts
+\(N(\zeta_d)=d>1\).  The six unit sectors therefore contain one associate
+with \(r>s>0\).  In particular,
+
+\[
+d-r=r(r-s-1)+s^2>0.
+\tag{54n-2}
+\]
+
+Put
+
+\[
+E_0:=e+\gamma.
+\tag{54n-3}
+\]
+
+The actual-coordinate bounds \(d\mid\eta+1\le e-1\) and \(\gamma\ge1\)
+give
+
+\[
+E_0\ge d+2.
+\tag{54n-4}
+\]
+
+Let \(u\) be any Eisenstein unit.  Replacing \(\zeta_d\) by
+\(u\zeta_d\) replaces \((B_d,E_d)\) by \((uB_d,uE_d)\).  Write
+
+\[
+u\zeta_d=r_u-s_u\omega,
+\qquad
+uB_d=A_u-\mathsf b_u\omega,
+\qquad
+uE_d=\mathsf e_u-\mathsf U_u\omega.
+\tag{54n-5}
+\]
+
+Using \(B_d=\beta\zeta_d/d\), \(E_d=\epsilon\zeta_d/d\), and
+\(b=e-1\), their two coordinates relevant to the ordinary chart are
+
+\[
+\mathsf b_u=
+\frac{as_u+b(r_u-s_u)}d,
+\qquad
+\mathsf e_u=\frac{er_u-Us_u}d.
+\tag{54n-6}
+\]
+
+Since \(U=e+W\) and \(\gamma=W-\eta\), subtraction gives the exact
+normal-form defect
+
+\[
+\boxed{
+\mathsf e_u-\mathsf b_u-1
+=\frac{r_u-s_uE_0-d}{d}.}
+\tag{54n-7}
+\]
+
+An ordinary positive stutter re-entry at the same \((p,h)\) would require
+
+\[
+\mathsf e_u=\mathsf b_u+1,
+\qquad
+\mathsf b_u>0,
+\tag{54n-8}
+\]
+
+because then \(uB_d\) would have the form
+\(a'-(e'-1)\omega\), while \(uE_d\) would have constant coordinate
+\(e'\).  The six possible left sides of the numerator condition in
+(54n-7) are
+
+\[
+\begin{array}{c|c|c}
+u&(r_u,s_u)&r_u-s_uE_0\\ \hline
+1&(r,s)&r-sE_0\\
+-1&(-r,-s)&sE_0-r\\
+\omega&(s,s-r)&s+(r-s)E_0\\
+-\omega&(-s,r-s)&-s-(r-s)E_0\\
+\bar\omega&(r-s,r)&r-s-rE_0\\
+-\bar\omega&(s-r,-r)&rE_0-(r-s).
+\end{array}
+\tag{54n-9}
+\]
+
+The rows \(1,-\omega,\bar\omega\) are negative.  The rows
+\(\omega,-\bar\omega\) are strictly larger than \(d\): for the latter,
+
+\[
+rE_0-(r-s)=r(E_0-1)+s\ge2(d+1)+1>d.
+\tag{54n-10}
+\]
+
+For \(u=-1\), the value is larger than \(d\) when \(s\ge2\), since
+
+\[
+sE_0-r\ge2(d+2)-r>d.
+\tag{54n-11}
+\]
+
+The only numerical equality not already excluded is \(s=1\) and
+\(E_0-r=d\).  But in that case (54n-6) gives
+
+\[
+\mathsf b_{-1}=-\frac{a+b(r-1)}d<0,
+\tag{54n-12}
+\]
+
+contrary to the required positive ordinary coordinate in (54n-8).  Hence
+
+\[
+\boxed{
+d>1\quad\Longrightarrow\quad
+\text{no unit choice of the quotient pair in (54m) re-enters a positive
+ordinary stutter chart at the same }(p,h).}
+\tag{54n-13}
+\]
+
+This is a normal-form obstruction, not a new terminal or recursive edge.
+It rules out only the direct strategy of interpreting the canonical quotient
+itself as the next ordinary stutter receipt.  A genuine realization would
+still need a different target construction together with source provenance,
+an all-solution lift, and an E5 admission ticket.
+
 The earlier carrier \(g=(D,d)\) is the \(D\)-visible subproduct of this
 whole \(d\)-orientation.  Choose its compatible factor \(\zeta_g\mid
 \zeta_d\).  For \(q^\nu\Vert g\), the additional congruence
@@ -1313,14 +1457,14 @@ Eisenstein orientation:
 \tag{54o}
 \]
 
-This is not yet an actual recursive descent.  The quotient elements in
-(54m) need not retain the ordinary stutter coordinate forms
-\(\delta'+\omega\) and \(a'-(e'-1)\omega\).  Nothing here supplies a
-source occurrence, a legal target, an all-solution lift, or a T5 ticket.
-The remaining realization problem is precisely to turn this canonical,
-state-computable oriented quotient into either a direct certificate or a
-legal E1--E5 successor; without that step, (54m) does not close QC1, TR1,
-or T6.
+This is not yet an actual recursive descent.  Section 10.2a proves that
+even the direct unit-rechart of \((B_d,E_d)\) cannot retain the positive
+ordinary stutter coordinate form; nor does it address the independent
+\(\delta'+\omega\) requirement.  Nothing here supplies a source occurrence,
+a legal target, an all-solution lift, or a T5 ticket.  The remaining
+realization problem is therefore necessarily a different target construction
+or a direct certificate, not a unit-normalization of (54m); without that
+step, the factor quotient does not close QC1, TR1, or T6.
 
 ### 10.3 A natural full divisor fan for every nontrivial \(d\)
 
@@ -2398,6 +2542,92 @@ the identity
 
 Indeed, (50) gives \(m\equiv h(1-h)\pmod g\), while (52) selects the
 actual \(\Phi(h)\)-oriented factor rather than the second factor in (65).
+
+### 12.1 Every fixed \(m\)-shift has a finite resonant resultant gate
+
+There is a uniform version of the two local contacts in (55)--(56).  Let
+\(c\in\mathbb Z\), and put
+
+\[
+Q_c:=(g,m+c).
+\tag{65a}
+\]
+
+The two defining congruences (50) and (52) give, modulo \(Q_c\),
+
+\[
+h^2-h-c\equiv0,
+\qquad
+\Phi(h)\equiv0.
+\tag{65b}
+\]
+
+Reducing the quartic modulo the displayed quadratic gives the exact linear
+remainder
+
+\[
+\Phi(X)\equiv(c+2)X+(c^2+3c+1)
+\pmod {X^2-X-c}.
+\tag{65c}
+\]
+
+Write
+
+\[
+A_c:=c^2+3c+1,
+\qquad B_c:=c+2.
+\tag{65d}
+\]
+
+Thus \(B_ch+A_c\equiv0\pmod {Q_c}\).  Multiplication of the first
+congruence in (65b) by \(B_c^2\), followed by this linear relation, gives
+
+\[
+\begin{aligned}
+0
+&\equiv B_c^2(h^2-h-c)\\
+&\equiv A_c^2+A_cB_c-cB_c^2\\
+&=c^4+6c^3+12c^2+9c+3
+\pmod {Q_c}.
+\end{aligned}
+\tag{65e}
+\]
+
+Consequently every fixed integer shift obeys the whole-composite bound
+
+\[
+\boxed{
+(g,m+c)\mid F(c):=c^4+6c^3+12c^2+9c+3=\chi(-c).}
+\tag{65f}
+\]
+
+For a quadratic terminal shift \(c=K(K-1)\), identity (65) specializes this
+to
+
+\[
+\boxed{
+\bigl(g,m+K(K-1)\bigr)
+\mid F\bigl(K(K-1)\bigr)
+=\Phi(K)\Phi(1-K).}
+\tag{65g}
+\]
+
+Thus a fixed \(K\) can touch the resonant carrier only through the finite,
+\(K\)-dependent prime set of \(\Phi(K)\Phi(1-K)\).  For example,
+\(F(0)=3\) recovers \((g,m)=1\), while
+
+\[
+F(2)=133=7\cdot19
+\tag{65h}
+\]
+
+is the whole-composite precursor of the exceptional \(m+2\) contact in
+(56).  This does not say that a resonant carrier grows outside every fixed
+finite set, nor does it rule out a variable \(K\).  It does prove that a
+selector whose only resonant-carrier tests are finitely many fixed quadratic
+\(m\)-shifts can consume only the corresponding finite union of prime
+factors; any other factor requires a variable \(K\) or additional
+cross-parameter input.
 
 There is also a useful global size consequence.  Suppose for contradiction
 that \(4g>p-2\).  Write \(p=4\lambda+1\).  Then \(g\ge\lambda\).  Since
