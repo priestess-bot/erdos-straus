@@ -18,6 +18,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 LEDGER_PATH = ROOT / "data" / "t6-selector-obligation-ledger-v1.json"
 TAXONOMY_PATH = ROOT / "data" / "t5-full-transition-taxonomy-v2.json"
+TOTAL_COFACTOR_ADAPTER_PATH = (
+    ROOT / "reproductions" / "type_i_overflow_total_cofactor_typed_adapter.py"
+)
+TOTAL_COFACTOR_ADAPTER_CLAIM = (
+    "type-I-overflow-total-cofactor-typed-projection-dispatch"
+)
 
 CLAIM_STATUSES = {"established", "computationally_reproduced"}
 RECEIPT_COMPONENT = "established_under_written_claim_guard"
@@ -125,6 +131,19 @@ def run_ledger() -> dict[str, object]:
             raise AssertionError(f"family lacks a selector boundary: {row['id']}")
         if not isinstance(row["minimal_gap_ids"], list):
             raise AssertionError(f"family gap list malformed: {row['id']}")
+
+    overflow_residual = next(
+        row for row in families if row["id"] == "type_i_a_gt_one_overflow_residual"
+    )
+    if overflow_residual["coverage_status"] != "OPEN":
+        raise AssertionError("relative adapter cannot close the A>1 overflow family")
+    evidence = set(overflow_residual["evidence"])
+    if TOTAL_COFACTOR_ADAPTER_CLAIM not in evidence:
+        raise AssertionError("A>1 overflow ledger omits its relative adapter boundary")
+    if not TOTAL_COFACTOR_ADAPTER_PATH.is_file():
+        raise AssertionError("missing relative total-cofactor adapter")
+    if claim_status(TOTAL_COFACTOR_ADAPTER_CLAIM) not in CLAIM_STATUSES:
+        raise AssertionError("relative total-cofactor adapter lost its claim card")
 
     taxonomy_rows = taxonomy["current_verified_edge_families"]
     generic_reference = ledger["taxonomy_cross_check"]["generic_contract_reference"]

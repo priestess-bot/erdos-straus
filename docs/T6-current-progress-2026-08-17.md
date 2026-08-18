@@ -96,6 +96,13 @@ proper-root stutter 提供了较强的算术结构：正定 Eisenstein 范数、
 [T6-V1.md](T6-V1.md)。它是当前最具体的 Type-I 残余之一，但尚未证明所有实际可达状态都会
 归入此分支。
 
+对 residual `A>1` overflow，`total_cofactor_typed_projection_v1` 已把一个**外部已登记**的
+persistent source 加 terminal-first miss 处理为内容寻址的 source/target，并独立重算
+hit/F/G、Smith F witness、HNF-dual G separator、scope 和 Type-I local-drop。它因而消除了
+一般 typed serialization 的实现缺口；但它不能从一条 determinant 或非空 digest 推出 source
+确实已入队，也不证明每个 residual state 都拥有这类登记。该相对 adapter 不是 O1 的全称 exit，
+详见 [total-cofactor adapter 接入记录](T6-total-cofactor-typed-adapter-integration-2026-08-18.md)。
+
 该子域已有两项全称收缩：\(c=h\) 的 named odd-distance fan 已严格排空；Eisenstein quotient
 的 \(k=1\) actual 子域也由 cyclotomic common-divisor 排除与 Vieta 无限下降严格排空。另有
 \(\gcd(a,e-1)\mid\gcd(h,k)\) 的公共因子对齐：共享 Eisenstein 因子必是 \(h\)-supported，
@@ -124,6 +131,7 @@ actual provenance、terminal-first 和 target receipt 都保留后，才应继�
 | proper-root \(k=1\) quotient | actual 子域全称为空；无有限扫描 | `established`, `internal_review` |
 | proper-root \(\gcd(a,e-1)\) 对齐 | 公共因子只可落在 \(\gcd(h,k)\)；拆开 h-supported 与 quotient-only residual | `established`, `internal_review`；不构成 edge |
 | proper-root \(k=3\) fixed-\(d\) fiber | primitive Pell-type 约化；\(d=1\) 重现已排除的 \((m,a)=(6,3)\) 行 | `established`, `internal_review`；\(d\ge4\) fibers 及 QC1 仍开放 |
+| relative total-cofactor typed adapter | 已实现 source/target retyping、F/G/hit 与 local-drop receipt | `established`, `internal_review`；仅消费外部 registration，不证明 actual reachability |
 | Eisenstein quotient \(k\) 的 EQ1--EQ7 | 由已知 stutter 恒等式可推的代数包 | `analysis_evidence`；不构成 edge |
 | canonical low chart from \(k>1\) | 图表存在 | 缺 E1--E4/provenance，不构成 edge |
 

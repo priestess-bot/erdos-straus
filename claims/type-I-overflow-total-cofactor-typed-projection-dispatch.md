@@ -14,9 +14,10 @@ statement: >-
   类型不能从 source 继承：p=73 有严格的
   F->G、G->F 和 F->hit 三种折叠。定理只适用于真实 persistent source；内部
   transient receipt 必须比较 parent->target，p=1201 的已知替代总折叠仍精确返回
-  parent，不能登记为递归边。仓库尚无通用 charged-chart normal-form verifier，也未把
-  一般 SNF 分离角色和完整 receipt hash 序列化为统一 selector adapter，故本卡证明
-  条件性准入定理但不伪称已有全局 `verified_edge`。
+  parent，不能登记为递归边。现有 versioned reference adapter 已将一般 Smith F 见证、
+  HNF-dual G 分离角色、完整 source/target content address 与 E5 receipt 序列化；它只消费
+  外部给定的 persistent-source registration 和 terminal-first miss，不能认证该 registration
+  对所有实际状态均存在，故本卡仍只给出条件性准入定理，不伪称已有全局 `verified_edge`。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -41,8 +42,10 @@ topics:
 sources:
   - reproduction: reproductions/type_i_overflow_total_cofactor_typed_projection_dispatch.py
     role: focused-type-change-terminal-and-transient-boundary-controls
+  - reproduction: reproductions/type_i_overflow_total_cofactor_typed_adapter.py
+    role: versioned-relative-E1-to-E5-content-addressed-adapter
 visibility: public
-last_checked: '2026-08-09'
+last_checked: '2026-08-18'
 ---
 
 # 整体余因子 canonical 投影的全域 typed 分派与条件性 E1--E5 准入
@@ -110,7 +113,10 @@ A\mid K_A,\qquad R_A\equiv3\pmod4.
 只依赖 \((p,A)\)；完整 typed target 还依赖继承的 scope、schema/verifier version，
 以及这些字段共同生成的 state ID。这里不能借用一个现成的通用 `normal_form`
 verifier：仓库中的 normal form 都是 adapter-specific；本定理要求新 adapter 对 source
-和 target 分别定义、重算并验证自己的 normal form。
+和 target 分别定义、重算并验证自己的 normal form。当前
+`total_cofactor_typed_projection_v1` reference adapter 已固定该 normal form 和 state ID
+的编码；它验证作为输入的 registration 与 source ID 绑定，但不把这个输入误当作可独立
+认证的 actual provenance。
 
 ## 2. 每个 target 都有完备的 typed 三分
 
@@ -144,10 +150,11 @@ B_\nu=\prod_i[-\nu_i,\nu_i]\cap\mathbb Z^r.
 \tag{10}
 \]
 
-`hit` 的盒内见证恢复中心平方除子和直接 Type I 终端。`F` 中，以有限 Cayley 图的
-最短路选择 \(\ell_1\) 最小、再字典序最小的无界指数见证；这给出合法
-`target_fiber.status=nonempty`，并相对 \(\nu_i\) 重算全局定向的
-\(D^-,D^+\)。`G` 中，有限阿贝尔商 \(U(R_A)/H_A\) 的对偶性给出角色
+`hit` 的盒内见证恢复中心平方除子和直接 Type I 终端。`F` 中，v1 adapter 在固定的
+CRT 坐标和素因子顺序下取 Smith normal form 的确定性关系原像；它是带版本的 canonical
+见证，而不声称 \(\ell_1\) 最短。这给出合法 `target_fiber.status=nonempty`，并相对
+\(\nu_i\) 重算全局定向的 \(D^-,D^+\)。`G` 中，有限阿贝尔商
+\(U(R_A)/H_A\) 的对偶性给出角色
 
 \[
 \psi(q_i)=1\quad(1\le i\le r),
@@ -156,7 +163,7 @@ B_\nu=\prod_i[-\nu_i,\nu_i]\cap\mathbb Z^r.
 \tag{11}
 \]
 
-用固定 CRT/SNF 编码按角色阶和相位字典序选择规范分离角色，并记录
+v1 adapter 用固定 CRT 坐标中的 HNF-dual 行，按角色阶和相位字典序选择规范分离角色，并记录
 `signed_defect.status=not_applicable`。因此 (10)--(11) 是一个有限、确定且对所有
 target 有定义的分类器；它不需要假设 target 与 source 类型相同。
 
@@ -175,10 +182,10 @@ W_T=\operatorname{Sol}(4,p).
 \tag{12}
 \]
 
-未来具名 adapter `total_cofactor_typed_projection_v1` 必须执行：
+具名 reference adapter `total_cofactor_typed_projection_v1` 执行：
 
 ```text
-verify persistent source state_id and queued provenance
+consume a persistent-source registration bound to source_state_id
 verify determinant receipt binds (M,d,n,A) to the exact source
 recompute source factorization and hit/F/G fields
 construct (C_A,R_A,K_A,d_A,n_A)
@@ -190,11 +197,14 @@ bind all inputs, verifier versions and classification digests into edge_id
 
 任一实际回执通过这些检查时，E1--E4 全部成立：
 
-1. **E1** 由作为输入假设的真实 queued `source_state_id`、绑定的 determinant receipt、
-   charged support 与原样传播的 \(\sigma\) 支付；determinant 本身不能制造这些字段；
+1. **E1** 由作为输入前提的 queued `source_state_id`、绑定的 determinant receipt、
+   charged support 与原样传播的 \(\sigma\) 支付；adapter 检查 source ID、receipt digest、
+   terminal-first miss 与 persistent flag 的绑定，但 determinant 或非空 digest 本身不能制造
+   actual provenance；
 2. **E2** 由 (5)--(7) 的完整 target 构造支付；
-3. **E3** 由 source/target 的独立三分、新 adapter 的通用 charged-chart normal-form
-   verifier、state/receipt hash 重算支付；该 verifier 是待实现合同，不是现有 helper；
+3. **E3** 由 source/target 的独立三分、adapter-specific charged-chart normal-form
+   verifier、state/receipt hash 重算支付；它是已实现的 reference verifier，仍不是一个
+   能证明 source registration 存在的全域 selector；
 4. **E4** 取
    \[
    \boxed{\Phi_{T\to S}(u)=u:
@@ -301,14 +311,13 @@ H\longrightarrow H,
 ## 7. 证明推进与实现边界
 
 本卡消除了“canonical target 可能没有完备 typed 分类或 E4”的数学缺口：对任何真实
-queued strict source，(10)--(16) 已给出终端或 E1--E5 的条件性准入模板；只有新 adapter 的
-具名回执通过第 3 节合同后，才能成为 verified edge。它没有声称当前统一 selector 已经
-注册任意这样的边。生产回执仍须实现一般 CRT/SNF G 分离角色、规范 F 最短见证、
-通用 charged-chart normal-form verifier、完整 source/target state hash 和 terminal-first
-dispatcher。当前通用 selector 顺序尚无 total-fold 分支，既有 overflow G profile 也未
-携带本合同要求的任意分离角色；
-聚焦复现器只核验
-三种类型变化和 transient persistence 边界。
+queued strict source，(10)--(16) 已给出终端或 E1--E5 的条件性准入模板。reference adapter
+现在实际重算 source/target normal form、完整 factorization、Smith F witness、HNF-dual G
+separator、content-addressed state/edge payload、scope continuity 与 local-drop ticket；其
+focused controls 覆盖 F->G、G->F、F->hit、stutter、transient 和 terminal-first 边界。
 
-因此现阶段的准确标签是“全称 adapter 准入定理已建立，统一序列化实现仍待接入”，
+尚未实现的不是这些局部字段，而是全域量词的来源：adapter 接受一个外部 registration，
+只验证其结构和与 source 的绑定，不能由该 payload 独立推出 parent receipt 是 actual、
+terminal-first dispatcher 已穷尽或每个 residual source 都有 determinant receipt。因此准确
+标签是“相对 adapter 实现已接入；source-registration/reachability 与 T6 totality 仍开放”。
 不能仅凭本页把旧 `candidate_transition` JSON 批量改写为 `verified_edge`。

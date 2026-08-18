@@ -31,7 +31,7 @@ one.
 | `GAP-O1-INITIAL-ROOT` | Every core root has a canonical legal serializer and first non-circular selector classification. | The contract specifies root fields, not a total dispatch. |
 | `GAP-O1-GLOBAL-EXHAUSTION` | Every actual nonterminal reachable state belongs to a family with a total exit. | The registered-edge taxonomy is not an independent construction of the reachable set. |
 | `GAP-O1-POST-G-TYPE-I` | Every nonterminal state after a q=1 or positive-q G handoff has a total Type I continuation. | The full-carrier handoff proves a root and first strict segment only. |
-| `GAP-O1-A-GT-ONE-OVERFLOW` | Every actual residual `A>1` overflow is terminal or has E1--E5. | Current resets and bounded-divisor constructions are guarded. |
+| `GAP-O1-A-GT-ONE-OVERFLOW` | Every actual residual `A>1` overflow is terminal or has E1--E5. | The relative total-cofactor adapter retypes a supplied registered source, but no universal theorem supplies that registration for every residual. |
 | `GAP-O1-HIGH-SUPPORT-ROOT-CAPACITY` | Every high-support/root-capacity state has a strict exit or is empty. | Sink-bundle selection only works when its improvement set is nonempty. |
 | `GAP-O2-PROPER-ROOT-K-GT-ONE` | QC1 or TR1 physicalizes every actual proper-root `k>1` residual. | A formal quotient chart has neither E1 provenance nor an E4 lift. |
 | `GAP-O3-C8-OUTGOING` | Every terminal-first-surviving c=8 parent has terminal, double-low receipt, or another verified edge. | The c=8 macro is conditional on the qualifying receipt. |
