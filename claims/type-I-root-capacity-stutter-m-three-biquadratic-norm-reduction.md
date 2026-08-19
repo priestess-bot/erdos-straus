@@ -24,6 +24,9 @@ statement: >-
   quotient-only residual 三类之一。在 terminal-first 的 m=3 slice 中，5|D* 当且仅当
   v_5(3u^2-u+1)>=v_5(A)+2；这强制 p≡11、h≡9、u≡3 (mod 25)，且若该 5-residual
   高于最小层或进入 complete-excess multiplier，则原始 root 坐标为 11 (mod 25)。
+  在唯一 minimal leaf 中，L_5=D_*/5 含有非 5 的 pure-T carrier；但其任一非平凡
+  除子均不能命中 general-A_0 positive whole-divisor Type II terminal fan。
+  更一般地，m=3 的 D 因子不命中 native raw Type II menu。
   该约化不证明这些互锁 divisor fibers 为空，不构造
   terminal 或 E1--E5 successor，也不闭合 QC1、TR1 或 T6。
 claim_status: established
@@ -40,6 +43,9 @@ depends_on:
   - type-I-root-capacity-stutter-transverse-root-residue-low-gap-descent
   - type-I-root-capacity-stutter-transverse-overlap-valuation-alignment
   - type-I-root-capacity-stutter-transverse-overlap-complete-excess-valuation-classification
+  - type-I-root-capacity-stutter-c-side-m-localization
+  - type-I-root-capacity-stutter-transverse-composite-divisor-positive-quadratic-type-II-fan
+  - type-I-root-capacity-stutter-transverse-native-raw-type-II-menu
 topics:
   - type-I
   - root-capacity
@@ -68,6 +74,12 @@ sources:
     role: p-minus-one-overlap-excess-height
   - claim: type-I-root-capacity-stutter-transverse-overlap-complete-excess-valuation-classification
     role: p-minus-one-minimal-leaf-complete-excess-classification
+  - claim: type-I-root-capacity-stutter-c-side-m-localization
+    role: exact-C-side-versus-T-side-carrier-split-at-m-equals-three
+  - claim: type-I-root-capacity-stutter-transverse-composite-divisor-positive-quadratic-type-II-fan
+    role: whole-divisor-positive-ray-terminal-conditions
+  - claim: type-I-root-capacity-stutter-transverse-native-raw-type-II-menu
+    role: native-raw-ray-terminal-conditions
 visibility: public
 last_checked: '2026-08-19'
 ---
@@ -761,7 +773,7 @@ t=v_5(D_*)=\delta-1,
 
 \[
 2T=2p^2\varrho-(p+1)
-\equiv5(1+2c)pmod {25}.
+\equiv5(1+2c)\pmod {25}.
 \]
 
 故 \(25\mid T\) 当且仅当 \(c\equiv2\pmod5\)，这正是 (20zb)。再由
@@ -799,6 +811,264 @@ complete-excess \(5\)-branch 都已被压到同一个 root-residue class；剩�
 本节只把唯一 low-gap negative overlap 压缩为一条可无限提升的局部同余管；它没有
 证明该管为空，也没有给出 terminal、source consumption 或 E1--E5 adapter。因此
 TR1、QC1 与 T6 的状态均不改变。
+
+### 6.4 最小 \(q=5\) leaf 强制一个非平凡 pure-\(T\) cofactor
+
+上一节的 minimal leaf 还不能被当作“只剩同一个 \(5\)”的局部残余。事实上，在整个
+\(q=5\) branch（不只 minimal leaf）中，C-side 与 transverse carrier 精确分离为
+
+\[
+\boxed{D_C=5,\qquad D_T=D_*.}
+\tag{20zf}
+\]
+
+**证明。** \(m=3\) 时，C-side localization 给出
+
+\[
+D_C\mid\operatorname{lcm}(m,m+2)=15.
+\tag{20zg}
+\]
+
+另一方面 \(D\equiv1\pmod3\)，故 \(3\nmid D_C\)。由 (20z)，
+\(v_5(D)\ge2\) 而 \(v_5(C)=v_5(p-1)=1\)，所以 \(5\mid D_C\)。
+于是 (20zg) 强制 \(D_C=5\)。再用 (20t) 的 \(D_H=5\)，便得到
+\(D_T=D/D_C=D/5=D_*\)。证毕。
+
+现在专门回到 (20zd) 的 minimal leaf，定义
+
+\[
+L_5=\frac{D_*}{5}.
+\tag{20zh}
+\]
+
+由于 \(t=v_5(D_*)=1\)，有 \((L_5,5)=1\)。而 (20g) 给出
+
+\[
+L_5>\frac{2p+1}{25}>1
+\tag{20zi}
+\]
+
+（核心素数 \(p\ge73\)），所以可取一个奇素数 \(\ell\mid L_5\)。它不是另一份
+模糊的 C-side 因子：由 (20zf)、\(D_H=5\)、actual C/T split 及 (20h)，有
+
+\[
+\boxed{
+\ell\mid\gcd\bigl(T,\ 2\varrho+3,\ h^2-h-2\varrho\bigr),
+\qquad
+\ell\nmid (p^2-1)(h^2-1)m(m+2)(m-1).}
+\tag{20zj}
+\]
+
+这里 \(\ell\nmid p^2-1\) 来自 \(D_C=5\)，\(\ell\nmid h^2-1\) 来自
+\(D_H=5\)，而 \(m=3\)、\(\ell\ne3,5\) 排除余下三个小 \(m\)-side 因子。
+第一组整除式分别来自 \(D_T\mid T\)、\(D_T\mid h^2-h-2\varrho\) 与
+\(D_*\mid2\varrho+3\)。
+
+因此 minimal \(q=5\) leaf 不是一个单独的 overlap dead end：它**必定**携带至少一个
+非 \(5\) 的 actual pure-\(T\) prime carrier。这个 carrier 仍未被证明命中 terminal
+menu 或拥有 E1--E5 adapter；但未来的 TR1 证明可以且必须在 \(\ell\) 上进行
+physicalization，不能只反复处理已经完全分账的 \(5\) overlap。
+
+### 6.5 \(L_5\) 的所有非平凡除子均避开 general-\(A_0\) positive terminal fan
+
+上一节产生的 pure-\(T\) cofactor 看似可以立刻送入 general-\(A_0\) quadratic
+Type II fan 的正支。这里必须先排除一个更强的事实：在 minimal leaf 内，**没有**
+\(L_5\) 的非平凡除子能满足该正支的完整 terminal congruence。令
+
+\[
+Q>1,\qquad Q\mid L_5.
+\tag{20zk}
+\]
+
+则不存在 odd \(A_0\mid p+3\)、even \(K>A_0\) 与 \((A_0,K)=1\)，使得
+
+\[
+Q\mid Kp+A_0,
+\qquad
+Q\equiv3K-A_0\pmod {4A_0K}.
+\tag{20zl}
+\]
+
+按照 whole-divisor positive fan，(20zl) 若成立就会给出一张 direct Type II
+terminal；本节证明它在这个 leaf 中实际上没有输入。
+
+**证明。** 令
+
+\[
+s=\frac{Q+A_0}{K},
+\qquad
+C_0=\frac{p+s}{4A_0Q}.
+\tag{20zm}
+\]
+
+由 (20zl) 有
+
+\[
+Q=Ks-A_0,
+\qquad
+s\equiv3\pmod {4A_0},
+\qquad
+s\ge3,
+\tag{20zn}
+\]
+
+且 \(C_0\) 是正整数。又 \(Q\mid D\mid ph+1\)，将
+\(Q\mid Kp+A_0\) 乘以 \(h\) 后得到
+
+\[
+A_0h\equiv K\pmod Q.
+\tag{20zo}
+\]
+
+由 (20zl) 的最小正剩余，\(Q\ge3K-A_0>K\)。故可唯一写成
+
+\[
+A_0h=\alpha Q+K,
+\qquad \alpha\in\mathbb Z_{\ge0}.
+\tag{20zp}
+\]
+
+现在写 \(L_5=Qj\)。minimal leaf 的 \(D_H=5\)、\(D_*=5L_5\) 与
+\(t=1\) 给出
+
+\[
+D=25Qj.
+\tag{20zq}
+\]
+
+另一方面 (20zm) 给出 \(p=4A_0QC_0-s\)。将它和 (20zp) 代入
+\(D=3p+1-h\)，并先乘以 \(A_0\)，得到
+
+\[
+\bigl(12A_0^2C_0-\alpha-25A_0j\bigr)Q
+=3A_0s+K-A_0.
+\tag{20zr}
+\]
+
+右端为正。记左侧括号为 \(\beta\in\mathbb Z_{>0}\)，再代入
+\(Q=Ks-A_0\)，便得到只含 terminal 参数的刚性方程
+
+\[
+\boxed{
+(\beta K-3A_0)s=K+A_0(\beta-1).}
+\tag{20zs}
+\]
+
+它的正整数解在 (20zn) 和 \(K>A_0\) 下极少。若 \(\beta\ge5\)，则
+
+\[
+3(\beta K-3A_0)-\bigl(K+A_0(\beta-1)\bigr)
+=(3\beta-1)K-\beta A_0-8A_0>0,
+\]
+
+其中最后一步使用 \(K\ge A_0+1\)。这与 \(s\ge3\) 矛盾。剩余
+\(\beta=1,2,3,4\) 分别给出
+
+\[
+\begin{array}{c|c}
+\beta&\text{(20zs) 的等价式}\\
+\hline
+1&(s-1)K=3A_0s\\
+2&(2s-1)K=A_0(3s+1)\\
+3&(3s-1)K=A_0(3s+2)\\
+4&(4s-1)K=3A_0(s+1).
+\end{array}
+\tag{20zt}
+\]
+
+由于 \(s=3+4A_0n\)，第一行要求 \(s-1\mid3A_0\)：当 \(s=3\) 时这会要求
+\(2\mid3A_0\)，而 \(s\ge4A_0+3\) 时有 \(s-1>3A_0\)，故无解。第二行中
+\(\gcd(2s-1,3s+1)\mid5\)，第三行中
+\(\gcd(3s-1,3s+2)\mid3\)，第四行中
+\(\gcd(4s-1,s+1)\mid5\)。所以当 \(s\ge4A_0+3\) 时，(20zt) 每一行的
+左侧去除该公因子后仍大于右侧所能提供的 \(A_0\) 或 \(3A_0\) 因子；只需检查
+\(s=3\)。此时第二行给出
+
+\[
+(A_0,K,Q)=(1,2,5),
+\tag{20zu}
+\]
+
+第三行给出 \(8K=11A_0\)，与 \(A_0\) 为奇数、\(K\) 为偶数矛盾；第四行给出
+\(11K=12A_0\)。结合 \((A_0,K)=1\)，后者唯一给出
+
+\[
+(A_0,K,Q)=(11,12,25).
+\tag{20zv}
+\]
+
+但 (20zh) 已有 \((L_5,5)=1\)，故 (20zu)、(20zv) 的 \(Q=5\) 和 \(Q=25\)
+都不可能整除 \(L_5\)。矛盾，证毕。
+
+这条 no-go 同时覆盖 \(Q=\ell\) 的素数选择和任意复合 \(Q\mid L_5\)，也允许
+unbounded 的 gap \(s\)；因此它不是此前 fixed-low-gap 枚举的重述。它只排除了
+一个明确的 direct Type II terminal family。native raw-ray、其它 Type I/II 图表、
+general-\(A_0\) 负支以及带 E1--E5 的 actual adapter 都仍未处理，TR1 与 T6 的状态
+不变。
+
+### 6.6 \(m=3\) 的 native raw Type II menu 实际为空
+
+这个 no-go 不需要进入 \(q=5\) leaf。对任一 \(m=3\) actual receipt，由 (5) 与
+\(h=3u\) 直接有
+
+\[
+h^2-h+3=3(3u^2-u+1)=3AD,
+\qquad\text{故}\qquad D\mid h^2-h+3.
+\tag{20zw}
+\]
+
+反设某个 \(Q\mid D\) 命中 native raw menu。按该 menu 的定义，存在
+\(c\in\mathbb Z_{>0}\) 使
+
+\[
+Q=4hc-1.
+\tag{20zx}
+\]
+
+令
+
+\[
+N=\frac{h^2-h+3}{Q}\in\mathbb Z_{>0}.
+\tag{20zy}
+\]
+
+模 \(h\) 使用 (20zx) 得 \(N\equiv-3\pmod h\)，故可写
+
+\[
+N=ah-3,
+\qquad a\in\mathbb Z_{>0}.
+\tag{20zz}
+\]
+
+将 (20zx)、(20zz) 代回 (20zy) 的分子，严格消去常数项后有
+
+\[
+h^2-h+3=(ah-3)(4hc-1)
+\quad\Longrightarrow\quad
+(4ac-1)h=a+12c-1.
+\tag{20zza}
+\]
+
+但 \(a,c\ge1\) 时
+
+\[
+4(4ac-1)-(a+12c-1)
+=(16c-1)a-12c-3\ge0.
+\tag{20zzb}
+\]
+
+所以 (20zza) 强制 \(h\le4\)。另一方面 (11)--(12) 已给
+\(h=3u\ge48\)，矛盾。因此
+
+\[
+\boxed{\mathcal M_{\mathrm{raw}}(p,h,D)=\varnothing
+\quad\text{在所有 actual }m=3\text{ proper-root receipts 中成立}.}
+\tag{20zzc}
+\]
+
+这不与一般 native raw menu 的存在性冲突：它使用的是本 slice 特有的
+\(D\mid h^2-h+3\)。结论只排除该 Type II terminal chart；其它 terminal 图表和
+所有 E1--E5 physicalization 义务保持开放。
 
 ## 7. 根支撑强制的 primitive \(m=3\) quotient fiber
 
