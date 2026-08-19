@@ -428,7 +428,7 @@ D_H=1\Longrightarrow\varrho\ge p.}
 residue、source consumption、全域 lift 或 T5 ticket，因而不构成 TR1；其作用是排除把
 \(r_{27}\) 代入 (20h) 的错误，并把未来的 adapter 限定在真实高-root 输入上。
 
-### 6.2 \(m=3\) 的 \(A_0=1\) automatic low-gap gate 已完全分类
+### 6.2 \(m=3\) 的 low-gap positive gate 与 \(A_0=1\) negative gate 已完全分类
 
 这里的 \(A_0\) 是 Type II raw-ray 的参数，不是本卡的 stutter 坐标 \(A\)。令
 
@@ -437,10 +437,28 @@ residue、source consumption、全域 lift 或 T5 ticket，因而不构成 TR1�
 F_s^+=sh-1,\qquad F_s^-=s(h-1)+1,
 \]
 
-并固定一个奇素数 \(q\mid D_*\)，满足 \(q\equiv-1\pmod {2s}\)。已有的
-\(A_0=1\) low-gap root-residue 分派把 \(q\mid F_s^+\) 送入 direct Type II
-terminal，把 \(q\mid F_s^-\) 送入它的 negative branch。对 \(m=3\)，这两个
-入口实际只留下一个可枚举的素数。
+先取已有 root-residue low-gap adapter 的任一**正根**输入：\(A_0\mid p+3\) 为奇数，
+\(q\mid D_*\) 是奇素数、\(q\nmid A_0\)，且其 root residue
+\(K=\langle A_0h\rangle_q\) 满足该 adapter 的条件
+
+\[
+q+A_0=sK,\qquad s\in\mathcal G,
+\qquad s\equiv3\pmod {4A_0}.
+\tag{20j-0}
+\]
+
+因该 adapter 还要求 \(K>A_0\)，有
+\(q=sK-A_0\ge s(A_0+1)-A_0>s\)。由 \(K\equiv A_0h\pmod q\) 与 (20j-0)，有
+
+\[
+q\mid A_0(sh-1),
+\qquad\text{从而}\qquad q\mid F_s^+.
+\tag{20j-1}
+\]
+
+这一步对任意允许的 \(A_0\) 都成立，不把它限制为 \(1\)。另在 \(A_0=1\) 的
+existing negative low-gap branch 中，输入条件正是 \(q\mid F_s^-\)。下面同时分类这
+两种情形。
 
 确实，令
 
@@ -455,52 +473,58 @@ terminal，把 \(q\mid F_s^-\) 送入它的 negative branch。对 \(m=3\)，这�
 \tag{20j}
 \]
 
-因为 \(q\mid D_*\mid D\) 且 \(q>s\)，任一正根或负根命中都强制
-\(q\mid\Delta_s\)。四个固定整数及其允许的素因子为
+因为 \(q\mid D_*\mid D\) 且 \(q>s\)，(20j-1) 的正根命中强制
+\(q\mid\Delta_s\)。四个固定整数分解为
 
 \[
-\begin{array}{c|c|c}
-s&\Delta_s&\text{满足 }q\equiv-1\pmod {2s}\text{ 的奇素因子}\\
-\hline
-3&25&5\\
-7&141=3\cdot47&\varnothing\\
-11&353&\varnothing\\
-23&1565=5\cdot313&\varnothing.
-\end{array}
+\Delta_3=25,\qquad
+\Delta_7=141=3\cdot47,\qquad
+\Delta_{11}=353,\qquad
+\Delta_{23}=1565=5\cdot313.
 \tag{20k}
 \]
 
-其中 \(353\) 与 \(313\) 都是素数（分别只需试除不超过 \(17\) 的素数）。表中后三行分别只需检查
-\(3,47\not\equiv13\pmod {14}\)、\(353\equiv1\pmod {22}\)，以及
-\(5,313\equiv5,37\pmod {46}\)。因此
+其中 \(353\) 与 \(313\) 都是素数（分别只需试除不超过 \(17\) 的素数）。条件
+\(s\equiv3\pmod {4A_0}\) 在 \(s=3,7,11,23\) 时分别只允许
+\(A_0\) 为任意奇数、\(1\)、\(1\)、或 \(1,5\)。逐项再用
+\(q+A_0\equiv0\pmod s\)：当 \(s=7\) 时 \(3+1,47+1\) 都不被 \(7\)
+整除；当 \(s=11\) 时 \(353+1\) 不被 \(11\) 整除；当 \(s=23\) 时
+\(A_0=1\) 给出 \(5+1,313+1\not\equiv0\pmod {23}\)，而 \(A_0=5\) 时
+\(q\nmid A_0\) 排除 \(q=5\)，且 \(313+5\not\equiv0\pmod {23}\)。因此
 
 \[
-q\mid F_s^+\ \text{或}\ q\mid F_s^-
-\quad\Longrightarrow\quad
-(s,q)=(3,5).
+\boxed{\text{任一 positive low-gap root-residue 输入都满足 }(s,q)=(3,5).}
 \tag{20l}
 \]
 
-这个唯一 pair 的两个根仍须区分。若 \(5\mid F_3^+=3h-1\)，则
+若 \(5\mid F_3^+=3h-1\)，则
 \(h\equiv2\pmod5\)。又 \(5\mid D\) 与 \(D=3p+1-h\) 给出
-\(p\equiv2\pmod5\)。令
+\(p\equiv2\pmod5\)。因为 \(5\nmid A_0\)、\(A_0\mid p+3\)，令
 
 \[
-C=\frac{p+3}{20}.
+C=\frac{p+3}{20A_0},
+\qquad
+K=\frac{A_0+5}{3}.
 \]
 
-因为 \(p\equiv1\pmod4\)，\(C\) 是正整数，且已有正根构造在这里具体成为
+因为 \(p\equiv1\pmod4\)，\(C\) 是正整数；\(K\) 则由 (20j-0) 给出。已有正根
+构造在这里具体成为
 
 \[
 \boxed{
 \frac4p=
-\frac1{5C}+
-\frac1{2pC}+
-\frac1{10pC}.}
+\frac1{5A_0C}+
+\frac1{pA_0CK}+
+\frac1{5pCK}.}
 \tag{20m}
 \]
 
-所以 terminal-first 后不可能保留这个正根。若反而 \(5\mid F_3^-=3h-2\)，则
+所以 terminal-first 后不可能保留任何允许 \(A_0\) 的 positive low-gap gate。最后才
+处理 \(A_0=1\) 的 negative branch。此时额外有 \(q\equiv-1\pmod {2s}\)，且
+\(q\mid F_s^-\) 仍由 (20j) 强制 \(q\mid\Delta_s\)。式 (20k) 的素因子中只有
+\((s,q)=(3,5)\) 满足该剩余类：后三个 \(s\) 分别只需检查
+\(3,47\not\equiv13\pmod {14}\)、\(353\equiv1\pmod {22}\)，以及
+\(5,313\equiv5,37\pmod {46}\)。若 \(5\mid F_3^-=3h-2\)，则
 \(h\equiv-1\pmod5\)，同一 \(D\) 关系给出 \(p\equiv1\pmod5\)。此时
 
 \[
@@ -517,7 +541,7 @@ branch；若 \(5\) 的更高赋值仍留在 \(D_*\)，那只是该 overlap 的�
 \[
 \boxed{
 \begin{array}{l}
-\text{terminal-first 的 actual }m=3\text{ stutter 不保留任何 }A_0=1\text{ positive low-gap exit};\\
+\text{terminal-first 的 actual }m=3\text{ stutter 不保留任何允许 }A_0\text{ 的 positive low-gap exit};\\
 \text{其 }A_0=1\text{ negative low-gap carrier 至多是 }(s,q)=(3,5)\text{ 的既有 overlap}.
 \end{array}}
 \tag{20o}
