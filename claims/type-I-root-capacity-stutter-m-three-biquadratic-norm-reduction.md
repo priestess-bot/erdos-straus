@@ -428,7 +428,7 @@ D_H=1\Longrightarrow\varrho\ge p.}
 residue、source consumption、全域 lift 或 T5 ticket，因而不构成 TR1；其作用是排除把
 \(r_{27}\) 代入 (20h) 的错误，并把未来的 adapter 限定在真实高-root 输入上。
 
-### 6.2 \(m=3\) 的 low-gap positive gate 与 \(A_0=1\) negative gate 已完全分类
+### 6.2 \(m=3\) 的 general-\(A_0\) low-gap factor gate 已完全分类
 
 这里的 \(A_0\) 是 Type II raw-ray 的参数，不是本卡的 stutter 坐标 \(A\)。令
 
@@ -456,9 +456,8 @@ q\mid A_0(sh-1),
 \tag{20j-1}
 \]
 
-这一步对任意允许的 \(A_0\) 都成立，不把它限制为 \(1\)。另在 \(A_0=1\) 的
-existing negative low-gap branch 中，输入条件正是 \(q\mid F_s^-\)。下面同时分类这
-两种情形。
+这一步对任意允许的 \(A_0\) 都成立，不把它限制为 \(1\)。下文还会处理同一
+general-\(A_0\) quadratic fan 的 negative linear factor 在这个 low-gap 形状下的情形。
 
 确实，令
 
@@ -519,30 +518,74 @@ K=\frac{A_0+5}{3}.
 \tag{20m}
 \]
 
-所以 terminal-first 后不可能保留任何允许 \(A_0\) 的 positive low-gap gate。最后才
-处理 \(A_0=1\) 的 negative branch。此时额外有 \(q\equiv-1\pmod {2s}\)，且
-\(q\mid F_s^-\) 仍由 (20j) 强制 \(q\mid\Delta_s\)。式 (20k) 的素因子中只有
-\((s,q)=(3,5)\) 满足该剩余类：后三个 \(s\) 分别只需检查
-\(3,47\not\equiv13\pmod {14}\)、\(353\equiv1\pmod {22}\)，以及
-\(5,313\equiv5,37\pmod {46}\)。若 \(5\mid F_3^-=3h-2\)，则
+所以 terminal-first 后不可能保留任何允许 \(A_0\) 的 positive low-gap gate。
+
+再取同一 general-\(A_0\) quadratic fan 的一个 low-gap **negative** specialization。
+这次不假设正根的 \(K=\langle A_0h\rangle_q\)：令 \(A_0\mid p+3\) 为奇数，
+\(K>A_0\) 为偶数、\((A_0,K)=1\)，\(q\mid D_*\) 为奇素数，并满足
+
+\[
+q+A_0=sK,\qquad s\in\mathcal G,
+\qquad s\equiv3\pmod {4A_0}.
+\tag{20m-1}
+\]
+
+再假设它落在 negative linear factor，
+
+\[
+q\mid((K-A_0)p-A_0).
+\tag{20m-1a}
+\]
+
+因为 \(q\mid D_*\mid D\mid ph+1\)，有 \(q\nmid p\)。若 \(q\mid A_0\)，
+(20m-1a) 会给出 \(q\mid K\)，与 \((A_0,K)=1\) 矛盾；故 \(q\nmid A_0\)。
+又 \(q=sK-A_0>s\)，并由 \(p^{-1}\equiv-h\pmod q\)、(20m-1a) 得
+
+\[
+K-A_0\equiv-A_0h\pmod q,
+\qquad
+K\equiv A_0(1-h)\pmod q.
+\tag{20m-2}
+\]
+
+因 \(Da=3+h(h-1)\) 且 \(q\mid D\)，这也重放 general-\(A_0\) quadratic shift：
+
+\[
+3A_0^2+K(K-A_0)
+\equiv A_0^2\bigl(3+(1-h)(-h)\bigr)
+\equiv0\pmod q.
+\tag{20m-2a}
+\]
+
+将它代回 \(q+A_0=sK\)，得到
+
+\[
+q\mid A_0\bigl(s(h-1)+1\bigr),
+\qquad\text{从而}\qquad q\mid F_s^-.
+\tag{20m-3}
+\]
+
+由 (20j) 又有 \(q\mid\Delta_s\)。从 (20k) 到 (20l) 的逐项枚举只使用
+\(q\mid\Delta_s\)、\(q\nmid A_0\)、\(s\equiv3\pmod {4A_0}\) 与
+\(q+A_0\equiv0\pmod s\)，所以在这里同样给出 \((s,q)=(3,5)\)。若
+\(5\mid F_3^-=3h-2\)，则
 \(h\equiv-1\pmod5\)，同一 \(D\) 关系给出 \(p\equiv1\pmod5\)。此时
 
 \[
-5\mid(p-1,h+1,m+2),\qquad
-K=\frac{5+1}{3}=2,
-\qquad L=K-1=1.
+5\mid(p-1,h+1,m+2).
 \tag{20n}
 \]
 
 它正是已有 \(p-1,h+1,m+2\) overlap，而不是新的 pure-\(T\) transverse
 branch；若 \(5\) 的更高赋值仍留在 \(D_*\)，那只是该 overlap 的既有 excess
-情形。故可准确总结为
+情形。特别地，取 \(A_0=1\) 时才有 \(K=(5+1)/3=2\)、\(L=1\)，恰恢复此前的
+\(A_0=1\) negative branch。故可准确总结为
 
 \[
 \boxed{
 \begin{array}{l}
 \text{terminal-first 的 actual }m=3\text{ stutter 不保留任何允许 }A_0\text{ 的 positive low-gap exit};\\
-\text{其 }A_0=1\text{ negative low-gap carrier 至多是 }(s,q)=(3,5)\text{ 的既有 overlap}.
+\text{其 general-}A_0\text{ negative low-gap specialization 至多是 }(s,q)=(3,5)\text{ 的既有 overlap}.
 \end{array}}
 \tag{20o}
 \]
