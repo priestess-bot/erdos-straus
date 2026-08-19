@@ -3273,6 +3273,283 @@ q\equiv1-D_1\pmod p.}
 引入**其它**素数的完整 excess block，也没有证明 \(\mathsf{Reint}_{q_\star}\) 为空；
 因此 second-child canonicalization、E1--E5 及 TR1 仍保持开放。
 
+### 6.20 second child 的完整 terminal-or-macro 算术分解
+
+第 6.19 节留下的“其它新素数”不是一个任意选择的因子集合。对 second child
+\((y',t)\) 直接按相同 \(K\) 作完整 excess normalisation：
+
+\[
+y'=Q_-\beta_-,
+\qquad
+t=Q_+\beta_+,
+\qquad
+Q_\pm=Q_K(y'),Q_K(t).
+\tag{20zz-second-full-1}
+\]
+
+这里 \(Q_K\) 是 (20zzt) 的逐赋值最大完整块。令
+
+\[
+M_2:=\operatorname{lcm}(\mathcal A,Q_-,Q_+),
+\qquad
+L_2:=\frac{M_2}{\mathcal A}.
+\tag{20zz-second-full-2}
+\]
+
+由于 \((y',t)=1\)，这一定义不依赖两侧显示顺序，且每个 \(Q_\pm\) 都是由 actual
+raw node 唯一确定的，不是为目标 chart 反向选择的因子。
+和第 6.19 节的 \(M'\) 一样，\(M_2\) 是相对 original root support
+\(\mathcal A\) 的 fresh arithmetic macro target；它不允许把已经出现的
+\(M_{\rm split}\) 当作可丢弃的 persistent support 而作 reset。
+
+先按 source action 的 terminal-first priority 检查 \((y',t)\)。以下假设没有 terminal。
+由 (20zz-second-q-6)，\(y'\) 已 p-free，而 \(t\) 的唯一 p-free 门是
+
+\[
+\boxed{
+p\nmid t
+\quad\Longleftrightarrow\quad
+q_\star\not\equiv1-D_1\pmod p.}
+\tag{20zz-second-full-3}
+\]
+
+在该门通过时，second child 的 complete-excess 算术严格穷尽为
+
+\[
+\boxed{
+\begin{array}{c|c}
+(Q_-,Q_+)&\text{唯一的算术输出}\ \\ \hline
+(1,1)&y't\mid K,\ \text{Type I terminal}\\
+(Q,1)\ \text{或}\ (1,Q),\ Q>1&\text{single-side complete-excess bundle}\\
+Q_->1,\ Q_+>1&\text{path-anchored atomic split bundle}.
+\end{array}}
+\tag{20zz-second-full-4}
+\]
+
+**证明。** \(Q_-=Q_+=1\) 等价于两侧都整除 \(K\)；又两侧互素，故
+\(y't\mid K\)，给出 terminal。恰有一块非平凡时，另一侧及所选块的 \(\beta\) 部分
+都在 \(K\) 容量内，且因原始性互素，正是单侧 bundle kernel。两块都非平凡时，
+\((y',t)=1\)、p-free 和 \(\beta_-\beta_+\mid K\) 正是 atomic schema 的完整算术
+kernel。没有第四类：这只是逐素数 maximality 的定义分解。\(\square\)
+
+若 (20zz-second-full-4) 的第二或第三行发生，则 \(L_2>1\)，而从 original high-support
+root 的 E5 只剩一条、完全显式的 rank-restoration gate：
+
+\[
+\boxed{
+\left\langle(4M_2)^{-1}\right\rangle_p=p-1
+\quad\Longleftrightarrow\quad
+L_2\equiv1\pmod p.}
+\tag{20zz-second-full-5}
+\]
+
+因为 \(4\mathcal A\equiv-1\pmod p\)，式 (20zz-second-full-5) 直接成立；其补集
+严格给 \(1\le c_2\le p-2\)。换言之，所有 companion 的其它新 excess block 都已被压入
+唯一整数 \(L_2\)，而不是保留为无限的未命名 factor menu。与第 6.13 节的 formal support
+作模 \(p\) 比较时，\((E/\ell)(F_y/q)\equiv q^{-1}\pmod p\)，故也可写成
+
+\[
+L_2\equiv1\pmod p
+\quad\Longleftrightarrow\quad
+qL_2\equiv q\pmod p;
+\tag{20zz-second-full-6}
+\]
+
+右侧正说明 companion 的总 correction 必须精确恢复 \(q\) 才能消掉 formal
+\(\langle-q\rangle_p\) 严格性。
+
+若原 source state 已有到 \((y',t)\) 的绑定 path、(20zz-second-full-3) 通过、terminal
+miss，且 (20zz-second-full-5) 不成立，则 (20zz-second-full-4) 的单侧或 atomic
+分支已分别给现有 path-anchored adapter 的 E1 witness 和 strict E5 ticket；E2--E4 仍恰好
+是相应 typed target、scope/owner、terminal prefix 与 \(\operatorname{Sol}(p)\) lift 的
+既有 validator obligations。
+
+**边界。** 这是一条 raw/complete-excess 的全分解，不是 TR1。它没有证明每个 actual
+proper-root state 有上述 persistent source path；也没有排空 p-block gate
+(20zz-second-full-3) 或 rank-restoration gate (20zz-second-full-5)，更没有替现有 adapter
+实际完成 E2--E4。它的结论是：second child 的真正剩余量词已精确变成这两个同余门和
+source/typed receipt，而不再是“可能还有某个其它 companion 因子”。
+
+### 6.21 second-child \(p\)-block 的 Hensel 分层与首层 re-entry 分离
+
+第 6.20 节的 \(p\)-free gate 失败时，不能把 \(p\)-block 静默从 \(Q_+\) 删除。
+不过这个失败也不是一个无结构的容量事件：它由所选 \(q_\star\) 的单个 \(p\)-adic
+residue tube 完全控制。仍记
+
+\[
+q:=q_\star,
+\qquad
+F_y=qf,
+\qquad
+y'=fD_y,
+\qquad
+t=R-y'.
+\tag{20zz-pblock-1}
+\]
+
+这里 \(p\nmid q\)，因为 \(p\nmid F_y\)。对每个 \(j\ge1\)，定义唯一的 source-child
+可读 residue
+
+\[
+\Theta_j\equiv yR^{-1}\pmod {p^j}.
+\tag{20zz-pblock-2}
+\]
+
+\(R\equiv1\pmod p\) 保证逆元存在。则有精确 Hensel 判别
+
+\[
+\boxed{
+p^j\mid t
+\quad\Longleftrightarrow\quad
+q\equiv\Theta_j\pmod {p^j}.}
+\tag{20zz-pblock-3}
+\]
+
+**证明。** 由 \(qt=qR-y\) 及 \(p\nmid q\)，左侧等价于
+\(qR\equiv y\pmod {p^j}\)，再右乘 \(R^{-1}\) 即得。\(\square\)
+
+这不是只重述第 6.19 节的模 \(p\) gate。利用 \(D=\ell D_1\)、
+\(E=1+p\sigma\) 和 (20zz-gate-10)，有 exact identities
+
+\[
+R=1+p(3+\sigma\ell D_1),
+\qquad
+y=1-D_1+p\bigl(3+\sigma(\ell-1)D_1\bigr).
+\tag{20zz-pblock-4}
+\]
+
+所以前两层为
+
+\[
+\boxed{
+\Theta_1\equiv1-D_1\pmod p,}
+\tag{20zz-pblock-5}
+\]
+
+\[
+\boxed{
+\Theta_2\equiv
+1-D_1+pD_1\bigl(3-\sigma+\sigma\ell D_1\bigr)
+\pmod {p^2}.}
+\tag{20zz-pblock-6}
+\]
+
+为核对第二式，写 \(q=1-D_1+pa\)。将 (20zz-pblock-4) 代入
+\(qR-y\)，模 \(p^2\) 后得到
+
+\[
+\frac{qR-y}{p}
+\equiv
+a-D_1\bigl(3-\sigma+\sigma\ell D_1\bigr)
+\pmod p,
+\tag{20zz-pblock-7}
+\]
+
+这正给出 (20zz-pblock-6)。特别地，\(p\mid t\) 的高度不是一个额外未命名的
+factor menu：\(v_p(t)=j\) 当且仅当 \(q\) 落在 \(\Theta_j\) 而不落在
+\(\Theta_{j+1}\) 的唯一嵌套 residue tube。
+
+首层还有一个有用且严格的分离。假设 \(p\mid t\) 但 \(p^2\nmid t\)，写
+
+\[
+t=pu,
+\qquad
+v=R-u.
+\tag{20zz-pblock-8}
+\]
+
+令
+
+\[
+\Theta_2^{\rm ret}
+\equiv
+\Theta_2+p(1-D_1)
+\equiv
+1-D_1+p\left[D_1\bigl(3-\sigma+\sigma\ell D_1\bigr)+1-D_1\right]
+\pmod {p^2}.
+\tag{20zz-pblock-9}
+\]
+
+则
+
+\[
+\boxed{
+p\mid v
+\quad\Longleftrightarrow\quad
+q\equiv\Theta_2^{\rm ret}\pmod {p^2}.}
+\tag{20zz-pblock-10}
+\]
+
+**证明。** 仍写 \(q=1-D_1+pa\)，并令
+\(a_0=D_1(3-\sigma+\sigma\ell D_1)\)。由 (20zz-pblock-7) 和
+\(qt=puq\)，有
+
+\[
+u\equiv(a-a_0)(1-D_1)^{-1}\pmod p.
+\tag{20zz-pblock-11}
+\]
+
+又 \(R\equiv1\pmod p\)，故 \(p\mid v=R-u\) 当且仅当
+\(a-a_0\equiv1-D_1\pmod p\)，即 (20zz-pblock-10)。\(\square\)
+
+这里 \(1<D_1<p\)，所以 \(1-D_1\not\equiv0\pmod p\)，从而
+
+\[
+\Theta_2^{\rm ret}\not\equiv\Theta_2\pmod {p^2}.
+\tag{20zz-pblock-12}
+\]
+
+故 first \(p\)-block 的全部二阶行为严格分成三个互斥分支：
+
+\[
+\boxed{
+\begin{array}{c|c}
+q\pmod {p^2}&\text{actual raw consequence}\\ \hline
+\Theta_2&p^2\mid t\\
+\Theta_2^{\rm ret}&p\parallel t\ \text{且}\ p\mid v\\
+\Theta_1\pmod p\ \text{的其余 lift}&p\parallel t\ \text{且}\ p\nmid uv.
+\end{array}}
+\tag{20zz-pblock-13}
+\]
+
+最后说明这个分流保留 actual lineage，而不暗中作 chart reset。一般地，若
+\(\mu=v_p(t)\ge1\)，写 \(t=p^\mu u\)、\(v=R-u\)。由
+\(4\mathcal A\equiv-1\pmod p\) 与 \(K=\mathcal A(p-1)\)，有 \(p\nmid K\)；每个
+\(0\le i<\mu\) 都有 \(v_p(t/p^i)>v_p(K)\)。因此存在确定的、无 gcd reduction 的
+actual raw suffix
+
+\[
+\boxed{
+(t,y',1)\leadsto(u,v,1),
+\qquad
+v=y'+(p^\mu-1)u.}
+\tag{20zz-pblock-14}
+\]
+
+其中 primitive 性来自 \((t,y')=1\)，因为每个中间 selected coordinate 都与
+\(R\) 互素。其两侧 odd-capacity gates 还由 exact identities
+
+\[
+\boxed{
+4K=p^{\mu+1}u+py'+1,
+\qquad
+(u,4K)=(u,py'+1),
+\qquad
+(v,4K)=(v,pu+1)}
+\tag{20zz-pblock-15}
+\]
+
+唯一确定。另一方面，\(p^\mu\mid Q_+\)，所以任何把它完整带入 \(M_2\) 的
+support 都含 \(p\)，不可能整除任一合法 Type I target 的 \(K_T\)，因为
+\(4K_T=pR_T+1\) 强制 \(p\nmid K_T\)。因此 (20zz-pblock-14) 是保留来源的
+actual continuation，而不是把 \(p\)-block 删除后直接重图表。
+
+**边界。** (20zz-pblock-3)--(20zz-pblock-15) 没有给出这个 raw suffix 的 terminal、
+canonical p-free bundle 或 E1--E5 macro。尤其 \(\Theta_2\) 分支可有任意高的
+\(p\)-adic height，而 \(\Theta_2^{\rm ret}\) 分支会在互补侧重引入 \(p\)。它们的
+作用是把 second-child p-block 从一个笼统例外收缩为三条互斥、可由 source/path
+receipt 重放的 continuation gates；TR1 与 T6 仍保持开放。
+
 ## 7. 根支撑强制的 primitive \(m=3\) quotient fiber
 
 这里还有一个比 (15) 更强的 actual-only 收缩。因为 \(h=3u\mid p^2+p+1\)，

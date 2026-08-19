@@ -342,6 +342,19 @@ companion 不含 \(q_\star\)，相对原 root support 新鲜重算的 joined sup
 \(M_{\rm split}/q_\star\) 指数。尚未处理的是其它新素数的 companion excess，而不是
 \(q_\star\) 的任意层都可能回流。companion 的 \(p\)-block 也不是隐藏例外：它恰在
 \(q_\star\equiv1-D_1\pmod p\) 时出现；因此 p-free admission 的失败门同样已显式化。
+更一般地，second child 的其它新素数不再需要逐一猜测：对
+\((y/q_\star,R-y/q_\star)\) 的两侧重算唯一完整 excess blocks \(Q_-,Q_+\)，便有严格穷尽：
+两块皆空给 Type I terminal；恰一块非空给 single-side bundle；两块皆非空给 atomic split。
+在 p-free gate 通过后，所有 companion correction 都被一个 canonical
+\(L_2=\operatorname{lcm}(\mathcal A,Q_-,Q_+)/\mathcal A\) 吸收；E5 失败当且仅当
+\(L_2\equiv1\pmod p\)。所以 second-child 的最小剩余已是 source-path/typed receipt、
+\(q_\star\equiv1-D_1\pmod p\) 和 \(L_2\equiv1\pmod p\) 三个明确义务，不再是未分类因子。
+其中 p-block 义务也已有二阶的精确 dispatch，而不是一个笼统的失败类：令
+\(\Theta_j\equiv yR^{-1}\pmod {p^j}\)，则 \(p^j\mid R-y/q_\star\) 当且仅当
+\(q_\star\equiv\Theta_j\pmod {p^j}\)。在首层，\(p^2\mid R-y/q_\star\) 与
+“剥掉唯一一层 \(p\) 后互补坐标重新含 \(p\)”分别是两个不同的模 \(p^2\) 类；其余
+首层 lift 回到双侧 p-free raw node。所有三支都保留一个从同一 source 出发的 actual
+raw suffix，但尚未成为 terminal 或 E1--E5 macro。
 若它还重复进入 \(L\equiv1\pmod{p^2}\) 的 \(a_0=1\) hard branch，写
 \(L=1+p^2\chi\)，则实际 child 还必须满足一条新的模 \(p^2\) lifted congruence
 \[
