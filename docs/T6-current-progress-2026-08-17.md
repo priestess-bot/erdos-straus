@@ -285,6 +285,24 @@ L\equiv1\pmod{p^2}.
 这没有关闭 TR1：它把下一条 \(m=3\) 证明精确收缩为二阶 congruence 的排空，或将该
 congruence 族接入具备完整 E1--E5 的 guarded macro。
 
+在这个 \(a_0=1\) 子纤维再附加 minimal \(q=5\) leaf 时，约束进一步相互锁定：
+\(D=25L_5\)、\(5\nmid L_5\)，而从 \(D\mid3p^2+p+1\) 和
+\(\sigma D=2r(p^2-1)-p-4\) 可得
+\[
+D\mid(2r+3)(p+4).
+\]
+任一 \(\ell\mid L_5\) 若整除 \(p+4\)，则 pure-\(T\) 的
+\(2\varrho+3\) 与 \(h^2-h-2\varrho\) 两条整除会强制 \(\ell\mid135\)，矛盾。
+因此 \((L_5,p+4)=1\)；再用 \(v_5(p+4)=1\)，得到
+\[
+5L_5\mid2r+3,\qquad
+2r+3=5L_5w,\qquad
+w\frac{p^2-1}{5}=\sigma+e+p.
+\]
+特别有 \(r>(p-7)/5\)、\(r\equiv1\pmod5\) 及
+\(\sigma+e+p\equiv0\pmod{48}\)。这把 pure-\(T\) carrier 直接绑到 d=1 residual
+参数上，但 \(w\) 仍无界，故并未排空 \(L\equiv1\pmod{p^2}\) 或完成 E1--E5。
+
 补充：在 actual \(m=3\)、whole-\(d\)、\(s_d=3\) 子分支中，双范数门与 exact
 primitive content 强制 \(d=13\)、\(\rho=160+234z\)、\(A=52t-1\)，并使 primitive
 quotient \(q\) 的全部素因子落在 \(1\pmod3\)，且最小 leaf \(q=1\) 全称为空。这排除了从

@@ -50,7 +50,9 @@ statement: >-
   因而它恰在 ordinary d=1 p-free failure 面上；其未被既有 a>1 peeled route 处理的
   子纤维必有 \(a_0=1\)，并由一条显式 Diophantine 等式刻画。在该子纤维中，split
   target 再次进入 p-primary hard branch 当且仅当 \(L\equiv1\pmod{p^2}\)。
-  这个二阶同余仍未被排空。
+  这个二阶同余仍未被排空。若再处于 minimal q=5 leaf，则 pure-T carrier 强制
+  \(5L_5\mid2r+3\)，并把剩余参数锁到
+  \(w(p^2-1)/5=\sigma+e+p\)；这仍不是 terminal 或 physical edge。
   更一般地，m=3 的 D 因子不命中 native raw Type II menu。
   该约化不证明这些互锁 divisor fibers 为空，不构造
   terminal 或 E1--E5 successor，也不闭合 QC1、TR1 或 T6。
@@ -2686,6 +2688,151 @@ L\equiv1\pmod{p^2}.}
 \(L\equiv1\pmod{p^2}\) 的可能性仅靠固定深度的 \(p\)-peeling 排除。真正下一步仍是
 对 (20zz-face-12) 构造 guarded physical macro，或使用 \(m=3\) 的额外
 Diophantine gates 证明其无解。
+
+### 6.16 minimal \(q=5\) leaf 对 \(a_0=1\) 参数的 pure-\(T\) 整除门
+
+第 6.15 节的 \(a_0=1\) 子纤维还可以和第 6.4 节的 minimal \(q=5\) leaf
+真正相接。这里额外假设
+
+\[
+t=v_5(D_*)=1,
+\qquad
+D=25L_5,
+\qquad
+(L_5,5)=1,
+\qquad
+p\equiv11\pmod{25}.
+\tag{20zz-factor-1}
+\]
+
+先由 \(eD=ph+1\) 与 \(h=3p+1-D\) 得
+
+\[
+eD=3p^2+p+1-pD,
+\qquad
+\boxed{D\mid3p^2+p+1.}
+\tag{20zz-factor-2}
+\]
+
+另一方面，(20zz-face-9) 给 \(D\mid2r(p^2-1)-p-4\)。将这两个被 \(D\)
+整除的数作固定线性组合，得到
+
+\[
+\begin{aligned}
+&3\bigl(2r(p^2-1)-p-4\bigr)
+-2r(3p^2+p+1)\\
+&\hspace{3em}=-(2r+3)(p+4).
+\end{aligned}
+\]
+
+故
+
+\[
+\boxed{D\mid(2r+3)(p+4).}
+\tag{20zz-factor-3}
+\]
+
+关键是 minimal leaf 的 pure-\(T\) 部分与 \(p+4\) 互素。事实上，反设某个
+素数 \(\ell\mid L_5\) 也整除 \(p+4\)。第 6.4 节给
+
+\[
+\ell\mid D,
+\qquad
+\ell\mid2\varrho+3,
+\qquad
+\ell\mid h^2-h-2\varrho,
+\tag{20zz-factor-4}
+\]
+
+且 \(\ell\ne3,5\)。由 \(p\equiv-4\pmod\ell\) 和
+\(D=3p+1-h\equiv0\pmod\ell\)，有 \(h\equiv-11\pmod\ell\)。于是
+(20zz-factor-4) 的后两式强制
+
+\[
+0\equiv h^2-h-2\varrho
+\equiv121+11+3=135\pmod\ell,
+\]
+
+与 \(\ell\ne3,5\) 矛盾。因此
+
+\[
+\boxed{(L_5,p+4)=1.}
+\tag{20zz-factor-5}
+\]
+
+再由 (20zz-factor-1) 有 \(v_5(p+4)=1\)，故
+
+\[
+\gcd(D,p+4)=\gcd(25L_5,p+4)=5.
+\tag{20zz-factor-6}
+\]
+
+将 (20zz-factor-6) 代入 (20zz-factor-3) 的逐素数整除，得到本节的主结论
+
+\[
+\boxed{
+5L_5\mid2r+3.}
+\tag{20zz-factor-7}
+\]
+
+等价地可唯一写成
+
+\[
+2r+3=5L_5w,
+\qquad
+w\in\mathbb Z_{>0}\text{ 为奇数}.
+\tag{20zz-factor-8}
+\]
+
+这里 \(D=3p+1-h\) 为奇数，故 (20zz-factor-1) 的 \(L_5\) 也为奇数，从而
+\(w\) 的奇性确实由 (20zz-factor-8) 强制。
+
+参数 \(w\) 还与原曲线数据严格耦合。由 (20zz-factor-8) 有
+\(2r=Dw/5-3\)。把它代回 (20zz-face-9)，并使用
+\(eD=3p^2+p+1-pD\)，得到
+
+\[
+\begin{aligned}
+\sigma D
+&=\left(\frac{Dw}{5}-3\right)(p^2-1)-p-4\\
+&=D\left(\frac{w(p^2-1)}5-(e+p)\right).
+\end{aligned}
+\]
+
+因而
+
+\[
+\boxed{
+w\frac{p^2-1}{5}=\sigma+e+p.}
+\tag{20zz-factor-8a}
+\]
+
+特别地，minimal leaf 的两条基本同余
+\(p\equiv1\pmod{24}\)、\(p\equiv11\pmod{25}\) 使
+\((p^2-1)/5\) 被 \(48\) 整除，所以
+
+\[
+\boxed{\sigma+e+p\equiv0\pmod{48}.}
+\tag{20zz-factor-8b}
+\]
+
+这条整除是 (20zz-factor-7) 的强化，而非新的 terminal：它仍没有控制
+\(w\) 的大小或给出 atomic checkpoint 的 receipt。
+
+特别地，第 6.4 节的 \(L_5>(2p+1)/25\) 还给出
+
+\[
+\boxed{
+r>\frac{p-7}{5},
+\qquad
+r\equiv1\pmod5.}
+\tag{20zz-factor-9}
+\]
+
+所以 \(a_0=1\) residual 中的 \(r\) 不能再独立于 actual pure-\(T\) carrier
+选择；整个 \(L_5\) 已被迫进入 \(2r+3\)。这没有排空 (20zz-face-12)：参数 \(w\)
+仍无全局上界，且本节没有构造 source、typed target、lift 或 T5 ticket。它提供的是
+下一步针对二阶 congruence 的一个更窄的整数输入，而不是 TR1 或 verified edge。
 
 ## 7. 根支撑强制的 primitive \(m=3\) quotient fiber
 
