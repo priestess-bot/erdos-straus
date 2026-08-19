@@ -428,6 +428,104 @@ D_H=1\Longrightarrow\varrho\ge p.}
 residue、source consumption、全域 lift 或 T5 ticket，因而不构成 TR1；其作用是排除把
 \(r_{27}\) 代入 (20h) 的错误，并把未来的 adapter 限定在真实高-root 输入上。
 
+### 6.2 \(m=3\) 的 \(A_0=1\) automatic low-gap gate 已完全分类
+
+这里的 \(A_0\) 是 Type II raw-ray 的参数，不是本卡的 stutter 坐标 \(A\)。令
+
+\[
+\mathcal G=\{3,7,11,23\},\qquad
+F_s^+=sh-1,\qquad F_s^-=s(h-1)+1,
+\]
+
+并固定一个奇素数 \(q\mid D_*\)，满足 \(q\equiv-1\pmod {2s}\)。已有的
+\(A_0=1\) low-gap root-residue 分派把 \(q\mid F_s^+\) 送入 direct Type II
+terminal，把 \(q\mid F_s^-\) 送入它的 negative branch。对 \(m=3\)，这两个
+入口实际只留下一个可枚举的素数。
+
+确实，令
+
+\[
+\Delta_s=3s^2-s+1.
+\]
+
+有限曲线恒等式 \(Da=3+h(h-1)\) 给出
+
+\[
+\Delta_s+F_s^+F_s^-=s^2Da.
+\tag{20j}
+\]
+
+因为 \(q\mid D_*\mid D\) 且 \(q>s\)，任一正根或负根命中都强制
+\(q\mid\Delta_s\)。四个固定整数及其允许的素因子为
+
+\[
+\begin{array}{c|c|c}
+s&\Delta_s&\text{满足 }q\equiv-1\pmod {2s}\text{ 的奇素因子}\\
+\hline
+3&25&5\\
+7&141=3\cdot47&\varnothing\\
+11&353&\varnothing\\
+23&1565=5\cdot313&\varnothing.
+\end{array}
+\tag{20k}
+\]
+
+其中 \(353\) 与 \(313\) 都是素数（分别只需试除不超过 \(17\) 的素数）。表中后三行分别只需检查
+\(3,47\not\equiv13\pmod {14}\)、\(353\equiv1\pmod {22}\)，以及
+\(5,313\equiv5,37\pmod {46}\)。因此
+
+\[
+q\mid F_s^+\ \text{或}\ q\mid F_s^-
+\quad\Longrightarrow\quad
+(s,q)=(3,5).
+\tag{20l}
+\]
+
+这个唯一 pair 的两个根仍须区分。若 \(5\mid F_3^+=3h-1\)，则
+\(h\equiv2\pmod5\)。又 \(5\mid D\) 与 \(D=3p+1-h\) 给出
+\(p\equiv2\pmod5\)。令
+
+\[
+C=\frac{p+3}{20}.
+\]
+
+因为 \(p\equiv1\pmod4\)，\(C\) 是正整数，且已有正根构造在这里具体成为
+
+\[
+\boxed{
+\frac4p=
+\frac1{5C}+
+\frac1{2pC}+
+\frac1{10pC}.}
+\tag{20m}
+\]
+
+所以 terminal-first 后不可能保留这个正根。若反而 \(5\mid F_3^-=3h-2\)，则
+\(h\equiv-1\pmod5\)，同一 \(D\) 关系给出 \(p\equiv1\pmod5\)。此时
+
+\[
+5\mid(p-1,h+1,m+2),\qquad
+K=\frac{5+1}{3}=2,
+\qquad L=K-1=1.
+\tag{20n}
+\]
+
+它正是已有 \(p-1,h+1,m+2\) overlap，而不是新的 pure-\(T\) transverse
+branch；若 \(5\) 的更高赋值仍留在 \(D_*\)，那只是该 overlap 的既有 excess
+情形。故可准确总结为
+
+\[
+\boxed{
+\begin{array}{l}
+\text{terminal-first 的 actual }m=3\text{ stutter 不保留任何 }A_0=1\text{ positive low-gap exit};\\
+\text{其 }A_0=1\text{ negative low-gap carrier 至多是 }(s,q)=(3,5)\text{ 的既有 overlap}.
+\end{array}}
+\tag{20o}
+\]
+
+这是一个 fixed low-gap family exhaustion，不证明 \(D_*\) 的其它因子命中 terminal，
+也不构造 TR1 的全称 E1--E5 adapter。
+
 ## 7. 根支撑强制的 primitive \(m=3\) quotient fiber
 
 这里还有一个比 (15) 更强的 actual-only 收缩。因为 \(h=3u\mid p^2+p+1\)，
