@@ -15,7 +15,8 @@ statement: >-
   d=(W-eta,k)，则 d|(p^2-p+1)、gcd(d,h(p^2+p+1)D)=1，且其 natural gap
   s_d 满足 d|(s_d^2+s_d+1)。若 d>1，则其 natural fan cofactor 必有 C_d>=40，且
   natural gap 满足 s_d<=(p-40)/39。若进一步 s_d=3，则 d=13，且 whole-d
-  primitive quotient q=n/d 必满足 q>=457，且其 primitive coordinates 满足
+  primitive quotient q=n/d 必满足 q≡13 mod24、q>=2893，且其 primitive coordinates
+  满足
   tau>sigma（等价于 W-eta>eta+1）与 A<rho。
   所以 d 是 Phi_6(p) carrier，不是 root-height
   Phi_3(p) carrier。kappa 有一个 canonical q≡7 mod12 素因子；它确定地落入
@@ -2496,9 +2497,142 @@ z\equiv1\pmod2\Longrightarrow q\ge2\sigma+15.
 \tag{37cv}
 \]
 
-这把 whole-\(d\) gap-three residual 限定到 actual high-\(\gamma\) sector；它不说明
-\(\gamma\) 的新因子出现在 \(u,d,D_*\) 或 \(\kappa\)，所以仍不产生 terminal、source
-provenance 或 E1--E5 adapter。
+### 8.5.8 \(-11\) gate 排除 low-\(t\)，并强制 large-scale primitive residual
+
+仍固定 \(d=13,s_d=3\)，并保留 (37af)、(37ah)、(37al)、(37an) 与 (37ce)。
+先由
+
+\[
+\lambda=\frac{9\rho^2+5\rho+1}{A}\in\mathbb Z
+\tag{37cw-0}
+\]
+
+排除最小的两个允许 \(t\)。若 \(t=1\)，则 \(A=51\)，故
+\(17\mid9\rho^2+5\rho+1\)。该二次式的判别式为
+\(-11\equiv6\pmod {17}\)，而 \(6\) 不是模 \(17\) 的平方，矛盾。若 \(t=7\)，
+则 \(A=363=3\cdot11^2\)，故 \(121\mid9\rho^2+5\rho+1\)。但
+
+\[
+36(9\rho^2+5\rho+1)=(18\rho+5)^2+11.
+\]
+
+右侧若为 \(0\pmod {121}\)，模 \(11\) 先给出 \(11\mid18\rho+5\)，使平方项为
+\(0\pmod {121}\)，右侧反而为 \(11\pmod {121}\)。因此，因
+\(t>0\) 且 \(t\equiv1\pmod6\)，有
+
+\[
+\boxed{t\ge13.}
+\tag{37cw}
+\]
+
+另一方面，(37cu) 的 \(0<A<\rho\)、\(u=2A+3\rho+1>3\rho\) 与 (37al) 给出
+
+\[
+13K=\frac{A^2+A\rho+\rho^2}{u}
+<\frac{3\rho^2}{3\rho}=\rho.
+\]
+
+由于 \(3\rho+1=13\sigma\)，所以
+
+\[
+\boxed{K<\frac{\sigma}{3}.}
+\tag{37cx}
+\]
+
+代回 (37ce) 得
+
+\[
+a\theta=26\sigma+1+117K<65\sigma+1.
+\tag{37cy}
+\]
+
+偶 \(z\) 支有 \(\theta\ge186\)，故由 \(a=156t-3\)、
+\(\sigma=37+54z\) 及 (37cw)，
+
+\[
+4836\cdot13<494+585z,
+\]
+
+所以 \(z\ge108\)。奇 \(z\) 支有 \(\theta\ge30\)，同理得到
+
+\[
+780\cdot13<416+585z,
+\]
+
+所以 \(z\ge17\)。即
+
+\[
+\boxed{
+z\equiv0\pmod2\Longrightarrow z\ge108,\ \sigma\ge5869;
+\qquad
+z\equiv1\pmod2\Longrightarrow z\ge17,\ \sigma\ge955.
+}
+\tag{37cz}
+\]
+
+还有一个精确的模 \(24\) 改进。由 (37an) 的第一式和
+\(3\rho+1=13\sigma\)，有 \(A\tau=\sigma\rho-K\)。写
+\(\tau=\sigma+6w\)、\(X=\rho-A\)，则 (37ct) 给出 \(w>0\)，并且
+
+\[
+K=\sigma X-6Aw.
+\tag{37da}
+\]
+
+由 \(A\equiv3\pmod {24}\)、\(\rho\equiv16+18z\pmod {24}\)、
+\(\sigma\equiv13+6z\pmod {24}\) 及 \(K\equiv19\pmod {24}\)，有
+
+\[
+w\equiv
+\begin{cases}
+3\pmod4,&z\equiv0\pmod2,\\
+1\pmod4,&z\equiv1\pmod2.
+\end{cases}
+\tag{37db}
+\]
+
+事实上 \(\sigma X\equiv1\pmod {24}\) 于偶支、\(\sigma X\equiv13\pmod {24}\)
+于奇支。两支的 \(w\) 都是奇数，且 \(\sigma w\equiv3\pmod4\)、
+\(\sigma^2\equiv1\pmod {24}\)。于是 (37an) 的第二式化为
+
+\[
+qK=\sigma^2+6\sigma w+12w^2\equiv1+18+12\equiv7\pmod {24}.
+\]
+
+因 \(19^{-1}\equiv19\pmod {24}\)，故
+
+\[
+\boxed{q\equiv13\pmod {24}.}
+\tag{37dc}
+\]
+
+最后由 (37cx) 和 \(3qK=\sigma^2+\sigma\tau+\tau^2\)，
+
+\[
+q>\sigma+\tau+\frac{\tau^2}{\sigma}
+\ge3\sigma+18+\frac{36}{\sigma}.
+\tag{37dd}
+\]
+
+将 (37cz)--(37dd) 合并，并在各支取大于右端的最小 \(13\pmod {24}\) 整数，得到
+
+\[
+\boxed{
+\begin{array}{c|c|c|c}
+z\bmod2&z&\sigma&q\\
+\hline
+0&\ge108&\ge5869&\ge17629\\
+1&\ge17&\ge955&\ge2893
+\end{array}}
+\qquad\text{and hence}\qquad
+\boxed{q\ge2893.}
+\tag{37de}
+\]
+
+这把 whole-\(d\) gap-three residual 限定到严格的大尺度 actual high-\(\gamma\) sector。
+它仍不说明 \(q\) 或 \(\gamma\) 的因子出现在 \(u,d,D_*\) 或 \(\kappa\)，也不把 \(q\)
+变成 rational source carrier；因此不产生 terminal、source provenance 或 E1--E5 adapter，
+QC1、TR1 与 T6 的状态均不因本节改变。
 
 ## 9. 一个 canonical \(7\pmod {12}\) quotient carrier
 
