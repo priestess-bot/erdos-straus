@@ -21,7 +21,10 @@ statement: >-
   所以 d 是 Phi_6(p) carrier，不是 root-height
   Phi_3(p) carrier。kappa 有一个 canonical q≡7 mod12 素因子；它确定地落入
   q|u 的 root-supported、q|d 的 Phi_6 cancellation，或两者皆不整除的 primitive
-  quotient-only residual 三类之一。该约化不证明这些互锁 divisor fibers 为空，不构造
+  quotient-only residual 三类之一。在 terminal-first 的 m=3 slice 中，5|D* 当且仅当
+  v_5(3u^2-u+1)>=v_5(A)+2；这强制 p≡11、h≡9、u≡3 (mod 25)，且若该 5-residual
+  高于最小层或进入 complete-excess multiplier，则原始 root 坐标为 11 (mod 25)。
+  该约化不证明这些互锁 divisor fibers 为空，不构造
   terminal 或 E1--E5 successor，也不闭合 QC1、TR1 或 T6。
 claim_status: established
 proof_provenance: repository_derivation
@@ -33,6 +36,10 @@ depends_on:
   - type-I-root-capacity-stutter-complementary-eisenstein-coordinate-gap
   - type-I-root-capacity-stutter-eisenstein-support
   - type-I-root-capacity-stutter-primitive-quotient-normalization
+  - type-I-root-capacity-stutter-transverse-residual-capacity-map
+  - type-I-root-capacity-stutter-transverse-root-residue-low-gap-descent
+  - type-I-root-capacity-stutter-transverse-overlap-valuation-alignment
+  - type-I-root-capacity-stutter-transverse-pminusone-w-offset-valuation-staircase
 topics:
   - type-I
   - root-capacity
@@ -53,6 +60,14 @@ sources:
     role: oddness-of-the-actual-Eisenstein-quotient
   - claim: type-I-root-capacity-stutter-primitive-quotient-normalization
     role: common-factor-normalization-and-primitive-system
+  - claim: type-I-root-capacity-stutter-transverse-residual-capacity-map
+    role: actual-D-star-to-original-root-coordinate-interface
+  - claim: type-I-root-capacity-stutter-transverse-root-residue-low-gap-descent
+    role: terminal-first-positive-q-equals-five-pruning
+  - claim: type-I-root-capacity-stutter-transverse-overlap-valuation-alignment
+    role: p-minus-one-overlap-excess-height
+  - claim: type-I-root-capacity-stutter-transverse-pminusone-w-offset-valuation-staircase
+    role: complete-excess-minimal-layer-root-quotient-refinement
 visibility: public
 last_checked: '2026-08-19'
 ---
@@ -592,6 +607,185 @@ branch；若 \(5\) 的更高赋值仍留在 \(D_*\)，那只是该 overlap 的�
 
 这是一个 fixed low-gap family exhaustion，不证明 \(D_*\) 的其它因子命中 terminal，
 也不构造 TR1 的全称 E1--E5 adapter。
+
+### 6.3 terminal-first 后 \(q=5\) transverse residual 的精确 \(5\)-进管
+
+上一节留下的 \((s,q)=(3,5)\) negative overlap 不能仅按“\(5\mid D_*\)”
+记录：在本 \(m=3\) slice 中，它等价于一个精确的 \(-11\) norm \(5\)-进条件。令
+
+\[
+F(X)=3X^2-X+1,
+\qquad
+\nu=v_5(A),
+\qquad
+\delta=v_5(D).
+\tag{20p}
+\]
+
+则在本卡的 terminal-first actual scope 内有
+
+\[
+\boxed{
+5\mid D_*
+\quad\Longleftrightarrow\quad
+v_5\bigl(F(u)\bigr)\ge\nu+2.}
+\tag{20q}
+\]
+
+**证明。** 若 \(5\mid D_*\)，则 \(5\mid D\)，而 \(AD=F(u)\)。模 \(5\)
+的两个根恰为
+
+\[
+F(u)\equiv0\pmod5
+\quad\Longleftrightarrow\quad
+u\equiv3\ \hbox{或}\ 4\pmod5.
+\tag{20r}
+\]
+
+若 \(u\equiv4\pmod5\)，则 \(h=3u\equiv2\pmod5\)，并由
+\(D=3p+1-h\) 得 \(p\equiv2\pmod5\)。此时
+
+\[
+5\mid3h-1,
+\qquad
+K=\langle h\rangle_5=2,
+\qquad
+\frac{5+1}{K}=3,
+\tag{20s}
+\]
+
+正是第 6.2 节的 \(A_0=1\) positive low-gap Type II terminal。它已被
+terminal-first 排除。因此必有 \(u\equiv3\pmod5\)，从而
+
+\[
+h\equiv-1\pmod5,
+\qquad
+p\equiv1\pmod5,
+\qquad
+D_H=5.
+\tag{20t}
+\]
+
+因为 \(D_H\) 恰为 \(5\)，\(5\mid D_*\) 等价于 \(\delta\ge2\)；再由
+\(D=F(u)/A\)，这正是 (20q) 的右端。反过来，若该右端成立，则
+\(25\mid D\)。若 \(u\equiv4\pmod5\)，则 \(h\equiv2\pmod5\)，所以
+\(5\nmid h^2-1\) 且 \(5\mid D_*\)；于是 (20s) 的 positive terminal 再次与
+terminal-first 矛盾。故
+(20t) 成立、\(D_H=5\)，于是 \(5\mid D/D_H=D_*\)。证毕。
+
+这里的 \(u\equiv3\pmod5\) 根是 simple root，因为
+
+\[
+F'(3)=17\equiv2\pmod5.
+\tag{20u}
+\]
+
+令 \(\alpha_j\) 为唯一满足
+
+\[
+F(\alpha_j)\equiv0\pmod {5^j},
+\qquad
+\alpha_j\equiv3\pmod5
+\tag{20v}
+\]
+
+的剩余类。Hensel 提升和 (20q) 给出更精确的等价式
+
+\[
+\boxed{
+5\mid D_*
+\quad\Longleftrightarrow\quad
+u\equiv\alpha_{\nu+2}\pmod {5^{\nu+2}}.}
+\tag{20w}
+\]
+
+前几层为
+
+\[
+\alpha_1=3\pmod5,
+\qquad
+\alpha_2=3\pmod {25},
+\qquad
+\alpha_3=53\pmod {125}.
+\tag{20x}
+\]
+
+特别地，任何未被 terminal-first 吃掉的 \(q=5\) transverse residual 都满足
+
+\[
+\boxed{
+p\equiv11\pmod {25},
+\qquad
+h\equiv9\pmod {25},
+\qquad
+u\equiv3\pmod {25},}
+\tag{20y}
+\]
+
+并且
+
+\[
+v_5(p-1)=v_5(h+1)=v_5(m+2)=1,
+\qquad
+v_5(D_*)=\delta-1=v_5(F(u))-\nu-1.
+\tag{20z}
+\]
+
+令
+
+\[
+t=v_5(D_*)=\delta-1,
+\tag{20za}
+\]
+
+并令 \(E\) 为该 actual maximal receipt 的 complete-excess multiplier。则
+\(q=5\) branch 还有一个来自原始 root 坐标的 sharpened split：
+
+\[
+\boxed{
+t\ge2\ \text{或}\ 5\mid E
+\quad\Longrightarrow\quad
+\varrho\equiv11\pmod {25}.}
+\tag{20zb}
+\]
+
+若 \(t\ge2\)，则 \(25\mid D_*\)，而 (20h) 的
+\(D_*\mid2\varrho+3\) 立刻给出该结论。余下设 \(t=1\) 且 \(5\mid E\)。由
+(20z)，此时这是 \(p-1,h+1,m+2\) complete-excess overlap 的
+\(b=v_5(p-1)=1\) 共振层。令
+
+\[
+w=\frac{2\varrho+1}{u}.
+\tag{20zc}
+\]
+
+已有 root-quotient \(w+9\) valuation staircase 在该层给出 \(25\mid w+9\)。再用
+\(u\equiv3\pmod {25}\)，便有
+
+\[
+2\varrho+1=uw\equiv3(-9)\equiv23\pmod {25},
+\]
+
+故 \(\varrho\equiv11\pmod {25}\)。等价地，唯一尚未被这个 root-coordinate
+收缩覆盖的 \(q=5\) 情形必须满足
+
+\[
+\boxed{
+\varrho\not\equiv11\pmod {25}
+\quad\Longrightarrow\quad
+t=1,\qquad5\nmid E.}
+\tag{20zd}
+\]
+
+最后一个指数仍由已有 overlap capacity map 支付，即
+\(5^t\mid T\)，而 actual residual map 至少给出
+\(5\mid2\varrho+3\)，故 \(\varrho\equiv1\pmod5\)。这些是同一个
+\(q=5\) residual 的 norm、receipt 与原始 root 坐标三种描述；其中
+\(\varrho\) 仍不是 (16) 的 \(r_{27}\)。
+
+本节只把唯一 low-gap negative overlap 压缩为一条可无限提升的局部同余管；它没有
+证明该管为空，也没有给出 terminal、source consumption 或 E1--E5 adapter。因此
+TR1、QC1 与 T6 的状态均不改变。
 
 ## 7. 根支撑强制的 primitive \(m=3\) quotient fiber
 
