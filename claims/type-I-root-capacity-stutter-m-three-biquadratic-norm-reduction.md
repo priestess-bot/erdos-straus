@@ -34,7 +34,9 @@ statement: >-
   \(p-\ell\)。更精确地，该 child 在 complete-excess 意义下必精确分流为单侧
   bundle，或两个 p-free 完整超额块的 atomic split；后者的 high-support rank
   stutter 恰等价于另一侧 multiplier \(F_y\equiv\ell\pmod p\)。这仍不能以因子删除
-  冒充 E1 rebase，也不支付 persistent provenance、priority 或 typed target。
+  冒充 E1 rebase；若该 stutter 出现，其 canonical residual \(D_y\) 还必须同时通过
+  两个 root-receipt divisor gate 和一个显式模 \(p\) 同余。上述结果仍不支付 persistent
+  provenance、priority 或 typed target。
   更一般地，m=3 的 D 因子不命中 native raw Type II menu。
   该约化不证明这些互锁 divisor fibers 为空，不构造
   terminal 或 E1--E5 successor，也不闭合 QC1、TR1 或 T6。
@@ -1657,6 +1659,120 @@ F_y\equiv\ell\pmod p.
 persistent origin、scope、terminal-first priority、typed target/normal form 与全域 lift。
 本节只证明：在这些合同义务之外，minimal leaf 的 excess-\(\ell\) child 已不存在
 另一种未分类的 complete-excess arithmetic obstruction。
+
+### 6.11 split stutter 的 root-receipt divisor gate
+
+第 6.10 节没有排除唯一的 split rank-stutter 同余
+
+\[
+F_y\equiv\ell\pmod p.
+\tag{20zz-gate-1}
+\]
+
+但它可以进一步压成只读取原 root receipt 和 \(y\)-side canonical residual 的三重门。
+在 split 分支中置
+
+\[
+g_y=(A,Q_y),
+\qquad
+D_y=\beta_yg_y,
+\qquad
+F_y=\frac{Q_y}{g_y}.
+\tag{20zz-gate-2}
+\]
+
+按 complete-excess 的定义，\(\beta_y\mid K\)、\(g_y\mid A\mid K\)，而
+\((\beta_y,g_y)=1\)，故 \(D_y\mid K\)。又 \(D\mid x\)、\(D_y\mid y\) 和
+(20zz-child-5) 给出
+
+\[
+(D,D_y)=1,
+\qquad
+DD_y\mid K,
+\qquad
+\boxed{D_y\mid\frac KD.}
+\tag{20zz-gate-3}
+\]
+
+这里并未把两个 residual 的互素性当作额外假设：它直接来自同一 primitive raw child
+的两侧。
+
+再从 \(\ell y=(\ell-1)R+h\)、\(pR=4K-1\) 与 \(ph+1=eD\) 得到精确恒等式
+
+\[
+\begin{aligned}
+p\ell y
+&=(\ell-1)(4K-1)+ph\\
+&=4(\ell-1)K+eD-\ell.
+\end{aligned}
+\tag{20zz-gate-4}
+\]
+
+两侧前两项均被 \(D_y\) 整除，所以 \(D_y\mid eD-\ell\)。又
+\(\ell\mid D\) 而 \((D_y,\ell)=1\)，于是
+
+\[
+\boxed{D_y\mid\frac{eD}{\ell}-1.}
+\tag{20zz-gate-5}
+\]
+
+若再假设 (20zz-gate-1)，则由 (20zz-child-6) 和 \(y=F_yD_y\) 有
+
+\[
+\ell^2D_y
+\equiv
+\ell y
+\equiv
+\ell+h-1
+\pmod p.
+\tag{20zz-gate-6}
+\]
+
+再用 stutter 的 \(D\equiv1-h\pmod p\) 并约去 \(\ell\)，可把它写成更接近
+原 residual 的等价式
+
+\[
+\boxed{\ell D_y\equiv1-\frac D\ell\pmod p.}
+\tag{20zz-gate-6a}
+\]
+
+事实上 \(\ell\) 是 \(L_5\) 的 odd prime，故 \(\ell\ge7\)；又
+\(D/\ell<3p/\ell<p\)，并且 \(D/\ell=25(L_5/\ell)>1\)。所以
+(20zz-gate-6a) 还有唯一的正整数 lifted form
+
+\[
+\boxed{
+\ell D_y=p+1-\frac D\ell+pn_y,
+\qquad n_y\in\mathbb Z_{\ge0}.}
+\tag{20zz-gate-6b}
+\]
+
+最后，\(F_y\mid Q_y\mid y\)，而第 6.10 节已经证明 \(\ell\nmid y\)。由于
+\(1<\ell<p\)，(20zz-gate-1) 唯一地写成
+
+\[
+\boxed{F_y=\ell+ps,\qquad s\in\mathbb Z_{\ge1}.}
+\tag{20zz-gate-7}
+\]
+
+其中 \(s=0\) 会给 \(F_y=\ell\mid y\)，已被 \(y\equiv h\not\equiv0\pmod\ell\)
+排除。综上，任何 actual split stutter 都必须同时满足
+
+\[
+\boxed{
+D_y\mid
+\gcd\!\left(\frac KD,\ \frac{eD}{\ell}-1\right),
+\qquad
+\ell D_y\equiv1-\frac D\ell\pmod p,
+\qquad
+F_y=\ell+ps\ (s\ge1).}
+\tag{20zz-gate-8}
+\]
+
+这是一个 root-receipt divisor gate，而不是 stutter 的排空定理：目前没有证明
+(20zz-gate-8) 无解，也没有从它构造 terminal、macro suffix 或 persistent edge。
+它的价值在于把 split 的剩余问题从任意的 \(Q_y\) 因子化，缩到一个与 \(D\) 互素、
+同时受两个原始 divisor gate 和一个模 \(p\) 线性余数约束的 \(D_y\)。
 
 ## 7. 根支撑强制的 primitive \(m=3\) quotient fiber
 

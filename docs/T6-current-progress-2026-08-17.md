@@ -197,6 +197,9 @@ bundle 的全部算术 kernel，并以 \(p-\ell\) 严格支付 E5；若不满足
 maximal block 必有 \(Q_y>1\)，从而精确进入 atomic split kernel。令
 \(F_y=Q_y/(A,Q_y)\)，split support 为 \(A(E/\ell)F_y\)，其 rank stutter
 **当且仅当** \(F_y\equiv\ell\pmod p\)；除此一个同余外，split 也严格支付 E5。
+若该唯一 stutter 真的发生，写 \(D_y\) 为另一侧 canonical residual，则它还被压到
+\(D_y\mid\gcd(K/D,eD/\ell-1)\)、\(\ell D_y\equiv1-D/\ell\pmod p\) 和
+\(F_y=\ell+ps\ (s\ge1)\) 的 root-receipt divisor gate；尚未证明此门为空。
 所以这一 raw child 不再有未分类的 complete-excess 算术障碍。其余 \(\ell\) 在当前
 endpoint 已处于容量内，必须寻找新的 occurrence 或新的 physical adapter。上述两支都
 仍缺 persistent E1 root-policy、terminal-first、typed target/normal form 和全域 lift，
