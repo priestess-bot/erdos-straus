@@ -52,7 +52,11 @@ statement: >-
   target 再次进入 p-primary hard branch 当且仅当 \(L\equiv1\pmod{p^2}\)。
   这个二阶同余仍未被排空。若再处于 minimal q=5 leaf，则 pure-T carrier 强制
   \(5L_5\mid2r+3\)，并把剩余参数锁到
-  \(w(p^2-1)/5=\sigma+e+p\)；这仍不是 terminal 或 physical edge。
+  \(w(p^2-1)/5=\sigma+e+p\)。在该 leaf 中更有 exact root-support 分解
+  \(4\mathcal A=5L_5(p+1)(5\sigma+w)\)，故 \(E\) 的所有奇素因子均已落在
+  \(L_5\) 上；纯二进 \(E=2^a\) 的临界 excess 层不可能，且其 \(q=2\) raw
+  deflation 有 strict selected-side cofactor \(p-2\)。这些结论仍不是 terminal 或
+  physical edge。
   更一般地，m=3 的 D 因子不命中 native raw Type II menu。
   该约化不证明这些互锁 divisor fibers 为空，不构造
   terminal 或 E1--E5 successor，也不闭合 QC1、TR1 或 T6。
@@ -2833,6 +2837,339 @@ r\equiv1\pmod5.}
 选择；整个 \(L_5\) 已被迫进入 \(2r+3\)。这没有排空 (20zz-face-12)：参数 \(w\)
 仍无全局上界，且本节没有构造 source、typed target、lift 或 T5 ticket。它提供的是
 下一步针对二阶 congruence 的一个更窄的整数输入，而不是 TR1 或 verified edge。
+
+### 6.17 minimal leaf 的 root-support 分解与二阶 child 过滤
+
+第 6.16 节的 \(w\) 并不只是把 \(r\) 重参数化：在 \(a_0=1\) minimal
+\(q=5\) leaf 中，它精确决定 root-chart charged support 的全部非 \(p-1\) 部分。
+为避免与其它图表的 cofactor \(C\) 混淆，记
+
+\[
+\Xi:=5\sigma+w.
+\tag{20zz-factor-10}
+\]
+
+则有两个 exact support identities
+
+\[
+\boxed{
+4\mathcal A=5L_5(p+1)\Xi,
+\qquad
+\frac KD=\frac{(p^2-1)\Xi}{20}.}
+\tag{20zz-factor-11}
+\]
+
+**证明。** 由 (20zz-face-4)、(20zz-face-9) 先有
+
+\[
+\begin{aligned}
+4\mathcal A
+&=pN-1\\
+&=2rp^2(p+1)-p^2-2p-1.
+\end{aligned}
+\tag{20zz-factor-12}
+\]
+
+将 (20zz-factor-8) 写成 \(2r=Dw/5-3\)，并使用
+\(3p^2+p+1=D(e+p)\)，得到
+
+\[
+\begin{aligned}
+4\mathcal A
+&=\frac{Dwp^2(p+1)}5-(p+1)(3p^2+p+1)\\
+&=D(p+1)\left(\frac{wp^2}{5}-(e+p)\right).
+\end{aligned}
+\tag{20zz-factor-13}
+\]
+
+最后由 (20zz-factor-8a)，括号恰为 \(\sigma+w/5\)；再代入
+\(D=25L_5\) 就给出第一式。第二式由 \(K=\mathcal A(p-1)\) 立刻得到。
+\(\square\)
+
+这个分解还把 multiplier 与 root support 的可重叠部分完全钉住。由于 \(R,h\)
+均为奇数而 \(D\) 为奇数，\(E=(R-h)/D\) 为偶数。对任意 \(q\mid E\)，完整
+excess normalisation (20zzt) 的逐赋值公式给出
+
+\[
+v_q(\mathcal A)=v_q(D).
+\tag{20zz-factor-14}
+\]
+
+事实上，\(q\mid E=Q_{\rm ex}/(\mathcal A,Q_{\rm ex})\) 意味着 \(q\)-block
+在 \(Q_{\rm ex}\) 中超过 \(\mathcal A\) 的容量；\(\beta\) 不保留该素数，而
+\(D=\beta(\mathcal A,Q_{\rm ex})\) 恰保留 \(v_q(\mathcal A)\) 层。
+对 \(q=2\)，(20zz-factor-14) 和 \(D\) 为奇数给出 \(\mathcal A\) 为奇数。又
+\(v_2(p+1)=1\)，故 (20zz-factor-11) 强制
+
+\[
+v_2(\Xi)=1.
+\tag{20zz-factor-15}
+\]
+
+对奇素数 \(q\mid E\)，minimal leaf 的 \(5\nmid E\) 与
+\(D=25L_5\) 把 (20zz-factor-14) 写成
+
+\[
+v_q(\mathcal A)=v_q(L_5).
+\tag{20zz-factor-16}
+\]
+
+比较 (20zz-factor-11) 的 \(q\)-赋值可知 \(q\) 不能整除 \(p+1\) 或
+\(\Xi\)。因此有精确的 disjointness identities
+
+\[
+\boxed{
+(E,\mathcal A)=(E,L_5),
+\qquad
+(E,p+1)=2,
+\qquad
+(E,\Xi)=2.}
+\tag{20zz-factor-17}
+\]
+
+特别地，任何真正触发本 child 的 \(\ell\mid(E,L_5)\) 都不整除 \(\Xi\)。这不是
+一个额外假设，而是 minimal leaf 的 canonical support valuation 强制的结论。
+
+还有一个对 source-path coverage 很关键的直接推论：\(E\) 的所有奇素因子已经都在
+\(L_5\) 上，故
+
+\[
+\boxed{
+\operatorname{rad}_{\rm odd}(E)\mid L_5,
+\qquad
+(E,L_5)>1
+\Longleftrightarrow
+E\text{ 不是 }2\text{ 的幂}.}
+\tag{20zz-factor-17a}
+\]
+
+这里 \(E\) 已知为偶数而 \(L_5\) 为奇数，所以第二个等价式没有遗漏 \(2\)-part。
+它将第 6.12 节的 \(G_E>1\) 前提从一个表面上的 common-factor 假设缩成唯一的
+pure-dyadic multiplier boundary \(E=2^a\)。这个 boundary 不能仅凭 \(E=2^a\)
+调用现有 pure-dyadic half-power theorem：后者还要求一个 Jacobi F-state 的
+negative record 和其可重放的半幂关系，而当前 complete-excess receipt 并不提供这些
+数据。故这里是量词收缩，不是一个 dyadic terminal 或 edge。
+
+现在回到第 6.11 节的 rank-stutter child。由
+\(D_y\mid K/D\)、(20zz-gate-3a) 及 (20zz-factor-11)，它满足更具结构的
+source-only restriction
+
+\[
+\boxed{
+D_y\mid
+\gcd\!\left(
+\frac{(p^2-1)\Xi}{20},\ eD_1-1
+\right),
+\qquad
+(D_y,25L_5E)=1.}
+\tag{20zz-factor-18}
+\]
+
+也就是说，child residual 不但避开旧的 pure-\(T\) carrier 和旧 multiplier，
+而且它的全部候选素数都已被拆到 \(p^2-1\) 或新的 scalar \(\Xi\) 上；这比只写
+\(D_y\mid K/D\) 更适合继续处理 actual second child。
+
+再额外假设第 6.15 节的二阶 hard gate，即
+
+\[
+L=\frac E\ell F_y=1+p^2\chi,
+\qquad \chi\in\mathbb Z_{>0},
+\tag{20zz-factor-19}
+\]
+
+并置 \(E_1=E/\ell\)。由 (20zz-gate-3a) 有 \((E_1,F_y)=1\)，而
+\(y=F_yD_y\)，故有 exact identity
+
+\[
+\boxed{
+E_1y=(1+p^2\chi)D_y.}
+\tag{20zz-factor-20}
+\]
+
+将它乘以 \(\ell\)，并使用 (20zz-gate-10)，模 \(p^2\) 化简得到一个比
+(20zz-gate-6a) 强一阶的 child congruence：
+
+\[
+\boxed{
+\ell D_y
+\equiv
+1-D_1+p\left[3+\sigma\bigl((\ell-2)D_1+1\bigr)\right]
+\pmod {p^2}.}
+\tag{20zz-factor-21}
+\]
+
+确实，(20zz-gate-10) 写成
+
+\[
+y=1-D_1+p\left[3+\sigma(\ell-1)D_1\right],
+\]
+
+而 \(E=1+p\sigma\)，所以
+
+\[
+Ey
+\equiv
+1-D_1+p\left[3+\sigma\bigl((\ell-2)D_1+1\bigr)\right]
+\pmod {p^2}.
+\]
+
+式 (20zz-factor-20) 的 \(\ell\)-倍数正给出左侧。与
+(20zz-gate-6b) 比较，还得到等价的 lift-coefficient filter
+
+\[
+2n_y
+\equiv
+2+\sigma\bigl((\ell-2)D_1+1\bigr)
+\pmod p.
+\tag{20zz-factor-22}
+\]
+
+因此，若沿用第 6.11 节的有限 source-data menu \(\mathscr D_\ell\)，则二阶
+hard branch 的实际 child 必进一步满足
+
+\[
+\boxed{
+D_y\in
+\mathscr D_\ell^{[2]}
+:=
+\left\{
+d\in\mathscr D_\ell:
+\ell d\equiv
+1-D_1+p\left[3+\sigma\bigl((\ell-2)D_1+1\bigr)\right]
+\pmod {p^2}
+\right\}.}
+\tag{20zz-factor-23}
+\]
+
+这不是把原来的 \(L\equiv1\pmod{p^2}\) 重述为一个 root-only 条件：它将该条件
+落实到实际 raw child 的 canonical residual 位置。还有一个一致性检验：\(E_1\) 为偶数、
+\(F_y\) 为奇数，所以 \(\chi\) 为奇数；由
+\(p\chi=\sigma+2s_yE_1\)、\(p\equiv1\pmod4\) 和 (20zz-factor-15)，有
+
+\[
+\boxed{\chi\equiv\sigma\equiv w\pmod4.}
+\tag{20zz-factor-24}
+\]
+
+**边界。** (20zz-factor-18)--(20zz-factor-23) 没有证明
+\(\mathscr D_\ell^{[2]}\) 为空，也没有使 \(U_{\rm ar}\) 成为 persistent checkpoint。
+它们只将剩余二阶 branch 收缩为一个 coprime support factorisation 和一个明确的
+\(p^2\)-lifted child menu。要关闭 TR1，仍须证明该 menu 在 canonical actual receipt 下
+为空，或为 second child 的 companion non-reintroduction 构造带完整 E1--E5 的 guarded
+macro。
+
+### 6.18 pure-dyadic multiplier 的实际严格 raw suffix
+
+式 (20zz-factor-17a) 把 \((E,L_5)=1\) 的唯一可能性隔离为 \(E\) 纯二进。
+这一支并不需要伪造 Jacobi half-power record；它本身已有一条可直接分析的 actual raw
+suffix。设
+
+\[
+E=2^a,
+\qquad
+\lambda:=v_2(p-1).
+\tag{20zz-dyadic-1}
+\]
+
+则
+
+\[
+\boxed{a\ge\lambda+2.}
+\tag{20zz-dyadic-2}
+\]
+
+**证明。** 由 (20zz-factor-14)--(20zz-factor-15)，\(\mathcal A,D\) 都是奇数。
+所以 root endpoint \(z=ED\) 的 \(2\)-赋值为 \(a\)，而
+\(v_2(K)=\lambda\)。\(2\mid E\) 的 complete-excess 定义先给 \(a>\lambda\)。
+若恰有 \(a=\lambda+1\)，则 stutter 的 \(E\equiv1\pmod p\) 给出
+
+\[
+p\mid2^{\lambda+1}-1.
+\tag{20zz-dyadic-3}
+\]
+
+写 \(p-1=2^\lambda m\)，其中 \(m\) 为正奇数。由 (20zz-dyadic-3) 的大小界
+\(p<2^{\lambda+1}\)，有 \(m<2\)，故 \(m=1\) 且 \(p=2^\lambda+1\)。但此时
+\(2^\lambda\equiv-1\pmod p\)，所以
+
+\[
+2^{\lambda+1}-1\equiv-3\pmod p,
+\]
+
+迫使 \(p=3\)，与核心 \(p\equiv1\pmod{24}\) 矛盾。证毕。
+
+现在将 root 的 primitive raw node \((z,h,1)\) 定向到其 \(2\)-side。令
+
+\[
+x=\frac z2=2^{a-1}D,
+\qquad
+y=R-x=h+2^{a-1}D.
+\tag{20zz-dyadic-4}
+\]
+
+因为 \((z,R)=1\) 而 \(R\) 为奇数，\((x,y)=1\)。又 \(p\nmid x\)。若 \(p\mid y\)，
+则由 \(R\equiv1\pmod p\)、\(E\equiv1\pmod p\) 和
+\(D\equiv1-h\pmod p\) 会有 \(h\equiv-1\pmod p\)。proper-root 的 \(0<h<p\)
+于是给出 \(h=p-1\)，但 \(D=3p+1-h=2p+2\) 与 \(D\) 为奇数矛盾。因此
+
+\[
+\boxed{
+(z,h,1)
+\xrightarrow[q=2]{\mathrm{shift}=1}
+(x,y,1)
+\quad\text{is actual, primitive, and }p\text{-free}.}
+\tag{20zz-dyadic-5}
+\]
+
+这里没有额外 gcd reduction。由 (20zz-dyadic-2)，\(x\) 的 \(2\)-指数
+\(a-1\) 仍严格超过 \(v_2(K)=\lambda\)，而其它素数指数不变。对 child 重新作完整
+excess normalisation 因而精确给出
+
+\[
+\boxed{
+E_x=2^{a-1}=\frac E2,
+\qquad
+D_x=D,
+\qquad
+M_x=\mathcal A\frac E2.}
+\tag{20zz-dyadic-6}
+\]
+
+由 \(E\equiv1\pmod p\)、\(4\mathcal A\equiv-1\pmod p\)，其 selected-side
+canonical cofactor 为
+
+\[
+\boxed{
+\left\langle(4M_x)^{-1}\right\rangle_p
+=\left\langle-2\right\rangle_p
+=p-2<p-1.}
+\tag{20zz-dyadic-7}
+\]
+
+所以 pure-dyadic branch 并不保留一个 \(a=\lambda+1\) 的 non-strict endpoint
+例外；它总有严格的 \(2\)-side support candidate。
+
+结合 (20zz-factor-17a)，minimal leaf 的 multiplier-side raw choice 现在可以完全确定：
+
+\[
+q_E=
+\begin{cases}
+2,&E\text{ 是 }2\text{ 的幂},\\
+\min\{q:q\mid E,\ q\text{ 为奇素数}\},&\text{否则}.
+\end{cases}
+\tag{20zz-dyadic-8}
+\]
+
+第二行的 \(q_E\) 自动整除 \(L_5\)，故第 6.8--6.12 节适用；第一行由
+(20zz-dyadic-5)--(20zz-dyadic-7) 处理。两种情形都给出从已绑定 persistent source
+出发的 actual forward raw suffix，以及一个严格的 selected-side high-support cofactor
+\(p-q_E\)。
+
+**边界。** (20zz-dyadic-7) 只支付 selected-side 的 E5 信号。companion \(y\) 仍须
+重新计算 complete-excess block；它可能把 action 送入 single-side bundle 或 atomic split。
+因此这没有证明 dyadic child 已有 canonical joined target、E1 provenance、E2--E4 或
+global T5 ticket。它的作用是删除 \((E,L_5)>1\) 作为 raw suffix 的遗漏条件，并把
+pure-dyadic multiplier 与 odd-prime multiplier 一并归入同一个 companion-admission 问题。
 
 ## 7. 根支撑强制的 primitive \(m=3\) quotient fiber
 

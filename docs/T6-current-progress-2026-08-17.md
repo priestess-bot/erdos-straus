@@ -303,6 +303,47 @@ w\frac{p^2-1}{5}=\sigma+e+p.
 \(\sigma+e+p\equiv0\pmod{48}\)。这把 pure-\(T\) carrier 直接绑到 d=1 residual
 参数上，但 \(w\) 仍无界，故并未排空 \(L\equiv1\pmod{p^2}\) 或完成 E1--E5。
 
+该 minimal leaf 现在还有一个更细的 root-support 分解。记 \(\Xi=5\sigma+w\)，则
+\[
+4\mathcal A=5L_5(p+1)\Xi,
+\qquad
+\frac KD=\frac{(p^2-1)\Xi}{20}.
+\]
+这不是形式重写：canonical complete-excess 的逐赋值规则强制
+\[
+(E,\mathcal A)=(E,L_5),
+\qquad
+(E,p+1)=(E,\Xi)=2,
+\qquad v_2(\Xi)=1.
+\]
+所以触发 root deflation 的任意 \(\ell\mid(E,L_5)\) 必避开 \(\Xi\)，而 split-stutter
+child 的 residual 已从一般 \(K/D\) 因子收缩为
+\[
+D_y\mid
+\gcd\!\left(\frac{(p^2-1)\Xi}{20},eD_1-1\right),
+\qquad (D_y,25L_5E)=1.
+\]
+更重要的是，\(E\) 的所有奇素因子都已落在 \(L_5\) 上；故先前 source-bound suffix 所需的
+\((E,L_5)>1\) 现在等价于 \(E\) 不是纯二幂。唯一新隔离出的 \(E=2^a\) boundary
+不能自动调用现有 pure-dyadic half-power 结果，因为后者还需要本 receipt 未提供的 Jacobi
+F-state / half-power source data。
+不过它也不是 raw-suffix dead end：记 \(\lambda=v_2(p-1)\)，complete-excess 的逐赋值
+定义给出 \(a>\lambda\)，而 \(2^a\equiv1\pmod p\) 排除唯一临界值
+\(a=\lambda+1\)。故 \(a\ge\lambda+2\)，实际 \(q=2\) raw deflation 后的 selected-side
+normalisation 精确为 \(E_x=E/2,D_x=D,M_x=\mathcal A E/2\)，cofactor 为 \(p-2\)。
+所以无论 \(E\) 是否有奇素因子，都已有一个确定的 actual raw deflation label；尚未关闭的
+仅是 companion 的 complete-excess 重生、atomic admission 与完整 E1--E5，而不是 multiplier
+本身没有可选 physical raw move。
+若它还重复进入 \(L\equiv1\pmod{p^2}\) 的 \(a_0=1\) hard branch，写
+\(L=1+p^2\chi\)，则实际 child 还必须满足一条新的模 \(p^2\) lifted congruence
+\[
+\ell D_y\equiv
+1-D_1+p\left[3+\sigma((\ell-2)D_1+1)\right]\pmod{p^2}.
+\]
+这将残余压到原 finite source-data divisor menu 的一个附加 \(p^2\) 条件子菜单；并未证明该菜单为空，
+也没有补上 atomic checkpoint 的 E1--E4 或 second-child canonicalization。因此 TR1 与
+T6 仍保持 `OPEN`，但下一条证明对象已不再是未结构化的二阶同余。
+
 补充：在 actual \(m=3\)、whole-\(d\)、\(s_d=3\) 子分支中，双范数门与 exact
 primitive content 强制 \(d=13\)、\(\rho=160+234z\)、\(A=52t-1\)，并使 primitive
 quotient \(q\) 的全部素因子落在 \(1\pmod3\)，且最小 leaf \(q=1\) 全称为空。这排除了从
