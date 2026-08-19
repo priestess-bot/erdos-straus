@@ -27,6 +27,14 @@ statement: >-
   在唯一 minimal leaf 中，L_5=D_*/5 含有非 5 的 pure-T carrier；但其任一非平凡
   除子均不能命中 general-A_0 positive whole-divisor Type II terminal fan。
   其中每个 pure-T 素因子也不能进入 reflected negative ray。
+  对任意真因子 1<J|L_5，D/J 虽给出严格的 formal cofactor，却不可能是同一
+  (A,K,R-h) 的 canonical maximal receipt；L_5 的素因子因而严格分成已有
+  endpoint q-excess（可重放 raw child，但无 persistent E1 root-policy）与容量内
+  饱和两类。前一类的一步 raw deflation 精确给出 strict support cofactor
+  \(p-\ell\)。更精确地，该 child 在 complete-excess 意义下必精确分流为单侧
+  bundle，或两个 p-free 完整超额块的 atomic split；后者的 high-support rank
+  stutter 恰等价于另一侧 multiplier \(F_y\equiv\ell\pmod p\)。这仍不能以因子删除
+  冒充 E1 rebase，也不支付 persistent provenance、priority 或 typed target。
   更一般地，m=3 的 D 因子不命中 native raw Type II menu。
   该约化不证明这些互锁 divisor fibers 为空，不构造
   terminal 或 E1--E5 successor，也不闭合 QC1、TR1 或 T6。
@@ -48,6 +56,10 @@ depends_on:
   - type-I-root-capacity-stutter-transverse-composite-divisor-positive-quadratic-type-II-fan
   - type-I-root-capacity-stutter-transverse-native-raw-type-II-menu
   - type-I-root-capacity-stutter-transverse-negative-branch-bezout-reflection-terminal
+  - type-I-root-capacity-strict-carry-support-rebase
+  - type-I-root-capacity-strict-carry-universal-raw-word-policy-boundary
+  - type-I-bottom-sink-scc-complete-excess-bundle-selector
+  - type-I-path-anchored-atomic-split-complete-excess-admission
 topics:
   - type-I
   - root-capacity
@@ -84,6 +96,14 @@ sources:
     role: native-raw-ray-terminal-conditions
   - claim: type-I-root-capacity-stutter-transverse-negative-branch-bezout-reflection-terminal
     role: reflected-negative-ray-terminal-conditions
+  - claim: type-I-root-capacity-strict-carry-support-rebase
+    role: canonical-receipt-required-for-a-real-support-rebase
+  - claim: type-I-root-capacity-strict-carry-universal-raw-word-policy-boundary
+    role: actual-root-endpoint-raw-occurrence-without-persistent-E1-policy
+  - claim: type-I-bottom-sink-scc-complete-excess-bundle-selector
+    role: complete-excess-lcm-support-and-high-support-rank-admission
+  - claim: type-I-path-anchored-atomic-split-complete-excess-admission
+    role: two-sided-complete-excess-arithmetic-kernel-and-exact-rank-gate
 visibility: public
 last_checked: '2026-08-19'
 ---
@@ -1170,6 +1190,473 @@ p=\frac{\ell B-s}{s-1}
 该引理不说 \(\ell\) 必须落入某一 negative root；它只证明一旦尝试用 reflected
 negative ray 消费它，就必然失败。non-reflection negative branch、其它 Type I/II
 chart 以及 actual E1--E5 adapter 仍是下一步的实质问题。
+
+### 6.8 \(L_5\) 真因子只能制造 formal strictness，不能删除 actual receipt
+
+最小叶看起来还留下一个诱人的形式操作。任取
+
+\[
+1<J\mid L_5,
+\tag{20zzn}
+\]
+
+并写
+
+\[
+\widetilde D_J=\frac{D}{J},
+\qquad
+\widetilde E_J=EJ.
+\tag{20zzo}
+\]
+
+因为此处 \(D=25L_5=3p+1-h<3p\)，有
+
+\[
+1<J\le L_5<\frac{3p}{25}<p.
+\tag{20zzp}
+\]
+
+又 \(p\nmid D\)，故 \(p\nmid J\)。所以 (20zzo) 保持所有容易检查的整数门：
+
+\[
+R-h=\widetilde E_J\widetilde D_J,
+\qquad
+\widetilde D_J\mid K,
+\qquad
+\widetilde D_J\mid ph+1,
+\qquad
+p\nmid\widetilde E_J.
+\tag{20zzq}
+\]
+
+原 receipt 是 stutter，故 \(D\equiv1-h=-(h-1)\pmod p\)。形式 cofactor 因而为
+
+\[
+\widetilde c_J
+:=
+\left\langle
+\widetilde D_J(h-1)^{-1}
+\right\rangle_p
+=
+\left\langle-J^{-1}\right\rangle_p.
+\tag{20zzr}
+\]
+
+由 (20zzp)，\(J\not\equiv1\pmod p\)，故
+
+\[
+\boxed{1\le\widetilde c_J\le p-2.}
+\tag{20zzs}
+\]
+
+也就是说，删去 \(J\) 的确会产生一个**形式上的**严格 cofactor。关键是它不能
+被误当作同一 endpoint 的 actual strict carry。
+
+为此固定该 endpoint 的原始 \((A,K,z)\)，其中 \(z=R-h\)，并重放唯一的
+maximal complete-excess normalisation
+
+\[
+Q_{\rm ex}
+=
+\prod_{\nu_\ell(z)>\nu_\ell(K)}
+\ell^{\nu_\ell(z)},
+\qquad
+\beta=\frac z{Q_{\rm ex}},
+\qquad
+D=\beta(A,Q_{\rm ex}),
+\qquad
+E=\frac{Q_{\rm ex}}{(A,Q_{\rm ex})}.
+\tag{20zzt}
+\]
+
+取任意素数 \(\ell\mid J\)，并记
+
+\[
+a_\ell=\nu_\ell(A),
+\qquad
+k_\ell=\nu_\ell(K),
+\qquad
+b_\ell=\nu_\ell(z).
+\tag{20zzu}
+\]
+
+同一固定 endpoint 的 canonical \(D\)-指数只能是
+
+\[
+\nu_\ell(D)=
+\begin{cases}
+b_\ell,&b_\ell\le k_\ell,\\
+a_\ell,&b_\ell>k_\ell.
+\end{cases}
+\tag{20zzv}
+\]
+
+但 \(\nu_\ell(\widetilde D_J)<\nu_\ell(D)\)。因此
+
+\[
+\boxed{
+\widetilde D_J
+\text{ 不可能是同一 }(A,K,z)\text{ 的 canonical maximal receipt}.}
+\tag{20zzw}
+\]
+
+这不是单靠唯一性措辞的结论：在第一行，形式删除把一个尚在 \(K\) 容量内的
+\(\ell\)-指数错误地移入 multiplier；在第二行，它把 canonical \((A,Q_{\rm ex})\)
+留下的指数再删去。两种情形都直接违反 (20zzv)。所以 (20zzq) 中的整除式即使全部
+成立，也不能为 complete-excess bundle 或 strict support rebase 提供 E1 receipt。
+
+这还给出 minimal leaf 的一个可操作、但严格条件性的来源二分：
+
+\[
+\ell\mid L_5,\quad
+\begin{cases}
+\ell\nmid E
+&\Longrightarrow\
+\nu_\ell(z)=\nu_\ell(D)\le\nu_\ell(K),\\
+\ell\mid E
+&\Longrightarrow\
+\nu_\ell(z)>\nu_\ell(K).
+\end{cases}
+\tag{20zzx}
+\]
+
+第一行由 (20zzv) 的第一种情形给出，第二行由
+\(\nu_\ell(E)>0\) 只能出现在第二种情形给出。故前一类 pure-\(T\) prime 在当前
+endpoint 甚至没有 raw overcapacity；它若要参与 TR1，必须来自不同的 raw
+occurrence 或新 adapter。后一类则已有 endpoint-level overcapacity，但仍不能使用
+\(\widetilde D_J\)。
+
+这里不再需要把 root endpoint 的 raw occurrence 当作未知输入。已有 universal
+raw-word 定理从 universal_p_source_v1 出发，先到 \((1,R-1)\)，再经两段
+规范 capacity-peeling 到达 \((h,z,1)\)。因此若 \(\ell\mid E\)，则可在该
+已回放 word 后追加唯一 shift
+\(t=\ell-1\)，并有无额外 gcd 约分的 actual raw child
+
+\[
+(z,h,1)
+\longmapsto
+\left(
+\frac z\ell,\
+\frac{h+R(\ell-1)}\ell,\
+1
+\right)
+=
+\left(
+\frac z\ell,\
+R-\frac z\ell,\
+1
+\right).
+\tag{20zzy}
+\]
+
+这里 \((z/\ell,R-z/\ell)=1\) 来自 \((z,R)=(z,h)=1\)。所以
+\(\ell\mid E\) 时的缺口已不再是 raw occurrence，而是 universal root word 只能标为
+analysis evidence：它由当前 target chart 反向确定，尚不支付 target-independent
+persistent origin、scope 或 terminal-first miss。后继仍须重新计算 full receipt、typed
+target、全域 lift 与 T5 ticket；当前没有证明 (20zzy) 给出 terminal 或 E1--E5 edge。
+
+### 6.9 actual raw deflation 的严格 support cofactor
+
+上一节的 (20zzy) 不是把 \(D\) 除以 \(\ell\) 的替代记号。它改变了 raw node，
+因而应在 child 上重新计算完整超额块。这个重算恰好给出一个严格的 canonical
+support target。
+
+仍令
+
+\[
+M_{\rm ex}=\operatorname{lcm}(A,Q_{\rm ex})=AE,
+\tag{20zzz}
+\]
+
+并取一个素数
+
+\[
+\ell\mid(E,L_5).
+\tag{20zza}
+\]
+
+第 6.4 节的 pure-\(T\) 分裂给出 \(\ell\nmid p^2-1\)。由于
+\(K=A(p-1)\)，若
+
+\[
+a=\nu_\ell(A)=\nu_\ell(K),
+\qquad
+b=\nu_\ell(z),
+\tag{20zzb}
+\]
+
+则 \(\ell\mid E\) 与 canonical receipt 的逐赋值规则等价于 \(b>a\)。
+对 (20zzy) 的 child 记
+
+\[
+x=\frac z\ell,
+\qquad
+Q_x=
+\prod_{\nu_q(x)>\nu_q(K)}q^{\nu_q(x)},
+\qquad
+M_x=\operatorname{lcm}(A,Q_x).
+\tag{20zzc}
+\]
+
+除 \(\ell\) 外，各个素数在 \(x\) 与 \(z\) 中的赋值完全相同。对 \(\ell\)，
+\(\nu_\ell(x)=b-1\)：若 \(b-1>a\)，它仍在 \(Q_x\) 中；若 \(b-1=a\)，
+它退出 \(Q_x\) 但恰由 \(A\) 承担。两种情形都给
+
+\[
+\nu_\ell(M_x)=b-1=\nu_\ell(M_{\rm ex})-1.
+\tag{20zzd}
+\]
+
+逐素数合并，得到没有选择余地的恒等式
+
+\[
+\boxed{
+M_x=\frac{M_{\rm ex}}{\ell}
+=A\frac E\ell.}
+\tag{20zze}
+\]
+
+这里 \(E/\ell>1\)：否则 \(E=\ell\)，但 stutter 有 \(E\equiv1\pmod p\)，
+而 (20zzp) 给出 \(1<\ell<p\)，矛盾。因此 \(M_x>A>B_p\)。
+
+原 root chart 满足 \(4A\equiv-1\pmod p\)，而 stutter 又有
+\(E\equiv1\pmod p\)。所以 child 的 canonical lcm support cofactor 精确为
+
+\[
+\begin{aligned}
+c_x
+&=
+\left\langle(4M_x)^{-1}\right\rangle_p\\
+&=
+\left\langle-\ell E^{-1}\right\rangle_p
+=p-\ell.
+\end{aligned}
+\tag{20zzf}
+\]
+
+特别地
+
+\[
+\boxed{
+\Lambda_p^\sharp:
+(0,p-1)\longmapsto(0,p-\ell)
+\quad\text{严格下降}.}
+\tag{20zzg}
+\]
+
+故 \(\ell\mid(E,L_5)\) 子支的真正障碍不是 E5，也不是 raw move 或 lcm target
+的算术唯一性。若能把 (20zzy) 的 child 作为现有单侧 complete-excess 或双色
+atomic admission 的实际 occurrence，并补齐 persistent origin、scope、terminal-first
+与 typed normal form，那么 (20zze)--(20zzg) 已经支付其 strict support/rank
+部分。当前并未证明 child 满足这些 admission 的其余前提；尤其不能从
+\(M_x\) 的严格性反推 E1--E4 或全域 lift。
+
+### 6.10 excess-\(\ell\) raw child 的单侧/双色穷尽与精确 split stutter 门
+
+第 6.9 节只重算了 child 的 \(x=z/\ell\) 一侧。这里证明：在 minimal leaf 中，
+这个实际 raw child 不会落在 complete-excess 语法之外。仍固定
+
+\[
+\ell\mid(E,L_5),
+\qquad
+x=\frac z\ell,
+\qquad
+y=R-x,
+\tag{20zz-child-1}
+\]
+
+并以相对于同一个 \(K\) 的 maximal complete-excess normalisation 定义
+
+\[
+x=Q_x\beta_x,
+\qquad
+g_x=(A,Q_x),
+\qquad
+E_x=\frac{Q_x}{g_x},
+\qquad
+D_x=\beta_xg_x,
+\tag{20zz-child-2}
+\]
+
+以及 \(y=Q_y\beta_y\) 的同类对象。第 6.9 节的逐赋值讨论实际上给出更强的
+完整恒等式
+
+\[
+\boxed{
+E_x=\frac E\ell,
+\qquad
+D_x=D,
+\qquad
+\operatorname{lcm}(A,Q_x)=A\frac E\ell.}
+\tag{20zz-child-3}
+\]
+
+确实，在 \(\ell\) 外所有赋值不变。若
+\(a=\nu_\ell(A)=\nu_\ell(K)\)、\(b=\nu_\ell(z)>a\)，则 child 的赋值为
+\(b-1\)。当 \(b-1>a\) 时，完整 \(\ell^{b-1}\) 块仍属于 \(Q_x\)；当
+\(b-1=a\) 时，它完全退出 \(Q_x\)，转而留在 \(\beta_x\)。两种情形都使
+\(D_x\) 的 \(\ell\)-赋值保持为 \(a\)，而 \(E_x\) 的 \(\ell\)-赋值比原来
+少一。逐素数合并即得 (20zz-child-3)。
+
+由第 6.9 节已知 \(E/\ell>1\)，所以
+
+\[
+Q_x>1,
+\qquad
+\beta_x\mid K.
+\tag{20zz-child-4}
+\]
+
+还须排除双色 schema 中可能出现的 \(p\)-block。原端点 primitive，故
+\((z,R)=(z,h)=1\)，于是
+
+\[
+(x,y)=(x,R)=1.
+\tag{20zz-child-5}
+\]
+
+proper-root receipt 有 \(p\nmid E\)，而 stutter 给出
+\(D\equiv1-h\pmod p\)、\(E\equiv1\pmod p\)。因此
+
+\[
+R=h+ED\equiv1\pmod p,
+\qquad
+x\equiv(1-h)\ell^{-1}\pmod p.
+\tag{20zz-child-6}
+\]
+
+若 \(p\mid y\)，由 (20zz-child-6) 必有
+
+\[
+\ell\equiv1-h\pmod p.
+\tag{20zz-child-7}
+\]
+
+这里 \(1<h<p\)、\(1<\ell<p\)，故 (20zz-child-7) 强制
+\(\ell=p+1-h\)。但 \(\ell\mid L_5\mid D\)，且
+
+\[
+D-(p+1-h)=2p.
+\tag{20zz-child-8}
+\]
+
+于是 \(\ell\mid2p\)，这不可能：\(\ell\) 是 odd pure-\(T\) prime、
+\(\ell<p\)，并且 \(p\nmid D\)（\(D\equiv1-h\not\equiv0\pmod p\)）。故
+
+\[
+\boxed{p\nmid xy.}
+\tag{20zz-child-9}
+\]
+
+同样，\(y=h+(\ell-1)x\equiv h\pmod\ell\)，而 \((h,D)=1\)、\(\ell\mid D\)，
+所以 \(\ell\nmid y\)。这个事实以后排除了把 \(\ell\) 同时记到两种颜色。
+
+现在有一个无需搜索的穷尽。若
+
+\[
+y\beta_x\mid K,
+\tag{20zz-child-10}
+\]
+
+则 (20zz-child-2)、(20zz-child-4)--(20zz-child-5) 给出
+
+\[
+Q_x>1,
+\qquad
+x=Q_x\beta_x,
+\qquad
+y\beta_x\mid K,
+\qquad
+(Q_x,y\beta_x)=1,
+\qquad
+p\nmid Q_x.
+\tag{20zz-child-11}
+\]
+
+并且 \(Q_x\nmid K\)、\(Q_x<R\)。这正是单侧 complete-excess receipt 的全部
+**算术** kernel；其 canonical support 是 (20zz-child-3)，cofactor 已精确为
+\(p-\ell\)，故在原 high-support root 的 \(\Lambda_p^\sharp\) 下严格。
+
+反之，若 (20zz-child-10) 失败，则
+
+\[
+\boxed{Q_y>1.}
+\tag{20zz-child-12}
+\]
+
+因为若 \(Q_y=1\)，maximal definition 给 \(y\mid K\)；再由
+\((y,\beta_x)=1\) 及 \(\beta_x\mid K\)，便会推出 \(y\beta_x\mid K\)，矛盾。
+结合 (20zz-child-5)、(20zz-child-9)，此时
+
+\[
+Q_x,Q_y>1,
+\qquad
+p\nmid Q_xQ_y,
+\qquad
+\beta_x\beta_y\mid K.
+\tag{20zz-child-13}
+\]
+
+所以 raw child 落入 path-anchored atomic split 的完整**算术** kernel，而非一个
+未分类的第三种 residual。
+
+最后可把 split 的 E5 问题压成一个单一同余。令
+
+\[
+F_y=\frac{Q_y}{(A,Q_y)}>1.
+\tag{20zz-child-14}
+\]
+
+由于 \((Q_x,Q_y)=1\) 且 \(E_x\mid Q_x\)，其 canonical joined support 为
+
+\[
+\begin{aligned}
+M_{\rm split}
+&=\operatorname{lcm}(A,Q_x,Q_y)\\
+&=A\frac E\ell\,F_y.
+\end{aligned}
+\tag{20zz-child-15}
+\]
+
+其中 \(p\nmid F_y\) 由 (20zz-child-9) 给出。用 \(4A\equiv-1\pmod p\) 及
+\(E\equiv1\pmod p\)，split target 的 canonical cofactor 是
+
+\[
+c_{\rm split}
+=\left\langle(4M_{\rm split})^{-1}\right\rangle_p
+=\left\langle-\ell F_y^{-1}\right\rangle_p.
+\tag{20zz-child-16}
+\]
+
+原 root 的 high-support cofactor 为 \(p-1\)，故精确有
+
+\[
+\boxed{
+c_{\rm split}=p-1
+\quad\Longleftrightarrow\quad
+F_y\equiv\ell\pmod p.}
+\tag{20zz-child-17}
+\]
+
+因此 split 分支一旦通过其 source/target 准入，除 (20zz-child-17) 这一显式
+congruence 外都自动严格支付 E5；若该同余不成立，则
+\(c_{\rm split}\le p-2\)。这把此前模糊的“child 可能还要重新分块”收缩为：
+
+\[
+\boxed{
+\begin{array}{ll}
+\text{single-side:}&\text{算术 kernel 完整，且 cofactor }p-\ell;\\
+\text{atomic split:}&\text{算术 kernel 完整，唯一 rank stutter 门为 }
+F_y\equiv\ell\pmod p.
+\end{array}}
+\tag{20zz-child-18}
+\]
+
+这不是 E1--E5 edge 的声明。当前 universal root word 仍只提供 target-derived
+`analysis_evidence` raw occurrence；两种分支都仍须由一个已入队 source 支付
+persistent origin、scope、terminal-first priority、typed target/normal form 与全域 lift。
+本节只证明：在这些合同义务之外，minimal leaf 的 excess-\(\ell\) child 已不存在
+另一种未分类的 complete-excess arithmetic obstruction。
 
 ## 7. 根支撑强制的 primitive \(m=3\) quotient fiber
 

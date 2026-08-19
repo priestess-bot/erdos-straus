@@ -184,6 +184,24 @@ actual provenance、terminal-first 和 target receipt 都保留后，才应继�
 | Eisenstein quotient \(k\) 的 EQ1--EQ6 | 由已知 stutter 恒等式可推的代数包 | `analysis_evidence`；不构成 edge |
 | canonical low chart from \(k>1\) | 图表存在 | 缺 E1--E4/provenance，不构成 edge |
 
+最小 \(q=5\) leaf 还有一个新近固定的边界：对每个 \(1<J\mid L_5\)，
+\(D/J\) 的 cofactor 虽严格，却不可能重建同一 \((A,K,R-h)\) 的 canonical
+maximal receipt。因此它不能作为 E1 的 factor-deletion rebase。对
+\(\ell\mid L_5\)，只有 \(\ell\mid E\) 的分支在当前 endpoint 已有 raw
+overcapacity，并可追加到已知 universal root raw word；但该 word 仍不支付
+persistent E1 root-policy。更精确地，这条 actual raw deflation 的 lcm support 为
+\(AE/\ell\)，canonical cofactor 为 \(p-\ell\)。并且它有一个完整、无需搜索的
+complete-excess 分流：写 child 为 \(x+y=R\)，则其一侧满足
+\(E_x=E/\ell,D_x=D\)，且两侧皆 p-free。若 \(y\beta_x\mid K\)，它已满足单侧
+bundle 的全部算术 kernel，并以 \(p-\ell\) 严格支付 E5；若不满足，则另一侧的
+maximal block 必有 \(Q_y>1\)，从而精确进入 atomic split kernel。令
+\(F_y=Q_y/(A,Q_y)\)，split support 为 \(A(E/\ell)F_y\)，其 rank stutter
+**当且仅当** \(F_y\equiv\ell\pmod p\)；除此一个同余外，split 也严格支付 E5。
+所以这一 raw child 不再有未分类的 complete-excess 算术障碍。其余 \(\ell\) 在当前
+endpoint 已处于容量内，必须寻找新的 occurrence 或新的 physical adapter。上述两支都
+仍缺 persistent E1 root-policy、terminal-first、typed target/normal form 和全域 lift，
+故这缩小了 TR1 的下一条构造命题，但不构成 terminal 或 edge。
+
 补充：在 actual \(m=3\)、whole-\(d\)、\(s_d=3\) 子分支中，双范数门与 exact
 primitive content 强制 \(d=13\)、\(\rho=160+234z\)、\(A=52t-1\)，并使 primitive
 quotient \(q\) 的全部素因子落在 \(1\pmod3\)，且最小 leaf \(q=1\) 全称为空。这排除了从
