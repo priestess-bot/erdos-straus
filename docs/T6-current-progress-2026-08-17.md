@@ -334,6 +334,14 @@ normalisation 精确为 \(E_x=E/2,D_x=D,M_x=\mathcal A E/2\)，cofactor 为 \(p-
 所以无论 \(E\) 是否有奇素因子，都已有一个确定的 actual raw deflation label；尚未关闭的
 仅是 companion 的 complete-excess 重生、atomic admission 与完整 E1--E5，而不是 multiplier
 本身没有可选 physical raw move。
+对 rank-stutter 后的 second suffix，所选 \(q_\star\) 自身的 companion reintroduction 也已
+缩成一个 exact unit-excess gate：写 \(b=v_{q_\star}(y)\)、\(y'=y/q_\star\)，则
+\(q_\star\mid R-y'\) 当且仅当 \(b=1\) 且 \(R\equiv y'\pmod {q_\star}\)。该情形自动有
+\(q_\star\nmid K\)、\(q_\star\parallel F_y\)、\(q_\star\nmid D_y\)；若 \(b\ge2\)，
+companion 不含 \(q_\star\)，相对原 root support 新鲜重算的 joined support 的该素数指数不超过 formal
+\(M_{\rm split}/q_\star\) 指数。尚未处理的是其它新素数的 companion excess，而不是
+\(q_\star\) 的任意层都可能回流。companion 的 \(p\)-block 也不是隐藏例外：它恰在
+\(q_\star\equiv1-D_1\pmod p\) 时出现；因此 p-free admission 的失败门同样已显式化。
 若它还重复进入 \(L\equiv1\pmod{p^2}\) 的 \(a_0=1\) hard branch，写
 \(L=1+p^2\chi\)，则实际 child 还必须满足一条新的模 \(p^2\) lifted congruence
 \[

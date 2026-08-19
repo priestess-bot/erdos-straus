@@ -3171,6 +3171,108 @@ q_E=
 global T5 ticket。它的作用是删除 \((E,L_5)>1\) 作为 raw suffix 的遗漏条件，并把
 pure-dyadic multiplier 与 odd-prime multiplier 一并归入同一个 companion-admission 问题。
 
+### 6.19 second suffix 的 \(q_\star\)-adic reintroduction 只在 unit-excess 层
+
+第 6.13 节正确保留了 second child 的 companion 可能重生 complete-excess 的边界。
+其中 \(q_\star\)-自身的重生其实可以完全隔离。仍写
+
+\[
+q:=q_\star,
+\qquad
+b:=v_q(y),
+\qquad
+k:=v_q(K),
+\qquad
+y':=\frac yq,
+\qquad
+t:=R-y'=x+(q-1)y'.
+\tag{20zz-second-q-1}
+\]
+
+由 (20zz-second-4)，\(b>k\)，且 \((x,y)=1\)。于是
+
+\[
+\boxed{
+q\mid t
+\quad\Longleftrightarrow\quad
+b=1\ \text{且}\ x\equiv y'\pmod q.}
+\tag{20zz-second-q-2}
+\]
+
+**证明。** 若 \(b\ge2\)，则 \(y'\equiv0\pmod q\)，从而
+\(t\equiv x\not\equiv0\pmod q\)。若 \(b=1\)，则
+\(t\equiv x-y'\pmod q\)，正好给出所述充要条件。证毕。
+
+由于 \(b>k\)，这个唯一 reintroduction gate 自动还满足
+
+\[
+\boxed{
+b=1\Longrightarrow k=0,
+\quad q\nmid K,
+\quad q\parallel F_y,
+\quad q\nmid D_y.}
+\tag{20zz-second-q-3}
+\]
+
+最后两项来自 \(F_y=Q_y/(\mathcal A,Q_y)\)、
+\(D_y=\beta_y(\mathcal A,Q_y)\)：当 \(b=1>k\) 时，\(q\) 既不在
+\(\mathcal A\) 也不在 \(\beta_y\)，而在 \(Q_y\) 中恰有一次。因此 (20zz-second-q-2)
+可直接重写为一个 source-child 可读的窄 gate
+
+\[
+\boxed{
+\mathsf{Reint}_{q_\star}
+\quad\Longleftrightarrow\quad
+q_\star\parallel F_y
+\ \text{且}\
+R\equiv\frac{y}{q_\star}\pmod {q_\star}.}
+\tag{20zz-second-q-4}
+\]
+
+在其补集上，所选 \(q\)-coordinate 不会损坏第 6.13 节的 formal support。
+事实上，\(q\nmid E/\ell\)，且
+\(v_q(F_y)=b-v_q(\mathcal A)\)，所以
+\(M_{q}^{\rm form}=M_{\rm split}/q\) 的 \(q\)-赋值是 \(b-1\)。若
+\(b-1>k\)，raw deflation 后 \(y'\) 仍携带完整 \(q^{b-1}\) excess block；若
+\(b-1=k\)，该 block 退出 complete-excess，但 retained charged support 的
+\(q\)-赋值至多为 \(v_q(\mathcal A)\le k=b-1\)。令 \(M'\) 表示从
+\((y',t)\) 相对**原 root support** \(\mathcal A\) 重新计算全部 complete-excess blocks
+得到的 fresh arithmetic joined support；它不是已提交 \(M_{\rm split}\) 后的 persistent
+support reset。由 (20zz-second-q-2)，当 \(b\ge2\) 时 companion 不含 \(q\)。故 \(M'\)
+至少在这个素数坐标上满足
+
+\[
+\boxed{
+b\ge2
+\Longrightarrow
+v_q(M')\le v_q\!\left(M_{q}^{\rm form}\right)=b-1.}
+\tag{20zz-second-q-5}
+\]
+
+second child 的两侧也保持一个有用的 primitive 分离：
+
+\[
+\boxed{
+(y',t)=1,
+\qquad
+p\mid t
+\Longleftrightarrow
+q\equiv1-D_1\pmod p.}
+\tag{20zz-second-q-6}
+\]
+
+第一式由 \((x,y)=1\) 及 \(t=x+(q-1)y'\) 立即给出。对第二式，rank-stutter 的
+(20zz-gate-6a) 与 \(F_y\equiv\ell\pmod p\) 给
+\(y=F_yD_y\equiv1-D_1\pmod p\)；又 \(R\equiv1\pmod p\)、\(p\nmid q\)，所以
+\(p\mid R-y/q\) 恰等价于 \(q\equiv y\equiv1-D_1\pmod p\)。因此除
+(20zz-second-q-4) 的 unit \(q\)-gate 外，可能破坏 p-free atomic admission 的
+\(p\)-block 也已经是一条显式 source/child congruence，而不是隐藏的 companion 现象。
+
+这把 “\(q_\star\)-adic boundary” 从未分类的 companion 风险压成 (20zz-second-q-4)
+这一条 exact congruence，并把 p-free 风险压成 (20zz-second-q-6)。它没有排除 companion
+引入**其它**素数的完整 excess block，也没有证明 \(\mathsf{Reint}_{q_\star}\) 为空；
+因此 second-child canonicalization、E1--E5 及 TR1 仍保持开放。
+
 ## 7. 根支撑强制的 primitive \(m=3\) quotient fiber
 
 这里还有一个比 (15) 更强的 actual-only 收缩。因为 \(h=3u\mid p^2+p+1\)，
