@@ -26,6 +26,7 @@ statement: >-
   高于最小层或进入 complete-excess multiplier，则原始 root 坐标为 11 (mod 25)。
   在唯一 minimal leaf 中，L_5=D_*/5 含有非 5 的 pure-T carrier；但其任一非平凡
   除子均不能命中 general-A_0 positive whole-divisor Type II terminal fan。
+  其中每个 pure-T 素因子也不能进入 reflected negative ray。
   更一般地，m=3 的 D 因子不命中 native raw Type II menu。
   该约化不证明这些互锁 divisor fibers 为空，不构造
   terminal 或 E1--E5 successor，也不闭合 QC1、TR1 或 T6。
@@ -46,6 +47,7 @@ depends_on:
   - type-I-root-capacity-stutter-c-side-m-localization
   - type-I-root-capacity-stutter-transverse-composite-divisor-positive-quadratic-type-II-fan
   - type-I-root-capacity-stutter-transverse-native-raw-type-II-menu
+  - type-I-root-capacity-stutter-transverse-negative-branch-bezout-reflection-terminal
 topics:
   - type-I
   - root-capacity
@@ -80,6 +82,8 @@ sources:
     role: whole-divisor-positive-ray-terminal-conditions
   - claim: type-I-root-capacity-stutter-transverse-native-raw-type-II-menu
     role: native-raw-ray-terminal-conditions
+  - claim: type-I-root-capacity-stutter-transverse-negative-branch-bezout-reflection-terminal
+    role: reflected-negative-ray-terminal-conditions
 visibility: public
 last_checked: '2026-08-19'
 ---
@@ -1069,6 +1073,103 @@ h^2-h+3=(ah-3)(4hc-1)
 这不与一般 native raw menu 的存在性冲突：它使用的是本 slice 特有的
 \(D\mid h^2-h+3\)。结论只排除该 Type II terminal chart；其它 terminal 图表和
 所有 E1--E5 physicalization 义务保持开放。
+
+### 6.7 minimal leaf 的 pure-\(T\) prime 不会进入 reflected negative ray
+
+上一节排除了 positive quadratic fan 与 native raw menu；还须检查已有 negative-root
+terminal 的反射子类。令 \(\ell\mid L_5\) 为任一素数。则不存在正整数
+\(s\ge3,\lambda,c\) 满足
+
+\[
+\ell=s(\lambda+1)-1,
+\qquad
+\lambda p\equiv1\pmod\ell,
+\qquad
+\ell\equiv-1\pmod {4s(s-1)}.
+\tag{20zzd}
+\]
+
+后一个同余正是 reflected negative ray 的 terminal 条件；当 \(s\) 取已有
+low-gap set 时，这一结论特别排除了完整的 Bezout-reflection Type II certificate。
+
+**证明。** 由最后一个同余与第一式，可写
+
+\[
+\lambda+1=4c(s-1),
+\qquad
+\ell=4sc(s-1)-1.
+\tag{20zze}
+\]
+
+因为 \(\ell\mid D\mid ph+1\) 且 \(\lambda p\equiv1\pmod\ell\)，有
+
+\[
+h\equiv-\lambda\pmod\ell.
+\tag{20zzf}
+\]
+
+这里 \(0<\lambda<\ell\)，而
+\(\ell-\lambda=(s-1)(\lambda+1)=4c(s-1)^2\)。故存在
+\(\alpha\in\mathbb Z_{\ge0}\) 使
+
+\[
+h=\alpha\ell+4c(s-1)^2.
+\tag{20zzg}
+\]
+
+又由于 \(\ell\) 为素数且 \(\lambda\not\equiv0\pmod\ell\)，由 (20zzd) 得
+
+\[
+B:=\frac{(s-1)p+s}{\ell}\in\mathbb Z_{>0}.
+\tag{20zzh}
+\]
+
+事实上，将分子乘以 \(\lambda\) 后模 \(\ell\) 化简，恰得到
+\((s-1)+s\lambda=\ell\)。写 \(L_5=\ell j\)，由
+\(D=25L_5\)、(20zzg) 及
+
+\[
+p=\frac{\ell B-s}{s-1}
+\tag{20zzi}
+\]
+
+可得
+
+\[
+\bigl(3B-\alpha(s-1)-25j(s-1)\bigr)\ell
+=2s+1+4c(s-1)^3.
+\tag{20zzj}
+\]
+
+右端为正，故左括号可记为 \(\beta\in\mathbb Z_{>0}\)。再用 (20zze) 消去
+\(\ell\)，得到
+
+\[
+4c(s-1)\bigl(\beta s-(s-1)^2\bigr)=\beta+2s+1.
+\tag{20zzk}
+\]
+
+括号必须为正，因而 \(\beta\ge s-1\)。写
+\(\beta=s-1+r\)、\(r\ge0\)，(20zzk) 化为
+
+\[
+4c(s-1)\bigl(s(r+1)-1\bigr)=3s+r.
+\tag{20zzl}
+\]
+
+左端减右端关于 \(r\) 严格递增，且在 \(r=0\) 时至少为
+
+\[
+4(s-1)^2-3s>0
+\qquad(s\ge3).
+\tag{20zzm}
+\]
+
+所以 (20zzl) 无正整数解，矛盾，证毕。
+
+该引理不说 \(\ell\) 必须落入某一 negative root；它只证明一旦尝试用 reflected
+negative ray 消费它，就必然失败。non-reflection negative branch、其它 Type I/II
+chart 以及 actual E1--E5 adapter 仍是下一步的实质问题。
 
 ## 7. 根支撑强制的 primitive \(m=3\) quotient fiber
 
