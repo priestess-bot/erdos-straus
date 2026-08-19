@@ -39,7 +39,7 @@ depends_on:
   - type-I-root-capacity-stutter-transverse-residual-capacity-map
   - type-I-root-capacity-stutter-transverse-root-residue-low-gap-descent
   - type-I-root-capacity-stutter-transverse-overlap-valuation-alignment
-  - type-I-root-capacity-stutter-transverse-pminusone-w-offset-valuation-staircase
+  - type-I-root-capacity-stutter-transverse-overlap-complete-excess-valuation-classification
 topics:
   - type-I
   - root-capacity
@@ -66,8 +66,8 @@ sources:
     role: terminal-first-positive-q-equals-five-pruning
   - claim: type-I-root-capacity-stutter-transverse-overlap-valuation-alignment
     role: p-minus-one-overlap-excess-height
-  - claim: type-I-root-capacity-stutter-transverse-pminusone-w-offset-valuation-staircase
-    role: complete-excess-minimal-layer-root-quotient-refinement
+  - claim: type-I-root-capacity-stutter-transverse-overlap-complete-excess-valuation-classification
+    role: p-minus-one-minimal-leaf-complete-excess-classification
 visibility: public
 last_checked: '2026-08-19'
 ---
@@ -735,47 +735,60 @@ v_5(D_*)=\delta-1=v_5(F(u))-\nu-1.
 
 \[
 t=v_5(D_*)=\delta-1,
+\qquad
+\tau=v_5(T),
 \tag{20za}
 \]
 
-并令 \(E\) 为该 actual maximal receipt 的 complete-excess multiplier。则
-\(q=5\) branch 还有一个来自原始 root 坐标的 sharpened split：
+这个 \(q=5\) branch 的原始 root 坐标还满足一个精确等价式：
 
 \[
 \boxed{
-t\ge2\ \text{或}\ 5\mid E
-\quad\Longrightarrow\quad
-\varrho\equiv11\pmod {25}.}
+\varrho\equiv11\pmod {25}
+\quad\Longleftrightarrow\quad
+\tau\ge2.}
 \tag{20zb}
 \]
 
-若 \(t\ge2\)，则 \(25\mid D_*\)，而 (20h) 的
-\(D_*\mid2\varrho+3\) 立刻给出该结论。余下设 \(t=1\) 且 \(5\mid E\)。由
-(20z)，此时这是 \(p-1,h+1,m+2\) complete-excess overlap 的
-\(b=v_5(p-1)=1\) 共振层。令
+事实上，(20h) 先给出 \(\varrho\equiv1\pmod5\)，写
 
 \[
-w=\frac{2\varrho+1}{u}.
+\varrho=1+5c.
 \tag{20zc}
 \]
 
-已有 root-quotient \(w+9\) valuation staircase 在该层给出 \(25\mid w+9\)。再用
-\(u\equiv3\pmod {25}\)，便有
+由 (20y) 的 \(p\equiv11\pmod {25}\)，直接在 \(T\) 的定义中计算
 
 \[
-2\varrho+1=uw\equiv3(-9)\equiv23\pmod {25},
+2T=2p^2\varrho-(p+1)
+\equiv5(1+2c)pmod {25}.
 \]
 
-故 \(\varrho\equiv11\pmod {25}\)。等价地，唯一尚未被这个 root-coordinate
-收缩覆盖的 \(q=5\) 情形必须满足
+故 \(25\mid T\) 当且仅当 \(c\equiv2\pmod5\)，这正是 (20zb)。再由
+\(5^t\mid T\)，有 \(\tau\ge t\)。于是唯一尚未被这个 root-coordinate
+收缩覆盖的 \(q=5\) 情形有精确的最小 leaf 正规形
 
 \[
 \boxed{
 \varrho\not\equiv11\pmod {25}
-\quad\Longrightarrow\quad
-t=1,\qquad5\nmid E.}
+\quad\Longleftrightarrow\quad
+t=\tau=1.}
 \tag{20zd}
 \]
+
+并令 \(E\) 为该 actual maximal receipt 的 complete-excess multiplier，
+\(\zeta=v_5(R-h)\)。由 (20z) 的 \(b=v_5(p-1)=1\) 与已有
+\(p-1,h+1,m+2\) complete-excess 分型，(20zd) 的 minimal leaf 还必满足
+
+\[
+\boxed{5\nmid E,\qquad\zeta=2.}
+\tag{20ze}
+\]
+
+反之，若 \(5\mid E\)，该分型给出 \(\tau=b+t=t+1\ge2\)，故自动落入
+\(\varrho\equiv11\pmod {25}\) 的已定向支。这样，所有 \(t\ge2\) 或
+complete-excess \(5\)-branch 都已被压到同一个 root-residue class；剩下的仅是
+\(t=\tau=1\)、non-excess 的 actual leaf。
 
 最后一个指数仍由已有 overlap capacity map 支付，即
 \(5^t\mid T\)，而 actual residual map 至少给出
