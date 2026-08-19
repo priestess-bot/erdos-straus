@@ -193,7 +193,10 @@ quotient \(q\) 的全部素因子落在 \(1\pmod3\)，且最小 leaf \(q=1\) 全
 \(S=(7\rho^2+4\rho+1)/u\)，则 \(S\equiv3\pmod6\)，并有 exact composite defect
 \(R_{q,S}=91q-12S>0\)、\(R_{q,S}\equiv7\pmod {12}\)。该 defect 目前尚未连回
 \(u,d,D_*\) 或 \(\kappa\)，所以这些都是局部输入收缩，不是 terminal、E1--E5 edge、
-QC1 或 T6 的闭合。
+QC1 或 T6 的闭合。同一 high-gap 子支还满足 \(p>2h\)，故 actual \(D_*\) 也不能直接
+充当既有 odd-distance even-source fan 的距离：\(D_H=1\) 时 \(D_*>p\)，而 \(D_H=5\)
+时 \(c=D_*\) 给出的偶源 \(p-c\) 已严格小于 \(c\)，与该 fan 的首个因子参数矛盾。
+这只排除一个 named lift family，不使 TR1 闭合。
 
 `T6-V1.md` 的原始公式分隔符已修复，并把上述证据等级明确写入。原
 \(p=20\,065\,847\,377\) 数值线索已被精确反解：它不满足 actual root divisibility，且有

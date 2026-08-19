@@ -2634,6 +2634,76 @@ z\bmod2&z&\sigma&q\\
 变成 rational source carrier；因此不产生 terminal、source provenance 或 E1--E5 adapter，
 QC1、TR1 与 T6 的状态均不因本节改变。
 
+### 8.5.9 high-gap \(D_*\) 不能直接作为既有 odd-distance even-source 的距离
+
+在这个精确 residual 中，actual transverse carrier \(D_*\) 也有一个看似自然的
+smaller-source 解释，但它不满足既有 `odd-distance-even-source-descent` 的参数前提。先由
+(37ao)、\(h=3u\) 与 \(u=2A+3\rho+1\)，有
+
+\[
+p-2h=\lambda-6A-3\rho-2.
+\tag{37df}
+\]
+
+由 (37cu) 的 \(0<A<\rho\) 及 (37cw-0)，
+
+\[
+\lambda>\frac{9\rho^2+5\rho+1}{\rho}>9\rho+5,
+\qquad
+6A+3\rho+2<9\rho+2.
+\]
+
+所以
+
+\[
+\boxed{p>2h.}
+\tag{37dg}
+\]
+
+回到 (20d) 的 actual dichotomy。若 \(D_H=1\)，则 (20g) 已给出
+\(D_*=D>2p+1\)，因而 \(D_*\) 根本不能作为一个满足 \(0<c<p\) 的 source
+distance。若 \(D_H=5\)，令
+
+\[
+c:=D_*=\frac{3p+1-h}{5},
+\qquad
+n:=p-c=\frac{2p+h-1}{5}.
+\tag{37dh}
+\]
+
+由 (20b)，\(D\) 为奇数；故此时 \(c\) 为正奇数、\(n\) 为正偶数，且由 (37dg)
+
+\[
+c-\frac p2=\frac{p+2-2h}{10}>0,
+\qquad
+0<n<c.
+\tag{37di}
+\]
+
+但是 `odd-distance-even-source-descent` 的首个参数条件已经要求
+
+\[
+n=d_0(1+cr_0)
+\]
+
+其中 \(d_0,r_0\) 都为正整数。这是该扇的首个必要参数条件；故必有
+\(n\ge c+1\)，与 (37di) 矛盾。因此
+
+\[
+\boxed{
+\begin{array}{c|c}
+D_H&\text{以 }c=D_*\text{ 调用既有 odd-distance even-source fan 的结果}\\
+\hline
+1&D_*>p,\ \text{不在允许距离范围}\\
+5&0<p-D_*<D_*,\ \text{首个因子参数已不可能}
+\end{array}}
+\tag{37dj}
+\]
+
+这是针对 actual \(D_*\) 的一个 family no-go，而不是 \(D_*\) 本身为空，也不排除其它
+距离、marked lift、三分母 lift、direct terminal 或新的 E1--E5 adapter。特别地，TR1
+仍保持开放；后续的 \(D_*\) 物理化不能只是把它重命名为现成的 odd-distance even-source。
+
 ## 9. 一个 canonical \(7\pmod {12}\) quotient carrier
 
 式 (24) 还决定了 \(\kappa\) 的素因子类型。若奇素数 \(q\mid\kappa\)，则
