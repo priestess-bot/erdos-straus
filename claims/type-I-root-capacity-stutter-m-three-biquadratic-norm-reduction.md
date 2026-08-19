@@ -28,14 +28,20 @@ statement: >-
   除子均不能命中 general-A_0 positive whole-divisor Type II terminal fan。
   其中每个 pure-T 素因子也不能进入 reflected negative ray。
   对任意真因子 1<J|L_5，D/J 虽给出严格的 formal cofactor，却不可能是同一
-  (A,K,R-h) 的 canonical maximal receipt；L_5 的素因子因而严格分成已有
+  (\mathcal A,K,R-h) 的 canonical maximal receipt；这里的 root-chart support
+  \mathcal A=K/(p-1) 与前段曲线坐标 A=a/3 不同。L_5 的素因子因而严格分成已有
   endpoint q-excess（可重放 raw child，但无 persistent E1 root-policy）与容量内
   饱和两类。前一类的一步 raw deflation 精确给出 strict support cofactor
   \(p-\ell\)。更精确地，该 child 在 complete-excess 意义下必精确分流为单侧
   bundle，或两个 p-free 完整超额块的 atomic split；后者的 high-support rank
   stutter 恰等价于另一侧 multiplier \(F_y\equiv\ell\pmod p\)。这仍不能以因子删除
-  冒充 E1 rebase；若该 stutter 出现，其 canonical residual \(D_y\) 还必须同时通过
-  两个 root-receipt divisor gate 和一个显式模 \(p\) 同余。上述结果仍不支付 persistent
+  冒充 E1 rebase；若该 stutter 出现，其 canonical residual \(D_y\ge5\) 为奇数，
+  且 \(D_yF_y\) 与旧 \(DE\) 互素；它满足一个 root-only child-compatibility normal
+  form 和一个显式模 \(p\) 同余；其中第二个 divisibility form 在固定 deterministic
+  child 后由第一个及 raw identity 自动推出。
+  若已有 persistent source 的已绑定 raw path 已到达该 root endpoint，则 excess-ell
+  child 是该 source 的正向 suffix，并在单侧或非 stutter split 分支支付 E1 和 E5；
+  这不创建新的 root，也不证明每个 actual receipt 具有该 path。上述结果仍不支付 persistent
   provenance、priority 或 typed target。
   更一般地，m=3 的 D 因子不命中 native raw Type II menu。
   该约化不证明这些互锁 divisor fibers 为空，不构造
@@ -1193,6 +1199,18 @@ p=\frac{\ell B-s}{s-1}
 negative ray 消费它，就必然失败。non-reflection negative branch、其它 Type I/II
 chart 以及 actual E1--E5 adapter 仍是下一步的实质问题。
 
+**支撑记号分离。** 前文的 \(A=a/3\) 是 \(m=3\) 整数曲线坐标。以下第 6.8--6.11
+节还要使用 root-capacity endpoint 的 charged support，故一律写为
+
+\[
+\boxed{\mathcal A:=\frac K{p-1}.}
+\tag{20zzm0}
+\]
+
+它满足 \(4\mathcal A\equiv-1\pmod p\)，但没有任何一步断言
+\(\mathcal A=A\)。这两个对象的大小、赋值和同余角色不同；下文的 maximal
+complete-excess 公式均以 \(\mathcal A\) 为支撑。
+
 ### 6.8 \(L_5\) 真因子只能制造 formal strictness，不能删除 actual receipt
 
 最小叶看起来还留下一个诱人的形式操作。任取
@@ -1254,7 +1272,7 @@ p\nmid\widetilde E_J.
 也就是说，删去 \(J\) 的确会产生一个**形式上的**严格 cofactor。关键是它不能
 被误当作同一 endpoint 的 actual strict carry。
 
-为此固定该 endpoint 的原始 \((A,K,z)\)，其中 \(z=R-h\)，并重放唯一的
+为此固定该 endpoint 的原始 \((\mathcal A,K,z)\)，其中 \(z=R-h\)，并重放唯一的
 maximal complete-excess normalisation
 
 \[
@@ -1265,16 +1283,16 @@ Q_{\rm ex}
 \qquad
 \beta=\frac z{Q_{\rm ex}},
 \qquad
-D=\beta(A,Q_{\rm ex}),
+D=\beta(\mathcal A,Q_{\rm ex}),
 \qquad
-E=\frac{Q_{\rm ex}}{(A,Q_{\rm ex})}.
+E=\frac{Q_{\rm ex}}{(\mathcal A,Q_{\rm ex})}.
 \tag{20zzt}
 \]
 
 取任意素数 \(\ell\mid J\)，并记
 
 \[
-a_\ell=\nu_\ell(A),
+\alpha_\ell=\nu_\ell(\mathcal A),
 \qquad
 k_\ell=\nu_\ell(K),
 \qquad
@@ -1288,7 +1306,7 @@ b_\ell=\nu_\ell(z).
 \nu_\ell(D)=
 \begin{cases}
 b_\ell,&b_\ell\le k_\ell,\\
-a_\ell,&b_\ell>k_\ell.
+\alpha_\ell,&b_\ell>k_\ell.
 \end{cases}
 \tag{20zzv}
 \]
@@ -1298,12 +1316,12 @@ a_\ell,&b_\ell>k_\ell.
 \[
 \boxed{
 \widetilde D_J
-\text{ 不可能是同一 }(A,K,z)\text{ 的 canonical maximal receipt}.}
+\text{ 不可能是同一 }(\mathcal A,K,z)\text{ 的 canonical maximal receipt}.}
 \tag{20zzw}
 \]
 
 这不是单靠唯一性措辞的结论：在第一行，形式删除把一个尚在 \(K\) 容量内的
-\(\ell\)-指数错误地移入 multiplier；在第二行，它把 canonical \((A,Q_{\rm ex})\)
+\(\ell\)-指数错误地移入 multiplier；在第二行，它把 canonical \((\mathcal A,Q_{\rm ex})\)
 留下的指数再删去。两种情形都直接违反 (20zzv)。所以 (20zzq) 中的整除式即使全部
 成立，也不能为 complete-excess bundle 或 strict support rebase 提供 E1 receipt。
 
@@ -1366,7 +1384,7 @@ support target。
 仍令
 
 \[
-M_{\rm ex}=\operatorname{lcm}(A,Q_{\rm ex})=AE,
+M_{\rm ex}=\operatorname{lcm}(\mathcal A,Q_{\rm ex})=\mathcal A E,
 \tag{20zzz}
 \]
 
@@ -1378,16 +1396,16 @@ M_{\rm ex}=\operatorname{lcm}(A,Q_{\rm ex})=AE,
 \]
 
 第 6.4 节的 pure-\(T\) 分裂给出 \(\ell\nmid p^2-1\)。由于
-\(K=A(p-1)\)，若
+\(K=\mathcal A(p-1)\)，若
 
 \[
-a=\nu_\ell(A)=\nu_\ell(K),
+\alpha=\nu_\ell(\mathcal A)=\nu_\ell(K),
 \qquad
 b=\nu_\ell(z),
 \tag{20zzb}
 \]
 
-则 \(\ell\mid E\) 与 canonical receipt 的逐赋值规则等价于 \(b>a\)。
+则 \(\ell\mid E\) 与 canonical receipt 的逐赋值规则等价于 \(b>\alpha\)。
 对 (20zzy) 的 child 记
 
 \[
@@ -1396,13 +1414,13 @@ x=\frac z\ell,
 Q_x=
 \prod_{\nu_q(x)>\nu_q(K)}q^{\nu_q(x)},
 \qquad
-M_x=\operatorname{lcm}(A,Q_x).
+M_x=\operatorname{lcm}(\mathcal A,Q_x).
 \tag{20zzc}
 \]
 
 除 \(\ell\) 外，各个素数在 \(x\) 与 \(z\) 中的赋值完全相同。对 \(\ell\)，
-\(\nu_\ell(x)=b-1\)：若 \(b-1>a\)，它仍在 \(Q_x\) 中；若 \(b-1=a\)，
-它退出 \(Q_x\) 但恰由 \(A\) 承担。两种情形都给
+\(\nu_\ell(x)=b-1\)：若 \(b-1>\alpha\)，它仍在 \(Q_x\) 中；若 \(b-1=\alpha\)，
+它退出 \(Q_x\) 但恰由 \(\mathcal A\) 承担。两种情形都给
 
 \[
 \nu_\ell(M_x)=b-1=\nu_\ell(M_{\rm ex})-1.
@@ -1414,14 +1432,14 @@ M_x=\operatorname{lcm}(A,Q_x).
 \[
 \boxed{
 M_x=\frac{M_{\rm ex}}{\ell}
-=A\frac E\ell.}
+=\mathcal A\frac E\ell.}
 \tag{20zze}
 \]
 
 这里 \(E/\ell>1\)：否则 \(E=\ell\)，但 stutter 有 \(E\equiv1\pmod p\)，
-而 (20zzp) 给出 \(1<\ell<p\)，矛盾。因此 \(M_x>A>B_p\)。
+而 (20zzp) 给出 \(1<\ell<p\)，矛盾。因此 \(M_x>\mathcal A>B_p\)。
 
-原 root chart 满足 \(4A\equiv-1\pmod p\)，而 stutter 又有
+原 root chart 满足 \(4\mathcal A\equiv-1\pmod p\)，而 stutter 又有
 \(E\equiv1\pmod p\)。所以 child 的 canonical lcm support cofactor 精确为
 
 \[
@@ -1472,7 +1490,7 @@ y=R-x,
 \[
 x=Q_x\beta_x,
 \qquad
-g_x=(A,Q_x),
+g_x=(\mathcal A,Q_x),
 \qquad
 E_x=\frac{Q_x}{g_x},
 \qquad
@@ -1489,15 +1507,15 @@ E_x=\frac E\ell,
 \qquad
 D_x=D,
 \qquad
-\operatorname{lcm}(A,Q_x)=A\frac E\ell.}
+\operatorname{lcm}(\mathcal A,Q_x)=\mathcal A\frac E\ell.}
 \tag{20zz-child-3}
 \]
 
 确实，在 \(\ell\) 外所有赋值不变。若
-\(a=\nu_\ell(A)=\nu_\ell(K)\)、\(b=\nu_\ell(z)>a\)，则 child 的赋值为
-\(b-1\)。当 \(b-1>a\) 时，完整 \(\ell^{b-1}\) 块仍属于 \(Q_x\)；当
-\(b-1=a\) 时，它完全退出 \(Q_x\)，转而留在 \(\beta_x\)。两种情形都使
-\(D_x\) 的 \(\ell\)-赋值保持为 \(a\)，而 \(E_x\) 的 \(\ell\)-赋值比原来
+\(\alpha=\nu_\ell(\mathcal A)=\nu_\ell(K)\)、\(b=\nu_\ell(z)>\alpha\)，则 child 的赋值为
+\(b-1\)。当 \(b-1>\alpha\) 时，完整 \(\ell^{b-1}\) 块仍属于 \(Q_x\)；当
+\(b-1=\alpha\) 时，它完全退出 \(Q_x\)，转而留在 \(\beta_x\)。两种情形都使
+\(D_x\) 的 \(\ell\)-赋值保持为 \(\alpha\)，而 \(E_x\) 的 \(\ell\)-赋值比原来
 少一。逐素数合并即得 (20zz-child-3)。
 
 由第 6.9 节已知 \(E/\ell>1\)，所以
@@ -1550,8 +1568,9 @@ D-(p+1-h)=2p.
 \tag{20zz-child-9}
 \]
 
-同样，\(y=h+(\ell-1)x\equiv h\pmod\ell\)，而 \((h,D)=1\)、\(\ell\mid D\)，
-所以 \(\ell\nmid y\)。这个事实以后排除了把 \(\ell\) 同时记到两种颜色。
+又因为 \(\ell\mid(E,D)\)，有 \(\ell\mid x=ED/\ell\)。所以
+\(y=h+(\ell-1)x\equiv h\pmod\ell\)；而 \((h,D)=1\)、\(\ell\mid D\)，
+从而 \(\ell\nmid y\)。这个事实以后排除了把 \(\ell\) 同时记到两种颜色。
 
 现在有一个无需搜索的穷尽。若
 
@@ -1605,7 +1624,7 @@ p\nmid Q_xQ_y,
 最后可把 split 的 E5 问题压成一个单一同余。令
 
 \[
-F_y=\frac{Q_y}{(A,Q_y)}>1.
+F_y=\frac{Q_y}{(\mathcal A,Q_y)}>1.
 \tag{20zz-child-14}
 \]
 
@@ -1614,13 +1633,13 @@ F_y=\frac{Q_y}{(A,Q_y)}>1.
 \[
 \begin{aligned}
 M_{\rm split}
-&=\operatorname{lcm}(A,Q_x,Q_y)\\
-&=A\frac E\ell\,F_y.
+&=\operatorname{lcm}(\mathcal A,Q_x,Q_y)\\
+&=\mathcal A\frac E\ell\,F_y.
 \end{aligned}
 \tag{20zz-child-15}
 \]
 
-其中 \(p\nmid F_y\) 由 (20zz-child-9) 给出。用 \(4A\equiv-1\pmod p\) 及
+其中 \(p\nmid F_y\) 由 (20zz-child-9) 给出。用 \(4\mathcal A\equiv-1\pmod p\) 及
 \(E\equiv1\pmod p\)，split target 的 canonical cofactor 是
 
 \[
@@ -1660,7 +1679,7 @@ persistent origin、scope、terminal-first priority、typed target/normal form �
 本节只证明：在这些合同义务之外，minimal leaf 的 excess-\(\ell\) child 已不存在
 另一种未分类的 complete-excess arithmetic obstruction。
 
-### 6.11 split stutter 的 root-receipt divisor gate
+### 6.11 split stutter 的 child-compatibility normal form
 
 第 6.10 节没有排除唯一的 split rank-stutter 同余
 
@@ -1669,11 +1688,12 @@ F_y\equiv\ell\pmod p.
 \tag{20zz-gate-1}
 \]
 
-但它可以进一步压成只读取原 root receipt 和 \(y\)-side canonical residual 的三重门。
+但它可以进一步写成只读取原 root receipt 和 \(y\)-side canonical residual 的
+compatibility normal form。
 在 split 分支中置
 
 \[
-g_y=(A,Q_y),
+g_y=(\mathcal A,Q_y),
 \qquad
 D_y=\beta_yg_y,
 \qquad
@@ -1681,12 +1701,18 @@ F_y=\frac{Q_y}{g_y}.
 \tag{20zz-gate-2}
 \]
 
-按 complete-excess 的定义，\(\beta_y\mid K\)、\(g_y\mid A\mid K\)，而
-\((\beta_y,g_y)=1\)，故 \(D_y\mid K\)。又 \(D\mid x\)、\(D_y\mid y\) 和
-(20zz-child-5) 给出
+按 complete-excess 的定义，\(\beta_y\mid K\)、\(g_y\mid\mathcal A\mid K\)，而
+\((\beta_y,g_y)=1\)，故 \(D_y\mid K\)。由于 \(\ell\mid E\)，有
 
 \[
-(D,D_y)=1,
+x=\frac{ED}{\ell}=\frac E\ell D=ED_1.
+\tag{20zz-gate-2a}
+\]
+
+所以 \(D\mid x\)、\(E\mid x\)；再与 \(D_y\mid y\) 和 (20zz-child-5) 合并，得到
+
+\[
+(DE,D_y)=1,
 \qquad
 DD_y\mid K,
 \qquad
@@ -1695,7 +1721,12 @@ DD_y\mid K,
 \]
 
 这里并未把两个 residual 的互素性当作额外假设：它直接来自同一 primitive raw child
-的两侧。
+的两侧。又 \(F_yD_y=Q_y\beta_y=y\)，故同一论证还给出
+
+\[
+\boxed{(DE,F_yD_y)=1.}
+\tag{20zz-gate-3a}
+\]
 
 再从 \(\ell y=(\ell-1)R+h\)、\(pR=4K-1\) 与 \(ph+1=eD\) 得到精确恒等式
 
@@ -1715,6 +1746,35 @@ p\ell y
 \boxed{D_y\mid\frac{eD}{\ell}-1.}
 \tag{20zz-gate-5}
 \]
+
+这里必须记录两个 divisibility form 的精确逻辑关系，不能把它们当成独立的
+no-go 压力。置
+
+\[
+U:=\frac KD=\frac{pE+e}{4},
+\qquad
+D_1:=\frac D\ell,
+\qquad
+V:=eD_1-1.
+\tag{20zz-gate-5a}
+\]
+
+第一个等式来自 \(4K=p(h+ED)+1=D(pE+e)\)，而 \(x=ED_1\)。故有恒等式
+
+\[
+\boxed{
+p x+1=4UD_1-V,
+\qquad
+\gcd(U,V)=\gcd(U,p x+1).}
+\tag{20zz-gate-5b}
+\]
+
+另一方面，(20zz-gate-3) 给 \(D_y\mid U\)，从而 \(D_y\mid K\)；又
+\(D_y\mid y\) 和 \(p(x+y)+1=4K\) 给出 \(D_y\mid p x+1\)。代回
+(20zz-gate-5b) 即重新得到 (20zz-gate-5)。因此，在 deterministic raw child
+已经固定后，(20zz-gate-5) 不是额外独立的 divisor obstruction；它只是把
+\(D_y\mid p x+1\) 改写成只含 root receipt 的 \(V\) 形式。保留它的用途是
+不分解 \(y\) 也能列出候选除子，而不是声称出现了第二个独立 no-go 门。
 
 若再假设 (20zz-gate-1)，则由 (20zz-child-6) 和 \(y=F_yD_y\) 有
 
@@ -1736,22 +1796,78 @@ p\ell y
 \tag{20zz-gate-6a}
 \]
 
+这里还有一个不依赖因子分解的 parity lift。因为 \(p\equiv1\pmod4\) 且
+\(4K=pR+1\)，有 \(R\equiv3\pmod4\)。又 \(h\mid p^2+p+1\) 而
+\(p^2+p+1\) 为奇数，故 root layer \(h=3u\) 为奇数，进而
+\(z=R-h\) 以及 \(x=z/\ell\) 为偶数，而 \(y=R-x\) 为奇数。由
+\(y=F_yD_y\) 可知 \(F_y,D_y\) 都是奇数。
+
 事实上 \(\ell\) 是 \(L_5\) 的 odd prime，故 \(\ell\ge7\)；又
 \(D/\ell<3p/\ell<p\)，并且 \(D/\ell=25(L_5/\ell)>1\)。所以
-(20zz-gate-6a) 还有唯一的正整数 lifted form
+(20zz-gate-6a) 先有唯一的正整数 lifted form。其两端均为奇数：左端因
+\(\ell,D_y\) 为奇，右端的 \(p+1-D/\ell\) 也为奇。因此 lift coefficient 必为偶数，
+并可唯一写成
 
 \[
 \boxed{
-\ell D_y=p+1-\frac D\ell+pn_y,
+\ell D_y=p+1-\frac D\ell+2pn_y,
 \qquad n_y\in\mathbb Z_{\ge0}.}
 \tag{20zz-gate-6b}
 \]
 
-最后，\(F_y\mid Q_y\mid y\)，而第 6.10 节已经证明 \(\ell\nmid y\)。由于
-\(1<\ell<p\)，(20zz-gate-1) 唯一地写成
+将 (20zz-gate-6b) 重排，得到 exact size identity
 
 \[
-\boxed{F_y=\ell+ps,\qquad s\in\mathbb Z_{\ge1}.}
+\boxed{(2n_y+1)p=\ell D_y+D_1-1.}
+\tag{20zz-gate-6c}
+\]
+
+minimal \(q=5\) leaf 有 \(\ell\ge7\)、\(D_1=25(L_5/\ell)\ge25\)，而 proper-root
+又有 \(D=\ell D_1<3p\)。将 (20zz-gate-6c) 代入后者，得到
+
+\[
+\bigl(\ell(2n_y+1)-3\bigr)D_1<3\ell D_y-3,
+\]
+
+从而
+
+\[
+\boxed{
+D_y>
+\frac{\bigl(\ell(2n_y+1)-3\bigr)D_1+3}{3\ell}.}
+\tag{20zz-gate-6d}
+\]
+
+若 \(n_y=0\)，右端至少为
+
+\[
+\frac{25\ell-72}{3\ell}\ge\frac{103}{21}>4;
+\]
+
+若 \(n_y\ge1\)，右端至少为
+
+\[
+\frac{75\ell-72}{3\ell}\ge\frac{151}{7}>21.
+\]
+
+又 \(D_y\) 为奇数，故每个 actual split rank stutter 都满足更强的尺寸门
+
+\[
+\boxed{
+n_y=0\Longrightarrow D_y\ge5,
+\qquad
+n_y\ge1\Longrightarrow D_y\ge23.}
+\tag{20zz-gate-6e}
+\]
+
+特别地，canonical residual 不能退化为 \(D_y=1\) 或 \(D_y=3\)。
+
+最后，\(F_y\mid Q_y\mid y\)，而第 6.10 节已经证明 \(\ell\nmid y\)。由于
+\(1<\ell<p\)，(20zz-gate-1) 先唯一地写成 \(F_y=\ell+ps\) 且 \(s\ge1\)。
+上段已给 \(F_y,\ell,p\) 均为奇数，故 \(s\) 必为偶数；于是更精确地唯一写成
+
+\[
+\boxed{F_y=\ell+2ps,\qquad s\in\mathbb Z_{\ge1}.}
 \tag{20zz-gate-7}
 \]
 
@@ -1765,14 +1881,196 @@ D_y\mid
 \qquad
 \ell D_y\equiv1-\frac D\ell\pmod p,
 \qquad
-F_y=\ell+ps\ (s\ge1).}
+F_y=\ell+2ps\ (s\ge1).}
 \tag{20zz-gate-8}
 \]
 
-这是一个 root-receipt divisor gate，而不是 stutter 的排空定理：目前没有证明
-(20zz-gate-8) 无解，也没有从它构造 terminal、macro suffix 或 persistent edge。
-它的价值在于把 split 的剩余问题从任意的 \(Q_y\) 因子化，缩到一个与 \(D\) 互素、
-同时受两个原始 divisor gate 和一个模 \(p\) 线性余数约束的 \(D_y\)。
+rank stutter 的两个 lift 参数还满足一个精确的 source-only 仿射耦合。因为
+\(\ell\mid E\) 且 proper-root nonterminal receipt 有 \(E\equiv1\pmod p\)，写
+
+\[
+E=1+p\sigma,
+\qquad \sigma\in\mathbb Z_{>0},
+\qquad D=\ell D_1.
+\tag{20zz-gate-9}
+\]
+
+由 \(m=3\) 的 \(h=3p+1-D\) 及 \(x=ED_1\)，child 的另一侧有
+
+\[
+\begin{aligned}
+y
+&=h+(\ell-1)x\\
+&=p+1-D_1+p\bigl(2+\sigma(\ell-1)D_1\bigr).
+\end{aligned}
+\tag{20zz-gate-10}
+\]
+
+把 (20zz-gate-6b)、(20zz-gate-7) 和 \(y=F_yD_y\) 代入，消去 \(y\) 后得到
+
+\[
+\boxed{
+n_y+sD_y
+=C_\ell:=1+\frac{\sigma(\ell-1)D_1}{2}.}
+\tag{20zz-gate-11}
+\]
+
+右端是整数，因为 \(\ell-1\) 为偶数。特别地，\(n_y\) 与 \(s\) 不再是可独立选择的
+lift 参数。
+
+这给出一个完全由 source receipt 决定的有限候选菜单。置
+
+\[
+G_\ell:=\gcd\!\left(\frac KD,\ \frac{eD}{\ell}-1\right),
+\tag{20zz-gate-12}
+\]
+
+并对每个正除子 \(d\mid G_\ell\) 定义
+
+\[
+n(d):=\frac{\ell d-(p+1-D_1)}{2p},
+\qquad
+s(d):=\frac{C_\ell-n(d)}d.
+\tag{20zz-gate-13}
+\]
+
+令
+
+\[
+\mathscr D_\ell=
+\left\{
+d\ge5:
+d\mid G_\ell,\ (d,DE)=1,\
+n(d)\in\mathbb Z_{\ge0},\
+s(d)\in\mathbb Z_{\ge1},\
+\bigl(\ell+2p\,s(d),DE\bigr)=1
+\right\}.
+\tag{20zz-gate-14}
+\]
+
+则任何 actual split rank stutter 都满足
+
+\[
+\boxed{
+D_y\in\mathscr D_\ell,
+\qquad
+F_y=\ell+2p\,s(D_y),
+\qquad
+D_y\le C_\ell.}
+\tag{20zz-gate-15}
+\]
+
+反过来，任一 \(d\in\mathscr D_\ell\) 都满足纯整数恒等式
+
+\[
+y=\bigl(\ell+2p\,s(d)\bigr)d.
+\tag{20zz-gate-16}
+\]
+
+**证明。** 由 (20zz-gate-6b) 有
+\(\ell D_y=p+1-D_1+2pn_y\)，而 (20zz-gate-7) 给
+\(F_y=\ell+2ps\)。将它们相乘并与 (20zz-gate-10) 比较，除以 \(2p\)
+即得 (20zz-gate-11)。于是 actual \(D_y\) 满足 (20zz-gate-12)--(20zz-gate-14)，
+并且 \(D_y\le C_\ell\)。反向代入 (20zz-gate-13) 得
+\(\ell d=p+1-D_1+2pn(d)\) 与 \(n(d)+s(d)d=C_\ell\)；二式合并即为
+(20zz-gate-16)。\(\square\)
+
+这个 converse 只恢复一个算术因子化，**不**断言 \(d\) 已是 child 的 canonical
+\(D_y\)：仍须逐赋值重算 \(Q_y,\beta_y\) 与 owner/path receipt。因此它提供的是有限、
+source-data-only 的 rank-stutter candidate menu，而不是其非空性、canonicality 或 edge。
+
+这是一条 child-compatibility normal form，而不是 stutter 的排空定理：目前没有证明
+(20zz-gate-8) 无解，也没有从它构造无条件 terminal、macro suffix 或 persistent edge。
+它把 split 的剩余问题写成一个与 \(D\) 互素、满足有限 root-only divisor menu 和
+模 \(p\) 线性余数的 \(D_y\)；其中 (20zz-gate-5) 在 actual child 上只是
+(20zz-gate-3) 与 raw identity 的等价重写，不应计作第二个独立约束。
+
+### 6.12 已绑定 persistent source 下的 excess-\(\ell\) 正向 suffix
+
+第 6.8--6.11 节中 `universal_p_source_v1` 的使用只能证明 raw occurrence；它不能
+反向创建一个 root state。这个 root-policy 边界不应被误读成：一个**已经 persistent**
+的 source 永远不能使用同一条 suffix。这里把两件事分开。
+
+设 \(S=(p,R,K;\mathcal A,\varsigma)\) 已是已入队、内容寻址的
+`TYPEI/CHARGED` root source，满足 \(\mathcal A>B_p\)，故其 local rank 为
+\((0,K/\mathcal A)=(0,p-1)\)。再假设它的 origin tag、scope \(\varsigma\) 与
+state validator 已通过现有 path-anchored admission 的 source guard。
+进一步假设其 E1 receipt 已序列化一条从 \(S\) 绑定 source 出发、终点为
+
+\[
+(z,h),
+\qquad z=ED,
+\qquad z+h=R,
+\tag{20zz-suffix-1}
+\]
+
+的实际 raw path \(\pi\)。在本卡的 minimal \(q=5\) leaf 中，若
+
+\[
+G_E:=(E,L_5)>1,
+\qquad
+\ell:=\min\{q:q\text{ prime},\ q\mid G_E\},
+\tag{20zz-suffix-2}
+\]
+
+则 \(\ell\) 只读取 \(S\) 的 canonical receipt，且 (20zzy) 给出一个实际、确定的
+一跳 suffix \(\delta_\ell\)。因此
+
+\[
+\boxed{\pi_\ell:=\pi\mathbin\Vert\delta_\ell}
+\tag{20zz-suffix-3}
+\]
+
+是从同一 persistent source 到 \(x+y=R\) 的可重放正向 path；它不是从希望得到的
+target 反向制造 parent。source scope 也随 \(\pi_\ell\) 原样延续，不创建
+`fresh_source_tree_only` root。
+
+现在先按该 action 的已声明 priority 对 child 执行 terminal-first。若命中 terminal，
+则该 terminal 优先输出。以下只讨论 miss。第 6.10 节给出两个互斥的算术分流：
+
+\[
+\begin{array}{rcll}
+y\beta_x\mid K
+&\Longrightarrow&
+\text{single-side complete-excess suffix},
+&M_x=\mathcal A E/\ell,\quad c_x=p-\ell;\\
+y\beta_x\nmid K
+&\Longrightarrow&
+\text{atomic split suffix},
+&M_{\rm split}=\mathcal A(E/\ell)F_y.
+\end{array}
+\tag{20zz-suffix-4}
+\]
+
+第一行严格有 \(c_x<p-1\)。第二行除
+\(F_y\equiv\ell\pmod p\) 外也严格有 \(c_{\rm split}<p-1\)；其唯一 stutter
+剩余已经被 (20zz-gate-8) 及 parity lift 写为
+
+\[
+F_y=\ell+2ps,\qquad s\ge1.
+\tag{20zz-suffix-5}
+\]
+
+故在 (20zz-suffix-4) 的单侧行，或 atomic 行同时满足
+\(F_y\not\equiv\ell\pmod p\) 时，\(\pi_\ell\) 已分别成为既有
+`path_anchored_complete_excess_bundle` 或
+`path_anchored_atomic_split_complete_excess_v1` 的 E1 path witness，并以
+\((0,p-1)\to(0,c_x)\) 或 \((0,p-1)\to(0,c_{\rm split})\) 严格支付 E5。
+在两个既有 adapter 的 source/target validator、canonical owner 与 typed normal-form
+前提都实际通过时，其条件 E2--E4 表示定理随即适用。
+
+**证明。** \(\pi\) 已由 source state id 绑定，且 \(\ell\) 由该 source 的 receipt
+确定；所以 (20zz-suffix-3) 是 source-forward witness，不属于 universal p-parent 的
+target-backward 构造。第 6.8 节保证 \(\delta_\ell\) 是实际 raw edge，第 6.10 节给出
+single-side/atomic 的完整 maximal payload 与 p-free guards，第 6.9--6.10 节给出上述
+canonical support 和严格 cofactor。代入两种既有 path-anchored adapter 的定义，正好给出
+其 E1 输入与 E5 ticket；E2--E4 仍只在 adapter 已验证的 target receipt 下成立。\(\square\)
+
+这是一个 source-bound admission lemma，不是 TR1 或 T6 closure：它没有证明每个
+actual proper-root stutter 已经保存这样的 \(\pi\)，没有证明 \((E,L_5)>1\)，也没有
+排除 (20zz-suffix-5) 的 rank stutter。它的作用是把“universal raw word 缺 E1”准确
+收缩为 source-path coverage 的量词，而不是在已存在 persistent source 时错误地继续
+拒绝一个正向 suffix。
 
 ## 7. 根支撑强制的 primitive \(m=3\) quotient fiber
 

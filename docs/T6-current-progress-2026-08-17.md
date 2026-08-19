@@ -176,7 +176,7 @@ actual provenance、terminal-first 和 target receipt 都保留后，才应继�
 | proper-root \(\gcd(a,e-1)\) 对齐 | 公共因子只可落在 \(\gcd(h,k)\)；拆开 h-supported 与 quotient-only residual | `established`, `internal_review`；不构成 edge |
 | proper-root primitive quotient 正规化 | 除去全部 shared \(g\) 后得到 exact primitive system、actual-root cyclotomic saturation identity，以及 quotient-only \(q\) 的 cyclotomic-complement 分流；quotient-only 因子只能留在 \(\kappa\) | `established`, `internal_review`；只收缩 QC1 provenance，不构成 edge |
 | proper-root \(k=3\) fixed-\(d\)/fixed-\(\rho\)/fixed-\(j\)/fixed-\(t\) fibers | 四种等价 primitive divisor 约化；core primitive system 自动恢复 \(h\mid p^2+p+1\) 并给 \(B\equiv t\equiv2A+1\pmod3\)；fixed-\(j\) 消去旧 gate 的冗余因子 \(3\)，fixed-\(t\) 给出 \(A<m<B\) 与 \(2\le t\le A-1\)，同-\(M\) Vieta companion 的第二整数门被排除，且共享 \(A=1,d=1\) 边界重现已排除的 \((m,a)=(6,3)\) 行 | `established`, `internal_review`；无全域 parameter bound，QC1 仍开放 |
-| proper-root \(m=3\) 双二次范数 slice | \(h=3u,a=3A\) 后得到精确互锁 gates \(A\mid3u^2-u+1\)、\(u\mid7A^2+A+1\)；root support 与核心模 \(24\) 强制 \(A\equiv3\pmod {24}\)、\((a,e-1)=3\)、\(k=3\kappa\equiv21\pmod {72}\)、\(k\ge93\)、\(W-\eta\ge13\)，fixed-\(\kappa\) fiber 满足 \(A\mid9(27\kappa^2+8\kappa+1)\)。whole \(d=(W-\eta,k)\) carrier 满足 \(d\mid p^2-p+1\) 且 \(\gcd(d,h(p^2+p+1)D)=1\)；其 \(d>1\) natural fan 还满足 \(C_d\ge40\)、\(s_d\le(p-40)/39\)。canonical \(q_\star\equiv7\pmod {12}\) 因而严格分为 root-supported、\(\Phi_6\)-fan 与 d-free quotient-only 三路；\(D\) 的 native quadratic form 判别式为 \(-11\)，并强制 native raw Type II menu 为空 | `established`, `internal_review`；压缩 \(m=3\) 的新 adapter 输入并排除一个完整 Type II terminal chart，不给 E1--E5，QC1/TR1 仍开放 |
+| proper-root \(m=3\) 双二次范数 slice | 写 \(A_3=a/3\)、\(h=3u\) 后得到精确互锁 gates \(A_3\mid3u^2-u+1\)、\(u\mid7A_3^2+A_3+1\)；actual core congruence 强制 \(A_3\equiv3\pmod {24}\)、\((a,e-1)=3\)、\(k=3\kappa\equiv21\pmod {72}\)、\(k\ge93\)、\(W-\eta\ge13\)，fixed-\(\kappa\) fiber 满足 \(A_3\mid9(27\kappa^2+8\kappa+1)\)。whole \(d=(W-\eta,k)\) carrier 满足 \(d\mid p^2-p+1\) 且 \(\gcd(d,h(p^2+p+1)D)=1\)；其 \(d>1\) natural fan 还满足 \(C_d\ge40\)、\(s_d\le(p-40)/39\)。canonical \(q_\star\equiv7\pmod {12}\) 因而严格分为 root-supported、\(\Phi_6\)-fan 与 d-free quotient-only 三路；\(D\) 的 native quadratic form 判别式为 \(-11\)，并强制 native raw Type II menu 为空 | `established`, `internal_review`；曲线坐标 \(A_3\) 与 root-chart support 必须分开；该项压缩 \(m=3\) 的新 adapter 输入并排除一个完整 Type II terminal chart，不给 E1--E5，QC1/TR1 仍开放 |
 | proper-root \(m=3\) transverse overlap | 以 root-capacity 坐标 \(\varrho\)（不等于 \(-27\) 范数商）计，\(D_H=(D,h^2-1)\in\{1,5\}\)；\(D_H=5\) 当且仅当 \(p\equiv1\pmod5,u\equiv3\pmod5\)。并有 \(D_*>(2p+1)/5\)、\(D_*\mid2\varrho+3\)，故 \(\varrho>(p-7)/5\)，而 \(D_H=1\) 时 \(\varrho\ge p\) | `established`, `internal_review`；真实高-root 输入收缩，不构成 terminal 或 TR1 edge |
 | proper-root \(m=3\) automatic low-gap factor gate | 对任意允许 \(A_0\) 的 positive root-residue gate，及同一 general-\(A_0\) quadratic fan 的 low-gap negative linear-factor specialization，\(\Delta_s=3s^2-s+1\) 的逐项分解都只留下 \((s,q)=(3,5)\)。正根给出 direct Type II terminal；负根仅为既有 \(p-1,h+1,m+2\) overlap | `established`, `internal_review`；排空这个 fixed low-gap family，不构成 TR1 |
 | proper-root \(m=3\) residual \(q=5\) | terminal-first 后 \(5\mid D_*\) 当且仅当 \(v_5(3u^2-u+1)\ge v_5(A)+2\)，即 \(u\) 落在 \(-11\) norm 的唯一 \(5\)-进 Hensel 管；这强制 \(p\equiv11\pmod{25}\)、\(h\equiv9\pmod{25}\)、\(u\equiv3\pmod{25}\)，且 \(v_5(p-1)=v_5(h+1)=v_5(m+2)=1\)。更精确地 \(\varrho\equiv11\pmod{25}\) 当且仅当 \(v_5(T)\ge2\)；唯一未定向 leaf 为 \(v_5(D_*)=v_5(T)=1\)、\(5\nmid E\)、\(v_5(R-h)=2\)，且它强制存在一个非 \(5\) 的 pure-\(T\) 素因子 \(\ell\mid D_*/5\)。更强地，\(L_5=D_*/5\) 的任意非平凡除子都不命中 general-\(A_0\) positive whole-divisor Type II terminal fan，且每个 \(\ell\mid L_5\) 都避开 reflected negative ray | `established`, `internal_review`；把既有 \((3,5)\) overlap 转化为明确的 pure-\(T\) physicalization 输入，并排除两类 variable-gap Type II terminal family；不构成 terminal 或 TR1 |
@@ -185,25 +185,42 @@ actual provenance、terminal-first 和 target receipt 都保留后，才应继�
 | canonical low chart from \(k>1\) | 图表存在 | 缺 E1--E4/provenance，不构成 edge |
 
 最小 \(q=5\) leaf 还有一个新近固定的边界：对每个 \(1<J\mid L_5\)，
-\(D/J\) 的 cofactor 虽严格，却不可能重建同一 \((A,K,R-h)\) 的 canonical
+\(D/J\) 的 cofactor 虽严格，却不可能重建同一 \((\mathcal A,K,R-h)\) 的 canonical
 maximal receipt。因此它不能作为 E1 的 factor-deletion rebase。对
 \(\ell\mid L_5\)，只有 \(\ell\mid E\) 的分支在当前 endpoint 已有 raw
 overcapacity，并可追加到已知 universal root raw word；但该 word 仍不支付
 persistent E1 root-policy。更精确地，这条 actual raw deflation 的 lcm support 为
-\(AE/\ell\)，canonical cofactor 为 \(p-\ell\)。并且它有一个完整、无需搜索的
+\(\mathcal A E/\ell\)，canonical cofactor 为 \(p-\ell\)。并且它有一个完整、无需搜索的
 complete-excess 分流：写 child 为 \(x+y=R\)，则其一侧满足
 \(E_x=E/\ell,D_x=D\)，且两侧皆 p-free。若 \(y\beta_x\mid K\)，它已满足单侧
 bundle 的全部算术 kernel，并以 \(p-\ell\) 严格支付 E5；若不满足，则另一侧的
 maximal block 必有 \(Q_y>1\)，从而精确进入 atomic split kernel。令
-\(F_y=Q_y/(A,Q_y)\)，split support 为 \(A(E/\ell)F_y\)，其 rank stutter
+\(F_y=Q_y/(\mathcal A,Q_y)\)，split support 为 \(\mathcal A(E/\ell)F_y\)，其 rank stutter
 **当且仅当** \(F_y\equiv\ell\pmod p\)；除此一个同余外，split 也严格支付 E5。
 若该唯一 stutter 真的发生，写 \(D_y\) 为另一侧 canonical residual，则它还被压到
 \(D_y\mid\gcd(K/D,eD/\ell-1)\)、\(\ell D_y\equiv1-D/\ell\pmod p\) 和
-\(F_y=\ell+ps\ (s\ge1)\) 的 root-receipt divisor gate；尚未证明此门为空。
+\(F_y=\ell+2ps\ (s\ge1)\) 的 child-compatibility normal form；其中第二个
+divisibility form 是固定 raw child 后的等价重写，不是独立 no-go 门，仍未证明残余为空。
+更进一步，写 \(E=1+p\sigma\)、\(D=\ell D_1\)，rank stutter 的两个 lift 参数满足
+\(n_y+sD_y=1+\sigma(\ell-1)D_1/2\)。因此 \(D_y\) 必落入由
+\(\gcd(K/D,eD/\ell-1)\) 的除子、\((D_yF_y,DE)=1\)、两个显式整性条件和该上界定义的有限
+source-data-only candidate menu；反向候选仍须通过 child 的 canonical complete-excess 重算，故这不是空性或 edge。
+proper-root 尺度还给出残余尺寸门：\(n_y=0\) 时 \(D_y\ge5\)，\(n_y\ge1\) 时
+\(D_y\ge23\)；特别地 \(D_y=1,3\) 都不可能。因此 rank-stutter 必携带一个奇的、
+非平凡 residual divisor。
 所以这一 raw child 不再有未分类的 complete-excess 算术障碍。其余 \(\ell\) 在当前
-endpoint 已处于容量内，必须寻找新的 occurrence 或新的 physical adapter。上述两支都
-仍缺 persistent E1 root-policy、terminal-first、typed target/normal form 和全域 lift，
-故这缩小了 TR1 的下一条构造命题，但不构成 terminal 或 edge。
+endpoint 已处于容量内，必须寻找新的 occurrence 或新的 physical adapter。未提供下段所述
+source-bound path 的上述两支仍缺 persistent E1 root-policy、terminal-first、typed target/
+normal form 和全域 lift，故这缩小了 TR1 的下一条构造命题，但不构成 terminal 或 edge。
+
+这里的 E1 边界现可进一步精确化：universal raw word 不能**创建** persistent root source，
+但若一个已入队 source 的回执已经把实际 raw path 绑定到 \((z,h)\)，则
+\(\ell=\min\operatorname{Prime}((E,L_5))\) 的 raw deflation 是该 source 的正向 suffix。
+在 child terminal-first miss 后，单侧分支或 \(F_y\not\equiv\ell\pmod p\) 的 atomic split
+分支已有 E1 witness 与严格 E5；既有 adapter 的 validator 条件满足时可继续支付 E2--E4。
+这没有证明每个 actual proper-root stutter 保存该 path、满足 \((E,L_5)>1\)，或避开
+\(F_y=\ell+2ps\) 的 rank stutter，故 TR1 和 T6 仍开放；但 “缺 E1” 现在准确地只剩
+source-path coverage，而不是这条确定 raw suffix 本身。
 
 补充：在 actual \(m=3\)、whole-\(d\)、\(s_d=3\) 子分支中，双范数门与 exact
 primitive content 强制 \(d=13\)、\(\rho=160+234z\)、\(A=52t-1\)，并使 primitive
