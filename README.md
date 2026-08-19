@@ -4,7 +4,7 @@
 可核查数学主张和计算复现。`研究进展综述.md` 是阅读入口；`papers/`、
 `claims/`、`concepts/` 中的 Markdown/YAML 文件是知识库的事实源。
 
-当前文献快照审计至 2026-07-31；当前证明前沿和本轮旗舰命题核验至 2026-08-17。论文卡、
+当前文献快照审计至 2026-07-31；当前证明前沿和本轮旗舰命题核验至 2026-08-19。论文卡、
 主张卡、概念卡及各状态的实时数量以 `python scripts/kb.py status` 和自动生成的
 `index/theorem-ledger.md` 为准，不在入口文档手工复制。其中被撤回论文和存在关键证明
 缺口的预印本仍会收录，但用独立状态标出。
@@ -54,6 +54,34 @@ T2/T5 的本次合并边界见
 [`docs/T6-actual-reachable-coverage-audit-2026-08-17.md`](docs/T6-actual-reachable-coverage-audit-2026-08-17.md)。
 本轮 T6 全闭合尝试、新增子定理与仍缺量词见
 [`docs/T6-closure-attempt-audit-2026-08-17.md`](docs/T6-closure-attempt-audit-2026-08-17.md)。
+
+### T6 近期进展截面（2026-08-19）
+
+T6 仍为 `OPEN`。已闭合的局部验收项是每个核心素数的规范初始状态 serializer：
+取 \(q=1\)、\(m=3\)、\(X=(p+3)/4\)，若 \(X\) 有 \(2\pmod3\) 的素因子则给出
+直接 Type II terminal；否则得到 ordinary G receipt，并进入既有 full-carrier
+Type I handoff。该分派只闭合初始根，不声称 handoff 后的 Type I 路径 total。
+
+本轮进一步收缩了 proper-root \(m=3\)、\(q=5\) rank-stutter 子分支。对其中的实际
+raw occurrence，现有确定性策略至多消费两个因子即可到达 p-free primitive node；full-capacity
+支若非 terminal 则只剩 single-side bundle。重算 canonical complete-excess support 后，
+新的重复 \(a=1\) hard branch 被压缩为
+
+
+\[
+L_\omega\equiv1\pmod{p^2}.
+\]
+
+这消除了 p-block 作为必要 raw-policy 分支，也将 companion 的未分类算术压缩为规范
+complete-excess 重算；但尚未提供连续的 E1--E4 receipt 或全称 QC1/TR1 exit。因此它不是
+T6、O2 或全局 selector 的闭合结论。
+
+精确的 acceptance-gate 状态和未闭合量词见
+[`data/t6-selector-obligation-ledger-v1.json`](data/t6-selector-obligation-ledger-v1.json) 与
+[`docs/T6-selector-obligation-ledger-2026-08-18.md`](docs/T6-selector-obligation-ledger-2026-08-18.md)。
+该 p-free policy 及其 \(p^2\) canonical gate 的完整推导见
+[`claims/type-I-root-capacity-stutter-m-three-biquadratic-norm-reduction.md`](claims/type-I-root-capacity-stutter-m-three-biquadratic-norm-reduction.md)
+和 [`docs/T6-current-progress-2026-08-17.md`](docs/T6-current-progress-2026-08-17.md)。
 
 ## 快速使用
 
