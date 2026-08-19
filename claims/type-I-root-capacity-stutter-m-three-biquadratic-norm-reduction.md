@@ -15,7 +15,7 @@ statement: >-
   d=(W-eta,k)，则 d|(p^2-p+1)、gcd(d,h(p^2+p+1)D)=1，且其 natural gap
   s_d 满足 d|(s_d^2+s_d+1)。若 d>1，则其 natural fan cofactor 必有 C_d>=40，且
   natural gap 满足 s_d<=(p-40)/39。若进一步 s_d=3，则 d=13，且 whole-d
-  primitive quotient q=n/d 必满足 q>=181。
+  primitive quotient q=n/d 必满足 q>=457。
   所以 d 是 Phi_6(p) carrier，不是 root-height
   Phi_3(p) carrier。kappa 有一个 canonical q≡7 mod12 素因子；它确定地落入
   q|u 的 root-supported、q|d 的 Phi_6 cancellation，或两者皆不整除的 primitive
@@ -2096,7 +2096,7 @@ a\le\frac{2(507\sigma^2-13\sigma+1)}{39q+3}.
 
 \[
 \begin{gathered}
-q\ge181,\qquad q\equiv1\pmod {12},\qquad
+q\ge457,\qquad q\equiv1\pmod {12},\qquad
 \sigma=37+54z,\qquad z\ge0,\\
 \lambda>0,\qquad
 \lambda\equiv3\pmod6,\qquad
@@ -2242,6 +2242,35 @@ a\theta
 \tag{37cg}
 \]
 
+这里的 \(\theta\) 还保留了 \(z\) 的一个实际 parity mark。由 \(t\equiv1\pmod6\)、
+\(K\equiv19\pmod {24}\) 与 \(\sigma=37+54z\)，将 (37ce) 模 \(24\) 化简为
+
+\[
+9\theta\equiv18+12z\pmod {24}.
+\]
+
+因此 \(z\) 偶时 \(\theta\equiv18\pmod {24}\)，而 \(z\) 奇时
+\(\theta\equiv6\pmod {24}\)。再与 (37cf) 联立，得到精确的两支：
+
+\[
+\boxed{
+\begin{array}{c|c|c}
+z\bmod2&\sigma\text{ 的下界}&\theta\text{ 的同余与下界}\\
+\hline
+0&\sigma\ge37&\theta\equiv186\pmod {312},\quad\theta\ge186\\
+1&\sigma\ge91&\theta\equiv30\pmod {312},\quad\theta\ge30.
+\end{array}}
+\tag{37cg-1}
+\]
+
+在第一支，将 \(\theta\ge186\) 代回 (37bu)，并再次使用 \(q\) 为奇数，给出
+
+\[
+\boxed{z\equiv0\pmod2\Longrightarrow q\ge2\tau+11,
+\qquad \tau\le\frac{q-11}{2}.}
+\tag{37cg-2}
+\]
+
 另一方面，从 (37an) 消去 \(K\)：
 
 \[
@@ -2261,21 +2290,18 @@ q(13\sigma^2-\sigma-a\tau)=\sigma^2+\sigma\tau+\tau^2.
 \tag{37ch}
 \]
 
-这条式子可一次排除此前未处理的小 \(q\) 区间。反设
-\(37\le q\le169\)。写 (37ch) 的三个系数为 \(A,B,C\)。由 (37cf)、
-(37cg) 和 (37bu)，有
+这条式子可一次排除此前未处理的一段完整 \(q\) 区间。写 (37ch) 的三个系数为
+\(A,B,C\)。在两支中都可使用 (37cg) 与 (37bu)，因此
 
 \[
 \begin{aligned}
-A&\le-\frac{741q+57}{2},\\
 B&<52q^2,\\
 C&=q\tau+\lambda\tau^2<5q^3.
 \end{aligned}
 \tag{37ci}
 \]
 
-这里第二、三行只使用
-\(\tau\le(q-3)/2\) 与 \(\lambda\le(39q-9)/2\) 的直接代入。例如
+例如，直接代入 \(\tau\le(q-3)/2\)、\(\lambda\le(39q-9)/2\) 即得
 
 \[
 \begin{aligned}
@@ -2287,46 +2313,89 @@ C&\le q\frac{q-3}{2}
 \end{aligned}
 \]
 
-由 \(\sigma\ge37\)，(37ci) 给出
+现在反设 \(37\le q\le433\)。若 \(z\) 为偶数，则 (37cg-2) 与
+\(\theta\ge186\) 给出
 
 \[
-\mathcal H'_{q,\tau,\theta}(\sigma)
-<52q^2-37(741q+57).
+A\le-\frac{4797q+57}{2}.
 \tag{37cj}
 \]
 
-右侧在 \([37,169]\) 上递减，且其在 \(q=37\) 的值为
-\(-945350\)，所以 \(\mathcal H\) 在 \(\sigma\ge37\) 上严格递减。再由
+又 \(\sigma\ge37\)，故
 
 \[
-\mathcal H_{q,\tau,\theta}(37)
-<F(q):=5q^3+1924q^2-\frac{1369(741q+57)}2.
+\mathcal H'_{q,\tau,\theta}(\sigma)
+<52q^2-37(4797q+57).
 \tag{37ck}
 \]
 
-函数 \(F\) 在该区间严格凸，且
+右侧在 \([37,433]\) 上递减，且其在 \(q=37\) 的值为
+\(-6498014\)。所以 \(\mathcal H\) 在 \(\sigma\ge37\) 上严格递减；同时
 
 \[
-F(37)=-15918732,
-\qquad
-F(169)=-6672858.
+\mathcal H_{q,\tau,\theta}(37)
+<F_0(q):=5q^3+1924q^2-\frac{1369(4797q+57)}2.
+\tag{37cl}
 \]
 
-凸函数在闭区间上不超过其两个端点值的较大者，故 \(F(q)<0\)，进而
-\(\mathcal H(\sigma)<0\)，与 (37ch) 矛盾。结合
-\(q\equiv1\pmod {12}\)，得到更强的剩余下界
+函数 \(F_0\) 严格凸，且
+
+\[
+F_0(37)=-118643016,
+\qquad
+F_0(433)=-655172130.
+\]
+
+因此这一个 parity 支不可能有 \(37\le q\le433\) 的解。
+
+若 \(z\) 为奇数，则 (37cg-1) 给出 \(\sigma\ge91\)，而 (37cf)、(37cg) 给出
+
+\[
+A\le-\frac{741q+57}{2}.
+\tag{37cm}
+\]
+
+于是
+
+\[
+\mathcal H'_{q,\tau,\theta}(\sigma)
+<52q^2-91(741q+57).
+\tag{37cn}
+\]
+
+该右侧同样在 \([37,433]\) 上递减，且其在 \(q=37\) 的值为
+\(-2428946\)。故 \(\mathcal H\) 在 \(\sigma\ge91\) 上严格递减，且
+
+\[
+\mathcal H_{q,\tau,\theta}(91)
+<F_1(q):=5q^3+4732q^2-\frac{8281(741q+57)}2.
+\tag{37co}
+\]
+
+函数 \(F_1\) 也严格凸，其端点值为
+
+\[
+F_1(37)=-107024724,
+\qquad
+F_1(433)=-35616222.
+\]
+
+凸函数在闭区间上不超过其两个端点值的较大者，故第二支也矛盾。于是
+\(37\le q\le433\) 完全排空。由 \(q\equiv1\pmod {12}\)，先有 \(q\ge445\)；但
+\(445=5\cdot89\)，而 (37au) 已证明 \(q\) 的每个素因子都是 \(1\pmod3\)，所以
+\(q\ne445\)。最终得到
 
 \[
 \boxed{
 \text{actual }m=3,\ d>1,\ s_d=3
-\quad\Longrightarrow\quad q\ge181.
+\quad\Longrightarrow\quad q\ge457.
 }
-\tag{37cl}
+\tag{37cp}
 \]
 
-这是一条 uniform Diophantine exclusion：它没有对 \(q\ge181\) 构造 terminal，
+这是一条 uniform Diophantine exclusion：它没有对 \(q\ge457\) 构造 terminal，
 也没有把 quotient parameter 变成 actual source carrier。因此 QC1、TR1 与 T6 的
-状态均不因 (37cl) 改变。
+状态均不因 (37cp) 改变。
 
 ## 9. 一个 canonical \(7\pmod {12}\) quotient carrier
 
