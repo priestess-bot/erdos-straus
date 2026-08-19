@@ -14,7 +14,8 @@ statement: >-
   actual m=3 receipt 必有 k≡21 mod72、k≥93 与 W-eta≥13。若
   d=(W-eta,k)，则 d|(p^2-p+1)、gcd(d,h(p^2+p+1)D)=1，且其 natural gap
   s_d 满足 d|(s_d^2+s_d+1)。若 d>1，则其 natural fan cofactor 必有 C_d>=40，且
-  natural gap 满足 s_d<=(p-40)/39。
+  natural gap 满足 s_d<=(p-40)/39。若进一步 s_d=3，则 d=13，且 whole-d
+  primitive quotient q=n/d 必满足 q>=37。
   所以 d 是 Phi_6(p) carrier，不是 root-height
   Phi_3(p) carrier。kappa 有一个 canonical q≡7 mod12 素因子；它确定地落入
   q|u 的 root-supported、q|d 的 Phi_6 cancellation，或两者皆不整除的 primitive
@@ -319,6 +320,111 @@ quotient cancellation 直接重命名为 \(D_*\)-edge 在本 slice 中不可能�
 \(K(K-1)X^2-X-1\) 的整数线性因子分解；它不能把 (20) 作为同一个
 linear-factor instance。这个结论只排除该既有 factorization mechanism 的直接套用，
 不排除某个 \(D\) 因子额外命中其它 terminal menu。
+
+### 6.1 \(m=3\) transverse overlap 的精确二分
+
+本节需要明确区分两个不同坐标。令 \(\varrho\) 为 root-capacity 的原始参数，
+
+\[
+u=\gcd(2\varrho+1,M_0),
+\qquad
+M_0=\frac{p^2+p+1}{3},
+\]
+
+而 (16) 的
+
+\[
+r_{27}=\frac{7A^2+A+1}{u}
+\]
+
+只是 \(-27\) 范数门的商。下述结论**不**把 \(\varrho\) 与 \(r_{27}\) 识别。
+
+令
+
+\[
+D_H=(D,h^2-1),
+\qquad
+D_*=\frac{D}{D_H}.
+\tag{20a}
+\]
+
+在 \(m=3\) 时 \(D=3p+1-h\)。因为 \(p,h\) 都是奇数且 \(3\mid h\)，有
+
+\[
+D\ \text{为奇数},
+\qquad
+D\equiv1\pmod3.
+\tag{20b}
+\]
+
+置 \(b_-=(D,h-1)\)、\(b_+=(D,h+1)\)。直接模 \(b_-\)、\(b_+\) 重放
+\(D=3p+1-h\) 与 \(D\mid ph+1\)，分别得到
+
+\[
+b_-\mid3,
+\qquad
+b_+\mid5.
+\tag{20c}
+\]
+
+由 (20b)，\(b_-=1\)；又 \(D\) 为奇数，所以 \(D_H=b_+\)。因此
+
+\[
+\boxed{D_H\in\{1,5\}.}
+\tag{20d}
+\]
+
+更精确地，
+
+\[
+\boxed{
+D_H=5
+\quad\Longleftrightarrow\quad
+p\equiv1\pmod5,\quad u\equiv3\pmod5.}
+\tag{20e}
+\]
+
+事实上，若 \(5\mid(D,h+1)\)，则 \(3u=h\equiv-1\pmod5\)，故
+\(u\equiv3\pmod5\)；再由 \(D=3p+1-3u\) 得 \(p\equiv1\pmod5\)。
+反向代入这两个同余便有 \(5\mid(D,h+1)\)，再用 (20d) 即得。
+
+proper-root 条件 \(h<p\) 还给出
+
+\[
+D-(2p+1)=p-h>0.
+\tag{20f}
+\]
+
+因此
+
+\[
+\boxed{
+D_*>\frac{2p+1}{5};
+\qquad
+D_H=1\Longrightarrow D_*>2p+1.}
+\tag{20g}
+\]
+
+横向 residual capacity map 的真正接口是
+
+\[
+D_*\mid m+2\varrho=2\varrho+3.
+\tag{20h}
+\]
+
+结合 (20g)，得到实际 root 坐标的高区下界
+
+\[
+\boxed{
+\varrho>\frac{p-7}{5};
+\qquad
+D_H=1\Longrightarrow\varrho\ge p.}
+\tag{20i}
+\]
+
+这是一条 actual transverse scale/orientation 结论。它没有给出 \(D_*\) 的 terminal
+residue、source consumption、全域 lift 或 T5 ticket，因而不构成 TR1；其作用是排除把
+\(r_{27}\) 代入 (20h) 的错误，并把未来的 adapter 限定在真实高-root 输入上。
 
 ## 7. 根支撑强制的 primitive \(m=3\) quotient fiber
 
@@ -1502,6 +1608,511 @@ C_d\ge40,
 
 **单独**推导 natural-fan hit 的证明都会失败；下一条全称引理必须使用尚未消费的
 actual double-norm gates、receipt-capacity 或构造一条新的 physical adapter。
+
+### 8.5 natural gap \(s_d=3\) 的 exact \(13\)-adic double-norm core
+
+formal packet (37y) 说明单凭 \(\Phi_6/\Phi_3\) envelope 不能排除 \(s_d=3\)。但在
+actual \(m=3\) receipt 中，这个 gap 不能保留任意的 \((d,\ell,\sigma)\)。以下给出它由
+两张范数门和 whole-\(d\) primitive kernel 强制出的精确必要核。
+
+继续假设 \(d>1\) 且
+
+\[
+s_d=3.
+\tag{37ad}
+\]
+
+由 (37) 立刻有 \(d\mid3^2+3+1=13\)，故
+
+\[
+\boxed{d=13.}
+\tag{37ae}
+\]
+
+再由 \(s_d=\ell d-a\)、\(a=3A\) 和 \(A\equiv3\pmod {24}\)，得到
+
+\[
+\ell\equiv12\pmod {24},
+\qquad
+\ell=12t,
+\qquad
+A=52t-1,
+\qquad
+t\equiv1\pmod6.
+\tag{37af}
+\]
+
+这里 \(t>0\)。事实上 \(a=13\ell-3\)，而 \(a\equiv9\pmod {24}\) 给出
+\(\ell\equiv12\pmod {24}\)；随后 \(A=13\ell/3-1\)，再用
+\(A\equiv3\pmod {24}\) 即得 \(t\equiv1\pmod6\)。
+
+另一方面，(26) 的 \(\eta=3\rho\) 与 (37a) 给出
+
+\[
+3\rho+1=13\sigma.
+\tag{37ag}
+\]
+
+把它与 (27b) 的 \(\rho\equiv16\pmod {18}\) 联立。若
+\(\rho=16+18n\)，则 (37ag) 模 \(13\) 强制 \(n\equiv8\pmod {13}\)。
+正性因而给出唯一的参数化
+
+\[
+\boxed{
+\rho=160+234z,
+\qquad
+\sigma=37+54z,
+\qquad z\in\mathbb Z_{\ge0}.
+}
+\tag{37ah}
+\]
+
+特别地，这里不是一般 whole-\(d\) 分析中仅有的
+\(\sigma\equiv1\pmod6\)，而是实际 \(m=3\) root gate 强制的
+\(\sigma\equiv37\pmod {54}\)。
+
+设
+
+\[
+u=2A+3\rho+1=104t+702z+479.
+\tag{37ai}
+\]
+
+除了已有的 \(A\mid9\rho^2+5\rho+1\) 外，(26) 还给出一个对称的第二除子门。恒等式
+
+\[
+4(A^2+A\rho+\rho^2)
+=(2A-\rho-1)(2A+3\rho+1)
++(7\rho^2+4\rho+1)
+\tag{37aj}
+\]
+
+与 \(u\mid A^2+A\rho+\rho^2\) 及 \(u\) 为奇数等价地给出
+
+\[
+\boxed{u\mid7\rho^2+4\rho+1.}
+\tag{37ak}
+\]
+
+由于 \(13\mid k=3\kappa\)，写 \(\kappa=13K\)。把 (37af)--(37ai) 代入两张
+范数门，得到两个显式整数商
+
+\[
+\begin{aligned}
+\lambda
+&:=\frac{9\rho^2+5\rho+1}{A}
+=\frac{492804z^2+675090z+231201}{52t-1},\\
+K
+&:=\frac{A^2+A\rho+\rho^2}{13u}\\
+&=\frac{208t^2+936tz+632t+4212z^2+5742z+1957}
+{104t+702z+479}.
+\end{aligned}
+\tag{37al}
+\]
+
+二者都必须是正整数；并且 (27e) 给出
+
+\[
+\boxed{K\equiv19\pmod {24}.}
+\tag{37am}
+\]
+
+最后保留 whole-\(d\) 的 primitive content。写
+\(\gamma=13\tau\)；由 \(k=3\kappa=39K\)、
+\(k=\eta(\eta+1)-a\gamma\) 及 \(d=(\gamma,k)=13\)，有
+
+\[
+\boxed{
+\begin{aligned}
+(156t-3)\tau&=13\sigma^2-\sigma-3K,\\
+3qK&=\sigma^2+\sigma\tau+\tau^2,\\
+(\sigma,\tau)&=1,
+\qquad
+(\tau,3K)=1,
+\end{aligned}}
+\tag{37an}
+\]
+
+其中 \(q>0\) 是 (37u) 的 \(n/d\) 商。第二个互素条件正是
+\(d=(13\tau,39K)=13\) 的 exactness，而不是把 \(13\mid k\) 作为松弛条件。
+
+相应的核心素数和 cofactor 也不再自由：令 \(C=C_d\)，则
+
+\[
+\boxed{
+p=312t+3510z+2398+\lambda=52C-3,
+\qquad
+52C=312t+3510z+2401+\lambda,
+}
+\tag{37ao}
+\]
+
+其中 \(p\) 仍须为核心素数，且既有结论保留
+
+\[
+C\ge40,
+\qquad C\equiv1\pmod6,
+\qquad
+\lambda\equiv43-26z\pmod {52}.
+\tag{37ap}
+\]
+
+最后一个同余只是 (37ao) 的可整除性重写；它不是新的 terminal predicate。
+
+该核也精确描述 gap-\(3\) natural linear fan 的剩余。此时
+\(x=dC=13C\)，所以
+
+\[
+\left\{\zeta\mid x:\ \zeta\equiv-1\pmod3\right\}=\varnothing
+\quad\Longleftrightarrow\quad
+\text{every prime divisor of }C\text{ is }1\pmod3.
+\tag{37aq}
+\]
+
+左侧一旦失败，(54u) 已给出 direct Type II terminal；反向则因为
+\(13\equiv1\pmod3\)、\(C\equiv1\pmod3\) 而成立。因此，\(s_d=3\) 的真正
+remaining problem 不是 \(d\mid\Phi_3(s_d)\) 或 cofactor lower bound，而是：
+是否能从 (37af)--(37an) 排除 (37aq)，或在它成立时构造不依赖 quotient rechart 的
+actual E1--E5 adapter。
+
+本节只给出 actual receipt 的一向 Diophantine reduction。它不声称任一满足
+(37af)--(37ap) 的整数包可重建 maximal receipt，更不证明该核为空、natural fan 必命中
+或 T6 的任何出口。
+
+### 8.5.1 primitive quotient \(q\) 不能提供 gap-\(3\) fan residue
+
+仍在 (37ad) 的 actual packet 中。由 (37ah)，有
+\(\sigma\equiv1\pmod9\)；由 (37am)，有 \(K\equiv1\pmod3\) 且 \(K\) 为奇数。
+再由 (31a) 前的 parity conclusion，\(\gamma\) 为奇数，故
+\(\tau=\gamma/13\) 也为奇数。把这些信息代入 (37an) 的第二式。
+
+首先 \((\tau,3K)=1\) 给出 \(3\nmid\tau\)。模 \(3\) 化简
+
+\[
+3qK=\sigma^2+\sigma\tau+\tau^2
+\tag{37ar}
+\]
+
+可知 \(\tau\equiv1\pmod3\)：若 \(\tau\equiv-1\pmod3\)，右侧即为
+\(1-1+1\not\equiv0\pmod3\)。写 \(\tau=1+3w\)，并使用
+\(\sigma\equiv1\pmod9\)，则
+
+\[
+\sigma^2+\sigma\tau+\tau^2\equiv3\pmod9.
+\tag{37as}
+\]
+
+因为 \(3\parallel3K\)，(37ar)--(37as) 给出 \(3\nmid q\)。另一方面，等式右侧为
+奇数，而 \(3K\) 也为奇数，所以 \(q\) 为奇数。由 (37w)，\((q,\sigma)=1\)。若素数
+\(r\mid q\)，则 \(r\ne3\)，且模 \(r\) 有
+
+\[
+\left(\tau\sigma^{-1}\right)^2+\tau\sigma^{-1}+1\equiv0\pmod r.
+\tag{37at}
+\]
+
+其中 \(\tau\sigma^{-1}\ne1\)，否则会推出 \(r=3\)。故它在
+\(\mathbb F_r^\times\) 中有阶 \(3\)，从而 \(r\equiv1\pmod3\)。此外，若一个素数同时
+整除 \(\tau\) 与 \(q\)，则 (37ar) 模该素数会强制它整除 \(\sigma\)，与
+\((\sigma,\tau)=1\) 矛盾。还可把 (37an) 的第一式模 \(4\) 化简：
+\(156t-3\equiv1\pmod4\)、\(K\equiv3\pmod4\) 及 \(\sigma^2\equiv1\pmod4\)
+给出
+
+\[
+\tau\equiv-\sigma\pmod4.
+\tag{37at-1}
+\]
+
+因此 (37ar) 模 \(4\) 的右侧为 \(1-1+1\equiv1\pmod4\)，而
+\(3K\equiv1\pmod4\)，从而 \(q\equiv1\pmod4\)。于是
+
+\[
+\boxed{
+\tau\equiv1\pmod6,
+\qquad
+q\equiv1\pmod {12},
+\qquad
+(\tau,q)=1,
+\qquad
+r\mid q\Longrightarrow r\equiv1\pmod3.
+}
+\tag{37au}
+\]
+
+这不是把 \(q\) 识别为 \(13C\) 的除子，也不是新的 terminal。它只排除了一个常见但
+无效的尝试：不能从 primitive quotient \(q\) 本身抽取 \(\zeta\equiv-1\pmod3\) 来完成
+gap-\(3\) natural fan。因而 (37aq) 成立时，尚未解决的工作确实是 \(C\) 的因子结构或一条
+新的 actual E1--E5 adapter。
+
+### 8.5.2 \(q=1\) primitive leaf 的全称排空
+
+上节的 \(q\equiv1\pmod {12}\) 仍允许 \(q=1\)。这一最小 leaf 实际上与两张范数门不相容。
+若 \(q=1\)，则 (37u) 给出
+
+\[
+\frac{\delta^2+\delta+1}{h}=n=d=13.
+\tag{37av}
+\]
+
+由 \(h=2a+3d\sigma=2a+39\sigma\)，有
+
+\[
+\delta^2+\delta+1=26a+507\sigma.
+\tag{37aw}
+\]
+
+另一方面，(27a)、(37ag) 与 \(h=6A+9\rho+3\) 给出
+
+\[
+\delta=p-h=6\rho+1+\lambda=26\sigma-1+\lambda.
+\tag{37ax}
+\]
+
+又因为 \(a=3A\)，把 (37ag) 代入 \(\lambda=(9\rho^2+5\rho+1)/A\)，得到
+
+\[
+a\lambda=507\sigma^2-13\sigma+1.
+\tag{37ay}
+\]
+
+将 (37ax) 代入 (37aw) 可写成
+
+\[
+26a
+=676\sigma^2+(52\lambda-533)\sigma+\lambda^2-\lambda+1.
+\tag{37az}
+\]
+
+先证明 \(\lambda<21\)。若 \(\lambda\ge21\)，则
+\(\delta\ge26\sigma+20\)，故由 (37aw)
+
+\[
+a\ge\frac{676\sigma^2+559\sigma+421}{26}.
+\tag{37ba}
+\]
+
+但 (37ay) 同时给出
+
+\[
+a\le\frac{507\sigma^2-13\sigma+1}{21}.
+\tag{37bb}
+\]
+
+两个界不相容，因为左边分子乘 \(21\) 后减去右边分子乘 \(26\) 等于
+
+\[
+1014\sigma^2+12077\sigma+8815>0.
+\tag{37bc}
+\]
+
+而 (27b) 的 \(\lambda\equiv3\pmod6\) 与 \(\lambda>0\) 于是只留下
+\(\lambda\in\{3,9,15\}\)。将 (37ay) 代入 (37az)，令其两边之差为
+
+\[
+F_\lambda(\sigma):=
+\lambda\bigl[676\sigma^2+(52\lambda-533)\sigma+\lambda^2-\lambda+1\bigr]
+-26(507\sigma^2-13\sigma+1).
+\tag{37bd}
+\]
+
+则必须有 \(F_\lambda(\sigma)=0\)。但三个仅余多项式分别为
+
+\[
+\begin{array}{c|c}
+\lambda&F_\lambda(\sigma)\\
+\hline
+3&-11154\sigma^2-793\sigma-5\\
+9&-7098\sigma^2-247\sigma+631\\
+15&-3042\sigma^2+4043\sigma+3139.
+\end{array}
+\tag{37be}
+\]
+
+前两行对 \(\sigma\ge1\) 严格为负；第三行从 \(\sigma=2\) 起严格递减且
+\(F_{15}(2)=-943\)。而 (37ah) 给出 \(\sigma\ge37\)，故三行均不可能为零。结合
+(37au) 的 \(q\equiv1\pmod {12}\)，排除 \(q=1\) 后得到
+
+\[
+\boxed{
+\text{actual }m=3,\ d>1,\ s_d=3
+\quad\Longrightarrow\quad q\ge13.
+}
+\tag{37bf}
+\]
+
+这是一条 family-empty proof，只排空 gap-\(3\) core 的 \(q=1\) primitive leaf。它不对
+\(q>1\) 建立 terminal 或 E1--E5 successor，也不把 (37bf) 提升为 QC1 或 T6 的闭合。
+
+### 8.5.3 \(q=13\) primitive leaf 的全称排空
+
+下一允许值 \(q=13\) 也可由同一 exact core 排除。此时
+\(n=dq=169\)，故 (37ax) 与 \(h=2a+39\sigma\) 给出
+
+\[
+338a
+=676\sigma^2+(52\lambda-6617)\sigma+\lambda^2-\lambda+1.
+\tag{37bg}
+\]
+
+先有 \(\lambda<255\)。否则 \(\delta\ge26\sigma+254\)，从而
+
+\[
+a\ge
+\frac{676\sigma^2+6643\sigma+64771}{338}.
+\tag{37bh}
+\]
+
+但 (37ay) 给出 \(a\le(507\sigma^2-13\sigma+1)/255\)。这与 (37bh) 矛盾，
+因为其交叉相减为
+
+\[
+1014\sigma^2+1698359\sigma+16516267>0.
+\tag{37bi}
+\]
+
+现在使用 (37ap) 的 \(\lambda\equiv43-26z\pmod {52}\)。若 \(z\) 为偶数，则
+\(\lambda\equiv43\pmod {52}\)；若 \(z\) 为奇数，则
+\(\lambda\equiv17\pmod {52}\)。结合 \(0<\lambda<255\) 与
+\(\lambda\equiv3\pmod6\)，只剩
+
+\[
+z\equiv0\pmod2\Longrightarrow\lambda=147,
+\qquad
+z\equiv1\pmod2\Longrightarrow\lambda\in\{69,225\}.
+\tag{37bj}
+\]
+
+把 (37ay) 代入 (37bg)，记
+
+\[
+\begin{aligned}
+G_\lambda(\sigma):={}&
+\lambda\bigl[676\sigma^2+(52\lambda-6617)\sigma+\lambda^2-\lambda+1\bigr]\\
+&-338(507\sigma^2-13\sigma+1).
+\end{aligned}
+\tag{37bk}
+\]
+
+则 \(G_\lambda(\sigma)=0\) 是必要条件。三个剩余多项式及其实际范围如下：
+
+\[
+\begin{array}{c|c|c}
+\lambda&G_\lambda(\sigma)&\text{applicable }\sigma\\
+\hline
+69&-124722\sigma^2-204607\sigma+323479&\sigma\ge91\\
+147&-71994\sigma^2+155363\sigma+3154723&\sigma\ge37\\
+225&-19266\sigma^2+1148069\sigma+11339887&\sigma\ge91.
+\end{array}
+\tag{37bl}
+\]
+
+第一行从 \(\sigma=1\) 起严格为负。第二行从 \(\sigma=2\) 起递减，且
+\(G_{147}(37)=-89656632\)；第三行从 \(\sigma=91\) 起递减，且
+\(G_{225}(91)=-43727580\)。故 (37bj) 的每个可能性都矛盾，进而
+
+\[
+\boxed{q\ne13.}
+\tag{37bm}
+\]
+
+结合 (37au)、(37bf) 以及 \(r\mid q\Rightarrow r\equiv1\pmod3\)，若
+\(1<q<37\)，唯一尚未排除的 \(q\equiv1\pmod {12}\) 数是 \(25\)，但它含有
+\(5\equiv2\pmod3\) 的素因子。因此这个 actual gap-\(3\) core 必满足
+
+\[
+\boxed{q\ge37.}
+\tag{37bn}
+\]
+
+这仍只是在 proper-root receipt 内排除两个 primitive leaves。它没有对
+\(q\ge37\) 构造 terminal、actual successor 或 physical E1--E5 adapter。
+
+### 8.5.4 \(q\)-residual 的统一二次 normal form
+
+前两节的比较并不依赖 \(q=1\) 或 \(q=13\)。一般地，由
+\(n=dq=13q\)、(37ax) 与 \(h=2a+39\sigma\)，所有剩余 packet 都满足
+
+\[
+26qa
+=676\sigma^2+(52\lambda-26-507q)\sigma+\lambda^2-\lambda+1.
+\tag{37bo}
+\]
+
+配合 (37ay)，消去 \(a\) 后得到一条必要的二次曲线
+
+\[
+\boxed{
+\begin{aligned}
+\mathcal G_{q,\lambda}(\sigma):={}&
+\lambda\bigl[
+676\sigma^2+(52\lambda-26-507q)\sigma+\lambda^2-\lambda+1
+\bigr]\\
+&-26q(507\sigma^2-13\sigma+1)=0.
+\end{aligned}}
+\tag{37bp}
+\]
+
+这条曲线还有一个统一的 upper slope bound：
+
+\[
+\boxed{\lambda<\frac{39q+3}{2}.}
+\tag{37bq}
+\]
+
+事实上，反设 \(\lambda\ge(39q+3)/2\)。由 (37ax) 可得
+
+\[
+26qa\ge
+676\sigma^2+(507q+52)\sigma+\frac{1521q^2+156q+7}{4}.
+\tag{37br}
+\]
+
+另一方面，(37ay) 给出
+
+\[
+a\le\frac{2(507\sigma^2-13\sigma+1)}{39q+3}.
+\tag{37bs}
+\]
+
+将 (37br) 与 (37bs) 交叉相乘，左减右为
+
+\[
+\begin{aligned}
+&2028\sigma^2+(19773q^2+4225q+156)\sigma\\
+&\qquad+\frac{59319q^3+10647q^2+533q+21}{4}>0,
+\end{aligned}
+\tag{37bt}
+\]
+
+矛盾，故 (37bq) 成立。再用 (37au) 的 \(q\equiv1\pmod {12}\) 和
+\(\lambda\equiv3\pmod6\)，可写成更便于枚举 divisor fibers 的整型界
+
+\[
+\lambda\le\frac{39q-9}{2}.
+\tag{37bu}
+\]
+
+因此尚未排空的 \(s_d=3\) actual packet 必同时满足
+
+\[
+\begin{gathered}
+q\ge37,\qquad q\equiv1\pmod {12},\qquad
+\sigma=37+54z,\qquad z\ge0,\\
+\lambda>0,\qquad
+\lambda\equiv3\pmod6,\qquad
+\lambda\equiv43-26z\pmod {52},\qquad
+\lambda\le\frac{39q-9}{2},\\
+\mathcal G_{q,\lambda}(\sigma)=0,\qquad
+a=\frac{507\sigma^2-13\sigma+1}{\lambda}=156t-3,\qquad
+t>0,\quad t\equiv1\pmod6.
+\end{gathered}
+\tag{37bv}
+\]
+
+它仍须同时通过 (37al)、(37an) 的 \(K,\tau\) exactness；因此 (37bv) 是
+Diophantine residual 的必要 normal form，不是对 actual receipts 的反向构造。
+要关闭这个 residual，仍需要一条全称无限下降、一个 new terminal mechanism，或
+带完整 E1--E5 的 physical adapter。
 
 ## 9. 一个 canonical \(7\pmod {12}\) quotient carrier
 

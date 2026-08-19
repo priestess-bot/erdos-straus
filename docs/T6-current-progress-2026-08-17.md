@@ -177,9 +177,17 @@ actual provenance、terminal-first 和 target receipt 都保留后，才应继�
 | proper-root primitive quotient 正规化 | 除去全部 shared \(g\) 后得到 exact primitive system、actual-root cyclotomic saturation identity，以及 quotient-only \(q\) 的 cyclotomic-complement 分流；quotient-only 因子只能留在 \(\kappa\) | `established`, `internal_review`；只收缩 QC1 provenance，不构成 edge |
 | proper-root \(k=3\) fixed-\(d\)/fixed-\(\rho\)/fixed-\(j\)/fixed-\(t\) fibers | 四种等价 primitive divisor 约化；core primitive system 自动恢复 \(h\mid p^2+p+1\) 并给 \(B\equiv t\equiv2A+1\pmod3\)；fixed-\(j\) 消去旧 gate 的冗余因子 \(3\)，fixed-\(t\) 给出 \(A<m<B\) 与 \(2\le t\le A-1\)，同-\(M\) Vieta companion 的第二整数门被排除，且共享 \(A=1,d=1\) 边界重现已排除的 \((m,a)=(6,3)\) 行 | `established`, `internal_review`；无全域 parameter bound，QC1 仍开放 |
 | proper-root \(m=3\) 双二次范数 slice | \(h=3u,a=3A\) 后得到精确互锁 gates \(A\mid3u^2-u+1\)、\(u\mid7A^2+A+1\)；root support 与核心模 \(24\) 强制 \(A\equiv3\pmod {24}\)、\((a,e-1)=3\)、\(k=3\kappa\equiv21\pmod {72}\)、\(k\ge93\)、\(W-\eta\ge13\)，fixed-\(\kappa\) fiber 满足 \(A\mid9(27\kappa^2+8\kappa+1)\)。whole \(d=(W-\eta,k)\) carrier 满足 \(d\mid p^2-p+1\) 且 \(\gcd(d,h(p^2+p+1)D)=1\)；其 \(d>1\) natural fan 还满足 \(C_d\ge40\)、\(s_d\le(p-40)/39\)。canonical \(q_\star\equiv7\pmod {12}\) 因而严格分为 root-supported、\(\Phi_6\)-fan 与 d-free quotient-only 三路；\(D\) 的 native quadratic form 判别式为 \(-11\) | `established`, `internal_review`；压缩 \(m=3\) 的新 adapter 输入，不给 terminal 或 E1--E5，QC1/TR1 仍开放 |
+| proper-root \(m=3\) transverse overlap | 以 root-capacity 坐标 \(\varrho\)（不等于 \(-27\) 范数商）计，\(D_H=(D,h^2-1)\in\{1,5\}\)；\(D_H=5\) 当且仅当 \(p\equiv1\pmod5,u\equiv3\pmod5\)。并有 \(D_*>(2p+1)/5\)、\(D_*\mid2\varrho+3\)，故 \(\varrho>(p-7)/5\)，而 \(D_H=1\) 时 \(\varrho\ge p\) | `established`, `internal_review`；真实高-root 输入收缩，不构成 terminal 或 TR1 edge |
 | relative total-cofactor typed adapter | 已实现 source/target retyping、F/G/hit 与 local-drop receipt | `established`, `internal_review`；仅消费外部 registration，不证明 actual reachability |
 | Eisenstein quotient \(k\) 的 EQ1--EQ6 | 由已知 stutter 恒等式可推的代数包 | `analysis_evidence`；不构成 edge |
 | canonical low chart from \(k>1\) | 图表存在 | 缺 E1--E4/provenance，不构成 edge |
+
+补充：在 actual \(m=3\)、whole-\(d\)、\(s_d=3\) 子分支中，双范数门与 exact
+primitive content 强制 \(d=13\)、\(\rho=160+234z\)、\(A=52t-1\)，并使 primitive
+quotient \(q\) 的全部素因子落在 \(1\pmod3\)，且最小 leaf \(q=1\) 全称为空。这排除了从
+\(q\) 自身抽取 gap-\(3\) natural-fan residue 的路线；实际剩余 \(q\) 还满足
+\(q\equiv1\pmod {12}\)、\(q\ge37\)。这些都是局部输入收缩，不是 terminal、
+E1--E5 edge、QC1 或 T6 的闭合。
 
 `T6-V1.md` 的原始公式分隔符已修复，并把上述证据等级明确写入。原
 \(p=20\,065\,847\,377\) 数值线索已被精确反解：它不满足 actual root divisibility，且有
