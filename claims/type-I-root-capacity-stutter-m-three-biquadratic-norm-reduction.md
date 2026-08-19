@@ -15,7 +15,8 @@ statement: >-
   d=(W-eta,k)，则 d|(p^2-p+1)、gcd(d,h(p^2+p+1)D)=1，且其 natural gap
   s_d 满足 d|(s_d^2+s_d+1)。若 d>1，则其 natural fan cofactor 必有 C_d>=40，且
   natural gap 满足 s_d<=(p-40)/39。若进一步 s_d=3，则 d=13，且 whole-d
-  primitive quotient q=n/d 必满足 q>=457。
+  primitive quotient q=n/d 必满足 q>=457，且其 primitive coordinates 满足
+  tau>sigma（等价于 W-eta>eta+1）与 A<rho。
   所以 d 是 Phi_6(p) carrier，不是 root-height
   Phi_3(p) carrier。kappa 有一个 canonical q≡7 mod12 素因子；它确定地落入
   q|u 的 root-supported、q|d 的 Phi_6 cancellation，或两者皆不整除的 primitive
@@ -2396,6 +2397,108 @@ F_1(433)=-35616222.
 这是一条 uniform Diophantine exclusion：它没有对 \(q\ge457\) 构造 terminal，
 也没有把 quotient parameter 变成 actual source carrier。因此 QC1、TR1 与 T6 的
 状态均不因 (37cp) 改变。
+
+### 8.5.7 primitive norm 的 high-gap orientation
+
+式 (37ch) 还蕴含一个不依赖有限 \(q\) 区间的 actual coordinate orientation。将其按
+\(q\) 收集，定义
+
+\[
+\mathscr D:=13\theta\sigma^2-(26\tau+\theta)\sigma-\tau.
+\]
+
+则 (37ch) 等价于
+
+\[
+\boxed{
+q\mathscr D=\lambda(\sigma^2+\sigma\tau+\tau^2)>0.
+}
+\tag{37cq}
+\]
+
+由 (37cg)，\(q-2\tau>0\)。从 (37cq) 减去 \(2\tau\mathscr D\)，并用
+\(\lambda=39\tau+\theta\)，得到
+
+\[
+\begin{aligned}
+(q-2\tau)\mathscr D={}&
+-\bigl(26\theta\tau-39\tau-\theta\bigr)\sigma^2\\
+&+(91\tau^2+3\theta\tau)\sigma\\
+&+39\tau^3+(\theta+2)\tau^2.
+\end{aligned}
+\tag{37cr}
+\]
+
+反设 \(\tau\le\sigma\)。令
+
+\[
+E:=26\theta\tau-39\tau-\theta.
+\]
+
+由 \(\theta\ge30\)、\(\tau\ge1\)，有
+
+\[
+E-(132+4\theta)\tau
+=(22\theta-171)\tau-\theta>0.
+\tag{37cs}
+\]
+
+而 \(\tau\le\sigma\) 时，(37cr) 右边的全部正项不超过
+
+\[
+(132+4\theta)\tau\sigma^2:
+\]
+
+\[
+\begin{aligned}
+91\tau^2\sigma&\le91\tau\sigma^2,\\
+3\theta\tau\sigma&\le3\theta\tau\sigma^2,\\
+39\tau^3&\le39\tau\sigma^2,\\
+(\theta+2)\tau^2&\le(\theta+2)\tau\sigma^2.
+\end{aligned}
+\]
+
+式 (37cs) 因而使 (37cr) 的右边严格为负；但左边严格为正，矛盾。因此
+
+\[
+\boxed{\tau>\sigma.}
+\tag{37ct}
+\]
+
+在 actual coordinates 中，这等价于
+
+\[
+\gamma=13\tau>13\sigma=\eta+1.
+\]
+
+另一方面，(31b) 与 \(\kappa=13K>0\) 给出
+
+\[
+A\gamma=3\rho^2+\rho-13K<\rho(3\rho+1)=\rho(\eta+1).
+\]
+
+所以
+
+\[
+\boxed{\gamma>\eta+1,\qquad A<\rho.}
+\tag{37cu}
+\]
+
+又 \(\sigma\equiv\tau\equiv1\pmod6\)，故 \(\tau\ge\sigma+6\)。与
+(37cg-1)、(37bu) 合并还给出 parameter-scale 下界
+
+\[
+\boxed{
+z\equiv0\pmod2\Longrightarrow q\ge2\sigma+23,
+\qquad
+z\equiv1\pmod2\Longrightarrow q\ge2\sigma+15.
+}
+\tag{37cv}
+\]
+
+这把 whole-\(d\) gap-three residual 限定到 actual high-\(\gamma\) sector；它不说明
+\(\gamma\) 的新因子出现在 \(u,d,D_*\) 或 \(\kappa\)，所以仍不产生 terminal、source
+provenance 或 E1--E5 adapter。
 
 ## 9. 一个 canonical \(7\pmod {12}\) quotient carrier
 
