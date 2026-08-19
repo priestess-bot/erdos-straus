@@ -15,7 +15,7 @@ statement: >-
   d=(W-eta,k)，则 d|(p^2-p+1)、gcd(d,h(p^2+p+1)D)=1，且其 natural gap
   s_d 满足 d|(s_d^2+s_d+1)。若 d>1，则其 natural fan cofactor 必有 C_d>=40，且
   natural gap 满足 s_d<=(p-40)/39。若进一步 s_d=3，则 d=13，且 whole-d
-  primitive quotient q=n/d 必满足 q>=37。
+  primitive quotient q=n/d 必满足 q>=181。
   所以 d 是 Phi_6(p) carrier，不是 root-height
   Phi_3(p) carrier。kappa 有一个 canonical q≡7 mod12 素因子；它确定地落入
   q|u 的 root-supported、q|d 的 Phi_6 cancellation，或两者皆不整除的 primitive
@@ -2096,7 +2096,7 @@ a\le\frac{2(507\sigma^2-13\sigma+1)}{39q+3}.
 
 \[
 \begin{gathered}
-q\ge37,\qquad q\equiv1\pmod {12},\qquad
+q\ge181,\qquad q\equiv1\pmod {12},\qquad
 \sigma=37+54z,\qquad z\ge0,\\
 \lambda>0,\qquad
 \lambda\equiv3\pmod6,\qquad
@@ -2197,6 +2197,136 @@ R_{q,S}\equiv7\pmod {12}.
 \(u\)、\(d\)、\(D_*\) 或 \(\kappa\)。因此它目前不是可直接消费的 source carrier，
 更不是 terminal 或 E1--E5 adapter。它的价值在于把原先彼此独立的 \(q\)-residual 与
 \(-27\) norm quotient 合成了单个 \(7\pmod {12}\) composite defect equation。
+
+### 8.5.6 primitive \(\tau\)-bridge 的小 \(q\) 区间排空
+
+除了 \(u\)-bridge，还可把 (37an) 的两个 primitive identities 与 (37ay) 直接
+耦合。定义
+
+\[
+\theta:=\lambda-39\tau.
+\]
+
+由 (37an) 的第一式和 (37ay)，有
+
+\[
+\begin{aligned}
+a\theta
+&=a\lambda-39a\tau\\
+&=(507\sigma^2-13\sigma+1)
+-39(13\sigma^2-\sigma-3K)\\
+&=26\sigma+1+117K>0.
+\end{aligned}
+\tag{37ce}
+\]
+
+又由 \(\lambda\equiv3\pmod6\) 和 \(\tau\equiv1\pmod6\)，有
+\(\theta\equiv0\pmod6\)。式 (37ce) 模 \(13\) 化简为
+\(a\theta\equiv1\pmod {13}\)；而 \(a=156t-3\equiv-3\pmod {13}\)，故
+
+\[
+\boxed{\theta\equiv30\pmod {78},\qquad \theta\ge30.}
+\tag{37cf}
+\]
+
+将此与 (37bu) 联立，得到
+
+\[
+39\tau+30\le\lambda\le\frac{39q-9}{2}.
+\]
+
+因为 \(q\) 为奇数，遂有
+
+\[
+\boxed{q\ge2\tau+3,\qquad \tau\le\frac{q-3}{2}.}
+\tag{37cg}
+\]
+
+另一方面，从 (37an) 消去 \(K\)：
+
+\[
+q(13\sigma^2-\sigma-a\tau)=\sigma^2+\sigma\tau+\tau^2.
+\]
+
+乘以 \(\lambda=39\tau+\theta\)，再使用 (37ay)，得到必要二次式
+
+\[
+\boxed{
+\begin{aligned}
+\mathcal H_{q,\tau,\theta}(\sigma):={}&
+\bigl[39\tau-(13q-1)\theta\bigr]\sigma^2\\
+&+\bigl[26q\tau+39\tau^2+\theta(q+\tau)\bigr]\sigma\\
+&+q\tau+39\tau^3+\theta\tau^2=0.
+\end{aligned}}
+\tag{37ch}
+\]
+
+这条式子可一次排除此前未处理的小 \(q\) 区间。反设
+\(37\le q\le169\)。写 (37ch) 的三个系数为 \(A,B,C\)。由 (37cf)、
+(37cg) 和 (37bu)，有
+
+\[
+\begin{aligned}
+A&\le-\frac{741q+57}{2},\\
+B&<52q^2,\\
+C&=q\tau+\lambda\tau^2<5q^3.
+\end{aligned}
+\tag{37ci}
+\]
+
+这里第二、三行只使用
+\(\tau\le(q-3)/2\) 与 \(\lambda\le(39q-9)/2\) 的直接代入。例如
+
+\[
+\begin{aligned}
+B&\le26q\frac{q-3}{2}
++39\frac{(q-3)^2}{4}
++\frac{39q-9}{2}\frac{3q-3}{2}<52q^2,\\
+C&\le q\frac{q-3}{2}
++\frac{39q-9}{2}\frac{(q-3)^2}{4}<5q^3.
+\end{aligned}
+\]
+
+由 \(\sigma\ge37\)，(37ci) 给出
+
+\[
+\mathcal H'_{q,\tau,\theta}(\sigma)
+<52q^2-37(741q+57).
+\tag{37cj}
+\]
+
+右侧在 \([37,169]\) 上递减，且其在 \(q=37\) 的值为
+\(-945350\)，所以 \(\mathcal H\) 在 \(\sigma\ge37\) 上严格递减。再由
+
+\[
+\mathcal H_{q,\tau,\theta}(37)
+<F(q):=5q^3+1924q^2-\frac{1369(741q+57)}2.
+\tag{37ck}
+\]
+
+函数 \(F\) 在该区间严格凸，且
+
+\[
+F(37)=-15918732,
+\qquad
+F(169)=-6672858.
+\]
+
+凸函数在闭区间上不超过其两个端点值的较大者，故 \(F(q)<0\)，进而
+\(\mathcal H(\sigma)<0\)，与 (37ch) 矛盾。结合
+\(q\equiv1\pmod {12}\)，得到更强的剩余下界
+
+\[
+\boxed{
+\text{actual }m=3,\ d>1,\ s_d=3
+\quad\Longrightarrow\quad q\ge181.
+}
+\tag{37cl}
+\]
+
+这是一条 uniform Diophantine exclusion：它没有对 \(q\ge181\) 构造 terminal，
+也没有把 quotient parameter 变成 actual source carrier。因此 QC1、TR1 与 T6 的
+状态均不因 (37cl) 改变。
 
 ## 9. 一个 canonical \(7\pmod {12}\) quotient carrier
 
