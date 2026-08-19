@@ -2114,6 +2114,90 @@ Diophantine residual 的必要 normal form，不是对 actual receipts 的反向
 要关闭这个 residual，仍需要一条全称无限下降、一个 new terminal mechanism，或
 带完整 E1--E5 的 physical adapter。
 
+### 8.5.5 未消费 \(-27\) 范数门的 \(u\)-bridge
+
+(37bv) 尚未使用 \(u\mid7\rho^2+4\rho+1\) 的完整商。定义
+
+\[
+S:=\frac{7\rho^2+4\rho+1}{u}\in\mathbb Z_{>0}.
+\tag{37bw}
+\]
+
+由 \(\rho\equiv7\pmod9\)，分子恰为 \(3\pmod9\)；又 \(u\equiv1\pmod3\) 且
+二者均为奇数。因此
+
+\[
+S\equiv3\pmod6.
+\tag{37bx}
+\]
+
+把 \(3\rho+1=13\sigma\) 代入 (37bw)，有
+
+\[
+9uS=1183\sigma^2-26\sigma+4.
+\tag{37by}
+\]
+
+另一方面，(37ay) 和 \(3u=2a+39\sigma\) 给出
+
+\[
+3\lambda u
+=2(507\sigma^2-13\sigma+1)+39\lambda\sigma
+=1014\sigma^2+(39\lambda-26)\sigma+2.
+\tag{37bz}
+\]
+
+用 \(7\) 倍 (37bz) 减去 \(6\) 倍 (37by)，消去二次项，得到 exact linear bridge
+
+\[
+\boxed{
+(273\lambda-26)\sigma-10
+=u(21\lambda-54S).
+}
+\tag{37ca}
+\]
+
+左侧严格为正，故
+
+\[
+0<S<\frac{7\lambda}{18}.
+\tag{37cb}
+\]
+
+同一 \(S\) 还把 \(q\)-quotient 与第二范数商直接耦合。由
+\(\delta^2+\delta+1=39qu\)、(37ax) 与 (37bw)，有
+
+\[
+\boxed{
+3u(91q-12S)
+=(364\lambda-78)\sigma+7\lambda^2-7\lambda-9.
+}
+\tag{37cc}
+\]
+
+右侧严格为正；令
+
+\[
+R_{q,S}:=91q-12S,
+\]
+
+则
+
+\[
+\boxed{
+R_{q,S}>0,
+\qquad
+R_{q,S}\equiv7\pmod {12}.
+}
+\tag{37cd}
+\]
+
+这里的结论只针对这个**复合 defect 整数本身**；它并不推出一个
+\(7\pmod {12}\) 的素因子（例如 \(55\equiv7\pmod {12}\)）。\(R_{q,S}\) 也尚未证明整除
+\(u\)、\(d\)、\(D_*\) 或 \(\kappa\)。因此它目前不是可直接消费的 source carrier，
+更不是 terminal 或 E1--E5 adapter。它的价值在于把原先彼此独立的 \(q\)-residual 与
+\(-27\) norm quotient 合成了单个 \(7\pmod {12}\) composite defect equation。
+
 ## 9. 一个 canonical \(7\pmod {12}\) quotient carrier
 
 式 (24) 还决定了 \(\kappa\) 的素因子类型。若奇素数 \(q\mid\kappa\)，则

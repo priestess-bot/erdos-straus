@@ -186,8 +186,11 @@ actual provenance、terminal-first 和 target receipt 都保留后，才应继�
 primitive content 强制 \(d=13\)、\(\rho=160+234z\)、\(A=52t-1\)，并使 primitive
 quotient \(q\) 的全部素因子落在 \(1\pmod3\)，且最小 leaf \(q=1\) 全称为空。这排除了从
 \(q\) 自身抽取 gap-\(3\) natural-fan residue 的路线；实际剩余 \(q\) 还满足
-\(q\equiv1\pmod {12}\)、\(q\ge37\)。这些都是局部输入收缩，不是 terminal、
-E1--E5 edge、QC1 或 T6 的闭合。
+\(q\equiv1\pmod {12}\)、\(q\ge37\)。再令
+\(S=(7\rho^2+4\rho+1)/u\)，则 \(S\equiv3\pmod6\)，并有 exact composite defect
+\(R_{q,S}=91q-12S>0\)、\(R_{q,S}\equiv7\pmod {12}\)。该 defect 目前尚未连回
+\(u,d,D_*\) 或 \(\kappa\)，所以这些都是局部输入收缩，不是 terminal、E1--E5 edge、
+QC1 或 T6 的闭合。
 
 `T6-V1.md` 的原始公式分隔符已修复，并把上述证据等级明确写入。原
 \(p=20\,065\,847\,377\) 数值线索已被精确反解：它不满足 actual root divisibility，且有
