@@ -42,7 +42,15 @@ statement: >-
   若已有 persistent source 的已绑定 raw path 已到达该 root endpoint，则 excess-ell
   child 是该 source 的正向 suffix，并在单侧或非 stutter split 分支支付 E1 和 E5；
   这不创建新的 root，也不证明每个 actual receipt 具有该 path。上述结果仍不支付 persistent
-  provenance、priority 或 typed target。
+  provenance、priority 或 typed target。split rank stutter 的 canonical arithmetic target
+  还必为完整乘积 d=1 饱和行；其 d=1 normalisation 可完全由 root/child 数据重算。
+  因而若它再次落入 d=1 的 a=1 p-free hard branch，必须满足一个显式的整除与模 p
+  双门。这个归约不支付 atomic checkpoint 的 E1--E4，也不构造新的递归边。
+  更强地，m=3 root 自身必满足 \(N=p\lambda_0-2\)、\(\lambda_0\equiv3\pmod4\)，
+  因而它恰在 ordinary d=1 p-free failure 面上；其未被既有 a>1 peeled route 处理的
+  子纤维必有 \(a_0=1\)，并由一条显式 Diophantine 等式刻画。在该子纤维中，split
+  target 再次进入 p-primary hard branch 当且仅当 \(L\equiv1\pmod{p^2}\)。
+  这个二阶同余仍未被排空。
   更一般地，m=3 的 D 因子不命中 native raw Type II menu。
   该约化不证明这些互锁 divisor fibers 为空，不构造
   terminal 或 E1--E5 successor，也不闭合 QC1、TR1 或 T6。
@@ -66,8 +74,13 @@ depends_on:
   - type-I-root-capacity-stutter-transverse-negative-branch-bezout-reflection-terminal
   - type-I-root-capacity-strict-carry-support-rebase
   - type-I-root-capacity-strict-carry-universal-raw-word-policy-boundary
+  - type-I-universal-p-source-capacity-anchor-orbit
   - type-I-bottom-sink-scc-complete-excess-bundle-selector
   - type-I-path-anchored-atomic-split-complete-excess-admission
+  - type-I-overflow-full-product-d-one-p-adic-regeneration-countdown
+  - type-I-chart-least-coprime-prime-anchor-source
+  - type-I-overflow-full-product-d-one-p-free-peeled-small-anchor
+  - type-I-overflow-full-product-d-one-a-one-s-zero-endpoint-boundary
 topics:
   - type-I
   - root-capacity
@@ -108,10 +121,20 @@ sources:
     role: canonical-receipt-required-for-a-real-support-rebase
   - claim: type-I-root-capacity-strict-carry-universal-raw-word-policy-boundary
     role: actual-root-endpoint-raw-occurrence-without-persistent-E1-policy
+  - claim: type-I-universal-p-source-capacity-anchor-orbit
+    role: exact-one-sided-capacity-peeling-word
   - claim: type-I-bottom-sink-scc-complete-excess-bundle-selector
     role: complete-excess-lcm-support-and-high-support-rank-admission
   - claim: type-I-path-anchored-atomic-split-complete-excess-admission
     role: two-sided-complete-excess-arithmetic-kernel-and-exact-rank-gate
+  - claim: type-I-overflow-full-product-d-one-p-adic-regeneration-countdown
+    role: d-one-normalisation-and-residue-dispatch
+  - claim: type-I-chart-least-coprime-prime-anchor-source
+    role: d-one-raw-source-failure-alternate-route
+  - claim: type-I-overflow-full-product-d-one-p-free-peeled-small-anchor
+    role: d-one-p-free-hard-branch-boundary
+  - claim: type-I-overflow-full-product-d-one-a-one-s-zero-endpoint-boundary
+    role: a-one-second-order-hard-branch-boundary
 visibility: public
 last_checked: '2026-08-19'
 ---
@@ -2071,6 +2094,598 @@ actual proper-root stutter 已经保存这样的 \(\pi\)，没有证明 \((E,L_5
 排除 (20zz-suffix-5) 的 rank stutter。它的作用是把“universal raw word 缺 E1”准确
 收缩为 source-path coverage 的量词，而不是在已存在 persistent source 时错误地继续
 拒绝一个正向 suffix。
+
+### 6.13 rank-stutter 的确定第二 raw suffix 与严格 formal \(q\)-chart
+
+现在设第 6.12 节 atomic 行发生唯一的 rank stutter，即
+
+\[
+F_y\equiv\ell\pmod p.
+\tag{20zz-second-1}
+\]
+
+它并不使所有进一步的 raw action 消失。定义
+
+\[
+\mathcal P_y:=
+\left\{
+q:\ q\text{ 为素数},\ q\mid F_y,\ q\not\equiv1\pmod p
+\right\}.
+\tag{20zz-second-2}
+\]
+
+这个集合非空。否则 \(F_y\) 的每个素因子都为 \(1\pmod p\)，从而
+\(F_y\equiv1\pmod p\)，与 (20zz-second-1) 和 \(1<\ell<p\) 矛盾。故可确定地取
+
+\[
+q_\star:=\min\mathcal P_y.
+\tag{20zz-second-3}
+\]
+
+因为 \(q_\star\mid F_y\mid Q_y\)，maximal complete-excess 的定义给出
+
+\[
+q_\star\mid y,
+\qquad
+v_{q_\star}(y)>v_{q_\star}(K).
+\tag{20zz-second-4}
+\]
+
+把同一 primitive child 定向为 \((y,x,1)\)。此时 \(m=1\) 强制 raw shift 为
+\(t=q_\star-1\)，故有确定的实际 raw edge
+
+\[
+\boxed{
+(y,x,1)
+\xrightarrow[q_\star]{\mathrm{shift}=q_\star-1}
+\left(
+\frac y{q_\star},
+\ R-\frac y{q_\star},
+\ 1
+\right).}
+\tag{20zz-second-5}
+\]
+
+不发生额外 gcd 约分：因为 \((x,y)=1\)，有 \((y,R)=1\)，进而
+
+\[
+\left(\frac y{q_\star},R-\frac y{q_\star}\right)
+=\left(\frac y{q_\star},R\right)=1.
+\tag{20zz-second-6}
+\]
+
+事实上可以一次剥尽 \(y\)-side 的所有超容量层。令
+
+\[
+Y_K:=(y,K),
+\qquad
+J_y:=(Q_y,p-1).
+\tag{20zz-second-6a}
+\]
+
+则有 exact identity
+
+\[
+\boxed{
+Y_K=D_yJ_y,
+\qquad
+J_y\mid F_y.}
+\tag{20zz-second-6b}
+\]
+
+**证明。** 对任意素数 \(q\)，写
+
+\[
+b=v_q(y),
+\qquad
+a=v_q(\mathcal A),
+\qquad
+r=v_q(p-1),
+\qquad
+v_q(K)=a+r.
+\]
+
+若 \(b\le a+r\)，则 \(q\nmid Q_y\)，且 \(Y_K,D_y\) 的 \(q\)-赋值都为 \(b\)。
+若 \(b>a+r\)，则 \(q\mid Q_y\)，而 \(Y_K,D_y,J_y,F_y\) 的 \(q\)-赋值依次为
+
+\[
+a+r,\qquad a,\qquad r,\qquad b-a.
+\]
+
+这里 \(b-a>r\)，故逐素数相加即得 (20zz-second-6b)。\(\square\)
+
+已有容量剥离定理因而给出一条实际、按素数非降顺序确定的 raw word \(\omega_y\)
+
+\[
+\boxed{
+\omega_y:\quad
+(y,x,1)\leadsto(Y_K,R-Y_K,1).}
+\tag{20zz-second-6c}
+\]
+
+所以 \(J_y=1\) 时该 word 的 selected-side endpoint 恰为 \(D_y\)；而 \(J_y>1\) 时，
+\(J_y\mid F_y\) 明确给出一个 \(p-1\) overlap carrier。它只是对 raw occurrence 的
+精确二分：尚未把任一分支变为 terminal 或 persistent edge。
+
+所以若第 6.12 节的 \(\pi_\ell\) 已由 persistent source 绑定，则
+
+\[
+\pi_{\ell,q_\star}:=\pi_\ell\mathbin\Vert\delta_{q_\star},
+\qquad
+\pi_{\ell,\mathrm{cap}}:=\pi_\ell\mathbin\Vert\omega_y
+\tag{20zz-second-7}
+\]
+
+都仍是从同一 source 出发的确定、可重放 raw path。
+
+这条 suffix 还有一个精确的 formal E5 信号。令
+
+\[
+M_{q_\star}^{\rm form}
+:=\frac{M_{\rm split}}{q_\star}
+=\mathcal A\frac E\ell\frac{F_y}{q_\star}.
+\tag{20zz-second-8}
+\]
+
+第 6.9 节给出 \(E/\ell>1\)，故
+\(M_{q_\star}^{\rm form}>\mathcal A>B_p\)。又 \(p\nmid q_\star F_yE\)，于是
+
+\[
+\begin{aligned}
+\left\langle\left(4M_{q_\star}^{\rm form}\right)^{-1}\right\rangle_p
+&=
+\left\langle-\ell q_\star F_y^{-1}\right\rangle_p\\
+&=
+\left\langle-q_\star\right\rangle_p
+\le p-2.
+\end{aligned}
+\tag{20zz-second-9}
+\]
+
+最后一个严格不等式正是 \(q_\star\not\equiv1\pmod p\) 的定义。因此 rank-stutter
+不是“没有可选因子”：它已有 deterministic second raw suffix，且若该 suffix 的
+complete-excess target 恰实现 (20zz-second-8)，则 E5 会严格下降。
+
+**边界。** (20zz-second-8) 目前只是 formal chart，不是已证明的 canonical target。
+第二 child 的 companion
+
+\[
+R-\frac y{q_\star}
+=x+(q_\star-1)\frac y{q_\star}
+\]
+
+可能产生新的 complete-excess block，或在 \(q_\star\)-adic 边界重新分配容量。因而
+尚未证明其 canonical joined support 等于 \(M_{q_\star}^{\rm form}\)，也尚未得到
+E2--E4、typed normal form 或 verified E5 ticket。本节把 rank-stutter 的余项精确压缩为
+这个 **second-child canonicalization / companion non-reintroduction** 命题；它不是
+TR1、T6 或一个新 recursive edge。
+
+### 6.14 split stutter 的 \(d=1\) 饱和正规形及其唯一继承 hard gate
+
+第 6.13 节处理的是从 child 出发的第二条 raw suffix。这里换一个角度：第 6.10 节的
+rank stutter 自己已经把它的 **canonical arithmetic target** 强制送入完整乘积
+\(d=1\) 行。这个事实不产生 checkpoint，更不把该 target 独立提升为 persistent
+source；但它把一旦 checkpoint 获准后的全部 \(d=1\) 算术分派压成一个显式的
+root/child 数据门。
+
+仍在 (20zz-gate-1) 的 rank-stutter 假设下，置
+
+\[
+L:=\frac{M_{\rm split}}{\mathcal A}
+=\frac E\ell F_y.
+\tag{20zz-done-1}
+\]
+
+第 6.11 节已经唯一写出
+
+\[
+E=1+p\sigma,
+\qquad
+F_y=\ell+2p s_y,
+\qquad
+\sigma,s_y\in\mathbb Z_{>0}.
+\tag{20zz-done-2}
+\]
+
+故 \(L\) 不只满足 \(L\equiv1\pmod p\)，而有精确 lift
+
+\[
+\boxed{
+L=1+p\theta,
+\qquad
+\theta=\sigma+2s_y\frac E\ell\in\mathbb Z_{>0}.}
+\tag{20zz-done-3}
+\]
+
+这里 \(E/\ell\) 为整数；等式只需把 (20zz-done-2) 代入
+\(L=(E/\ell)F_y\)。特别地，\(L>1\)，不是一个形式上允许但无实际增长的
+\(L=1\) 情形。
+
+先定义原 root chart 的 \(d=1\) 行参数
+
+\[
+N:=\frac{4\mathcal A+1}{p}.
+\tag{20zz-done-4}
+\]
+
+它确为正整数，因为 \(4\mathcal A\equiv-1\pmod p\)。又
+\(\mathcal A>B_p\) 给出 \(N>1\)，且由 \(p\equiv1\pmod4\) 有
+\(N\equiv1\pmod4\)。原 chart 因而已经满足
+
+\[
+\mathcal A=\frac{pN-1}{4},
+\qquad
+R=(p-1)N-1,
+\qquad
+K=\mathcal A(p-1).
+\tag{20zz-done-5}
+\]
+
+定义
+
+\[
+N_+:=LN-\theta=N+\theta(pN-1).
+\tag{20zz-done-6}
+\]
+
+于是 \(N_+>1\)、\(N_+\equiv1\pmod4\)，并且
+
+\[
+\begin{aligned}
+pN_+
+&=L(pN)-(L-1)\\
+&=L(4\mathcal A+1)-(L-1)\\
+&=4M_{\rm split}+1.
+\end{aligned}
+\tag{20zz-done-7}
+\]
+
+所以第 6.10 节 cofactor \(c_{\rm split}=p-1\) 所对应的 canonical arithmetic
+target 精确是
+
+\[
+\boxed{
+M_{\rm split}=\frac{pN_+-1}{4},
+\qquad
+R_+=(p-1)N_+-1,
+\qquad
+K_+=M_{\rm split}(p-1).}
+\tag{20zz-done-8}
+\]
+
+确实，\(4K_+=pR_++1\)，且 \(M_{\rm split}\mid K_+\)。因此这里得到的是
+完整乘积 \(d=1\) 饱和行的**精确整数正规形**，不是把同余 \(c_{\rm split}=p-1\)
+误读成一个尚未定义的 target。下文暂记这组整数为
+
+\[
+U_{\rm ar}:=(p,R_+,K_+;M_{\rm split});
+\tag{20zz-done-8a}
+\]
+
+该记号只指 arithmetic chart，不含 state ID、scope、typed label 或任何 persistent
+provenance。
+
+下面写出该行的 normalisation 如何变化。令
+
+\[
+\alpha:=\frac{p+1}{2},
+\qquad
+v:=\frac{N+1}{2},
+\qquad
+g:=(\alpha,v),
+\qquad
+\alpha=g a_0,
+\quad v=g b_0,
+\tag{20zz-done-9}
+\]
+
+其中 \((a_0,b_0)=1\)。为避免与第 1--6 节的曲线坐标 \(a=3A\) 混淆，
+这里的 \(a_0,b_0\) 只属于 \(d=1\) 行 normalisation。再置
+
+\[
+\gamma:=(a_0,L),
+\qquad
+B_+:=b_0L-a_0\theta,
+\qquad
+a_+:=\frac{a_0}{\gamma},
+\quad
+b_+:=\frac{B_+}{\gamma},
+\quad
+g_+:=g\gamma.
+\tag{20zz-done-10}
+\]
+
+这里各量均为正整数。事实上
+
+\[
+B_+=b_0+\theta(pb_0-a_0)>0,
+\tag{20zz-done-11}
+\]
+
+因为 \(a_0\le\alpha<p\)。并且
+
+\[
+\frac{N_++1}{2}
+=g\bigl(b_0L-a_0\theta\bigr)=gB_+,
+\tag{20zz-done-12}
+\]
+
+而
+
+\[
+\begin{aligned}
+\gcd(a_0,B_+)
+&=\gcd(a_0,b_0L)\\
+&=\gcd(a_0,L)=\gamma.
+\end{aligned}
+\tag{20zz-done-13}
+\]
+
+故 (20zz-done-9) 在 target 上的正确 normalisation 恰为
+
+\[
+\boxed{
+\alpha=g_+a_+,
+\qquad
+\frac{N_++1}{2}=g_+b_+,
+\qquad
+(a_+,b_+)=1.}
+\tag{20zz-done-14}
+\]
+
+特别地，不能在一般 split stutter 中直接沿用 \(a_0\)：只有
+\(\gamma=1\) 时它才保持不变。这正是一般情形与既有 \(a=1\) split relay 的
+必要差别。
+
+令
+
+\[
+\mathscr E_0:=(p-1)b_0-a_0,
+\qquad
+\mathscr E_+:=(p-1)b_+-a_+.
+\tag{20zz-done-15}
+\]
+
+它们分别是 (20zz-done-5)、(20zz-done-8) 两条 \(d=1\) 行从其 ordinary
+high-\(R\) anchor 计算得到的 complete-excess multiplier；它们**不是**这里的
+root-endpoint multiplier \(E\)。由 (20zz-done-10) 有精确 relay
+
+\[
+\boxed{
+\mathscr E_+
+=\frac{L\mathscr E_0+a_0\theta}{\gamma}.}
+\tag{20zz-done-16}
+\]
+
+**证明。** 将 \(B_+=b_0L-a_0\theta\) 代入左边，分子为
+
+\[
+(p-1)b_0L-(p-1)a_0\theta-a_0
+=L\bigl((p-1)b_0-a_0\bigr)+a_0\theta,
+\]
+
+其中最后一步只用 \(L=1+p\theta\)。除以 \(\gamma\) 即得。
+\(\square\)
+
+因为 \(p\nmid\gamma\)，(20zz-done-10) 在模 \(p\) 下给出
+
+\[
+b_+\equiv\gamma^{-1}(b_0-a_0\theta),
+\qquad
+a_+\equiv\gamma^{-1}a_0
+\pmod p.
+\tag{20zz-done-17}
+\]
+
+于是 target 的 ordinary \(d=1\) complete-excess 分派可完全翻译成 source 数据：
+
+\[
+\begin{array}{c|c}
+\text{target 的 ordinary \(d=1\) 情形}&\text{等价的 source-data 条件}\\ \hline
+\text{raw \(p\)-source 门失败}&b_0\equiv a_0\theta\pmod p\\
+\text{\(p\)-free bundle 门失败}&b_0\equiv a_0(\theta-1)\pmod p\\
+\text{canonical \(d=1\) 再生}&b_0\equiv a_0(\theta-1)-\gamma\pmod p\\
+\text{其余情形}&\text{target residual capacity 严格下降}.
+\end{array}
+\tag{20zz-done-18}
+\]
+
+前三行正是分别将 \(b_+\equiv0,-a_+,-a_+-1\pmod p\) 代入
+(20zz-done-17) 的结果。它们互斥；最后一行由完整乘积 \(d=1\) 的标准容量公式
+支付严格 residual-capacity drop。
+
+这也隔离了真正可能重复进入 \(d=1\) hard branch 的唯一算术门。既有 \(d=1\)
+结果已分别处理 raw-\(p\) source 失败的最小互素素数替代、canonical 再生的
+\(p\)-进倒计时，以及 \(p\)-free failure 中 \(a_+>1\) 的真实 peeled strict
+出口。因此，若 (20zz-done-8) 已作为合法 checkpoint 接入这些结果，而其 ordinary
+continuation 仍落入尚未闭合的 \(a=1\) \(p\)-primary hard branch，则必且只需满足
+
+\[
+\boxed{
+a_0\mid L=\frac E\ell F_y,
+\qquad
+b_0\equiv a_0(\theta-1)\pmod p,}
+\tag{20zz-done-19}
+\]
+
+其中等价地
+
+\[
+\theta=\sigma+2s_y\frac E\ell.
+\tag{20zz-done-20}
+\]
+
+确实，\(a_+=1\) 当且仅当 \(\gamma=a_0\)，也就是 \(a_0\mid L\)；在此条件下，
+(20zz-done-18) 的第二行恰为 \(b_+\equiv-1\pmod p\)。所以
+(20zz-done-19) 是该继承 hard branch 的精确必要充分算术门，而不是一个经验性筛选。
+
+**边界。** 本节没有把 (20zz-done-8) 登记为 standalone state，更没有声称
+\(M_{\rm split}\) 已有 E1--E4。要把上述分派变成 guarded macro，仍须证明原
+atomic split 的 source/path、scope、terminal-first、typed target 与全域 lift 连续；
+随后每个 \(d=1\) suffix 也必须在同一宏内重放其 own source/path 与 target receipt。
+特别地，不能因 (20zz-done-8) 的整数正规形而让 \(U_{\rm ar}\) 独立充当 persistent
+parent。故 (20zz-done-19) 的作用只是把下一条证明任务压缩为：证明该双门为空，或为该
+双门构造真正的 guarded physical continuation；它不是 TR1、T6 或 verified edge。
+
+### 6.15 \(m=3\) root 自身的 \(d=1\) \(p\)-free 面与二阶残余
+
+第 6.14 节的 relay 对任意 cofactor-\(p-1\) root 都成立。但在当前 \(m=3\) slice，
+原 root 的 \(d=1\) normalisation 还满足一个额外的、完全由 stutter 恒等式强制的
+结论：它已经位于 ordinary complete-excess 的 \(p\)-free failure 面上。
+
+仍取 (20zz-done-2) 的 \(E=1+p\sigma\)。由
+
+\[
+D+h=3p+1,
+\qquad
+R=h+ED,
+\tag{20zz-face-1}
+\]
+
+有
+
+\[
+R=h+D+p\sigma D
+=p(3+\sigma D)+1.
+\tag{20zz-face-2}
+\]
+
+另一方面，第 6.14 节的 \(d=1\) 正规形给出
+\(R=(p-1)N-1\)。比较两式，得到
+
+\[
+(p-1)N=p(3+\sigma D)+2.
+\tag{20zz-face-3}
+\]
+
+因此
+
+\[
+\boxed{
+\lambda_0:=\frac{\sigma D+5}{p-1}\in\mathbb Z_{>0},
+\qquad
+N=p\lambda_0-2.}
+\tag{20zz-face-4}
+\]
+
+**证明。** (20zz-face-3) 模 \(p-1\) 化为
+\(\sigma D+5\equiv0\pmod{p-1}\)。代入
+\(\sigma D=(p-1)\lambda_0-5\) 后，右边正好化为
+\((p-1)(p\lambda_0-2)\)。\(\square\)
+
+又 \(N\equiv1\pmod4\)、\(p\equiv1\pmod4\)，故
+
+\[
+\boxed{
+\lambda_0\equiv3\pmod4,
+\qquad
+N\ge3p-2.}
+\tag{20zz-face-5}
+\]
+
+现在使用 (20zz-done-9) 的 normalisation。由
+\[
+2g b_0=N+1\equiv-1\pmod p,
+\qquad
+2g a_0=p+1\equiv1\pmod p,
+\]
+必有
+
+\[
+\boxed{
+b_0\equiv-a_0\pmod p,
+\qquad
+\mathscr E_0=(p-1)b_0-a_0\equiv0\pmod p,
+\qquad
+R\equiv1\pmod p.}
+\tag{20zz-face-6}
+\]
+
+这正是完整乘积 \(d=1\) ordinary bundle 的 \(p\)-free gate failure，而不是 raw
+\(p\)-source failure。因而，在原 root 已通过相应 persistent/source/typed macro
+前提时，既有 \(d=1\) \(p\)-free peeled construction 已为 \(a_0>1\) 提供严格的
+容量出口。这个条件性调用不替代本卡的 E1--E4；它只说明任何仍未被该 route 处理的
+\(m=3\) root 必须落到
+
+\[
+\boxed{a_0=1.}
+\tag{20zz-face-7}
+\]
+
+这个残余也有完全显式的参数化。事实上
+
+\[
+\begin{aligned}
+a_0=1
+&\Longleftrightarrow p+1\mid N+1\\
+&\Longleftrightarrow \lambda_0\equiv-1\pmod{p+1}.
+\end{aligned}
+\tag{20zz-face-8}
+\]
+
+写 \(\lambda_0=(p+1)t-1\)。由 (20zz-face-5) 及
+\(p+1\equiv2\pmod4\)，\(t\) 必为正偶数；写 \(t=2r\) 后得到
+
+\[
+\boxed{
+\lambda_0=2r(p+1)-1,
+\qquad
+b_0=2pr-1,
+\qquad
+\sigma D=2r(p^2-1)-p-4,
+\qquad
+r\ge1.}
+\tag{20zz-face-9}
+\]
+
+所以 (20zz-face-7) 不是泛泛的“\(a=1\)”标签，而是已嵌入 \(m=3\) 的一条
+具体 Diophantine 子纤维。它还给出一个有用但不矛盾的 root-only residue gate：
+由 (20zz-face-4)、(20zz-face-8) 及
+\(D=3p+1-h\)，模 \(p+1\) 有
+
+\[
+\boxed{
+\sigma(h+2)\equiv3\pmod{p+1},
+\qquad
+\gcd(h+2,p+1)=1.}
+\tag{20zz-face-10}
+\]
+
+确实，(20zz-face-4)、(20zz-face-8) 给出
+\(\sigma D+5=(p-1)\lambda_0\equiv2\pmod{p+1}\)；再用
+\(D\equiv-h-2\pmod{p+1}\) 即得第一个同余。它强制
+\(\gcd(h+2,p+1)\mid3\)，而 \(p\equiv1\pmod3\) 使 \(3\nmid p+1\)，故第二式成立。
+这里互素性只说明该同余有唯一的 \(\sigma\)-residue；它不是 empty proof。
+
+最后，把 (20zz-face-6) 代回第 6.14 节的 target 分派。若原 root 已落在
+\(a_0=1\) residual，则 \(\gamma=1\)，且 (20zz-done-18) 精确简化为
+
+\[
+\begin{array}{c|c}
+\text{target 的 ordinary \(d=1\) 情形}&\theta\pmod p\\ \hline
+\text{raw \(p\)-source 门失败}&-1\\
+\text{\(p\)-free failure，即再次进入 hard branch}&0\\
+\text{canonical regeneration}&1\\
+\text{严格 residual-capacity drop}&\text{其余类}.
+\end{array}
+\tag{20zz-face-11}
+\]
+
+由于 \(L=1+p\theta\)，第二行等价于
+
+\[
+\boxed{
+\text{the \(a_0=1\) residual repeats the \(p\)-primary hard branch}
+\quad\Longleftrightarrow\quad
+L\equiv1\pmod{p^2}.}
+\tag{20zz-face-12}
+\]
+
+这把 \(m=3\) rank-stutter 的继承性 \(d=1\) 余项从第 6.14 节的一般双门进一步
+压成一个二阶同余。它仍不是全称排空：已有 \(a=1\) 理论明确表明不能把
+\(L\equiv1\pmod{p^2}\) 的可能性仅靠固定深度的 \(p\)-peeling 排除。真正下一步仍是
+对 (20zz-face-12) 构造 guarded physical macro，或使用 \(m=3\) 的额外
+Diophantine gates 证明其无解。
 
 ## 7. 根支撑强制的 primitive \(m=3\) quotient fiber
 

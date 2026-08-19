@@ -222,6 +222,69 @@ normal form 和全域 lift，故这缩小了 TR1 的下一条构造命题，但�
 \(F_y=\ell+2ps\) 的 rank stutter，故 TR1 和 T6 仍开放；但 “缺 E1” 现在准确地只剩
 source-path coverage，而不是这条确定 raw suffix 本身。
 
+rank-stutter 本身也不再是“没有下一条 raw action”：因为
+\(F_y\equiv\ell\not\equiv1\pmod p\)，它必有一个确定的最小素因子
+\(q_\star\mid F_y\)、\(q_\star\not\equiv1\pmod p\)。把 \((x,y)\) 定向为 \((y,x)\)
+后，\(q_\star\) 是 actual overcapacity label，故可实际走到
+\((y/q_\star,R-y/q_\star)\)，且无 gcd reduction。若原 path 已 source-bound，这仍是同一
+source 的正向 suffix。形式支撑 \(M_{\rm split}/q_\star\) 的 cofactor 为
+\(\langle-q_\star\rangle_p\le p-2\)。不过 companion 可能重生新的 complete-excess block，
+所以该形式支撑还不是 canonical target 或 verified edge；当前最小的剩余命题正是证明或
+反驳 second-child canonicalization / companion non-reintroduction。
+
+更强地，对 \(y\) 完整容量剥离的 selected-side endpoint 精确为
+\((y,K)=D_y(Q_y,p-1)\)，且 \((Q_y,p-1)\mid F_y\)。故当前 rank-stutter 精确分成
+\((Q_y,p-1)=1\) 的 fresh-residual branch 与一个显式 \(p-1\) overlap branch；这是 raw
+occurrence 的二分，不是 terminal 或 verified edge。
+
+并行地，atomic split stutter 的 canonical arithmetic target 已被精确识别为新的完整乘积
+\(d=1\) 饱和行。若
+\[
+L=\frac{M_{\rm split}}{\mathcal A}=\frac E\ell F_y=1+p\theta,
+\qquad
+\theta=\sigma+2s_yE/\ell,
+\]
+并以原 root 的 \(d=1\) normalisation
+\((p+1)/2=g a_0,(N+1)/2=g b_0\) 表示，则 target normalisation 的公共因子精确为
+\(\gamma=(a_0,L)\)。它的 ordinary \(d=1\) dispatch 因而完全由 source 数据决定：
+raw-\(p\) source failure、\(p\)-free failure、canonical regeneration 和严格 capacity drop
+分别对应四个显式模 \(p\) 类。结合既有 d=1 结果，若这个 target 真能作为 guarded
+checkpoint 接入，仍会落入未闭合的 \(a=1\) \(p\)-primary hard branch 当且仅当
+\[
+a_0\mid L,
+\qquad
+b_0\equiv a_0(\theta-1)\pmod p.
+\]
+这是新的精确 residual gate，而非 E1--E5 edge：atomic target 的 provenance、typed
+normal form、terminal-first 和全域 lift 仍须在同一宏内完成。它与第二 child 的
+canonicalization 问题并列，给出了下一步可直接证明或证伪的两条最小命题。
+
+对 \(m=3\) 本身，还有一个更强的 root-level 收缩。写
+\[
+N=\frac{4\mathcal A+1}{p},\qquad E=1+p\sigma,\qquad D+h=3p+1,
+\]
+则 root identity 强制
+\[
+\lambda_0=\frac{\sigma D+5}{p-1}\in\mathbb Z,\qquad
+N=p\lambda_0-2,\qquad \lambda_0\equiv3\pmod4.
+\]
+故 \(N\equiv-2\pmod p\)、\(R\equiv1\pmod p\)：原 root 的 ordinary \(d=1\) bundle
+已经精确落在 \(p\)-free failure，而非 raw-\(p\) source failure。若相应 persistent
+macro 的前提能够接入，既有 peeled construction 已处理 \(a_0>1\) 的严格容量出口；
+剩余必须有 \(a_0=1\)。这个子纤维等价于
+\[
+\lambda_0=2r(p+1)-1,\qquad
+b_0=2pr-1,\qquad
+\sigma D=2r(p^2-1)-p-4\quad(r\ge1),
+\]
+并强制 \(\sigma(h+2)\equiv3\pmod{p+1}\)。在该 \(a_0=1\) 残余中，上述 atomic
+target 再次进入 \(p\)-primary hard branch 当且仅当
+\[
+L\equiv1\pmod{p^2}.
+\]
+这没有关闭 TR1：它把下一条 \(m=3\) 证明精确收缩为二阶 congruence 的排空，或将该
+congruence 族接入具备完整 E1--E5 的 guarded macro。
+
 补充：在 actual \(m=3\)、whole-\(d\)、\(s_d=3\) 子分支中，双范数门与 exact
 primitive content 强制 \(d=13\)、\(\rho=160+234z\)、\(A=52t-1\)，并使 primitive
 quotient \(q\) 的全部素因子落在 \(1\pmod3\)，且最小 leaf \(q=1\) 全称为空。这排除了从
