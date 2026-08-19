@@ -355,6 +355,25 @@ companion 不含 \(q_\star\)，相对原 root support 新鲜重算的 joined sup
 “剥掉唯一一层 \(p\) 后互补坐标重新含 \(p\)”分别是两个不同的模 \(p^2\) 类；其余
 首层 lift 回到双侧 p-free raw node。所有三支都保留一个从同一 source 出发的 actual
 raw suffix，但尚未成为 terminal 或 E1--E5 macro。
+更强地，p-block 不再是这个 raw policy 的必要分支。把 \(y\)-side 的真实可剥离
+prime occurrences 从 \(p-1\) overlap 中分开后：若存在 residue 既非 \(1\) 亦非
+\(1-D_1\) 的 occurrence，就选最小的一个；否则全部 bad occurrence 都为
+\(\delta=1-D_1\)，且严格至少有两个。后一情形连续剥离两个 occurrence，所得乘子
+为 \(\delta^2\)，它同时避开 \(\delta\)（故 companion p-free）和 \(1\)（故 formal
+cofactor 严格）。因此可确定地在至多两条 actual raw 边后回到 p-free primitive node；
+剩余的不再是 p-block，而是该最终 node 的 canonical complete-excess multiplier、其
+rank-restoration gate 以及 E1--E4 receipt。
+若把 \(y\) 侧全部真实 excess 一次剥尽，则得到 \(Y_K=(y,K)=D_yJ_y\)。其唯一
+p-block residue 是 \(\mathcal W_y\equiv1-D_1\pmod p\)；其余情形该 endpoint 是
+p-free，且由于 \(Y_K\mid K\)，只能是 Type I terminal 或 single-side bundle，不能再
+是 atomic split。更重要的是 \(\mathcal W_y\not\equiv1\pmod p\) 已被严格排除，故
+full-capacity word 的 selected-side formal cofactor 总严格。此分流为后续 canonical
+companion 分析提供了一个较窄的单侧入口，但仍不替代 E1--E5 admission。
+合并两条分流后，rank-stutter 现有一个只读取当前 receipt 的确定 p-free raw policy：
+若 \(\mathcal W_y\not\equiv1-D_1\)，走 full-capacity word；否则走至多两步的
+bad-residue word。两者都保留严格 formal cofactor；差别仅在前者的 nonterminal endpoint
+已是单侧、后者仍可能为 atomic。这消除了 p-block 作为必要 raw-policy branch，但没有
+解决最终 canonical lcm 的 rank gate 或 E1--E4。
 若它还重复进入 \(L\equiv1\pmod{p^2}\) 的 \(a_0=1\) hard branch，写
 \(L=1+p^2\chi\)，则实际 child 还必须满足一条新的模 \(p^2\) lifted congruence
 \[

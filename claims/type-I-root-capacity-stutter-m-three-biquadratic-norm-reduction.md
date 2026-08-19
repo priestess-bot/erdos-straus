@@ -56,7 +56,9 @@ statement: >-
   \(4\mathcal A=5L_5(p+1)(5\sigma+w)\)，故 \(E\) 的所有奇素因子均已落在
   \(L_5\) 上；纯二进 \(E=2^a\) 的临界 excess 层不可能，且其 \(q=2\) raw
   deflation 有 strict selected-side cofactor \(p-2\)。这些结论仍不是 terminal 或
-  physical edge。
+  physical edge。对 split rank-stutter，按真实 raw-excess multiplicity 可确定地选取
+  长度至多二的 p-free suffix，且其 formal cofactor 严格；剩余只在最终 companion 的
+  canonical multiplier 与 receipt obligations，不能把这条 raw 事实当作 verified edge。
   更一般地，m=3 的 D 因子不命中 native raw Type II menu。
   该约化不证明这些互锁 divisor fibers 为空，不构造
   terminal 或 E1--E5 successor，也不闭合 QC1、TR1 或 T6。
@@ -3544,11 +3546,321 @@ support 都含 \(p\)，不可能整除任一合法 Type I target 的 \(K_T\)，�
 \(4K_T=pR_T+1\) 强制 \(p\nmid K_T\)。因此 (20zz-pblock-14) 是保留来源的
 actual continuation，而不是把 \(p\)-block 删除后直接重图表。
 
-**边界。** (20zz-pblock-3)--(20zz-pblock-15) 没有给出这个 raw suffix 的 terminal、
-canonical p-free bundle 或 E1--E5 macro。尤其 \(\Theta_2\) 分支可有任意高的
+**边界。** (20zz-pblock-3)--(20zz-pblock-15) 没有给出这个固定 one-label suffix 的
+terminal、canonical p-free bundle 或 E1--E5 macro。尤其 \(\Theta_2\) 分支可有任意高的
 \(p\)-adic height，而 \(\Theta_2^{\rm ret}\) 分支会在互补侧重引入 \(p\)。它们的
-作用是把 second-child p-block 从一个笼统例外收缩为三条互斥、可由 source/path
-receipt 重放的 continuation gates；TR1 与 T6 仍保持开放。
+作用是把 one-label second-child p-block 从一个笼统例外收缩为三条互斥、可由 source/path
+receipt 重放的 continuation gates；下一节再说明它不是一个不可绕开的 raw-policy 余项。
+
+### 6.22 坏 \(p\)-residue 的确定 p-free 一/二步绕行
+
+第 6.13 节取最小 \(q_\star\) 只为保证一个 non-\(1\pmod p\) raw label 存在；它不必是
+避免 \(p\)-block 的最佳选择。这里构造一个仍完全由 child 数据决定、长度至多为二的
+raw word，使最终 node 必为 p-free。
+
+先把 \(y\)-side 的真正 raw-excess multiplicity 与 \(F_y\) 中的 \(p-1\) overlap
+分开。令
+
+\[
+\mathcal W_y
+:=
+\prod_{v_s(y)>v_s(K)}s^{v_s(y)-v_s(K)},
+\qquad
+\delta:=p+1-D_1.
+\tag{20zz-pfree-word-1}
+\]
+
+由第 6.13 节的 \(J_y=(Q_y,p-1)\) 及逐赋值分解，有
+
+\[
+\boxed{F_y=\mathcal W_yJ_y.}
+\tag{20zz-pfree-word-2}
+\]
+
+确实，若 \(b=v_s(y)>v_s(K)=a+r\)，其中
+\(a=v_s(\mathcal A)\)、\(r=v_s(p-1)\)，则
+
+\[
+v_s(F_y)=b-a=(b-a-r)+r
+=v_s(\mathcal W_y)+v_s(J_y).
+\tag{20zz-pfree-word-3}
+\]
+
+其余素数两侧赋值皆为零。尤其 \(J_y\) 的每个素因子在 \(\mathcal W_y\) 中也至少
+出现一次，因为 \(b-a-r>0\)。所以 \(F_y\not\equiv1\pmod p\) 的确强制
+\(\mathcal W_y\) 含有 non-\(1\pmod p\) 素因子。特别地，\(\mathcal W_y\) 中的每一个素数 occurrence 都是
+当时可实际剥离的一步 raw label；这比仅从 \(F_y\) 的因子化选择 label 更精确。
+
+因为 \(F_y\equiv\ell\not\equiv1\pmod p\)，\(\mathcal W_y\) 至少有一个
+non-\(1\pmod p\) 素因子。又第 6.11 节给出
+
+\[
+y\equiv\ell D_y\equiv1-D_1\equiv\delta\pmod p,
+\qquad
+2\le\delta\le p-1,
+\qquad
+\delta\not\equiv\pm1\pmod p.
+\tag{20zz-pfree-word-4}
+\]
+
+最后两个不等式使用 \(1<D_1<p\) 与 \(D_1\ge25\)。定义 safe label 集
+
+\[
+\mathcal S_{\rm pf}
+:=
+\left\{
+s:s\mid\mathcal W_y,\quad
+s\not\equiv1,\delta\pmod p
+\right\}.
+\tag{20zz-pfree-word-5}
+\]
+
+若它非空，取 \(Q_{\rm pf}:=\min\mathcal S_{\rm pf}\)。唯一需要处理的是
+\(\mathcal S_{\rm pf}=\varnothing\) 的 monochromatic bad-residue 情形。记
+
+\[
+\Omega_\delta(\mathcal W_y)
+:=
+\sum_{\substack{s\equiv\delta\, (\mathrm{mod}\ p)}}v_s(\mathcal W_y).
+\tag{20zz-pfree-word-6}
+\]
+
+则必有
+
+\[
+\boxed{\Omega_\delta(\mathcal W_y)\ge2.}
+\tag{20zz-pfree-word-7}
+\]
+
+**证明。** 反设 \(\Omega_\delta(\mathcal W_y)=1\)，并令 \(q_0\) 为唯一的 bad
+raw occurrence。若 \(q_0\nmid p-1\)，则 (20zz-pfree-word-2) 表明 \(F_y\) 的
+唯一 non-\(1\pmod p\) contribution 就是 \(q_0\)。于是
+\(\ell\equiv F_y\equiv q_0\equiv\delta\pmod p\)。再由
+\(\ell D_y\equiv\delta\) 得 \(D_y\equiv1\pmod p\)，从而
+\(\ell+D_1=p+1\)：两项都在 \((0,p)\) 内，且其和小于 \(2p\)。但这会给出
+
+\[
+D-3p
+=\ell D_1-3(\ell+D_1-1)
+=(\ell-3)(D_1-3)-6>0,
+\tag{20zz-pfree-word-8}
+\]
+
+与 \(D=3p+1-h<3p\) 矛盾。
+
+故必有 \(q_0\mid p-1\)。因为 \(2\le q_0,\delta\le p-1\) 且
+\(q_0\equiv\delta\pmod p\)，此时 \(q_0=\delta=p+1-D_1\)。由
+\(q_0\mid p-1\) 可得 \(q_0\mid D_1-2\)，所以
+
+\[
+p+1-D_1=q_0\le D_1-2,
+\qquad
+D_1\ge\frac{p+3}{2}.
+\tag{20zz-pfree-word-9}
+\]
+
+另一方面 \(D_1=D/\ell<3p/\ell\le3p/7<(p+3)/2\)，又成矛盾。故
+(20zz-pfree-word-7) 成立。\(\square\)
+
+在 \(\mathcal S_{\rm pf}=\varnothing\) 时，按非降素数顺序取
+\(\mathcal W_y\) 的前两个 bad occurrences \(q_1,q_2\)，并定义
+
+\[
+Q_{\rm pf}:=q_1q_2.
+\tag{20zz-pfree-word-10}
+\]
+
+若两个 occurrence 同属一个素数，则 (20zz-pfree-word-7) 保证它在真实 raw-excess
+中至少仍有第二层，故两次除法都合法。于是两种情形统一给出一个确定的、无 gcd
+reduction 的 actual raw suffix
+
+\[
+\boxed{
+(y,x,1)
+\leadsto
+\left(
+\frac{y}{Q_{\rm pf}},
+R-\frac{y}{Q_{\rm pf}},
+1
+\right).}
+\tag{20zz-pfree-word-11}
+\]
+
+这里在 \(\mathcal S_{\rm pf}\ne\varnothing\) 时 \(Q_{\rm pf}\) 是单个素数；否则它是
+两个素数 occurrence 的乘积。式中所有中间 selected coordinate 都整除 \(y\)，从而与
+\(R\) 互素，故不发生 gcd reduction。
+
+令 \(y_{\rm pf}=y/Q_{\rm pf}\)、\(t_{\rm pf}=R-y_{\rm pf}\)。由于 \(p\nmid y\) 且
+\(R\equiv1\pmod p\)，有
+
+\[
+p\mid t_{\rm pf}
+\quad\Longleftrightarrow\quad
+Q_{\rm pf}\equiv y\equiv\delta\pmod p.
+\tag{20zz-pfree-word-12}
+\]
+
+在 safe 情形，\(Q_{\rm pf}\not\equiv\delta\)；在 monochromatic 情形，
+\(Q_{\rm pf}\equiv\delta^2\not\equiv\delta\)。所以
+
+\[
+\boxed{p\nmid y_{\rm pf}t_{\rm pf}.}
+\tag{20zz-pfree-word-13}
+\]
+
+这条绕行还保留第 6.13 节所需的 formal strictness。因为
+\(Q_{\rm pf}\mid\mathcal W_y\mid F_y\)，令
+
+\[
+M_{\rm pf}^{\rm form}
+:=\frac{M_{\rm split}}{Q_{\rm pf}}
+=\mathcal A\frac E\ell\frac{F_y}{Q_{\rm pf}}.
+\tag{20zz-pfree-word-14}
+\]
+
+rank-stutter 给 \((E/\ell)F_y\equiv1\pmod p\)，故
+
+\[
+\boxed{
+\left\langle\left(4M_{\rm pf}^{\rm form}\right)^{-1}\right\rangle_p
+=\langle-Q_{\rm pf}\rangle_p
+\le p-2.}
+\tag{20zz-pfree-word-15}
+\]
+
+在 safe 情形 \(Q_{\rm pf}\not\equiv1\)；在 monochromatic 情形
+\(Q_{\rm pf}\equiv\delta^2\not\equiv1\)，所以最后的不等式严格成立。
+
+若第 6.12 节的 persistent source path 已绑定，则 (20zz-pfree-word-11) 仍是它的
+forward suffix。由 (20zz-pfree-word-13)，对最终 primitive node 相对 original root
+support 重算完整 excess blocks 后，直接适用第 6.20 节的 terminal / single-side /
+atomic 三分；其 canonical rank-restoration gate 仍须从真实 joined support 重算。
+
+**边界。** 该引理消除了“必须沿 fixed \(q_\star\) 的 p-block 继续”的 raw-policy
+障碍，但没有证明 final companion 的 canonical multiplier 不会恢复 rank，也没有生成
+typed target、scope/owner、terminal priority 或全域 lift。因此它不是 E1--E5 macro，更
+不是 TR1；它把 second-child 的未闭合算术残余进一步缩到 p-free final node 的 canonical
+rank gate 与既有 receipt obligations。
+
+### 6.23 full \(y\)-capacity word 的单侧分派与唯一 \(p\)-block residue
+
+第 6.22 节的短 word 在任何 residue 下都能避开 \(p\)-block。若允许把 \(y\)-side 的
+实际 excess 一次剥尽，则还可得到更强的结构：除一个显式 residue 外，最终 node
+自动是单侧而非 atomic。仍取
+
+\[
+Y_K:=(y,K)=D_yJ_y,
+\qquad
+J_y=(Q_y,p-1),
+\tag{20zz-fullcap-1}
+\]
+
+并沿第 6.13 节的 actual capacity word \(\omega_y\) 到达
+
+\[
+\boxed{
+(y,x,1)\leadsto(Y_K,R-Y_K,1).}
+\tag{20zz-fullcap-2}
+\]
+
+先注意 \(\mathcal W_y\) 不可能自身造成 formal rank stutter：
+
+\[
+\boxed{\mathcal W_y\not\equiv1\pmod p.}
+\tag{20zz-fullcap-3}
+\]
+
+**证明。** 若 \(\mathcal W_y\equiv1\pmod p\)，由
+\(F_y=\mathcal W_yJ_y\equiv\ell\pmod p\) 有 \(J_y\equiv\ell\pmod p\)。但
+\(1\le J_y\le p-1\) 与 \(1<\ell<p\) 强制 \(J_y=\ell\)。这不可能，因为
+\(J_y\mid F_y\) 而 \((F_y,DE)=1\)、\(\ell\mid D\)。\(\square\)
+
+full word 的 \(p\)-free gate 也可精确写为 \(\mathcal W_y\) 的一个 residue：
+
+\[
+\boxed{
+p\mid R-Y_K
+\quad\Longleftrightarrow\quad
+Y_K\equiv1\pmod p
+\quad\Longleftrightarrow\quad
+\mathcal W_y\equiv\delta\pmod p.}
+\tag{20zz-fullcap-4}
+\]
+
+**证明。** 第一等价使用 \(R\equiv1\pmod p\)。又
+\(F_y=\mathcal W_yJ_y\equiv\ell\) 及 \(\delta\equiv\ell D_y\) 给出
+
+\[
+\mathcal W_y\equiv\delta
+\quad\Longleftrightarrow\quad
+J_yD_y\equiv1\pmod p,
+\]
+
+而右侧正是 \(Y_K\equiv1\pmod p\)。\(\square\)
+
+因此若 \(\mathcal W_y\not\equiv\delta\pmod p\)，(20zz-fullcap-2) 的两侧均 p-free。
+令 \(R-Y_K=Q_{\rm cap}\beta_{\rm cap}\) 为相对 \(K\) 的 maximal complete-excess
+分解。若 \(Q_{\rm cap}=1\)，则 \(Y_K(R-Y_K)\mid K\)，给出 Type I terminal；若
+\(Q_{\rm cap}>1\)，则
+
+\[
+Y_K\beta_{\rm cap}\mid K,
+\qquad
+(Y_K,\beta_{\rm cap})=1,
+\tag{20zz-fullcap-5}
+\]
+
+所以它是 single-side complete-excess bundle 的完整算术 kernel，不可能再是 atomic
+split。这里 (20zz-fullcap-5) 只使用 \(Y_K\mid K\)、\(\beta_{\rm cap}\mid K\) 和
+primitive node 的互素性。
+
+其对应的 selected-side formal support 为
+
+\[
+M_{\rm cap}^{\rm form}
+:=\frac{M_{\rm split}}{\mathcal W_y}
+=\mathcal A\frac E\ell J_y,
+\tag{20zz-fullcap-6}
+\]
+
+并由 rank-stutter 与 (20zz-fullcap-3) 满足
+
+\[
+\boxed{
+\left\langle\left(4M_{\rm cap}^{\rm form}\right)^{-1}\right\rangle_p
+=\langle-\mathcal W_y\rangle_p
+\le p-2.}
+\tag{20zz-fullcap-7}
+\]
+
+因此，这个 full capacity policy 在 \(\mathcal W_y\not\equiv\delta\) 时给出一个
+p-free、single-side 的 actual suffix 与严格 formal signal；在唯一的
+\(\mathcal W_y\equiv\delta\) residue 中，则由第 6.22 节的至多两步 \(Q_{\rm pf}\)
+word 取代它，仍回到 p-free primitive node。
+
+因而可把两种情形合成一个不读取目标解的确定 raw policy：
+
+\[
+\boxed{
+\omega_{\rm pf}:=
+\begin{cases}
+\omega_y,&\mathcal W_y\not\equiv\delta\pmod p,\\
+Q_{\rm pf}\text{-word of (20zz-pfree-word-11)},
+&\mathcal W_y\equiv\delta\pmod p.
+\end{cases}}
+\tag{20zz-fullcap-8}
+\]
+
+它总在有限个 actual raw steps 后到达 p-free primitive node；相对 original root support
+的对应 formal cofactor 均严格小于 \(p-1\)。第一行若未 terminal 还必为 single-side
+kernel，第二行只可能保留第 6.20 节的 single-side/atomic canonicalisation 问题。这个
+结论消除了 rank-stutter 的 p-block 作为**必要 raw-policy 分支**，但不把 formal
+strictness 误称为 E5 ticket。
+
+若原 source path 已绑定，以上两条 word 都是同一 source 的 forward suffix。**边界**是：
+(20zz-fullcap-6)--(20zz-fullcap-7) 仍是 formal support；\(Q_{\rm cap}\) 或
+\(Q_{\rm pf}\) 终点 companion 的 canonical lcm support 仍须重算，其 rank gate、
+typed target 和 E2--E4 receipt 没有由本节支付。故本节缩小而不关闭 TR1。
 
 ## 7. 根支撑强制的 primitive \(m=3\) quotient fiber
 
