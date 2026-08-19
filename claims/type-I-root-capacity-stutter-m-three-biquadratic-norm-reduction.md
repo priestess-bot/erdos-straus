@@ -3862,6 +3862,78 @@ strictness 误称为 E5 ticket。
 \(Q_{\rm pf}\) 终点 companion 的 canonical lcm support 仍须重算，其 rank gate、
 typed target 和 E2--E4 receipt 没有由本节支付。故本节缩小而不关闭 TR1。
 
+### 6.24 p-free policy 终点 canonical rank gate 的二阶继承
+
+第 6.23 节留下的不是任意的 companion 风险。固定 \(\omega_{\rm pf}\) 的最终
+p-free primitive node，并先执行 terminal-first。若未 terminal，按其 single-side 或
+atomic complete-excess blocks 重算唯一 joined support
+
+\[
+M_\omega=\mathcal A L_\omega,
+\qquad
+L_\omega>1.
+\tag{20zz-policy-rank-1}
+\]
+
+因为 node 与 \(\mathcal A\) 都 p-free，\(p\nmid M_\omega\)。所以 canonical target
+cofactor 满足
+
+\[
+\boxed{
+\left\langle(4M_\omega)^{-1}\right\rangle_p=p-1
+\quad\Longleftrightarrow\quad
+L_\omega\equiv1\pmod p.}
+\tag{20zz-policy-rank-2}
+\]
+
+其补集直接给 canonical 的 strict E5 arithmetic ticket；这里不再是第 6.22--6.23 节的
+formal support。
+
+现在设 (20zz-policy-rank-2) 的 stutter 行，并唯一写成
+
+\[
+L_\omega=1+p\theta_\omega,
+\qquad
+\theta_\omega\in\mathbb Z_{>0}.
+\tag{20zz-policy-rank-3}
+\]
+
+第 6.14 节的整数推导只使用 original \(d=1\) root normalisation 与
+\(M=\mathcal A(1+p\theta)\)，故可逐字应用于 \(M_\omega\)。当前 minimal leaf 已在
+第 6.15 节压到 \(a_0=1\)，于是 \(\gamma=(a_0,L_\omega)=1\)，target 仍在
+\(a_+=1\) 的完整乘积 \(d=1\) 行。其 ordinary dispatch 精确为
+
+\[
+\begin{array}{c|c}
+\theta_\omega\pmod p&\text{target 的 arithmetic dispatch}\\ \hline
+-1&\text{raw \(p\)-source failure channel}\\
+0&\text{\(p\)-free failure；repeat \(a=1\) hard branch}\\
+1&\text{canonical regeneration channel}\\
+\text{其它}&\text{strict residual-capacity channel}.
+\end{array}
+\tag{20zz-policy-rank-4}
+\]
+
+特别地，policy endpoint 的 canonical rank restoration 若要再次落入同一个未闭合
+\(a=1\) p-primary residual，必要充分地满足唯一二阶门
+
+\[
+\boxed{
+L_\omega\equiv1\pmod {p^2}.}
+\tag{20zz-policy-rank-5}
+\]
+
+这把第 6.23 节的 final-companion 问题从一个模 \(p\) rank stutter 精确收缩到
+已知 \(d=1\) dispatch 的三条具名 channel，或 (20zz-policy-rank-5) 的单一
+second-order hard gate。
+
+**边界。** (20zz-policy-rank-4) 是 canonical arithmetic target 的分派，不是已经
+注册的 guarded macro：每条 channel 仍须从 \(\omega_{\rm pf}\) 的实际 source/path
+连续重放 terminal priority、typed target、scope/owner 和全域 lift。尤其本节没有证明
+(20zz-policy-rank-5) 为空，也没有把 regeneration 或 raw-source channel 自动升级为
+E1--E5 edge。它给出的下一条真正证明对象是：排空该 canonical \(p^2\) gate，或为其
+构造一条连续、已支付的 macro。
+
 ## 7. 根支撑强制的 primitive \(m=3\) quotient fiber
 
 这里还有一个比 (15) 更强的 actual-only 收缩。因为 \(h=3u\mid p^2+p+1\)，

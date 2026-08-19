@@ -374,6 +374,12 @@ companion 分析提供了一个较窄的单侧入口，但仍不替代 E1--E5 ad
 bad-residue word。两者都保留严格 formal cofactor；差别仅在前者的 nonterminal endpoint
 已是单侧、后者仍可能为 atomic。这消除了 p-block 作为必要 raw-policy branch，但没有
 解决最终 canonical lcm 的 rank gate 或 E1--E4。
+这个最终 canonical gate 也已有二阶归约：若重算后的 \(L_\omega\not\equiv1\pmod p\)，
+它有真实 canonical strict E5 arithmetic ticket；若 \(L_\omega\equiv1\pmod p\)，当前
+\(a_0=1\) root 使目标回到同一 \(d=1\) normal form。其 raw-p-source、regeneration 和
+strict-residual 分派分别由 \((L_\omega-1)/p\equiv-1,1,\text{other}\pmod p\) 给出；只有
+\(L_\omega\equiv1\pmod{p^2}\) 再次进入 a=1 p-primary hard branch。该结论仍只是
+canonical arithmetic dispatch，尚缺连续 macro 的 E1--E4。
 若它还重复进入 \(L\equiv1\pmod{p^2}\) 的 \(a_0=1\) hard branch，写
 \(L=1+p^2\chi\)，则实际 child 还必须满足一条新的模 \(p^2\) lifted congruence
 \[
