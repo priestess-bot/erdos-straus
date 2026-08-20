@@ -87,10 +87,46 @@ package 文件被静态改写，却不能验证 producer 穷尽、normalizer 总
 此外，交付 patch 把当前仓库的 `README.md` 作为 `/dev/null` 新文件创建，`git apply --check`
 在真实基线失败；它没有修改上述所需合同接口。故该 patch 不能作为本仓库 F1 定理的实现。
 
-## 4. 当前处置与后续可接纳形式
+### 3.5 解压主证明的逐项裁定
+
+下表复查解压材料
+[`archive/f1-reachable-state-exhaustion-candidate-2026-08-20/source/docs/F1-reachable-state-exhaustion-closure-2026-08-20.md`](archive/f1-reachable-state-exhaustion-candidate-2026-08-20/source/docs/F1-reachable-state-exhaustion-closure-2026-08-20.md)
+的各个证明单元，而不是只检查其 manifest 的自洽性。
+
+| 包内单元 | 裁定 | 原因与可保留内容 |
+|---|---|---|
+| 第 1 节 state / `Reach_p` 定义 | 不可作为 F1 前提 | `legal persistent selector state` 已要求 normalizer 返回 owner 与 digest 验证；因此它把未分类 E3 target 排除在论域外。 |
+| F1-L1 producer exhaustion | 未建立 | M3 firewall 是对未来合并的 fail-closed 政策，不是当前全部 constructor 与 successor serializer 的独立枚举。 |
+| F1-L2 nonpersistent isolation | 仅条件性成立 | 若两个实际 enqueue gate、artifact tag 与 receipt schema 已被定义并强制，则隔离结论成立；当前合同尚无该完整机制。 |
+| F1-L3 verified-header extraction | 未构造 | 包只有函数名和输入意图，没有 header schema、extractor、异常/拒绝语义或对所有 E3 target 的总性证明。 |
+| F1-L4 normalizer totality | 未建立 | 16 个 owner 名称不是 16 个谓词；包没有给出 `V_i`、guard partition 或 residual branch 的全称覆盖证明。 |
+| F1-L5 first-match uniqueness | 条件性正确 | 一旦已知集合 `A_S = {i : V_i(S)}` 非空，最小下标规则确实给出唯一 owner。这是可复用的组合引理，不是 totality。 |
+| F1-L6 target re-entry | 未建立 | admission 在写队列前要求 normalizer 成功，因而只能得到“已经分类的 target 重新分类成功”，不能排除未知 target。 |
+| 第 8 节 trace induction | 仅加强合同下有效 | 归纳步骤依赖 L1、L3、L4、L6；在这些作为公理的封闭队列模型中形式上无误，但没有从 actual legal successor 到该模型的桥梁。 |
+| 第 10、12 节 | 接纳为项目组织结论 | O1 分解、F1 与 F2/F3 的边界、以及新增 constructor 必须重开 F1，均可作为后续证明的治理规则。 |
+
+因此，包中真正已证明的数学核最多是条件性组合命题
+
+\[
+A_S\ne\varnothing
+\quad\Longrightarrow\quad
+\exists!j=\min A_S,
+\]
+
+而 F1 所需的非平凡方向是对每个独立产生的 legal E3 target 证明
+\(A_S\ne\varnothing\)。该方向未在包内给出。
+
+## 4. 规范处置、归档及后续可接纳形式
 
 本包不作为 `t6-proof-frontier-v3.json`、`f1-reachable-state-exhaustion-v1.json` 或 F1 closure
 claim 合入。现有 `data/t6-proof-frontier-v2.json` 保持 F1 为 `OPEN`，且不删除任何 active gap。
+
+原始 ZIP 已作为字节级证据保留在
+[`erdos-straus-F1-reachable-state-exhaustion-all-outputs.zip`](erdos-straus-F1-reachable-state-exhaustion-all-outputs.zip)；
+完整解压的可检索源码视图和输入完整性说明在
+[`archive/f1-reachable-state-exhaustion-candidate-2026-08-20/`](archive/f1-reachable-state-exhaustion-candidate-2026-08-20/)。
+归档进入项目历史并不等于接纳其 theorem status；规范进展仍以本报告、
+[T6 证明边界](T6-proof-boundary-2026-08-20.md) 和根目录 README 为准。
 
 未来若要将 F1 降为真正的 `CLOSED_CONTRACT_LEVEL`，至少需要：
 

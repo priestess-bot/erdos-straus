@@ -110,6 +110,11 @@ F1 未完成以前，“下面的列表是所有剩余数学缺口”只能理�
 owner digest 与 enqueue gate 接入当前状态合同；它也只假设 15 个 registry producer，而没有独立
 枚举全部 constructor。因此该闭合结论未被接纳，F1 保持 `OPEN`。完整依据、输入完整性与
 可接纳的后续接口见 [F1 reachable-state exhaustion 包复核](F1-reachable-state-exhaustion-package-review-2026-08-20.md)。
+该包已解压并以未接纳候选形式保存在
+[`archive/f1-reachable-state-exhaustion-candidate-2026-08-20/`](archive/f1-reachable-state-exhaustion-candidate-2026-08-20/)。
+它能保留的正面内容仅是 O1 的 F1/F2--F3 分解、future-constructor 重开规则，以及在已知
+至少一个 guard 命中时的 ordered-first-match 唯一性；这些是 F1 的设计约束，不是
+reachable-state exhaustion 定理。
 
 ### T6-F2：non-proper dispatch totality
 

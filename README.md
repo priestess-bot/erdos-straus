@@ -86,6 +86,27 @@ L_\omega\equiv1\pmod{p^2}.
 complete-excess 重算；但尚未提供连续的 E1--E4 receipt 或全称 QC1/TR1 exit。因此它不是
 T6、O2 或全局 selector 的闭合结论。
 
+### 最新证明包复查与归档（2026-08-20）
+
+`T6-F1-REACHABLE-STATE-EXHAUSTION` 的候选闭合包已完整解压、逐项复查并归档。复查结果
+没有新增已闭合定理：包中把 `legal persistent selector state` 预先定义为 normalizer 已成功
+给出 owner 的状态，又据此推出所有状态有 owner；同时它把 producer 穷尽限制为预设的 15 条
+registry edge，未从当前全部 constructor 独立导出。因此 F1 仍是 `OPEN`，T6 的全局 selector
+状态不变。
+
+本次可保留的实质性进展是把 F1 的证明门收紧为可执行的四步：先独立定义 persistent queue、
+header extractor 和拒绝路径；再枚举每个实际 constructor 的 guard partition；随后证明每个
+nonterminal E3 target 至少命中一个 family predicate；最后才用 target re-entry 与 trace induction
+把该覆盖提升到全部可达状态。包中的 O1 分解、future-constructor 重开规则和“已知命中时的
+first-match 唯一性”被保留为这条路线的设计约束，而不冒充 F1 closure。
+
+原始证据包与解压源码在
+[`docs/archive/f1-reachable-state-exhaustion-candidate-2026-08-20/`](docs/archive/f1-reachable-state-exhaustion-candidate-2026-08-20/)；
+逐引理裁定见
+[`docs/F1-reachable-state-exhaustion-package-review-2026-08-20.md`](docs/F1-reachable-state-exhaustion-package-review-2026-08-20.md)，
+规范 frontier 见
+[`docs/T6-proof-boundary-2026-08-20.md`](docs/T6-proof-boundary-2026-08-20.md)。
+
 精确的冻结 family/edge 清单、立即闭合项和五个剩余 frontier theorem 见
 [`data/t6-proof-frontier-v2.json`](data/t6-proof-frontier-v2.json) 与
 [`docs/T6-proof-boundary-2026-08-20.md`](docs/T6-proof-boundary-2026-08-20.md)。原始 acceptance-gate
