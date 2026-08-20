@@ -105,6 +105,12 @@ S\text{ 在 terminal-first 后恰属于一个登记 family}.
 F1 未完成以前，“下面的列表是所有剩余数学缺口”只能理解为当前登记清单，不能理解为
 语义上绝对穷尽。
 
+**2026-08-20 F1 包复核。** 外部候选包曾把 F1 标为 `CLOSED_CONTRACT_LEVEL`，但其
+`legal persistent state` 定义预设 normalizer 已成功分类，且未把 header extractor、normalizer、
+owner digest 与 enqueue gate 接入当前状态合同；它也只假设 15 个 registry producer，而没有独立
+枚举全部 constructor。因此该闭合结论未被接纳，F1 保持 `OPEN`。完整依据、输入完整性与
+可接纳的后续接口见 [F1 reachable-state exhaustion 包复核](F1-reachable-state-exhaustion-package-review-2026-08-20.md)。
+
 ### T6-F2：non-proper dispatch totality
 
 必须证明每个已分类、非 proper-root 的非终端状态都 terminal 或有完整 E1--E5 successor。
