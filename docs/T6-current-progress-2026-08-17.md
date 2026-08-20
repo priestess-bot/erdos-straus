@@ -1,7 +1,8 @@
 # T6 Global Selector 当前进度（复核整理版）
 
-> 复核日期：2026-08-17
-> 文档角色：T6 的状态入口；技术推导和候选引理见 [T6-V1.md](T6-V1.md)。
+> 原始复核日期：2026-08-17
+> 边界裁定更新：2026-08-20
+> 文档角色：T6 的历史技术入口；规范状态见 [T6 证明边界](T6-proof-boundary-2026-08-20.md)。
 > 结论状态：`T6_GLOBAL_SELECTOR_TOTALITY = OPEN`。本页不把 T6、任一 high-support exit 或 Erdős--Straus 猜想标记为已证明。
 
 ## 1. 当前结论
@@ -22,6 +23,14 @@
 [旗舰证明纲领](../concepts/flagship-proof-program-2026-08-16.md) 和
 [状态合同](../concepts/denominator-escape-state-contract.md)。
 
+**2026-08-20 规范裁定。** T6 之前的证明前提冻结为有显式作用域的
+`T1v1--T5v1`；当前能直接完成的 T6 项冻结为 `M0--M7`。其中只有 M0 是完整的
+root terminal-or-edge selector，M1--M3 是 closed-world/准入基础设施，M4--M7 是
+`ESTABLISHED_ARITHMETIC_ONLY`，不得登记为 recursive edge。剩余证明恰由
+`F1--F5` 管理；机器事实源是 `data/pre-t6-contract-kernel-v1.json` 与
+`data/t6-proof-frontier-v2.json`。这里的“恰由”只指冻结 grammar 的账本归属；F1 未证前，
+不声称实际语义可达域已经穷尽。
+
 目前已经建立的是“已承认 recursive edge 必然下降”，而不是“每个 nonterminal state 都已有边”：
 
 \[
@@ -41,18 +50,20 @@
 
 | 项目 | 当前状态 | 已接纳范围 | 仍未覆盖的部分 |
 |---|---|---|---|
-| T1 / H4 clean \(q\) | 相对闭包已建立 | 归档的 actual arm 与其具名 receipt | 其它 H4 selector branch、后续 F/G 出口 |
-| T2 | 当前具名 atomic surface 闭合；full open | H4 \(a=1\) 与 c=8 double-low 两个 `v1` arm 恰好穷尽当前 taxonomy | future raw arm、pooled-capacity、输入覆盖与全域 admission |
-| T3 | 抽象命题开放；当前具名图中不可达 | 当前 15 个 concrete generators 都保持 \(W=\operatorname{Sol}(p)\)，无 nontrivial-mark seed | 任意 future marked edge 的 serializer、membership 与 lift |
-| T4 | ordinary \(q\ge1\) 相对闭包已建立 | actual terminal-first ordinary G 统一进入同一个 p-only fresh full-carrier root，并通过 origin-normalized 首条 local edge | nontrivial mark、首条边之后的 Type-I totality |
-| T5 | 合同层闭合 | 所有 contract-recognized persistent edge 的七元势严格下降 | 任何 E1--E4 candidate 自动有 ticket，或 selector totality |
-| 初始 \(q=1\) 根 | 已闭合 | 每个核心 \(p\) 均按 \(X=(p+3)/4\) 分派为 gap-3 root terminal，或 ordinary G 到 full-carrier 的 actual E1--E5 handoff | handoff 后 Type-I totality 与全局 reachable-state exhaustion |
-| T6 | 开放 | terminal-first 与五类输出的验收规则 | 每个实际可达 nonterminal state 的 terminal 或 verified successor |
+| `T1v1` / H4 clean \(q\) | `CLOSED_RELATIVE` | actual、parent-anchored、top-capacity、\(a_{\rm alt}=1\) receipt 的相对宏；与 T2v1/T5v1 合用时完成该 arm 的 admission/ticket | 其它 H4 branch 与 target 后续 totality，由 F2 管理 |
+| `T2v1` | `CLOSED_PHASE_LOCAL` | H4 \(a=1\) 与 conditional c=8 double-low 两个 arm 的有限 receipt grammar | 所有 raw path、所有 c=8 parent 与 future atomic constructor 不在 v1 量词内 |
+| `T3v1` | `CLOSED_CURRENT_GRAPH` | initializer 与冻结的 15 个 edge generator 均不产生 nontrivial mark；路径归纳给出当前图不可达 | semantic reachable-state exhaustion 与 future marked constructor |
+| `T4v1` | `CLOSED_RELATIVE` | actual terminal-first ordinary \(q\ge1\) G 统一进入 p-only fresh full-carrier root，并完成首条严格 segment | nontrivial mark 与 post-handoff Type-I totality |
+| `T5v1` | `CLOSED_CONTRACT_LEVEL` | 所有 contract-admitted `verified_edge` 的七元势严格下降 | edge existence、E1--E4 candidate 自动获票、selector totality |
+| `T6-M0` 初始根 | `ESTABLISHED` | 每个核心 \(p\) 的 \(q=1,m=3,X=(p+3)/4\) terminal-or-edge 分派 | handoff 后 totality 与全局 reachable-state exhaustion |
+| `T6-M1--M3` | `ESTABLISHED` | 冻结 family/edge inventory、current-mark invariant、constructor admission firewall | 只属 closed-world/仓库准入闭包，不是语义穷尽 |
+| `T6-M4--M7` | `ESTABLISHED_ARITHMETIC_ONLY` | \(m=3,q=5\) raw policy、p-block elimination、channel partition 与 \(p^2\) residual isolation | 连续 E1--E4、QC1/TR1、gate 空性/terminal/paid exit |
+| T6 | `OPEN` | terminal-first 与 E1--E5 验收规则 | F1--F5 全部完成后方可闭合 |
 
-closed-world 审计说明 full T2 与 nontrivial T3 不是**当前具名图**的 live blocker；但 future
-selector 若新增 atomic arm 或 marked generator，就必须重开相应义务。其它 T1 input、c=8
-outgoing existence、一般 overflow 与 high-support 分支仍没有全局归约定理，不能把 T6 缩写为
-只剩 proper-root。
+closed-world 审计说明 `T2*` 与 `T3*` 的 future-constructor 强版本不是**冻结具名图**的
+live blocker；任何新增 atomic/marked constructor 必须先通过 admission firewall，并自动重开
+相应义务。其它 H4 input、c=8 outgoing existence、一般 overflow、post-G 与 high-support 分支
+仍没有全局归约定理，不能把 T6 缩写为只剩 proper-root，更不能缩写为只剩一个 \(p^2\) gate。
 
 ## 3. 已确认不能使用的捷径
 
@@ -410,18 +421,26 @@ QC1 或 T6 的闭合。同一 high-gap 子支还满足 \(p>2h\)，故 actual \(D
 \(p=20\,065\,847\,377\) 数值线索已被精确反解：它不满足 actual root divisibility，且有
 gap-3 Type II terminal，被 terminal-first 抢占，故已从 proper-root evidence 中删除。
 
-## 6. 下一批可判真假的问题
+## 6. 冻结后的五个证明前沿
 
-1. 从 positive-\(q\) 已接入的首条 local edge 继续证明后续 Type-I totality。
-2. 将 high-support dispatch 表限制在已知实际 state class，逐行产出 terminal、完整 E1--E5
-   receipt 或唯一的 `MINIMAL_SELECTOR_GAP`。
-3. 对 \(k>1\)，证明某个 \(q\mid k\) 的 provenance/physicalization，或从 \(D_*\) 构造
-   合法 terminal / E1--E5 successor；仅构造 \((p,R_k,K_k)\) 不够。
-4. 对每个 actual c=8 parent，证明 high-\(q\) double-low label 或其它 verified outgoing edge
-   存在；有限 controls 中没有 dead end 不能替代该量词。
+1. `T6-F1-REACHABLE-STATE-EXHAUSTION`：从合法 constructor 独立归纳，证明每个 actual
+   reachable nonterminal state 恰进入一个登记 family；不能从 taxonomy 反推语义穷尽。
+2. `T6-F2-NONPROPER-DISPATCH-TOTALITY`：统一关闭其它 H4、post-G Type I、\(A>1\)
+   overflow、high-support、atomic target 和所有 c=8 parent。
+3. `T6-F3-PROPER-ROOT-PHYSICALIZATION`：对每个 \(k>1\) proper-root 给出 terminal 或完整
+   E1--E5 successor；\(m=3,q=5\) 的 \(L_\omega\equiv1\pmod{p^2}\) 仅是其中一个 residual gate。
+4. `T6-F4-SELECTOR-ASSEMBLY-AND-LIFTS`：固定 branch precedence、tie-break、terminal lifts
+   和单一 \(\mathbb N^7\) 强归纳，组装真正的确定性 selector。
+5. `T6-F5-INDEPENDENT-CLOSURE-AUDIT`：在完整 checkout 上独立 replay 所有 receipt、核对
+   v1/v2 inventory，并只在全部 acceptance gate 有证据后升级状态。
+
+精确量词、八个 active mathematical gap 的唯一 owner 和验收门见
+[T6 证明边界](T6-proof-boundary-2026-08-20.md)。
 
 ## 7. 参考入口
 
+- [T6 证明边界（2026-08-20）](T6-proof-boundary-2026-08-20.md)
+- [pre-T6 合同内核闭包（2026-08-20）](pre-T6-contract-kernel-closure-2026-08-20.md)
 - [T6 证明工作包复核与合并记录](T6-proof-workfiles-package-audit-2026-08-18.md)
 - [T6 全闭合尝试审计](T6-closure-attempt-audit-2026-08-17.md)
 - [T2/T5 合并复核](T2-T5-full-integration-review-2026-08-17.md)

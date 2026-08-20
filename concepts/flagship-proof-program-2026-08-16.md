@@ -3,11 +3,10 @@ kind: concept
 concept_id: flagship-proof-program-2026-08-16
 title: 从 normal form 到全局 selector 的六个旗舰命题
 summary: >-
-  核验截至 2026-08-17 的仓库前沿后，将最终双出口 F0 与六个可判真假的旗舰命题
-  T1--T6 固定为主线；T1 的 actual a_alt=1 clean-q 相对宏闭包、T4 的 ordinary q>=1 G
-  full-carrier fresh-source 相对闭包、T2 的有限 v1 atomic admission grammar，以及 T5 的
-  合同层 E5 良基势均已建立。它们不替代其它 H4 branch、非平凡 mark、全域 atomic 覆盖或
-  selector totality。其余内容记录 H4、atomic split、Fourier/容量、外部源和 lift 路线的已知边界。
+  核验截至 2026-08-20 的仓库前沿后，将已证明的 pre-T6 合同内核冻结为 T1v1--T5v1，
+  将历史强版本 T1*--T3* 的未覆盖量词迁入 T6 的 reachable-state 与 family-totality
+  frontier。T1v1、T4v1 是相对闭包，T2v1 是有限 receipt grammar，T3v1 是冻结具名图
+  的 mark 不变量，T5v1 是合同认可边的 N^7 良基性；均不替代 total selector。
 topics:
 - research-map
 - proof-program
@@ -61,14 +60,33 @@ sources:
 - claim: type-I-g-anchor-q-supported-p14281-full-scale-exclusion
   role: full-scale-Q-supported-external-source-boundary
 visibility: public
-last_checked: '2026-08-17'
+last_checked: '2026-08-20'
 ---
 
 # 从 normal form 到全局 selector 的六个旗舰命题
 
+## 2026-08-20 的版本化裁定
+
+本文件保留 2026-08-16--17 的推导历史，但主线编号现在采用下列无歧义解释：
+
+| 编号 | 冻结状态 | 量词边界 |
+|---|---|---|
+| `T1v1` | `CLOSED_RELATIVE` | H4 clean-\(q\)、\(a_{\rm alt}=1\) 的书面 guard；其它 H4 为 T6-F2 |
+| `T2v1` | `CLOSED_PHASE_LOCAL` | H4 a=1 与 conditional c=8 double-low 的有限 receipt grammar |
+| `T3v1` | `CLOSED_CURRENT_GRAPH` | initializer 与当前 15 个 edge generator 生成的冻结图无 nontrivial mark seed |
+| `T4v1` | `CLOSED_RELATIVE` | ordinary \(q\ge1\) G fresh-source handoff 与首条严格 segment |
+| `T5v1` | `CLOSED_CONTRACT_LEVEL` | 每条合同认可 `verified_edge` 严格降低固定 \(\mathbb N^7\) 势 |
+| `T6` | `OPEN` | 每个 actual reachable nonterminal state 的 terminal 或 verified successor |
+
+历史强版本 `T1*`（所有 H4）、`T2*`（所有 raw/future atomic）和 `T3*`（任意未来 mark）
+不再与 v1 共享“已闭合/开放”的混合状态。它们是研究扩展，分别由 T6-F1、T6-F2 或
+constructor admission firewall 接管。精确闭包证明和机器清单见
+[pre-T6 合同内核闭包](../docs/pre-T6-contract-kernel-closure-2026-08-20.md) 与
+[T6 证明边界](../docs/T6-proof-boundary-2026-08-20.md)。
+
 ## 核验结论与范围
 
-本文是截至 **2026-08-17** 的仓库内前沿核验和后续研究议程，不是 Erdős--Straus
+本文保留截至 **2026-08-17** 的历史推导，并按 **2026-08-20** 的版本化裁定维护后续研究议程，不是 Erdős--Straus
 猜想已获证明的声明。文中标为“已建立”的内容，指相应 claim 卡已经给出仓库内推导和
 记录的审阅状态；“待证”均是尚未闭合的全称命题。所有递归边仍须遵守
 [分母逃逸状态合同](denominator-escape-state-contract.md)中的 E1--E5，而不能以有限
@@ -136,12 +154,15 @@ E\mid4K^2,\qquad E\equiv1\pmod R,\qquad 2\mid E,
 [Type I 目标除子与偶终端选择器](../claims/type-I-target-divisor-even-terminal-selector.md)
 建立。该卡片**没有**证明每个 \(p\) 都可选到 \(m,e,E\)；因此 F0 仍是旗舰开放命题。
 
-## 六个主线命题
+## 六个主线命题的历史推导与冻结解释
 
 下面的六条以“证明或给出真实反例”为完成标准。它们刻意不再把“增加若干参数族”当作
 主线交付物。
 
-### T1: H4-Closure
+### T1v1 / T1*: H4-Closure
+
+**冻结解释。** 本节中已经建立的 `a_alt=1` clean-q relative macro 是 T1v1；“所有 H4
+branch 及 descendants 均有 total exit”是 T1*，当前不属于 pre-T6 内核，并由 T6-F2 负责。
 
 **命题。** 对任意满足 actual high-\(C=2\)、19-phase H4 provenance 的合法 source
 state，clean \(q\)-word 的 endpoint 经 terminal-first 处理后必属于以下三者之一：
@@ -207,7 +228,10 @@ source/receipt acceptance。见
 严格算术余量和双侧 complete-excess payload，却无法通过 source/provenance、normal-form
 或 receipt serializer 准入，也没有合法 terminal。
 
-### T2: Atomic-Admission
+### T2v1 / T2*: Atomic-Admission
+
+**冻结解释。** 两个具名 arm 的有限 grammar 是 T2v1。对所有 actual raw path、所有 c=8
+parent 或未来 atomic constructor 的全域 admission 是 T2*，没有由 v1 推出。
 
 **命题。** 对任意 actual raw legal path 到 \(x+y=R\) 的节点，若其 canonical maximal
 complete-excess decomposition 满足
@@ -256,7 +280,11 @@ acceptance。见
 canonical owner，或某 actual split 在不读取未知目标解的前提下完成分类后，仍无法通过
 source/target normal form 或 receipt serialization。
 
-### T3: Marked-Terminal
+### T3v1 / T3*: Marked-Terminal
+
+**冻结解释。** T3v1 是 closed-world 路径归纳：root mark 为 \(\operatorname{Sol}(p)\)，
+initializer 与 15 个登记 edge 均不指向 nontrivial marked family，因此该 family 在冻结图中
+不可达。任意未来 mark 的 membership/lift 是 T3*；新增 marked target 前必须重开该义务。
 
 **命题。** 对 Type II gcd-shadow phase 实际使用的每一种 mark \(\theta\)，给出可检验的
 必要充分成员资格条件
@@ -285,7 +313,10 @@ generalized dyadic candidate 或任意新方程解直接当作根证书。见
 但该解不满足 mark。这样的例子会迫使状态增强或改变递降，而不是把普通 terminal
 直接当作闭合。
 
-### T4: Fresh-G-Handoff
+### T4v1: Fresh-G-Handoff
+
+**冻结解释。** T4v1 只关闭 ordinary G endpoint 到 fresh full-carrier root 及书面首段的
+相对 E1--E5 合法性；post-handoff Type I totality 仍是 T6-F2。
 
 **命题。** 每个 actual、terminal-first 后仍存活的 ordinary \(q\ge1\) G core-prime
 endpoint 都有只依赖 \(p\)、不读取未知目标 certificate、且不复用 Type II source support
@@ -345,7 +376,10 @@ T6 仍需对每个递归可达 Type I state 给出 total selector，包含后续
 image 的 totality。旧 canonical root 的互素障碍仍是为什么必须使用 fresh scope 的结构性
 理由，见 [canonical-root support disjointness](../claims/type-II-q-one-canonical-root-slice-support-disjointness.md)。
 
-### T5: Global-Well-Foundedness
+### T5v1: Contract-Level Well-Foundedness
+
+**冻结解释。** T5v1 是 edge admission theorem，不是 edge existence theorem。它证明
+`verified_edge(S,T)` 蕴含固定势下降；“每个非终端 S 都有这样的 T”仍完全属于 T6。
 
 **命题。** 构造一个取值于有限词典序或 \(\omega^k\) 的全局势 \(\Pi\)，使最终 proof
 graph 中每条非 terminal verified edge 都满足
@@ -384,8 +418,8 @@ E1--E4 candidate 才能成为 `verified_edge`；因此所有**合同认可**的�
 其中最后一项是完整 legal state edge。\(\Sigma\) 不能读取“哪个候选最终成功”的未知
 目标解，不能依赖有限计算上界，并且必须对递归产生的新状态仍有定义。
 
-**依赖。** T1--T4 提供覆盖各类端点的候选输出，T3 处理 marked terminal，T5 给出
-终止性。若这些合同和 totality 均建立，强归纳才可推出 F0。当前的 terminal-first selector
+**依赖。** T1v1--T4v1 只提供各自 scoped 输入域的候选输出或图不变量，T5v1 给出
+已 admission 边的终止性。还必须完成 F1--F5 的 totality、lift 与独立审计，强归纳才可推出 F0。当前的 terminal-first selector
 合同只规定了何时可接受候选；它不声称所有 state 都已有 terminal 或 verified edge。见
 [unified terminal-first selector contract](../claims/type-I-unified-terminal-first-selector-contract.md)。
 
@@ -393,16 +427,17 @@ E1--E4 candidate 才能成为 `verified_edge`；因此所有**合同认可**的�
 
 \[
 \begin{array}{c}
-\text{H4 arithmetic strictness} \Rightarrow \mathrm{T1}\\
-\text{conditional atomic schema} \Rightarrow \mathrm{T2}\\
-\text{Type II gcd-shadow endpoints} \Rightarrow \mathrm{T3}\\
-\text{ordinary q>=1 G full-carrier root-entry} \Rightarrow \mathrm{T4\ (relative)}\\
-\mathrm{T1,T2,T3,T4}\ +\ \text{all existing verified edges}
-\Rightarrow \mathrm{T5}\Rightarrow \mathrm{T6}\Rightarrow \mathrm{F0}.
+\text{H4 clean-q scoped macro} \Rightarrow \mathrm{T1v1}\\
+\text{finite atomic receipt grammar} \Rightarrow \mathrm{T2v1}\\
+\text{frozen-graph mark induction} \Rightarrow \mathrm{T3v1}\\
+\text{ordinary q>=1 G full-carrier root-entry} \Rightarrow \mathrm{T4v1}\\
+\text{admitted-edge ticket theorem} \Rightarrow \mathrm{T5v1}\\
+\mathrm{T1v1,\ldots,T5v1}\ +\ \mathrm{F1,\ldots,F5}
+\Rightarrow \mathrm{T6}\Rightarrow \mathrm{F0}.
 \end{array}
 \]
 
-箭头表示研究依赖，不表示左端已经足以推出右端。尤其 T6 还需要一个覆盖全部递归状态的
+箭头表示研究依赖，不表示 scoped kernel 已经足以推出右端。尤其 T6 还需要 F1--F5：覆盖全部递归状态的
 selector case split。
 
 ## 次级但有价值的待证方向

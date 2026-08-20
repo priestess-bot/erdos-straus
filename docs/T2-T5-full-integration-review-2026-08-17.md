@@ -1,5 +1,21 @@
 # T2 + T5 FULL 合并复核（2026-08-17）
 
+## 2026-08-20 版本化处置
+
+本文件的原始复核结论保持不变，但命题编号不再混用：
+
+- `T2v1 = CLOSED_PHASE_LOCAL`：只指 H4 `a=1` actual arm 与 conditional c=8
+  double-low arm 的有限 receipt grammar；
+- `T2*`：所有 actual raw path、所有 c=8 parent 及 future atomic surface 的强版本，仍未
+  证明，但其未覆盖状态由 T6-F1/F2 管理，不再称作“尚未修完的 pre-T6 内核”；
+- `T5v1 = CLOSED_CONTRACT_LEVEL`：只指合同认可的 `verified_edge` 沿固定
+  \(\mathbb N^7\) 势严格下降；
+- `T6_GLOBAL_SELECTOR_TOTALITY = OPEN`。
+
+任何 future atomic constructor 必须先通过 constructor admission firewall；不允许先进入
+递归图再以后补 T2/T3、serializer、lift 或 T6 owner。机器边界见
+`data/pre-t6-contract-kernel-v1.json` 和 `data/t6-proof-frontier-v2.json`。
+
 ## 审查对象
 
 复核包为 `erdos_straus_T2_T5_FULL_2026-08-17.zip`，SHA-256 为
@@ -75,11 +91,12 @@ totality。故 T5 的闭合不会把 Erdős--Straus 猜想或 T6 标为已解决
 ## 当前状态
 
 ```text
+T1V1_TO_T5V1_PRE_T6_KERNEL          = CLOSED_WITH_EXPLICIT_SCOPE
 T2_ATOMIC_ADMISSION_V1              = PHASE_LOCAL_GRAMMAR_CLOSED
-T2_ATOMIC_ADMISSION_FULL            = OPEN
-T5_GLOBAL_WELL_FOUNDEDNESS           = CONTRACT_LEVEL_WELL_FOUNDEDNESS_CLOSED
-T6_GLOBAL_SELECTOR_TOTALITY          = OPEN
-ERDOS_STRAUS_CONJECTURE              = OPEN
+T2_STRONG_RESEARCH_EXTENSION        = NOT_A_KERNEL_PREREQUISITE
+T5_GLOBAL_WELL_FOUNDEDNESS_V1       = CONTRACT_LEVEL_WELL_FOUNDEDNESS_CLOSED
+T6_GLOBAL_SELECTOR_TOTALITY         = OPEN
+ERDOS_STRAUS_CONJECTURE             = OPEN
 ```
 
 验证入口：

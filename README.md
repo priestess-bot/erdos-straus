@@ -4,12 +4,12 @@
 可核查数学主张和计算复现。`研究进展综述.md` 是阅读入口；`papers/`、
 `claims/`、`concepts/` 中的 Markdown/YAML 文件是知识库的事实源。
 
-当前文献快照审计至 2026-07-31；当前证明前沿和本轮旗舰命题核验至 2026-08-19。论文卡、
+当前文献快照审计至 2026-07-31；当前证明前沿和本轮旗舰命题核验至 2026-08-20。论文卡、
 主张卡、概念卡及各状态的实时数量以 `python scripts/kb.py status` 和自动生成的
 `index/theorem-ledger.md` 为准，不在入口文档手工复制。其中被撤回论文和存在关键证明
 缺口的预印本仍会收录，但用独立状态标出。
 
-## 当前旗舰命题（核验至 2026-08-17）
+## 当前旗舰命题（合同内核核验至 2026-08-20）
 
 对核心素数 \(p\equiv1\pmod{24}\)，最终目标是下列双出口命题：
 
@@ -35,18 +35,23 @@ E\mid4K^2,\quad E\equiv1\pmod R,\quad 2\mid E,\quad E\le4K-2R.
 
 | ID | 状态 | 核心断言 |
 |---|---|---|
-| T1 H4-Closure | 相对闭包已建立 | 对 actual proper-overlap、top-capacity、\(a_{\rm alt}=1\) receipt，已验证的 upstream provenance 与 priority miss 之后，clean \(q\)-macro 给出 E1--E5 的 phase-local `candidate_transition`；其它 H4 selector branch 与全局 admission 仍须覆盖。 |
-| T2 Atomic-Admission | 当前具名 atomic surface 闭合；全域仍开放 | H4 `a=1` actual arm 与 c=8 double-low conditional arm 已冻结为 `v1` grammar，并穷尽当前 taxonomy 的 atomic families；future raw arm、pooled-capacity one-use 与输入覆盖仍未闭合。 |
-| T3 Marked-Terminal | 抽象命题开放；当前具名图中不可达 | 当前 15 个 concrete edge generators 都保持 \(W=\operatorname{Sol}(p)\)，故 closed-world named reachability 没有 nontrivial-mark seed；future marked edge 仍须重开 T3。 |
-| T4 Fresh-G-Handoff | ordinary \(q\ge1\) 相对闭包已建立 | 对每个 actual terminal-first ordinary G endpoint，q=1 与 positive-q adapter 都进入同一个 target-independent full-carrier fresh root，并通过 origin-normalized 首条 local edge；非平凡 mark、后续 Type I totality 与全局 selector 仍开放。 |
-| T5 Global-Well-Foundedness | 合同层闭合 | 当前五类 selector 输出中，只有携带 `OUTER_RANK_DROP`、`PHASE_DROP` 或 `LOCAL_DROP` 的 E1--E4 candidate 才能成为 verified edge；T6 仍须证明每个实际状态有这样的输出。 |
-| T6 Global-Selector | 开放 | 确定性 selector 在每个核心 prime / legal state 输出 terminal 或一条可提升、严格下降的 verified edge。 |
+| T1v1 H4 clean-q closure | `CLOSED_RELATIVE` | 对 actual proper-overlap、top-capacity、\(a_{\rm alt}=1\) receipt，已验证 upstream provenance 与 priority miss 后，clean \(q\)-macro 给出书面 guard 下的 phase-local terminal 或 E1--E5 candidate；其它 H4 branch 由 T6-F2 接管。 |
+| T2v1 Atomic-Admission | `CLOSED_PHASE_LOCAL` | 冻结 H4 `a=1` actual arm 与 c=8 double-low conditional arm 的有限 receipt grammar；不声称所有 c=8 parent、所有 raw path 或未来 atomic constructor 已覆盖。 |
+| T3v1 Mark Invariant | `CLOSED_CURRENT_GRAPH` | initializer 与当前 15 个 registered edge generators 均不产生 nontrivial mark，故冻结具名图中该 family 不可达；新增 marked constructor 会自动重开义务。 |
+| T4v1 Fresh-G-Handoff | `CLOSED_RELATIVE` | ordinary \(q\ge1\) G endpoint 在书面 guard 下进入 target-independent full-carrier fresh root 并完成首条严格 segment；post-handoff Type I totality 仍属 T6-F2。 |
+| T5v1 Well-Founded Admission | `CLOSED_CONTRACT_LEVEL` | 所有合同认可的 `verified_edge` 都携带固定 ticket，并严格降低 \(\mathbb N^7\) 势；不推出每个非终端状态都存在 edge。 |
+| T6 Global-Selector | `OPEN` | 确定性 selector 在每个核心 prime / actual reachable legal state 输出 terminal 或一条可提升、严格下降的 verified edge。 |
 
-六条命题的精确量词、现有证据、尚缺合同、反证标准、依赖顺序和其余次级研究方向见
+这些编号现在指向冻结的 pre-T6 合同内核。历史强版本 `T1*--T3*` 不再与已闭合的
+v1 命题共用状态：未覆盖的 H4、raw atomic 和 future mark 量词分别由 T6 的 family-totality、
+reachable-state exhaustion 与 constructor admission firewall 接管。精确迁移和 closed-world
+证明见 [`docs/pre-T6-contract-kernel-closure-2026-08-20.md`](docs/pre-T6-contract-kernel-closure-2026-08-20.md)，
+机器事实源见 [`data/pre-t6-contract-kernel-v1.json`](data/pre-t6-contract-kernel-v1.json)。
+
+六条命题的历史推导、证据和反证标准仍见
 [`concepts/flagship-proof-program-2026-08-16.md`](concepts/flagship-proof-program-2026-08-16.md)。
-T1 与 T4 的上述结论都只是限定输入域的相对闭包，不推出全局 selector 或猜想本身；
-T2 的全域版本、抽象 T3 与 T6 仍为开放研究命题；T5 已在当前状态合同的 E5 admission scope 内闭合，
-但不提供 selector totality。T4 的独立冻结证明包复核见
+T1v1 与 T4v1 都只是限定输入域的相对闭包；T2v1 是有限 grammar；T3v1 是冻结图不变量；
+T5v1 只提供 edge-admission 良基性。它们都不提供 selector totality。T4 的独立冻结证明包复核见
 [`docs/q1-fresh-handoff-proof-package-audit-2026-08-17.md`](docs/q1-fresh-handoff-proof-package-audit-2026-08-17.md)；
 T2/T5 的本次合并边界见
 [`docs/T2-T5-full-integration-review-2026-08-17.md`](docs/T2-T5-full-integration-review-2026-08-17.md)。
@@ -55,12 +60,17 @@ T2/T5 的本次合并边界见
 本轮 T6 全闭合尝试、新增子定理与仍缺量词见
 [`docs/T6-closure-attempt-audit-2026-08-17.md`](docs/T6-closure-attempt-audit-2026-08-17.md)。
 
-### T6 近期进展截面（2026-08-19）
+### T6 近期进展截面与证明边界（2026-08-20）
 
-T6 仍为 `OPEN`。已闭合的局部验收项是每个核心素数的规范初始状态 serializer：
+T6 仍为 `OPEN`。已闭合的完整局部 selector 项是每个核心素数的规范初始状态 serializer：
 取 \(q=1\)、\(m=3\)、\(X=(p+3)/4\)，若 \(X\) 有 \(2\pmod3\) 的素因子则给出
 直接 Type II terminal；否则得到 ordinary G receipt，并进入既有 full-carrier
 Type I handoff。该分派只闭合初始根，不声称 handoff 后的 Type I 路径 total。
+
+本次还机械闭合了冻结 transition surface 的 inventory、当前图 nontrivial-mark unreachability
+以及 future atomic/marked constructor 的 admission firewall。后者把原 O4 从一个悬空流程
+缺口改为“未补 T2/T3、serializer、lift 和 T6 owner 就拒绝合并”的可执行规则；它只对冻结
+v1 有效，新增构造器时自动重开。
 
 本轮进一步收缩了 proper-root \(m=3\)、\(q=5\) rank-stutter 子分支。对其中的实际
 raw occurrence，现有确定性策略至多消费两个因子即可到达 p-free primitive node；full-capacity
@@ -76,10 +86,12 @@ L_\omega\equiv1\pmod{p^2}.
 complete-excess 重算；但尚未提供连续的 E1--E4 receipt 或全称 QC1/TR1 exit。因此它不是
 T6、O2 或全局 selector 的闭合结论。
 
-精确的 acceptance-gate 状态和未闭合量词见
-[`data/t6-selector-obligation-ledger-v1.json`](data/t6-selector-obligation-ledger-v1.json) 与
-[`docs/T6-selector-obligation-ledger-2026-08-18.md`](docs/T6-selector-obligation-ledger-2026-08-18.md)。
-该 p-free policy 及其 \(p^2\) canonical gate 的完整推导见
+精确的冻结 family/edge 清单、立即闭合项和五个剩余 frontier theorem 见
+[`data/t6-proof-frontier-v2.json`](data/t6-proof-frontier-v2.json) 与
+[`docs/T6-proof-boundary-2026-08-20.md`](docs/T6-proof-boundary-2026-08-20.md)。原始 acceptance-gate
+账本仍保留在 [`data/t6-selector-obligation-ledger-v1.json`](data/t6-selector-obligation-ledger-v1.json)；
+v2 不删除其中任何数学 gap，只把 O4 流程义务改造成 admission firewall，并把其余八项唯一
+映射到 F1--F3。该 p-free policy 及其 \(p^2\) canonical gate 的完整推导见
 [`claims/type-I-root-capacity-stutter-m-three-biquadratic-norm-reduction.md`](claims/type-I-root-capacity-stutter-m-three-biquadratic-norm-reduction.md)
 和 [`docs/T6-current-progress-2026-08-17.md`](docs/T6-current-progress-2026-08-17.md)。
 
@@ -90,6 +102,8 @@ python scripts/kb.py validate
 python scripts/kb.py build
 python scripts/kb.py search "half dimensional sieve"
 python scripts/kb.py status
+python reproductions/pre_t6_contract_kernel_audit.py --root .
+python -m unittest tests.test_pre_t6_contract_kernel_audit -v
 ```
 
 `build` 生成：

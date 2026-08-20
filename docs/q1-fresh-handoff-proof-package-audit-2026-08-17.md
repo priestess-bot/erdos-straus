@@ -10,8 +10,10 @@
 ```
 
 包声明的基线为提交 `47fedc2b772d6acf28a306bdbe9b1e5d5a49bfff`
-(`Archive H4 clean q relative closure`)。`unzip -t` 已通过。包内保存的六份 upstream
-Markdown 快照均与该提交及当前 `HEAD` 逐字一致：
+(`Archive H4 clean q relative closure`)。`unzip -t` 已通过。在 2026-08-17 原审计基线，
+包内保存的六份 upstream Markdown 快照均与当时 `HEAD` 逐字一致。2026-08-20 对 flagship
+文档和 state contract 加入了版本化边界/准入附录，因此这两份 current copy 不再要求与冻结
+snapshot 字节相同；数学证明仍由 archive digest、payload digest 和冻结 claim/contract 内容固定：
 
 | 快照 | SHA-256 | 结果 |
 |---|---|---|
@@ -19,15 +21,29 @@ Markdown 快照均与该提交及当前 `HEAD` 逐字一致：
 | `type-I-universal-p-source-capacity-anchor-orbit` | `08e8349d...1df421` | frozen = current |
 | `type-II-q-one-canonical-root-slice-support-disjointness` | `372b6111...3cafab8` | frozen = current |
 | `type-II-q-one-full-carrier-phase-root-entry` | `38692de5...9ae340` | frozen = current |
-| `denominator-escape-state-contract` | `88712307...f573f` | frozen = current |
-| `flagship-proof-program-2026-08-16` | `64b41f6b...bd02b` | frozen = current |
+| `denominator-escape-state-contract` | `88712307...f573f` | frozen = 2026-08-17 audit baseline；current 新增 2026-08-20 admission-firewall 附录 |
+| `flagship-proof-program-2026-08-16` | `64b41f6b...bd02b` | frozen = 2026-08-17 audit baseline；current 含 2026-08-20 boundary addendum |
 
-包的 `UPSTREAM_MANIFEST.md` 所列其余 core/first-child/downstream 依赖也与当前
-`HEAD` 相比没有自 `47fedc2` 起的内容变更。
+包的 `UPSTREAM_MANIFEST.md` 所列 core/first-child/downstream 依赖在 2026-08-17 审计时
+均未发生自 `47fedc2` 起的实质内容变更。后续文档边界更新不改变冻结包的 provenance，且不应
+再用“整个 current HEAD 与 archive 全部逐字一致”作为持续不变量。
 
-包内 `SHA256SUMS` 对全部 payload 文件通过，但它包含自身的 hash；该自指条目不匹配。
+包内 `SHA256SUMS` 对除其自身外的 payload 条目通过；它同时包含自身的 hash，而该自指条目不匹配。
 因此不能写成“内部 manifest 全部通过”。这里以外层 archive hash、成功的压缩测试和逐个
 payload hash 为 provenance；该元数据缺陷不改变证明文件或验证器的内容。
+
+### 2026-08-20 detached provenance 规则
+
+该 archive 的权威完整性链固定为：
+
+1. 外层 archive SHA-256；
+2. `unzip -t` 容器完整性；
+3. 每个非 manifest payload 的 detached/逐文件 SHA-256；
+4. 内部 `SHA256SUMS` 的非自指条目只作辅助交叉检查；
+5. `SHA256SUMS` 对自身的条目明确为 non-authoritative。
+
+CI 或文档不得再声称“内部 manifest 全部通过”。这关闭的是证据 provenance 的歧义，不会
+升级或降级 handoff 的数学结论。
 
 为使内容进入知识库全文检索，包内 `PROOF.md` 已按字节复制为
 [q=1 fresh handoff 完整证明](q1-fresh-handoff-proof-2026-08-17.md)；其 SHA-256 是
@@ -87,9 +103,11 @@ counterexample controls、source/anchor 以及 E1--E5 的 shape。报告的有�
 公式或实现错误，绝不作为全称证明。
 
 独立代码对 E5 只能检查已声明 phase rank 的局部不等式，不能凭自身建立 global policy。
-本次接纳 E5 的理由是当前
+本次接纳 E5 的理由是 2026-08-17 冻结
 [状态合同第 6.8 节](../concepts/denominator-escape-state-contract.md) 已明确纳入同一
-不可回返 policy，且该文件与冻结快照完全一致；这正是为什么结论仍限定为 relative closure。
+不可回返 policy。2026-08-20 的 current contract 只在后续新增 constructor admission
+firewall，没有改写该冻结段；因此数学依据仍由 archive payload 固定，但不再声称整份 current
+文件与快照字节一致。这正是为什么结论仍限定为 relative closure。
 
 ## 仓库同步决策
 

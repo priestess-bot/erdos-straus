@@ -99,7 +99,7 @@ sources:
 - claim: type-II-positive-q-G-full-carrier-phase-root-entry
   role: ordinary-positive-q-G-to-fresh-full-carrier-Type-I-phase-reindexing
 visibility: public
-last_checked: '2026-08-17'
+last_checked: '2026-08-20'
 ---
 
 # 分母缺陷逃逸的合法状态与转移合同
@@ -1712,6 +1712,31 @@ rank 下降支付；会丢旧 support 的 legacy carrier reset 只能进入不�
 terminal、analysis evidence、pending normalization 与 macro internal checkpoint 均不产生递归边。
 因此本合同认可的全部 persistent edges 共享同一预定义良基顺序；这不证明每个 E1--E4 candidate
 都有 ticket，selector totality 仍是独立问题。
+
+### 6.10 冻结 v1 的 constructor admission firewall（2026-08-20）
+
+本合同从本节起把“未来再补证明”改为显式的拒绝规则。冻结 v1 的合法递归面由
+`data/t6-proof-frontier-v2.json` 中的 initializer、16 个 state family 和 15 个 registered
+edge generator 定义。任何变更若新增 constructor，或使既有 constructor 产生未登记 atomic
+family / nontrivial marked family，在进入 persistent graph 以前必须同时提交：
+
+1. source/target family 注册与确定 normal form；
+2. 可重放 serializer、scope、owner 和 terminal-first priority；
+3. 需要时对 T2 receipt grammar 或 T3 mark invariant 的扩展证明；
+4. E4 lift，以及若为递归边则完整 E1--E5 和 T5 ticket；
+5. 唯一 T6 frontier owner，或 family-empty / terminal / universal-successor 闭包；
+6. 通过 `pre_t6_contract_kernel_audit.py` 及其负向测试。
+
+在上述材料齐备前，输出只能标为 `analysis_evidence` 或 `candidate_transition`，不得登记为
+`verified_edge`，也不得作为 F1 的 reachable-state exhaustion 前提。当前 initializer 和 15 个
+registered edge 的 target 均不属于 `generic_nontrivial_marked_state`；因此从根标记
+\(W_0=\operatorname{Sol}(p)\) 出发，对冻结语法图作路径长度归纳，nontrivial mark 不可达。
+这个 closed-world 不变量不声称未来 marked membership 已解决，也不声称冻结 family 已经语义
+穷尽所有 actual reachable state。
+
+该规则把旧 `GAP-O4-NEW-ATOMIC-OR-MARKED-FAMILY` 在冻结 v1 上关闭为
+`CLOSED_FOR_FROZEN_V1_BY_ADMISSION_FIREWALL`。任何新 atomic/marked constructor 都是明确的
+reopen trigger，而不是对旧闭包的静默扩张。
 
 ## 7. 明确不构成递降的对象
 

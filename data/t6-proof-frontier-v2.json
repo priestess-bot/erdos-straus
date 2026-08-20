@@ -1,0 +1,512 @@
+{
+  "frontier_id": "t6_proof_frontier_v2",
+  "frontier_version": 2,
+  "date": "2026-08-20",
+  "baseline_commit": "ef95ac0f2c3b687bb67d33dc490b248ccd8cfcb0",
+  "current_status": "OPEN",
+  "statement_boundary": "This manifest closes repository-level and closed-world obligations only. It does not prove semantic reachable-state exhaustion, a total selector, or the Erdos-Straus conjecture.",
+  "initializer": {
+    "source": "initial_core_root",
+    "targets": [
+      "type_ii_relation_g_endpoint",
+      "direct_terminal_leaf"
+    ],
+    "status": "ESTABLISHED"
+  },
+  "state_families": [
+    {
+      "id": "initial_core_root",
+      "status": "CLOSED_BY_UNIVERSAL_SUCCESSOR"
+    },
+    {
+      "id": "type_ii_relation_f_endpoint",
+      "status": "CLOSED_BY_UNIVERSAL_SUCCESSOR"
+    },
+    {
+      "id": "type_ii_relation_g_endpoint",
+      "status": "RELATIVE_EDGE_ONLY"
+    },
+    {
+      "id": "type_i_full_carrier_post_g",
+      "status": "OPEN"
+    },
+    {
+      "id": "type_i_low_support_persistent_overflow",
+      "status": "CLOSED_BY_UNIVERSAL_SUCCESSOR"
+    },
+    {
+      "id": "type_i_a_one_overflow",
+      "status": "CLOSED_BY_UNIVERSAL_SUCCESSOR"
+    },
+    {
+      "id": "type_i_a_gt_one_overflow_residual",
+      "status": "OPEN"
+    },
+    {
+      "id": "type_i_high_support_sink",
+      "status": "LOCAL_EDGE_ONLY"
+    },
+    {
+      "id": "proper_root_stutter_k_one",
+      "status": "CLOSED_BY_EMPTY_PROOF"
+    },
+    {
+      "id": "proper_root_stutter_k_gt_one",
+      "status": "OPEN"
+    },
+    {
+      "id": "c8_terminal_first_surviving_parent",
+      "status": "OPEN"
+    },
+    {
+      "id": "h4_non_v1_branch_or_descendant",
+      "status": "OPEN"
+    },
+    {
+      "id": "type_i_c2_19_macro_target",
+      "status": "OPEN"
+    },
+    {
+      "id": "t2_v1_atomic_pending_target",
+      "status": "OPEN"
+    },
+    {
+      "id": "generic_nontrivial_marked_state",
+      "status": "UNREACHABLE_IN_FROZEN_GRAPH"
+    },
+    {
+      "id": "direct_terminal_leaf",
+      "status": "TERMINAL"
+    }
+  ],
+  "registered_edges": [
+    {
+      "id": "type_ii_proper_endpoint_descent",
+      "source_family_ids": [
+        "type_ii_relation_f_endpoint"
+      ],
+      "target_family_ids": [
+        "type_ii_relation_f_endpoint",
+        "type_ii_relation_g_endpoint",
+        "direct_terminal_leaf"
+      ],
+      "guard_class": "conditional_adapter_control"
+    },
+    {
+      "id": "type_ii_gcd_shadow_endpoint_descent",
+      "source_family_ids": [
+        "type_ii_relation_f_endpoint"
+      ],
+      "target_family_ids": [
+        "type_ii_relation_f_endpoint",
+        "type_ii_relation_g_endpoint",
+        "direct_terminal_leaf"
+      ],
+      "guard_class": "actual"
+    },
+    {
+      "id": "q_one_g_full_carrier_phase_root",
+      "source_family_ids": [
+        "type_ii_relation_g_endpoint"
+      ],
+      "target_family_ids": [
+        "type_i_full_carrier_post_g"
+      ],
+      "guard_class": "actual"
+    },
+    {
+      "id": "positive_q_g_full_carrier_phase_root",
+      "source_family_ids": [
+        "type_ii_relation_g_endpoint"
+      ],
+      "target_family_ids": [
+        "type_i_full_carrier_post_g"
+      ],
+      "guard_class": "conditional_adapter_control"
+    },
+    {
+      "id": "q_one_g_c3_source_lineage_relay",
+      "source_family_ids": [
+        "type_ii_relation_g_endpoint"
+      ],
+      "target_family_ids": [
+        "type_i_full_carrier_post_g"
+      ],
+      "guard_class": "conditional_adapter_control"
+    },
+    {
+      "id": "q_one_full_carrier_second_anchor_fixed_n_macro",
+      "source_family_ids": [
+        "type_i_full_carrier_post_g"
+      ],
+      "target_family_ids": [
+        "type_i_full_carrier_post_g"
+      ],
+      "guard_class": "actual"
+    },
+    {
+      "id": "same_chart_support_promotion",
+      "source_family_ids": [
+        "type_i_low_support_persistent_overflow"
+      ],
+      "target_family_ids": [
+        "type_i_low_support_persistent_overflow"
+      ],
+      "guard_class": "actual"
+    },
+    {
+      "id": "joined_support_outer_reset",
+      "source_family_ids": [
+        "type_i_a_gt_one_overflow_residual"
+      ],
+      "target_family_ids": [
+        "type_i_low_support_persistent_overflow",
+        "type_i_a_gt_one_overflow_residual"
+      ],
+      "guard_class": "conditional_adapter_control"
+    },
+    {
+      "id": "a_one_dual_outer_reset",
+      "source_family_ids": [
+        "type_i_a_one_overflow"
+      ],
+      "target_family_ids": [
+        "type_i_low_support_persistent_overflow"
+      ],
+      "guard_class": "actual"
+    },
+    {
+      "id": "high_carrier_fixed_n_descent",
+      "source_family_ids": [
+        "type_i_a_gt_one_overflow_residual"
+      ],
+      "target_family_ids": [
+        "type_i_low_support_persistent_overflow"
+      ],
+      "guard_class": "conditional_adapter_control"
+    },
+    {
+      "id": "high_support_rank_aware_sink_bundle",
+      "source_family_ids": [
+        "type_i_high_support_sink"
+      ],
+      "target_family_ids": [
+        "type_i_high_support_sink",
+        "type_i_low_support_persistent_overflow"
+      ],
+      "guard_class": "conditional_adapter_control"
+    },
+    {
+      "id": "q_one_d_one_p_free_relay",
+      "source_family_ids": [
+        "type_i_full_carrier_post_g"
+      ],
+      "target_family_ids": [
+        "type_i_c2_19_macro_target",
+        "type_i_high_support_sink",
+        "direct_terminal_leaf"
+      ],
+      "guard_class": "actual"
+    },
+    {
+      "id": "high_c_two_three_anchor_macro",
+      "source_family_ids": [
+        "type_i_c2_19_macro_target"
+      ],
+      "target_family_ids": [
+        "type_i_c2_19_macro_target",
+        "direct_terminal_leaf"
+      ],
+      "guard_class": "conditional_adapter_control"
+    },
+    {
+      "id": "h4_a_one_atomic_macro",
+      "source_family_ids": [
+        "type_i_c2_19_macro_target"
+      ],
+      "target_family_ids": [
+        "t2_v1_atomic_pending_target",
+        "direct_terminal_leaf"
+      ],
+      "guard_class": "conditional_adapter_control"
+    },
+    {
+      "id": "c8_double_low_atomic_macro",
+      "source_family_ids": [
+        "c8_terminal_first_surviving_parent"
+      ],
+      "target_family_ids": [
+        "t2_v1_atomic_pending_target",
+        "direct_terminal_leaf"
+      ],
+      "guard_class": "conditional_adapter_control"
+    }
+  ],
+  "family_frontier_ownership": {
+    "initial_core_root": "T6-M0-INITIAL-SERIALIZER",
+    "type_ii_relation_f_endpoint": "T6-F2-NONPROPER-DISPATCH-TOTALITY",
+    "type_ii_relation_g_endpoint": "T6-F2-NONPROPER-DISPATCH-TOTALITY",
+    "type_i_full_carrier_post_g": "T6-F2-NONPROPER-DISPATCH-TOTALITY",
+    "type_i_low_support_persistent_overflow": "T6-F2-NONPROPER-DISPATCH-TOTALITY",
+    "type_i_a_one_overflow": "T6-F2-NONPROPER-DISPATCH-TOTALITY",
+    "type_i_a_gt_one_overflow_residual": "T6-F2-NONPROPER-DISPATCH-TOTALITY",
+    "type_i_high_support_sink": "T6-F2-NONPROPER-DISPATCH-TOTALITY",
+    "proper_root_stutter_k_one": "T6-F3-PROPER-ROOT-PHYSICALIZATION",
+    "proper_root_stutter_k_gt_one": "T6-F3-PROPER-ROOT-PHYSICALIZATION",
+    "c8_terminal_first_surviving_parent": "T6-F2-NONPROPER-DISPATCH-TOTALITY",
+    "h4_non_v1_branch_or_descendant": "T6-F2-NONPROPER-DISPATCH-TOTALITY",
+    "type_i_c2_19_macro_target": "T6-F2-NONPROPER-DISPATCH-TOTALITY",
+    "t2_v1_atomic_pending_target": "T6-F2-NONPROPER-DISPATCH-TOTALITY",
+    "generic_nontrivial_marked_state": "constructor_admission_firewall",
+    "direct_terminal_leaf": "TERMINAL"
+  },
+  "legacy_gap_registry": [
+    {
+      "id": "GAP-O1-GLOBAL-EXHAUSTION",
+      "owner": "T6-F1-REACHABLE-STATE-EXHAUSTION"
+    },
+    {
+      "id": "GAP-O1-H4-OTHER-BRANCHES",
+      "owner": "T6-F2-NONPROPER-DISPATCH-TOTALITY"
+    },
+    {
+      "id": "GAP-O1-POST-G-TYPE-I",
+      "owner": "T6-F2-NONPROPER-DISPATCH-TOTALITY"
+    },
+    {
+      "id": "GAP-O1-A-GT-ONE-OVERFLOW",
+      "owner": "T6-F2-NONPROPER-DISPATCH-TOTALITY"
+    },
+    {
+      "id": "GAP-O1-HIGH-SUPPORT-ROOT-CAPACITY",
+      "owner": "T6-F2-NONPROPER-DISPATCH-TOTALITY"
+    },
+    {
+      "id": "GAP-O1-ATOMIC-TARGET-CLOSURE",
+      "owner": "T6-F2-NONPROPER-DISPATCH-TOTALITY"
+    },
+    {
+      "id": "GAP-O2-PROPER-ROOT-K-GT-ONE",
+      "owner": "T6-F3-PROPER-ROOT-PHYSICALIZATION"
+    },
+    {
+      "id": "GAP-O3-C8-OUTGOING",
+      "owner": "T6-F2-NONPROPER-DISPATCH-TOTALITY"
+    }
+  ],
+  "closed_immediate_items": [
+    {
+      "id": "T6-M0-INITIAL-SERIALIZER",
+      "status": "ESTABLISHED",
+      "closure_class": "universal_root_dispatch",
+      "edge_complete": true
+    },
+    {
+      "id": "T6-M1-NAMED-SURFACE-INVENTORY",
+      "status": "ESTABLISHED",
+      "closure_class": "closed_world_inventory",
+      "edge_complete": false
+    },
+    {
+      "id": "T6-M2-CURRENT-MARK-UNREACHABILITY",
+      "status": "ESTABLISHED",
+      "closure_class": "closed_world_invariant",
+      "edge_complete": false
+    },
+    {
+      "id": "T6-M3-CONSTRUCTOR-ADMISSION-FIREWALL",
+      "status": "ESTABLISHED",
+      "closure_class": "repository_policy",
+      "edge_complete": false
+    },
+    {
+      "id": "T6-M4-M3-Q5-PFREE-RAW-POLICY",
+      "status": "ESTABLISHED_ARITHMETIC_ONLY",
+      "closure_class": "arithmetic_reduction",
+      "edge_complete": false,
+      "boundary": "actual raw suffix to a p-free primitive node; no typed E1-E4 macro"
+    },
+    {
+      "id": "T6-M5-PBLOCK-POLICY-ELIMINATION",
+      "status": "ESTABLISHED_ARITHMETIC_ONLY",
+      "closure_class": "arithmetic_reduction",
+      "edge_complete": false,
+      "boundary": "p-block is not a necessary raw-policy branch; canonical companion can still restore rank"
+    },
+    {
+      "id": "T6-M6-CANONICAL-CHANNEL-PARTITION",
+      "status": "ESTABLISHED_ARITHMETIC_ONLY",
+      "closure_class": "arithmetic_reduction",
+      "edge_complete": false,
+      "boundary": "theta mod p gives four arithmetic channels; channels are not registered macros"
+    },
+    {
+      "id": "T6-M7-P2-RESIDUAL-ISOLATION",
+      "status": "ESTABLISHED_ARITHMETIC_ONLY",
+      "closure_class": "arithmetic_reduction",
+      "edge_complete": false,
+      "boundary": "repeat hard branch iff L_omega is 1 modulo p^2; the gate is not proved empty"
+    }
+  ],
+  "frontier_theorems": [
+    {
+      "id": "T6-F1-REACHABLE-STATE-EXHAUSTION",
+      "status": "OPEN",
+      "quantifier": "Every actual recursively reachable nonterminal legal state is classified into exactly one selector family after terminal-first priority.",
+      "subgaps": [
+        "independent constructor induction rather than taxonomy enumeration",
+        "proof that no raw H4, atomic, overflow, marked, or post-handoff family is omitted",
+        "proof that every emitted target re-enters the classified domain"
+      ],
+      "closes_legacy_gap_ids": [
+        "GAP-O1-GLOBAL-EXHAUSTION"
+      ]
+    },
+    {
+      "id": "T6-F2-NONPROPER-DISPATCH-TOTALITY",
+      "status": "OPEN",
+      "quantifier": "Every classified non-proper-root nonterminal family is terminal or has a complete verified successor.",
+      "subgaps": [
+        "all H4 branches and F/G descendants outside T1v1",
+        "post-G Type I continuation beyond the registered first segment",
+        "every A>1 overflow residual",
+        "high-support/root-capacity when the improvement set is empty",
+        "every c=8 parent, not only the double-low receipt arm",
+        "recursive closure of every current atomic pending target"
+      ],
+      "closes_legacy_gap_ids": [
+        "GAP-O1-H4-OTHER-BRANCHES",
+        "GAP-O1-POST-G-TYPE-I",
+        "GAP-O1-A-GT-ONE-OVERFLOW",
+        "GAP-O1-HIGH-SUPPORT-ROOT-CAPACITY",
+        "GAP-O1-ATOMIC-TARGET-CLOSURE",
+        "GAP-O3-C8-OUTGOING"
+      ]
+    },
+    {
+      "id": "T6-F3-PROPER-ROOT-PHYSICALIZATION",
+      "status": "OPEN",
+      "quantifier": "Every actual terminal-first-surviving proper-root state with k>1 is terminal or has a deterministic E1-E5 successor.",
+      "subgaps": [
+        "route every k>1 proper-root state to QC1, TR1, or an explicitly covered slice",
+        "bind a persistent actual source path for the m=3 q=5 raw policy",
+        "serialize terminal priority, typed target, scope, owner, and global E4 lift continuously",
+        "close atomic checkpoint and second-child canonicalization",
+        "prove the L_omega congruent to 1 modulo p^2 gate empty, terminal, or equipped with a paid successor",
+        "prove recursive closure of all channel targets"
+      ],
+      "closes_legacy_gap_ids": [
+        "GAP-O2-PROPER-ROOT-K-GT-ONE"
+      ]
+    },
+    {
+      "id": "T6-F4-SELECTOR-ASSEMBLY-AND-LIFTS",
+      "status": "OPEN",
+      "quantifier": "The family theorems assemble into one deterministic computable selector whose terminals and edges lift to the root and whose recursive calls are T5-decreasing.",
+      "subgaps": [
+        "deterministic branch precedence and tie breaking on actual states",
+        "complete E1-E5 coverage for every selected edge",
+        "terminal-certificate lift through every parent receipt",
+        "strong-induction theorem over the fixed N^7 potential",
+        "no open or finite-only lemma used by the closure proof"
+      ],
+      "closes_legacy_gap_ids": []
+    },
+    {
+      "id": "T6-F5-INDEPENDENT-CLOSURE-AUDIT",
+      "status": "OPEN",
+      "quantifier": "An implementation independent of the construction verifies artifact consistency, all proof dependencies, and the final acceptance gates.",
+      "subgaps": [
+        "full-repository audit on a complete checkout",
+        "independent replay of selector receipts",
+        "external or genuinely independent mathematical review"
+      ],
+      "closes_legacy_gap_ids": []
+    }
+  ],
+  "superseded_process_gap": {
+    "id": "GAP-O4-NEW-ATOMIC-OR-MARKED-FAMILY",
+    "status": "CLOSED_FOR_FROZEN_V1_BY_ADMISSION_FIREWALL",
+    "reopen_trigger": "Any proposed constructor or edge that creates a new atomic or nontrivial marked family",
+    "required_before_admission": [
+      "register source and target family",
+      "extend T2 or T3 as applicable",
+      "supply serializer and lift",
+      "assign a T6 frontier obligation or close it",
+      "pass this audit"
+    ]
+  },
+  "acceptance_gates": [
+    {
+      "id": "pre_t6_contract_kernel",
+      "status": "ESTABLISHED"
+    },
+    {
+      "id": "initial_state_serializer",
+      "status": "ESTABLISHED"
+    },
+    {
+      "id": "named_surface_inventory",
+      "status": "ESTABLISHED"
+    },
+    {
+      "id": "current_graph_mark_invariant",
+      "status": "ESTABLISHED"
+    },
+    {
+      "id": "constructor_admission_firewall",
+      "status": "ESTABLISHED"
+    },
+    {
+      "id": "m3_q5_arithmetic_dispatch",
+      "status": "ESTABLISHED_ARITHMETIC_ONLY"
+    },
+    {
+      "id": "reachable_state_exhaustion",
+      "status": "OPEN"
+    },
+    {
+      "id": "all_nonterminal_leaves_closed",
+      "status": "OPEN"
+    },
+    {
+      "id": "proper_root_physicalization",
+      "status": "OPEN"
+    },
+    {
+      "id": "deterministic_computable_selector",
+      "status": "OPEN"
+    },
+    {
+      "id": "edge_e1_to_e5_coverage",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "terminal_certificate_lifts",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "t5_strong_induction_termination",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "no_open_or_finite_only_in_closure",
+      "status": "OPEN"
+    },
+    {
+      "id": "repository_artifact_consistency",
+      "status": "PARTIAL_UNTIL_FULL_CHECKOUT_CI"
+    },
+    {
+      "id": "independent_closure_audit",
+      "status": "OPEN"
+    }
+  ],
+  "forbidden_conclusions": [
+    "T6_GLOBAL_SELECTOR_TOTALITY=CLOSED",
+    "F0=CLOSED",
+    "ERDOS_STRAUS_CONJECTURE=CLOSED",
+    "arithmetic_candidate_implies_verified_edge",
+    "registered_taxonomy_implies_semantic_reachability_exhaustion"
+  ]
+}
