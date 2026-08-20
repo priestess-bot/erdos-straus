@@ -30,7 +30,9 @@ DOC_DIRS = (ROOT / "papers", ROOT / "claims", ROOT / "concepts")
 FRONTMATTER_RE = re.compile(r"\A---\s*\n(.*?)\n---\s*\n?", re.DOTALL)
 PRIVATE_MARKERS = ("/home/", "sources/files/", "worklog/")
 TEXT_SCAN_SUFFIXES = {".md", ".yaml", ".yml", ".bib"}
-TEXT_SCAN_EXCLUDED = {".git", "index", "public", "sources", "__pycache__"}
+# Raw proof-package payloads intentionally preserve historical, unaccepted text.
+# They are indexed through their archive summaries, not treated as active KB cards.
+TEXT_SCAN_EXCLUDED = {".git", "archive", "index", "public", "sources", "__pycache__"}
 MALFORMED_LATEX_RE = re.compile(r"(?<!\\)qquad")
 
 

@@ -2,7 +2,7 @@
 
 > 复核日期：2026-08-18
 >
-> 输入包：`docs/erdos-straus-T6-proof-workfiles-2026-08-17.zip`
+> 输入包：[`../archive/proof-packages/raw/erdos-straus-T6-proof-workfiles-2026-08-17.zip`](../archive/proof-packages/raw/erdos-straus-T6-proof-workfiles-2026-08-17.zip)
 >
 > ZIP SHA-256：`c7e7f63da0d040fdbaede1244b774d25c594c60bb4ec51fdfd091577f8c5981a`
 

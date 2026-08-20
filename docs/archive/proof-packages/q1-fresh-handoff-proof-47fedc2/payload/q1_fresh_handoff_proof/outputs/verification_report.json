@@ -1,0 +1,743 @@
+{
+  "base_commit": "47fedc2",
+  "package": "q1_fresh_handoff_proof",
+  "proof_boundary": [
+    "not a proof of the Erdos-Straus conjecture",
+    "not a global Type I selector",
+    "not T5 global well-foundedness",
+    "not nontrivial marked-terminal membership",
+    "not c=8,q*=103 totality"
+  ],
+  "results": {
+    "controls": {
+      "controls": {
+        "118801": {
+          "X": 29701,
+          "anchor": [
+            1,
+            79202,
+            1
+          ],
+          "first_child": {
+            "A": 22275,
+            "K": 882067725,
+            "R": 29699,
+            "kind": "fixed_n_edge"
+          },
+          "p": 118801,
+          "root": [
+            79203,
+            2352348901
+          ],
+          "source": [
+            118801,
+            9409197599,
+            118800
+          ],
+          "t": 4950
+        },
+        "241": {
+          "X": 61,
+          "anchor": [
+            1,
+            162,
+            1
+          ],
+          "first_child": {
+            "A": 45,
+            "K": 3555,
+            "R": 59,
+            "kind": "fixed_n_edge"
+          },
+          "p": 241,
+          "root": [
+            163,
+            9821
+          ],
+          "source": [
+            241,
+            38879,
+            240
+          ],
+          "t": 10
+        },
+        "2521": {
+          "X": 631,
+          "anchor": [
+            1,
+            1682,
+            1
+          ],
+          "first_child": {
+            "A": 1682,
+            "K": 1325416,
+            "R": 2103,
+            "kind": "marked_absorb"
+          },
+          "p": 2521,
+          "root": [
+            1683,
+            1060711
+          ],
+          "source": [
+            2521,
+            4238639,
+            2520
+          ],
+          "t": 105
+        },
+        "73": {
+          "X": 19,
+          "anchor": [
+            1,
+            50,
+            1
+          ],
+          "first_child": {
+            "A": 50,
+            "K": 1150,
+            "R": 63,
+            "kind": "marked_absorb"
+          },
+          "p": 73,
+          "root": [
+            51,
+            931
+          ],
+          "source": [
+            73,
+            3599,
+            72
+          ],
+          "t": 3
+        },
+        "76129": {
+          "X": 19033,
+          "anchor": [
+            1,
+            50754,
+            1
+          ],
+          "first_child": {
+            "A": 14274,
+            "K": 362202750,
+            "R": 19031,
+            "kind": "fixed_n_edge"
+          },
+          "p": 76129,
+          "root": [
+            50755,
+            965981849
+          ],
+          "source": [
+            76129,
+            3863800511,
+            76128
+          ],
+          "t": 3172
+        }
+      },
+      "finite_sanity_scan": {
+        "core_primes": 2212,
+        "limit": 200000,
+        "q_one_g_primes": 1106
+      },
+      "status": "verified"
+    },
+    "counterexamples": {
+      "double_g_min_control": {
+        "N": 181,
+        "X": 61,
+        "conclusion": "q=1 G does not force R=3 Type I non-G",
+        "p": 241
+      },
+      "double_g_stronger_control": {
+        "p": 2521
+      },
+      "old_root_support_disjointness": [
+        {
+          "X": 19,
+          "gcd": 1,
+          "old_K": 42490800,
+          "p": 73
+        },
+        {
+          "X": 61,
+          "gcd": 1,
+          "old_K": 16863208560,
+          "p": 241
+        },
+        {
+          "X": 631,
+          "gcd": 1,
+          "old_K": 2120556250219680,
+          "p": 2521
+        },
+        {
+          "X": 19033,
+          "gcd": 1,
+          "old_K": 53272574137777990263840,
+          "p": 76129
+        }
+      ],
+      "status": "verified"
+    },
+    "downstream": {
+      "regeneration_control": {
+        "E_mod_p": 1,
+        "g": 1,
+        "n": 961,
+        "p": 193,
+        "q_star": 23,
+        "regeneration": true
+      },
+      "second_anchor_controls": [
+        {
+          "B_p": 1296,
+          "M": 1550,
+          "Q": 31,
+          "anchor": 62,
+          "beta": 2,
+          "blocks": [
+            [
+              31,
+              1
+            ]
+          ],
+          "child": {
+            "A": 50,
+            "K": 1150,
+            "R": 63,
+            "kind": "marked_absorb"
+          },
+          "d_one_receiver": {
+            "A": 310,
+            "K": 22320,
+            "R": 1223,
+            "n": 17
+          },
+          "fixed_n": {
+            "L": 62,
+            "d": 44,
+            "delta": 5,
+            "h": 15,
+            "n": 3737,
+            "target": [
+              231,
+              4216
+            ],
+            "target_kind": "high",
+            "target_n": 17
+          },
+          "overflow_chart": [
+            2463,
+            44950
+          ],
+          "p": 73,
+          "t": 3
+        },
+        {
+          "B_p": 1587600,
+          "M": 1767782,
+          "Q": 1051,
+          "anchor": 2102,
+          "beta": 2,
+          "blocks": [
+            [
+              1051,
+              1
+            ]
+          ],
+          "child": {
+            "A": 1682,
+            "K": 1325416,
+            "R": 2103,
+            "kind": "marked_absorb"
+          },
+          "d_one_receiver": {
+            "A": 1135080,
+            "K": 2860401600,
+            "R": 4538519,
+            "n": 1801
+          },
+          "fixed_n": {
+            "L": 2102,
+            "d": 810,
+            "delta": 540,
+            "h": 270,
+            "n": 2271961,
+            "target": [
+              6607,
+              4164062
+            ],
+            "target_kind": "high",
+            "target_n": 1801
+          },
+          "overflow_chart": [
+            4799167,
+            3024675002
+          ],
+          "p": 2521,
+          "t": 105
+        },
+        {
+          "B_p": 9216,
+          "M": 828,
+          "Q": 23,
+          "anchor": 46,
+          "beta": 2,
+          "blocks": [
+            [
+              23,
+              1
+            ]
+          ],
+          "child": {
+            "A": 36,
+            "K": 2268,
+            "R": 47,
+            "kind": "fixed_n_edge"
+          },
+          "d_one_receiver": {
+            "A": 46368,
+            "K": 8902656,
+            "R": 184511,
+            "n": 961
+          },
+          "fixed_n": {
+            "L": 828,
+            "d": 56,
+            "delta": 56,
+            "h": 0,
+            "n": 961,
+            "target": [
+              2351,
+              113436
+            ],
+            "target_kind": "high",
+            "target_n": 961
+          },
+          "overflow_chart": [
+            2351,
+            113436
+          ],
+          "p": 193,
+          "q_star": 23,
+          "t": 8
+        },
+        {
+          "B_p": 14400,
+          "M": 2610,
+          "Q": 58,
+          "anchor": 58,
+          "beta": 1,
+          "blocks": [
+            [
+              2,
+              1
+            ],
+            [
+              29,
+              1
+            ]
+          ],
+          "child": {
+            "A": 45,
+            "K": 3555,
+            "R": 59,
+            "kind": "fixed_n_edge"
+          },
+          "d_one_receiver": {
+            "A": 126585,
+            "K": 30380400,
+            "R": 504239,
+            "n": 2101
+          },
+          "fixed_n": {
+            "L": 1305,
+            "d": 169,
+            "delta": 97,
+            "h": 1,
+            "n": 7321,
+            "target": [
+              3119,
+              187920
+            ],
+            "target_kind": "high",
+            "target_n": 2101
+          },
+          "overflow_chart": [
+            3119,
+            187920
+          ],
+          "p": 241,
+          "q_star": 29,
+          "t": 10
+        },
+        {
+          "B_p": 147456,
+          "M": 2736,
+          "Q": 19,
+          "anchor": 190,
+          "beta": 10,
+          "blocks": [
+            [
+              19,
+              1
+            ]
+          ],
+          "child": {
+            "A": 144,
+            "K": 36720,
+            "R": 191,
+            "kind": "fixed_n_edge"
+          },
+          "d_one_receiver": {
+            "A": 295488,
+            "K": 226934784,
+            "R": 1180415,
+            "n": 1537
+          },
+          "fixed_n": {
+            "L": 2736,
+            "d": 108,
+            "delta": 108,
+            "h": 0,
+            "n": 1537,
+            "target": [
+              9407,
+              1808496
+            ],
+            "target_kind": "high",
+            "target_n": 1537
+          },
+          "overflow_chart": [
+            9407,
+            1808496
+          ],
+          "p": 769,
+          "q_star": 19,
+          "t": 32
+        },
+        {
+          "B_p": 3528360000,
+          "M": 661522950,
+          "Q": 29698,
+          "anchor": 29698,
+          "beta": 1,
+          "blocks": [
+            [
+              2,
+              1
+            ],
+            [
+              31,
+              1
+            ],
+            [
+              479,
+              1
+            ]
+          ],
+          "child": {
+            "A": 22275,
+            "K": 882067725,
+            "R": 29699,
+            "kind": "fixed_n_edge"
+          },
+          "d_one_receiver": {
+            "A": 57336362325,
+            "K": 6811559844210000,
+            "R": 229343518799,
+            "n": 1930501
+          },
+          "fixed_n": {
+            "L": 690525,
+            "d": 70400,
+            "delta": 83033,
+            "h": 567,
+            "n": 1568041201,
+            "target": [
+              831599,
+              24698698200
+            ],
+            "target_kind": "high",
+            "target_n": 1930501
+          },
+          "overflow_chart": [
+            1078050599,
+            32018372302950
+          ],
+          "p": 118801,
+          "q_star": 31,
+          "t": 4950
+        }
+      ],
+      "status": "verified"
+    },
+    "state_contract": {
+      "receipts": [
+        {
+          "E1_E5": {
+            "E1": true,
+            "E2": true,
+            "E3": true,
+            "E4": true,
+            "E5": true
+          },
+          "anchor": [
+            1,
+            50,
+            1
+          ],
+          "forbidden_nonterminal": "type_i_full_carrier_tree -> type_ii_q_one_g_endpoint",
+          "p": 73,
+          "raw_source": [
+            73,
+            3599,
+            72
+          ],
+          "solution_lift": "identity on Sol(p)",
+          "source_state": {
+            "X": 19,
+            "equation_target": [
+              4,
+              73
+            ],
+            "gap": 3,
+            "marked_solution_set": "Sol(p)",
+            "phase": "type_ii_q_one_g_endpoint",
+            "phase_rank": 2,
+            "q": 1,
+            "scope": "type_ii_endpoint_only"
+          },
+          "target_state": {
+            "A": 1,
+            "K": 931,
+            "R": 51,
+            "equation_target": [
+              4,
+              73
+            ],
+            "marked_solution_set": "Sol(p)",
+            "normal_form": "type_i_full_carrier_low_root_v1",
+            "phase": "type_i_full_carrier_tree",
+            "phase_rank": 1,
+            "scope": "fresh_source_tree_only"
+          }
+        },
+        {
+          "E1_E5": {
+            "E1": true,
+            "E2": true,
+            "E3": true,
+            "E4": true,
+            "E5": true
+          },
+          "anchor": [
+            1,
+            162,
+            1
+          ],
+          "forbidden_nonterminal": "type_i_full_carrier_tree -> type_ii_q_one_g_endpoint",
+          "p": 241,
+          "raw_source": [
+            241,
+            38879,
+            240
+          ],
+          "solution_lift": "identity on Sol(p)",
+          "source_state": {
+            "X": 61,
+            "equation_target": [
+              4,
+              241
+            ],
+            "gap": 3,
+            "marked_solution_set": "Sol(p)",
+            "phase": "type_ii_q_one_g_endpoint",
+            "phase_rank": 2,
+            "q": 1,
+            "scope": "type_ii_endpoint_only"
+          },
+          "target_state": {
+            "A": 1,
+            "K": 9821,
+            "R": 163,
+            "equation_target": [
+              4,
+              241
+            ],
+            "marked_solution_set": "Sol(p)",
+            "normal_form": "type_i_full_carrier_low_root_v1",
+            "phase": "type_i_full_carrier_tree",
+            "phase_rank": 1,
+            "scope": "fresh_source_tree_only"
+          }
+        },
+        {
+          "E1_E5": {
+            "E1": true,
+            "E2": true,
+            "E3": true,
+            "E4": true,
+            "E5": true
+          },
+          "anchor": [
+            1,
+            1682,
+            1
+          ],
+          "forbidden_nonterminal": "type_i_full_carrier_tree -> type_ii_q_one_g_endpoint",
+          "p": 2521,
+          "raw_source": [
+            2521,
+            4238639,
+            2520
+          ],
+          "solution_lift": "identity on Sol(p)",
+          "source_state": {
+            "X": 631,
+            "equation_target": [
+              4,
+              2521
+            ],
+            "gap": 3,
+            "marked_solution_set": "Sol(p)",
+            "phase": "type_ii_q_one_g_endpoint",
+            "phase_rank": 2,
+            "q": 1,
+            "scope": "type_ii_endpoint_only"
+          },
+          "target_state": {
+            "A": 1,
+            "K": 1060711,
+            "R": 1683,
+            "equation_target": [
+              4,
+              2521
+            ],
+            "marked_solution_set": "Sol(p)",
+            "normal_form": "type_i_full_carrier_low_root_v1",
+            "phase": "type_i_full_carrier_tree",
+            "phase_rank": 1,
+            "scope": "fresh_source_tree_only"
+          }
+        },
+        {
+          "E1_E5": {
+            "E1": true,
+            "E2": true,
+            "E3": true,
+            "E4": true,
+            "E5": true
+          },
+          "anchor": [
+            1,
+            50754,
+            1
+          ],
+          "forbidden_nonterminal": "type_i_full_carrier_tree -> type_ii_q_one_g_endpoint",
+          "p": 76129,
+          "raw_source": [
+            76129,
+            3863800511,
+            76128
+          ],
+          "solution_lift": "identity on Sol(p)",
+          "source_state": {
+            "X": 19033,
+            "equation_target": [
+              4,
+              76129
+            ],
+            "gap": 3,
+            "marked_solution_set": "Sol(p)",
+            "phase": "type_ii_q_one_g_endpoint",
+            "phase_rank": 2,
+            "q": 1,
+            "scope": "type_ii_endpoint_only"
+          },
+          "target_state": {
+            "A": 1,
+            "K": 965981849,
+            "R": 50755,
+            "equation_target": [
+              4,
+              76129
+            ],
+            "marked_solution_set": "Sol(p)",
+            "normal_form": "type_i_full_carrier_low_root_v1",
+            "phase": "type_i_full_carrier_tree",
+            "phase_rank": 1,
+            "scope": "fresh_source_tree_only"
+          }
+        },
+        {
+          "E1_E5": {
+            "E1": true,
+            "E2": true,
+            "E3": true,
+            "E4": true,
+            "E5": true
+          },
+          "anchor": [
+            1,
+            79202,
+            1
+          ],
+          "forbidden_nonterminal": "type_i_full_carrier_tree -> type_ii_q_one_g_endpoint",
+          "p": 118801,
+          "raw_source": [
+            118801,
+            9409197599,
+            118800
+          ],
+          "solution_lift": "identity on Sol(p)",
+          "source_state": {
+            "X": 29701,
+            "equation_target": [
+              4,
+              118801
+            ],
+            "gap": 3,
+            "marked_solution_set": "Sol(p)",
+            "phase": "type_ii_q_one_g_endpoint",
+            "phase_rank": 2,
+            "q": 1,
+            "scope": "type_ii_endpoint_only"
+          },
+          "target_state": {
+            "A": 1,
+            "K": 2352348901,
+            "R": 79203,
+            "equation_target": [
+              4,
+              118801
+            ],
+            "marked_solution_set": "Sol(p)",
+            "normal_form": "type_i_full_carrier_low_root_v1",
+            "phase": "type_i_full_carrier_tree",
+            "phase_rank": 1,
+            "scope": "fresh_source_tree_only"
+          }
+        }
+      ],
+      "status": "verified"
+    },
+    "symbolic": {
+      "checks": [
+        "full-carrier root identities",
+        "root uniqueness congruence witness",
+        "odd first-child identity",
+        "even overflow/fixed-n identity",
+        "odd second-anchor formulas",
+        "general fixed-n quotient-fold identity",
+        "odd/even p-free gate closed forms",
+        "even regeneration multiplier identity"
+      ],
+      "status": "verified"
+    }
+  },
+  "scope": "ordinary q=1 Type II G -> fresh Type I handoff and q=1-specific downstream formula checks"
+}

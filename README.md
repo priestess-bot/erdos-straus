@@ -86,7 +86,7 @@ L_\omega\equiv1\pmod{p^2}.
 complete-excess 重算；但尚未提供连续的 E1--E4 receipt 或全称 QC1/TR1 exit。因此它不是
 T6、O2 或全局 selector 的闭合结论。
 
-### 最新证明包复查与归档（2026-08-20）
+### 最新证明包复查、归档与边界（2026-08-21）
 
 `T6-F1-REACHABLE-STATE-EXHAUSTION` 的候选闭合包已完整解压、逐项复查并归档。复查结果
 没有新增已闭合定理：包中把 `legal persistent selector state` 预先定义为 normalizer 已成功
@@ -100,12 +100,20 @@ nonterminal E3 target 至少命中一个 family predicate；最后才用 target 
 把该覆盖提升到全部可达状态。包中的 O1 分解、future-constructor 重开规则和“已知命中时的
 first-match 唯一性”被保留为这条路线的设计约束，而不冒充 F1 closure。
 
-原始证据包与解压源码在
-[`docs/archive/f1-reachable-state-exhaustion-candidate-2026-08-20/`](docs/archive/f1-reachable-state-exhaustion-candidate-2026-08-20/)；
+原始证据包与完整解压源码分别在
+[`archive/proof-packages/raw/`](archive/proof-packages/raw/) 和
+[`docs/archive/proof-packages/f1-reachable-state-exhaustion-all-outputs-2026-08-20/`](docs/archive/proof-packages/f1-reachable-state-exhaustion-all-outputs-2026-08-20/)；
 逐引理裁定见
 [`docs/F1-reachable-state-exhaustion-package-review-2026-08-20.md`](docs/F1-reachable-state-exhaustion-package-review-2026-08-20.md)，
 规范 frontier 见
 [`docs/T6-proof-boundary-2026-08-20.md`](docs/T6-proof-boundary-2026-08-20.md)。
+
+本轮已将所有七份近期证明包统一展开并归档，逐包的完整性结果、数学处置和 payload 索引见
+[`docs/proof-package-consolidation-2026-08-21.md`](docs/proof-package-consolidation-2026-08-21.md)。
+新 M-H 包只带来两个受限结果：低支撑 marked F/G 的 complete-excess 构造已给出 E1 source
+algebra、E2、root-wide E4 与 `LOCAL_DROP`，但没有全称 E3 owner/re-entry，故仍是条件性
+adapter；高支撑结论只建立 `C=1` 同协议局部最小元，并未关闭一般 `C>1` 空改善分支。因而
+F1、F2、F3、T6 与猜想本身的状态均不提升。
 
 精确的冻结 family/edge 清单、立即闭合项和五个剩余 frontier theorem 见
 [`data/t6-proof-frontier-v2.json`](data/t6-proof-frontier-v2.json) 与

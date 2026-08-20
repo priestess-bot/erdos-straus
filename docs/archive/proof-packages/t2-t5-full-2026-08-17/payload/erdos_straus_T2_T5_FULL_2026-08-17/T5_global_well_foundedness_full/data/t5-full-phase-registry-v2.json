@@ -1,0 +1,47 @@
+{
+  "registry_id": "t5_full_phase_registry_v2",
+  "date": "2026-08-17",
+  "global_order": "lexicographic_N7",
+  "fields": ["induction_rank", "major_phase", "type_i_protocol", "r1", "r2", "r3", "r4"],
+  "major_phases": {
+    "TYPEII_REL": 4,
+    "TYPEII_G_HANDOFF": 3,
+    "TYPEI": 2,
+    "GENERIC_MARKED": 1
+  },
+  "type_i_protocols": {
+    "CHARGED": 4,
+    "PRE": 3,
+    "ABSORB": 2,
+    "RESET": 1
+  },
+  "local_rank_schemas": {
+    "TYPEII_REL": ["q", 0, 0, 0],
+    "TYPEII_G_HANDOFF": [0, 0, 0, 0],
+    "TYPEI.CHARGED": ["floor(B_p/A)", "K/A", "eta_p", 0],
+    "TYPEI.PRE": ["a", 0, 0, 0],
+    "TYPEI.ABSORB": ["R", "m", "r_epsilon", 0],
+    "TYPEI.RESET": ["M", 0, 0, 0],
+    "GENERIC_MARKED": [0, 0, 0, 0]
+  },
+  "definitions": {
+    "B_p": "(p-1)^2/4",
+    "eta_p": "v_p(E-1) only when a named immediate d=1 regeneration token is active; otherwise 0"
+  },
+  "admission_tickets": {
+    "OUTER_RANK_DROP": "rho(T) < rho(S)",
+    "PHASE_DROP": "rho equal and (major_phase, protocol) lexicographically drops",
+    "LOCAL_DROP": "rho and phase/protocol equal and canonical local tuple drops"
+  },
+  "hard_rules": [
+    "terminal outputs never create successors",
+    "analysis_evidence never creates successors",
+    "pending normalization is not a proof edge",
+    "macro internal checkpoints are not persistent states",
+    "same-rho phase/protocol increase is rejected",
+    "standalone stutter is rejected",
+    "RESET may not return to CHARGED/PRE/ABSORB at the same rho",
+    "joined-support reset that lowers charged rank remains CHARGED rather than using RESET",
+    "GENERIC_MARKED has no same-rho recursive successor unless a named phase adapter is introduced"
+  ]
+}

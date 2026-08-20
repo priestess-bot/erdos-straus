@@ -1,0 +1,85 @@
+name: Pre-T6 contract and T6 boundary
+
+"on":
+  pull_request:
+    paths:
+      - README.md
+      - concepts/denominator-escape-state-contract.md
+      - concepts/flagship-proof-program-2026-08-16.md
+      - data/pre-t6-contract-kernel-v1.json
+      - data/t6-proof-frontier-v2.json
+      - data/t6-selector-obligation-ledger-v1.json
+      - docs/T2-T5-full-integration-review-2026-08-17.md
+      - docs/T6-current-progress-2026-08-17.md
+      - docs/T6-proof-boundary-2026-08-20.md
+      - docs/T6-selector-obligation-ledger-2026-08-18.md
+      - docs/pre-T6-contract-kernel-closure-2026-08-20.md
+      - docs/q1-fresh-handoff-proof-package-audit-2026-08-17.md
+      - reproductions/pre_t6_contract_kernel_audit.py
+      - tests/test_pre_t6_contract_kernel_audit.py
+      - .github/workflows/pre-t6-t6-boundary-ci.yml
+  push:
+    paths:
+      - README.md
+      - concepts/denominator-escape-state-contract.md
+      - concepts/flagship-proof-program-2026-08-16.md
+      - data/pre-t6-contract-kernel-v1.json
+      - data/t6-proof-frontier-v2.json
+      - data/t6-selector-obligation-ledger-v1.json
+      - docs/T2-T5-full-integration-review-2026-08-17.md
+      - docs/T6-current-progress-2026-08-17.md
+      - docs/T6-proof-boundary-2026-08-20.md
+      - docs/T6-selector-obligation-ledger-2026-08-18.md
+      - docs/pre-T6-contract-kernel-closure-2026-08-20.md
+      - docs/q1-fresh-handoff-proof-package-audit-2026-08-17.md
+      - reproductions/pre_t6_contract_kernel_audit.py
+      - tests/test_pre_t6_contract_kernel_audit.py
+      - .github/workflows/pre-t6-t6-boundary-ci.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  boundary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out full repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install audit dependencies
+        run: python -m pip install --upgrade PyYAML sympy ruff
+
+      - name: Validate the knowledge base
+        run: python scripts/kb.py validate
+
+      - name: Replay the original T6 ledger
+        run: |
+          python reproductions/type_i_t6_selector_obligation_ledger.py --verify
+          python -m unittest \
+            tests.test_type_i_t6_selector_obligation_ledger -v
+
+      - name: Replay the initial root serializer
+        run: |
+          python reproductions/type_ii_initial_q_one_root_dispatch.py --verify
+          python -m unittest \
+            tests.test_type_ii_initial_q_one_root_dispatch -v
+
+      - name: Audit the frozen kernel and proof frontier
+        run: |
+          python reproductions/pre_t6_contract_kernel_audit.py \
+            --root . --require-full-tree
+          python -m unittest \
+            tests.test_pre_t6_contract_kernel_audit -v
+
+      - name: Lint the new verifier
+        run: |
+          ruff check reproductions/pre_t6_contract_kernel_audit.py \
+            tests/test_pre_t6_contract_kernel_audit.py

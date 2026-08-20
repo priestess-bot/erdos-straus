@@ -1,11 +1,11 @@
 # F1 reachable-state exhaustion 包复核（2026-08-20）
 
-> 输入包：`erdos-straus-F1-reachable-state-exhaustion-all-outputs.zip`
+> 输入包：[`../archive/proof-packages/raw/erdos-straus-F1-reachable-state-exhaustion-all-outputs.zip`](../archive/proof-packages/raw/erdos-straus-F1-reachable-state-exhaustion-all-outputs.zip)
 > 输入 SHA-256：`2a7d2744cf72c23fa163c9f75979cd4eb7e92dd9c69b7a74430fa9c6c062eb0c`
 > 声明基线：`d3b3b6a39595d9fdc369a8648e821294a19e04c1`
 > 处置：`NOT_ADMITTED_AS_F1_CLOSURE`
 > 规范状态：`T6-F1-REACHABLE-STATE-EXHAUSTION = OPEN`
-> 归档：[`archive/f1-reachable-state-exhaustion-candidate-2026-08-20/`](archive/f1-reachable-state-exhaustion-candidate-2026-08-20/)
+> 归档：[`archive/proof-packages/f1-reachable-state-exhaustion-all-outputs-2026-08-20/`](archive/proof-packages/f1-reachable-state-exhaustion-all-outputs-2026-08-20/)
 
 ## 1. 输入完整性与审查范围
 
@@ -90,7 +90,7 @@ package 文件被静态改写，却不能验证 producer 穷尽、normalizer 总
 ### 3.5 解压主证明的逐项裁定
 
 下表复查解压材料
-[`archive/f1-reachable-state-exhaustion-candidate-2026-08-20/source/docs/F1-reachable-state-exhaustion-closure-2026-08-20.md`](archive/f1-reachable-state-exhaustion-candidate-2026-08-20/source/docs/F1-reachable-state-exhaustion-closure-2026-08-20.md)
+[`archive/proof-packages/f1-reachable-state-exhaustion-all-outputs-2026-08-20/payload/erdos-straus-f1/docs/F1-reachable-state-exhaustion-closure-2026-08-20.md`](archive/proof-packages/f1-reachable-state-exhaustion-all-outputs-2026-08-20/payload/erdos-straus-f1/docs/F1-reachable-state-exhaustion-closure-2026-08-20.md)
 的各个证明单元，而不是只检查其 manifest 的自洽性。
 
 | 包内单元 | 裁定 | 原因与可保留内容 |
@@ -122,9 +122,9 @@ A_S\ne\varnothing
 claim 合入。现有 `data/t6-proof-frontier-v2.json` 保持 F1 为 `OPEN`，且不删除任何 active gap。
 
 原始 ZIP 已作为字节级证据保留在
-[`erdos-straus-F1-reachable-state-exhaustion-all-outputs.zip`](erdos-straus-F1-reachable-state-exhaustion-all-outputs.zip)；
+[`../archive/proof-packages/raw/erdos-straus-F1-reachable-state-exhaustion-all-outputs.zip`](../archive/proof-packages/raw/erdos-straus-F1-reachable-state-exhaustion-all-outputs.zip)；
 完整解压的可检索源码视图和输入完整性说明在
-[`archive/f1-reachable-state-exhaustion-candidate-2026-08-20/`](archive/f1-reachable-state-exhaustion-candidate-2026-08-20/)。
+[`archive/proof-packages/f1-reachable-state-exhaustion-all-outputs-2026-08-20/`](archive/proof-packages/f1-reachable-state-exhaustion-all-outputs-2026-08-20/)。
 归档进入项目历史并不等于接纳其 theorem status；规范进展仍以本报告、
 [T6 证明边界](T6-proof-boundary-2026-08-20.md) 和根目录 README 为准。
 

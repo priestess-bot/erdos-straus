@@ -1,0 +1,1755 @@
+From 7f35776de040919b93e9ba19413789501faed6da Mon Sep 17 00:00:00 2001
+From: priestess-bot <308619535+priestess-bot@users.noreply.github.com>
+Date: Thu, 20 Aug 2026 09:38:10 -0700
+Subject: [PATCH] Establish marked-G exit and isolate C1 high-support boundary
+
+---
+ .github/workflows/research-kb-ci.yml          |   6 +-
+ README.md                                     |  18 +
+ ...y-improvement-c1-local-minimum-boundary.md | 354 ++++++++++++++++++
+ ...g-universal-anchor-complete-excess-exit.md | 297 +++++++++++++++
+ ...tter-m-three-biquadratic-norm-reduction.md |   6 +-
+ data/mh-final-two-problem-resolution-v1.json  |  66 ++++
+ .../M-H-final-two-problem-audit-2026-08-20.md | 291 ++++++++++++++
+ docs/T6-V1.md                                 |   2 +-
+ index/theorem-ledger.md                       |  12 +-
+ ..._high_support_c1_local_minimum_boundary.py | 283 ++++++++++++++
+ ...g_universal_anchor_complete_excess_exit.py | 169 +++++++++
+ tests/test_type_i_mh_final_two_boundary.py    |  73 ++++
+ 12 files changed, 1568 insertions(+), 9 deletions(-)
+ create mode 100644 claims/type-I-high-support-empty-improvement-c1-local-minimum-boundary.md
+ create mode 100644 claims/type-I-marked-g-universal-anchor-complete-excess-exit.md
+ create mode 100644 data/mh-final-two-problem-resolution-v1.json
+ create mode 100644 docs/M-H-final-two-problem-audit-2026-08-20.md
+ create mode 100755 reproductions/type_i_high_support_c1_local_minimum_boundary.py
+ create mode 100755 reproductions/type_i_marked_g_universal_anchor_complete_excess_exit.py
+ create mode 100644 tests/test_type_i_mh_final_two_boundary.py
+
+diff --git a/.github/workflows/research-kb-ci.yml b/.github/workflows/research-kb-ci.yml
+index e86ff7a..465d02d 100644
+--- a/.github/workflows/research-kb-ci.yml
++++ b/.github/workflows/research-kb-ci.yml
+@@ -41,11 +41,12 @@ jobs:
+             tests.test_type_i_tail_reverse_small_b_profile \
+             tests.test_type_i_dyadic_b_source_selector \
+             tests.test_type_i_tail_reverse_even_source_min_source_distance \
++            tests.test_type_i_mh_final_two_boundary \
+             tests.test_type_ii_q_one_c2_19_phase_h4_clean_q_macro_verifier
+ 
+       - name: Lint the maintained verification surface
+         run: |
+-          ruff check \
++          ruff check --select E4,E7,E9,F \
+             scripts/kb.py \
+             reproductions/type_ii_pure_new_canonical_fan_sieve.py \
+             reproductions/type_ii_pure_new_exception_dynamic_selector.py \
+@@ -60,6 +61,8 @@ jobs:
+             reproductions/type_i_tail_reverse_small_b_profile.py \
+             reproductions/type_i_dyadic_b_source_selector.py \
+             reproductions/type_i_tail_reverse_even_source_min_source_distance.py \
++            reproductions/type_i_marked_g_universal_anchor_complete_excess_exit.py \
++            reproductions/type_i_high_support_c1_local_minimum_boundary.py \
+             reproductions/type_ii_q_one_c2_19_phase_h4_clean_q_macro_verifier.py \
+             tests/test_kb.py \
+             tests/test_type_ii_pure_new_canonical_fan_sieve.py \
+@@ -75,6 +78,7 @@ jobs:
+             tests/test_type_i_tail_reverse_small_b_profile.py \
+             tests/test_type_i_dyadic_b_source_selector.py \
+             tests/test_type_i_tail_reverse_even_source_min_source_distance.py \
++            tests/test_type_i_mh_final_two_boundary.py \
+             tests/test_type_ii_q_one_c2_19_phase_h4_clean_q_macro_verifier.py
+ 
+       - name: Rebuild generated indexes
+diff --git a/README.md b/README.md
+index 5725bc0..917f8c1 100644
+--- a/README.md
++++ b/README.md
+@@ -107,6 +107,24 @@ first-match 唯一性”被保留为这条路线的设计约束，而不冒充 F
+ 规范 frontier 见
+ [`docs/T6-proof-boundary-2026-08-20.md`](docs/T6-proof-boundary-2026-08-20.md)。
+ 
++### M/H 最后两原子的精确复核（2026-08-20）
++
++聊天层归约中的 M（terminal-free low/marked G continuation）现在已有全称局部出口：
++universal $p$-source 到 anchor 后，terminal 或 complete-excess canonical target 直接给出
++完整 E1--E5；marked parent 自动满足 $A\le B_p$，且 $M/A\ge2$ 使
++$\lfloor B_p/M\rfloor<\lfloor B_p/A\rfloor$。该结论同时覆盖 marked F/G，见
++[`type-I-marked-g-universal-anchor-complete-excess-exit`](claims/type-I-marked-g-universal-anchor-complete-excess-exit.md)。
++
++H（high-support empty-improvement）没有因此闭合。其精确底层是 $C=K/A=1$：固定 T5
++的 CHARGED local tuple 为 $(0,1,0,0)$，所有仍返回 CHARGED 的 bundle finite macro
++只能 stutter 或上升，total-cofactor 也精确投影回自身。剩余出口必须是 root terminal、
++outer-rank drop 或有递归 total target 的 paid protocol/phase reset。全称 no-go、
++$p=73$ 的条件性 $C=2\to6\to1$ 正控制及严格边界见
++[`type-I-high-support-empty-improvement-c1-local-minimum-boundary`](claims/type-I-high-support-empty-improvement-c1-local-minimum-boundary.md)
++与 [M/H 审计报告](docs/M-H-final-two-problem-audit-2026-08-20.md)。因此 M 的 local atom
++已关闭，但 H、F1、F2、F3 与 T6 均继续保持 OPEN；本轮没有把新宏静默注册到冻结
++15-edge v2 surface。
++
+ 精确的冻结 family/edge 清单、立即闭合项和五个剩余 frontier theorem 见
+ [`data/t6-proof-frontier-v2.json`](data/t6-proof-frontier-v2.json) 与
+ [`docs/T6-proof-boundary-2026-08-20.md`](docs/T6-proof-boundary-2026-08-20.md)。原始 acceptance-gate
+diff --git a/claims/type-I-high-support-empty-improvement-c1-local-minimum-boundary.md b/claims/type-I-high-support-empty-improvement-c1-local-minimum-boundary.md
+new file mode 100644
+index 0000000..b7cd14b
+--- /dev/null
++++ b/claims/type-I-high-support-empty-improvement-c1-local-minimum-boundary.md
+@@ -0,0 +1,354 @@
++---
++kind: claim
++claim_id: type-I-high-support-empty-improvement-c1-local-minimum-boundary
++title: 高支撑空改善分支的 C=1 局部最小元与付费 reset 边界
++statement: >-
++  对 fixed-p TYPEI/CHARGED 高支撑状态 H=(p,R,K;A) 满足 A>B_p、K=A、
++  eta_p=0，其 T5 local tuple 为 (0,1,0,0)，是整个 CHARGED 层的绝对最小元。
++  因而任意 complete-excess target 的 cofactor c>=1：c=1 只会 stutter，c>1
++  上升；任何只把中间上升 chart 当 transient、最终仍回到同 rho 的 CHARGED
++  finite macro 也不可能支付 parent-to-final E5。total-cofactor 在 C=1<p 时精确为
++  identity。最小 canonical C=1 high chart 是 A_1=(p+1)^2/4、R_1=p+2、K_1=A_1；
++  其两个 determinant dual chart 虽为 (p-2,B_p) 与 (3,(3p+1)/4)，却都丢弃旧
++  charged support，不能冒充 joined-support edge。故空改善 H 的精确剩余出口只有
++  root terminal、严格 outer-rank drop，或带 target-totality 的具名
++  CHARGED-to-lower-protocol reset。本卡是全称 local no-go 与接口归约，不关闭 H、F2、
++  T6 或 Erdős--Straus 猜想。
++claim_status: established
++proof_provenance: mixed
++review_status: internal_review
++depends_on:
++  - type-I-high-support-rank-aware-sink-bundle-selector
++  - type-I-high-support-bundle-carry-capacity-terminal-dispatch
++  - type-I-overflow-total-cofactor-canonical-projection-persistence-rank
++  - type-I-overflow-determinant-fixed-n-dual-support-conflict
++  - type-I-high-anchor-direct-c1-finite-menu-exhaustion
++  - type-I-t5-full-contract-level-global-well-foundedness
++topics:
++  - type-I
++  - high-support
++  - empty-improvement
++  - residual-capacity
++  - cofactor-one
++  - local-minimum
++  - phase-reset
++  - no-go
++  - proof-boundary
++sources:
++  - claim: type-I-high-support-rank-aware-sink-bundle-selector
++    role: nonempty-improvement-edge-and-empty-family-no-go
++  - claim: type-I-high-support-bundle-carry-capacity-terminal-dispatch
++    role: exact-canonical-carry-formula
++  - claim: type-I-overflow-total-cofactor-canonical-projection-persistence-rank
++    role: canonical-projection-stutter-boundary
++  - concept: t5-global-well-foundedness-contract-v2
++    role: fixed-protocol-order-and-local-rank
++  - reproduction: reproductions/type_i_high_support_c1_local_minimum_boundary.py
++    role: symbolic-C1-boundary-and-p73-two-bundle-control
++visibility: public
++last_checked: '2026-08-20'
++---
++
++# 高支撑空改善分支的 $C=1$ 局部最小元与付费 reset 边界
++
++## 1. 固定 T5 下的绝对局部底层
++
++固定核心素数 $p\equiv1\pmod {24}$，并记
++
++\[
++B_p=\frac{(p-1)^2}{4}.
++\tag{1}
++\]
++
++设 actual persistent high-support 状态为
++
++\[
++H=(p,R,K;A,\sigma),
++\qquad
++A>B_p,
++\qquad
++A\mid K,
++\qquad
++C=K/A.
++\tag{2}
++\]
++
++在没有 active $d=1$ regeneration token 时，固定 T5 的 `TYPEI/CHARGED` local tuple
++是
++
++\[
++\lambda(H)=
++\left(\left\lfloor\frac{B_p}{A}\right\rfloor,C,0,0\right)
++=(0,C,0,0).
++\tag{3}
++\]
++
++因此 $C=1$ 时
++
++\[
++\boxed{\lambda(H)=(0,1,0,0)}
++\tag{4}
++\]
++
++是该固定 $(p,\rho,\mathrm{TYPEI},\mathrm{CHARGED})$ 层的绝对最小元。
++
++任一合法 complete-excess candidate 的 canonical target cofactor 都满足
++
++\[
++1\le c\le p-1.
++\tag{5}
++\]
++
++其 support $M>A>B_p$，故 target local tuple 为 $(0,c,0,0)$。于是
++
++\[
++c=1\Longrightarrow\text{stutter},
++\qquad
++c>1\Longrightarrow\text{strict rise}.
++\tag{6}
++\]
++
++事实上 target 仍必为 overflow。因为 $M/A\ge2$、$A>B_p$ 且核心素数
++$p\ge73$，
++
++\[
++4M\ge8A>2(p-1)^2>p^2+1.
++\tag{6a}
++\]
++
++所以对任意 $c\ge1$，
++
++\[
++R_M=\frac{4Mc-1}{p}>p.
++\tag{6b}
++\]
++
++因此不能把 $c=1$ target 偷换成 $R_M<p$ 的 marked phase 来支付下降。
++
++更一般地，允许任意有限个不入队的上升 intermediate chart 也没有帮助：只要宏的真实
++parent 和最终 persistent target 仍处于同一 CHARGED 层，E5 比较的仍是
++$(0,1,0,0)$ 与 $(0,c,0,0)$，所以不可能严格下降。内部某一步先升后降不能替代
++parent-to-final ticket。
++
++整体余因子投影也不提供出口。已有精确式
++
++\[
++C_S=C_A+pt,
++\tag{7}
++\]
++
++在 $C_S=1<p$ 时只能有 $C_A=1,t=0$，故 target 与 source 是同一 canonical
++chart。
++
++已有 direct-cofactor control 也正好落在同一边界：对 $p=97$，
++
++\[
++(R,K;A)=(99,2401;2401)
++\tag{7a}
++\]
++
++就是 (9)--(10) 的 universal $C=1$ chart。其冻结 $Q_*=2,M=4802$ action 完整
++回返 $c=1$，只能作为非入队 exhaustion bookkeeping；当前 T5-v2 local rank 没有
++action-menu 剩余数坐标，故该回返不能成为 persistent edge。这是一手 stutter control，
++不是“再试一次 direct action 即可离开 C=1”的证据。
++
++## 2. 最小 canonical $C=1$ high chart
++
++canonical $C=1$ 要求
++
++\[
++4A\equiv1\pmod p,
++\qquad
++A>B_p.
++\tag{8}
++\]
++
++所有解相差 $p$，而刚好越过 $B_p$ 的第一个解为
++
++\[
++\boxed{
++A_1=B_p+p=\frac{(p+1)^2}{4}.}
++\tag{9}
++\]
++
++相应图表为
++
++\[
++\boxed{
++H_1(p)=
++\left(p,p+2,\frac{(p+1)^2}{4};\frac{(p+1)^2}{4}\right).}
++\tag{10}
++\]
++
++它的 determinant 数据为
++
++\[
++M=A_1,
++\quad
++d=p-1,
++\quad
++n=p^2+p-1,
++\quad
++r=M\bmod p=\frac{3p+1}{4},
++\quad
++s=3p-2.
++\tag{11}
++\]
++
++两个算术 dual chart 精确为
++
++\[
++(R_d,K_d)=\left(p-2,B_p\right),
++\tag{12}
++\]
++
++\[
++(R_r,K_r)=\left(3,\frac{3p+1}{4}\right).
++\tag{13}
++\]
++
++这个 family 对每个核心 $p$ 都是显式合法的抽象 high-support chart，不是有限样本的
++偶发现象。其 universal anchor 是 $\{1,p+1\}$。由于 $(p+1)/2$ 为奇数且
++$K=((p+1)/2)^2$，完整超额首块为
++
++\[
++Q=2,
++\qquad
++\beta=\frac{p+1}{2},
++\qquad
++L=2,
++\tag{13a}
++\]
++
++canonical target cofactor 为
++
++\[
++c=2^{-1}\pmod p=\frac{p+1}{2}>1.
++\tag{13b}
++\]
++
++所以最自然的首 bundle 在每个核心 $p$ 上都严格上升。这里没有声称图表对每个 $p$
++都 actual reachable；它严格否定的是“不加 reach/terminal/phase 信息，仅凭 C=1 和
++universal source 就有下降 bundle”的过强定理。对 $p=73$，图表
++$(R,K;A)=(75,1369;1369)$ 还由模 $75$ 的 Jacobi 角色给出一个显式 G local-minimum
++控制。
++
++这两个小图表本身都合法，但它们的自然 support 分别是 $p-1$ 或
++$(3p+1)/4$ 的因子；均小于旧承诺 $A_1$。若按 joined-support 规则保留旧 support，
++则 $\operatorname{lcm}(A_1,t)>K_t$，不可能整除 $K_t$。所以 (12)--(13) 只能成为
++一个另行付款的 forgetful reset 候选，不能伪装成 CHARGED local edge。
++
++## 3. $p=73$ 的两-bundle 正控制及其终点
++
++已有 terminal-first-preempted 的算术状态
++
++\[
++H_0=(73,143,2610;1305),
++\qquad C_0=2.
++\tag{14}
++\]
++
++从它的 universal anchor 沿实际 raw path 到 $(45,98)$，取
++
++\[
++Q_1=49,
++\quad
++\beta_1=2,
++\quad
++45\beta_1=90\mid2610,
++\quad
++M_1=63945,
++\tag{15}
++\]
++
++得到不入队 checkpoint
++
++\[
++H'_1=(73,21023,383670;63945),
++\qquad C'_1=6.
++\tag{16}
++\]
++
++再从 $H'_1$ 的 universal anchor 到 $(30,20993)$，取
++
++\[
++Q_2=2999,
++\quad
++\beta_2=7,
++\quad
++30\beta_2=210\mid383670,
++\quad
++M_2=191771055,
++\tag{17}
++\]
++
++得到
++
++\[
++H_2=(73,10508003,191771055;191771055),
++\qquad C_2=1.
++\tag{18}
++\]
++
++比较真实宏端点可得
++
++\[
++(0,2)>(0,1),
++\tag{19}
++\]
++
++所以在已经具备 actual parent、scope、terminal-priority 和 versioned adapter 的条件下，
++这是一条 $C=2\to1$ 的 parent-to-final 严格宏；中间的 $2\to6$ 不入队。三个图表
++均须独立重算 fiber typing 和 state ID，E4 只使用
++$W=\operatorname{Sol}(4,73)$ 的恒等映射。
++
++但 (18) 正好落在 (4) 的底层，故它不能关闭 high-support family。并且 $p=73$ 有直接
++Type II root certificate $(20,219,4380)$，实际 terminal-first 会先结束；因此该宏当前
++只能登记为 conditional/analysis control，不能冒充 actual selector edge。
++
++## 4. H 的精确剩余量词
++
++对 empty-improvement high-support 状态，现有证明现在给出完整二分：
++
++1. $C>1$ 时，rank-aware bundle 若有下降候选就已有 E1--E5；某些 $C$ 还可由有限
++   多-anchor 宏下降，$p=73,C=2\to1$ 是正控制；
++2. $C=1$ 时，任何仍留在同一 CHARGED 层的 bundle 或 total-cofactor finite macro 都被
++   (4)--(7) 全称排除。
++
++因此真正剩下的 theorem 不是“再枚举一个 bundle”，而是
++
++\[
++\boxed{
++\begin{aligned}
++&H\text{ actual, terminal-first miss, }A>B_p,C=1\\
++&\quad\Longrightarrow
++\text{OUTER\_RANK\_DROP}
++\ \lor\
++\text{paid lower-protocol target with recursively total owner}.
++\end{aligned}}
++\tag{20}
++\]
++
++或者证明该 actual family 为空。一个只丢弃 $A$ 的 arithmetic dual、一个没有 target
++totality 的 CHARGED-to-RESET、或一个最终仍为 CHARGED 的有限 bundle 串都不能证明
++式 (20)。
++
++## 5. 逻辑状态
++
++本卡严格建立的是：
++
++```text
++H-C1-CHARGED-LOCAL-MINIMUM = ESTABLISHED
++H-C1-BUNDLE-OR-TOTAL-COFACTOR-EXIT = IMPOSSIBLE_UNDER_FIXED_LOCAL_TICKET
++H-C1-PAID-RESET-OR-OUTER-DROP = OPEN
++```
++
++所以 `GAP-O1-HIGH-SUPPORT-ROOT-CAPACITY` 仍为 OPEN。若把 H 连同 F1、其余 family
++totality、F3、F4 和 F5 都闭合，T5 良基归纳才会给出全局根证书；当前仓库并没有这些
++前提。尤其不能用有限 root-terminal 普查倒推出式 (20)。
++
++聚焦验证：
++
++```bash
++python reproductions/type_i_high_support_c1_local_minimum_boundary.py --verify
++```
+diff --git a/claims/type-I-marked-g-universal-anchor-complete-excess-exit.md b/claims/type-I-marked-g-universal-anchor-complete-excess-exit.md
+new file mode 100644
+index 0000000..cf1771c
+--- /dev/null
++++ b/claims/type-I-marked-g-universal-anchor-complete-excess-exit.md
+@@ -0,0 +1,297 @@
++---
++kind: claim
++claim_id: type-I-marked-g-universal-anchor-complete-excess-exit
++title: 低支撑 marked F/G 的通用锚点 complete-excess 全称出口
++statement: >-
++  设 p=1 (mod 24) 为素数，S=(p,R,K;A,sigma) 是由独立 producer receipt
++  给出的 actual persistent TYPEI/CHARGED 状态，满足 4K=pR+1、
++  3<=R<=p-2、A|K、W_S=Sol(4,p)，并在 terminal-first 后仍为 marked F/G。
++  则 universal p-source 唯一到达 (1,R-1,1)：若 R-1|K，直接得到 Type I
++  root terminal；否则 R-1 的完整超容量块 Q 与 M=lcm(A,Q) 确定一个 canonical
++  target。该 target 在 terminal-first 命中时终止，否则经独立 F/G/overflow
++  重分类得到完整 E1--E5 verified successor。由于 marked parent 自动有 A<=B_p
++  且 M/A>=2，T5 的 floor(B_p/A) 坐标严格下降。特别地，这关闭了独立产生的
++  terminal-free marked G 出口量词；它不证明 F1 reachable-state exhaustion，
++  也未在冻结的 15-edge v2 surface 上静默注册新 producer。
++claim_status: established
++proof_provenance: repository_derivation
++review_status: internal_review
++depends_on:
++  - type-I-universal-p-source-capacity-anchor-orbit
++  - type-I-bottom-sink-scc-complete-excess-bundle-selector
++  - type-I-overflow-unbounded-same-chart-promotion-persistence-boundary
++  - type-I-t5-full-contract-level-global-well-foundedness
++topics:
++  - type-I
++  - marked-state
++  - G-state
++  - universal-source
++  - complete-excess
++  - selector-totality
++  - verified-edge
++  - well-founded-descent
++  - proof-boundary
++sources:
++  - claim: type-I-universal-p-source-capacity-anchor-orbit
++    role: universal-source-anchor-and-complete-excess-receipt
++  - claim: type-I-bottom-sink-scc-complete-excess-bundle-selector
++    role: full-block-bundle-and-canonical-target
++  - claim: type-I-overflow-unbounded-same-chart-promotion-persistence-boundary
++    role: low-support-parent-to-target-E1-E5-and-rank
++  - concept: t5-global-well-foundedness-contract-v2
++    role: fixed-T5-LOCAL-DROP-ticket
++  - reproduction: reproductions/type_i_marked_g_universal_anchor_complete_excess_exit.py
++    role: p601-marked-G-and-target-reclassification-control
++visibility: public
++last_checked: '2026-08-20'
++---
++
++# 低支撑 marked F/G 的通用锚点 complete-excess 全称出口
++
++## 1. 精确量词
++
++固定核心素数
++
++\[
++p\equiv1\pmod {24},
++\qquad
++B_p=\frac{(p-1)^2}{4}.
++\tag{1}
++\]
++
++设
++
++\[
++S=(p,R,K;A,\sigma)
++\tag{2}
++\]
++
++是由独立 constructor/producer receipt 产生的 actual、persistent、内容寻址的
++`TYPEI/CHARGED` 状态，并满足
++
++\[
++4K=pR+1,
++\qquad
++3\le R\le p-2,
++\qquad
++A\mid K,
++\qquad
++W_S=\operatorname{Sol}(4,p).
++\tag{3}
++\]
++
++在 source 上先执行已登记的 terminal-first。以下定理覆盖其 miss 后的 marked F/G
++分类；source owner 必须由 producer 独立给出，不能把“normalizer 已成功”写进
++legal-state 定义后再循环使用。
++
++## 2. 通用实际 source 与 anchor 三分
++
++定义规范形式 source
++
++\[
++(U,V,m)=\bigl(p,R(p-1)-p,p-1\bigr).
++\tag{4}
++\]
++
++由 $p\nmid K$，唯一 $q=p$ raw edge 的 shift 是 $t=1$，且没有 gcd 约分：
++
++\[
++\bigl(p,R(p-1)-p,p-1\bigr)
++\xrightarrow{q=p,t=1}
++(1,R-1,1).
++\tag{5}
++\]
++
++若
++
++\[
++R-1\mid K,
++\tag{6}
++\]
++
++则 $1\cdot(R-1)\mid K$，anchor 直接序列化一张 Type I root terminal。对 G
++状态，(6) 还会使 $-1\equiv R-1\pmod R$ 落在 $K$-support 生成子群内，故与 G
++分离角色矛盾；因此 G 分支必进入下述 bundle。
++
++若 (6) 失败，唯一写成
++
++\[
++R-1=Q\beta,
++\qquad
++Q=\prod_{v_q(R-1)>v_q(K)}q^{v_q(R-1)}.
++\tag{7}
++\]
++
++逐素数得到
++
++\[
++Q>1,
++\quad
++\beta\mid K,
++\quad
++(Q,\beta)=1,
++\quad
++Q\nmid K,
++\quad
++Q<R<p.
++\tag{8}
++\]
++
++对当前 charged support 取
++
++\[
++M=\operatorname{lcm}(A,Q).
++\tag{9}
++\]
++
++某个 $q\mid Q$ 满足 $v_q(Q)>v_q(K)\ge v_q(A)$，所以
++
++\[
++\boxed{M/A\ge2.}
++\tag{10}
++\]
++
++## 3. 唯一 canonical target
++
++取唯一整数
++
++\[
++1\le R'<4M,
++\qquad
++pR'\equiv-1\pmod {4M},
++\tag{11}
++\]
++
++并置
++
++\[
++K'=\frac{pR'+1}{4},
++\qquad
++T=(p,R',K';M,\sigma).
++\tag{12}
++\]
++
++于是 $R'\equiv3\pmod4$、$R'\ne p$、$M\mid K'$。在 enqueue 前重新运行
++terminal-first 与完整 target typing：
++
++1. 若 target 给出 direct root certificate，输出 terminal leaf；
++2. 若 $R'<p$，独立重算为 marked F 或 G；
++3. 若 $R'>p$，独立重算为 low-support 或 high-support overflow owner。
++
++任何 target 都不得继承 source 的 G 标签、state ID 或 owner digest。
++
++## 4. E1--E5
++
++| 合同 | 支付内容 |
++|---|---|
++| E1 | actual persistent source receipt；绑定 (4)--(5)、anchor、完整超额 $Q$、scope $\sigma$ 与 terminal-priority digest |
++| E2 | 从 $(p,A,Q)$ 唯一重算 $(M,R',K')$，核验正性、canonical range 与 $M\mid K'$ |
++| E3 | source/target normal form、state ID、F/G/hit/overflow 与 owner 在 enqueue 前独立重算 |
++| E4 | 非终端两端都取 $\operatorname{Sol}(4,p)$，lift 是恒等映射；root terminal 不创建边 |
++| E5 | 固定 T5 `TYPEI/CHARGED` 的第一 local coordinate 严格下降 |
++
++E5 是全称整数不等式。由 (3)，
++
++\[
++A\le K=\frac{pR+1}{4}
++\le\frac{p(p-2)+1}{4}=B_p.
++\tag{13}
++\]
++
++结合 (10)，
++
++\[
++\left\lfloor\frac{B_p}{M}\right\rfloor
++\le
++\left\lfloor\frac{B_p}{2A}\right\rfloor
++<
++\left\lfloor\frac{B_p}{A}\right\rfloor.
++\tag{14}
++\]
++
++所以完整 T5 势
++
++\[
++\Pi_{T5}(S)=
++(\rho,\mathrm{TYPEI},\mathrm{CHARGED},
++\lfloor B_p/A\rfloor,K/A,\eta,0)
++\tag{15}
++\]
++
++取得 `LOCAL_DROP`，无需对 target 的第二坐标另加假设。这证明了
++
++\[
++\boxed{
++\text{actual marked F/G terminal-first miss}
++\Longrightarrow
++\text{root terminal 或 verified successor}.}
++\tag{16}
++\]
++
++## 5. $p=601$ 的 marked-G 重入控制
++
++取
++
++\[
++(R,K;A)=(599,90000;1),
++\qquad
++K=2^4 3^2 5^4.
++\tag{17}
++\]
++
++模 $599$ 的 Jacobi 角色在 $2,3,5$ 上均为 $+1$，在 $-1$ 上为 $-1$，故
++source 是 G。规范路径与 bundle 为
++
++\[
++(601,358799,600)\longrightarrow(1,598,1),
++\tag{18}
++\]
++
++\[
++598=299\cdot2,
++\qquad
++Q=299,
++\quad
++\beta=2,
++\quad
++M=299.
++\tag{19}
++\]
++
++canonical target 是
++
++\[
++(R',K';M)=(199,29900;299),
++\tag{20}
++\]
++
++且 source/target 分别有 local rank
++
++\[
++(90000,90000)>(301,100).
++\tag{21}
++\]
++
++目标经独立 Jacobi 重算仍为 G；这说明 marked-G re-entry 不是空形式。另一方面
++$p=601$ 本身已有直接根证书，所以 (17) 只是图表、typing 与 E1--E5 控制，不是
++真正 ESC 反例。
++
++## 6. 接入边界
++
++本定理可把局部原子记为
++
++```text
++F2-M-MARKED-G-EXIT = CLOSED_BY_UNIVERSAL_VERIFIED_SUCCESSOR
++```
++
++但当前 `data/t6-proof-frontier-v2.json` 冻结的是 15-edge surface，而当前 F1 复核又明确
++保持 semantic reachable-state exhaustion 为 OPEN。因此本卡不静默修改 v2 inventory，
++也不推出 `GAP-O1-POST-G-TYPE-I` 全局关闭。若把该宏加入实际 selector，必须发布新的
++versioned edge surface，并重新核对 producer exhaustion、source owner 与所有 target 的
++re-entry。
++
++聚焦验证：
++
++```bash
++python reproductions/type_i_marked_g_universal_anchor_complete_excess_exit.py --verify
++```
+diff --git a/claims/type-I-root-capacity-stutter-m-three-biquadratic-norm-reduction.md b/claims/type-I-root-capacity-stutter-m-three-biquadratic-norm-reduction.md
+index a649321..85531a7 100644
+--- a/claims/type-I-root-capacity-stutter-m-three-biquadratic-norm-reduction.md
++++ b/claims/type-I-root-capacity-stutter-m-three-biquadratic-norm-reduction.md
+@@ -3972,9 +3972,9 @@ primitive system 在本 slice 中精确成为
+ 
+ \[
+ \boxed{
+-(A,B)=1,qquad
+-u=3B+1-A,qquad
+-A^2-AB+B^2=u\kappa,qquad
++(A,B)=1,\qquad
++u=3B+1-A,\qquad
++A^2-AB+B^2=u\kappa,\qquad
+ pA+B=(3B+1)u.
+ }
+ \tag{24}
+diff --git a/data/mh-final-two-problem-resolution-v1.json b/data/mh-final-two-problem-resolution-v1.json
+new file mode 100644
+index 0000000..b6abb9c
+--- /dev/null
++++ b/data/mh-final-two-problem-resolution-v1.json
+@@ -0,0 +1,66 @@
++{
++  "resolution_id": "mh_final_two_problem_resolution_v1",
++  "date": "2026-08-20",
++  "reviewed_head": "49e2e25a72f69015e7bbbcb556155363b08486a0",
++  "scope": "Focused resolution of the chat-level M and H atoms; this manifest does not replace the frozen T6 v2 frontier.",
++  "M": {
++    "id": "F2-M-MARKED-G-EXIT",
++    "status": "CLOSED_BY_UNIVERSAL_VERIFIED_SUCCESSOR",
++    "closure_scope": "Independently produced actual persistent TYPEI/CHARGED marked F/G states with W=Sol(4,p), R<p, and terminal-first miss.",
++    "claim": "type-I-marked-g-universal-anchor-complete-excess-exit",
++    "edge_ticket": "LOCAL_DROP",
++    "registered_on_frozen_t6_v2_surface": false,
++    "does_not_claim": [
++      "semantic source reachability",
++      "source-owner exhaustion",
++      "global post-G Type I totality",
++      "F1 closure"
++    ]
++  },
++  "H": {
++    "id": "F2-H-HIGH-SUPPORT-EMPTY-IMPROVEMENT",
++    "status": "OPEN_REDUCED_TO_C1_PAID_RESET_OR_OUTER_DROP",
++    "established_boundary_claim": "type-I-high-support-empty-improvement-c1-local-minimum-boundary",
++    "closed_subcases": [
++      "rank-aware improvement set nonempty",
++      "any separately established terminal-first root certificate"
++    ],
++    "universal_no_go": {
++      "domain": "same-rho TYPEI/CHARGED high-support state with C=1 and eta_p=0",
++      "local_rank": [0, 1, 0, 0],
++      "blocked_families": [
++        "complete-excess bundle with CHARGED target",
++        "finite internal bundle macro with CHARGED endpoint",
++        "total-cofactor canonical projection",
++        "direct-cofactor C=1 action without a new T5 menu coordinate",
++        "joined-support interpretation of the natural determinant duals"
++      ]
++    },
++    "required_new_exit": [
++      "root terminal",
++      "OUTER_RANK_DROP",
++      "paid lower-protocol or lower-phase target with recursively total owner",
++      "actual-family empty proof"
++    ],
++    "p73_two_bundle_control": {
++      "endpoint_capacities": [2, 1],
++      "internal_capacity": 6,
++      "selector_status": "analysis_evidence",
++      "recursive_edge_eligible": false
++    }
++  },
++  "canonical_global_status": {
++    "T6_F1_REACHABLE_STATE_EXHAUSTION": "OPEN",
++    "T6_F2_NONPROPER_DISPATCH_TOTALITY": "OPEN",
++    "T6_F3_PROPER_ROOT_PHYSICALIZATION": "OPEN",
++    "T6_GLOBAL_SELECTOR_TOTALITY": "OPEN",
++    "ERDOS_STRAUS_CONJECTURE": "OPEN_IN_THIS_REPOSITORY"
++  },
++  "reproductions": [
++    "reproductions/type_i_marked_g_universal_anchor_complete_excess_exit.py",
++    "reproductions/type_i_high_support_c1_local_minimum_boundary.py"
++  ],
++  "tests": [
++    "tests/test_type_i_mh_final_two_boundary.py"
++  ]
++}
+diff --git a/docs/M-H-final-two-problem-audit-2026-08-20.md b/docs/M-H-final-two-problem-audit-2026-08-20.md
+new file mode 100644
+index 0000000..f4bce4d
+--- /dev/null
++++ b/docs/M-H-final-two-problem-audit-2026-08-20.md
+@@ -0,0 +1,291 @@
++# M/H“最后两个问题”精确审计（2026-08-20）
++
++> 复核基线：`49e2e25a72f69015e7bbbcb556155363b08486a0`
++>
++> M：`CLOSED_BY_UNIVERSAL_VERIFIED_SUCCESSOR`（局部、独立产生的 marked F/G 域）
++>
++> H：`OPEN_REDUCED_TO_C1_PAID_RESET_OR_OUTER_DROP`
++>
++> F1：`OPEN`
++>
++> T6：`OPEN`
++
++## 1. 结论先行
++
++本轮把聊天中最后留下的两个简称作了完整的当前仓库复核：
++
++\[
++\mathbf M:
++\text{terminal-free low/marked G 是否总有 paid exit},
++\]
++
++\[
++\mathbf H:
++\text{terminal-free high-support、}\mathcal I_\Sigma=\varnothing
++\text{ 是否总有 paid exit}.
++\]
++
++严格结果是
++
++\[
++\boxed{\mathbf M=\mathrm{CLOSED}_{\rm local}},
++\qquad
++\boxed{\mathbf H=\mathrm{OPEN}}.
++\]
++
++M 的缺口是三条已建立定理此前没有组合；现在已经补成一个全称 E1--E5 theorem。
++H 则出现了一个全称结构性底层：任何 $C=1$ high-support CHARGED 状态的固定 T5
++local tuple 是 $(0,1,0,0)$，因此所有仍返回 CHARGED 的 bundle/total-cofactor finite
++macro 都不可能严格下降。继续声称 H 已闭合，必须另外给出 root terminal、外层
++$\rho$ 下降，或一条带递归 total target 的付费 protocol/phase reset；当前仓库没有该
++定理。
++
++还有一个比 M/H 更上游的版本事实：当前 main 已正式拒绝此前 F1 closure package，
++`T6-F1-REACHABLE-STATE-EXHAUSTION` 保持 OPEN。因此 M/H 在当前规范 main 上并不是
++整个 T6 的字面“最后两个问题”。本报告不沿用被拒绝包的 closed-world 可达性前提。
++
++## 2. M 的完整关闭
++
++设 actual persistent source
++
++\[
++S=(p,R,K;A,\sigma),
++\qquad
++4K=pR+1,
++\quad
++3\le R\le p-2,
++\quad
++A\mid K,
++\quad
++W_S=\operatorname{Sol}(4,p),
++\]
++
++在 terminal-first 后为 marked F/G。规范 universal source
++
++\[
++\bigl(p,R(p-1)-p,p-1\bigr)
++\xrightarrow{q=p,t=1}
++(1,R-1,1)
++\]
++
++给出唯一 anchor。若 $R-1\mid K$，直接输出 Type I root terminal；否则令
++
++\[
++R-1=Q\beta,
++\qquad
++Q=\prod_{v_q(R-1)>v_q(K)}q^{v_q(R-1)},
++\qquad
++M=\operatorname{lcm}(A,Q).
++\]
++
++则 $Q>1$、$\beta\mid K$、$(Q,\beta)=1$、$Q\nmid K$，并且 $M/A\ge2$。
++唯一 canonical target 由
++
++\[
++1\le R'<4M,
++\qquad
++pR'\equiv-1\pmod{4M},
++\qquad
++K'=\frac{pR'+1}{4}
++\]
++
++确定。source 是 marked，所以
++
++\[
++A\le K\le B_p=\frac{(p-1)^2}{4}.
++\]
++
++因此
++
++\[
++\left\lfloor\frac{B_p}{M}\right\rfloor
++<
++\left\lfloor\frac{B_p}{A}\right\rfloor,
++\]
++
++直接支付 T5 `LOCAL_DROP`。E1 是 actual source、universal path 和完整超额 receipt；
++E2 是唯一 target；E3 在 enqueue 前独立重算 hit/F/G/overflow 和 owner；E4 是
++$\operatorname{Sol}(4,p)$ 恒等 lift；E5 是上述第一坐标严格下降。
++
++所以对独立产生的合法 marked F/G 状态，得到
++
++\[
++\boxed{\text{root terminal}\ \lor\ \text{verified successor}.}
++\]
++
++完整证明见
++[低支撑 marked F/G 的通用出口](../claims/type-I-marked-g-universal-anchor-complete-excess-exit.md)。
++
++这只关闭 M 的 local exit quantifier。它不证明 source 的 semantic reachability，也不把
++新 producer 偷塞进冻结 15-edge surface。实际接入 selector 时必须发布 versioned surface，
++并重新重放 F1 producer/target-reentry。
++
++## 3. H 的全称底层
++
++对 high-support CHARGED 状态写
++
++\[
++A>B_p,
++\qquad
++C=K/A.
++\]
++
++固定 T5 local tuple 为
++
++\[
++\left(0,C,\eta_p,0\right).
++\]
++
++在 $C=1,\eta_p=0$ 时，它等于 $(0,1,0,0)$，是整个同协议层的最小元。任一
++complete-excess target cofactor $c\in\{1,\ldots,p-1\}$：
++
++\[
++c=1\Rightarrow\text{stutter},
++\qquad
++c>1\Rightarrow\text{rise}.
++\]
++
++而且 $M/A\ge2$ 强制 $R_M>p$，所以 target 仍是 overflow，不能借 marked
++reclassification 偷降 phase。任何有限个 unqueued intermediate bundle 也无效，因为 E5
++比较真实 parent 和最终 persistent target，不比较内部峰值。整体余因子投影在 $C<p$
++时又精确满足 $t=0$，即 identity。
++
++direct-cofactor 也有现成的 sharp control：$p=97$ 的
++$(R,K;A)=(99,2401;2401)$ 正是 universal $C=1$ chart；其冻结 action 完整回返
++$c=1$，只能作为不入队的菜单耗尽记录。当前 T5-v2 势没有 action-menu 计数坐标，
++所以该 stutter 不能升级为 persistent edge。
++
++最小 canonical $C=1$ high chart 对每个核心 $p$ 都显式存在：
++
++\[
++A_1=K_1=\frac{(p+1)^2}{4}=B_p+p,
++\qquad
++R_1=p+2.
++\]
++
++其 universal anchor 的首个完整超额 bundle 固定为
++
++\[
++Q=2,
++\qquad
++\beta=\frac{p+1}{2},
++\qquad
++c=\frac{p+1}{2}>1,
++\]
++
++所以自然首步对每个核心 $p$ 都上升。其 determinant dual 虽给出小图表
++
++\[
++(R_d,K_d)=(p-2,B_p),
++\qquad
++(R_r,K_r)=\left(3,\frac{3p+1}{4}\right),
++\]
++
++却不保留旧 support $A_1$，不能按 joined-support CHARGED edge 准入。丢弃 support
++必须另建 paid reset，并证明 reset target 的后续 totality。
++
++完整定理和边界见
++[C=1 局部最小元](../claims/type-I-high-support-empty-improvement-c1-local-minimum-boundary.md)。
++
++## 4. 两-bundle 新证据没有关闭 H
++
++对 $p=73$，可重放两段真实 raw path，并把中间 $C=6$ chart 留作不入队 checkpoint：
++
++\[
++(143,2610;1305)_{C=2}
++\rightsquigarrow
++(21023,383670;63945)_{C=6}
++\rightsquigarrow
++(10508003,191771055;191771055)_{C=1}.
++\]
++
++宏端点满足
++
++\[
++(0,2)>(0,1),
++\]
++
++所以它是“单个 bundle 全上升”之外的真实两步正控制，证明中间上升本身不是绝对障碍。
++但是最终状态正落在 $C=1$ 底层；它没有 H 的下一条 paid exit。并且 $p=73$ 已有
++Type II root terminal $(20,219,4380)$，实际 terminal-first 会优先结束。因此当前
++replay 正确标为
++
++```text
++selector_status = analysis_evidence
++recursive_edge_eligible = false
++```
++
++而不是 selector edge。
++
++## 5. 严格剩余定理
++
++H 现在被精确压缩为
++
++\[
++\boxed{
++\begin{aligned}
++&H\text{ actual, terminal-first miss, }A>B_p,C=1\\
++&\quad\Longrightarrow
++\text{OUTER\_RANK\_DROP}
++\ \lor\
++\text{paid lower-protocol target with recursively total owner},
++\end{aligned}}
++\]
++
++或者证明该 actual family 为空。该命题需要新的数学；当前 complete-excess、
++same-chart promotion、total-cofactor 和 determinant dual 不能组合出它。
++
++若 terminal 的含义是任意可核验根证书，则 `terminal-first miss` 的语义全称版本与
++`Sol(4,p)` 是否为空直接相关；若它只是一个冻结的有限 prefix，miss 更不能被当成
++Erdős--Straus 反例。只有在 F1、全部 family totality、F3、F4 和 F5 都完成后，H 的
++出口才能通过 T5 良基归纳参与全局猜想证明。
++
++## 6. 仓库改动与验证
++
++新增：
++
++- `claims/type-I-marked-g-universal-anchor-complete-excess-exit.md`；
++- `claims/type-I-high-support-empty-improvement-c1-local-minimum-boundary.md`；
++- 两个 focused reproduction；
++- 四个回归测试；
++- `data/mh-final-two-problem-resolution-v1.json`。
++
++同时修复了完整 checkout 中四处缺少反斜杠的 LaTeX 间距命令，它们此前使
++`scripts/kb.py validate` 失败。
++
++聚焦命令：
++
++```bash
++python reproductions/type_i_marked_g_universal_anchor_complete_excess_exit.py --verify
++python reproductions/type_i_high_support_c1_local_minimum_boundary.py --verify
++python -m unittest tests.test_type_i_mh_final_two_boundary -v
++python scripts/kb.py validate
++```
++
++最终重放结果：
++
++```text
++knowledge-base validation: 1392 documents PASS
++maintained focused suite:    60 / 60 PASS
++M/H boundary tests:           4 / 4 PASS
++T6 ledger + root dispatcher:  4 / 4 PASS
++pre-T6 negative/audit suite:  16 / 16 PASS
++CI E/F lint surface:          PASS
++```
++
++冻结面审计继续返回 16 个 families、15 条 edges、8 个 active mathematical gaps
++与 5 个 open frontier theorems；本轮没有用 M 的局部定理篡改这个冻结账本。
++
++本轮规范状态是：
++
++| 对象 | 状态 |
++|---|---|
++| M local marked F/G exit | `CLOSED_BY_UNIVERSAL_VERIFIED_SUCCESSOR` |
++| H nonempty-improvement branch | `CLOSED_CONDITIONALLY` |
++| H $C=1$ CHARGED local bundle/cofactor exit | `IMPOSSIBLE_UNDER_FIXED_LOCAL_TICKET` |
++| H paid reset / outer drop | `OPEN` |
++| F1 semantic reachability exhaustion | `OPEN` |
++| T6 / Erdős--Straus | `OPEN` |
++
++因此不能诚实交付“两个都已 closed”的账本；可以交付的是一个真正关闭的 M，以及 H 的
++全称局部 no-go、最小边界和唯一合法剩余接口。
+diff --git a/docs/T6-V1.md b/docs/T6-V1.md
+index d3ecc7b..04d7156 100644
+--- a/docs/T6-V1.md
++++ b/docs/T6-V1.md
+@@ -479,7 +479,7 @@ r=\frac{7A^2+A+1}{u},\qquad D_H=(D,h^2-1),
+ \]
+ 则不再只有 \(D_*\mid2r+3\)，而是
+ \[
+-D_H=5,qquad D_*=2r+3,qquad D=10r+15.
++D_H=5,\qquad D_*=2r+3,\qquad D=10r+15.
+ \]
+ 故每个此类 receipt 落在单个三次整数核
+ \[
+diff --git a/index/theorem-ledger.md b/index/theorem-ledger.md
+index e821724..24ec53a 100644
+--- a/index/theorem-ledger.md
++++ b/index/theorem-ledger.md
+@@ -14,15 +14,15 @@
+ | 数学状态 | `computationally_reproduced` | 373 |
+ | 数学状态 | `conditional` | 30 |
+ | 数学状态 | `contradicted` | 2 |
+-| 数学状态 | `established` | 884 |
++| 数学状态 | `established` | 888 |
+ | 数学状态 | `open` | 12 |
+ | 数学状态 | `retracted` | 1 |
+ | 证明来源 | `computational_reproduction` | 128 |
+-| 证明来源 | `mixed` | 39 |
+-| 证明来源 | `repository_derivation` | 714 |
++| 证明来源 | `mixed` | 40 |
++| 证明来源 | `repository_derivation` | 717 |
+ | 证明来源 | `unspecified` | 428 |
+ | 审阅状态 | `independent_review` | 20 |
+-| 审阅状态 | `internal_review` | 861 |
++| 审阅状态 | `internal_review` | 865 |
+ | 审阅状态 | `unspecified` | 428 |
+ 
+ ## 全部主张
+@@ -518,6 +518,7 @@
+ | [C=4 最小高支撑正分支的 canonical complete-excess stutter](../claims/type-I-high-support-c4-canonical-stutter-boundary.md) (`type-I-high-support-c4-canonical-stutter-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
+ | [C=4 第一 bundle 双对偶的 R=7 边界与 p=1801 压力点](../claims/type-I-high-support-c4-first-bundle-dual-r7-boundary.md) (`type-I-high-support-c4-first-bundle-dual-r7-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
+ | [C=4 双高锚 complete-excess 的内部 checkpoint 严格宏](../claims/type-I-high-support-c4-two-anchor-persistent-macro.md) (`type-I-high-support-c4-two-anchor-persistent-macro`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
++| [高支撑空改善分支的 C=1 局部最小元与付费 reset 边界](../claims/type-I-high-support-empty-improvement-c1-local-minimum-boundary.md) (`type-I-high-support-empty-improvement-c1-local-minimum-boundary`) | `established` | `mixed` | `internal_review` | - | 2026-08-20 |
+ | [高支撑 F/G 状态的 rank-aware sink-bundle 有限选择器与 p=73 严格出口](../claims/type-I-high-support-rank-aware-sink-bundle-selector.md) (`type-I-high-support-rank-aware-sink-bundle-selector`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-11 |
+ | [高窗口 R 减一 full-excess 载体的自然 gap 排除](../claims/type-I-high-window-natural-gap-full-excess-carrier-exclusion.md) (`type-I-high-window-natural-gap-full-excess-carrier-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
+ | [Type I/II F-G 源映射的有限整数宇宙完备化](../claims/type-I-II-fg-universal-finite-source-map-completion.md) (`type-I-ii-fg-universal-finite-source-map-completion`) | `conditional` | `repository_derivation` | `internal_review` | - | 2026-08-10 |
+@@ -611,6 +612,7 @@
+ | [线性两块除子积集的 Kneser F 型必要条件](../claims/type-I-linear-two-block-kneser-f-obstruction.md) (`type-I-linear-two-block-kneser-f-obstruction`) | `established` | `repository_derivation` | `internal_review` | `grynkiewicz_marchan_ordaz2009`, `bradford2024` | 2026-07-29 |
+ | [线性两块奇部 source-map 完备性与 q-秩逃逸二分](../claims/type-I-linear-two-block-source-map-completeness.md) (`type-I-linear-two-block-source-map-completeness`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
+ | [线性双颜色载体的共享模数交集容量](../claims/type-I-linear-two-color-carrier-intersection-capacity.md) (`type-I-linear-two-color-carrier-intersection-capacity`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-30 |
++| [低支撑 marked F/G 的通用锚点 complete-excess 全称出口](../claims/type-I-marked-g-universal-anchor-complete-excess-exit.md) (`type-I-marked-g-universal-anchor-complete-excess-exit`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-20 |
+ | [外部支撑累积重图表的良基下降与 overflow 饱和边界](../claims/type-I-marked-support-accumulation-rechart-saturation.md) (`type-I-marked-support-accumulation-rechart-saturation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
+ | [九亿至十亿连续核心区间的混合终端闭合](../claims/type-I-mixed-terminal-dense-1b.md) (`type-I-mixed-terminal-dense-1b`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024`, `chamberland2026` | 2026-07-29 |
+ | [十亿至十一亿连续核心区间的混合终端闭合](../claims/type-I-mixed-terminal-dense-1p1b.md) (`type-I-mixed-terminal-dense-1p1b`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024`, `chamberland2026` | 2026-07-29 |
+@@ -811,6 +813,7 @@
+ | [proper-root stutter 的 c=h 奇距离偶源扇全称 no-go](../claims/type-I-root-capacity-stutter-c-equals-h-odd-distance-fan-no-go.md) (`type-I-root-capacity-stutter-c-equals-h-odd-distance-fan-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
+ | [proper-root stutter 的 C-side m 局部化与非平凡 T 余量](../claims/type-I-root-capacity-stutter-c-side-m-localization.md) (`type-I-root-capacity-stutter-c-side-m-localization`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
+ | [proper-root stutter 的 Eisenstein 商公共因子对齐](../claims/type-I-root-capacity-stutter-common-divisor-alignment.md) (`type-I-root-capacity-stutter-common-divisor-alignment`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-18 |
++| [proper-root stutter 的互补 Eisenstein 坐标缺口与固定坐标约化](../claims/type-I-root-capacity-stutter-complementary-eisenstein-coordinate-gap.md) (`type-I-root-capacity-stutter-complementary-eisenstein-coordinate-gap`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-19 |
+ | [根容量 actual stutter 的立方高度墙](../claims/type-I-root-capacity-stutter-cubic-hard-root-wall.md) (`type-I-root-capacity-stutter-cubic-hard-root-wall`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
+ | [proper-root stutter 范数的 Eisenstein 素因子支撑限制](../claims/type-I-root-capacity-stutter-eisenstein-support.md) (`type-I-root-capacity-stutter-eisenstein-support`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
+ | [根容量 stutter 的三参数整数曲线约束](../claims/type-I-root-capacity-stutter-finite-curve-constraint.md) (`type-I-root-capacity-stutter-finite-curve-constraint`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
+@@ -818,6 +821,7 @@
+ | [actual proper-root stutter 的 k=1 全称排除](../claims/type-I-root-capacity-stutter-k-one-universal-exclusion.md) (`type-I-root-capacity-stutter-k-one-universal-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
+ | [actual proper-root stutter 的 k=3 primitive Pell fiber 约化](../claims/type-I-root-capacity-stutter-k-three-primitive-fiber-reduction.md) (`type-I-root-capacity-stutter-k-three-primitive-fiber-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-18 |
+ | [actual proper-root k=3 的同-M Vieta companion 第二整数门障碍](../claims/type-I-root-capacity-stutter-k-three-vieta-companion-obstruction.md) (`type-I-root-capacity-stutter-k-three-vieta-companion-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-18 |
++| [actual proper-root stutter 的 m=3 双二次范数约化](../claims/type-I-root-capacity-stutter-m-three-biquadratic-norm-reduction.md) (`type-I-root-capacity-stutter-m-three-biquadratic-norm-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-19 |
+ | [根容量 stutter 的参数对 root-divisor gate 与 actual 边界](../claims/type-I-root-capacity-stutter-pair-root-divisor-gate.md) (`type-I-root-capacity-stutter-pair-root-divisor-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
+ | [proper-root stutter 的正定范数与平方根菜单界](../claims/type-I-root-capacity-stutter-positive-definite-norm-bound.md) (`type-I-root-capacity-stutter-positive-definite-norm-bound`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
+ | [proper-root stutter 的 primitive quotient 正规化与 cyclotomic 饱和](../claims/type-I-root-capacity-stutter-primitive-quotient-normalization.md) (`type-I-root-capacity-stutter-primitive-quotient-normalization`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-18 |
+diff --git a/reproductions/type_i_high_support_c1_local_minimum_boundary.py b/reproductions/type_i_high_support_c1_local_minimum_boundary.py
+new file mode 100755
+index 0000000..2aba69d
+--- /dev/null
++++ b/reproductions/type_i_high_support_c1_local_minimum_boundary.py
+@@ -0,0 +1,283 @@
++#!/usr/bin/env python3
++"""Verify the C=1 high-support local minimum and the p=73 two-bundle control.
++
++The two-bundle row is deliberately emitted as conditional analysis evidence:
++p=73 is preempted by a direct root terminal and the frozen selector has no
++versioned adapter for this macro.  Its purpose is to confirm that C=2 can reach
++C=1 while C=1 itself remains the exact fixed-T5 CHARGED boundary.
++"""
++
++from __future__ import annotations
++
++import argparse
++import json
++from math import gcd, lcm
++
++import type_i_bottom_sink_scc_complete_excess_bundle as bottom
++import type_i_high_r_chart_two_anchor as shared
++
++
++def sharp_rank(prime: int, K: int, support: int) -> tuple[int, int]:
++    if support <= 0 or K % support:
++        raise AssertionError("charged support must divide K")
++    return ((prime - 1) ** 2 // (4 * support), K // support)
++
++
++def centered_f_receipt(R: int, K: int, witness: tuple[int, ...]) -> dict[str, object]:
++    factors = shared.factorization(K)
++    receipt = shared.residue_witness(R, factors, witness)
++    residues = {1}
++    for q, exponent in factors:
++        residues = {
++            left * pow(q, z, R) % R
++            for left in residues
++            for z in range(-exponent, exponent + 1)
++        }
++    if R - 1 in residues or receipt["classification"] != "F":
++        raise AssertionError("canonical F classification control changed")
++    receipt["bounded_residue_count"] = len(residues)
++    return receipt
++
++
++def replay_labels(
++    R: int,
++    K: int,
++    source: tuple[int, int, int],
++    labels: tuple[int, ...],
++) -> tuple[tuple[int, int, int], list[dict[str, object]]]:
++    current = source
++    rows: list[dict[str, object]] = []
++    factors = bottom.factorization(K)
++    for q in labels:
++        target, shift, common = bottom.formal_transition(current, q, R, factors)
++        if shift != q - 1 or common != 1:
++            raise AssertionError("raw path lost its primitive q-1 form")
++        rows.append(
++            {
++                "source": list(current),
++                "q": q,
++                "shift": shift,
++                "gcd_reduction": common,
++                "target": list(target),
++            }
++        )
++        current = target
++    return current, rows
++
++
++def canonical_c1_boundary(prime: int) -> dict[str, object]:
++    if prime % 24 != 1:
++        raise AssertionError("control must lie in the core congruence class")
++    bound = (prime - 1) ** 2 // 4
++    support = (prime + 1) ** 2 // 4
++    R, K = prime + 2, support
++    if not (
++        support == bound + prime
++        and 4 * K == prime * R + 1
++        and sharp_rank(prime, K, support) == (0, 1)
++    ):
++        raise AssertionError("minimal C=1 chart formula changed")
++
++    d = prime - 1
++    n = prime * prime + prime - 1
++    residue = (3 * prime + 1) // 4
++    quotient = (prime - 1) // 4
++    reduced_n = n - 4 * quotient * d
++    if not (
++        support == quotient * prime + residue
++        and prime * n == 4 * support * d + 1
++        and reduced_n == 3 * prime - 2
++    ):
++        raise AssertionError("C=1 determinant data changed")
++
++    dual_d = (4 * d - reduced_n, d * (prime - residue))
++    dual_r = (4 * residue - reduced_n, residue * (prime - d))
++    if dual_d != (prime - 2, bound) or dual_r != (3, residue):
++        raise AssertionError("C=1 determinant dual formulas changed")
++
++    anchor_selected = prime + 1
++    Q, beta = 2, (prime + 1) // 2
++    target_support = lcm(support, Q)
++    target_R, target_K = bottom.canonical_chart(prime, target_support)
++    if not (
++        anchor_selected == Q * beta
++        and K % beta == 0
++        and target_support == 2 * support
++        and target_K // target_support == (prime + 1) // 2
++        and target_R > prime
++    ):
++        raise AssertionError("universal C=1 first-bundle rise changed")
++
++    for target_cofactor in range(1, prime):
++        target_local = (0, target_cofactor, 0, 0)
++        if target_local < (0, 1, 0, 0):
++            raise AssertionError("a CHARGED cofactor fell below C=1")
++
++    fiber_control: dict[str, object] | None = None
++    if prime == 73:
++        support_primes = bottom.factorization(K)
++        values = {str(q): bottom.jacobi_symbol(q, R) for q in support_primes}
++        minus_one = bottom.jacobi_symbol(-1, R)
++        if values != {"37": 1} or minus_one != -1:
++            raise AssertionError("p=73 C=1 G separator changed")
++        fiber_control = {
++            "classification": "G",
++            "support_values": values,
++            "minus_one": minus_one,
++        }
++
++    return {
++        "p": prime,
++        "B_p": bound,
++        "minimal_C1_state": [R, K, support],
++        "local_rank": [0, 1, 0, 0],
++        "determinant": {
++            "M": support,
++            "d": d,
++            "n": n,
++            "M_mod_p": residue,
++            "k": quotient,
++            "s": reduced_n,
++        },
++        "dual_d": list(dual_d),
++        "dual_r": list(dual_r),
++        "universal_anchor_first_bundle": {
++            "anchor": [1, anchor_selected],
++            "Q": Q,
++            "beta": beta,
++            "target": [target_R, target_K, target_support],
++            "target_cofactor": target_K // target_support,
++            "relation": "increase",
++        },
++        "fiber_control": fiber_control,
++        "joined_support_preserved": False,
++    }
++
++
++def p73_two_bundle_control() -> dict[str, object]:
++    prime = 73
++    H0 = (143, 2_610, 1_305)
++    H1 = (21_023, 383_670, 63_945)
++    H2 = (10_508_003, 191_771_055, 191_771_055)
++    for R, K, support in (H0, H1, H2):
++        if 4 * K != prime * R + 1 or K % support:
++            raise AssertionError("p=73 high chart changed")
++
++    fiber0 = centered_f_receipt(H0[0], H0[1], (0, -2, 2, -1))
++    fiber1 = centered_f_receipt(H1[0], H1[1], (-1, 8, 0, -5, -2))
++    fiber2 = centered_f_receipt(H2[0], H2[1], (-9, 8, -6, 11, 0))
++    if [fiber0["bounded_residue_count"], fiber1["bounded_residue_count"], fiber2["bounded_residue_count"]] != [86, 875, 675]:
++        raise AssertionError("independent F typing counts changed")
++
++    anchor0 = (1, H0[0] - 1, 1)
++    node1, path1 = replay_labels(
++        H0[0], H0[1], anchor0, (71, 47, 7, 2, 19, 17, 3)
++    )
++    if node1 != (45, 98, 1):
++        raise AssertionError("first two-bundle path endpoint changed")
++    Q1, beta1, residual1 = 49, 2, 90
++    M1 = lcm(H0[2], Q1)
++    if not (
++        node1[1] == Q1 * beta1
++        and node1[0] * beta1 == residual1
++        and H0[1] % residual1 == 0
++        and gcd(Q1, residual1) == 1
++        and M1 == H1[2]
++        and bottom.canonical_chart(prime, M1) == H1[:2]
++    ):
++        raise AssertionError("first bundle receipt changed")
++
++    anchor1 = (1, H1[0] - 1, 1)
++    node2, path2 = replay_labels(
++        H1[0], H1[1], anchor1, (457, 11, 59, 3, 2, 13, 647)
++    )
++    if node2 != (30, 20_993, 1):
++        raise AssertionError("second two-bundle path endpoint changed")
++    Q2, beta2, residual2 = 2_999, 7, 210
++    M2 = lcm(H1[2], Q2)
++    if not (
++        node2[1] == Q2 * beta2
++        and node2[0] * beta2 == residual2
++        and H1[1] % residual2 == 0
++        and gcd(Q2, residual2) == 1
++        and M2 == H2[2]
++        and bottom.canonical_chart(prime, M2) == H2[:2]
++    ):
++        raise AssertionError("second bundle receipt changed")
++
++    ranks = {
++        "H0": sharp_rank(prime, H0[1], H0[2]),
++        "H1_transient": sharp_rank(prime, H1[1], H1[2]),
++        "H2": sharp_rank(prime, H2[1], H2[2]),
++    }
++    if not ranks["H2"] < ranks["H0"] or ranks["H1_transient"] <= ranks["H0"]:
++        raise AssertionError("parent-to-final rank comparison changed")
++
++    terminal = (20, 219, 4_380)
++    x, y, z = terminal
++    if 4 * x * y * z != prime * (x * y + x * z + y * z):
++        raise AssertionError("p=73 terminal preemption changed")
++
++    return {
++        "source": {"state": list(H0), "fiber": fiber0, "rank": list(ranks["H0"])},
++        "first_bundle": {
++            "path": path1,
++            "node": list(node1),
++            "Q": Q1,
++            "beta": beta1,
++            "residual": residual1,
++            "target": list(H1),
++            "fiber": fiber1,
++            "rank": list(ranks["H1_transient"]),
++            "persistent": False,
++        },
++        "second_bundle": {
++            "path": path2,
++            "node": list(node2),
++            "Q": Q2,
++            "beta": beta2,
++            "residual": residual2,
++            "target": list(H2),
++            "fiber": fiber2,
++            "rank": list(ranks["H2"]),
++        },
++        "E4": "identity_on_Sol(4,73)",
++        "E5": {"source": list(ranks["H0"]), "target": list(ranks["H2"])},
++        "terminal_first_preemption": list(terminal),
++        "selector_status": "analysis_evidence",
++        "recursive_edge_eligible": False,
++        "why_not_edge": [
++            "p73 direct root terminal has priority",
++            "no versioned two-bundle adapter is registered on the frozen surface",
++            "the final C=1 target still has no paid exit",
++        ],
++    }
++
++
++def run() -> dict[str, object]:
++    symbolic_controls = [canonical_c1_boundary(p) for p in (73, 97, 193, 241, 313)]
++    return {
++        "theorem": "type-I-high-support-empty-improvement-c1-local-minimum-boundary",
++        "symbolic_integer_controls": symbolic_controls,
++        "p73_two_bundle_control": p73_two_bundle_control(),
++        "status": {
++            "C1_local_minimum": "verified",
++            "H_universal_exit": "open",
++        },
++    }
++
++
++def main() -> int:
++    parser = argparse.ArgumentParser()
++    parser.add_argument("--verify", action="store_true")
++    args = parser.parse_args()
++    result = run()
++    if args.verify:
++        print("verified C=1 high-support local minimum and p=73 two-bundle boundary")
++    else:
++        print(json.dumps(result, indent=2))
++    return 0
++
++
++if __name__ == "__main__":
++    raise SystemExit(main())
+diff --git a/reproductions/type_i_marked_g_universal_anchor_complete_excess_exit.py b/reproductions/type_i_marked_g_universal_anchor_complete_excess_exit.py
+new file mode 100755
+index 0000000..ad33312
+--- /dev/null
++++ b/reproductions/type_i_marked_g_universal_anchor_complete_excess_exit.py
+@@ -0,0 +1,169 @@
++#!/usr/bin/env python3
++"""Replay the universal paid exit for a low-support marked G chart.
++
++The universal theorem is proved symbolically in the accompanying claim.  This
++script is a focused independent integer replay of the nonempty p=601 G-to-G
++control, including the raw source, full-block bundle, canonical target, typing,
++identity lift, and the real parent-to-target T5 comparison.
++"""
++
++from __future__ import annotations
++
++import argparse
++import json
++from math import lcm
++
++import type_i_bottom_sink_scc_complete_excess_bundle as bottom
++
++
++def sharp_rank(prime: int, K: int, support: int) -> tuple[int, int]:
++    if support <= 0 or K % support:
++        raise AssertionError("charged support must divide K")
++    bound = (prime - 1) ** 2 // 4
++    return bound // support, K // support
++
++
++def full_excess(selected: int, K: int) -> tuple[int, int]:
++    K_factors = bottom.factorization(K)
++    Q = 1
++    beta = 1
++    for q, exponent in bottom.factorization(selected).items():
++        if exponent > K_factors.get(q, 0):
++            Q *= q**exponent
++        else:
++            beta *= q**exponent
++    return Q, beta
++
++
++def jacobi_g_receipt(R: int, K: int) -> dict[str, object]:
++    factors = bottom.factorization(K)
++    values = {str(q): bottom.jacobi_symbol(q, R) for q in factors}
++    minus_one = bottom.jacobi_symbol(-1, R)
++    if not all(value == 1 for value in values.values()) or minus_one != -1:
++        raise AssertionError("chart is not certified G by its Jacobi separator")
++    return {
++        "classification": "G",
++        "support_factorization": [[q, exponent] for q, exponent in factors.items()],
++        "separator": {
++            "kind": "Jacobi",
++            "modulus": R,
++            "support_values": values,
++            "minus_one": minus_one,
++        },
++    }
++
++
++def p601_control() -> dict[str, object]:
++    prime, R, K, support = 601, 599, 90_000, 1
++    bound = (prime - 1) ** 2 // 4
++    if not (
++        prime % 24 == 1
++        and 4 * K == prime * R + 1
++        and 3 <= R <= prime - 2
++        and K % support == 0
++        and K <= bound
++    ):
++        raise AssertionError("p=601 source chart changed")
++
++    source_fiber = jacobi_g_receipt(R, K)
++    source = (prime, R * (prime - 1) - prime, prime - 1)
++    anchor, shift, common = bottom.formal_transition(
++        source, prime, R, bottom.factorization(K)
++    )
++    if (anchor, shift, common) != ((1, 598, 1), 1, 1):
++        raise AssertionError("universal p-source edge changed")
++
++    Q, beta = full_excess(anchor[1], K)
++    residual = anchor[0] * beta
++    target_support = lcm(support, Q)
++    if not (
++        (Q, beta, residual, target_support) == (299, 2, 2, 299)
++        and residual > 0
++        and K % residual == 0
++        and K % Q != 0
++        and target_support // support >= 2
++    ):
++        raise AssertionError("complete-excess receipt changed")
++
++    target_R, target_K = bottom.canonical_chart(prime, target_support)
++    if (target_R, target_K) != (199, 29_900):
++        raise AssertionError("canonical target changed")
++    target_fiber = jacobi_g_receipt(target_R, target_K)
++
++    source_rank = sharp_rank(prime, K, support)
++    target_rank = sharp_rank(prime, target_K, target_support)
++    if not target_rank < source_rank:
++        raise AssertionError("real parent-to-target T5 rank did not descend")
++
++    terminal = (152, 13_053, 62_758_824)
++    x, y, z = terminal
++    if 4 * x * y * z != prime * (x * y + x * z + y * z):
++        raise AssertionError("p=601 root-terminal control changed")
++
++    return {
++        "source_state": {
++            "p": prime,
++            "R": R,
++            "K": K,
++            "A": support,
++            "fiber": source_fiber,
++            "rank": list(source_rank),
++        },
++        "E1": {
++            "universal_source": list(source),
++            "q": prime,
++            "shift": shift,
++            "gcd_reduction": common,
++            "anchor": list(anchor),
++            "Q": Q,
++            "beta": beta,
++            "residual": residual,
++        },
++        "E2_E3": {
++            "target_state": {
++                "p": prime,
++                "R": target_R,
++                "K": target_K,
++                "A": target_support,
++                "fiber": target_fiber,
++                "rank": list(target_rank),
++            },
++            "classification_was_recomputed": True,
++        },
++        "E4": "identity_on_Sol(4,p)",
++        "E5": {
++            "ticket": "LOCAL_DROP",
++            "source_rank": list(source_rank),
++            "target_rank": list(target_rank),
++        },
++        "root_terminal_preemption_control": list(terminal),
++        "global_scope": {
++            "local_M_atom": "CLOSED_BY_UNIVERSAL_VERIFIED_SUCCESSOR",
++            "F1_reachable_state_exhaustion": "OPEN",
++            "registered_on_frozen_v2_surface": False,
++        },
++    }
++
++
++def run() -> dict[str, object]:
++    return {
++        "theorem": "type-I-marked-g-universal-anchor-complete-excess-exit",
++        "control": p601_control(),
++        "status": "verified",
++    }
++
++
++def main() -> int:
++    parser = argparse.ArgumentParser()
++    parser.add_argument("--verify", action="store_true")
++    args = parser.parse_args()
++    result = run()
++    if args.verify:
++        print("verified universal marked-G anchor complete-excess exit")
++    else:
++        print(json.dumps(result, indent=2))
++    return 0
++
++
++if __name__ == "__main__":
++    raise SystemExit(main())
+diff --git a/tests/test_type_i_mh_final_two_boundary.py b/tests/test_type_i_mh_final_two_boundary.py
+new file mode 100644
+index 0000000..116a46d
+--- /dev/null
++++ b/tests/test_type_i_mh_final_two_boundary.py
+@@ -0,0 +1,73 @@
++from __future__ import annotations
++
++import importlib.util
++import sys
++import unittest
++from pathlib import Path
++
++ROOT = Path(__file__).resolve().parents[1]
++
++
++def load_module(name: str, relative: str):
++    path = ROOT / relative
++    spec = importlib.util.spec_from_file_location(name, path)
++    if spec is None or spec.loader is None:  # pragma: no cover
++        raise RuntimeError(f"cannot import {path}")
++    module = importlib.util.module_from_spec(spec)
++    sys.path.insert(0, str(ROOT / "reproductions"))
++    try:
++        spec.loader.exec_module(module)
++    finally:
++        sys.path.pop(0)
++    return module
++
++
++M = load_module(
++    "type_i_marked_g_universal_anchor_complete_excess_exit",
++    "reproductions/type_i_marked_g_universal_anchor_complete_excess_exit.py",
++)
++H = load_module(
++    "type_i_high_support_c1_local_minimum_boundary",
++    "reproductions/type_i_high_support_c1_local_minimum_boundary.py",
++)
++
++
++class MarkedGUniversalExitTests(unittest.TestCase):
++    def test_p601_control_has_real_local_drop(self) -> None:
++        row = M.p601_control()
++        self.assertEqual(row["source_state"]["fiber"]["classification"], "G")
++        self.assertEqual(row["E2_E3"]["target_state"]["fiber"]["classification"], "G")
++        self.assertLess(
++            tuple(row["E5"]["target_rank"]),
++            tuple(row["E5"]["source_rank"]),
++        )
++
++    def test_M_does_not_silently_close_F1(self) -> None:
++        scope = M.p601_control()["global_scope"]
++        self.assertEqual(scope["F1_reachable_state_exhaustion"], "OPEN")
++        self.assertFalse(scope["registered_on_frozen_v2_surface"])
++
++
++class HighSupportC1BoundaryTests(unittest.TestCase):
++    def test_minimal_C1_chart_and_duals(self) -> None:
++        row = H.canonical_c1_boundary(73)
++        self.assertEqual(row["minimal_C1_state"], [75, 1369, 1369])
++        self.assertEqual(row["local_rank"], [0, 1, 0, 0])
++        self.assertEqual(row["dual_d"], [71, 1296])
++        self.assertEqual(row["dual_r"], [3, 55])
++        self.assertEqual(
++            row["universal_anchor_first_bundle"]["target_cofactor"], 37
++        )
++        self.assertEqual(row["universal_anchor_first_bundle"]["relation"], "increase")
++        self.assertFalse(row["joined_support_preserved"])
++
++    def test_p73_two_bundle_only_reaches_the_boundary(self) -> None:
++        row = H.p73_two_bundle_control()
++        self.assertLess(tuple(row["E5"]["target"]), tuple(row["E5"]["source"]))
++        self.assertEqual(row["second_bundle"]["target"][-1], row["second_bundle"]["target"][1])
++        self.assertEqual(row["selector_status"], "analysis_evidence")
++        self.assertFalse(row["recursive_edge_eligible"])
++
++
++if __name__ == "__main__":
++    unittest.main()
+-- 
+2.51.1
+

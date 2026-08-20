@@ -18,7 +18,7 @@
 
 ## 审查对象
 
-复核包为 `erdos_straus_T2_T5_FULL_2026-08-17.zip`，SHA-256 为
+复核包为 [`../archive/proof-packages/raw/erdos_straus_T2_T5_FULL_2026-08-17.zip`](../archive/proof-packages/raw/erdos_straus_T2_T5_FULL_2026-08-17.zip)，SHA-256 为
 `abce823e05ff38c7fca13162d76bfd45ede0ec722ebb9dfac775c52d941aad40`。
 包内 SHA-256 manifest、focused verifiers 和 bundle validation 均通过。合并前，包内
 `denominator-escape-state-contract` 快照与仓库基线逐字一致；合同第 4 节确实把 selector

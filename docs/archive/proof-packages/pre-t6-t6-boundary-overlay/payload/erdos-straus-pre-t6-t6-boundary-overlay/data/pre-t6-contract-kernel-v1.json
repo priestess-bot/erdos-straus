@@ -1,0 +1,156 @@
+{
+  "manifest_id": "pre_t6_contract_kernel_v1",
+  "manifest_version": 1,
+  "date": "2026-08-20",
+  "baseline_commit": "ef95ac0f2c3b687bb67d33dc490b248ccd8cfcb0",
+  "status": "CLOSED_WITH_EXPLICIT_SCOPE",
+  "scope": {
+    "root_domain": "core primes p congruent to 1 modulo 24",
+    "registered_transition_surface": "t5_full_transition_surface_v2",
+    "registered_edge_count": 15,
+    "root_mark": "Sol(p)",
+    "closed_world": true,
+    "semantic_reachable_state_exhaustion": false,
+    "future_constructor_policy": "REJECT_UNTIL_REGISTERED_WITH_T2_T3_AND_T6_OBLIGATIONS",
+    "registered_family_count": 16
+  },
+  "kernel_theorems": [
+    {
+      "id": "T1v1",
+      "name": "H4 clean-q a=1 relative macro closure",
+      "status": "CLOSED_RELATIVE",
+      "closure_class": "relative_contract_theorem",
+      "statement": "For an actual parent-anchored proper-overlap top-capacity H4 receipt with a_alt=1 and verified terminal-priority miss, the clean-q macro supplies a phase-local E1-E5 candidate transition or terminal under the written guard.",
+      "does_not_claim": [
+        "all H4 branches are covered",
+        "all descendants have a total continuation",
+        "T6 totality"
+      ],
+      "evidence": [
+        "claims/type-II-q-one-c-two-19-phase-h4-clean-q-e1-e5-relative-macro-closure.md",
+        "docs/T2-T5-full-integration-review-2026-08-17.md"
+      ]
+    },
+    {
+      "id": "T2v1",
+      "name": "finite atomic-admission grammar",
+      "status": "CLOSED_PHASE_LOCAL",
+      "closure_class": "finite_receipt_grammar_theorem",
+      "statement": "The frozen atomic surface A_v1=A_H4 disjoint-union A_C8 has a deterministic receipt grammar for the H4 a=1 actual arm and the conditional c=8 double-low arm.",
+      "does_not_claim": [
+        "all raw paths are atomic-admissible",
+        "every c=8 parent is double-low",
+        "future atomic constructors are admitted"
+      ],
+      "evidence": [
+        "claims/type-I-atomic-admission-v1-finite-grammar-integration.md",
+        "docs/T2-T5-full-integration-review-2026-08-17.md"
+      ]
+    },
+    {
+      "id": "T3v1",
+      "name": "current registered graph has no nontrivial-mark seed",
+      "status": "CLOSED_CURRENT_GRAPH",
+      "closure_class": "closed_world_invariant",
+      "statement": "Starting from root mark Sol(p), neither the initializer nor any of the 15 registered edge generators targets generic_nontrivial_marked_state; direct terminals use the root-certificate disjunction. Hence a nontrivial marked state is unreachable in the frozen named graph.",
+      "reopen_conditions": [
+        "a registered edge targets a nontrivial marked family",
+        "the initializer creates a nontrivial mark",
+        "a terminal is accepted only in a changed equation fiber"
+      ],
+      "does_not_claim": [
+        "an abstract membership theorem for every future mark",
+        "semantic reachability exhaustion"
+      ],
+      "evidence": [
+        "data/t6-selector-obligation-ledger-v1.json",
+        "claims/root-context-terminal-disjunctive-invariant.md"
+      ]
+    },
+    {
+      "id": "T4v1",
+      "name": "ordinary q>=1 G fresh-source handoff",
+      "status": "CLOSED_RELATIVE",
+      "closure_class": "relative_contract_theorem",
+      "statement": "Every actual terminal-first ordinary G endpoint with mark Sol(p) satisfying the written q=1 or positive-q receipt guard has a target-independent full-carrier Type I fresh-root handoff and the registered first strict local segment.",
+      "does_not_claim": [
+        "post-handoff Type I totality",
+        "nontrivial marked handoff",
+        "T6 totality"
+      ],
+      "evidence": [
+        "claims/type-II-q-one-full-carrier-phase-root-entry.md",
+        "claims/type-II-positive-q-G-full-carrier-phase-root-entry.md",
+        "docs/q1-fresh-handoff-proof-package-audit-2026-08-17.md"
+      ]
+    },
+    {
+      "id": "T5v1",
+      "name": "contract-admitted recursive graph is well founded",
+      "status": "CLOSED_CONTRACT_LEVEL",
+      "closure_class": "well_founded_admission_theorem",
+      "statement": "Every admitted verified_edge carries OUTER_RANK_DROP, PHASE_DROP, or LOCAL_DROP and strictly decreases the fixed N^7 potential.",
+      "does_not_claim": [
+        "every E1-E4 candidate receives a ticket",
+        "every reachable nonterminal state has an edge",
+        "T6 totality"
+      ],
+      "evidence": [
+        "claims/type-I-t5-full-contract-level-global-well-foundedness.md",
+        "docs/T2-T5-full-integration-review-2026-08-17.md"
+      ]
+    }
+  ],
+  "legacy_strong_formulations": [
+    {
+      "id": "T1-star",
+      "status": "RESEARCH_EXTENSION_NOT_KERNEL_PREREQUISITE",
+      "owner": "T6-F2-NONPROPER-DISPATCH-TOTALITY",
+      "description": "all H4 branches and descendants"
+    },
+    {
+      "id": "T2-star",
+      "status": "RESEARCH_EXTENSION_NOT_KERNEL_PREREQUISITE",
+      "owner": "T6-F1-REACHABLE-STATE-EXHAUSTION",
+      "description": "all actual raw paths and future atomic surfaces"
+    },
+    {
+      "id": "T3-star",
+      "status": "RESEARCH_EXTENSION_NOT_KERNEL_PREREQUISITE",
+      "owner": "constructor_admission_firewall",
+      "description": "abstract membership for any future nontrivial mark"
+    }
+  ],
+  "mechanical_closures": [
+    {
+      "id": "registered_surface_inventory",
+      "status": "ESTABLISHED",
+      "proof": "15 unique registered edge generators; every source and target is a named family"
+    },
+    {
+      "id": "current_graph_mark_invariant",
+      "status": "ESTABLISHED",
+      "proof": "no initializer or edge targets generic_nontrivial_marked_state"
+    },
+    {
+      "id": "constructor_admission_firewall",
+      "status": "ESTABLISHED",
+      "proof": "manifest and CI reject an unregistered family, an unknown target, or a marked target without explicit reopen obligations"
+    },
+    {
+      "id": "pre_t6_scope_separation",
+      "status": "ESTABLISHED",
+      "proof": "T1v1-T5v1 carry explicit scopes and no kernel theorem claims T6 or F0"
+    },
+    {
+      "id": "q1_package_provenance_boundary",
+      "status": "ESTABLISHED",
+      "proof": "outer archive digest and detached payload evidence are authoritative; the embedded self-hash is explicitly non-authoritative"
+    }
+  ],
+  "global_status": {
+    "T6_GLOBAL_SELECTOR_TOTALITY": "OPEN",
+    "F0": "OPEN",
+    "ERDOS_STRAUS_CONJECTURE": "OPEN"
+  }
+}

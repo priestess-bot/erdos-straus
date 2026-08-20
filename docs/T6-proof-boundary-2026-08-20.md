@@ -111,7 +111,7 @@ owner digest 与 enqueue gate 接入当前状态合同；它也只假设 15 个 
 枚举全部 constructor。因此该闭合结论未被接纳，F1 保持 `OPEN`。完整依据、输入完整性与
 可接纳的后续接口见 [F1 reachable-state exhaustion 包复核](F1-reachable-state-exhaustion-package-review-2026-08-20.md)。
 该包已解压并以未接纳候选形式保存在
-[`archive/f1-reachable-state-exhaustion-candidate-2026-08-20/`](archive/f1-reachable-state-exhaustion-candidate-2026-08-20/)。
+[`archive/proof-packages/f1-reachable-state-exhaustion-all-outputs-2026-08-20/`](archive/proof-packages/f1-reachable-state-exhaustion-all-outputs-2026-08-20/)。
 它能保留的正面内容仅是 O1 的 F1/F2--F3 分解、future-constructor 重开规则，以及在已知
 至少一个 guard 命中时的 ordered-first-match 唯一性；这些是 F1 的设计约束，不是
 reachable-state exhaustion 定理。
@@ -127,6 +127,13 @@ reachable-state exhaustion 定理。
 4. `GAP-O1-HIGH-SUPPORT-ROOT-CAPACITY`：improvement set 为空时的 empty/terminal/edge；
 5. `GAP-O1-ATOMIC-TARGET-CLOSURE`：H4/c=8 macro 发出的每个 nonterminal target；
 6. `GAP-O3-C8-OUTGOING`：每个 c=8 parent 的 terminal/double-low/other-edge 三分。
+
+**2026-08-21 M/H 包复核。** M 的 universal anchor complete-excess 构造已给出 E2、
+root-wide E4 和 low-support `LOCAL_DROP`，但 target 的 E3 owner/serializer/re-entry 未被
+全称构造，且未注册到冻结 15-edge surface；它只能作为条件性 adapter。H 已证明
+`C=1, eta_p=0` high-support CHARGED 的同协议 bundle/total-cofactor 无法支付 E5，但
+`C>1` 的 terminal-first-miss empty-improvement 分支仍是本 F2 gap 的一部分。详见
+[M/H 证明包复核](M-H-final-two-problem-audit-2026-08-20.md)。
 
 “有一条 conditional adapter”不足以关闭某 family；需要证明 adapter 的 guard 对该 family
 全覆盖，或给出其余 guard 的 terminal/empty/edge。

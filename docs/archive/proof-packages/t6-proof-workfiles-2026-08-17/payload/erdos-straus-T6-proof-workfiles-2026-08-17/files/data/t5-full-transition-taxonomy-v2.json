@@ -1,0 +1,142 @@
+{
+  "taxonomy_id": "t5_full_transition_surface_v2",
+  "date": "2026-08-17",
+  "selector_outputs": [
+    {
+      "kind": "type_I_hit",
+      "persistent_successor": false,
+      "t5_class": "TERMINAL"
+    },
+    {
+      "kind": "type_II_hit",
+      "persistent_successor": false,
+      "t5_class": "TERMINAL"
+    },
+    {
+      "kind": "support_switch",
+      "persistent_successor": "conditional",
+      "t5_class": "REQUIRE_ONE_OF_THREE_ADMISSION_TICKETS"
+    },
+    {
+      "kind": "q_adic_lift",
+      "persistent_successor": "conditional",
+      "t5_class": "REQUIRE_ONE_OF_THREE_ADMISSION_TICKETS"
+    },
+    {
+      "kind": "generalized_dyadic_terminal",
+      "persistent_successor": "only_if_represented_as_smaller_marked_state",
+      "t5_class": "TERMINAL_OR_OUTER_RANK_DROP"
+    }
+  ],
+  "terminal_labels": [
+    "root_terminal_leaf",
+    "factorization_free_centered_pair_terminal",
+    "registered_direct_root_terminal"
+  ],
+  "nonrecursive_surfaces": [
+    "fixed-layer quotient Fourier certificate",
+    "q-adic phase-cell capacity evidence",
+    "natural-tail relation graph kappa transitions",
+    "unlifted generalized dyadic candidate",
+    "formal PRE/ABSORB cursor edges before E1-E4",
+    "pending_dispatch normalization",
+    "raw macro checkpoint",
+    "standalone atomic stutter",
+    "overflow carrier reset without T5 admission",
+    "control-only fixture"
+  ],
+  "current_verified_edge_families": [
+    {
+      "family": "Type-II proper endpoint descent",
+      "rank_ticket": "LOCAL_DROP or PHASE_DROP",
+      "reference": "type-II-relation-reach-proper-endpoint-descent"
+    },
+    {
+      "family": "Type-II gcd-shadow descent",
+      "rank_ticket": "LOCAL_DROP for F; PHASE_DROP for G",
+      "reference": "type-II-relation-reach-gcd-shadow-endpoint-descent"
+    },
+    {
+      "family": "q=1 G full-carrier root entry",
+      "rank_ticket": "PHASE_DROP",
+      "reference": "type-II-q-one-full-carrier-phase-root-entry"
+    },
+    {
+      "family": "positive-q G full-carrier root entry",
+      "rank_ticket": "PHASE_DROP",
+      "reference": "type-II-positive-q-G-full-carrier-phase-root-entry"
+    },
+    {
+      "family": "q=1 G c=3 conditional source-lineage relay",
+      "rank_ticket": "PHASE_DROP then LOCAL_DROP",
+      "reference": "type-II-q-one-c3-source-lineage-phase-root-entry"
+    },
+    {
+      "family": "charged support accumulation / same-chart promotion",
+      "rank_ticket": "LOCAL_DROP on (J,C,eta)",
+      "reference": "type-I-overflow-unbounded-same-chart-promotion-persistence-boundary"
+    },
+    {
+      "family": "joined-support overflow outer reset",
+      "rank_ticket": "LOCAL_DROP on J; remains CHARGED",
+      "reference": "type-I-overflow-outer-rank-reset"
+    },
+    {
+      "family": "A=1 dual overflow reset",
+      "rank_ticket": "LOCAL_DROP on J",
+      "reference": "type-I-overflow-a-one-dual-outer-rank-reset"
+    },
+    {
+      "family": "high-carrier fixed-n bounded divisor descent",
+      "rank_ticket": "LOCAL_DROP on J (R drop is secondary)",
+      "reference": "type-I-overflow-high-carrier-fixed-n-R-descent"
+    },
+    {
+      "family": "high-support rank-aware sink bundle",
+      "rank_ticket": "LOCAL_DROP on C",
+      "reference": "type-I-high-support-rank-aware-sink-bundle-selector"
+    },
+    {
+      "family": "q=1 d=1 relay / one-time regeneration",
+      "rank_ticket": "LOCAL_DROP on J, then C, then eta",
+      "reference": "type-II-q-one-full-carrier-d-one-p-free-gate-exclusion-relay"
+    },
+    {
+      "family": "high-C=2 persistent macro chain",
+      "rank_ticket": "LOCAL_DROP on C; rising internal checkpoints nonpersistent",
+      "reference": "type-II-q-one-c-two-19-phase-three-anchor-persistent-macro"
+    },
+    {
+      "family": "T2 H4 atomic macro",
+      "rank_ticket": "LOCAL_DROP on J or C",
+      "reference": "type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-atomic-macro-checkpoint-contraction"
+    },
+    {
+      "family": "T2 c=8 double-low conditional macro",
+      "rank_ticket": "LOCAL_DROP on J or C when actual receipt exists",
+      "reference": "type-I-q-one-full-carrier-d-one-c-eight-double-low-parent-anchored-atomic-macro"
+    },
+    {
+      "family": "legal smaller marked/equation source",
+      "rank_ticket": "OUTER_RANK_DROP",
+      "reference": "denominator-escape-state-contract"
+    }
+  ],
+  "cycle_obstructions_resolved_by_phase_contract": [
+    {
+      "name": "PRE/algebraic-inverse two-cycle",
+      "control": "p=73: X=(2,1,35) -> Y=(1,1,71) -> X",
+      "resolution": "PRE can commit downward to ABSORB but ABSORB cannot return to PRE at same rho"
+    },
+    {
+      "name": "m=1 terminal-free formal self-loop",
+      "control": "p=1009, R=3, {1,2}->{1,2}",
+      "resolution": "ABSORB retains only edges lowering fixed r_epsilon"
+    },
+    {
+      "name": "legacy reset re-entry carrier cycle",
+      "control": "38 -> 12 -> 132 -> 330 -> 132",
+      "resolution": "legacy support-losing reset enters RESET protocol; same-rho return to higher protocol is forbidden"
+    }
+  ]
+}

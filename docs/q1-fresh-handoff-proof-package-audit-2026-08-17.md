@@ -3,7 +3,7 @@
 ## 原始来源与完整性
 
 本次同步保留用户提供的冻结包
-[q1_fresh_handoff_proof_47fedc2.zip](q1_fresh_handoff_proof_47fedc2.zip)，其外层 SHA-256 为：
+[`../archive/proof-packages/raw/q1_fresh_handoff_proof_47fedc2.zip`](../archive/proof-packages/raw/q1_fresh_handoff_proof_47fedc2.zip)，其外层 SHA-256 为：
 
 ```text
 18bac61ee7976ce3c32aabd94a6f37ab50e5f8a229a33d8bf4ae91552d41ba4a

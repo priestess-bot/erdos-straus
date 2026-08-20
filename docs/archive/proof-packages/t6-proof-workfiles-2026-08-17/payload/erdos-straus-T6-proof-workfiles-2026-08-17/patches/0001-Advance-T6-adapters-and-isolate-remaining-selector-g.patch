@@ -1,0 +1,3936 @@
+From d59b1ffe046b34609b9c416f157ff1b06b6c7ad6 Mon Sep 17 00:00:00 2001
+From: OpenAI Codex <codex@openai.com>
+Date: Mon, 17 Aug 2026 08:46:13 -0700
+Subject: [PATCH 1/2] Advance T6 adapters and isolate remaining selector gaps
+
+---
+ README.md                                     |  12 +-
+ ...utter-c-equals-h-odd-distance-fan-no-go.md | 151 ++++++
+ ...acity-stutter-k-one-universal-exclusion.md | 366 +++++++++++++
+ ...city-stutter-t6-numeric-clue-preemption.md | 174 ++++++
+ ...named-reachability-t2-t3-coverage-audit.md |  90 ++++
+ ...itive-q-G-full-carrier-phase-root-entry.md | 390 ++++++++++++++
+ concepts/denominator-escape-state-contract.md |  40 +-
+ concepts/flagship-proof-program-2026-08-16.md |  31 +-
+ .../t5-global-well-foundedness-contract-v2.md |  13 +-
+ data/t5-full-transition-taxonomy-v2.json      |   5 +
+ ...ull-global-well-foundedness-integration.md |  11 +-
+ ...l-well-foundedness-migration-2026-08-17.md |   3 +-
+ docs/T6-V1.md                                 |  61 ++-
+ ...ual-reachable-coverage-audit-2026-08-17.md | 258 +++++++++
+ docs/T6-closure-attempt-audit-2026-08-17.md   | 135 +++++
+ docs/T6-current-progress-2026-08-17.md        |  61 ++-
+ ...roper-root-minimal-gap-audit-2026-08-17.md | 350 ++++++++++++
+ .../T6-review-and-consolidation-2026-08-17.md |   5 +
+ index/theorem-ledger.md                       |  11 +-
+ ...utter_c_equals_h_odd_distance_fan_no_go.py |  46 ++
+ ...acity_stutter_k_one_universal_exclusion.py | 213 ++++++++
+ ...city_stutter_t6_numeric_clue_preemption.py | 126 +++++
+ ...pe_i_t6_actual_reachable_coverage_audit.py | 392 ++++++++++++++
+ ...itive_q_g_full_carrier_phase_root_entry.py | 500 ++++++++++++++++++
+ 24 files changed, 3360 insertions(+), 84 deletions(-)
+ create mode 100644 claims/type-I-root-capacity-stutter-c-equals-h-odd-distance-fan-no-go.md
+ create mode 100644 claims/type-I-root-capacity-stutter-k-one-universal-exclusion.md
+ create mode 100644 claims/type-I-root-capacity-stutter-t6-numeric-clue-preemption.md
+ create mode 100644 claims/type-I-t6-current-named-reachability-t2-t3-coverage-audit.md
+ create mode 100644 claims/type-II-positive-q-G-full-carrier-phase-root-entry.md
+ create mode 100644 docs/T6-actual-reachable-coverage-audit-2026-08-17.md
+ create mode 100644 docs/T6-closure-attempt-audit-2026-08-17.md
+ create mode 100644 docs/T6-proper-root-minimal-gap-audit-2026-08-17.md
+ create mode 100755 reproductions/type_i_root_capacity_stutter_c_equals_h_odd_distance_fan_no_go.py
+ create mode 100755 reproductions/type_i_root_capacity_stutter_k_one_universal_exclusion.py
+ create mode 100755 reproductions/type_i_root_capacity_stutter_t6_numeric_clue_preemption.py
+ create mode 100755 reproductions/type_i_t6_actual_reachable_coverage_audit.py
+ create mode 100755 reproductions/type_ii_positive_q_g_full_carrier_phase_root_entry.py
+
+diff --git a/README.md b/README.md
+index e0ba70b..5e95299 100644
+--- a/README.md
++++ b/README.md
+@@ -36,20 +36,24 @@ E\mid4K^2,\quad E\equiv1\pmod R,\quad 2\mid E,\quad E\le4K-2R.
+ | ID | 状态 | 核心断言 |
+ |---|---|---|
+ | T1 H4-Closure | 相对闭包已建立 | 对 actual proper-overlap、top-capacity、\(a_{\rm alt}=1\) receipt，已验证的 upstream provenance 与 priority miss 之后，clean \(q\)-macro 给出 E1--E5 的 phase-local `candidate_transition`；其它 H4 selector branch 与全局 admission 仍须覆盖。 |
+-| T2 Atomic-Admission | `v1` 局部闭合；全域仍开放 | H4 `a=1` actual arm 与 c=8 double-low conditional arm 已冻结为有限 receipt grammar；其它 raw arm、pooled-capacity one-use 与输入覆盖仍未闭合。 |
+-| T3 Marked-Terminal | 开放 | Type II gcd-shadow 产生的普通 terminal 满足相应 marked solution-set membership，或转为下一条严格合法状态边。 |
+-| T4 Fresh-G-Handoff | ordinary 相对闭包已建立 | 对 ordinary \(q=1\) G endpoint，target-independent full-carrier fresh root-entry 已完成 E1--E5，并无条件接首个严格 Type I segment；非平凡 mark、其余 atomic 输入覆盖与 total selector 仍开放。 |
++| T2 Atomic-Admission | 当前具名 atomic surface 闭合；全域仍开放 | H4 `a=1` actual arm 与 c=8 double-low conditional arm 已冻结为 `v1` grammar，并穷尽当前 taxonomy 的 atomic families；future raw arm、pooled-capacity one-use 与输入覆盖仍未闭合。 |
++| T3 Marked-Terminal | 抽象命题开放；当前具名图中不可达 | 当前 14 个 concrete edge generators 都保持 \(W=\operatorname{Sol}(p)\)，故 closed-world named reachability 没有 nontrivial-mark seed；future marked edge 仍须重开 T3。 |
++| T4 Fresh-G-Handoff | ordinary \(q\ge1\) 相对闭包已建立 | 对每个 actual terminal-first ordinary G endpoint，q=1 与 positive-q adapter 都进入同一个 target-independent full-carrier fresh root；非平凡 mark、新 origin 后续 Type I totality 与全局 selector 仍开放。 |
+ | T5 Global-Well-Foundedness | 合同层闭合 | 当前五类 selector 输出中，只有携带 `OUTER_RANK_DROP`、`PHASE_DROP` 或 `LOCAL_DROP` 的 E1--E4 candidate 才能成为 verified edge；T6 仍须证明每个实际状态有这样的输出。 |
+ | T6 Global-Selector | 开放 | 确定性 selector 在每个核心 prime / legal state 输出 terminal 或一条可提升、严格下降的 verified edge。 |
+ 
+ 六条命题的精确量词、现有证据、尚缺合同、反证标准、依赖顺序和其余次级研究方向见
+ [`concepts/flagship-proof-program-2026-08-16.md`](concepts/flagship-proof-program-2026-08-16.md)。
+ T1 与 T4 的上述结论都只是限定输入域的相对闭包，不推出全局 selector 或猜想本身；
+-T2 的全域版本、T3 与 T6 仍为开放研究命题；T5 已在当前状态合同的 E5 admission scope 内闭合，
++T2 的全域版本、抽象 T3 与 T6 仍为开放研究命题；T5 已在当前状态合同的 E5 admission scope 内闭合，
+ 但不提供 selector totality。T4 的独立冻结证明包复核见
+ [`docs/q1-fresh-handoff-proof-package-audit-2026-08-17.md`](docs/q1-fresh-handoff-proof-package-audit-2026-08-17.md)；
+ T2/T5 的本次合并边界见
+ [`docs/T2-T5-full-integration-review-2026-08-17.md`](docs/T2-T5-full-integration-review-2026-08-17.md)。
++当前 named graph 的 T2/T3 reachability 边界见
++[`docs/T6-actual-reachable-coverage-audit-2026-08-17.md`](docs/T6-actual-reachable-coverage-audit-2026-08-17.md)。
++本轮 T6 全闭合尝试、新增子定理与仍缺量词见
++[`docs/T6-closure-attempt-audit-2026-08-17.md`](docs/T6-closure-attempt-audit-2026-08-17.md)。
+ 
+ ## 快速使用
+ 
+diff --git a/claims/type-I-root-capacity-stutter-c-equals-h-odd-distance-fan-no-go.md b/claims/type-I-root-capacity-stutter-c-equals-h-odd-distance-fan-no-go.md
+new file mode 100644
+index 0000000..156d32a
+--- /dev/null
++++ b/claims/type-I-root-capacity-stutter-c-equals-h-odd-distance-fan-no-go.md
+@@ -0,0 +1,151 @@
++---
++kind: claim
++claim_id: type-I-root-capacity-stutter-c-equals-h-odd-distance-fan-no-go
++title: proper-root stutter 的 c=h 奇距离偶源扇全称 no-go
++statement: >-
++  对核心素数 p≡1 mod24 的 terminal-first 后 actual proper-root stutter receipt，
++  令 h=3u、2≤h<p，并保留已有 cubic hard-root wall 513h^6>8p^4。
++  不存在正整数 delta,r 使 p-h=delta(1+hr) 且 delta*r≡-1 mod4。
++  因而以自然距离 c=h 调用 odd-distance-even-source-descent 的现有
++  translated-square family 恒为空。该命题只排除这一个具名 even-source family；
++  它不排除其它距离、marked even-source lift 或三分母 lift，也不构造 terminal、
++  E1--E5 successor 或 T6 totality。
++claim_status: established
++proof_provenance: repository_derivation
++review_status: internal_review
++depends_on:
++  - type-I-root-capacity-stutter-cubic-hard-root-wall
++  - odd-distance-even-source-descent
++topics:
++  - type-I
++  - root-capacity
++  - stutter
++  - even-source
++  - odd-distance
++  - no-go
++  - proof-boundary
++sources:
++  - reproduction: reproductions/type_i_root_capacity_stutter_c_equals_h_odd_distance_fan_no_go.py
++    role: exact-constant-and-relaxed-boundary-controls
++visibility: public
++last_checked: '2026-08-17'
++---
++
++# proper-root stutter 的 \(c=h\) 奇距离偶源扇全称 no-go
++
++## 1. 设置
++
++固定一个 terminal-first 后的 actual proper-root stutter receipt。沿用
++
++\[
++p\equiv1\pmod {24},\qquad 2\le h<p,\qquad
++h\mid p^2+p+1,
++\tag{1}
++\]
++
++以及已建立的 cubic hard-root wall
++
++\[
++513h^6>8p^4.
++\tag{2}
++\]
++
++反设自然距离 \(c=h\) 能进入已有的 odd-distance even-source fan。则存在正整数
++\(\delta,r\) 使
++
++\[
++p-h=\delta(1+hr),\qquad \delta r\equiv-1\pmod4.
++\tag{3}
++\]
++
++## 2. Fan 条件给出的上界
++
++奇距离偶源定理从 (3) 推出
++
++\[
++r\equiv7\pmod8,
++\]
++
++所以 \(r\ge7\)。于是
++
++\[
++p-h=\delta(1+hr)\ge1+7h,
++\]
++
++从而
++
++\[
++h<\frac p8.
++\tag{4}
++\]
++
++令 \(g=p-h\)。由 (1) 有
++
++\[
++h\mid g^2+g+1.
++\]
++
++而 (3) 给出 \(g\equiv\delta\pmod h\)，故
++
++\[
++h\mid\delta^2+\delta+1
++\quad\Longrightarrow\quad
++h\le\delta^2+\delta+1.
++\tag{5}
++\]
++
++另一方面，
++
++\[
++\delta=\frac{p-h}{1+hr}<\frac p{7h}.
++\tag{6}
++\]
++
++把 (6) 代入 (5)，再使用 (4)，得到
++
++\[
++\begin{aligned}
++h^3
++&<\frac{p^2}{49}+\frac{ph}{7}+h^2\\
++&<\left(\frac1{49}+\frac1{56}+\frac1{64}\right)p^2
++=\frac{169}{3136}p^2
++<\frac19p^2.
++\end{aligned}
++\tag{7}
++\]
++
++## 3. Hard-root wall 给出的反向下界
++
++由 (2)，
++
++\[
++h^6>\frac8{513}p^4.
++\]
++
++又
++
++\[
++\frac8{513}>\frac1{81},
++\]
++
++两侧均为正数，所以
++
++\[
++h^3>\frac19p^2.
++\tag{8}
++\]
++
++(7) 与 (8) 矛盾，故 (3) 不存在。
++
++## 4. 证明边界
++
++该结论使用了 (3) 的完整 named-family 形状，尤其是
++\(p-h=\delta(1+hr)\) 和 odd-distance theorem 强制的 \(r\ge7\)。若 future
++selector 改变 source family、距离、保留尾或 lift 形状，本 no-go 不适用。它没有产生
++terminal 或 persistent successor，不能作为 proper-root 子域或 T6 的闭合证明。
++
++## 聚焦复现
++
++```bash
++python3 reproductions/type_i_root_capacity_stutter_c_equals_h_odd_distance_fan_no_go.py --verify
++```
+diff --git a/claims/type-I-root-capacity-stutter-k-one-universal-exclusion.md b/claims/type-I-root-capacity-stutter-k-one-universal-exclusion.md
+new file mode 100644
+index 0000000..12d4df3
+--- /dev/null
++++ b/claims/type-I-root-capacity-stutter-k-one-universal-exclusion.md
+@@ -0,0 +1,366 @@
++---
++kind: claim
++claim_id: type-I-root-capacity-stutter-k-one-universal-exclusion
++title: actual proper-root stutter 的 k=1 全称排除
++statement: >-
++  对核心素数 p≡1 mod24 的任意 actual proper-root stutter receipt，令
++  b=e-1、N=a^2-ab+b^2=hk。则 k不等于1。证明先用 actual root 条件
++  h|p^2+p+1 排除 gcd(a,b)>1；随后把抽象 k=1 整数曲线参数化为
++  e=dx^2、a=dxy-1、gcd(x,y)=1，并由 p 的整性门得到
++  a|(x-y)(x^2-xy-y^2)。共同因子排除把它收紧为
++  x^2-xy-y^2=c(dxy-1)。保持 d,c 的两步 Vieta 无限下降强制 c=1，
++  但 actual 模3条件给出 d≡2、3不整除x、3整除y，故等式两边分别为
++  1与2 mod3，矛盾。该结论闭合 proper-root quotient 的 QC0 空域；
++  它不 physicalize k>1 的 quotient carrier，也不闭合 proper-root 或 T6 totality。
++claim_status: established
++proof_provenance: repository_derivation
++review_status: internal_review
++depends_on:
++  - type-I-root-capacity-stutter-finite-curve-constraint
++  - type-I-root-capacity-stutter-positive-definite-norm-bound
++  - type-I-root-capacity-stutter-eisenstein-support
++topics:
++  - type-I
++  - root-capacity
++  - stutter
++  - eisenstein-quotient
++  - k-one
++  - infinite-descent
++  - universal-exclusion
++  - proof-boundary
++sources:
++  - reproduction: reproductions/type_i_root_capacity_stutter_k_one_universal_exclusion.py
++    role: symbolic-identities-and-descent-invariant
++visibility: public
++last_checked: '2026-08-17'
++---
++
++# actual proper-root stutter 的 \(k=1\) 全称排除
++
++## 1. 设置与结论
++
++固定一个 actual proper-root stutter receipt。沿用
++
++\[
++p\equiv1\pmod {24},\qquad h=3u,\qquad (u,3)=1,
++\qquad 2\le h<p,
++\qquad h\mid p^2+p+1,
++\tag{1}
++\]
++
++\[
++b=e-1,\qquad a=em-h,\qquad
++pa=e(h-1)+1,
++\tag{2}
++\]
++
++以及
++
++\[
++1\le a<e,\qquad
++N=a^2-ab+b^2=hk.
++\tag{3}
++\]
++
++本卡证明
++
++\[
++\boxed{k\ne1.}
++\tag{4}
++\]
++
++证明不枚举参数范围。actual 条件只在共同因子排除和最后的模 \(3\) 输入中使用；
++中间的无限下降是一个纯整数命题。
++
++## 2. Actual root 排除 \(\gcd(a,b)>1\)
++
++反设 \(k=1\)，于是 \(h=N\)。令
++
++\[
++g_0=(a,b),\qquad a=g_0A,\qquad b=g_0B,
++\qquad H=A^2-AB+B^2.
++\tag{5}
++\]
++
++于是 \(h=g_0^2H\)。由 (2) 的等价形式 \(pa+b=eh\)，约去 \(g_0\) 得
++
++\[
++pA+B=eg_0H.
++\tag{6}
++\]
++
++把 \(pA=eg_0H-B\) 代入 \(A^2(p^2+p+1)\)，直接展开得到精确恒等式
++
++\[
++\boxed{
++A^2(p^2+p+1)
++=H\left(e^2g_0^2H+eg_0(A-2B)+1\right).
++}
++\tag{7}
++\]
++
++另一方面，(1) 与 \(h=g_0^2H\) 给出某个正整数 \(v\) 使
++
++\[
++p^2+p+1=g_0^2Hv.
++\]
++
++代入 (7) 并约去正整数 \(H\)，括号必须等于 \(g_0^2A^2v\)，因而被
++\(g_0^2\) 整除。但该括号模 \(g_0\) 恒等于 \(1\)。所以
++
++\[
++\boxed{(a,b)=g_0=1.}
++\tag{8}
++\]
++
++这一步不能从抽象 stutter 曲线单独推出；它精确使用了 actual root 的
++\(h\mid p^2+p+1\)。
++
++## 3. 模 \(3\) 输入与 \(k=1\) 参数化
++
++由 \(3\mid h=N\)，在 \(\mathbf F_3\) 中
++
++\[
++N=a^2-ab+b^2=(a+b)^2,
++\]
++
++所以 \(a+b\equiv0\pmod3\)。又 \(a\equiv em\pmod3\)、\(b=e-1\)，并且
++(8) 排除 \(3\mid a,b\)。逐一检查 \(e\pmod3\)：
++
++* \(e\equiv0\) 会给出 \(a\equiv0,b\equiv2\)，与 \(a+b\equiv0\) 矛盾；
++* \(e\equiv1\) 会给出 \(a\equiv b\equiv0\)，与 (8) 矛盾；
++* 因而只能有
++
++\[
++\boxed{e\equiv a\equiv2\pmod3,\qquad m\equiv1\pmod3.}
++\tag{9}
++\]
++
++现在只使用 \(h=N=em-a\)。展开后有
++
++\[
++m=\frac{(a+1)^2}{e}+e-a-2,
++\]
++
++故 \(e\mid(a+1)^2\)。标准平方因子分裂给出正整数 \(d,x,y\)，使
++
++\[
++\boxed{
++e=dx^2,\qquad a=dxy-1,\qquad (x,y)=1,\qquad 1\le y\le x.
++}
++\tag{10}
++\]
++
++具体地，若 \(g=(e,a+1)\)，写 \(e=gx,a+1=gy,(x,y)=1\)，则
++\(e\mid(a+1)^2\) 强制 \(x\mid g\)，写 \(g=dx\) 即得 (10)。
++由 (9)--(10)，
++
++\[
++\boxed{d\equiv2\pmod3,\qquad 3\nmid x,\qquad 3\mid y.}
++\tag{11}
++\]
++
++特别地
++
++\[
++d\ge2,\qquad y\ge3,\qquad x>y.
++\tag{12}
++\]
++
++令 \(Q=x^2-xy+y^2\)。代回可得完整闭式
++
++\[
++\boxed{
++m=dQ-1,\qquad
++h=d^2x^2Q-dx(x+y)+1,
++}
++\tag{13}
++\]
++
++\[
++\boxed{
++p=\frac{d^3x^4Q-d^2x^3(x+y)+1}{dxy-1}.
++}
++\tag{14}
++\]
++
++## 4. 整性门收紧为单个二次式
++
++由 (2)，\(p\) 为整数要求
++
++\[
++a\mid e(h-1)+1.
++\tag{15}
++\]
++
++因为 \((a,y)=1\)，在模 \(a=dxy-1\) 下有 \(e\equiv xy^{-1}\)。又
++\(h=N\equiv(e-1)^2\pmod a\)，所以把 (15) 的被除数乘以 \(y^3\) 后得到
++
++\[
++\boxed{
++a\mid x^3-2x^2y+y^3
++=(x-y)(x^2-xy-y^2).
++}
++\tag{16}
++\]
++
++另一方面，\(b=dx^2-1\) 满足两个精确线性恒等式
++
++\[
++b-a=dx(x-y),
++\qquad
++xa-yb=y-x.
++\tag{17}
++\]
++
++第一式说明 \((a,x-y)\mid(a,b)\)，第二式给出反向整除，故由 (8)
++
++\[
++\boxed{(a,x-y)=(a,b)=1.}
++\tag{18}
++\]
++
++由 (16)--(18)，
++
++\[
++a\mid P_2,\qquad P_2=x^2-xy-y^2.
++\tag{19}
++\]
++
++这里 \(P_2\ne0\)：否则 \(y\mid x^2\) 和 \((x,y)=1\) 先迫使 \(y=1\)，
++继而 \(x^2-x-1=0\)，无整数解。若 \(P_2<0\)，则由 (12)
++
++\[
++0<-P_2=xy+y^2-x^2<xy<dxy-1=a,
++\]
++
++也不可能是 \(a\) 的非零倍数。因此 \(P_2>0\)，存在正整数 \(c\) 使
++
++\[
++\boxed{x^2-xy-y^2=c(dxy-1).}
++\tag{20}
++\]
++
++## 5. 保持 \((d,c)\) 的无限下降
++
++先证明
++
++\[
++0<c<x.
++\tag{21}
++\]
++
++左侧来自 (20)。右侧由下列严格正分解得到：
++
++\[
++\begin{aligned}
++x(dxy-1)-(x^2-xy-y^2)
++&=(d-1)x^2y+(y-1)(x^2+x)+y^2\\
++&>0.
++\end{aligned}
++\]
++
++把 (20) 写成
++
++\[
++E(x,y):=x^2-(dc+1)xy-y^2+c=0.
++\tag{22}
++\]
++
++若 \(y=1\)，则 (22) 模 \(x\) 给出 \(c\equiv1\pmod x\)，结合 (21) 立即得到
++\(c=1\)。以下设 \(y>1\)，并令
++
++\[
++L=dc+1,
++\qquad
++q=\frac{y^2-c}{x}.
++\tag{23}
++\]
++
++由 (22) 模 \(x\)，\(q\) 是整数。若 \(q<0\)，则正整数
++\(c-y^2\) 是 \(x\) 的倍数，却由 (21) 严格小于 \(x\)，矛盾。若 \(q=0\)，
++则 (22) 给出 \(x=Ly\)，从而 \((x,y)=y>1\)，仍矛盾。因此
++
++\[
++0<q=\frac{y^2-c}{x}<\frac{y^2}{x}<y,
++\qquad x=Ly+q.
++\tag{24}
++\]
++
++特别地 \((q,y)=(x,y)=1\)。再令
++
++\[
++r=\frac{q^2+c}{y}.
++\tag{25}
++\]
++
++因为 \(q\equiv x\pmod y\)，而 (22) 模 \(y\) 给出
++\(x^2+c\equiv0\pmod y\)，所以 \(r\) 是正整数。把 \(x=Ly+q\) 代回
++(22)，还得到
++
++\[
++r=y-Lq,\qquad (q,r)=1.
++\tag{26}
++\]
++
++这两次 Vieta 变换保持同一个方程：直接展开有
++
++\[
++\boxed{E(q,r)=E(x,y)=0.}
++\tag{27}
++\]
++
++等价地，
++
++\[
++q^2-qr-r^2=c(dqr-1).
++\tag{28}
++\]
++
++若 \(dqr-1=0\)，正整数性迫使 \(d=q=r=1\)，但 (28) 左边为 \(-1\)，
++矛盾。所以 \(dqr-1>0\)，(28) 左边为正，进而 \(0<r<q\)。因此
++
++\[
++(x,y)\longmapsto(q,r)
++\]
++
++产生同一 \((d,c)\)、互素且满足同型方程的新正整数对，并且
++
++\[
++0<r<q<y<x.
++\tag{29}
++\]
++
++同一个正分解 (21) 应用于新对 \((q,r)\)，还重新给出 \(c<q\)，所以 (23)--(29)
++可按完全相同的条件继续迭代。反复应用会严格降低正整数首坐标，必在有限步后到达
++第二坐标为 \(1\) 的情形；
++该端点已经证明强制
++
++\[
++\boxed{c=1.}
++\tag{30}
++\]
++
++## 6. 最终模 \(3\) 矛盾与边界
++
++由 (20)、(30) 有 \(P_2=a\)。但 (11) 给出
++
++\[
++P_2=x^2-xy-y^2\equiv x^2\equiv1\pmod3,
++\]
++
++而 (9) 给出 \(a\equiv2\pmod3\)，矛盾。这证明 (4)。
++
++因此 proper-root quotient 路线的 \(k=1\) 子域为空，QC0 已全称闭合。剩余的
++proper-root quotient-carrier 量词严格位于 \(k>1\)：本卡没有把任何
++\(q\mid k\) physicalize 为 actual occurrence 或 E1--E5 successor，也没有处理
++transverse \(D_*\) 的全称出口。故它不是 proper-root 子域或 T6 的 totality claim。
++
++## 聚焦复现
++
++```bash
++python3 reproductions/type_i_root_capacity_stutter_k_one_universal_exclusion.py --verify
++```
++
++脚本在一个标准库整数多项式环中核对 (7)、(13)--(17)、(21) 的正分解以及
++Vieta 不变量 (27)。它不执行有限范围扫描；全称次序与严格不等式由上面的证明承担。
+diff --git a/claims/type-I-root-capacity-stutter-t6-numeric-clue-preemption.md b/claims/type-I-root-capacity-stutter-t6-numeric-clue-preemption.md
+new file mode 100644
+index 0000000..9a2553a
+--- /dev/null
++++ b/claims/type-I-root-capacity-stutter-t6-numeric-clue-preemption.md
+@@ -0,0 +1,174 @@
++---
++kind: claim
++claim_id: type-I-root-capacity-stutter-t6-numeric-clue-preemption
++title: T6 proper-root 数值线索的 root-provenance 失败与 gap-3 终端抢占
++statement: >-
++  对 T6-V1 中记录的数值线索 p=20065847377、m=6768、a=141、k=3，
++  将 proper-root quotient 恒等式反解得到唯一正整数候选
++  u=46126129、h=138378387、e=20446、D=135805516669150，且
++  N=a^2-a(e-1)+(e-1)^2=3h。然而
++  p^2+p+1 除以 h 的余数为 39277161，故 h 不整除 p^2+p+1，u 也不可能是
++  gcd(2r+1,(p^2+p+1)/3)；该线索不是 actual proper-root receipt。
++  独立地，x=(p+3)/4=5016461845 含素因子 5=2 mod3，故 d=5 给出直接
++  gap-3 Type II 证书并由 terminal-first 抢占。该审计只删除一个数值线索，
++  不证明 actual proper-root stutter 域为空，也不关闭 T6。
++claim_status: established
++proof_provenance: repository_derivation
++review_status: internal_review
++depends_on:
++  - type-I-root-capacity-stutter-pair-root-divisor-gate
++  - type-I-root-capacity-stutter-positive-definite-norm-bound
++  - gap-three-criterion
++  - short-certificate-equivalence
++topics:
++  - type-I
++  - root-capacity
++  - stutter
++  - T6
++  - numeric-control
++  - terminal-first
++  - proof-boundary
++sources:
++  - reproduction: reproductions/type_i_root_capacity_stutter_t6_numeric_clue_preemption.py
++    role: exact-reconstruction-root-divisibility-and-terminal-control
++visibility: public
++last_checked: '2026-08-17'
++---
++
++# T6 proper-root 数值线索的 root-provenance 失败与 gap-3 终端抢占
++
++## 1. 被审核的线索
++
++T6 技术备忘录记录了
++
++\[
++p=20\,065\,847\,377,\qquad m=6768,\qquad a=141,\qquad k=3.
++\tag{1}
++\]
++
++它只被列为“未验证线索”。下面证明它不能提升为 actual proper-root stutter
++receipt。
++
++## 2. 唯一正根重建
++
++沿用 parameter-pair root-divisor gate 的记号
++
++\[
++L=am=954288,\qquad s=m-a=6627.
++\]
++
++任一对应的 root height \(u>0\) 必满足
++
++\[
++9u^2+3(a-1)u+s=Lp.
++\tag{2}
++\]
++
++式 (2) 的判别式为
++
++\[
++\Delta=689349505021230564=830270742^2,
++\]
++
++所以唯一正整数根为
++
++\[
++u=46126129.
++\]
++
++随后所有 stutter 参数都被强制为
++
++\[
++h=3u=138378387,
++\qquad
++e=\frac{a+3u}{m}=20446,
++\]
++
++\[
++D=mp+1-h=135805516669150.
++\tag{3}
++\]
++
++直接重算给出
++
++\[
++eD=ph+1,
++\qquad
++a=em-h,
++\]
++
++以及
++
++\[
++N=a^2-a(e-1)+(e-1)^2=415135161=3h.
++\tag{4}
++\]
++
++因此 (1) 确实能重建抽象 quotient 曲线，且其形式商为 \(k=N/h=3\)。
++
++## 3. Actual root provenance 失败
++
++actual root endpoint 必须满足
++
++\[
++h\mid p^2+p+1,
++\qquad
++u=\gcd\!\left(2r+1,\frac{p^2+p+1}{3}\right)
++\]
++
++对某个真实 source 坐标 \(r\) 成立。但 (1)--(3) 给出
++
++\[
++p^2+p+1
++=h\cdot 2909690159758+39277161.
++\tag{5}
++\]
++
++余数非零，故 \(h\nmid p^2+p+1\)。特别地 \(u\) 不整除
++\((p^2+p+1)/3\)，所以它不可能成为上述 gcd。这个失败发生在 source/root
++provenance，早于 maximal complete-excess normalization 和 E1--E5。
++
++## 4. Terminal-first 还会独立抢占
++
++该素数还有一张直接 gap-3 Type II 证书。令
++
++\[
++x=\frac{p+3}{4}=5016461845=5\cdot1003292369,
++\qquad d=5.
++\]
++
++则 \(d\mid x^2\)、\(d\le x\)，且 \(3\mid x+d\)。按短证书恢复式，
++
++\[
++(X,Y,Z)=
++(
++5016461845,
++33553185951547689150,
++33663655420825800263779096350
++)
++\]
++
++满足
++
++\[
++\frac4p=\frac1X+\frac1Y+\frac1Z.
++\tag{6}
++\]
++
++所以即使忽略 (5)，terminal-first 也会在进入 proper-root stutter 分支前终止该
++\(p\)。
++
++## 5. 边界
++
++本卡只完成对 (1) 这一条数值线索的精确审计。它不说明其它参数是否产生 actual
++proper-root stutter，也不把 Eisenstein quotient chart 变成 persistent successor，因而不
++构成 T6 totality 或 Erdős--Straus 猜想的证明。
++
++一般 (k=1) 的精确参数化与仍未完成的 quotient/transverse carrier 全称量词，另见
++[T6 proper-root 最小缺口审计](../docs/T6-proper-root-minimal-gap-audit-2026-08-17.md)。
++
++## 聚焦复现
++
++```bash
++python3 reproductions/type_i_root_capacity_stutter_t6_numeric_clue_preemption.py --verify
++```
+diff --git a/claims/type-I-t6-current-named-reachability-t2-t3-coverage-audit.md b/claims/type-I-t6-current-named-reachability-t2-t3-coverage-audit.md
+new file mode 100644
+index 0000000..e1f3738
+--- /dev/null
++++ b/claims/type-I-t6-current-named-reachability-t2-t3-coverage-audit.md
+@@ -0,0 +1,90 @@
++---
++kind: claim
++claim_id: type-I-t6-current-named-reachability-t2-t3-coverage-audit
++title: T6 当前具名边闭包的 ordinary-mark 不变量与 atomic surface 审计
++statement: >-
++  固定核心素数 p，并将 current named graph 定义为从 ordinary 根
++  W=Sol(p) 出发、只沿 t5-full-transition-taxonomy-v2 中有具体 edge claim 的
++  current_verified_edge_families 取传递闭包；contract-only 的 generic marked
++  admission、pending normalization、analysis evidence 与 macro checkpoint 均不生成边。
++  taxonomy 的 14 个具体边构造器逐一以 W_S=W_T=Sol(p) 的恒等 lift 支付 E4；其中若干
++  只是 guarded constructor，不被误计为 selector totality。故路径归纳给出当前具名闭包
++  中每个状态仍为 ordinary mark，nontrivial marked state 没有 seed。另一方面，taxonomy
++  中仅有的两个 atomic edge family 恰与 T2 v1 的 H4 a=1 和 c=8 double-low 两个 arm
++  相同，所以 T2 admission 在当前具名 atomic surface 上闭合。该 closed-world 结论不证明
++  抽象 full T2、任意 future marked edge、c=8 double-low existence、T6 totality 或
++  Erdos--Straus 猜想；taxonomy 一旦加入新 marked/atomic generator，审计必须重开。
++claim_status: established
++proof_provenance: repository_derivation
++review_status: internal_review
++depends_on:
++  - type-I-t5-full-transition-surface-exhaustion
++  - type-I-atomic-admission-v1-finite-grammar-integration
++  - root-context-terminal-disjunctive-invariant
++  - type-II-relation-reach-proper-endpoint-descent
++  - type-II-relation-reach-gcd-shadow-endpoint-descent
++  - type-II-q-one-full-carrier-phase-root-entry
++  - type-II-positive-q-G-full-carrier-phase-root-entry
++  - type-II-q-one-c3-source-lineage-phase-root-entry
++  - type-I-overflow-unbounded-same-chart-promotion-persistence-boundary
++  - type-I-overflow-outer-rank-reset
++  - type-I-overflow-a-one-dual-outer-rank-reset
++  - type-I-overflow-high-carrier-fixed-n-R-descent
++  - type-I-high-support-rank-aware-sink-bundle-selector
++  - type-II-q-one-full-carrier-d-one-p-free-gate-exclusion-relay
++  - type-II-q-one-c-two-19-phase-three-anchor-persistent-macro
++  - type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-atomic-macro-checkpoint-contraction
++  - type-I-q-one-full-carrier-d-one-c-eight-double-low-parent-anchored-atomic-macro
++topics:
++  - t6
++  - selector
++  - reachability
++  - marked-solution
++  - atomic-admission
++  - transition-audit
++  - proof-boundary
++sources:
++  - data: data/t5-full-transition-taxonomy-v2.json
++    role: frozen-current-edge-family-surface
++  - reproduction: reproductions/type_i_t6_actual_reachable_coverage_audit.py
++    role: taxonomy-claim-E4-and-minimal-c8-control-regression-audit
++visibility: public
++last_checked: '2026-08-17'
++---
++
++# T6 当前具名边闭包的 ordinary-mark 不变量与 atomic surface 审计
++
++完整逐行证明、guard/total 分类、c=8 最小剩余量词和数值控制见
++[T6 actual-reachable coverage audit](../docs/T6-actual-reachable-coverage-audit-2026-08-17.md)。
++
++## 1. Closed-world 定义
++
++本卡的 `current named graph` 不是状态合同未来可能接纳的一切图。它只含当前 taxonomy 中
++有具名构造 claim 的边。`legal smaller marked/equation source` 是 admission class，不是凭空
++生成 E1--E4 的构造器；generalized-dyadic evidence、pending normalization 和 macro internal
++checkpoint 也不产生 persistent successor。
++
++14 张具体 edge claim 的 source guard 强弱不同：有的在声明域上 total，有的只有 guard 成立时
++才构造边。但每张 claim 一旦构造 target，其 E4 都是图表无关
++\(W_S=W_T=\operatorname{Sol}(p)\) 的恒等 lift。由根状态开始按路径长度归纳，当前闭包中不可能
++首次出现 nontrivial mark。
++
++## 2. Atomic surface
++
++当前 taxonomy 的 atomic edge references 只有 H4 parent-anchored macro 和 c=8 double-low
++parent-anchored macro。T2 v1 arm registry 也恰有这两行。因此当前 named atomic receipt 一旦
++出现，已有 terminal / strict pending target / boundary / rejection 的确定分派；generic raw
++schema 不构成额外 executable arm。
++
++## 3. 边界
++
++这是一条 reachability/coverage 不变量，不是 outgoing-existence theorem。特别地，c=8 的
++double-low guard 是否对每个 terminal-first-surviving parent 有可选 label，仍是 T6 的开放量词。
++future edge 若创建非平凡 mark 或新增 atomic arm，也必须显式扩张本卡的 closed world，而不能
++沿用本结论。
++
++聚焦复核：
++
++```bash
++python3 reproductions/type_i_t6_actual_reachable_coverage_audit.py --verify
++```
+diff --git a/claims/type-II-positive-q-G-full-carrier-phase-root-entry.md b/claims/type-II-positive-q-G-full-carrier-phase-root-entry.md
+new file mode 100644
+index 0000000..0623c2a
+--- /dev/null
++++ b/claims/type-II-positive-q-G-full-carrier-phase-root-entry.md
+@@ -0,0 +1,390 @@
++---
++kind: claim
++claim_id: type-II-positive-q-G-full-carrier-phase-root-entry
++title: ordinary positive-q G 到全载体 Type I 根的全称 phase-root 准入
++statement: >-
++  令 p=24t+1 为核心素数，q>1 属于 p-1 Type II 的端点允许下闭域，并令
++  m=4q-1、x=(p+m)/4=(p-1)/4+q。任取一份 terminal-first 后实际存活的
++  ordinary G endpoint state S，其 marked solution set 恰为 Sol(p)，且其
++  G-empty certificate 按完整源子群重算。则不需要把 Type-II raw word 延续到
++  Type I，也不需要先把 q 降到 1：由 p 单独预声明的 full-carrier root
++  X=(p+3)/4、R_X=(8X+1)/3、K_X=X(R_X-2) 及 universal p-source 给出一条
++  target-independent fresh phase reindexing。E1 重放实际 source state digest、
++  canonical G separator 与 target universal raw source；E2--E3 重算唯一 p-only
++  root、fresh scope 和 normal form；E4 是 Sol(p) 上的恒等映射；E5 由 T5 的
++  TYPEII_G_HANDOFF -> TYPEI major-phase drop 支付。target state serialization
++  不含 source q。该 root 后第一个 Type-I 段的整数公式和 T5 local-drop 也只依赖
++  p；但既有 q=1-origin verifier 的形式迁移须与 handoff 本身分开记录。该定理闭合
++  ordinary positive-q G handoff 的相对接口，但不处理
++  nontrivial marks、source-state existence 或首段之后的 Type-I totality。
++claim_status: established
++proof_provenance: repository_derivation
++review_status: internal_review
++depends_on:
++  - type-II-p-minus-one-divisor-downset-prime-power-allocation
++  - type-II-q-one-full-carrier-phase-root-entry
++  - type-I-universal-p-source-capacity-anchor-orbit
++  - type-I-t5-full-contract-level-global-well-foundedness
++  - denominator-escape-state-contract
++topics:
++  - type-II
++  - positive-q
++  - G-state
++  - type-I
++  - full-carrier
++  - phase-reindexing
++  - universal-source
++  - identity-lift
++  - T5
++  - E1-E5
++  - T6
++sources:
++  - claim: type-II-p-minus-one-divisor-downset-prime-power-allocation
++    role: positive-q endpoint domain and exact G/F/hit reconstruction
++  - claim: type-II-q-one-full-carrier-phase-root-entry
++    role: p-only target root, universal source, and first strict Type-I segment
++  - claim: type-I-universal-p-source-capacity-anchor-orbit
++    role: target-side universal p-source and actual raw edge
++  - claim: type-I-t5-full-contract-level-global-well-foundedness
++    role: canonical TYPEII_G_HANDOFF-to-TYPEI PHASE_DROP ticket
++  - concept: concepts/denominator-escape-state-contract.md
++    role: ordinary G state, fresh-source scope, and E1-E5 contract
++  - reproduction: reproductions/type_ii_positive_q_g_full_carrier_phase_root_entry.py
++    role: exact G separators, endpoint-downset receipt, conditional E1 schema, E2-E5, target confluence, and first-step arithmetic controls
++visibility: public
++last_checked: '2026-08-17'
++---
++
++# ordinary positive-\(q\) G 到全载体 Type I 根的全称准入
++
++## 1. 输入域与结论
++
++固定核心素数
++
++\[
++p=24t+1,
++\qquad
++U=\frac{p-1}{4}=6t.
++\tag{1}
++\]
++
++令 \(q>1\) 属于 \(p-1\) Type II 的规范端点允许域
++
++\[
++\mathcal C_U
++=\{d\mid U:d\le Q(U/d)\},
++\tag{2}
++\]
++
++并定义
++
++\[
++m_q=4q-1,
++\qquad
++x_q=U+q.
++\tag{3}
++\]
++
++本文的 source hypothesis 是一份**实际、terminal-first 后仍存活**的 ordinary G
++endpoint state
++
++\[
++S_q=(p,q,m_q,x_q,\mathrm G;
++W_{S_q}=\operatorname{Sol}(p)).
++\tag{4}
++\]
++
++“实际”要求 source state 已按状态合同保存其 provenance 和内容摘要；“ordinary”要求
++标记集逐字为 \(\operatorname{Sol}(p)\)，而不是某个非平凡 marked fiber；“G”要求从
++\((p,q)\) 的整数数据重新验证目标纤维为空。本文不声称每个 \(q\in\mathcal C_U\) 都会
++产生 (4)，只证明每一份满足 (4) 的合法输入都有同一个确定性出口。
++
++结论是具名 adapter
++
++```text
++positive_q_g_full_carrier_phase_root_entry_v1
++```
++
++给出一条完整 E1--E5 边
++
++\[
++S_q\longrightarrow T_X,
++\tag{5}
++\]
++
++其中 \(T_X\) 只由 \(p\) 决定，完全不含 source \(q\)。
++
++## 2. positive-\(q\) G source guard 可由当前整数重放
++
++由 (2)--(3) 有 \(q\mid U\)，并且
++
++\[
++4x_q=p+m_q.
++\tag{6}
++\]
++
++若正整数 \(d\mid(x_q,m_q)\)，则 (6) 给出 \(d\mid p\)。另一方面
++
++\[
++1\le m_q\le4U-1=p-2,
++\]
++
++所以 \(d\ne p\)，从而
++
++\[
++(x_q,m_q)=1.
++\tag{7}
++\]
++
++因此 \(x_q\) 的全部素因子都给出 \(U(m_q)\) 中的真实 source generators。令
++
++\[
++H_q=
++\left\langle
++\ell\bmod m_q:\ell\mid x_q,\ \ell\text{ prime}
++\right\rangle
++\le U(m_q),
++\qquad
++\tau_q=-1\bmod m_q.
++\tag{8}
++\]
++
++G 的精确定义是
++
++\[
++\tau_q\notin H_q.
++\tag{9}
++\]
++
++这不是一个需要读取未知解的 oracle。分解 \(x_q\)、枚举有限群 \(U(m_q)\) 并验证
++\(H_q\) 的乘法闭包，已经给出有限判定。若合同要求 character form，则对有限阿贝尔商
++
++\[
++A_q=U(m_q)/H_q
++\]
++
++使用字符分离：\(\bar\tau_q\ne1\) 蕴含存在
++\(\chi_q\in\widehat A_q\) 满足
++\(\chi_q(\bar\tau_q)\ne1\)。固定 $m_q$ 的素数幂 CRT 次序、奇素数幂上的最小本原根、
++\(2^e\) 上的标准 \((-1,5)\) 坐标和 character weight 的字典序后（等价地也可用固定
++Smith normal form），取第一张这样的 character；其 pullback 满足
++
++\[
++\chi_q(\ell)=1\quad(\ell\mid x_q),
++\qquad
++\chi_q(-1)\ne1.
++\tag{10}
++\]
++
++式 (10) 是规范、有限、可重放的 G separator。source guard 保存
++
++```text
++source_state_id
++endpoint = (p,q,m_q,x_q)
++endpoint_downset_receipt
++factorization(x_q)
++canonical_G_separator
++target_fiber.status = empty
++signed_defect.status = not_applicable
++terminal_first_receipt_digest
++marked_solution_set = Sol(p)
++```
++
++所以 positive-\(q\) source predicate 与 E1 replay 都可从当前 state 和整数重建；这里没有
++把 \(q=1\) 的模 3 特例当作假设。
++
++## 3. 目标根完全不依赖 \(q\)
++
++定义
++
++\[
++X=U+1=\frac{p+3}{4}=6t+1,
++\qquad
++R_X=16t+3=\frac{8X+1}{3},
++\qquad
++K_X=X(16t+1)=X(R_X-2).
++\tag{11}
++\]
++
++这些等式不需要 \(q=1\) G 假设。直接展开得到
++
++\[
++4K_X=pR_X+1,
++\qquad
++3\le R_X\le p-2,
++\qquad
++(X,K_X)=X,
++\tag{12}
++\]
++
++其中 \(R_X\le p-2\) 由 \(16t+3\le24t-1\) 得到，而
++\((X,K_X)=X\) 由 (11) 立即得到。若另一低 Type-I chart 满足
++\(4K=pR+1\) 与 \(X\mid K\)，利用 \(p=4X-3\) 有
++
++\[
++3R\equiv1\pmod{4X}.
++\]
++
++因为 \((3,4X)=1\)，且 \(R_X=(8X+1)/3\) 是区间 \(3\le R\le p-2<4X\) 内的一个解，
++它就是该区间内唯一的解。因此 \(T_X\) 的 chart existence/uniqueness 对所有核心素数成立，
++而不是从 q=1 source hypothesis 外推。
++
++该目标再由通用 \(p\)-source theorem 得到预声明的 universal
++raw source
++
++\[
++(p,R_X(p-1)-p,p-1),
++\tag{13}
++\]
++
++其唯一 \(p\)-edge（shift 1、gcd reduction 1）到达
++
++\[
++(1,R_X-1,1).
++\tag{14}
++\]
++
++式 (11)--(14) 全部只读取 \(p\)。因此把目标序列化为
++
++```text
++state_origin        = positive_q_g_full_carrier_phase_root_entry_v1
++source_tree_scope   = fresh_source_tree_only
++normal_form         = type_i_full_carrier_low_root_v1
++equation_target     = 4/p
++marked_solution_set = Sol(p)
++chart               = (p,R_X,K_X)
++absorbed_support    = 1
++```
++
++时，target `state_id` 不记录 source \(q\)、旧 Type-II factorization、raw word 或 separator。
++同一个 \(p\) 的不同 positive-\(q\) G inputs 因而严格汇合到同一个 \(T_X\)。
++
++这条动作与已有 q=1 adapter 一样，是**有向 phase reindexing**，不是把 Type-II raw word
++伪装成 Type-I raw word。旧 raw history 只证明 (4) 是 actual source；(13)--(14) 独立证明
++\(T_X\) 有一份 actual fresh source tree。
++
++## 4. E1--E5
++
++| 合同 | 可复核回执 |
++|---|---|
++| E1 | (4) 的 actual-source provenance、source state digest 与 terminal-first digest 是输入假设的一部分；adapter 验证这些摘要并重放 (2)--(10) 的 endpoint/G guard 与 target universal source (13)--(14)。focused controls 只重放后两项，绝不制造前三项。 |
++| E2 | 从 \(p\) 唯一计算 (11)，构造不含 source \(q\) 的 canonical target serialization。 |
++| E3 | 重算 (12)、source 正性与互素性、\(A=1\mid K_X\)、`fresh_source_tree_only` 和 target state digest；不继承 source 的 F/G 标签。 |
++| E4 | \(W_{S_q}=W_{T_X}=\operatorname{Sol}(p)\)，故 \(\Phi_{T_X\to S_q}(u)=u\) 对整个 target marked set 有定义。 |
++| E5 | T5 的 `PHASE_DROP`：同一 equation rank 下从 `TYPEII_G_HANDOFF` 降到 `TYPEI/CHARGED`。 |
++
++E4 不需要 \(\operatorname{Sol}(p)\) 已知非空。若该集合为空，恒等函数仍是从空集到空集的
++全域函数；若非空，它逐个保持同一三分式。adapter 的定义和运行均不读取其中任何元素。
++
++把 T5 七元势写全，source 与 target 分别为
++
++\[
++\Pi_{T5}(S_q)=(p,3,0,0,0,0,0),
++\tag{15}
++\]
++
++\[
++\Pi_{T5}(T_X)
++=(p,2,4,B_p,K_X,0,0),
++\qquad
++B_p=\frac{(p-1)^2}{4}.
++\tag{16}
++\]
++
++第二坐标 \(3>2\)，所以不论后续 Type-I protocol/local fields 如何重置，均有
++
++\[
++\Pi_{T5}(T_X)<\Pi_{T5}(S_q).
++\tag{17}
++\]
++
++因此 (5) 是一条 `verified_edge`，而不是 `analysis_evidence`、pending normalization 或
++无付款 reset。
++
++这里统一使用 2026-08-17 T5 registry 的 canonical major-phase 编号
++
++\[
++\mathrm{TYPEII\_G\_HANDOFF}=3,
++\qquad
++\mathrm{TYPEI}=2.
++\]
++
++早先 q=1 claim 为自己的局部前缀写过 \(2\to1\)；那是同序的局部记号，不是当前
++
++\(\Pi_{T5}\) 的字段值。本文的 claim、receipt 与 verifier 均只使用 (15)--(16) 的
++\(3\to2\)，不把两套编号混入同一个 state digest。
++
++## 5. root 后第一个段：算术与 T5 payment 可重放，形式迁移另记
++
++既有 q=1 handoff 的第一个 Type-I segment 的整数构造只读取 (11) 的 root 与 \(t\) 的奇偶，
++不读取 source endpoint 的 \(q\)。在 anchor (14) 令
++
++\[
++M=R_X-1=16t+2.
++\]
++
++complete-excess dispatch 在 \(t\) 为奇数时产生 support \(A_1=16t+2\) 的 marked absorb；
++在 \(t\) 为偶数时经显式 overflow 产生 support \(A_1=9t/2\) 的 fixed-\(n\) identity-lift
++edge。两者都满足 \(A_1>1\)、\(A_1\mid K_1\)，于是 CHARGED local rank 的首坐标严格下降：
++
++\[
++\left\lfloor\frac{B_p}{A_1}\right\rfloor
++<B_p
++=\left\lfloor\frac{B_p}{1}\right\rfloor.
++\tag{18}
++\]
++
++所以 positive-\(q\) handoff 的 root 有同一个首段**算术 candidate**，且它通过 T5 的
++`LOCAL_DROP` 数值门。focused verifier 正确复算这一点。
++
++不过，现有首段的具名 claim/verifier 使用 q=1 adapter 的 `state_origin`。若集成层把
++`state_origin` 当作该 local edge 的 source guard，而不是只读取
++`type_i_full_carrier_low_root_v1`、fresh scope、chart 和 support，则还须把该 guard 显式推广到
++本文的新 origin 并重算 source/target digest。在完成这项机械但必要的迁移前，(18) 不能被
++单独表述为本文已经验证的第二条 persistent edge；它不影响 (5) 本身的 E1--E5 闭合。
++
++## 6. 精确闭合范围
++
++本文建立
++
++\[
++\boxed{
++\text{actual terminal-first ordinary positive-}q\text{ G}
++\Longrightarrow
++\text{p-only fresh full-carrier Type-I root verified edge}.}
++\tag{19}
++\]
++
++与既有 (q=1) full-carrier phase-root theorem 合并，立即得到 ordinary G 接口的完整
++二分闭合：
++
++\[
++\boxed{
++q\ge1\text{ 的每个 actual terminal-first ordinary G endpoint}
++\Longrightarrow
++\text{同一个 p-only }T_X.}
++\tag{20}
++\]
++
++它删除了 ordinary positive-(q) G adapter 这一 T6 接口缺口，但没有证明：
++
++1. 某个 particular positive-(q) endpoint 必在更早的 terminal-first 分支后仍实际可达；
++2. (W_S\subsetneq\operatorname{Sol}(p)) 的 nontrivial mark 可使用同一 E4；
++3. (18) 的 q=1-origin local receipt 已完成新 origin 的形式迁移，或其后的 Type-I selector
++   全称有定义；
++4. T6 的其它 H4、F、marked 或 high-support state family 已闭合。
++
++聚焦 verifier 构造 exact finite-abelian G separator 和显式 endpoint-downset receipt，重放
++\((p,q)=(97,3),(241,4),(577,8),(937,13)\) 的 endpoint arithmetic、target universal
++source、E2--E5 与首段算术/T5 payment，并在
++(p=1009) 的 (q=2,4,7,9,18) 五张 G endpoint 上验证 target `state_id` 完全相同：
++
++```bash
++python3 reproductions/type_ii_positive_q_g_full_carrier_phase_root_entry.py --verify
++```
++
++这些 controls 明确输出 `conditional_adapter_control`、
++`recursive_edge_eligible=false`：它们没有 actual source-state receipt 或 terminal-first digest，
++所以 E1 保持 `complete=false`。它们只验证：一旦 (4) 的三份实际摘要由 persistent source
++state 提供，剩余 E1 arithmetic 与 E2--E5 都是确定且可重放的；有限 controls 不替代该
++actual/terminal-first hypothesis。
+diff --git a/concepts/denominator-escape-state-contract.md b/concepts/denominator-escape-state-contract.md
+index a7b09dd..a219d28 100644
+--- a/concepts/denominator-escape-state-contract.md
++++ b/concepts/denominator-escape-state-contract.md
+@@ -58,6 +58,7 @@ used_by:
+ - type-II-relation-reach-proper-endpoint-descent
+ - type-II-relation-reach-gcd-shadow-endpoint-descent
+ - type-II-q-one-full-carrier-phase-root-entry
++- type-II-positive-q-G-full-carrier-phase-root-entry
+ - type-II-q-one-full-carrier-second-anchor-fixed-n-macro
+ - type-I-path-anchored-atomic-split-complete-excess-admission
+ - type-I-atomic-admission-v1-finite-grammar-integration
+@@ -95,6 +96,8 @@ sources:
+   role: universal-q-owned-shadow-endpoint-E1-E5-and-q-one-base
+ - claim: type-II-q-one-full-carrier-phase-root-entry
+   role: ordinary-q-one-G-to-fresh-full-carrier-Type-I-phase-reindexing
++- claim: type-II-positive-q-G-full-carrier-phase-root-entry
++  role: ordinary-positive-q-G-to-fresh-full-carrier-Type-I-phase-reindexing
+ visibility: public
+ last_checked: '2026-08-17'
+ ---
+@@ -1498,7 +1501,7 @@ G/Type I handoff。见[奇 \(h\) 的 gap-23 二次非剩余 Type II 终端与两
+ phase 不可重入及 \(q=1\) F-empty 基例同时写入全局势时，才允许把它标为 E5；任何
+ 无付款的较大 \(q\) reset 都会使该资格失效。
+ 
+-### 6.8 \(q=1\) G 到 full-carrier Type I tree 的 phase-root 重索引
++### 6.8a \(q=1\) G 到 full-carrier Type I tree 的 phase-root 重索引
+ 
+ ordinary \(q=1\) G endpoint 不必回退到失败的 \(R=3\) companion chart。定义
+ 
+@@ -1520,7 +1523,7 @@ K_X=X(R_X-2).
+ \tag{41}
+ \]
+ 
+-因此只对下列 ordinary source state 允许具名 root-entry：
++因此 \(q=1\) 变体只对下列 ordinary source state 允许具名 root-entry：
+ 
+ ```text
+ q_one_full_carrier_phase_root_entry_v1
+@@ -1563,7 +1566,38 @@ Type II 证书只能是 terminal leaf，禁止 \(1\to2\) 重入。于是 root-en
+ dispatch 提供严格 local support payment。完整 receipt 与边界见
+ [q=1 G full-carrier phase-root 准入](../claims/type-II-q-one-full-carrier-phase-root-entry.md)。
+ 
+-### 6.8b \(q=1\) G 到 c=3 source-lineage tree 的条件性 relay
++### 6.8b ordinary positive-\(q\) G 到同一 full-carrier root 的相对准入
++
++对 \(q>1\)，若 source 已是 actual、terminal-first 后仍存活的 ordinary G endpoint，
++则允许另一条具名 root-entry：
++
++```text
++positive_q_g_full_carrier_phase_root_entry_v1
++source major phase   = TYPEII_G_HANDOFF
++source subtype       = type_ii_positive_q_g_endpoint
++source q             > 1, with endpoint-downset receipt
++source marked set    = Sol(p)
++source G receipt     = canonical separator from the full source subgroup
++target major phase   = TYPEI
++target scope         = fresh_source_tree_only
++target normal form   = type_i_full_carrier_low_root_v1
++target chart          = (p, R_X, K_X)
++target support        = 1
++```
++
++该 adapter 必须保存并重放 source state/provenance digest、terminal-first digest、endpoint
++downset、完整源子群上的 canonical G separator，以及 (40)--(41) 的 target universal
++raw source。target serialization 不含 source \(q\)，所以同一个 \(p\) 的全部合法 ordinary
++positive-\(q\) inputs 汇合到同一个 fresh root。E4 仍是 (42) 的恒等 lift；按 canonical
++T5 registry，E5 使用 `TYPEII_G_HANDOFF` \(3\to2\) 的 `PHASE_DROP`。
++
++该规则是以 actual source receipt 为输入的相对 theorem。focused controls 只重放 endpoint、
++separator 与 target arithmetic，不制造 actual provenance 或 terminal-first digest；因此 controls
++本身不能登记为 recursive edge。新 origin 下首个 Type-I local edge 的 source guard 还须单独
++迁移，这不影响 handoff 本身，也不提供后续 Type-I totality。完整 receipt 与边界见
++[positive-q G full-carrier phase-root 准入](../claims/type-II-positive-q-G-full-carrier-phase-root-entry.md)。
++
++### 6.8c \(q=1\) G 到 c=3 source-lineage tree 的条件性 relay
+ 
+ 另一条不与 full-carrier tree 混同的 phase root 只在 c=3 chart 已由根素数闭式预先确定，且
+ 存在一份从其 declared universal \(p\)-source 出发的实际 source-lineage raw receipt 时允许：
+diff --git a/concepts/flagship-proof-program-2026-08-16.md b/concepts/flagship-proof-program-2026-08-16.md
+index 33b9b87..83e3a7c 100644
+--- a/concepts/flagship-proof-program-2026-08-16.md
++++ b/concepts/flagship-proof-program-2026-08-16.md
+@@ -4,7 +4,7 @@ concept_id: flagship-proof-program-2026-08-16
+ title: 从 normal form 到全局 selector 的六个旗舰命题
+ summary: >-
+   核验截至 2026-08-17 的仓库前沿后，将最终双出口 F0 与六个可判真假的旗舰命题
+-  T1--T6 固定为主线；T1 的 actual a_alt=1 clean-q 相对宏闭包、T4 的 ordinary q=1 G
++  T1--T6 固定为主线；T1 的 actual a_alt=1 clean-q 相对宏闭包、T4 的 ordinary q>=1 G
+   full-carrier fresh-source 相对闭包、T2 的有限 v1 atomic admission grammar，以及 T5 的
+   合同层 E5 良基势均已建立。它们不替代其它 H4 branch、非平凡 mark、全域 atomic 覆盖或
+   selector totality。其余内容记录 H4、atomic split、Fourier/容量、外部源和 lift 路线的已知边界。
+@@ -44,6 +44,8 @@ sources:
+   role: Type-II-endpoint-and-marked-terminal-boundary
+ - claim: type-II-q-one-full-carrier-phase-root-entry
+   role: ordinary-q-one-G-fresh-full-carrier-relative-closure
++- claim: type-II-positive-q-G-full-carrier-phase-root-entry
++  role: ordinary-positive-q-G-fresh-full-carrier-relative-closure
+ - claim: type-II-q-one-canonical-root-full-product-predecessor-rigidity
+   role: q-one-G-handoff-inverse-classification
+ - claim: type-I-phase-labeled-candidate-selector-well-founded-schedule
+@@ -285,8 +287,9 @@ generalized dyadic candidate 或任意新方程解直接当作根证书。见
+ 
+ ### T4: Fresh-G-Handoff
+ 
+-**命题。** 每个 ordinary \(q=1\) G core-prime endpoint 都有只依赖 \(p\)、不读取未知目标
+-certificate、且不复用 Type II source support 的确定性有限 lineage
++**命题。** 每个 actual、terminal-first 后仍存活的 ordinary \(q\ge1\) G core-prime
++endpoint 都有只依赖 \(p\)、不读取未知目标 certificate、且不复用 Type II source support
++的确定性有限 lineage
+ 
+ \[
+ S_G\longrightarrow S_1\longrightarrow\cdots\longrightarrow S_r,
+@@ -295,7 +298,7 @@ S_G\longrightarrow S_1\longrightarrow\cdots\longrightarrow S_r,
+ 其终点是合法 Type I state 或 direct terminal；每条边均满足 E1--E5，并带显式 solution
+ lift。有限性应来自统一构造，不能来自对 \(p\) 的有限扫描。
+ 
+-**2026-08-17 ordinary 相对闭包。** 对
++**2026-08-17 ordinary 相对闭包。** q=1 情形对
+ 
+ \[
+ S=(p,q=1,\mathrm G;W_S=\operatorname{Sol}(p)),
+@@ -324,9 +327,19 @@ target-independent fresh source
+ 独立冻结包复核见
+ [q=1 fresh handoff 证明包审计](../docs/q1-fresh-handoff-proof-package-audit-2026-08-17.md)。
+ 
+-**仍未建立的边界。** 此结论只覆盖 ordinary \(W=\operatorname{Sol}(p)\) 与该 root 后的
+-首个 local strict segment；它不把 Type II source support 伪继承给 Type I chart。非平凡
+-marked state 仍需要可逐字重序列化的 mark schema；T5 的合同势已排除未付款 reset，
++对任意 \(q>1\)，若 actual persistent source 已保存 terminal-first receipt、endpoint
++downset 与 ordinary G separator，则同一个 \((X,R_X,K_X)\) root 完全不读取 source \(q\)。
++positive-q adapter 重放这些 source 摘要与 target universal source，以
++\(W_S=W_T=\operatorname{Sol}(p)\) 的恒等 lift 支付 E4，并按 canonical T5 registry 从
++`TYPEII_G_HANDOFF` 3 降到 `TYPEI` 2 支付 E5。其 focused controls 只验证条件性 adapter
++arithmetic，不制造 actual source receipt。完整 card 见
++[positive-q G full-carrier phase-root 准入](../claims/type-II-positive-q-G-full-carrier-phase-root-entry.md)。
++
++**仍未建立的边界。** 此结论只覆盖 actual terminal-first ordinary
++\(W=\operatorname{Sol}(p)\) source 到 fresh root 的相对接口；它不把 Type II source support
++伪继承给 Type I chart。q=1 root 后的首个 strict segment 已有具名 receipt，而 positive-q
++新 origin 的相同算术段仍需完成 source-guard 形式迁移。非平凡 marked state 仍需要可逐字
++重序列化的 mark schema；T5 的合同势已排除未付款 reset，
+ T6 仍需对每个递归可达 Type I state 给出 total selector，包含后续 \(c=8,q_*=103\)
+ image 的 totality。旧 canonical root 的互素障碍仍是为什么必须使用 fresh scope 的结构性
+ 理由，见 [canonical-root support disjointness](../claims/type-II-q-one-canonical-root-slice-support-disjointness.md)。
+@@ -340,7 +353,7 @@ graph 中每条非 terminal verified edge 都满足
+ \Pi(T)<\Pi(S).
+ \]
+ 
+-定义域至少包括 Type II \(q>1\) descent、\(q=1\) G handoff、Type I support rebase、
++定义域至少包括 Type II \(q>1\) descent、ordinary \(q\ge1\) G handoff、Type I support rebase、
+ overflow、PRE \(\to\) ABSORB 与 marked smaller-source descent；不得存在未付费的 reset。
+ 
+ **2026-08-17 合同层闭合。** 当前 state contract 的 selector 输出已固定为五类，并把
+@@ -382,7 +395,7 @@ E1--E4 candidate 才能成为 `verified_edge`；因此所有**合同认可**的
+ \text{H4 arithmetic strictness} \Rightarrow \mathrm{T1}\\
+ \text{conditional atomic schema} \Rightarrow \mathrm{T2}\\
+ \text{Type II gcd-shadow endpoints} \Rightarrow \mathrm{T3}\\
+-\text{ordinary q=1 G full-carrier root-entry} \Rightarrow \mathrm{T4\ (relative)}\\
++\text{ordinary q>=1 G full-carrier root-entry} \Rightarrow \mathrm{T4\ (relative)}\\
+ \mathrm{T1,T2,T3,T4}\ +\ \text{all existing verified edges}
+ \Rightarrow \mathrm{T5}\Rightarrow \mathrm{T6}\Rightarrow \mathrm{F0}.
+ \end{array}
+diff --git a/concepts/t5-global-well-foundedness-contract-v2.md b/concepts/t5-global-well-foundedness-contract-v2.md
+index b9a40bf..7738649 100644
+--- a/concepts/t5-global-well-foundedness-contract-v2.md
++++ b/concepts/t5-global-well-foundedness-contract-v2.md
+@@ -126,9 +126,10 @@ phase，必须满足 \(q'<q\)；G target 直接转入 major phase 3，因此无
+ ### 4.2 TYPEII_G_HANDOFF
+ 
+ local rank 全零。任何合法 G->Type-I handoff 只需要 E1--E4；major phase 3->2 自动支付 E5。
+-现有 full-carrier q=1 root 和条件 c=3 source-lineage relay 是这个通用规则的实例。positive-q G
+-若未来发现合法 handoff，也不需要修改 T5，只需通过 E1--E4；没有 handoff 时是 T6 totality gap，
+-不是 T5 gap。
++现有 full-carrier q=1 root、actual ordinary positive-q relative adapter 和条件 c=3
++source-lineage relay 是这个通用规则的实例。positive-q focused controls 不提供 actual source
++receipt，故它们本身不是 edge；一旦 theorem hypothesis 中的 source receipt 已提供，adapter
++通过 E1--E4，并由本条 phase ticket 支付 E5。后续 Type-I totality 仍是 T6 gap，不是 T5 gap。
+ 
+ ### 4.3 TYPEI / CHARGED
+ 
+@@ -260,6 +261,6 @@ candidate。这是
+ 
+ 的 T6 totality 问题，而不是 T5 well-foundedness 缺口。
+ 
+-特别地，positive-q G 没有 handoff、c=8 double-low 不存在、某 overflow 没有 rank-improving bundle、
+-marked terminal membership 未证明，都只会使 selector 停在“没有 outgoing edge”，不会制造 T5 cycle
+-或迫使修改全局势。
++特别地，positive-q 新 root 后没有后续 Type-I edge、c=8 double-low 不存在、某 overflow 没有
++rank-improving bundle、marked terminal membership 未证明，都只会使 selector 停在“没有 outgoing
++edge”，不会制造 T5 cycle 或迫使修改全局势。
+diff --git a/data/t5-full-transition-taxonomy-v2.json b/data/t5-full-transition-taxonomy-v2.json
+index 8770f1c..8cb2957 100644
+--- a/data/t5-full-transition-taxonomy-v2.json
++++ b/data/t5-full-transition-taxonomy-v2.json
+@@ -61,6 +61,11 @@
+       "rank_ticket": "PHASE_DROP",
+       "reference": "type-II-q-one-full-carrier-phase-root-entry"
+     },
++    {
++      "family": "positive-q G full-carrier root entry",
++      "rank_ticket": "PHASE_DROP",
++      "reference": "type-II-positive-q-G-full-carrier-phase-root-entry"
++    },
+     {
+       "family": "q=1 G c=3 conditional source-lineage relay",
+       "rank_ticket": "PHASE_DROP then LOCAL_DROP",
+diff --git a/docs/T5-full-global-well-foundedness-integration.md b/docs/T5-full-global-well-foundedness-integration.md
+index 304b3da..a767df0 100644
+--- a/docs/T5-full-global-well-foundedness-integration.md
++++ b/docs/T5-full-global-well-foundedness-integration.md
+@@ -84,7 +84,8 @@ CHARGED (4) -> PRE (3) -> ABSORB (2)
+ \]
+ 
+ F->F proper endpoint/gcd-shadow 用 \(q'<q\) 支付。若 target 重算为 G，则直接 major phase 4->3。
+-因此 positive-q G 本身不再是 T5 边界；它可以成为合法 G state，只是当前可能没有 T6 handoff。
++因此 positive-q G 本身不再是 T5 边界；actual ordinary source 的 relative handoff 已建立，
++后续 Type-I totality 仍属于 T6。
+ 
+ ### TYPEII_G_HANDOFF
+ 
+@@ -92,9 +93,9 @@ F->F proper endpoint/gcd-shadow 用 \(q'<q\) 支付。若 target 重算为 G，
+ (3,0;0,0,0,0).
+ \]
+ 
+-任何 future G->Type-I handoff，只要 E1--E4 真正成立，就自动由 3->2 支付 E5。现有 q=1
+-full-carrier root 和 c=3 conditional source-lineage relay 是实例；T5 不再写死 `q=1` 才允许 phase
+-下降。
++任何 G->Type-I handoff，只要 E1--E4 真正成立，就自动由 3->2 支付 E5。现有 q=1
++full-carrier root、actual ordinary positive-q relative adapter 和 c=3 conditional source-lineage
++relay 是实例；T5 不再写死 `q=1` 才允许 phase 下降。
+ 
+ ### TYPEI / CHARGED
+ 
+@@ -261,7 +262,7 @@ source/owner/typed admission：
+ 
+ 以下问题仍然存在，但全部是 T6/算术 existence，不是 T5：
+ 
+-- 某个 positive-q G state 是否存在 handoff；
++- positive-q 新 root 后是否总有后续 Type-I edge；
+ - post-atomic F/G state 是否总有 registered candidate；
+ - c=8 double-low 是否实际存在；
+ - high-support sink 改善集合是否总非空；
+diff --git a/docs/T5-global-well-foundedness-migration-2026-08-17.md b/docs/T5-global-well-foundedness-migration-2026-08-17.md
+index b33cd6b..fae0f9f 100644
+--- a/docs/T5-global-well-foundedness-migration-2026-08-17.md
++++ b/docs/T5-global-well-foundedness-migration-2026-08-17.md
+@@ -6,7 +6,8 @@ supersedes it with a contract-level rule:
+ 1. every persistent target must carry one canonical T5 rank;
+ 2. only three admission tickets exist: outer-rank, phase/protocol, or local-rank drop;
+ 3. PRE/ABSORB and legacy RESET are included in the phase registry;
+-4. positive-q G is a valid lower phase state even if T6 has no handoff yet;
++4. actual ordinary positive-q G has a relative handoff under its recorded source receipt, while
++   subsequent Type-I totality remains a T6 obligation;
+ 5. future arithmetic edges do not require a new T5 theorem: they must satisfy E1--E4 and one of the
+    existing admission tickets, or remain nonrecursive.
+ 
+diff --git a/docs/T6-V1.md b/docs/T6-V1.md
+index 6d3b2e9..dedbcf9 100644
+--- a/docs/T6-V1.md
++++ b/docs/T6-V1.md
+@@ -11,11 +11,12 @@
+ 
+ | 项目 | 复核结论 | 正确状态 |
+ |---|---|---|
+-| ordinary G universal fresh handoff | 不可从 q=1 claim 自动推出；当前 adapter 的 E1 guard 明确要求 \(q=1\) | `open` adapter problem |
+-| natural \(g=p-h\) even-source fan | 可在 actual proper-root terminal-first 假设下排除现有 odd-distance translated-square family | 条件性候选引理；尚未入库为 claim |
++| ordinary G universal fresh handoff | positive-q source guard 与 p-only target 已独立补齐；对 actual ordinary source 相对闭合 | `established`, internal review |
++| natural \(g=p-h\) even-source fan | actual proper-root scope 内排除现有 odd-distance translated-square family | `established` named-family no-go |
++| proper-root \(k=1\) quotient | cyclotomic gcd 门与 Vieta 无限下降给出 actual 空域 | `established`; QC0 closed |
+ | Eisenstein quotient identities | EQ1--EQ7 与现有 stutter 关系相容，推导见第 4 节 | `analysis_evidence` |
+ | \(k>1\) 生成的 low Type-I chart | 算术上成立，但不是 persistent successor | 缺 E1--E4 与 physical receipt |
+-| T6 的全局剩余 | 不能缩写为仅 high-support/root-stutter | T2 full、T3、其余 H4/F/G 输入仍在总量词内 |
++| T6 的全局剩余 | 不能缩写为仅 high-support/root-stutter | c=8 outgoing、一般 overflow、\(k>1\) physicalization 与其它输入仍开放 |
+ 
+ 所有公式已改为标准 LaTeX 分隔符。本文不把“相位可以支付 E5”误写成“E1--E4 已存在”。
+ 
+@@ -66,34 +67,28 @@ b=e-1,\qquad N=a^2-ab+b^2,
+ - [cubic hard-root wall](../claims/type-I-root-capacity-stutter-cubic-hard-root-wall.md)
+ - [actual-maximality 边界](../claims/type-I-root-capacity-stutter-actual-maximality-boundary.md)
+ 
+-## 3. Ordinary G：为什么不能宣布 universal handoff
++## 3. Ordinary G：positive-\(q\) relative adapter 已补齐
+ 
+-现有 full-carrier phase-root entry 的 source state 是
++原有 full-carrier phase-root entry 的 source state 是
+ 
+ \[
+ S=(p,q=1,\mathrm G;W_S=\operatorname{Sol}(p)).
+ \]
+ 
+-它的具名规则、E1 回执和状态合同都要求 `source q = 1`。T5 的
+-`TYPEII_G_HANDOFF -> TYPEI` phase drop 的确能为任何**已经合法**的 G-to-Type-I
+-handoff 支付 E5；但它不构造 source guard、raw source replay、target serialization 或 E4。
+-
+-因此下式目前只是研究目标：
++新增 positive-q adapter 现在对任意 actual、terminal-first、ordinary \(q>1\) G source
++重算 endpoint downset、完整源子群和 canonical G separator，并重放 source digest 与
++terminal-first digest。target 仍是只依赖 \(p\) 的同一个 full-carrier root，因此
+ 
+ \[
+-\forall S\;(S\text{ is ordinary positive-}q\text{ G})
++\forall S\;(S\text{ is actual ordinary positive-}q\text{ G})
+ \Longrightarrow
+ S\to T_X.
+ \]
+ 
+-要将其升级为 theorem，必须至少提供：
+-
+-1. 对 positive-\(q\) ordinary G 的 canonical source predicate；
+-2. 不读取 Type-II raw history 的 E1 replay；
+-3. 普通标记集仍为 \(\operatorname{Sol}(p)\) 的 E4 证明；
+-4. 与 `fresh_source_tree_only` 不冲突的 target state digest。
+-
+-在这些内容出现前，q=1 的相对闭包仍应保持原范围。
++已成为相对 theorem。E4 为 \(\operatorname{Sol}(p)\) 上的恒等 lift，E5 为 canonical
++T5 phase \(3\to2\)。focused controls 刻意不制造 actual source receipt，故只验证条件性
++adapter arithmetic；新 origin 下的首个 local Type-I edge 仍须形式迁移。见
++[positive-q G full-carrier phase-root entry](../claims/type-II-positive-q-G-full-carrier-phase-root-entry.md)。
+ 
+ ## 4. 可保留的 proper-root quotient 代数包
+ 
+@@ -200,11 +195,11 @@ K_k=\frac{pR_k+1}{4},
+ proper-root history 的 successor：当前没有给出 actual source/path、保留或合法重置旧 support
+ 的机制、target fiber，或 \(W_T\to W_S\) 的 lift。因此它必须保留为 `analysis_evidence`。
+ 
+-## 5. 条件性 no-go：\(c=h\) 的现有奇距离平移平方扇
++## 5. 已建立的 no-go：\(c=h\) 的现有奇距离平移平方扇
+ 
+-下面的命题可作为后续独立 claim 的候选；本备忘录不把它标记为已入库 theorem。
++下列命题已经写成独立 claim 与 focused verifier。
+ 
+-### 候选命题
++### 命题
+ 
+ 在第 2 节的 actual proper-root terminal-first scope 内，令 \(g=p-h\)。不存在现有
+ `odd-distance-even-source-descent` family 的 \(c=h\) 参数，即不存在正整数
+@@ -264,6 +259,9 @@ h^3>\sqrt{\frac8{513}}\,p^2>\frac19p^2,
+ 这项推导的依赖边界很重要：如果 future selector 使用的 even-source family 不满足 (F)，本
+ no-go 对它不适用。
+ 
++完整卡片见
++[proper-root stutter 的 c=h odd-distance fan no-go](../claims/type-I-root-capacity-stutter-c-equals-h-odd-distance-fan-no-go.md)。
++
+ ## 6. 正确的 T6 局部目标：Quotient-Carrier Exit
+ 
+ 在 proper-root stutter 子域，合理的研究目标不是“找到一个更小整数”或“把 \(k\) 改名为
+@@ -279,15 +277,17 @@ support”，而是：
+ 
+ 可细化为三个可证伪分支：
+ 
+-1. **QC0**：在 actual receipt 条件下分类 \(k=1\)，并证明 terminal 或 verified edge；
++1. **QC0（已闭合）**：actual \(k=1\) 子域由 cyclotomic gcd 排除与 Vieta 无限下降证明为空；
+ 2. **QC1**：当 \(k>1\) 时，将某个 \(q\mid k\) 连接到 actual physical complete-excess
+    occurrence，并取得真实 \(K/A\) 下降；
+ 3. **QC2**：若 QC1 不成立，构造带 E1--E4、solution lift 和 T5 ticket 的新 adapter，或证明
+    terminal。
+ 
+-任何不包含 source provenance 和 E4 的“quotient chart”都不得写为 QC 的完成。
++任何不包含 source provenance 和 E4 的“quotient chart”都不得写为 QC1/QC2 的完成。QC0 的
++完整全称排除见
++[proper-root k=1 universal exclusion](../claims/type-I-root-capacity-stutter-k-one-universal-exclusion.md)。
+ 
+-## 7. 未纳入证据的数值线索
++## 7. 已删除的数值伪线索
+ 
+ 草稿曾列出
+ 
+@@ -295,13 +295,13 @@ support”，而是：
+ p=20\,065\,847\,377,\qquad a=141,\qquad k=3,\qquad m=6768.
+ \]
+ 
+-本次复核确认 \(p\) 为素数且 \(p\equiv1\pmod{24}\)。但该三元组未附带与第 2 节完整
+-\((D,e,h,u)\) receipt 的可重放映射，仓库中也没有相应 claim 或 verifier。因此它只能保留为
+-未验证线索，不能用来证明或反驳 actual stutter、fan no-go 或 T6 totality。
++精确反解得到的唯一 \((D,e,h,u)\) 候选不满足 \(h\mid p^2+p+1\)，所以不是 actual root；
++同时 \((p+3)/4\) 含因子 \(5\)，给出 gap-3 Type II terminal 并被 terminal-first 抢占。见
++[数值线索抢占审计](../claims/type-I-root-capacity-stutter-t6-numeric-clue-preemption.md)。
+ 
+ ## 8. 进入 claim 前的最小验收条件
+ 
+-若将第 5 节或第 4 节的代数包提升为正式研究成果，至少需要：
++若将第 4 节剩余的 \(k>1\) 代数包提升为 recursive progress，至少需要：
+ 
+ 1. 独立 claim 中列出准确量词和所有 actual-receipt 前提；
+ 2. 一个只检查该命题的 verifier，含正、负和边界控制；
+@@ -312,7 +312,10 @@ p=20\,065\,847\,377,\qquad a=141,\qquad k=3,\qquad m=6768.
+ ## 9. 参考入口
+ 
+ - [q=1 G full-carrier phase-root entry](../claims/type-II-q-one-full-carrier-phase-root-entry.md)
++- [positive-q G full-carrier phase-root entry](../claims/type-II-positive-q-G-full-carrier-phase-root-entry.md)
+ - [奇距离偶源的完整平移平方因子递降扇](../claims/odd-distance-even-source-descent.md)
++- [proper-root c=h odd-distance fan no-go](../claims/type-I-root-capacity-stutter-c-equals-h-odd-distance-fan-no-go.md)
++- [proper-root k=1 universal exclusion](../claims/type-I-root-capacity-stutter-k-one-universal-exclusion.md)
+ - [proper-root 正定范数界](../claims/type-I-root-capacity-stutter-positive-definite-norm-bound.md)
+ - [proper-root Eisenstein 支撑](../claims/type-I-root-capacity-stutter-eisenstein-support.md)
+ - [proper-root cubic hard-root wall](../claims/type-I-root-capacity-stutter-cubic-hard-root-wall.md)
+diff --git a/docs/T6-actual-reachable-coverage-audit-2026-08-17.md b/docs/T6-actual-reachable-coverage-audit-2026-08-17.md
+new file mode 100644
+index 0000000..8e912d4
+--- /dev/null
++++ b/docs/T6-actual-reachable-coverage-audit-2026-08-17.md
+@@ -0,0 +1,258 @@
++# T6 actual-reachable coverage audit：T2、T3 与 c=8
++
++> 状态：独立审计草稿，2026-08-17。
++> 本文没有证明 T6 totality。它只把“当前具名边的实际可达闭包”和“状态合同允许未来加入的
++> 一切边”分开，并给出最小剩余量词。
++
++## 1. 审计域
++
++令 \(\mathcal E_{\rm named}\) 为
++[`t5-full-transition-taxonomy-v2.json`](../data/t5-full-transition-taxonomy-v2.json) 的
++`current_verified_edge_families` 中具有实际构造 claim 的边族。这里不把下列对象算作生成边：
++
++- `legal smaller marked/equation source`：它只是状态合同的 admission class；
++- `pending_dispatch`、raw macro checkpoint、standalone stutter；
++- generalized-dyadic arithmetic evidence；
++- 只有必要同余、Fourier 或商群数据的 candidate。
++
++从 ordinary 根状态 \(W=\operatorname{Sol}(p)\) 出发，对
++\(\mathcal E_{\rm named}\) 取保守的全边传递闭包，记为
++\(\mathcal R_p^{\rm named}\)。它比某个确定性 selector 只选择一条边所得的可达域更大，
++所以在该闭包中成立的不变量也适用于任何当前 selector 子图。
++
++## 2. 当前具名边的 ordinary-mark 闭包
++
++### 命题 1
++
++对每个 \(S\in\mathcal R_p^{\rm named}\)，都有
++
++\[
++W_S=\operatorname{Sol}(p).
++\]
++
++### 逐行审计
++
++这里的 “concrete generator” 只表示：一旦 claim 写明的 guard 已有可重放 receipt，它会确定构造
++target 与 E1--E5。它不表示 guard 对每个状态成立。`guarded` 行不能被计作 T6 totality。
++
++| 当前 persistent edge family | generator status | E4 / mark 处理 |
++|---|---|---|
++| Type-II proper endpoint descent | guarded；需 proper node | 两端取 \(\operatorname{Sol}(p)\)，恒等 lift |
++| Type-II gcd-shadow descent | declared \(q>1\) source 上 total | ordinary 定理两端取 \(\operatorname{Sol}(p)\)，恒等 lift |
++| q=1 G full-carrier root entry | ordinary q=1 G source 上 total | source guard 明确要求 \(W=\operatorname{Sol}(p)\)，恒等 lift |
++| positive-q G full-carrier root entry | actual ordinary positive-q G source 上 total | source guard 明确要求 \(W=\operatorname{Sol}(p)\)，恒等 lift |
++| q=1 G c=3 conditional relay | guarded；需 source-lineage receipt | source guard明确要求 ordinary mark，恒等 lift |
++| same-chart support promotion | declared persistent overflow source 上 total | 两端取图表无关 \(\operatorname{Sol}(4,p)\)，恒等 lift |
++| joined-support outer reset | guarded；需合法 \(A'\) | 两端取图表无关 \(\operatorname{Sol}(p)\)，恒等 lift |
++| A=1 dual reset | declared A=1 overflow source 上 total | 两端取 \(\operatorname{Sol}(p)\)，恒等 lift |
++| fixed-n bounded-divisor descent | guarded；需 selector 接受的 \(L\) | 两端取 \(\operatorname{Sol}(p)\)，恒等 lift |
++| high-support rank-aware sink bundle | guarded；需 improvement set 非空 | 复用 path-anchored receipt 的 \(\operatorname{Sol}(p)\) 恒等 lift |
++| q=1 d=1 relay / regeneration | declared immediate receiver 上 total | 两端取 \(\operatorname{Sol}(p)\)，恒等 lift |
++| high-C=2 three-anchor macro | guarded；需 priority miss 与 macro receipts | 所有 chart 取 \(\operatorname{Sol}(p)\)，恒等 lift |
++| T2 H4 atomic macro | guarded；需 actual H4 arm | \(W_P=W_T=\operatorname{Sol}(p)\)，恒等 lift |
++| T2 c=8 double-low macro | guarded；需 actual double-low | \(W_P=W_T=\operatorname{Sol}(p)\)，恒等 lift |
++| legal smaller marked/equation source | contract schema；不是 generator | 没有 E1--E4 source/target receipt |
++
++表中的 \(\operatorname{Sol}(4,p)\) 与其它卡片缩写的 \(\operatorname{Sol}(p)\) 都表示根方程
++\(4/p\) 的同一个全解集；前者只是显式写出分子，不引入新的 mark 谓词。
++
++证明只是对路径长度归纳：根的 mark 是 \(\operatorname{Sol}(p)\)；表中每个能实际生成
++persistent target 的具名边都保持该 mark；最后一行不能凭状态合同自行生成一条边。终端没有
++successor，nonrecursive evidence 也不进入闭包。故结论成立。
++
++### 对 T3 的含义
++
++当前 \(\mathcal R_p^{\rm named}\) 中没有 nontrivial-mark seed。因此
++“nontrivial marked terminal membership”不是**当前具名 T6 可达域**的 live state family。
++另外，若 Type-II endpoint 已给出直接核验 \(4/p\) 的证书，
++[root-context terminal disjunction](../claims/root-context-terminal-disjunctive-invariant.md)
++允许它进入根证书分支，不必伪称属于当前 mark。
++
++这不把旗舰 T3 的抽象命题改写为“对任意未来 mark 已证明”。准确结论是：
++
++\[
++\boxed{
++\text{T3 nontrivial-mark branch is unreachable in the current named graph.}
++}
++\]
++
++若未来加入 generalized-dyadic、scaled-tail 或其它会创建非平凡 \(W_T\) 的实际边，新增边必须
++同时提供有限 mark serializer、非空性和 E4；届时本审计须扩表。不能把一个尚未出现的 future
++edge 当作当前 T6 的先决缺口。
++
++## 3. 当前 atomic surface 已由 T2 v1 穷尽
++
++当前 T5 taxonomy 中具名 atomic persistent families 恰为：
++
++1. H4 `a=1` clean-q parent-anchored macro；
++2. c=8 double-low parent-anchored conditional macro。
++
++这与
++[T2 v1 finite grammar](../claims/type-I-atomic-admission-v1-finite-grammar-integration.md)
++的两个 arm 完全相同：
++
++```text
++h4_a1_clean_q_atomic_v1
++c8_double_low_parent_atomic_v1
++```
++
++generic path-anchored atomic schema 只说明“给定一个已经注册的 source/path occurrence 时，怎样
++重算 payload 与条件 E1--E4”；它不是第三个 executable arm。raw checkpoint 和 standalone
++stutter 又被 taxonomy 明确排除为 nonrecursive surface。
++
++因此可冻结较旗舰“任意 raw legal path”更窄但对当前图足够的结论：
++
++\[
++\boxed{
++\text{T2 admission is closed on the current named atomic surface.}
++}
++\]
++
++完整 T2 的开放量词只在 T6 决定调用一个新 atomic arm 时重新成为义务。c=8 是否出现
++double-low 是 outgoing-candidate existence，属于 T6；它不是已出现 receipt 的 T2 admission
++失败。
++
++## 4. c=8 / \(q_\star=103\) 的精确分派
++
++保留 terminal-first 已 miss 的 ordinary q=1 d=1 parent \(P\)，以及由既有 strict relay
++重放出的 c=8 arithmetic checkpoint
++
++\[
++H=(p,R,8M;M),\qquad p=48s+1.
++\]
++
++实际 \(q_\star=103\) 还要求 rough selection，不只是
++\(s\equiv86\pmod {103}\)。在 zero-\(k\)、\((c,j,g)=(8,11,1)\) 与 gap-7
++terminal-first residual 中，写 \(s=86+103u\)，必须有
++
++\[
++u\equiv1,6\pmod7.
++\]
++
++当前出口逐行如下。
++
++| 分支 | 当前处理 | 是否覆盖 |
++|---|---|---:|
++| parent 或 target terminal-first hit | direct root terminal | 是 |
++| actual high-\(q\)，且 \(1\le c_a,c_\Sigma\le7\) | c=8 parent-anchored atomic macro；terminal 或 strict pending target | 是 |
++| 上一行中的 zero-carry marker \((D,c,c_\Sigma,\epsilon,g_b)=(1,1,4,0,47)\) | 同一 strict macro 的子例 | 是；无需排除 marker |
++| 第二个 full-excess block | 强制 \(c_1>8\)，不能支付当前 capacity E5 | no-go，仅排除该 action |
++| 两个 named structured \(m=1\) 节点 | 强制 carry \(>8\)，且尚无独立 E1 source | no-go，仅排除该 action |
++| 只使用“存在某个 non-\(p\) V-side raw prime” | 尚不能保证 \(q>2(p-1)\) 或 double-low | 开放 |
++| high-\(q\) 但 \(c_a\ge8\) 或 \(c_\Sigma\ge8\) | 当前没有 T5 ticket | 开放 |
++
++这里最容易误判的是 marker。局部 character 与 full-source nonexclusion 说明 marker 的局部条件
++彼此相容；但若 marker 真正出现，它已经满足 double-low，并由现有 macro 给出 strict edge。
++所以 marker 不是 dead end。真正缺的是一个**全称选择定理**，保证每个 terminal-first-surviving
++parent 至少有一个 double-low label，或有另一个 terminal / verified edge。
++
++### 最小剩余量词
++
++令 \(\mathcal Q_V(P)\) 为 checkpoint 的全部 actual V-side excess prime labels。现有结果只给出
++\(\mathcal Q_V(P)\setminus\{p\}\ne\varnothing\)。T6 所需而未证明的是：
++
++\[
++\boxed{
++\operatorname{terminal}(P)
++\ \lor
++\exists q\in\mathcal Q_V(P):
++q>2(p-1),\quad 1\le c_a(q),c_\Sigma(q)\le7
++\ \lor
++\exists T\;\operatorname{verified\_edge}_{\rm other}(P,T).
++}
++\]
++
++否定这一析取所需的最小 dead-end receipt 必须同时包含：actual persistent parent、完整
++terminal-first miss、真实 \(q_\star=103\) rough receipt、全部 V-side label 的因子分解与逐项
++capacity 分类，以及所有其它 registered action 的 miss/rejection。当前仓库没有这样的 receipt。
++
++## 5. 为什么现有数值点不是 dead end
++
++原 c=8 arithmetic control \(p=157393\) 有直接根证书
++
++\[
++\frac4{157393}
++=\frac1{39375}
+++\frac1{57920624}
+++\frac1{2280624570000},
++\]
++
++所以被 terminal-first 抢占。
++
++进一步，对 frozen necessary predicates 作从 \(u=0\) 开始的精确有限扫描，第一条同时满足
++
++- \(u\equiv1,6\pmod7\)；
++- exact \(q_\star=103\) roughness；
++- \(p=48s+1\) 为素数；
++- \(12s+1\) 的素因子全部为 \(1\pmod3\)
++
++的 arithmetic candidate 是
++
++\[
++u=48,\quad s=5030,\quad p=241441,
++\]
++
++且
++
++\[
++6s-1=103\cdot293,
++\qquad
++12s+1=7\cdot8623.
++\]
++
++但它同样有直接 Type I terminal。取
++
++\[
++(A,B,C,H,m)=(468,1,129,5147,47),
++\]
++
++则 \(p=4ABC-m\)、\(K=BCH=663963\)，并有
++
++\[
++\frac4{241441}
++=\frac1{60372}
+++\frac1{310734684}
+++\frac1{160307890683}.
++\]
++
++所以该最小 candidate 也不是 persistent c=8 dead end。有限扫描只用于防止把一个
++terminal-preempted control 误报成反例；它不证明后续无限射线全部被抢占。
++
++## 6. 可重放审计
++
++运行：
++
++```bash
++python3 reproductions/type_i_t6_actual_reachable_coverage_audit.py --verify
++```
++
++脚本检查：
++
++1. 当前 14 个 concrete edge generators 的 ordinary-mark E4 anchor，以及 generic marked 行没有
++   concrete generator；
++2. 当前 atomic taxonomy 与 T2-v1 两个 arm 精确相等；
++3. \(u\le48\) 的最小 residual candidate 和 \(p=241441\) 的直接 Type I identity；
++4. \(p=157393\) 的 terminal-preempted identity。
++
++脚本只是防止 taxonomy、claim identity、status 和 E4 anchors 静默漂移；它不以字符串出现代替
++上表逐条引用的数学证明。ordinary-mark closure 的证明是前述对 14 张 edge claim 的 E4 检查加
++路径长度归纳。
++
++若 taxonomy 新增实际 marked edge 或 atomic arm，脚本会拒绝并要求更新本 coverage audit。
++
++## 7. 审计结论
++
++本审计从当前 T6 live blockers 中删除了两个过宽表述：
++
++- 不需要先证明“任意 future raw path”的完整 T2；当前 named atomic surface 已由 v1 覆盖。
++- 不需要为当前可达域处理 nontrivial T3 mark；当前 named edge closure 中没有这种 seed。
++
++仍未关闭的是 c=8 parent 的全称 outgoing-existence，以及 atomic target 后续 F/G、一般
++\(A>1\) overflow 和其它 T6 state families。因此准确状态仍是：
++
++```text
++T6_GLOBAL_SELECTOR_TOTALITY = OPEN
++T2_CURRENT_NAMED_ATOMIC_SURFACE = CLOSED
++T3_NONTRIVIAL_MARK_IN_CURRENT_NAMED_REACHABILITY = UNREACHABLE
++C8_ACTUAL_PARENT_OUTGOING_TOTALITY = OPEN
++```
+diff --git a/docs/T6-closure-attempt-audit-2026-08-17.md b/docs/T6-closure-attempt-audit-2026-08-17.md
+new file mode 100644
+index 0000000..ed9ec9c
+--- /dev/null
++++ b/docs/T6-closure-attempt-audit-2026-08-17.md
+@@ -0,0 +1,135 @@
++# T6 全闭合尝试审计（2026-08-17）
++
++> 结论：`T6_GLOBAL_SELECTOR_TOTALITY = OPEN`。
++>
++> 本轮建立了四个全称或 closed-world 子结果，并删除一条伪数值线索；它们仍不足以证明
++> 每个 actual reachable nonterminal state 都有 terminal 或 verified successor。
++
++## 1. 闭合标准
++
++T6 要求一个不读取未知解的确定性 selector。对每个核心素数
++\(p\equiv1\pmod {24}\) 和每个实际可达 legal state \(S\)，它必须给出
++
++\[
++\operatorname{terminal}(S)
++\quad\lor\quad
++\exists T\;\bigl(E1(S,T)\land E2(T)\land E3(T)
++\land E4(T\to S)\land\Pi_{T5}(T)<\Pi_{T5}(S)\bigr).
++\tag{T6}
++\]
++
++T5 已证明右支中**一旦**边被合同接纳就严格下降；它没有证明右支存在。因此不能用
++“verified edge 的定义包含 rank drop”、有限测试全过或有限范围内没有 dead end 来替代
++\((T6)\) 的全称存在量词。
++
++## 2. 本轮真正建立的结果
++
++| 子问题 | 结果 | 精确边界 |
++|---|---|---|
++| ordinary positive-\(q\) G handoff | 对任意 actual terminal-first ordinary source，相对 adapter 确定进入同一个 \(p\)-only full-carrier root | focused controls 不制造 actual source receipt；nontrivial mark 与后续 Type-I totality 不在结论内 |
++| 当前 T2/T3 live surface | 当前 14 个 concrete named generators 都保持 \(W=\operatorname{Sol}(p)\)；两个 atomic families 恰等于 T2-v1 arms | 只对 frozen named graph；future marked/atomic generator 会重开审计 |
++| proper-root \(c=h\) fan | existing odd-distance translated-square family 全称为空 | 只排除该 named family，不产生 terminal 或 edge |
++| proper-root \(k=1\) | actual 子域全称为空 | cyclotomic gcd 排除加 Vieta 无限下降；不使用范围扫描，不处理 \(k>1\) |
++| T6-V1 数值线索 | \(p=20\,065\,847\,377\) 的唯一反解不满足 root divisibility，且被 gap-3 terminal 抢占 | 只删除该线索，不是 general no-go |
++
++对应证据：
++
++- [positive-q G relative adapter](../claims/type-II-positive-q-G-full-carrier-phase-root-entry.md)
++- [current named reachability coverage](T6-actual-reachable-coverage-audit-2026-08-17.md)
++- [proper-root (c=h) named-fan no-go](../claims/type-I-root-capacity-stutter-c-equals-h-odd-distance-fan-no-go.md)
++- [proper-root (k=1) universal exclusion](../claims/type-I-root-capacity-stutter-k-one-universal-exclusion.md)
++- [proper-root numeric-clue preemption](../claims/type-I-root-capacity-stutter-t6-numeric-clue-preemption.md)
++
++## 3. 仍未闭合的最小量词
++
++### 3.1 没有全局 reachable-state exhaustion
++
++当前 taxonomy 是“已构造边族”的 closed world，不是对每个 actual state 的 exhaustive case
++split。一般 \(A>1\) overflow、high-support 和其它 T1 后续状态尚无定理证明必进入某个已覆盖
++guard。因此即使下面两个局部分支被解决，仍须给出全局 state-family exhaustion。
++
++### 3.2 Proper-root (k>1) physicalization
++
++令 \(\mathcal S_{\rm pr}\) 为 actual、terminal-first 后仍非终端的 proper-root stutter
++states。本轮证明 \(k(S)\ne1\)，但仍缺
++
++\[
++\forall S\in\mathcal S_{\rm pr},\ k(S)>1
++\Longrightarrow
++\left[
++\operatorname{terminal}(S)
++\ \lor\
++\exists q\mid k(S)\ \exists T\;
++\operatorname{PhysicalE1toE5}(S,q,T)
++\right].
++\tag{QC1}
++\]
++
++形式 low chart \(k\mid K_k\) 不满足这里的 `PhysicalE1toE5`：它没有把 quotient factor
++连接到 actual source occurrence，也没有保留或合法重置旧 charged support。
++
++transverse 路线同样缺
++
++\[
++\forall S\in\mathcal S_{\rm pr},\quad
++\operatorname{terminal}(S)
++\ \lor\
++\exists q\mid D_*(S)\ \exists T\;
++\operatorname{PhysicalE1toE5}(S,q,T).
++\tag{TR1}
++\]
++
++这里 \(D_*\) 有 actual receipt occurrence，却没有现有 root menu 所需的 \(q\mid u\)
++provenance。固定有限 same-\(q\) gap 菜单又受已有 Dirichlet--CRT no-go 限制。
++
++### 3.3 c=8 outgoing existence
++
++对 terminal-first-surviving c=8 parent \(P\)，现有 theorem 只在 actual double-low receipt 已经
++出现时给 strict macro。仍需证明
++
++\[
++\operatorname{terminal}(P)
++\ \lor\
++\exists q\in\mathcal Q_V(P):
++q>2(p-1),\ 1\le c_a(q),c_\Sigma(q)\le7
++\ \lor\
++\exists T\;\operatorname{verified\_edge}_{\rm other}(P,T).
++\tag{C8}
++\]
++
++仓库没有 actual persistent c=8 dead-end fixture；已冻结的 \(p=157393\) 与最小 residual
++\(p=241441\) controls 都被 terminal 菜单抢占。这是有用的有限证据，但不能证明 \((C8)\)。
++
++## 4. 为什么本轮不能把状态改成 closed
++
++若把 T6 标为 closed，T5 的良基性会把 selector 路径强制终止，并与 terminal lift 一起推出
++旗舰 F0，进而覆盖 Erdős--Straus 的核心素数类。当前没有 \((QC1)\)、\((TR1)\)、\((C8)\)
++或全局 reachable-state exhaustion 的证明；把条件性 constructor、形式 chart 或有限 scan
++当成这些量词中的 witness 会违反仓库自己的 E1--E5 合同。
++
++因此本轮唯一可审计的状态更新是：
++
++```text
++POSITIVE_Q_ORDINARY_G_RELATIVE_HANDOFF = ESTABLISHED
++T2_CURRENT_NAMED_ATOMIC_SURFACE = CLOSED
++T3_NONTRIVIAL_MARK_IN_CURRENT_NAMED_REACHABILITY = UNREACHABLE
++PROPER_ROOT_C_EQUALS_H_NAMED_FAN = EMPTY
++PROPER_ROOT_K_ONE_ACTUAL_DOMAIN = EMPTY
++T6_GLOBAL_SELECTOR_TOTALITY = OPEN
++```
++
++## 5. 重放命令
++
++```bash
++python3 reproductions/type_ii_positive_q_g_full_carrier_phase_root_entry.py --verify
++python3 reproductions/type_i_t6_actual_reachable_coverage_audit.py --verify
++python3 reproductions/type_i_root_capacity_stutter_c_equals_h_odd_distance_fan_no_go.py --verify
++python3 reproductions/type_i_root_capacity_stutter_k_one_universal_exclusion.py --verify
++python3 reproductions/type_i_root_capacity_stutter_t6_numeric_clue_preemption.py --verify
++python3 reproductions/type_i_t5_transition_surface_audit.py
++python3 scripts/kb.py validate
++python3 scripts/kb.py build
++```
++
++这些 focused verifiers 检查精确整数/多项式恒等、合同字段和 frozen controls；全称证明仍由
++对应 claim 正文承担。任何 verifier 输出都不把 finite controls 升级为 T6 totality。
+diff --git a/docs/T6-current-progress-2026-08-17.md b/docs/T6-current-progress-2026-08-17.md
+index f08b29e..e314ccf 100644
+--- a/docs/T6-current-progress-2026-08-17.md
++++ b/docs/T6-current-progress-2026-08-17.md
+@@ -42,15 +42,16 @@
+ | 项目 | 当前状态 | 已接纳范围 | 仍未覆盖的部分 |
+ |---|---|---|---|
+ | T1 / H4 clean \(q\) | 相对闭包已建立 | 归档的 actual arm 与其具名 receipt | 其它 H4 selector branch、后续 F/G 出口 |
+-| T2 | `v1` 局部 grammar 闭合 | H4 \(a=1\) actual arm；条件性的 c=8 double-low arm | 所有 raw path、pooled-capacity、输入覆盖与全域 admission |
+-| T3 | 开放 | Type-II gcd-shadow 的部分端点机制 | nontrivial marked terminal membership 的全称处理 |
+-| T4 | ordinary \(q=1\) 相对闭包已建立 | \(W=\operatorname{Sol}(p)\) 的 q=1 G 到 fresh full-carrier Type-I root，及首个严格段 | nontrivial mark、positive-\(q\) G、后续 Type-I totality |
++| T2 | 当前具名 atomic surface 闭合；full open | H4 \(a=1\) 与 c=8 double-low 两个 `v1` arm 恰好穷尽当前 taxonomy | future raw arm、pooled-capacity、输入覆盖与全域 admission |
++| T3 | 抽象命题开放；当前具名图中不可达 | 当前 14 个 concrete generators 都保持 \(W=\operatorname{Sol}(p)\)，无 nontrivial-mark seed | 任意 future marked edge 的 serializer、membership 与 lift |
++| T4 | ordinary \(q\ge1\) 相对闭包已建立 | actual terminal-first ordinary G 统一进入同一个 p-only fresh full-carrier root | nontrivial mark、positive-q 新 origin 的后续 local migration、Type-I totality |
+ | T5 | 合同层闭合 | 所有 contract-recognized persistent edge 的七元势严格下降 | 任何 E1--E4 candidate 自动有 ticket，或 selector totality |
+ | T6 | 开放 | terminal-first 与五类输出的验收规则 | 每个实际可达 nonterminal state 的 terminal 或 verified successor |
+ 
+-T2/T3 和未覆盖的 T1/T4 输入域不能因 T5 已闭合而从 T6 的总量词中删除。它们在当前
+-proof spine 中也许不会都落到同一个 high-support 分支，但尚无“只剩 high-support/root-stutter”
+-的全局归约定理。
++closed-world 审计说明 full T2 与 nontrivial T3 不是**当前具名图**的 live blocker；但 future
++selector 若新增 atomic arm 或 marked generator，就必须重开相应义务。其它 T1 input、c=8
++outgoing existence、一般 overflow 与 high-support 分支仍没有全局归约定理，不能把 T6 缩写为
++只剩 proper-root。
+ 
+ ## 3. 已确认不能使用的捷径
+ 
+@@ -68,20 +69,21 @@ proof spine 中也许不会都落到同一个 high-support 分支，但尚无“
+ 
+ ## 4. 当前研究焦点
+ 
+-### 4.1 Ordinary G 的 positive-\(q\) adapter 仍是开放接口
++### 4.1 Ordinary G 的 positive-\(q\) adapter 已相对闭合
+ 
+-T5 的 `TYPEII_G_HANDOFF -> TYPEI` 相位下降会自动支付 E5，**前提是**已经有 E1--E4。
+-但现存 full-carrier adapter 的 source guard 明确是 `q=1`，并要求 q=1 G separator、
+-实际 \(p\)-edge 和具名 state digest。故下列说法尚未建立：
++对每份 actual、terminal-first、ordinary positive-\(q\) G source，新增 adapter 从当前整数重算
++endpoint downset 与 canonical finite-abelian G separator，重放 source state / terminal-first
++摘要和 target universal \(p\)-source，并构造不含 source \(q\) 的 target serialization。因此
+ 
+ \[
+-\text{every ordinary positive-}q\text{ G endpoint}
++\text{every actual ordinary positive-}q\text{ G endpoint}
+ \longrightarrow
+ \text{fresh full-carrier Type-I root}.
+ \]
+ 
+-这是一条值得研究的 adapter 设计问题，而不是已从 q=1 定理自动推广出的结论。需要新增
+-source guard、E1 replay、canonical target serialization 和 ordinary-mark preservation 的完整回执。
++已在相对 source hypothesis 下建立。E4 是 \(\operatorname{Sol}(p)\) 上的恒等 lift，E5 使用
++canonical T5 major phase \(3\to2\)。focused controls 不制造 actual source receipt，所以仍标为
++conditional adapter controls；新 `state_origin` 后的首个 Type-I local edge 还需形式迁移。
+ 
+ ### 4.2 High-support / proper-root stutter 是优先残余，而非全局压缩定理
+ 
+@@ -93,6 +95,11 @@ proper-root stutter 提供了较强的算术结构：正定 Eisenstein 范数、
+ [T6-V1.md](T6-V1.md)。它是当前最具体的 Type-I 残余之一，但尚未证明所有实际可达状态都会
+ 归入此分支。
+ 
++该子域已有两项全称收缩：\(c=h\) 的 named odd-distance fan 已严格排空；Eisenstein quotient
++的 \(k=1\) actual 子域也由 cyclotomic common-divisor 排除与 Vieta 无限下降严格排空。真正
++剩余的是 \(k>1\) quotient carrier 的 physicalization（QC1），或 transverse \(D_*\) carrier
++的全称 E1--E5 出口（TR1）。
++
+ ### 4.3 c=8 residual 只在实际可达且未被抢占时处理
+ 
+ c=8 / \(q_\star=103\) 的四次整除门可作为必要条件记录，但不能单独作为 T6 exit。只有在
+@@ -104,31 +111,37 @@ actual provenance、terminal-first 和 target receipt 都保留后，才应继
+ | 技术项 | 结论 | 证据等级 |
+ |---|---|---|
+ | \(q=1\) G full-carrier handoff | 已建立，范围不扩张 | `established`, `independent_review` |
+-| ordinary positive-\(q\) G universal handoff | 未建立；是 adapter 假设 | `open` |
+-| \(c=h\) 奇距离 translated-square fan | 在 actual proper-root terminal-first 假设下得到一个条件性 no-go 推导 | 待写成独立 claim / verifier；当前为 `analysis_evidence` |
++| ordinary positive-\(q\) G universal handoff | 对 actual terminal-first ordinary source 相对闭合 | `established`, `internal_review` |
++| \(c=h\) 奇距离 translated-square fan | named family 在 actual proper-root scope 内全称 no-go | `established`, `internal_review` |
++| proper-root \(k=1\) quotient | actual 子域全称为空；无有限扫描 | `established`, `internal_review` |
+ | Eisenstein quotient \(k\) 的 EQ1--EQ7 | 由已知 stutter 恒等式可推的代数包 | `analysis_evidence`；不构成 edge |
+ | canonical low chart from \(k>1\) | 图表存在 | 缺 E1--E4/provenance，不构成 edge |
+ 
+-`T6-V1.md` 的原始公式分隔符已修复，并把上述证据等级明确写入。该文件中的
+-\(p=20\,065\,847\,377\) 数值候选的素数性与 \(p\equiv1\pmod{24}\) 已复算；但其
+-\((a,k,m)\) 到完整 stutter 参数的映射没有可重放来源，故不作为当前 T6 证据使用。
++`T6-V1.md` 的原始公式分隔符已修复，并把上述证据等级明确写入。原
++\(p=20\,065\,847\,377\) 数值线索已被精确反解：它不满足 actual root divisibility，且有
++gap-3 Type II terminal，被 terminal-first 抢占，故已从 proper-root evidence 中删除。
+ 
+ ## 6. 下一批可判真假的问题
+ 
+-1. 为 positive-\(q\) ordinary G 写出一个完整 source guard；若失败，给出最小的
+-   source/mark obstruction，而非只记录“没有 handoff”。
++1. 将 positive-\(q\) root 后的首个 p-only arithmetic candidate 迁移到新 `state_origin` 的
++   正式 local edge guard；这仍不替代后续 Type-I totality。
+ 2. 将 high-support dispatch 表限制在已知实际 state class，逐行产出 terminal、完整 E1--E5
+    receipt 或唯一的 `MINIMAL_SELECTOR_GAP`。
+-3. 将 \(c=h\) fan no-go 写成独立、可重放的条件性 claim；其结论只能排除现有 named fan，
+-   不能排除一切 even-source lift。
+-4. 在 actual receipt 约束下分类 \(k=1\)；对 \(k>1\)，证明某个 \(q\mid k\) 的
+-   provenance/physicalization，或构造一个合法 reset/terminal。仅构造 \((p,R_k,K_k)\) 不够。
++3. 对 \(k>1\)，证明某个 \(q\mid k\) 的 provenance/physicalization，或从 \(D_*\) 构造
++   合法 terminal / E1--E5 successor；仅构造 \((p,R_k,K_k)\) 不够。
++4. 对每个 actual c=8 parent，证明 high-\(q\) double-low label 或其它 verified outgoing edge
++   存在；有限 controls 中没有 dead end 不能替代该量词。
+ 
+ ## 7. 参考入口
+ 
++- [T6 全闭合尝试审计](T6-closure-attempt-audit-2026-08-17.md)
+ - [T2/T5 合并复核](T2-T5-full-integration-review-2026-08-17.md)
+ - [旗舰证明纲领](../concepts/flagship-proof-program-2026-08-16.md)
+ - [状态合同](../concepts/denominator-escape-state-contract.md)
+ - [T5 全局良基合同](../concepts/t5-global-well-foundedness-contract-v2.md)
+ - [q=1 G full-carrier phase-root claim](../claims/type-II-q-one-full-carrier-phase-root-entry.md)
++- [positive-q G full-carrier phase-root claim](../claims/type-II-positive-q-G-full-carrier-phase-root-entry.md)
++- [当前 named graph 的 T2/T3 coverage audit](T6-actual-reachable-coverage-audit-2026-08-17.md)
++- [proper-root 最小缺口审计](T6-proper-root-minimal-gap-audit-2026-08-17.md)
++- [proper-root k=1 全称排除](../claims/type-I-root-capacity-stutter-k-one-universal-exclusion.md)
+ - [proper-root stutter 的 Eisenstein 支撑](../claims/type-I-root-capacity-stutter-eisenstein-support.md)
+diff --git a/docs/T6-proper-root-minimal-gap-audit-2026-08-17.md b/docs/T6-proper-root-minimal-gap-audit-2026-08-17.md
+new file mode 100644
+index 0000000..83d184c
+--- /dev/null
++++ b/docs/T6-proper-root-minimal-gap-audit-2026-08-17.md
+@@ -0,0 +1,350 @@
++# T6 proper-root 最小缺口审计
++
++> 复核日期：2026-08-17
++>
++> 文档角色：局部参数化与开放量词审计，不是 T6 closure claim。
++>
++> 结论：`PROPER_ROOT_SELECTOR_TOTALITY = OPEN`。
++
++## 1. Scope
++
++只考虑已经通过 actual source/path、terminal-first 和 canonical maximal
++complete-excess 检验的 proper-root stutter receipt。沿用
++
++\[
++D=mp+1-h,\qquad eD=ph+1,\qquad a=em-h,
++\]
++
++\[
++b=e-1,\qquad N=a^2-ab+b^2=hk,
++\]
++
++其中
++
++\[
++p\equiv1\pmod {24},\qquad h=3u,\qquad (u,6)=1,
++\qquad h\mid p^2+p+1,\qquad 2\le h<p.
++\]
++
++本页不假设这种 actual receipt 存在，也不把满足部分整数等式的抽象元组当作 actual
++state。
++
++## 2. \(k=1\) 的精确参数化与 actual 全称排除
++
++先只使用 \(k=1\) 和 stutter 整数等式。此时
++
++\[
++h=N=a^2-a(e-1)+(e-1)^2,
++\qquad h=em-a.
++\tag{1}
++\]
++
++两式相减并除以 \(e\)，得到
++
++\[
++m=\frac{(a+1)^2}{e}+e-a-2.
++\tag{2}
++\]
++
++所以
++
++\[
++\boxed{e\mid(a+1)^2.}
++\tag{3}
++\]
++
++令 \(g=(e,a+1)\)。写 \(e=gx\)、\(a+1=gy\) 且 \((x,y)=1\)。由 (3)
++有 \(x\mid g\)，故存在正整数 \(d\) 使
++
++\[
++\boxed{e=dx^2,\qquad a=dxy-1,\qquad (x,y)=1.}
++\tag{4}
++\]
++
++范围 \(1\le a<e\) 强制 \(1\le y\le x\)。代回 (2) 得
++
++\[
++\boxed{m=d(x^2-xy+y^2)-1.}
++\tag{5}
++\]
++
++另一方面，\(p\) 为整数恰要求
++
++\[
++a\mid e(h-1)+1.
++\]
++
++在模 \(a=dxy-1\) 下有 \(e\equiv xy^{-1}\)。又由 (1)
++\(h\equiv(e-1)^2\pmod a\)。乘以可逆的 \(y^3\) 后，整数门精确化为
++
++\[
++\boxed{
++dxy-1\mid x^3-2x^2y+y^3
++=(x-y)(x^2-xy-y^2).
++}
++\tag{6}
++\]
++
++令 \(Q=x^2-xy+y^2\)。给定满足 (4)--(6) 的参数，抽象候选有闭式
++
++\[
++h=d^2x^2Q-dx(x+y)+1,\qquad
++p=\frac{d^3x^4Q-d^2x^3(x+y)+1}{dxy-1}.
++\tag{7}
++\]
++
++恢复。反向地，每个 \(k=1\) 抽象整数 stutter 都有上述参数化。
++
++### 2.1 对角子类已严格排除
++
++若 \(y=x\)，由 \((x,y)=1\) 得 \(x=y=1\)，从而 \(a=e-1\) 且
++
++\[
++h=a^2.
++\]
++
++actual root 有 \(h=3u\)、\(3\nmid u\)，所以 \(v_3(h)=1\)；一个被 3 整除的平方却有
++偶数 3-adic 赋值。故 actual \(k=1\) 候选必须满足
++
++\[
++\boxed{1\le y<x.}
++\tag{8}
++\]
++
++### 2.2 Actual 奇偶与模 3 必要条件
++
++actual root 有 \(a,h\) 为奇数，所以
++
++\[
++\boxed{dxy\equiv0\pmod2.}
++\tag{9}
++\]
++
++当 \(k=1\) 时 \(3\nmid k\)。既有 3-adic 分流强制
++
++\[
++m\equiv1\pmod3,
++\qquad
++a\equiv e\equiv2\pmod3.
++\]
++
++代入 (4) 后等价于
++
++\[
++\boxed{
++d\equiv2\pmod3,\qquad 3\nmid x,\qquad 3\mid y.
++}
++\tag{10}
++\]
++
++由于 \(a\) 为奇数且 \(a\equiv2\pmod3\)，有 \((a,24)=1\)。所以在 \(p\) 已由
++(7) 恢复为整数后，核心同余 \(p\equiv1\pmod {24}\) 精确等价于
++
++\[
++\boxed{
++d^3x^4Q-d^2x^3(x+y)-dxy+2\equiv0\pmod {24}.
++}
++\tag{11}
++\]
++
++这些只是必要的局部条件；相应模系统并不自动为空。
++
++### 2.3 Actual \(k=1\) 域已严格为空
++
++actual root 条件补上了抽象参数化中缺失的全称排除。令
++
++\[
++g_0=(a,e-1),\qquad a=g_0A,\qquad e-1=g_0B,
++\qquad H=A^2-AB+B^2.
++\]
++
++若 \(k=1\)，则 \(h=N=g_0^2H\)。由 \(pa+e-1=eh\) 得
++
++\[
++A^2(p^2+p+1)
++=H\left[e^2g_0^2H+eg_0(A-2B)+1\right].
++\]
++
++而 actual root 有 \(g_0^2H=h\mid p^2+p+1\)，所以方括号必须被 \(g_0^2\)
++整除；它模 \(g_0\) 却等于 1。故 \(g_0=1\)。
++
++令 \(P_2=x^2-xy-y^2\)。式 (6) 与两个恒等式
++
++\[
++x(dxy-1)-y(dx^2-1)=y-x,
++\qquad
++(dx^2-1)-(dxy-1)=dx(x-y)
++\]
++
++于是给出
++
++\[
++(dxy-1,x-y)=(a,e-1)=1,
++\qquad a\mid P_2.
++\]
++
++actual 模 3 条件精确强制 \(d\equiv2\pmod3\)、\(3\nmid x\)、\(3\mid y\)，
++所以 \(d\ge2,y\ge3,x>y\)。由此 \(P_2\) 不可能为零或负，故
++
++\[
++P_2=c(dxy-1),\qquad c>0.
++\]
++
++保持同一 \(d,c\) 的两步 Vieta 下降
++
++\[
++L=dc+1,\qquad q=x-Ly,\qquad r=y-Lq
++\]
++
++把每个 \(y>1\) 的互素正解严格送到
++
++\[
++0<r<q<y<x,
++\]
++
++并保持
++
++\[
++x^2-Lxy-y^2+c=q^2-Lqr-r^2+c=0.
++\]
++
++下降终点 \(y=1\) 强制 \(c=1\)。但此时
++\(P_2\equiv x^2\equiv1\pmod3\)，而 \(a=dxy-1\equiv2\pmod3\)，矛盾。因此
++
++\[
++\boxed{
++\forall S\in\mathcal S_{\mathrm{pr}},\qquad k(S)\ne1.
++}
++\tag{QC0-empty}
++\]
++
++完整证明与无有限扫描的符号核验见
++[actual proper-root stutter 的 k=1 全称排除](../claims/type-I-root-capacity-stutter-k-one-universal-exclusion.md)。
++这只清空 \(k=1\) 子域；actual maximality、terminal-first 与 source/path 条件不再需要
++逐项过滤一个已经不存在的候选。
++
++## 3. 两种 carrier 不可混同
++
++proper-root residual 同时出现两类结构上不同的因子。
++
++### 3.1 Eisenstein quotient carrier
++
++\[
++k=\frac Nh,\qquad 1\le k<\frac p4,
++\]
++
++且 \(k\) 的素因子只可能是 3 或 \(1\pmod3\)。当 \(k>1\) 时，形式上可构造
++
++\[
++R_k\equiv-p^{-1}\pmod {4k},\qquad
++K_k=\frac{pR_k+1}{4},\qquad k\mid K_k.
++\]
++
++但 \(q\mid k\) 只带有 quotient algebra；它不自动对应 actual source/path 中的 charged
++occurrence，也没有给出 \(W_T\to W_S\) 的 E4 lift。
++
++### 3.2 Transverse receipt carrier
++
++令
++
++\[
++D_*=\frac{D}{(D,h^2-1)}.
++\]
++
++已有 actual-receipt 定理给出
++
++\[
++1<D_*\mid\gcd(T/u,m+2r),
++\]
++
++以及
++
++\[
++(D_*,pM_0(2r+1)(m-1))=1.
++\]
++
++因此 \(q\mid D_*\) 确实来自 actual \(D\)，但它恰好没有现有 root-capacity menu 所需的
++\(q\mid u\) provenance。现有 low-gap、正根、反射和 overlap 分派都只有条件性覆盖；
++一般 \(L>1\) negative-root pure-\(T\) 分支，以及不命中这些有限多项式门的分支，仍没有
++terminal 或 E1--E5 edge。
++
++所以 \(q\mid k\) 与 \(q\mid D_*\) 不能互相替换：前者有 Eisenstein quotient 结构但缺
++physical occurrence，后者有 receipt occurrence 但缺可消费的 source provenance。
++
++## 4. 最小开放量词
++
++令 \(\mathcal S_{\mathrm{pr}}\) 表示所有实际可达、terminal-first 后仍非终端的
++proper-root stutter states，并定义
++
++\[
++\operatorname{Exit}(S)\iff
++\operatorname{terminal}(S)
++\ \lor\
++\exists T\;\bigl(
++E1(S,T)\land E2(T)\land E3(T)\land E4(T\to S)
++\land\Pi_{T5}(T)<\Pi_{T5}(S)
++\bigr).
++\]
++
++该子域的 T6 目标就是
++
++\[
++\boxed{
++\forall S\in\mathcal S_{\mathrm{pr}},\quad \operatorname{Exit}(S).
++}
++\tag{PR-T6}
++\]
++
++按 quotient 路线，\(k=1\) 分支已经由 (QC0-empty) 全称排空，所以
++
++\[
++\forall S\in\mathcal S_{\mathrm{pr}},\ k(S)=1
++\Longrightarrow\operatorname{Exit}(S),
++\tag{QC0}
++\]
++
++现已真空成立。唯一仍开放的 quotient-carrier 量词是
++
++\[
++\forall S\in\mathcal S_{\mathrm{pr}},\ k(S)>1
++\Longrightarrow
++\left[
++\operatorname{terminal}(S)\ \lor\
++\exists q\mid k(S)\ \exists T\;
++\operatorname{PhysicalE1toE5}(S,q,T)
++\right].
++\tag{QC1}
++\]
++
++按 transverse 路线，一个同样足够但尚未证明的局部引理是
++
++\[
++\forall S\in\mathcal S_{\mathrm{pr}},\quad
++\operatorname{terminal}(S)\ \lor\
++\exists q\mid D_*(S)\ \exists T\;
++\operatorname{PhysicalE1toE5}(S,q,T).
++\tag{TR1}
++\]
++
++这里 `PhysicalE1toE5` 必须包括 actual source replay、确定 target、target normal form、
++全域 solution lift 和 T5 ticket；“\(q\) 较小”“\(q\mid K_q\)”或一条 q-adic 同余均不够。
++
++## 5. 已知路线障碍
++
++现有 Dirichlet--CRT no-go 已证明：只读取 low-gap negative-root 的同一个 \(q\)，并不断
++添加有限多个固定条件 \(q\mid p+r\)，不能在 q-local 层全称关闭该负支。它不构造 actual
++receipt 反例，但说明 (TR1) 不能由有限 fixed-gap same-carrier 菜单推出。下一步至少要读取
++可变 gap、不同 carrier、多因子结构，或 canonical maximality 的额外非局部数据。
++
++另一个具体纠偏是：T6-V1 中的
++\(p=20\,065\,847\,377,m=6768,a=141,k=3\) 线索既不满足 actual root
++divisibility，又被 gap-3 Type II terminal 抢占；详见
++[数值线索审计](../claims/type-I-root-capacity-stutter-t6-numeric-clue-preemption.md)。它不能充当
++(QC1) 或 (TR1) 的 actual 控制。
++
++## 6. 结论边界
++
++本页严格完成的是 \(k=1\) 的参数化与 actual 全称排除，并把 (PR-T6) 的 quotient
++剩余精确收缩到 \(k>1\) 的 (QC1)。它仍没有 physicalize \(q\mid k\) 或为
++\(q\mid D_*\) 构造全称 successor。因此 (QC0) 已闭合，但 proper-root 子域和 T6
++仍保持开放。
+diff --git a/docs/T6-review-and-consolidation-2026-08-17.md b/docs/T6-review-and-consolidation-2026-08-17.md
+index b43f4da..35f71b1 100644
+--- a/docs/T6-review-and-consolidation-2026-08-17.md
++++ b/docs/T6-review-and-consolidation-2026-08-17.md
+@@ -14,6 +14,11 @@
+ 当前接纳的 T5 结论仍严格是：已进入 persistent queue 的 contract-recognized edge 在
+ \(\Pi_{T5}\in\mathbb N^7\) 下严格下降。它不提供任何 state 的 successor 存在性。
+ 
++> 后续同日进展：本页下表记录的是提交 `203716b` 时的审查快照。其后 ordinary
++> positive-\(q\) G relative adapter、\(c=h\) named-fan no-go、proper-root \(k=1\)
++> universal exclusion 与当前 named-graph T2/T3 coverage audit 已分别入库；最新状态以
++> [T6 当前进度](T6-current-progress-2026-08-17.md) 为准。T6 totality 仍为 open。
++
+ ## 主要发现
+ 
+ | 严重度 | 原位置 | 发现 | 处理 |
+diff --git a/index/theorem-ledger.md b/index/theorem-ledger.md
+index 5243d00..9c5506c 100644
+--- a/index/theorem-ledger.md
++++ b/index/theorem-ledger.md
+@@ -14,15 +14,15 @@
+ | 数学状态 | `computationally_reproduced` | 373 |
+ | 数学状态 | `conditional` | 30 |
+ | 数学状态 | `contradicted` | 2 |
+-| 数学状态 | `established` | 873 |
++| 数学状态 | `established` | 878 |
+ | 数学状态 | `open` | 12 |
+ | 数学状态 | `retracted` | 1 |
+ | 证明来源 | `computational_reproduction` | 128 |
+ | 证明来源 | `mixed` | 39 |
+-| 证明来源 | `repository_derivation` | 703 |
++| 证明来源 | `repository_derivation` | 708 |
+ | 证明来源 | `unspecified` | 428 |
+ | 审阅状态 | `independent_review` | 20 |
+-| 审阅状态 | `internal_review` | 850 |
++| 审阅状态 | `internal_review` | 855 |
+ | 审阅状态 | `unspecified` | 428 |
+ 
+ ## 全部主张
+@@ -808,16 +808,19 @@
+ | [严格 root carry 的规范 universal raw word 与 E1 root-policy 边界](../claims/type-I-root-capacity-strict-carry-universal-raw-word-policy-boundary.md) (`type-I-root-capacity-strict-carry-universal-raw-word-policy-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
+ | [根容量 stutter 的 actual-maximality 不可由除子交集替代](../claims/type-I-root-capacity-stutter-actual-maximality-boundary.md) (`type-I-root-capacity-stutter-actual-maximality-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
+ | [根容量实际 stutter 的低系数障碍与 30p 高度排除带](../claims/type-I-root-capacity-stutter-actual-small-root-exclusion.md) (`type-I-root-capacity-stutter-actual-small-root-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
++| [proper-root stutter 的 c=h 奇距离偶源扇全称 no-go](../claims/type-I-root-capacity-stutter-c-equals-h-odd-distance-fan-no-go.md) (`type-I-root-capacity-stutter-c-equals-h-odd-distance-fan-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
+ | [proper-root stutter 的 C-side m 局部化与非平凡 T 余量](../claims/type-I-root-capacity-stutter-c-side-m-localization.md) (`type-I-root-capacity-stutter-c-side-m-localization`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
+ | [根容量 actual stutter 的立方高度墙](../claims/type-I-root-capacity-stutter-cubic-hard-root-wall.md) (`type-I-root-capacity-stutter-cubic-hard-root-wall`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
+ | [proper-root stutter 范数的 Eisenstein 素因子支撑限制](../claims/type-I-root-capacity-stutter-eisenstein-support.md) (`type-I-root-capacity-stutter-eisenstein-support`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
+ | [根容量 stutter 的三参数整数曲线约束](../claims/type-I-root-capacity-stutter-finite-curve-constraint.md) (`type-I-root-capacity-stutter-finite-curve-constraint`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
+ | [proper-root stutter 的 h^2-1 重叠 m 界与非平凡约化除子](../claims/type-I-root-capacity-stutter-h-overlap-m-bound.md) (`type-I-root-capacity-stutter-h-overlap-m-bound`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
++| [actual proper-root stutter 的 k=1 全称排除](../claims/type-I-root-capacity-stutter-k-one-universal-exclusion.md) (`type-I-root-capacity-stutter-k-one-universal-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
+ | [根容量 stutter 的参数对 root-divisor gate 与 actual 边界](../claims/type-I-root-capacity-stutter-pair-root-divisor-gate.md) (`type-I-root-capacity-stutter-pair-root-divisor-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
+ | [proper-root stutter 的正定范数与平方根菜单界](../claims/type-I-root-capacity-stutter-positive-definite-norm-bound.md) (`type-I-root-capacity-stutter-positive-definite-norm-bound`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
+ | [根容量 stutter 范数因子的 provenance 三分派](../claims/type-I-root-capacity-stutter-provenance-dispatch.md) (`type-I-root-capacity-stutter-provenance-dispatch`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
+ | [根容量端点实际 D 的 cyclotomic 排除与 p±1/T 因子分裂](../claims/type-I-root-capacity-stutter-receipt-factor-split.md) (`type-I-root-capacity-stutter-receipt-factor-split`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
+ | [根容量 stutter 的约化除子与双因子结果式约束](../claims/type-I-root-capacity-stutter-reduced-divisor-product.md) (`type-I-root-capacity-stutter-reduced-divisor-product`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
++| [T6 proper-root 数值线索的 root-provenance 失败与 gap-3 终端抢占](../claims/type-I-root-capacity-stutter-t6-numeric-clue-preemption.md) (`type-I-root-capacity-stutter-t6-numeric-clue-preemption`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
+ | [根容量实际 stutter 的 10000 系数排除带](../claims/type-I-root-capacity-stutter-ten-thousand-coefficient-barrier.md) (`type-I-root-capacity-stutter-ten-thousand-coefficient-barrier`) | `established` | `mixed` | `internal_review` | - | 2026-08-14 |
+ | [横向 stutter 的一般 A 型二次移位 Type II 终端扇](../claims/type-I-root-capacity-stutter-transverse-general-quadratic-type-II-fan.md) (`type-I-root-capacity-stutter-transverse-general-quadratic-type-II-fan`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
+ | [横向 stutter 低缺口 m 多项式的正负根分派](../claims/type-I-root-capacity-stutter-transverse-low-gap-m-polynomial-root-split.md) (`type-I-root-capacity-stutter-transverse-low-gap-m-polynomial-root-split`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
+@@ -875,6 +878,7 @@
+ | [中心化指数盒的 Kneser 对合瓶颈](../claims/type-I-symmetric-box-kneser-involution-bottleneck.md) (`type-I-symmetric-box-kneser-involution-bottleneck`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
+ | [T5 完整状态合同层全局良基性](../claims/type-I-t5-full-contract-level-global-well-foundedness.md) (`type-I-t5-full-contract-level-global-well-foundedness`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
+ | [T5 对当前状态合同 persistent transition surface 的穷尽分类](../claims/type-I-t5-full-transition-surface-exhaustion.md) (`type-I-t5-full-transition-surface-exhaustion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
++| [T6 当前具名边闭包的 ordinary-mark 不变量与 atomic surface 审计](../claims/type-I-t6-current-named-reachability-t2-t3-coverage-audit.md) (`type-I-t6-current-named-reachability-t2-t3-coverage-audit`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
+ | [五亿普通双尾遗漏的 B=1 偶源桥边界](../claims/type-I-tail-reverse-b1-even-source-boundary-500m.md) (`type-I-tail-reverse-b1-even-source-boundary-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
+ | [五亿普通双尾遗漏的偶源 B=8 精确低溢出边界](../claims/type-I-tail-reverse-even-small-b-boundary-500m.md) (`type-I-tail-reverse-even-small-b-boundary-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
+ | [五亿普通尾遗漏的偶源反向二尾闭合](../claims/type-I-tail-reverse-even-source-closure-500m.md) (`type-I-tail-reverse-even-source-closure-500m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
+@@ -1102,6 +1106,7 @@
+ | [p-1 因子 Type II 的 Jacobi 源关系 SNF 秩一压缩与锚点二分](../claims/type-II-p-minus-one-jacobi-source-snf-rank-one-anchor-dichotomy.md) (`type-II-p-minus-one-jacobi-source-snf-rank-one-anchor-dichotomy`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-11 |
+ | [p-1 Type II 奇核空盒的物理权最小溢出与中性载体 no-go](../claims/type-II-p-minus-one-jacobi-weighted-minimum-overflow-neutral-carrier-no-go.md) (`type-II-p-minus-one-jacobi-weighted-minimum-overflow-neutral-carrier-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-11 |
+ | [p+12 / p+36 因子给出的 Type II 终端扇](../claims/type-II-p-plus-12-36-divisor-terminal-fan.md) (`type-II-p-plus-12-36-divisor-terminal-fan`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
++| [ordinary positive-q G 到全载体 Type I 根的全称 phase-root 准入](../claims/type-II-positive-q-G-full-carrier-phase-root-entry.md) (`type-II-positive-q-G-full-carrier-phase-root-entry`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
+ | [规范移位一私有素因子模型的强制因子阶梯边界](../claims/type-II-prime-cofactor-forcing-ladder.md) (`type-II-prime-cofactor-forcing-ladder`) | `computationally_reproduced` | `unspecified` | `unspecified` | `chamberland2026` | 2026-07-25 |
+ | [Type II 私有因子的 Kneser 增长—稳定子吸收二分](../claims/type-II-private-factor-kneser-growth-stabilizer-bridge.md) (`type-II-private-factor-kneser-growth-stabilizer-bridge`) | `established` | `repository_derivation` | `internal_review` | `grynkiewicz_marchan_ordaz2009` | 2026-08-04 |
+ | [Type II 碰撞诱导私有积集状态与一孔同余陷阱](../claims/type-II-private-product-state.md) (`type-II-private-product-state`) | `established` | `unspecified` | `unspecified` | `grynkiewicz_marchan_ordaz2009`, `chamberland2026` | 2026-07-25 |
+diff --git a/reproductions/type_i_root_capacity_stutter_c_equals_h_odd_distance_fan_no_go.py b/reproductions/type_i_root_capacity_stutter_c_equals_h_odd_distance_fan_no_go.py
+new file mode 100755
+index 0000000..80ecc28
+--- /dev/null
++++ b/reproductions/type_i_root_capacity_stutter_c_equals_h_odd_distance_fan_no_go.py
+@@ -0,0 +1,46 @@
++#!/usr/bin/env python3
++"""Verify exact constants in the c=h odd-distance proper-root no-go."""
++
++from __future__ import annotations
++
++import argparse
++from fractions import Fraction
++
++
++def verify() -> None:
++    upper_coefficient = Fraction(1, 49) + Fraction(1, 56) + Fraction(1, 64)
++    if upper_coefficient != Fraction(169, 3_136):
++        raise AssertionError("the fan upper-bound coefficient changed")
++    if not upper_coefficient < Fraction(1, 9):
++        raise AssertionError("the fan upper bound no longer contradicts one ninth")
++
++    hard_wall_squared_coefficient = Fraction(8, 513)
++    if not hard_wall_squared_coefficient > Fraction(1, 81):
++        raise AssertionError("the cubic hard-root lower bound weakened past one ninth")
++
++    # A relaxed arithmetic control satisfies the named fan and root congruence,
++    # but deliberately fails the hard-root wall.  It checks that the proof uses
++    # the actual hard-root input rather than claiming a bare congruence no-go.
++    p_value, h_value, delta, ray = 25, 3, 1, 7
++    if not (
++        p_value - h_value == delta * (1 + h_value * ray)
++        and delta * ray % 4 == 3
++        and (p_value * p_value + p_value + 1) % h_value == 0
++        and 513 * h_value**6 <= 8 * p_value**4
++    ):
++        raise AssertionError("the relaxed boundary control changed")
++
++    print("verified c=h odd-distance fan no-go constants and hard-wall boundary")
++
++
++def main() -> None:
++    parser = argparse.ArgumentParser()
++    parser.add_argument("--verify", action="store_true")
++    args = parser.parse_args()
++    if not args.verify:
++        parser.error("use --verify")
++    verify()
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/reproductions/type_i_root_capacity_stutter_k_one_universal_exclusion.py b/reproductions/type_i_root_capacity_stutter_k_one_universal_exclusion.py
+new file mode 100755
+index 0000000..a0d0dfd
+--- /dev/null
++++ b/reproductions/type_i_root_capacity_stutter_k_one_universal_exclusion.py
+@@ -0,0 +1,213 @@
++#!/usr/bin/env python3
++"""Verify symbolic identities in the proper-root k=1 infinite descent.
++
++This verifier deliberately performs no bounded search.  The universal order
++arguments and the well-founded descent are proved in the accompanying claim;
++the script checks their exact polynomial identities over the integers.
++"""
++
++from __future__ import annotations
++
++import argparse
++from dataclasses import dataclass
++
++VARIABLES = ("A", "B", "c", "d", "e", "g", "x", "y")
++ZERO_EXPONENTS = (0,) * len(VARIABLES)
++
++
++@dataclass(frozen=True)
++class Polynomial:
++    """A minimal exact multivariate polynomial over the integers."""
++
++    terms: dict[tuple[int, ...], int]
++
++    def __post_init__(self) -> None:
++        normalized = {
++            powers: coefficient
++            for powers, coefficient in self.terms.items()
++            if coefficient != 0
++        }
++        object.__setattr__(self, "terms", normalized)
++
++    @classmethod
++    def constant(cls, value: int) -> Polynomial:
++        return cls({ZERO_EXPONENTS: value})
++
++    @classmethod
++    def variable(cls, name: str) -> Polynomial:
++        powers = [0] * len(VARIABLES)
++        powers[VARIABLES.index(name)] = 1
++        return cls({tuple(powers): 1})
++
++    @staticmethod
++    def coerce(value: int | Polynomial) -> Polynomial:
++        if isinstance(value, Polynomial):
++            return value
++        return Polynomial.constant(value)
++
++    def __add__(self, other: int | Polynomial) -> Polynomial:
++        result = dict(self.terms)
++        for powers, coefficient in self.coerce(other).terms.items():
++            result[powers] = result.get(powers, 0) + coefficient
++        return Polynomial(result)
++
++    def __radd__(self, other: int | Polynomial) -> Polynomial:
++        return self + other
++
++    def __neg__(self) -> Polynomial:
++        return Polynomial(
++            {powers: -coefficient for powers, coefficient in self.terms.items()}
++        )
++
++    def __sub__(self, other: int | Polynomial) -> Polynomial:
++        return self + (-self.coerce(other))
++
++    def __rsub__(self, other: int | Polynomial) -> Polynomial:
++        return self.coerce(other) - self
++
++    def __mul__(self, other: int | Polynomial) -> Polynomial:
++        result: dict[tuple[int, ...], int] = {}
++        for left_powers, left_coefficient in self.terms.items():
++            for right_powers, right_coefficient in self.coerce(other).terms.items():
++                powers = tuple(
++                    left + right
++                    for left, right in zip(left_powers, right_powers, strict=True)
++                )
++                result[powers] = (
++                    result.get(powers, 0) + left_coefficient * right_coefficient
++                )
++        return Polynomial(result)
++
++    def __rmul__(self, other: int | Polynomial) -> Polynomial:
++        return self * other
++
++    def __pow__(self, exponent: int) -> Polynomial:
++        if exponent < 0:
++            raise ValueError("polynomial exponent must be nonnegative")
++        result = Polynomial.constant(1)
++        base = self
++        power = exponent
++        while power:
++            if power % 2:
++                result *= base
++            base *= base
++            power //= 2
++        return result
++
++
++def assert_zero(polynomial: Polynomial, label: str) -> None:
++    if polynomial.terms:
++        raise AssertionError(f"{label} failed: {polynomial.terms}")
++
++
++def verify_root_gcd_identity() -> None:
++    a_cap = Polynomial.variable("A")
++    b_cap = Polynomial.variable("B")
++    e_var = Polynomial.variable("e")
++    g_var = Polynomial.variable("g")
++    h_cap = a_cap**2 - a_cap * b_cap + b_cap**2
++    p_times_a = e_var * g_var * h_cap - b_cap
++
++    left = p_times_a**2 + a_cap * p_times_a + a_cap**2
++    bracket = (
++        e_var**2 * g_var**2 * h_cap
++        + e_var * g_var * (a_cap - 2 * b_cap)
++        + 1
++    )
++    assert_zero(left - h_cap * bracket, "actual-root common-divisor identity")
++
++
++def verify_parameterization_and_integrality() -> None:
++    d_var = Polynomial.variable("d")
++    x_var = Polynomial.variable("x")
++    y_var = Polynomial.variable("y")
++
++    e_var = d_var * x_var**2
++    a_var = d_var * x_var * y_var - 1
++    b_var = e_var - 1
++    q_form = x_var**2 - x_var * y_var + y_var**2
++    m_var = d_var * q_form - 1
++    h_var = e_var * m_var - a_var
++    norm = a_var**2 - a_var * b_var + b_var**2
++    h_closed = d_var**2 * x_var**2 * q_form - d_var * x_var * (x_var + y_var) + 1
++
++    assert_zero(norm - h_var, "k=1 norm parameterization")
++    assert_zero(h_var - h_closed, "closed formula for h")
++
++    numerator = e_var * (h_var - 1) + 1
++    cubic = (x_var - y_var) * (x_var**2 - x_var * y_var - y_var**2)
++    quotient = x_var**2 * (
++        d_var**2 * x_var**3 * y_var**2
++        - d_var**2 * x_var**2 * y_var**3
++        + d_var**2 * x_var * y_var**4
++        + d_var * x_var**2 * y_var
++        - 2 * d_var * x_var * y_var**2
++        + x_var
++        - 2 * y_var
++    )
++    assert_zero(
++        y_var**3 * numerator - cubic - a_var * quotient,
++        "p-integrality cubic remainder",
++    )
++
++    assert_zero(
++        x_var * a_var - y_var * b_var - (y_var - x_var),
++        "linear gcd identity",
++    )
++    assert_zero(b_var - a_var - d_var * x_var * (x_var - y_var), "gcd bridge")
++
++
++def verify_descent_invariant() -> None:
++    c_var = Polynomial.variable("c")
++    d_var = Polynomial.variable("d")
++    x_var = Polynomial.variable("x")
++    y_var = Polynomial.variable("y")
++    ell = d_var * c_var + 1
++
++    a_var = d_var * x_var * y_var - 1
++    p_two = x_var**2 - x_var * y_var - y_var**2
++    positive_decomposition = (
++        (d_var - 1) * x_var**2 * y_var
++        + (y_var - 1) * (x_var**2 + x_var)
++        + y_var**2
++    )
++    assert_zero(x_var * a_var - p_two - positive_decomposition, "c<x identity")
++
++    def equation(first: Polynomial, second: Polynomial) -> Polynomial:
++        return first**2 - ell * first * second - second**2 + c_var
++
++    q_var = x_var - ell * y_var
++    r_var = y_var - ell * q_var
++    assert_zero(equation(q_var, r_var) - equation(x_var, y_var), "Vieta invariant")
++
++    assert_zero(
++        equation(x_var, y_var)
++        - (x_var * q_var - (y_var**2 - c_var)),
++        "first Vieta quotient identity",
++    )
++    assert_zero(
++        equation(x_var, y_var)
++        - (q_var**2 + c_var - y_var * r_var),
++        "second Vieta quotient identity",
++    )
++
++
++def verify() -> None:
++    verify_root_gcd_identity()
++    verify_parameterization_and_integrality()
++    verify_descent_invariant()
++    print("verified proper-root k=1 symbolic identities and Vieta descent invariant")
++    print("no bounded scan is used; order and well-foundedness are proved in the claim")
++
++
++def main() -> None:
++    parser = argparse.ArgumentParser()
++    parser.add_argument("--verify", action="store_true")
++    args = parser.parse_args()
++    if not args.verify:
++        parser.error("use --verify")
++    verify()
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/reproductions/type_i_root_capacity_stutter_t6_numeric_clue_preemption.py b/reproductions/type_i_root_capacity_stutter_t6_numeric_clue_preemption.py
+new file mode 100755
+index 0000000..0fd193a
+--- /dev/null
++++ b/reproductions/type_i_root_capacity_stutter_t6_numeric_clue_preemption.py
+@@ -0,0 +1,126 @@
++#!/usr/bin/env python3
++"""Audit the T6-V1 proper-root numeric clue and its gap-3 preemption."""
++
++from __future__ import annotations
++
++import argparse
++from fractions import Fraction
++from math import isqrt
++
++P = 20_065_847_377
++M = 6_768
++A = 141
++EXPECTED_K = 3
++
++
++def is_prime_64(value: int) -> bool:
++    """Deterministic Miller--Rabin for unsigned 64-bit integers."""
++    if value < 2:
++        return False
++    for prime in (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37):
++        if value % prime == 0:
++            return value == prime
++
++    odd_part = value - 1
++    exponent = 0
++    while odd_part % 2 == 0:
++        exponent += 1
++        odd_part //= 2
++
++    for base in (2, 325, 9_375, 28_178, 450_775, 9_780_504, 1_795_265_022):
++        if base % value == 0:
++            continue
++        residue = pow(base, odd_part, value)
++        if residue in (1, value - 1):
++            continue
++        for _ in range(exponent - 1):
++            residue = residue * residue % value
++            if residue == value - 1:
++                break
++        else:
++            return False
++    return True
++
++
++def verify() -> None:
++    if P % 24 != 1 or not is_prime_64(P):
++        raise AssertionError("the recorded p stopped being a core prime")
++
++    layer = A * M
++    shift = M - A
++    linear = 3 * (A - 1)
++    discriminant = linear * linear - 36 * (shift - layer * P)
++    square_root = isqrt(discriminant)
++    if square_root * square_root != discriminant:
++        raise AssertionError("the root-gate discriminant stopped being square")
++
++    numerator = -linear + square_root
++    if numerator <= 0 or numerator % 18:
++        raise AssertionError("the unique positive root stopped being integral")
++    u_value = numerator // 18
++    if 9 * u_value * u_value + linear * u_value + shift != layer * P:
++        raise AssertionError("the reconstructed root no longer solves the pair gate")
++
++    h_value = 3 * u_value
++    if (A + h_value) % M:
++        raise AssertionError("the reconstructed e stopped being integral")
++    e_value = (A + h_value) // M
++    d_value = M * P + 1 - h_value
++    norm = A * A - A * (e_value - 1) + (e_value - 1) ** 2
++
++    if (u_value, h_value, e_value, d_value) != (
++        46_126_129,
++        138_378_387,
++        20_446,
++        135_805_516_669_150,
++    ):
++        raise AssertionError("the forced stutter reconstruction changed")
++    if not (
++        e_value * d_value == P * h_value + 1
++        and A == e_value * M - h_value
++        and norm == EXPECTED_K * h_value
++    ):
++        raise AssertionError("the abstract quotient identities changed")
++
++    cyclotomic = P * P + P + 1
++    quotient, remainder = divmod(cyclotomic, h_value)
++    if (quotient, remainder) != (2_909_690_159_758, 39_277_161):
++        raise AssertionError("the exact cyclotomic division changed")
++    if remainder == 0:
++        raise AssertionError("the clue unexpectedly acquired actual root provenance")
++
++    gap = 3
++    x_value = (P + gap) // 4
++    divisor = 5
++    if not (
++        x_value == 5_016_461_845
++        and x_value % divisor == 0
++        and divisor <= x_value
++        and (x_value + divisor) % gap == 0
++    ):
++        raise AssertionError("the gap-3 Type II certificate changed")
++
++    y_value = P * (x_value + divisor) // gap
++    z_value = P * (x_value + x_value * x_value // divisor) // gap
++    if (y_value, z_value) != (
++        33_553_185_951_547_689_150,
++        33_663_655_420_825_800_263_779_096_350,
++    ):
++        raise AssertionError("the recovered denominators changed")
++    if Fraction(1, x_value) + Fraction(1, y_value) + Fraction(1, z_value) != Fraction(4, P):
++        raise AssertionError("the terminal Egyptian-fraction identity failed")
++
++    print("verified T6 numeric clue provenance failure and gap-3 terminal preemption")
++
++
++def main() -> None:
++    parser = argparse.ArgumentParser()
++    parser.add_argument("--verify", action="store_true")
++    args = parser.parse_args()
++    if not args.verify:
++        parser.error("use --verify")
++    verify()
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/reproductions/type_i_t6_actual_reachable_coverage_audit.py b/reproductions/type_i_t6_actual_reachable_coverage_audit.py
+new file mode 100755
+index 0000000..c7c19a1
+--- /dev/null
++++ b/reproductions/type_i_t6_actual_reachable_coverage_audit.py
+@@ -0,0 +1,392 @@
++#!/usr/bin/env python3
++"""Audit the current T6 reachable surface without inventing new edges.
++
++This is deliberately a coverage audit, not a T6 totality verifier.  It checks
++three narrow facts that are easy to blur in prose:
++
++* every *named current* persistent edge family preserves the ordinary
++  ``Sol(p)`` marking; the generic marked contract is not an edge generator;
++* the named atomic transition surface is exactly the two T2-v1 arms; and
++* the first c=8/q*=103 arithmetic residual allowed by the frozen necessary
++  predicates is terminal-preempted, so it is not an actual dead-end fixture.
++
++The remaining c=8 gap is quantified: produce a terminal or a strict receipt
++for every terminal-first-surviving parent.  A finite control cannot prove it.
++"""
++
++from __future__ import annotations
++
++import argparse
++import json
++import math
++import re
++from fractions import Fraction
++from pathlib import Path
++
++ROOT = Path(__file__).resolve().parents[1]
++TAXONOMY = ROOT / "data" / "t5-full-transition-taxonomy-v2.json"
++
++
++# Every concrete family below either states W_S=W_T=Sol(p) explicitly or
++# invokes a receipt whose E4 is that identity lift.  The final generic row is
++# only an admission class in the state contract and has no construction.
++ORDINARY_EDGE_E4_ANCHORS: dict[str, tuple[str, ...]] = {
++    "type-II-relation-reach-proper-endpoint-descent": ("Sol(p)", "恒等"),
++    "type-II-relation-reach-gcd-shadow-endpoint-descent": ("Sol(p)", "恒等"),
++    "type-II-q-one-full-carrier-phase-root-entry": ("Sol(p)", "恒等"),
++    "type-II-positive-q-G-full-carrier-phase-root-entry": ("Sol(p)", "恒等映射"),
++    "type-II-q-one-c3-source-lineage-phase-root-entry": ("Sol(p)", "恒等"),
++    "type-I-overflow-unbounded-same-chart-promotion-persistence-boundary": (
++        "Sol}(4,p)",
++        "恒等",
++    ),
++    "type-I-overflow-outer-rank-reset": ("Sol}(p)", "恒等"),
++    "type-I-overflow-a-one-dual-outer-rank-reset": ("Sol}(p)", "恒等"),
++    "type-I-overflow-high-carrier-fixed-n-R-descent": ("Sol}(p)", "恒等"),
++    "type-I-high-support-rank-aware-sink-bundle-selector": (
++        "恒等解提升",
++        "path-anchored complete-excess receipt",
++    ),
++    "type-II-q-one-full-carrier-d-one-p-free-gate-exclusion-relay": (
++        "Sol}(p)",
++        "恒等",
++    ),
++    "type-II-q-one-c-two-19-phase-three-anchor-persistent-macro": (
++        "Sol}(p)",
++        "identity",
++    ),
++    "type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-atomic-macro-checkpoint-contraction": (
++        "Sol}(p)",
++        "Phi_{T\\to P}(u)=u",
++    ),
++    "type-I-q-one-full-carrier-d-one-c-eight-double-low-parent-anchored-atomic-macro": (
++        "Sol}(p)",
++        "恒等 lift",
++    ),
++}
++
++# "Concrete" here means that the referenced claim gives a deterministic
++# target/receipt once its written guard is supplied.  It does *not* mean that
++# the guard holds for every reachable state.  Keeping this distinction in the
++# machine output prevents a guarded constructor from being counted as a T6
++# totality row.
++EDGE_GENERATOR_CLASS: dict[str, str] = {
++    "type-II-relation-reach-proper-endpoint-descent": "guarded_constructor",
++    "type-II-relation-reach-gcd-shadow-endpoint-descent": "total_on_declared_q_gt_one_source",
++    "type-II-q-one-full-carrier-phase-root-entry": "total_on_declared_ordinary_q_one_G_source",
++    "type-II-positive-q-G-full-carrier-phase-root-entry": "total_on_declared_actual_ordinary_positive_q_G_source",
++    "type-II-q-one-c3-source-lineage-phase-root-entry": "guarded_constructor",
++    "type-I-overflow-unbounded-same-chart-promotion-persistence-boundary": "total_on_declared_persistent_overflow_source",
++    "type-I-overflow-outer-rank-reset": "guarded_constructor",
++    "type-I-overflow-a-one-dual-outer-rank-reset": "total_on_declared_A_one_overflow_source",
++    "type-I-overflow-high-carrier-fixed-n-R-descent": "guarded_constructor",
++    "type-I-high-support-rank-aware-sink-bundle-selector": "guarded_constructor",
++    "type-II-q-one-full-carrier-d-one-p-free-gate-exclusion-relay": "total_on_declared_immediate_receiver",
++    "type-II-q-one-c-two-19-phase-three-anchor-persistent-macro": "guarded_constructor",
++    "type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-atomic-macro-checkpoint-contraction": "guarded_constructor",
++    "type-I-q-one-full-carrier-d-one-c-eight-double-low-parent-anchored-atomic-macro": "guarded_constructor",
++}
++
++GENERIC_MARKED_CONTRACT = "denominator-escape-state-contract"
++ATOMIC_FAMILY_REFERENCES = {
++    "type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-atomic-macro-checkpoint-contraction",
++    "type-I-q-one-full-carrier-d-one-c-eight-double-low-parent-anchored-atomic-macro",
++}
++ATOMIC_V1_ARMS = {
++    "h4_a1_clean_q_atomic_v1",
++    "c8_double_low_parent_atomic_v1",
++}
++
++
++def claim_path(claim_id: str) -> Path:
++    path = ROOT / "claims" / f"{claim_id}.md"
++    if not path.is_file():
++        raise AssertionError(f"missing claim for current edge family: {claim_id}")
++    return path
++
++
++def claim_header(text: str) -> dict[str, str]:
++    if not text.startswith("---\n") or "\n---\n" not in text[4:]:
++        raise AssertionError("claim lost its YAML-like header")
++    header = text.split("\n---\n", 1)[0][4:]
++    result: dict[str, str] = {}
++    for key in ("kind", "claim_id", "claim_status", "proof_provenance", "review_status"):
++        match = re.search(rf"^{key}:\s*([^\n]+)$", header, flags=re.MULTILINE)
++        if match:
++            result[key] = match.group(1).strip(" '\"")
++    return result
++
++
++def audit_current_edge_marks() -> list[dict[str, str]]:
++    taxonomy = json.loads(TAXONOMY.read_text())
++    rows = taxonomy["current_verified_edge_families"]
++    references = {row["reference"] for row in rows}
++    expected = set(ORDINARY_EDGE_E4_ANCHORS) | {GENERIC_MARKED_CONTRACT}
++    if references != expected:
++        raise AssertionError(
++            "current edge taxonomy changed; mark-closure audit must be updated: "
++            f"missing={sorted(expected - references)}, extra={sorted(references - expected)}"
++        )
++
++    audited: list[dict[str, str]] = []
++    for row in rows:
++        reference = row["reference"]
++        if reference == GENERIC_MARKED_CONTRACT:
++            audited.append(
++                {
++                    "family": row["family"],
++                    "reference": reference,
++                    "generator_class": "contract_schema_not_a_generator",
++                    "mark_policy": "contract_only_no_concrete_edge_generator",
++                }
++            )
++            continue
++        text = claim_path(reference).read_text()
++        header = claim_header(text)
++        if header.get("kind") != "claim" or header.get("claim_id") != reference:
++            raise AssertionError(f"{reference} is not a content-addressed claim card")
++        if header.get("claim_status") not in {"established", "computationally_reproduced"}:
++            raise AssertionError(f"{reference} is not an accepted guarded constructor")
++        for anchor in ORDINARY_EDGE_E4_ANCHORS[reference]:
++            if anchor not in text:
++                raise AssertionError(f"{reference} lost E4 audit anchor {anchor!r}")
++        audited.append(
++            {
++                "family": row["family"],
++                "reference": reference,
++                "generator_class": EDGE_GENERATOR_CLASS[reference],
++                "mark_policy": "ordinary_Sol(p)_identity",
++            }
++        )
++    return audited
++
++
++def audit_atomic_surface() -> dict[str, object]:
++    taxonomy = json.loads(TAXONOMY.read_text())
++    named = {
++        row["reference"]
++        for row in taxonomy["current_verified_edge_families"]
++        if row["family"].startswith("T2 ")
++    }
++    if named != ATOMIC_FAMILY_REFERENCES:
++        raise AssertionError("named current atomic family surface changed")
++
++    contract = (
++        ROOT / "reproductions" / "type_i_atomic_admission_v1_contract.py"
++    ).read_text()
++    match = re.search(r"^ARMS\s*=\s*\{([^}]*)\}", contract, flags=re.MULTILINE)
++    if match is None:
++        raise AssertionError("cannot locate the T2-v1 arm registry")
++    arms = set(re.findall(r'"([^"]+)"', match.group(1)))
++    if arms != ATOMIC_V1_ARMS:
++        raise AssertionError("T2-v1 arm registry changed")
++
++    nonrecursive = set(taxonomy["nonrecursive_surfaces"])
++    for required in ("raw macro checkpoint", "standalone atomic stutter"):
++        if required not in nonrecursive:
++            raise AssertionError(f"atomic nonrecursive boundary disappeared: {required}")
++
++    return {
++        "named_atomic_family_references": sorted(named),
++        "t2_v1_arms": sorted(arms),
++        "generic_raw_schema_is_a_named_edge_family": False,
++    }
++
++
++def is_prime(value: int) -> bool:
++    if value < 2:
++        return False
++    if value % 2 == 0:
++        return value == 2
++    for divisor in range(3, math.isqrt(value) + 1, 2):
++        if value % divisor == 0:
++            return False
++    return True
++
++
++def factorint(value: int) -> dict[int, int]:
++    factors: dict[int, int] = {}
++    divisor = 2
++    while divisor * divisor <= value:
++        while value % divisor == 0:
++            factors[divisor] = factors.get(divisor, 0) + 1
++            value //= divisor
++        divisor = 3 if divisor == 2 else divisor + 2
++    if value > 1:
++        factors[value] = factors.get(value, 0) + 1
++    return factors
++
++
++def primes_below(limit: int) -> list[int]:
++    return [value for value in range(2, limit) if is_prime(value)]
++
++
++SMALL_EXCESS_PRIMES = tuple(prime for prime in primes_below(103) if prime >= 7)
++
++
++def exact_qstar_103_rough(s: int) -> bool:
++    value = 6 * s - 1
++    return bool(
++        value % 103 == 0
++        and value % 25 != 0
++        and all(value % prime for prime in SMALL_EXCESS_PRIMES)
++    )
++
++
++def ordinary_q_one_g_arithmetic(s: int) -> bool:
++    # In the frozen zero-k phase, X=12s+1 must have only 1 mod 3 primes.
++    return all(prime % 3 == 1 for prime in factorint(12 * s + 1))
++
++
++def c8_phase_candidate(u: int) -> dict[str, object] | None:
++    # s=86+103u is the c=8, j=11, g=1 zero-k ray.  After the named
++    # gap-7 terminal sieve and q*=103 roughness, only u=1,6 mod 7 remains.
++    if u < 0 or u % 7 not in {1, 6}:
++        return None
++    s = 86 + 103 * u
++    p = 48 * s + 1
++    if not exact_qstar_103_rough(s):
++        return None
++    if not is_prime(p):
++        return None
++    if not ordinary_q_one_g_arithmetic(s):
++        return None
++    if math.gcd(24 * s + 1, 66 * s + 1) != 1:
++        return None
++    if (11 * p + 4) % (3 * 103):
++        return None
++    # The frozen zero-k equation is c*j+8*g=12*c with (c,j,g)=(8,11,1).
++    if 8 * 11 + 8 != 12 * 8:
++        raise AssertionError("c=8 zero-k phase identity changed")
++    return {
++        "u": u,
++        "s": s,
++        "p": p,
++        "six_s_minus_one_factors": factorint(6 * s - 1),
++        "twelve_s_plus_one_factors": factorint(12 * s + 1),
++    }
++
++
++def verify_type_i_terminal_241441() -> dict[str, object]:
++    # Fixed B=1, E=12 p-1 Type-I receipt already present in the 1m profile.
++    p, E, B, C, H = 241_441, 12, 1, 129, 5_147
++    R = E - 1
++    K = (p * R + 1) // 4
++    A = (H + B) // R
++    gap = (4 * B * B * C + 1) // R
++    if not (
++        4 * K == p * R + 1
++        and K == B * C * H
++        and H == A * R - B
++        and p == 4 * A * B * C - gap
++    ):
++        raise AssertionError("p=241441 Type-I normal form changed")
++    x = A * B * C
++    y = A * C * H
++    z = p * K
++    if Fraction(1, x) + Fraction(1, y) + Fraction(1, z) != Fraction(4, p):
++        raise AssertionError("p=241441 terminal identity failed")
++    return {
++        "prime": p,
++        "certificate_type": "registered_direct_root_terminal",
++        "normal_form": {"A": A, "B": B, "C": C, "H": H, "gap": gap},
++        "denominators": [x, y, z],
++    }
++
++
++def verify_terminal_preempted_controls() -> dict[str, object]:
++    candidates = [candidate for u in range(49) if (candidate := c8_phase_candidate(u))]
++    if candidates != [
++        {
++            "u": 48,
++            "s": 5_030,
++            "p": 241_441,
++            "six_s_minus_one_factors": {103: 1, 293: 1},
++            "twelve_s_plus_one_factors": {7: 1, 8_623: 1},
++        }
++    ]:
++        raise AssertionError(f"minimal c=8 residual scan changed: {candidates}")
++
++    terminal = verify_type_i_terminal_241441()
++
++    # The repository's original arithmetic c=8 control is preempted too.
++    p = 157_393
++    denominators = (39_375, 57_920_624, 2_280_624_570_000)
++    if Fraction(1, denominators[0]) + Fraction(1, denominators[1]) + Fraction(
++        1, denominators[2]
++    ) != Fraction(4, p):
++        raise AssertionError("p=157393 terminal control changed")
++
++    return {
++        "first_frozen_necessary_predicate_candidate": candidates[0],
++        "candidate_terminal": terminal,
++        "original_c8_control": {
++            "prime": p,
++            "terminal_denominators": list(denominators),
++        },
++        "actual_persistent_c8_dead_end_fixture": None,
++    }
++
++
++def audit_c8_branches() -> list[dict[str, str]]:
++    return [
++        {
++            "branch": "terminal-first hit",
++            "disposition": "root_terminal_leaf",
++        },
++        {
++            "branch": "actual high-q with c_a<8 and c_Sigma<8",
++            "disposition": "T2-v1 parent-anchored strict macro (marker included)",
++        },
++        {
++            "branch": "second full-excess carry",
++            "disposition": "rejected: target capacity is >8",
++        },
++        {
++            "branch": "two named structured m=1 nodes",
++            "disposition": "rejected: forced carry is >8; E1 source also absent",
++        },
++        {
++            "branch": "only an unspecified non-p V-side raw prime is known",
++            "disposition": "OPEN: no theorem selects a high-q double-low receipt",
++        },
++        {
++            "branch": "high-q but c_a>=8 or c_Sigma>=8",
++            "disposition": "OPEN: no current T5 ticket",
++        },
++    ]
++
++
++def run_audit() -> dict[str, object]:
++    edge_rows = audit_current_edge_marks()
++    if sum(row["mark_policy"] == "ordinary_Sol(p)_identity" for row in edge_rows) != 14:
++        raise AssertionError("ordinary edge-family count changed")
++    return {
++        "audit_id": "t6_actual_reachable_coverage_v1",
++        "current_edge_mark_rows": edge_rows,
++        "ordinary_mark_closure": {
++            "root_mark": "Sol(p)",
++            "concrete_current_edge_generators_preserve_root_mark": True,
++            "nontrivial_mark_seed_in_current_taxonomy": False,
++            "scope": "current named edge generators only",
++        },
++        "atomic_surface": audit_atomic_surface(),
++        "c8_branch_surface": audit_c8_branches(),
++        "terminal_preempted_controls": verify_terminal_preempted_controls(),
++        "t6_totality": "OPEN",
++    }
++
++
++def main() -> None:
++    parser = argparse.ArgumentParser()
++    parser.add_argument("--verify", action="store_true")
++    args = parser.parse_args()
++    result = run_audit()
++    if args.verify:
++        print("T6 actual reachable coverage audit passed")
++    else:
++        print(json.dumps(result, indent=2, ensure_ascii=False, sort_keys=True))
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/reproductions/type_ii_positive_q_g_full_carrier_phase_root_entry.py b/reproductions/type_ii_positive_q_g_full_carrier_phase_root_entry.py
+new file mode 100755
+index 0000000..4d13ebf
+--- /dev/null
++++ b/reproductions/type_ii_positive_q_g_full_carrier_phase_root_entry.py
+@@ -0,0 +1,500 @@
++#!/usr/bin/env python3
++"""Verify the ordinary positive-q G -> full-carrier Type-I root adapter.
++
++The theorem verified here is conditional on an *actual*, terminal-first,
++ordinary Type-II G endpoint.  The focused controls rebuild the endpoint
++arithmetic and an exact finite-abelian separating character, then replay the
++same p-only root/source and first strict Type-I step used by the established
++q=1 adapter.  Finite controls are not used as an existence proof for source
++states.
++"""
++
++from __future__ import annotations
++
++import argparse
++import hashlib
++import json
++from itertools import product
++from math import gcd, lcm
++
++import type_ii_q_one_full_carrier_phase_root_entry as q_one
++import type_ii_q_one_type_i_carrier_rail_dispatch as rail
++from type_ii_odd_kernel_overflow_natural_tail_relation_graph import factorization
++from type_ii_relation_scc_proper_endpoint_descent import signed_box_profile
++
++ADAPTER = "positive_q_g_full_carrier_phase_root_entry_v1"
++SOURCE_PHASE = "TYPEII_G_HANDOFF"
++TARGET_PHASE = "TYPEI"
++TARGET_PROTOCOL = "CHARGED"
++SOURCE_SCOPE = "type_ii_endpoint_only"
++TARGET_SCOPE = "fresh_source_tree_only"
++
++
++def digest(payload: object) -> str:
++    encoded = json.dumps(payload, sort_keys=True, separators=(",", ":")).encode(
++        "ascii"
++    )
++    return hashlib.sha256(encoded).hexdigest()
++
++
++def phi(prime_power: int) -> int:
++    factors = factorization(prime_power)
++    if len(factors) != 1:
++        raise AssertionError("phi helper expects a prime power")
++    prime, exponent = next(iter(factors.items()))
++    return (prime - 1) * prime ** (exponent - 1)
++
++
++def prime_power_components(modulus: int) -> tuple[int, ...]:
++    return tuple(
++        prime**exponent for prime, exponent in factorization(modulus).items()
++    )
++
++
++def primitive_root_odd_prime_power(prime_power: int) -> int:
++    order = phi(prime_power)
++    order_primes = tuple(factorization(order))
++    for candidate in range(2, prime_power):
++        if gcd(candidate, prime_power) != 1:
++            continue
++        if all(
++            pow(candidate, order // divisor, prime_power) != 1
++            for divisor in order_primes
++        ):
++            return candidate
++    raise AssertionError("odd prime-power unit group lost a primitive root")
++
++
++def cyclic_log(value: int, modulus: int, generator: int, order: int) -> int:
++    current = 1
++    for exponent in range(order):
++        if current == value % modulus:
++            return exponent
++        current = current * generator % modulus
++    raise AssertionError("unit is outside the declared cyclic component")
++
++
++def unit_coordinate_system(modulus: int) -> dict[str, object]:
++    """Return deterministic coordinates for U(modulus).
++
++    Odd prime-power components use their least primitive root.  The 2-primary
++    component uses the standard (-1,5) decomposition when its exponent is at
++    least three.  This is only a focused verifier implementation; the proof
++    uses the standard finite-abelian character-separation lemma.
++    """
++    components: list[dict[str, int | str]] = []
++    for prime_power in prime_power_components(modulus):
++        prime, exponent = next(iter(factorization(prime_power).items()))
++        if prime != 2:
++            components.append(
++                {
++                    "kind": "cyclic",
++                    "modulus": prime_power,
++                    "generator": primitive_root_odd_prime_power(prime_power),
++                    "order": phi(prime_power),
++                }
++            )
++        elif exponent == 1:
++            continue
++        elif exponent == 2:
++            components.append(
++                {
++                    "kind": "cyclic",
++                    "modulus": prime_power,
++                    "generator": 3,
++                    "order": 2,
++                }
++            )
++        else:
++            components.extend(
++                [
++                    {
++                        "kind": "sign",
++                        "modulus": prime_power,
++                        "generator": prime_power - 1,
++                        "order": 2,
++                    },
++                    {
++                        "kind": "five",
++                        "modulus": prime_power,
++                        "generator": 5,
++                        "order": 2 ** (exponent - 2),
++                    },
++                ]
++            )
++
++    def coordinates(value: int) -> tuple[int, ...]:
++        if gcd(value, modulus) != 1:
++            raise AssertionError("character coordinate requested for a nonunit")
++        answer: list[int] = []
++        offset = 0
++        while offset < len(components):
++            component = components[offset]
++            local_modulus = int(component["modulus"])
++            local_value = value % local_modulus
++            if component["kind"] != "sign":
++                answer.append(
++                    cyclic_log(
++                        local_value,
++                        local_modulus,
++                        int(component["generator"]),
++                        int(component["order"]),
++                    )
++                )
++                offset += 1
++                continue
++
++            sign = 0 if local_value % 4 == 1 else 1
++            positive_value = local_value if sign == 0 else -local_value % local_modulus
++            five_component = components[offset + 1]
++            answer.extend(
++                [
++                    sign,
++                    cyclic_log(
++                        positive_value,
++                        local_modulus,
++                        5,
++                        int(five_component["order"]),
++                    ),
++                ]
++            )
++            offset += 2
++        return tuple(answer)
++
++    units = tuple(value for value in range(1, modulus) if gcd(value, modulus) == 1)
++    table = {value: coordinates(value) for value in units}
++    orders = tuple(int(component["order"]) for component in components)
++    if len(set(table.values())) != len(units):
++        raise AssertionError("unit coordinate map is not injective")
++    if len(units) != (1 if not orders else _product(orders)):
++        raise AssertionError("unit coordinate orders do not reconstruct phi(m)")
++    for left in units:
++        for right in units:
++            expected = tuple(
++                (a + b) % order
++                for a, b, order in zip(
++                    table[left], table[right], orders, strict=True
++                )
++            )
++            if table[left * right % modulus] != expected:
++                raise AssertionError("unit coordinate map is not a homomorphism")
++    return {"components": components, "orders": orders, "coordinates": table}
++
++
++def _product(values: tuple[int, ...]) -> int:
++    result = 1
++    for value in values:
++        result *= value
++    return result
++
++
++def canonical_g_separator(modulus: int, source_generators: tuple[int, ...]) -> dict[str, object]:
++    """Construct the lexicographically first exact character separating -1.
++
++    Character values are represented by exponents modulo the lcm of the
++    invariant cyclic-component orders, so no floating-point roots of unity
++    occur in the receipt.
++    """
++    system = unit_coordinate_system(modulus)
++    orders = tuple(system["orders"])
++    coordinate_table = dict(system["coordinates"])
++    common_order = lcm(*orders) if orders else 1
++
++    def phase(weights: tuple[int, ...], residue: int) -> int:
++        return sum(
++            weight * coordinate * (common_order // order)
++            for weight, coordinate, order in zip(
++                weights, coordinate_table[residue % modulus], orders, strict=True
++            )
++        ) % common_order
++
++    for weights in product(*(range(order) for order in orders)):
++        if all(weight == 0 for weight in weights):
++            continue
++        if any(phase(weights, generator) != 0 for generator in source_generators):
++            continue
++        target_phase = phase(weights, modulus - 1)
++        if target_phase == 0:
++            continue
++        return {
++            "modulus": modulus,
++            "component_orders": list(orders),
++            "character_weights": list(weights),
++            "root_of_unity_order": common_order,
++            "source_generator_phases": {
++                generator: phase(weights, generator) for generator in source_generators
++            },
++            "target_residue": modulus - 1,
++            "target_phase": target_phase,
++            "coordinate_system": system["components"],
++        }
++    raise AssertionError("G nonmembership was not separated by the finite dual")
++
++
++def positive_q_g_endpoint(prime: int, cofactor: int) -> dict[str, object]:
++    """Rebuild the p,q arithmetic and canonical ordinary G source guard.
++
++    This function deliberately does not manufacture an actual-reachability or
++    terminal-first receipt.  Those are hypotheses of the relative theorem and
++    must be supplied by the persistent source state in a real invocation.
++    """
++    if cofactor <= 1:
++        raise AssertionError("positive-q adapter is reserved for q > 1")
++    profile = signed_box_profile(prime, cofactor)
++    if profile["classification"] != "G":
++        raise AssertionError("source endpoint is not G")
++    modulus = int(profile["gap"])
++    source_generators = tuple(sorted(int(value) for value in profile["factors"]))
++    separator = canonical_g_separator(modulus, source_generators)
++    if not (
++        all(value == 0 for value in separator["source_generator_phases"].values())
++        and int(separator["target_phase"]) != 0
++        and not bool(profile["target_in_source_subgroup"])
++    ):
++        raise AssertionError("canonical G separator did not replay")
++    endpoint_downset_receipt = {
++        "base_U": int(profile["U"]),
++        "source_cofactor": cofactor,
++        "source_rank": int(profile["rank"]),
++        "endpoint_bound": int(profile["endpoint_bound"]),
++        "cofactor_divides_U": int(profile["U"]) % cofactor == 0,
++        "within_endpoint_bound": cofactor <= int(profile["endpoint_bound"]),
++    }
++    endpoint_downset_receipt["receipt_digest"] = digest(endpoint_downset_receipt)
++    endpoint = {
++        "phase": SOURCE_PHASE,
++        "equation_target": [4, prime],
++        "marked_solution_set": "Sol(p)",
++        "ordinary_mark": True,
++        "endpoint": {
++            "q": cofactor,
++            "gap": modulus,
++            "first_denominator": int(profile["x"]),
++            "U": int(profile["U"]),
++            "rank": int(profile["rank"]),
++            "endpoint_bound": int(profile["endpoint_bound"]),
++        },
++        "source_factorization": [
++            [factor, exponent] for factor, exponent in profile["factors"].items()
++        ],
++        "target_fiber": {
++            "status": "empty",
++            "emptiness_certificate": separator,
++        },
++        "signed_defect": {
++            "status": "not_applicable",
++            "reason": "G_empty_target_fiber",
++        },
++        "endpoint_downset_receipt": endpoint_downset_receipt,
++        "source_tree_scope": SOURCE_SCOPE,
++        "actual_source_receipt": {
++            "status": "hypothesis_not_supplied_by_focused_control",
++            "required_fields": [
++                "source_state_id",
++                "source_provenance_digest",
++                "terminal_first_receipt_digest",
++            ],
++        },
++    }
++    endpoint["arithmetic_guard_digest"] = "guard:" + digest(endpoint)
++    return endpoint
++
++
++def phase_root_entry(prime: int, cofactor: int) -> dict[str, object]:
++    """Build the conditional positive-q G -> p-only root control receipt."""
++    endpoint = positive_q_g_endpoint(prime, cofactor)
++    t = (prime - 1) // 24
++    X = (prime + 3) // 4
++    carrier = rail.carrier_chart(prime, X)
++    R, K = int(carrier["R"]), int(carrier["K"])
++    raw_source = q_one.universal_root_source(prime, R, K)
++    dispatch = rail.full_carrier_dispatch(prime)
++    if carrier != dispatch["root"]:
++        raise AssertionError("p-only root and first dispatch disagree")
++
++    root_state = {
++        "adapter": ADAPTER,
++        "state_origin": ADAPTER,
++        "source_tree_scope": TARGET_SCOPE,
++        "normal_form": "type_i_full_carrier_low_root_v1",
++        "major_phase": TARGET_PHASE,
++        "protocol": TARGET_PROTOCOL,
++        "equation_target": [4, prime],
++        "marked_solution_set": "Sol(p)",
++        "chart": {"R": R, "K": K},
++        "absorbed_support": 1,
++        "carrier": X,
++        "raw_source_digest": digest(raw_source),
++    }
++    root_state["state_id"] = "state:" + digest(root_state)
++
++    B_p = (prime - 1) ** 2 // 4
++    source_potential = [prime, 3, 0, 0, 0, 0, 0]
++    root_potential = [prime, 2, 4, B_p, K, 0, 0]
++    first_target = dispatch["dispatch"]
++    support = int(first_target["support"])
++    target_K = int(first_target["K"])
++    first_target_potential = [
++        prime,
++        2,
++        4,
++        B_p // support,
++        target_K // support,
++        0,
++        0,
++    ]
++
++    e1_arithmetic = bool(
++            endpoint["endpoint"]["q"] == cofactor
++            and endpoint["target_fiber"]["status"] == "empty"
++            and endpoint["signed_defect"]["status"] == "not_applicable"
++            and endpoint["endpoint_downset_receipt"]["cofactor_divides_U"]
++            and endpoint["endpoint_downset_receipt"]["within_endpoint_bound"]
++            and raw_source["destination"] == [1, R - 1, 1]
++        )
++    e2_e5 = {
++        "E2": bool(
++            R == 16 * t + 3
++            and K == X * (16 * t + 1)
++            and root_state["state_origin"] == ADAPTER
++            and "q" not in root_state
++        ),
++        "E3": bool(
++            3 <= R <= prime - 2
++            and 4 * K == prime * R + 1
++            and gcd(X, K) == X
++            and root_state["source_tree_scope"] == TARGET_SCOPE
++            and root_state["absorbed_support"] == 1
++        ),
++        "E4": bool(
++            endpoint["equation_target"] == root_state["equation_target"]
++            and endpoint["marked_solution_set"]
++            == root_state["marked_solution_set"]
++            == "Sol(p)"
++        ),
++        "E5": bool(
++            source_potential > root_potential
++            and source_potential[1:3] == [3, 0]
++            and root_potential[1:3] == [2, 4]
++        ),
++    }
++    if not e1_arithmetic or not all(e2_e5.values()):
++        failed = [name for name, passed in e2_e5.items() if not passed]
++        if not e1_arithmetic:
++            failed.insert(0, "E1_arithmetic")
++        raise AssertionError(f"positive-q phase-root entry failed: {failed}")
++    if not root_potential > first_target_potential:
++        raise AssertionError("root's first Type-I segment is not a local drop")
++
++    return {
++        "adapter": ADAPTER,
++        "endpoint": endpoint,
++        "root": root_state,
++        "root_source": raw_source,
++        "contract_replay": {
++            "E1": {
++                "endpoint_and_target_source_arithmetic": e1_arithmetic,
++                "actual_source_state_receipt": False,
++                "terminal_first_receipt": False,
++                "complete": False,
++                "completion_rule": (
++                    "becomes complete only when the theorem's actual persistent "
++                    "source receipt and terminal-first digest are supplied"
++                ),
++            },
++            **e2_e5,
++        },
++        "solution_lift": "identity: Sol(p) -> Sol(p)",
++        "T5_ticket": "PHASE_DROP",
++        "selector_status": "conditional_adapter_control",
++        "recursive_edge_eligible": False,
++        "potentials": {
++            "endpoint": source_potential,
++            "root": root_potential,
++            "first_type_i_target": first_target_potential,
++        },
++        "first_type_i_step": first_target,
++        "scope": {
++            "actual_terminal_first_source": (
++                "theorem hypothesis; not supplied or asserted by focused controls"
++            ),
++            "nontrivial_mark": "excluded",
++            "later_type_i_totality": "not proved",
++        },
++    }
++
++
++def verify() -> dict[str, object]:
++    controls_by_pair = {
++        (97, 3): phase_root_entry(97, 3),
++        (241, 4): phase_root_entry(241, 4),
++        (577, 8): phase_root_entry(577, 8),
++        (937, 13): phase_root_entry(937, 13),
++    }
++    expected = {
++        (97, 3): {"gap": 11, "x": 27},
++        (241, 4): {"gap": 15, "x": 64},
++        (577, 8): {"gap": 31, "x": 152},
++        (937, 13): {"gap": 51, "x": 247},
++    }
++    for key, receipt in controls_by_pair.items():
++        prime, cofactor = key
++        endpoint = receipt["endpoint"]["endpoint"]
++        if not (
++            endpoint["gap"] == expected[key]["gap"]
++            and endpoint["first_denominator"] == expected[key]["x"]
++            and endpoint["q"] == cofactor
++            and receipt["contract_replay"]["E1"][
++                "endpoint_and_target_source_arithmetic"
++            ]
++            and not receipt["contract_replay"]["E1"]["complete"]
++            and all(receipt["contract_replay"][name] for name in ("E2", "E3", "E4", "E5"))
++            and receipt["T5_ticket"] == "PHASE_DROP"
++            and receipt["selector_status"] == "conditional_adapter_control"
++            and not receipt["recursive_edge_eligible"]
++            and receipt["potentials"]["endpoint"] > receipt["potentials"]["root"]
++            and receipt["potentials"]["root"]
++            > receipt["potentials"]["first_type_i_target"]
++        ):
++            raise AssertionError(f"positive-q control changed for p={prime}, q={cofactor}")
++
++    # For a fixed p the target serialization is q-independent.  p=1009 has
++    # several positive-q G endpoints and gives a direct confluence control.
++    same_prime = {
++        q: phase_root_entry(1009, q) for q in (2, 4, 7, 9, 18)
++    }
++    if len({receipt["root"]["state_id"] for receipt in same_prime.values()}) != 1:
++        raise AssertionError("p-only target serialization inherited source q")
++
++    return {
++        "status": "verified_conditional_adapter_arithmetic",
++        "controls": {
++            f"p={prime},q={cofactor}": receipt
++            for (prime, cofactor), receipt in controls_by_pair.items()
++        },
++        "same_prime_target_independence": {
++            "prime": 1009,
++            "source_cofactors": sorted(same_prime),
++            "unique_root_state_id": next(
++                iter({receipt["root"]["state_id"] for receipt in same_prime.values()})
++            ),
++        },
++        "scope": (
++            "E1 endpoint/target-source arithmetic plus E2-E5 are replayed. "
++            "Controls do not supply an actual persistent source receipt or a "
++            "terminal-first digest and therefore are not recursive edges."
++        ),
++    }
++
++
++def main() -> None:
++    parser = argparse.ArgumentParser()
++    parser.add_argument("--verify", action="store_true")
++    args = parser.parse_args()
++    if not args.verify:
++        parser.error("use --verify")
++    print(json.dumps(verify(), indent=2, sort_keys=True))
++
++
++if __name__ == "__main__":
++    main()

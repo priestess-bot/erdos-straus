@@ -1,0 +1,90 @@
+name: Research knowledge base
+
+'on':
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  focused-verification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install verification dependencies
+        run: python -m pip install --disable-pip-version-check PyYAML sympy ruff
+
+      - name: Validate the knowledge base
+        run: python scripts/kb.py validate
+
+      - name: Run focused exact tests
+        run: |
+          python -m unittest \
+            tests.test_kb \
+            tests.test_type_ii_pure_new_canonical_fan_sieve \
+            tests.test_type_ii_pure_new_exception_dynamic_selector \
+            tests.test_type_ii_pure_new_exception_selector_counterexample_h20 \
+            tests.test_type_ii_tail_external_ac2_closure \
+            tests.test_h19_k23_unbridged_pressure_selector_subrays \
+            tests.test_h19_k23_unbridged_pressure_full_low_defect_rays \
+            tests.test_type_i_normal_gap_source_even_bridge \
+            tests.test_type_i_normal_gap_source_even_bridge_audit \
+            tests.test_type_i_mixed_terminal_sparse_tail_600m \
+            tests.test_type_i_tail_reverse_b1_even_source_audit \
+            tests.test_type_i_tail_reverse_small_b_profile \
+            tests.test_type_i_dyadic_b_source_selector \
+            tests.test_type_i_tail_reverse_even_source_min_source_distance \
+            tests.test_type_i_mh_final_two_boundary \
+            tests.test_type_ii_q_one_c2_19_phase_h4_clean_q_macro_verifier
+
+      - name: Lint the maintained verification surface
+        run: |
+          ruff check --select E4,E7,E9,F \
+            scripts/kb.py \
+            reproductions/type_ii_pure_new_canonical_fan_sieve.py \
+            reproductions/type_ii_pure_new_exception_dynamic_selector.py \
+            reproductions/type_ii_pure_new_exception_selector_counterexample_h20.py \
+            reproductions/type_ii_tail_external_ac2_closure.py \
+            reproductions/h19_k23_unbridged_pressure_selector_subrays.py \
+            reproductions/h19_k23_unbridged_pressure_full_low_defect_rays.py \
+            reproductions/type_i_normal_gap_source_even_bridge.py \
+            reproductions/type_i_normal_gap_source_even_bridge_audit.py \
+            reproductions/type_i_mixed_terminal_sparse_tail_600m.py \
+            reproductions/type_i_tail_reverse_b1_even_source_audit.py \
+            reproductions/type_i_tail_reverse_small_b_profile.py \
+            reproductions/type_i_dyadic_b_source_selector.py \
+            reproductions/type_i_tail_reverse_even_source_min_source_distance.py \
+            reproductions/type_i_marked_g_universal_anchor_complete_excess_exit.py \
+            reproductions/type_i_high_support_c1_local_minimum_boundary.py \
+            reproductions/type_ii_q_one_c2_19_phase_h4_clean_q_macro_verifier.py \
+            tests/test_kb.py \
+            tests/test_type_ii_pure_new_canonical_fan_sieve.py \
+            tests/test_type_ii_pure_new_exception_dynamic_selector.py \
+            tests/test_type_ii_pure_new_exception_selector_counterexample_h20.py \
+            tests/test_type_ii_tail_external_ac2_closure.py \
+            tests/test_h19_k23_unbridged_pressure_selector_subrays.py \
+            tests/test_h19_k23_unbridged_pressure_full_low_defect_rays.py \
+            tests/test_type_i_normal_gap_source_even_bridge.py \
+            tests/test_type_i_normal_gap_source_even_bridge_audit.py \
+            tests/test_type_i_mixed_terminal_sparse_tail_600m.py \
+            tests/test_type_i_tail_reverse_b1_even_source_audit.py \
+            tests/test_type_i_tail_reverse_small_b_profile.py \
+            tests/test_type_i_dyadic_b_source_selector.py \
+            tests/test_type_i_tail_reverse_even_source_min_source_distance.py \
+            tests/test_type_i_mh_final_two_boundary.py \
+            tests/test_type_ii_q_one_c2_19_phase_h4_clean_q_macro_verifier.py
+
+      - name: Rebuild generated indexes
+        run: |
+          python scripts/kb.py build
+          git diff --exit-code -- \
+            index/timeline.md \
+            index/citation-graph.mmd \
+            index/theorem-ledger.md

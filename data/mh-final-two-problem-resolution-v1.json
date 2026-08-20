@@ -1,0 +1,77 @@
+{
+  "resolution_id": "mh_final_two_problem_review_v1",
+  "date": "2026-08-21",
+  "reviewed_head": "49e2e25a72f69015e7bbbcb556155363b08486a0",
+  "scope": "Conservative integration review of the M/H package. This file does not modify the frozen T6 v2 frontier.",
+  "M": {
+    "id": "F2-M-MARKED-FG-ANCHOR-ADAPTER",
+    "status": "CONDITIONAL_ON_E3_AND_SURFACE_ADMISSION",
+    "claim": "type-I-marked-g-universal-anchor-complete-excess-exit",
+    "established_components": [
+      "universal p-source and complete-excess arithmetic",
+      "canonical target reconstruction",
+      "identity lift when both endpoints use Sol(4,p)",
+      "low-support LOCAL_DROP inequality"
+    ],
+    "missing_components": [
+      "universal target E3 normal-form and typed-family classification",
+      "target serializer, owner, and terminal-first priority",
+      "versioned surface registration and recursive re-entry"
+    ],
+    "registered_on_frozen_t6_v2_surface": false,
+    "does_not_claim": [
+      "semantic source reachability",
+      "source-owner exhaustion",
+      "global post-G Type I totality",
+      "F1 closure",
+      "a new verified edge"
+    ]
+  },
+  "H": {
+    "id": "F2-H-HIGH-SUPPORT-EMPTY-IMPROVEMENT",
+    "status": "OPEN",
+    "established_boundary_claim": "type-I-high-support-empty-improvement-c1-local-minimum-boundary",
+    "closed_subcase": {
+      "domain": "same-rho TYPEI/CHARGED high-support state with C=1 and eta_p=0",
+      "local_rank": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "blocked_families": [
+        "complete-excess bundle with CHARGED endpoint",
+        "finite internal bundle macro with CHARGED endpoint",
+        "total-cofactor canonical projection",
+        "joined-support interpretation of the natural determinant duals"
+      ]
+    },
+    "remaining_domains": [
+      "C=1 paid reset, outer-rank drop, or actual-family empty proof",
+      "C>1 terminal-first-miss high-support states with empty improvement set"
+    ],
+    "p73_two_bundle_control": {
+      "endpoint_capacities": [
+        2,
+        1
+      ],
+      "internal_capacity": 6,
+      "selector_status": "analysis_evidence",
+      "recursive_edge_eligible": false
+    }
+  },
+  "canonical_global_status": {
+    "T6_F1_REACHABLE_STATE_EXHAUSTION": "OPEN",
+    "T6_F2_NONPROPER_DISPATCH_TOTALITY": "OPEN",
+    "T6_F3_PROPER_ROOT_PHYSICALIZATION": "OPEN",
+    "T6_GLOBAL_SELECTOR_TOTALITY": "OPEN",
+    "ERDOS_STRAUS_CONJECTURE": "OPEN_IN_THIS_REPOSITORY"
+  },
+  "reproductions": [
+    "reproductions/type_i_marked_g_universal_anchor_complete_excess_exit.py",
+    "reproductions/type_i_high_support_c1_local_minimum_boundary.py"
+  ],
+  "tests": [
+    "tests/test_type_i_mh_final_two_boundary.py"
+  ]
+}

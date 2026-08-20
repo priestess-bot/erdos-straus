@@ -12,17 +12,17 @@
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
 | 数学状态 | `computationally_reproduced` | 373 |
-| 数学状态 | `conditional` | 30 |
+| 数学状态 | `conditional` | 31 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 884 |
+| 数学状态 | `established` | 887 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
-| 证明来源 | `mixed` | 39 |
-| 证明来源 | `repository_derivation` | 714 |
+| 证明来源 | `mixed` | 40 |
+| 证明来源 | `repository_derivation` | 717 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 20 |
-| 审阅状态 | `internal_review` | 861 |
+| 审阅状态 | `internal_review` | 865 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -518,6 +518,7 @@
 | [C=4 最小高支撑正分支的 canonical complete-excess stutter](../claims/type-I-high-support-c4-canonical-stutter-boundary.md) (`type-I-high-support-c4-canonical-stutter-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
 | [C=4 第一 bundle 双对偶的 R=7 边界与 p=1801 压力点](../claims/type-I-high-support-c4-first-bundle-dual-r7-boundary.md) (`type-I-high-support-c4-first-bundle-dual-r7-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
 | [C=4 双高锚 complete-excess 的内部 checkpoint 严格宏](../claims/type-I-high-support-c4-two-anchor-persistent-macro.md) (`type-I-high-support-c4-two-anchor-persistent-macro`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
+| [高支撑 C=1 的固定协议局部最小元与付费退出边界](../claims/type-I-high-support-empty-improvement-c1-local-minimum-boundary.md) (`type-I-high-support-empty-improvement-c1-local-minimum-boundary`) | `established` | `mixed` | `internal_review` | - | 2026-08-21 |
 | [高支撑 F/G 状态的 rank-aware sink-bundle 有限选择器与 p=73 严格出口](../claims/type-I-high-support-rank-aware-sink-bundle-selector.md) (`type-I-high-support-rank-aware-sink-bundle-selector`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-11 |
 | [高窗口 R 减一 full-excess 载体的自然 gap 排除](../claims/type-I-high-window-natural-gap-full-excess-carrier-exclusion.md) (`type-I-high-window-natural-gap-full-excess-carrier-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [Type I/II F-G 源映射的有限整数宇宙完备化](../claims/type-I-II-fg-universal-finite-source-map-completion.md) (`type-I-ii-fg-universal-finite-source-map-completion`) | `conditional` | `repository_derivation` | `internal_review` | - | 2026-08-10 |
@@ -611,6 +612,7 @@
 | [线性两块除子积集的 Kneser F 型必要条件](../claims/type-I-linear-two-block-kneser-f-obstruction.md) (`type-I-linear-two-block-kneser-f-obstruction`) | `established` | `repository_derivation` | `internal_review` | `grynkiewicz_marchan_ordaz2009`, `bradford2024` | 2026-07-29 |
 | [线性两块奇部 source-map 完备性与 q-秩逃逸二分](../claims/type-I-linear-two-block-source-map-completeness.md) (`type-I-linear-two-block-source-map-completeness`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [线性双颜色载体的共享模数交集容量](../claims/type-I-linear-two-color-carrier-intersection-capacity.md) (`type-I-linear-two-color-carrier-intersection-capacity`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-30 |
+| [低支撑 marked F/G 的通用锚点 complete-excess 条件性适配器](../claims/type-I-marked-g-universal-anchor-complete-excess-exit.md) (`type-I-marked-g-universal-anchor-complete-excess-exit`) | `conditional` | `repository_derivation` | `internal_review` | - | 2026-08-21 |
 | [外部支撑累积重图表的良基下降与 overflow 饱和边界](../claims/type-I-marked-support-accumulation-rechart-saturation.md) (`type-I-marked-support-accumulation-rechart-saturation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [九亿至十亿连续核心区间的混合终端闭合](../claims/type-I-mixed-terminal-dense-1b.md) (`type-I-mixed-terminal-dense-1b`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024`, `chamberland2026` | 2026-07-29 |
 | [十亿至十一亿连续核心区间的混合终端闭合](../claims/type-I-mixed-terminal-dense-1p1b.md) (`type-I-mixed-terminal-dense-1p1b`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024`, `chamberland2026` | 2026-07-29 |
@@ -811,6 +813,7 @@
 | [proper-root stutter 的 c=h 奇距离偶源扇全称 no-go](../claims/type-I-root-capacity-stutter-c-equals-h-odd-distance-fan-no-go.md) (`type-I-root-capacity-stutter-c-equals-h-odd-distance-fan-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [proper-root stutter 的 C-side m 局部化与非平凡 T 余量](../claims/type-I-root-capacity-stutter-c-side-m-localization.md) (`type-I-root-capacity-stutter-c-side-m-localization`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [proper-root stutter 的 Eisenstein 商公共因子对齐](../claims/type-I-root-capacity-stutter-common-divisor-alignment.md) (`type-I-root-capacity-stutter-common-divisor-alignment`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-18 |
+| [proper-root stutter 的互补 Eisenstein 坐标缺口与固定坐标约化](../claims/type-I-root-capacity-stutter-complementary-eisenstein-coordinate-gap.md) (`type-I-root-capacity-stutter-complementary-eisenstein-coordinate-gap`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-19 |
 | [根容量 actual stutter 的立方高度墙](../claims/type-I-root-capacity-stutter-cubic-hard-root-wall.md) (`type-I-root-capacity-stutter-cubic-hard-root-wall`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [proper-root stutter 范数的 Eisenstein 素因子支撑限制](../claims/type-I-root-capacity-stutter-eisenstein-support.md) (`type-I-root-capacity-stutter-eisenstein-support`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [根容量 stutter 的三参数整数曲线约束](../claims/type-I-root-capacity-stutter-finite-curve-constraint.md) (`type-I-root-capacity-stutter-finite-curve-constraint`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
@@ -818,6 +821,7 @@
 | [actual proper-root stutter 的 k=1 全称排除](../claims/type-I-root-capacity-stutter-k-one-universal-exclusion.md) (`type-I-root-capacity-stutter-k-one-universal-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [actual proper-root stutter 的 k=3 primitive Pell fiber 约化](../claims/type-I-root-capacity-stutter-k-three-primitive-fiber-reduction.md) (`type-I-root-capacity-stutter-k-three-primitive-fiber-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-18 |
 | [actual proper-root k=3 的同-M Vieta companion 第二整数门障碍](../claims/type-I-root-capacity-stutter-k-three-vieta-companion-obstruction.md) (`type-I-root-capacity-stutter-k-three-vieta-companion-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-18 |
+| [actual proper-root stutter 的 m=3 双二次范数约化](../claims/type-I-root-capacity-stutter-m-three-biquadratic-norm-reduction.md) (`type-I-root-capacity-stutter-m-three-biquadratic-norm-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-19 |
 | [根容量 stutter 的参数对 root-divisor gate 与 actual 边界](../claims/type-I-root-capacity-stutter-pair-root-divisor-gate.md) (`type-I-root-capacity-stutter-pair-root-divisor-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [proper-root stutter 的正定范数与平方根菜单界](../claims/type-I-root-capacity-stutter-positive-definite-norm-bound.md) (`type-I-root-capacity-stutter-positive-definite-norm-bound`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [proper-root stutter 的 primitive quotient 正规化与 cyclotomic 饱和](../claims/type-I-root-capacity-stutter-primitive-quotient-normalization.md) (`type-I-root-capacity-stutter-primitive-quotient-normalization`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-18 |

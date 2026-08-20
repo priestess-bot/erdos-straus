@@ -3,7 +3,7 @@
 ## 原始来源
 
 本次归档的来源包为
-[`h4_closure_release_2026-08-17.zip`](h4_closure_release_2026-08-17.zip)，其 SHA-256 为：
+[`../archive/proof-packages/raw/h4_closure_release_2026-08-17.zip`](../archive/proof-packages/raw/h4_closure_release_2026-08-17.zip)，其 SHA-256 为：
 
 ```text
 625ed074b82ce51c38916523128058c513faa3bafc4eb6fde1876a8882594692
