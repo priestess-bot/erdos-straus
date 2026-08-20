@@ -1,0 +1,14 @@
+name: F1 reachable-state exhaustion
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/audit_f1_reachable_state_exhaustion.py
+      - run: python -m unittest tests.test_f1_reachable_state_exhaustion -v

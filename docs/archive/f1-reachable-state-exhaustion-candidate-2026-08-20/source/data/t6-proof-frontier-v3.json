@@ -1,0 +1,32 @@
+{
+  "frontier_id": "t6-proof-frontier-v3",
+  "baseline": "d3b3b6a",
+  "date": "2026-08-20",
+  "T6_GLOBAL_SELECTOR_TOTALITY": "OPEN",
+  "F1": {
+    "id": "T6-F1-REACHABLE-STATE-EXHAUSTION",
+    "status": "CLOSED_CONTRACT_LEVEL",
+    "scope": "frozen persistent constructor grammar",
+    "evidence": [
+      "docs/F1-reachable-state-exhaustion-closure-2026-08-20.md",
+      "data/f1-reachable-state-exhaustion-v1.json",
+      "scripts/audit_f1_reachable_state_exhaustion.py",
+      "tests/test_f1_reachable_state_exhaustion.py"
+    ]
+  },
+  "F2": {"id": "T6-F2-NONPROPER-DISPATCH-TOTALITY", "status": "OPEN"},
+  "F3": {"id": "T6-F3-PROPER-ROOT-PHYSICALIZATION", "status": "OPEN"},
+  "F4": {"id": "T6-F4-SELECTOR-ASSEMBLY-AND-LIFTS", "status": "BLOCKED_BY_F2_F3"},
+  "F5": {"id": "T6-F5-INDEPENDENT-CLOSURE-AUDIT", "status": "BLOCKED_BY_F4"},
+  "legacy_O1": {
+    "status": "DECOMPOSED",
+    "classification_component": "CLOSED_BY_F1",
+    "exit_totality_component": "OPEN_UNDER_F2_F3"
+  },
+  "forbidden_conclusions": [
+    "F1_implies_F2_closed",
+    "F1_implies_F3_closed",
+    "F1_implies_T6_closed",
+    "F1_implies_erdos_straus_closed"
+  ]
+}

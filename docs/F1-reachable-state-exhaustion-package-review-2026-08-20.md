@@ -5,6 +5,7 @@
 > 声明基线：`d3b3b6a39595d9fdc369a8648e821294a19e04c1`
 > 处置：`NOT_ADMITTED_AS_F1_CLOSURE`
 > 规范状态：`T6-F1-REACHABLE-STATE-EXHAUSTION = OPEN`
+> 归档：[`archive/f1-reachable-state-exhaustion-candidate-2026-08-20/`](archive/f1-reachable-state-exhaustion-candidate-2026-08-20/)
 
 ## 1. 输入完整性与审查范围
 
