@@ -1,0 +1,141 @@
+{
+  "request_id": "f2_c8_atomic_target_shapes_v1",
+  "track_id": "F2-C8-ATOMIC",
+  "request_version": 1,
+  "date": "2026-08-24",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "status": "REQUESTED_NOT_REGISTERED",
+  "shared_change_policy": "This file is a proposal only. The track does not modify the shared grammar, producer registry, state contract, runtime or frontier.",
+  "common_internal_serializer": {
+    "shape_id": "AtomicPendingTargetV1",
+    "artifact_class": "nonpersistent_atomic_serializer_input",
+    "must_never_enter_queue": true,
+    "required_fields": [
+      "schema_id",
+      "schema_version",
+      "source_parent_id",
+      "source_macro_id",
+      "source_path_digest",
+      "terminal_first_digest",
+      "atomic_grammar_arm",
+      "canonical_two_color_payload",
+      "canonical_target_chart_facts",
+      "recomputed_target_fiber",
+      "source_tree_scope",
+      "parent_n7_potential",
+      "target_n7_potential",
+      "t5_ticket_candidate",
+      "mark_receipt",
+      "content_digest"
+    ],
+    "forbidden_fields": [
+      "inherited_F_G_hit_label",
+      "cached_owner",
+      "pending_suffix",
+      "pending_dispatch",
+      "later_selector"
+    ],
+    "deterministic_output_union": [
+      "AtomicTypedTerminalV1",
+      "AtomicTypedFSuccessorV1",
+      "AtomicTypedGSuccessorV1",
+      "REJECT_BEFORE_QUEUE"
+    ],
+    "admission_rule": "The internal artifact must recompute terminal/hit/F/G from canonical target integers. Only a final F/G successor projected into PersistentSelectorStateV1 may be offered to the common queue gate."
+  },
+  "target_shapes": [
+    {
+      "shape_id": "AtomicTypedTerminalV1",
+      "source_arms": [
+        "H4_A1",
+        "C8_DOUBLE_LOW"
+      ],
+      "existing_family_match": "direct_terminal_leaf",
+      "new_family_required": false,
+      "atomic_arm_required": false,
+      "mark_behavior": "Consume the inherited ROOT_SOL receipt only to reconstruct a terminal certificate for the same root; emit no persistent mark.",
+      "t2_request": "Reuse T2v1_A_H4 or T2v1_A_C8 to validate the source-specific internal atomic payload before terminalization.",
+      "t3_request": "No T3 extension if the input mark is ROOT_SOL and the output is terminal.",
+      "t5_ticket_type": "NOT_APPLICABLE_TERMINAL",
+      "owner_precedence_request": "Terminal-first preempts every persistent owner."
+    },
+    {
+      "shape_id": "AtomicTypedFSuccessorV1",
+      "source_arms": [
+        "H4_A1",
+        "C8_DOUBLE_LOW"
+      ],
+      "existing_family_match": "Use an existing active Type-I family only when its predicate independently matches the recomputed chart facts; the F label is not itself a family match.",
+      "new_family_required": "CONDITIONAL: if no existing active family predicate matches, request type_i_atomic_f_reentry_target_v1 rather than falling back to t2_v1_atomic_pending_target.",
+      "atomic_arm_required": false,
+      "mark_behavior": "Preserve ROOT_SOL with a replayable mark receipt; no nontrivial mark is introduced.",
+      "t2_request": "Extend the output contract of the existing H4_A1 and C8_DOUBLE_LOW arms from phase-local PENDING to a canonical typed-F serializer result; retain both existing arm payload schemas.",
+      "t3_request": "T3v1_CURRENT_GRAPH is sufficient only if ROOT_SOL preservation and zero nontrivial-mark creation are checked by the common gate.",
+      "t5_ticket_type": "LOCAL_DROP_CANDIDATE_PARENT_TO_FINAL_N7",
+      "owner_precedence_request": "After terminal-first, select the first independently matching active Type-I specialization. A conditional new atomic-F owner must be below existing geometry-specific specializations and above no-match rejection."
+    },
+    {
+      "shape_id": "AtomicTypedGSuccessorV1",
+      "source_arms": [
+        "H4_A1",
+        "C8_DOUBLE_LOW"
+      ],
+      "existing_family_match": "Use an existing active Type-I family only when its predicate independently matches the recomputed chart facts; the G label is not itself a family match.",
+      "new_family_required": "CONDITIONAL: if no existing active family predicate matches, request type_i_atomic_g_reentry_target_v1 rather than falling back to t2_v1_atomic_pending_target.",
+      "atomic_arm_required": false,
+      "mark_behavior": "Preserve ROOT_SOL with a replayable mark receipt; no nontrivial mark is introduced.",
+      "t2_request": "Extend the output contract of the existing H4_A1 and C8_DOUBLE_LOW arms from phase-local PENDING to a canonical typed-G serializer result; retain both existing arm payload schemas.",
+      "t3_request": "T3v1_CURRENT_GRAPH is sufficient only if ROOT_SOL preservation and zero nontrivial-mark creation are checked by the common gate.",
+      "t5_ticket_type": "LOCAL_DROP_CANDIDATE_PARENT_TO_FINAL_N7",
+      "owner_precedence_request": "After terminal-first, select the first independently matching active Type-I specialization. A conditional new atomic-G owner must be below existing geometry-specific specializations and above no-match rejection."
+    },
+    {
+      "shape_id": "C8OtherVerifiedSuccessorV1",
+      "source_arms": [
+        "C8_OTHER_UNRESOLVED"
+      ],
+      "existing_family_match": "UNKNOWN_UNTIL_THE_OTHER_BRANCH_CONSTRUCTION_IS_PROVED",
+      "new_family_required": "UNDECIDED_AND_BLOCKED",
+      "atomic_arm_required": "Do not reserve or register a C8_OTHER arm until the arithmetic branch supplies a canonical payload and deterministic target.",
+      "mark_behavior": "Must remain ROOT_SOL unless an explicit T3 extension is separately requested and proved.",
+      "t2_request": "A new arm request is mandatory if the eventual OTHER construction is atomic and is not exactly one of the two frozen T2v1 payloads.",
+      "t3_request": "A T3 extension is mandatory before registration if the eventual construction creates a nontrivial mark.",
+      "t5_ticket_type": "MUST_BE_PROVED_PARENT_TO_FINAL_N7",
+      "owner_precedence_request": "No owner requested before a target shape exists; fail closed at the interface."
+    }
+  ],
+  "atomic_arm_requests": [
+    {
+      "arm_id": "H4_A1",
+      "t2_contract_id": "T2v1_A_H4",
+      "request": "Keep the existing payload grammar and add common AtomicPendingTargetV1 input serialization plus terminal/F/G final disposition.",
+      "registration_status": "EXISTING_ARM_OUTPUT_EXTENSION_REQUESTED"
+    },
+    {
+      "arm_id": "C8_DOUBLE_LOW",
+      "t2_contract_id": "T2v1_A_C8",
+      "request": "Keep the existing payload grammar and add common AtomicPendingTargetV1 input serialization plus terminal/F/G final disposition.",
+      "registration_status": "EXISTING_ARM_OUTPUT_EXTENSION_REQUESTED"
+    },
+    {
+      "arm_id": "C8_OTHER_UNRESOLVED",
+      "t2_contract_id": "UNASSIGNED",
+      "request": "FAIL_CLOSED_PENDING_A_DETERMINISTIC_MATHEMATICAL_TARGET",
+      "registration_status": "NOT_REGISTERABLE"
+    }
+  ],
+  "t3_request": {
+    "current_requested_mark_set": [
+      "ROOT_SOL"
+    ],
+    "extension_required_now": false,
+    "reopen_condition": "Any H4, c8 double-low or c8 OTHER target whose mark is not a byte-replay of ROOT_SOL.",
+    "fail_closed_reason": "NEW_ATOMIC_OR_MARKED_TARGET_REQUIRES_T3_EXTENSION"
+  },
+  "coordinator_decisions_requested": [
+    "Approve AtomicPendingTargetV1 as a nonpersistent serializer input shared by H4_A1 and C8_DOUBLE_LOW.",
+    "Decide whether typed F/G outputs can always enter existing geometry families or whether conditional type_i_atomic_f_reentry_target_v1 and type_i_atomic_g_reentry_target_v1 families must be frozen.",
+    "Keep t2_v1_atomic_pending_target non-admissible as a final active state once the common serializer is integrated.",
+    "Reject C8_OTHER_UNRESOLVED until this track supplies a deterministic target and any needed T2/T3 request."
+  ]
+}
