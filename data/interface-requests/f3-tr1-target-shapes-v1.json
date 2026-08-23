@@ -68,19 +68,21 @@
     {
       "shape_id": "TR1_TYPEI_CHARGED_TARGET_V1",
       "disposition": "PERSISTENT_CANDIDATE_UNTIL_PROVED",
-      "existing_family_match": "one existing Type-I family selected from raw target facts by common admission",
+      "existing_family_match": "type_i_a_gt_one_overflow_residual by default; any refinement requires its own raw receipt",
       "allowed_existing_owners": [
-        "type_i_full_carrier_post_g",
-        "type_i_low_support_persistent_overflow",
-        "type_i_a_one_overflow",
-        "type_i_a_gt_one_overflow_residual",
-        "type_i_high_support_sink"
+        "type_i_a_gt_one_overflow_residual"
       ],
+      "conditional_owner_refinements": {
+        "type_i_low_support_persistent_overflow": "only with an independently replayed same-chart promotion receipt",
+        "type_i_a_one_overflow": "only when raw target support_A equals 1 and its overflow receipt is verified",
+        "type_i_high_support_sink": "only with an independently replayed sink_scc_receipt",
+        "type_i_full_carrier_post_g": "forbidden unless provenance_kind=FULL_CARRIER_POST_G and full_carrier_scope are both established by an actual G handoff; a transverse proper-root label is insufficient"
+      },
       "new_family_required": false,
       "atomic_arm_required": false,
       "mark_behavior": "preserve ROOT_SOL only if a universal identity lift is proved",
       "T5_ticket_type": "LOCAL_DROP or PHASE_DROP, derived from the actual parent and final target",
-      "owner_precedence_request": "none; common classifier must determine the owner from raw target facts",
+      "owner_precedence_request": "none; common classifier determines the owner from exact raw provenance and dedicated receipts, never from this proposal list",
       "admission_requirement": "target passes the frozen common extractor, owner classifier, producer target declaration and queue gate"
     },
     {
