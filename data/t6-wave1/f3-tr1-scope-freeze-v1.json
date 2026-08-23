@@ -48,7 +48,7 @@
   "fixed_definitions": {
     "k_perp": "product of q^v_q(k) over prime q dividing k with q not dividing h",
     "h_supported": "every prime divisor of k divides h, equivalently k_perp = 1",
-    "transverse_carrier": "a divisor occurrence q or Q bound to the actual D_star factor in the maximal receipt",
+    "transverse_arithmetic_factor": "a source-bound arithmetic factor q or Q of D_star; it is not a consumable integer raw occurrence until a separate E1 theorem binds one",
     "canonical_transverse_prime": "the least prime factor of verified D_star after all earlier terminal predicates miss"
   },
   "forbidden_inferences": [
@@ -67,7 +67,7 @@
   "required_partition": [
     "terminal",
     "QC1 via a genuinely admissible h-supported carrier",
-    "TR1 via an actual D_star transverse carrier",
+    "TR1 via a D_star arithmetic factor after an independently proved integer raw occurrence/E1 bridge",
     "family-empty",
     "explicit residual"
   ],
