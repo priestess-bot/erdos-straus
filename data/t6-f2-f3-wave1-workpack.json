@@ -1,0 +1,111 @@
+{
+  "schema_id": "t6_f2_f3_wave1_workpack_v1",
+  "schema_version": 1,
+  "date": "2026-08-24",
+  "repository": "priestess-bot/erdos-straus",
+  "authoritative_plan": {
+    "path": "docs/T6_F2_F3_HIGH_CONCURRENCY_EXECUTION_PLAN.md",
+    "sha256": "dac7957740c069fa04bb98170d5d7fddfa650225fc961d3193c82b360d424169"
+  },
+  "integration": {
+    "branch": "integration/t6-f2-f3-wave1",
+    "audited_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+    "base_sha": "c851bd213936b3bc8b3103b469292c139d229e97",
+    "f1_component_sha": "1b66fd62fb76c424f2a0fb6769942e4a3690c195",
+    "f3_component_sha": "c676dddb1020c5b3f006b8e051b7db9f118b0415",
+    "subagent_base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+    "generated_indexes_rebuilt": true
+  },
+  "baseline_validation": {
+    "kb_validate": "PASS_1397_DOCUMENTS",
+    "kb_build": "PASS",
+    "pre_t6_full_tree_audit": "PASS",
+    "pre_t6_unit_tests": "PASS_16_OF_16",
+    "full_unit_tests": "PASS_1158_OF_1158",
+    "constructor_inventory_audit": "PASS_STRUCTURAL_F1_OPEN",
+    "git_diff_check": "PASS",
+    "known_open_inventory_unknowns": 9,
+    "known_source_signals": 18,
+    "known_queue_api_signals": 0
+  },
+  "input_digests": {
+    "constructor_inventory_sha256": "cd2bd29205cb797d56929e543a4993eef2361085d4eab376ce554599d7a44743",
+    "f3_routing_sha256": "860546567f13bc47dbfdd068077904e81bc658cbe9107abdb80c5562a7a5a4d4"
+  },
+  "coordinator_ownership": [
+    "PersistentSelectorStateV1 runtime protocol",
+    "producer projection and exclusive admission",
+    "shared producer registry and family grammar",
+    "T5 N7 ticket verification",
+    "frontier, ledger, generated indexes and theorem-status decisions",
+    "final integration and combined closure receipt"
+  ],
+  "tracks": [
+    {
+      "agent": 1,
+      "track_id": "F2_POST_G_C2_H4",
+      "branch": "sol/f2-post-g-h4-totality",
+      "worktree": "/home/ymm/math/wt-f2-post-g",
+      "quantifier_owner": "post-G Type-I continuation, C2 and complete H4 branch totality"
+    },
+    {
+      "agent": 2,
+      "track_id": "F2_OVERFLOW_HIGH_SUPPORT",
+      "branch": "sol/f2-overflow-high-support-totality",
+      "worktree": "/home/ymm/math/wt-f2-overflow",
+      "quantifier_owner": "all A>1 overflow and complete high-support totality"
+    },
+    {
+      "agent": 3,
+      "track_id": "F2_C8_ATOMIC",
+      "branch": "sol/f2-c8-atomic-closure",
+      "worktree": "/home/ymm/math/wt-f2-atomic",
+      "quantifier_owner": "c8 outgoing totality and H4/c8 atomic recursive closure"
+    },
+    {
+      "agent": 4,
+      "track_id": "F3_HIGH_ENDPOINT",
+      "branch": "sol/f3-high-endpoint",
+      "worktree": "/home/ymm/math/wt-f3-high",
+      "quantifier_owner": "actual proper-factor high endpoint h>p"
+    },
+    {
+      "agent": 5,
+      "track_id": "F3_QC1_QUOTIENT_ONLY",
+      "branch": "sol/f3-qc1-quotient-only",
+      "worktree": "/home/ymm/math/wt-f3-qc1",
+      "quantifier_owner": "R3/R5 quotient-only QC1 physicalization"
+    },
+    {
+      "agent": 6,
+      "track_id": "F3_H_SUPPORTED_TR1",
+      "branch": "sol/f3-h-supported-tr1",
+      "worktree": "/home/ymm/math/wt-f3-tr1",
+      "quantifier_owner": "R4/R6 h-supported and transverse TR1 physicalization"
+    },
+    {
+      "agent": 7,
+      "track_id": "F3_M3_Q5_P2",
+      "branch": "sol/f3-m3-q5-p2",
+      "worktree": "/home/ymm/math/wt-f3-p2",
+      "quantifier_owner": "R1/R2 source path, serializer, second child and complete p2 gate"
+    }
+  ],
+  "mandatory_preliminary_artifacts": [
+    "exact scope freeze",
+    "exhaustive residual matrix",
+    "complete target-shape proposal"
+  ],
+  "closure_leaf_contract": [
+    "FAMILY_EMPTY",
+    "TERMINAL",
+    "VERIFIED_SUCCESSOR_E1_E5_WITH_REENTRY"
+  ],
+  "status_boundary": {
+    "F1": "OPEN_MINIMAL_GAPS",
+    "F2": "OPEN",
+    "F3": "OPEN_MINIMAL_GAPS",
+    "T6": "OPEN",
+    "erdos_straus_conjecture": "OPEN"
+  }
+}
