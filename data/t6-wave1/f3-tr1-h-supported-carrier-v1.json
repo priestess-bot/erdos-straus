@@ -1,0 +1,90 @@
+{
+  "artifact_id": "f3_tr1_h_supported_carrier_v1",
+  "artifact_version": 1,
+  "track_id": "F3-TR1-H-SUPPORTED",
+  "date": "2026-08-24",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "theorem_status": "ESTABLISHED_CARRIER_PARTITION",
+  "physicalization_status": "OPEN_MINIMAL_RESIDUALS",
+  "domain": {
+    "source_class": "ACTUAL_PERSISTENT",
+    "height": "2<=h<p",
+    "k": "k>1",
+    "k_perp": 1,
+    "routes": [
+      "R4_M3_NONQ5_H_SUPPORTED",
+      "R6_MGT3_H_SUPPORTED"
+    ],
+    "excluded": "m=3 and 5 divides D_star"
+  },
+  "canonical_carriers": {
+    "R4": {
+      "definition": "least prime q dividing kappa=k/3 with q congruent to 7 modulo 12",
+      "existence": "kappa congruent to 7 modulo 24 and kappa at least 31",
+      "provenance": "k_perp=1 implies q divides h; q is not 3, hence q divides u"
+    },
+    "R6_m_mod_3_equals_1": {
+      "definition": "least prime q dividing k",
+      "existence": "k>1 and 3 does not divide k",
+      "provenance": "k_perp=1 implies q divides u"
+    },
+    "R6_m_mod_3_equals_0_k_gt_3": {
+      "definition": "least prime q dividing k/3",
+      "existence": "v_3(k)=1 and k/3>1",
+      "provenance": "k_perp=1 implies q divides u"
+    },
+    "R6_k_equals_3": {
+      "definition": null,
+      "disposition": "NO_NONTHREE_H_CARRIER_USE_DSTAR_TR1",
+      "forbidden_relabel": "3 does not divide u"
+    },
+    "transverse": {
+      "definition": "least prime factor of verified D_star, with whole D_star retained",
+      "existence": "D_star>1",
+      "provenance": "D_star divides actual maximal-receipt D",
+      "separation": "gcd(D_star,h)=1"
+    }
+  },
+  "ordered_outcomes": [
+    "TERMINAL_FIRST",
+    "ROOT_SUPPORTED_MENU_TERMINAL",
+    "DSTAR_MENU_TERMINAL",
+    "TR1_PHYSICAL_SUCCESSOR",
+    "EXPLICIT_MINIMAL_RESIDUAL"
+  ],
+  "minimal_residuals": [
+    {
+      "code": "R4_H_MENU_AND_DSTAR_TERMINALS_MISS_NO_TR1_TARGET",
+      "route": "R4_M3_NONQ5_H_SUPPORTED",
+      "missing": [
+        "deterministic admitted target",
+        "universal E4 lift",
+        "authoritative T5 ticket",
+        "common F1 re-entry"
+      ]
+    },
+    {
+      "code": "R6_H_MENU_AND_DSTAR_TERMINALS_MISS_NO_TR1_TARGET",
+      "route": "R6_MGT3_H_SUPPORTED",
+      "includes_k_equals_3_subleaf": true,
+      "missing": [
+        "deterministic admitted target",
+        "universal E4 lift",
+        "authoritative T5 ticket",
+        "common F1 re-entry"
+      ]
+    }
+  ],
+  "proved_empty": [
+    "NO_TRANSVERSE_ARITHMETIC_CARRIER"
+  ],
+  "does_not_claim": [
+    "root-supported menu totality",
+    "D_star terminal-menu totality",
+    "TR1PhysicalTransitionV1",
+    "R4 closure",
+    "R6 closure",
+    "F3 closure",
+    "T6 closure"
+  ]
+}
