@@ -1,0 +1,51 @@
+{
+  "schema_id": "t6_wave1_f3_qc1_scope_freeze_v1",
+  "version": 1,
+  "track_id": "F3-QC1",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "branch": "sol/f3-qc1-quotient-only",
+  "owned_residual_ids": [
+    "R3_M3_NONQ5_QUOTIENT_ONLY",
+    "R5_MGT3_QUOTIENT_ONLY"
+  ],
+  "quantifier": "Every ACTUAL_PERSISTENT, terminal-first-surviving LOW_PROPER_HEIGHT state S with 2<=h(S)<p(S), k(S)>1, and k_perp(S)>1, in either m(S)=3 with 5 not dividing D_star(S), or m(S)>3.",
+  "definitions": {
+    "k_perp": "product q^v_q(k) over prime q dividing k with q not dividing h",
+    "q_perp": "the least prime q such that q divides k and q does not divide h; equivalently the least prime divisor of k_perp",
+    "canonical_tie_break": "least integer prime q_perp"
+  },
+  "whole_domain_existence_statement": "k_perp>1 implies that k_perp has a least prime divisor q_perp; by the defining support restriction, q_perp divides k and does not divide h.",
+  "excluded_domains": [
+    "HIGH_ENDPOINT h>p",
+    "k=1 actual empty slice",
+    "k_perp=1 h-supported residuals R4 and R6",
+    "m=3 and 5 divides D_star, owned by the dedicated R1/R2 q=5 route",
+    "terminal-first hit",
+    "CONDITIONAL_ADAPTER_CONTROL, ANALYSIS_ONLY, DEBUG_WORKFILE, or arithmetic-only tuples"
+  ],
+  "existing_established_lemmas": [
+    "type-I-t6-f3-proper-root-routing-with-explicit-residuals",
+    "type-I-root-capacity-stutter-positive-definite-norm-bound",
+    "type-I-root-capacity-stutter-h-overlap-m-bound",
+    "type-I-root-capacity-stutter-common-divisor-alignment",
+    "type-I-root-capacity-stutter-primitive-quotient-normalization",
+    "type-I-t5-full-contract-level-global-well-foundedness"
+  ],
+  "required_new_result": "For every state in the quantified domain, either an earlier terminal branch fires or one deterministic QC1PhysicalTransitionV1 binds the canonical q_perp to an actual source occurrence and supplies E1-E5 plus common-admission re-entry.",
+  "forbidden_inferences": [
+    "q_perp divides k therefore q_perp is an actual source occurrence",
+    "an arithmetic child is a persistent successor",
+    "a family label proves E3",
+    "a local chart or checkpoint drop proves the fixed N7 E5 ticket",
+    "a fixture or finite search proves actualness or universal coverage",
+    "the m=3 q=5 arithmetic route covers the non-q5 R3 domain",
+    "a conditional adapter may be registered as an actual edge"
+  ],
+  "status_boundary": {
+    "q_perp_arithmetic_existence": "ESTABLISHED_FROM_DOMAIN_DEFINITION",
+    "q_perp_actual_occurrence": "OPEN",
+    "qc1_physical_transition": "OPEN",
+    "f3": "OPEN",
+    "t6": "OPEN"
+  }
+}

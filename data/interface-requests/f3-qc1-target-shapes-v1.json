@@ -1,0 +1,91 @@
+{
+  "schema_id": "t6_interface_request_f3_qc1_target_shapes_v1",
+  "version": 1,
+  "request_id": "F3-QC1-QC1PhysicalTransitionV1",
+  "track_id": "F3-QC1",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "request_type": "SHARED_TRANSITION_ENVELOPE_AND_TARGET_ADMISSION",
+  "requested_symbol": "QC1PhysicalTransitionV1",
+  "source_residuals": [
+    "R3_M3_NONQ5_QUOTIENT_ONLY",
+    "R5_MGT3_QUOTIENT_ONLY"
+  ],
+  "carrier_policy": {
+    "definition": "q_perp=min{q prime: q divides k and q does not divide h}",
+    "deterministic": true,
+    "arithmetic_existence": "proved whenever k_perp>1",
+    "e1_boundary": "The envelope must reject unless a producer-issued occurrence token proves that this exact q_perp occurs on the replayable actual source path and survives terminal precedence."
+  },
+  "common_envelope_fields": [
+    "envelope_version",
+    "source_state_id",
+    "source_producer_id",
+    "source_admission_id",
+    "source_path_digest",
+    "terminal_first_digest",
+    "terminal_first_miss",
+    "maximal_receipt_digest",
+    "residual_id",
+    "p",
+    "h",
+    "m",
+    "k",
+    "k_perp",
+    "q_perp",
+    "q_perp_occurrence_id",
+    "q_perp_occurrence_path_digest",
+    "target_core",
+    "target_state_id",
+    "target_owner",
+    "solution_lift",
+    "t5_ticket",
+    "admission_result"
+  ],
+  "target_shapes": [
+    {
+      "shape_id": "QC1_EXISTING_TYPEI_CHARGED_TARGET",
+      "existing_family_match": "type_i_low_support_persistent_overflow | type_i_a_gt_one_overflow_residual | type_i_high_support_sink, selected only by common predicates",
+      "new_family_required": false,
+      "atomic_arm_required": false,
+      "mark_behavior": "preserve ordinary Sol(p); no nontrivial mark may be introduced",
+      "t5_ticket_type": "LOCAL_DROP in the fixed T5 N7 TYPEI/CHARGED rank, or reject",
+      "owner_precedence_request": "run terminal first, then existing Type-I family predicates under coordinator-frozen precedence",
+      "admission_requirement": "target must be rebuilt by the common serializer and accepted by the common admission gate"
+    },
+    {
+      "shape_id": "QC1_NEW_FAMILY_CANDIDATE",
+      "existing_family_match": null,
+      "new_family_required": true,
+      "atomic_arm_required": false,
+      "mark_behavior": "ordinary Sol(p) only",
+      "t5_ticket_type": "must provide one fixed-N7 ticket before admission",
+      "owner_precedence_request": "reject by default; coordinator must assign a unique owner after predicate and overlap review",
+      "admission_requirement": "remain NEW_FAMILY_CANDIDATE and nonrecursive until F1 grammar, T2/T3 obligations, serializer, lift, and re-entry are approved"
+    },
+    {
+      "shape_id": "QC1_DIRECT_TERMINAL",
+      "existing_family_match": "direct_terminal_leaf",
+      "new_family_required": false,
+      "atomic_arm_required": false,
+      "mark_behavior": "no successor mark",
+      "t5_ticket_type": "not applicable",
+      "owner_precedence_request": "highest precedence",
+      "admission_requirement": "verified terminal serializer; never enqueue"
+    }
+  ],
+  "e1_e5_contract": {
+    "E1": "Actual source envelope plus producer-issued q_perp occurrence/path token and terminal-first miss; divisibility q_perp|k is necessary but insufficient.",
+    "E2": "One deterministic integer target from q_perp and the verified source payload, with all tie-breaks fixed.",
+    "E3": "Target passes the coordinator-owned common serializer, family predicates, unique owner selection, digest verification, and admission gate.",
+    "E4": "A total solution lift over the entire selected branch, not a fixture or witness-only map.",
+    "E5": "The actual parent and final admitted target strictly decrease the fixed T5 N7 potential.",
+    "reentry": "Every nonterminal target is admitted into the frozen F1 grammar, otherwise the result remains a rejected candidate."
+  },
+  "requested_coordinator_decisions": [
+    "approve the QC1PhysicalTransitionV1 envelope name and version",
+    "freeze accepted existing-family predicates and precedence for QC1 targets",
+    "provide the common admission API binding used for E3 and re-entry",
+    "decide whether any proved QC1 target requires a new family after concrete target arithmetic is available"
+  ],
+  "status": "PROPOSED_NOT_REGISTERED"
+}
