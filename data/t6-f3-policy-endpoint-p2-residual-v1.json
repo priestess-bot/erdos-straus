@@ -1,0 +1,110 @@
+{
+  "schema_version": "t6-f3-policy-endpoint-p2-residual/v1",
+  "date": "2026-08-23",
+  "baseline_commit": "c851bd213936b3bc8b3103b469292c139d229e97",
+  "normal_form_status": "ESTABLISHED",
+  "b5_status": "OPEN_MINIMAL_RESIDUAL",
+  "f3_status": "OPEN",
+  "scope": {
+    "source_class": "source-bound m=3 minimal-q=5 proper-root atomic-rank-stutter receipt",
+    "required_receipts": [
+      "persistent source state id and scope",
+      "raw path to the first child",
+      "deterministic omega_pf suffix",
+      "terminal and alternate priority-prefix misses",
+      "canonical complete-excess maximality at the policy endpoint"
+    ],
+    "excluded": [
+      "unbound universal raw evidence",
+      "pure-dyadic multiplier branch",
+      "proper-root slices outside the written m=3 minimal-q=5 guard",
+      "any inference that the residual is empty or paid"
+    ]
+  },
+  "object_separation": {
+    "first_child_multiplier": "L1=(E/ell)*F_y",
+    "first_child_p2_gate": "L1=1+p^2*chi1",
+    "first_child_gate_reference": "20zz-factor-19 through 20zz-factor-23",
+    "policy_endpoint_multiplier": "L_omega=lcm(A,Q_u,Q_v)/A=E_u*E_v",
+    "policy_endpoint_p2_gate": "E_u*E_v=1+p^2*chi",
+    "mapping_status": "NOT_ESTABLISHED_NO_CANONICAL_BRIDGE",
+    "reason": "omega_pf is nonempty and the companion complete-excess blocks are recomputed; no theorem identifies L1 with L_omega"
+  },
+  "two_sided_normal_form": {
+    "definitions": [
+      "u=Q_u*beta_u=E_u*D_u",
+      "v=Q_v*beta_v=E_v*D_v",
+      "g_i=gcd(A,Q_i)",
+      "E_i=Q_i/g_i",
+      "D_i=beta_i*g_i"
+    ],
+    "established_identities": [
+      "D_u|K and D_v|K",
+      "gcd(D_u,D_v)=1 and D_u*D_v|K",
+      "D_u|(p*E_v*D_v+1)",
+      "D_v|(p*E_u*D_u+1)",
+      "L_omega=E_u*E_v",
+      "E_u*R-E_u^2*D_u-D_v=p^2*chi*D_v"
+    ],
+    "terminal_condition": "E_u=E_v=1",
+    "genuine_atomic_residual": "E_u>1 and E_v>1 and E_u*E_v=1+p^2*chi"
+  },
+  "full_capacity_one_sided": {
+    "guard": "W_y != delta mod p and terminal-first misses at u=(y,K)=D_y*J_y",
+    "definitions": [
+      "v=R-u=(1+p^2*chi)*d",
+      "m=(d+u-1)/p",
+      "c=(p*u+1)/d",
+      "w=K/(u*d)",
+      "R=1+p*tau"
+    ],
+    "established_identities": [
+      "d|gcd(K/u,p*u+1)",
+      "tau=m+p*chi*d",
+      "4*u*w=c+p+p^3*chi",
+      "d=(m*p^2+p+1)/(p+c)",
+      "u=(m*p*c+c-1)/(p+c)",
+      "p+c divides m*c^2-c+1",
+      "d<=(tau-1)/p",
+      "u^2>=p"
+    ],
+    "converse_boundary": "integer factor-pair identities do not replace canonical maximality, path provenance, priority, or target typing"
+  },
+  "short_qpf": {
+    "endpoint": "u=y/Q_pf; v=x+(Q_pf-1)*u",
+    "status": "OPEN_MINIMAL_RESIDUAL",
+    "closed_parts": [
+      "deterministic one-or-two-label p-free word",
+      "primitive endpoint",
+      "selected-side valuation update",
+      "unique endpoint complete-excess normalization"
+    ],
+    "open_parts": [
+      "companion block classification under the p^2 product gate",
+      "terminal or paid successor for every two-sided residual",
+      "E3 serializer, owner, normalizer, and family admission",
+      "strict T5 ticket and recursive target closure"
+    ]
+  },
+  "admission_boundary": {
+    "E1": "RELATIVE_TO_BOUND_SOURCE_PATH_AND_PRIORITY_MISSES",
+    "E2": "ESTABLISHED_ARITHMETIC_TARGET",
+    "E3": "OPEN_IMPLEMENTED_TYPING_AND_OWNER",
+    "E4": "CONDITIONAL_IDENTITY_LIFT_AFTER_TARGET_VALIDATION",
+    "E5": "OPEN_ON_L_OMEGA_CONGRUENT_1_MOD_P2"
+  },
+  "forbidden_conclusions": [
+    "B5=CLOSED",
+    "F3=CLOSED",
+    "T6_GLOBAL_SELECTOR_TOTALITY=CLOSED",
+    "20zz-factor-21 is a gate for L_omega",
+    "a finite control proves the residual empty",
+    "an arithmetic checkpoint is a persistent successor"
+  ],
+  "artifacts": {
+    "claim": "claims/type-I-t6-f3-policy-endpoint-p2-divisor-source-normal-form.md",
+    "note": "docs/T6-F3-policy-endpoint-p2-gate-2026-08-23.md",
+    "verifier": "reproductions/type_i_t6_f3_policy_endpoint_p2_gate.py",
+    "test": "tests/test_type_i_t6_f3_policy_endpoint_p2_gate.py"
+  }
+}
