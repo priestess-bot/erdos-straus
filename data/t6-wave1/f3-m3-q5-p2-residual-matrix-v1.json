@@ -51,7 +51,7 @@
       "mutually_exclusive_with": ["R1_M3_Q5_PATH_UNBOUND", "R2_M3_Q5_NONMINIMAL_ROOT_RESIDUE", "R2_M3_Q5_PURE_DYADIC", "R2_M3_Q5_FULL_CAPACITY_ONE_SIDED_P2", "R2_M3_Q5_SHORT_TWO_SIDED_STRICT", "R2_M3_Q5_SHORT_TWO_SIDED_P2"],
       "coverage_proof": "Policy residue and E5 residue split are disjoint after pure-dyadic precedence.",
       "planned_closure": "VERIFIED_SUCCESSOR",
-      "target_shape": "type_i_path_anchored_complete_excess_bundle_v1 -> type_i_policy_endpoint_marked_absorb_v1 or type_i_policy_endpoint_overflow_v1",
+      "target_shape": "type_i_path_anchored_complete_excess_bundle_v1 -> type_i_policy_endpoint_absorb_v1 (M<=B_p) or type_i_policy_endpoint_charged_overflow_v1 (M>B_p)",
       "current_blocker": "Arithmetic one-sided factor-pair gate is established, but common serializer, owner, target family, and parent-to-final E5 are not active.",
       "missing_obligations": ["E2", "E3", "E5", "D5", "D7", "D8"]
     },
@@ -71,7 +71,7 @@
       "mutually_exclusive_with": ["R1_M3_Q5_PATH_UNBOUND", "R2_M3_Q5_NONMINIMAL_ROOT_RESIDUE", "R2_M3_Q5_PURE_DYADIC", "R2_M3_Q5_FULL_CAPACITY_ONE_SIDED_STRICT", "R2_M3_Q5_FULL_CAPACITY_ONE_SIDED_P2", "R2_M3_Q5_SHORT_TWO_SIDED_P2"],
       "coverage_proof": "Short policy and genuine two-sided maximality are explicit; complement of p^2 stutter gives strict E5 arithmetic.",
       "planned_closure": "VERIFIED_SUCCESSOR",
-      "target_shape": "type_i_path_anchored_atomic_split_complete_excess_v1 -> type_i_policy_endpoint_marked_absorb_v1 or type_i_policy_endpoint_overflow_v1",
+      "target_shape": "type_i_path_anchored_atomic_split_complete_excess_v1 -> type_i_policy_endpoint_absorb_v1 (M<=B_p) or type_i_policy_endpoint_charged_overflow_v1 (M>B_p)",
       "current_blocker": "Conditional atomic schema supplies arithmetic E1-E4 only after common validators accept; owner, family admission, and parent-to-final E5 are absent.",
       "missing_obligations": ["E3", "E5", "D5", "D7", "D8"]
     },

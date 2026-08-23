@@ -5,6 +5,15 @@
   "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
   "request_status": "REQUESTED_NOT_REGISTERED",
   "coordinator_action": "Review and freeze target shapes before any active serializer or grammar change. This file does not authorize admission or alter shared grammar.",
+  "cross_audit_findings": [
+    {
+      "severity": "CRITICAL",
+      "reviewer": "Agent 4 high-endpoint",
+      "finding": "A previous draft assigned R_T<p marked-absorb targets support M>B_p and a CHARGED LOCAL_DROP. This is impossible: 4K_T=pR_T+1 and M|K_T imply M<=K_T<=B_p when R_T<p; for a parent A>B_p the first charged rank coordinate rises from 0 to a positive value.",
+      "resolution": "Replace the shape with TYPEI/ABSORB for M<=B_p and pay CHARGED->ABSORB by PHASE_DROP. Reserve CHARGED overflow/local-drop for M>B_p, which then necessarily has R_T>p.",
+      "status": "RESOLVED_IN_THIS_REQUEST"
+    }
+  ],
   "global_constraints": [
     "Never identify L1 with L_omega",
     "No standalone admission for an internal checkpoint",
@@ -58,7 +67,7 @@
       "kind": "edge_occurrence_envelope",
       "produces_recursive_state": true,
       "source": "R2 full-capacity one-sided endpoint or a one-sided companion after second child",
-      "target_schema": "canonical lcm support, source scope, path digest, occurrence owner tuple, target chart, and synchronous target normal-form receipt; dispatches to marked-absorb or overflow shape below",
+      "target_schema": "canonical lcm support, source scope, path digest, occurrence owner tuple, target chart, and synchronous target normal-form receipt; dispatches by M<=B_p versus M>B_p below",
       "existing_family_match": "occurrence envelope is not a state family",
       "new_family_required": false,
       "atomic_arm_required": false,
@@ -71,7 +80,7 @@
       "kind": "edge_occurrence_envelope",
       "produces_recursive_state": true,
       "source": "R2 short Q_pf genuine two-sided endpoint with E_u,E_v>1 and p-free blocks",
-      "target_schema": "two colored maximal payloads, canonical physical occurrence digest, lcm support, occurrence owner tuple, scope, target chart, and synchronous target normal-form receipt; dispatches to marked-absorb or overflow shape below",
+      "target_schema": "two colored maximal payloads, canonical physical occurrence digest, lcm support, occurrence owner tuple, scope, target chart, and synchronous target normal-form receipt; dispatches by M<=B_p versus M>B_p below",
       "existing_family_match": "occurrence envelope is not a state family; H4_A1/C8_DOUBLE_LOW are not semantically reused",
       "new_family_required": false,
       "atomic_arm_required": false,
@@ -80,23 +89,23 @@
       "owner_precedence_request": "keep atomic occurrence ownership in the edge receipt; synchronously classify the final chart instead of inventing an H4/C8 arm"
     },
     {
-      "shape_id": "type_i_policy_endpoint_marked_absorb_v1",
+      "shape_id": "type_i_policy_endpoint_absorb_v1",
       "kind": "recursive_state_candidate",
       "produces_recursive_state": true,
-      "source": "strict one-sided or two-sided R2 target with canonical R_T<p",
-      "target_schema": "persistent_selector_state_v1 TYPEI/CHARGED chart with Sol(p), support M>B_p, R_T<p, source scope, normalized F/G/hit fields, parent receipt, and strict local ticket",
-      "existing_family_match": "none in the current F1 predicates",
+      "source": "strict one-sided or two-sided R2 target with canonical M<=B_p; R_T may be below or above p",
+      "target_schema": "persistent_selector_state_v1 TYPEI/ABSORB protocol chart with Sol(p), support M<=B_p, source scope, normalized F/G/hit fields, parent receipt, and nonreturn protocol receipt",
+      "existing_family_match": "none in the current F1 predicates; current header grammar has no ordinary ABSORB protocol owner",
       "new_family_required": true,
       "atomic_arm_required": false,
       "mark_behavior": "ordinary ROOT_SOL/Sol(p) identity mark; not GENERIC_MARKED and not a smaller equation",
-      "t5_ticket": "LOCAL_DROP from (0,p-1,eta_parent) to (0,c_T,0), c_T<p-1",
-      "owner_precedence_request": "add an ordinary Type-I marked-absorb family or an equivalent exact predicate before broad overflow/post-G fallbacks"
+      "t5_ticket": "PHASE_DROP CHARGED->ABSORB; no same-rho return to CHARGED/PRE",
+      "owner_precedence_request": "add an ordinary Type-I ABSORB protocol family or equivalent exact predicate before broad overflow/post-G fallbacks"
     },
     {
-      "shape_id": "type_i_policy_endpoint_overflow_v1",
+      "shape_id": "type_i_policy_endpoint_charged_overflow_v1",
       "kind": "recursive_state_candidate",
       "produces_recursive_state": true,
-      "source": "strict one-sided or two-sided R2 target with canonical R_T>p",
+      "source": "strict one-sided or two-sided R2 target with canonical M>B_p (necessarily R_T>p)",
       "target_schema": "persistent_selector_state_v1 TYPEI/CHARGED OVERFLOW chart with Sol(p), support M>B_p, normalized fields, parent receipt, and strict local ticket",
       "existing_family_match": "type_i_a_gt_one_overflow_residual; type_i_high_support_sink only when an independent sink receipt is present",
       "new_family_required": false,
@@ -146,8 +155,8 @@
     }
   ],
   "requested_coordinator_decisions": [
-    "Add or designate an exact ordinary Type-I marked-absorb owner for strict R_T<p targets",
-    "Confirm type_i_a_gt_one_overflow_residual as the fallback owner for strict R_T>p targets without sink receipts",
+    "Add or designate an exact ordinary Type-I ABSORB owner for all strict targets with M<=B_p; R_T<p alone is not an E5 ticket",
+    "Confirm type_i_a_gt_one_overflow_residual as the CHARGED fallback only when M>B_p (then necessarily R_T>p) and no sink receipt exists",
     "Keep one-sided/two-sided occurrence ownership in edge receipts rather than reusing H4_A1 or C8_DOUBLE_LOW",
     "Require synchronous normalize_target_state before persistent admission, or specify an equivalent noncircular pending-dispatch owner",
     "Whether source path artifacts are stored as evidence only or attached to a future producer receipt"
