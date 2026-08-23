@@ -1,0 +1,20 @@
+{
+  "request_id": "f2_post_g_h4_overflow_owner_v1",
+  "track_id": "F2-POST-G-H4",
+  "date": "2026-08-24",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "status": "PROPOSAL_NOT_REGISTERED",
+  "new_family_required": false,
+  "requested_owner_resolution": [
+    "type_i_high_support_sink when and only when an actual sink-SCC receipt is present",
+    "otherwise type_i_a_gt_one_overflow_residual"
+  ],
+  "requested_removed_shapes": [
+    "new H4_F_DESCENDANT family",
+    "new H4_G_DESCENDANT family"
+  ],
+  "reason": "F/G is recomputed certificate_context on the same high-support overflow state and does not change persistent ownership facts.",
+  "atomic_note": "Atomic occurrence metadata remains in the edge receipt and Agent 3 payload; it does not override the admitted target owner after normalization.",
+  "precedence_request": "type_i_high_support_sink before type_i_a_gt_one_overflow_residual; unexpected overlap fails closed",
+  "status_boundary": "Coordinator approval required; no grammar file is modified here."
+}
