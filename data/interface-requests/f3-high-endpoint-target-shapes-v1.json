@@ -15,10 +15,10 @@
       "source_leaf": "HIGH_STRICT_CARRY",
       "lifecycle": "CANDIDATE_ONLY",
       "existing_family_match": [
-        "type_i_a_gt_one_overflow_residual",
-        "type_i_high_support_sink"
+        "type_i_a_gt_one_overflow_residual"
       ],
-      "family_match_status": "UNRESOLVED_UNTIL_E3",
+      "narrower_owner_only_if_receipt_present": "type_i_high_support_sink",
+      "family_match_status": "ESTABLISHED_OVERFLOW_SHAPE_CONDITIONAL_ON_COMMON_E3",
       "new_family_required": false,
       "atomic_arm_required": false,
       "mark_behavior": "ordinary unmarked Sol(4,p) semantics; no new mark may be inferred",
@@ -31,7 +31,7 @@
         "R_ex": "(4*M_ex*c-1)/p",
         "source_path_digest": "copied only from verified parent receipt, never synthesized"
       },
-      "t5_ticket_candidate": "LOCAL_DROP conditional on a target admitted with recomputed parent and target N^7 potentials",
+      "t5_ticket_candidate": "LOCAL_DROP from (0,p-1) to (0,c) conditional on a target admitted with recomputed parent and target N^7 potentials",
       "owner_precedence_request": "none until E3; coordinator must reject caller-supplied family/owner",
       "open_requirements": [
         "actual source occurrence and path replay",
