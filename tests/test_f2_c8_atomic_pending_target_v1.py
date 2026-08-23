@@ -103,6 +103,16 @@ class ChartAndFiberTests(unittest.TestCase):
         self.assertEqual(result.disposition, ATOMIC.Disposition.REJECT)
         self.assertEqual(result.reason, "TARGET_CHART_DIGEST_MISMATCH")
 
+    def test_forged_fiber_status_is_replayed_and_rejected(self) -> None:
+        target = chart(73, 11, 201, 67, 3, ((3, 1), (67, 1)))
+        certificate = ATOMIC.exact_fiber_certificate(target)
+        forged = replace(certificate, minus_one_in_subgroup=True)
+        result = ATOMIC.resolve_pending(
+            pending(target), terminal_first_miss=True, fiber=forged
+        )
+        self.assertEqual(result.disposition, ATOMIC.Disposition.REJECT)
+        self.assertEqual(result.reason, "FIBER_CERTIFICATE_MISMATCH")
+
     def test_unsupported_arm_and_pending_marker_fail_closed(self) -> None:
         target = chart(73, 11, 201, 67, 3, ((3, 1), (67, 1)))
         with self.assertRaisesRegex(ATOMIC.AtomicProtocolError, "UNSUPPORTED_ATOMIC_ARM"):

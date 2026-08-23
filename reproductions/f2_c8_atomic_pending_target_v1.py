@@ -143,13 +143,31 @@ class FiberCertificate:
     minus_one_in_subgroup: bool
     recomputed: bool
     inherited_label: bool
-    evidence_digest: str
+    subgroup_size: int | None
+    unbounded_f_witness: tuple[int, ...] | None
 
     @property
     def kind(self) -> FiberKind:
         if self.hit_vectors:
             return FiberKind.HIT
         return FiberKind.F if self.minus_one_in_subgroup else FiberKind.G
+
+    @property
+    def evidence_digest(self) -> str:
+        evidence = {
+            "chart_digest": self.chart_digest,
+            "hit_vectors": [list(vector) for vector in self.hit_vectors],
+            "minus_one_in_subgroup": self.minus_one_in_subgroup,
+            "subgroup_size": self.subgroup_size,
+            "unbounded_f_witness": (
+                list(self.unbounded_f_witness)
+                if self.unbounded_f_witness is not None
+                else None
+            ),
+            "recomputed": self.recomputed,
+            "inherited_label": self.inherited_label,
+        }
+        return "fiber:" + digest(evidence)
 
 
 @dataclass(frozen=True)
@@ -293,7 +311,10 @@ def exact_fiber_certificate(
             hit_vectors.append(tuple(vector))
 
     witness: tuple[int, ...] | None = None
-    if not hit_vectors and unbounded_f_witness is not None:
+    if hit_vectors:
+        minus_one_in_subgroup = True
+        subgroup_size = None
+    elif unbounded_f_witness is not None:
         witness = tuple(unbounded_f_witness)
         if len(witness) != len(factors) or any(
             not isinstance(value, int) or isinstance(value, bool) for value in witness
@@ -323,21 +344,29 @@ def exact_fiber_certificate(
                             raise AtomicProtocolError("FIBER_WORK_LIMIT", "subgroup closure exceeds limit")
         minus_one_in_subgroup = chart.residual - 1 in subgroup
         subgroup_size = len(subgroup)
-    evidence = {
-        "chart_digest": chart.chart_digest,
-        "hit_vectors": [list(vector) for vector in sorted(hit_vectors)],
-        "minus_one_in_subgroup": minus_one_in_subgroup,
-        "subgroup_size": subgroup_size,
-        "unbounded_f_witness": list(witness) if witness is not None else None,
-    }
     return FiberCertificate(
         chart_digest=chart.chart_digest,
         hit_vectors=tuple(sorted(hit_vectors)),
         minus_one_in_subgroup=minus_one_in_subgroup,
         recomputed=True,
         inherited_label=False,
-        evidence_digest="fiber:" + digest(evidence),
+        subgroup_size=subgroup_size,
+        unbounded_f_witness=witness,
     )
+
+
+def verify_fiber_certificate(
+    chart: ChartFacts, certificate: FiberCertificate
+) -> None:
+    """Replay a supplied certificate instead of trusting its status fields."""
+    expected = exact_fiber_certificate(
+        chart, unbounded_f_witness=certificate.unbounded_f_witness
+    )
+    if certificate != expected:
+        raise AtomicProtocolError(
+            "FIBER_CERTIFICATE_MISMATCH",
+            "hit set, subgroup decision or witness does not replay",
+        )
 
 
 def resolve_pending(
@@ -376,6 +405,16 @@ def resolve_pending(
             Disposition.REJECT,
             None,
             "TARGET_FIBER_NOT_RECOMPUTED",
+            pending.source_parent_id,
+            pending.chart.chart_digest,
+        )
+    try:
+        verify_fiber_certificate(pending.chart, fiber)
+    except AtomicProtocolError as exc:
+        return AtomicDisposition(
+            Disposition.REJECT,
+            None,
+            exc.code,
             pending.source_parent_id,
             pending.chart.chart_digest,
         )
@@ -461,4 +500,5 @@ __all__ = [
     "finalize_successor",
     "make_pending",
     "resolve_pending",
+    "verify_fiber_certificate",
 ]
