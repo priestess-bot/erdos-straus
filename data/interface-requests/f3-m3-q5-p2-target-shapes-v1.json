@@ -42,11 +42,11 @@
     },
     {
       "shape_id": "type_i_path_anchored_complete_excess_bundle_v1",
-      "kind": "recursive_candidate_or_terminal",
+      "kind": "edge_occurrence_envelope",
       "produces_recursive_state": true,
       "source": "R2 full-capacity one-sided endpoint or a one-sided companion after second child",
-      "target_schema": "persistent_selector_state_v1 linear_absorbed_support_v1 pending_dispatch with canonical lcm support, source scope, path digest, owner tuple, and target normal-form receipt",
-      "existing_family_match": "type_i_low_support_persistent_overflow or type_i_high_support_sink only after predicates pass",
+      "target_schema": "canonical lcm support, source scope, path digest, occurrence owner tuple, target chart, and synchronous target normal-form receipt; dispatches to marked-absorb or overflow shape below",
+      "existing_family_match": "occurrence envelope is not a state family",
       "new_family_required": false,
       "atomic_arm_required": false,
       "mark_behavior": "no new mark; Sol(p) identity lift",
@@ -55,16 +55,42 @@
     },
     {
       "shape_id": "type_i_path_anchored_atomic_split_complete_excess_v1",
-      "kind": "recursive_hyperedge_candidate_or_terminal",
+      "kind": "edge_occurrence_envelope",
       "produces_recursive_state": true,
       "source": "R2 short Q_pf genuine two-sided endpoint with E_u,E_v>1 and p-free blocks",
-      "target_schema": "persistent_selector_state_v1 with atomic_arm, two colored maximal payloads, canonical physical occurrence digest, lcm support, owner tuple, scope, and pending_dispatch normalization",
-      "existing_family_match": "t2_v1_atomic_pending_target only if an existing arm is semantically valid; otherwise coordinator must review a new atomic arm",
-      "new_family_required": "conditional",
-      "atomic_arm_required": true,
+      "target_schema": "two colored maximal payloads, canonical physical occurrence digest, lcm support, occurrence owner tuple, scope, target chart, and synchronous target normal-form receipt; dispatches to marked-absorb or overflow shape below",
+      "existing_family_match": "occurrence envelope is not a state family; H4_A1/C8_DOUBLE_LOW are not semantically reused",
+      "new_family_required": false,
+      "atomic_arm_required": false,
       "mark_behavior": "inherit source mark; no graph mark or support reset",
       "t5_ticket": "LOCAL_DROP/PHASE_DROP/OUTER_RANK_DROP only on final target; L_omega p^2 checkpoint has no standalone ticket",
-      "owner_precedence_request": "coordinator must decide overlap with overflow families and freeze one owner precedence"
+      "owner_precedence_request": "keep atomic occurrence ownership in the edge receipt; synchronously classify the final chart instead of inventing an H4/C8 arm"
+    },
+    {
+      "shape_id": "type_i_policy_endpoint_marked_absorb_v1",
+      "kind": "recursive_state_candidate",
+      "produces_recursive_state": true,
+      "source": "strict one-sided or two-sided R2 target with canonical R_T<p",
+      "target_schema": "persistent_selector_state_v1 TYPEI/CHARGED chart with Sol(p), support M>B_p, R_T<p, source scope, normalized F/G/hit fields, parent receipt, and strict local ticket",
+      "existing_family_match": "none in the current F1 predicates",
+      "new_family_required": true,
+      "atomic_arm_required": false,
+      "mark_behavior": "ordinary ROOT_SOL/Sol(p) identity mark; not GENERIC_MARKED and not a smaller equation",
+      "t5_ticket": "LOCAL_DROP from (0,p-1,eta_parent) to (0,c_T,0), c_T<p-1",
+      "owner_precedence_request": "add an ordinary Type-I marked-absorb family or an equivalent exact predicate before broad overflow/post-G fallbacks"
+    },
+    {
+      "shape_id": "type_i_policy_endpoint_overflow_v1",
+      "kind": "recursive_state_candidate",
+      "produces_recursive_state": true,
+      "source": "strict one-sided or two-sided R2 target with canonical R_T>p",
+      "target_schema": "persistent_selector_state_v1 TYPEI/CHARGED OVERFLOW chart with Sol(p), support M>B_p, normalized fields, parent receipt, and strict local ticket",
+      "existing_family_match": "type_i_a_gt_one_overflow_residual; type_i_high_support_sink only when an independent sink receipt is present",
+      "new_family_required": false,
+      "atomic_arm_required": false,
+      "mark_behavior": "ordinary ROOT_SOL/Sol(p) identity mark",
+      "t5_ticket": "LOCAL_DROP from (0,p-1,eta_parent) to (0,c_T,0), c_T<p-1",
+      "owner_precedence_request": "use the existing overflow precedence after synchronous normalization; do not fabricate sink_scc_receipt"
     },
     {
       "shape_id": "type_i_policy_endpoint_one_sided_p2_pending_v1",
@@ -107,10 +133,10 @@
     }
   ],
   "requested_coordinator_decisions": [
-    "Whether the existing type_i_low_support_persistent_overflow schema can represent a one-sided final target without new fields",
-    "Whether t2_v1_atomic_pending_target can represent the genuine two-sided payload without changing semantics",
-    "Owner precedence between atomic pending, high-support sink, and low-support overflow",
-    "Mandatory normalize_target_state and pending_dispatch contract for all R2 targets",
+    "Add or designate an exact ordinary Type-I marked-absorb owner for strict R_T<p targets",
+    "Confirm type_i_a_gt_one_overflow_residual as the fallback owner for strict R_T>p targets without sink receipts",
+    "Keep one-sided/two-sided occurrence ownership in edge receipts rather than reusing H4_A1 or C8_DOUBLE_LOW",
+    "Require synchronous normalize_target_state before persistent admission, or specify an equivalent noncircular pending-dispatch owner",
     "Whether source path artifacts are stored as evidence only or attached to a future producer receipt"
   ]
 }
