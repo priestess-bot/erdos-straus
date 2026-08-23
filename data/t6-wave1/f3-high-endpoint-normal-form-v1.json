@@ -1,0 +1,84 @@
+{
+  "schema_id": "t6_wave1_f3_high_endpoint_normal_form_v1",
+  "version": 1,
+  "artifact_id": "f3_high_endpoint_normal_form_v1",
+  "track_id": "F3-HIGH-ENDPOINT",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "date": "2026-08-24",
+  "status": "ESTABLISHED_NORMAL_FORM_OPEN_EXIT",
+  "quantifier": "ACTUAL_PERSISTENT and PROPER_FACTOR_ROOT and h>p and terminal_first_miss",
+  "valid_derived_fields": [
+    "C=p^2+p+1",
+    "M=C/3",
+    "u=gcd(2r+1,M)",
+    "v=M/u with 2<=v<=p-1",
+    "h=C/v>p",
+    "delta=h-p-1>0",
+    "z=R-h=E*D, D|K, D|p*h+1",
+    "c=<D*(h-1)^(-1)>_p"
+  ],
+  "strict_branch": {
+    "predicate": "c<=p-2",
+    "target_support": "M_ex=lcm(A,Q)=A*E",
+    "target_cofactor": "c",
+    "target_chart": "K_ex=M_ex*c, R_ex=(4*M_ex*c-1)/p",
+    "proved_range": "R_ex>p",
+    "target_family": "type_i_a_gt_one_overflow_residual after common E3 normalization",
+    "e1": "actual source/path receipt is a hypothesis of the domain",
+    "e2": "arithmetic target is deterministic",
+    "e3": "OPEN common serializer/owner/admission",
+    "e4": "identity on Sol(4,p) conditional on target scope",
+    "e5": "Lambda-sharp (0,p-1)->(0,c) conditional on admitted target",
+    "status": "CONDITIONAL_PHYSICALIZATION"
+  },
+  "stutter_branch": {
+    "predicate": "c=p-1, equivalently D congruent to 1-h modulo p",
+    "normal_form": [
+      "D=(m-1)*p-(h-p-1)",
+      "m>=3",
+      "e=(p*h+1)/D",
+      "a=e*m-h>e",
+      "N=a^2-a*(e-1)+(e-1)^2=h*k with k positive",
+      "m divides a+3u",
+      "L=a*m, s=m-a, u divides L^2+L*s+s^2"
+    ],
+    "low_height_imports_forbidden": [
+      "a<e",
+      "m<1+sqrt(h)",
+      "0<N<e^2",
+      "k=1 universal exclusion",
+      "D_star>1",
+      "QC1/TR1 low-height routing"
+    ],
+    "status": "OPEN_MINIMAL_RESIDUAL"
+  },
+  "controls": {
+    "strict_actual_core": {
+      "p": 313,
+      "r": 271,
+      "h": 543,
+      "D": 8,
+      "c": 298,
+      "target_is_overflow": true,
+      "actual_maximal_arithmetic_receipt": true,
+      "actual_persistent_witness": false
+    },
+    "stutter_shadow_noncore": {
+      "p": 67,
+      "r": 25311,
+      "h": 93,
+      "D_shadow": 779,
+      "m": 13,
+      "e": 8,
+      "actual_receipt": false,
+      "core_prime": false
+    }
+  },
+  "open_obligations": [
+    "common E3 serializer/owner/re-entry for strict overflow target",
+    "high-domain family-empty, terminal, or paid successor for stutter gate",
+    "no finite scan is accepted as closure"
+  ],
+  "f3": "OPEN",
+  "t6": "OPEN"
+}
