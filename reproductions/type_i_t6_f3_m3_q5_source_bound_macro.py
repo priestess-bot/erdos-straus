@@ -186,6 +186,8 @@ def serialize_endpoint(
     if q_left == q_right == 1:
         return {"outcome": "TERMINAL", "kind": "BOTTOM_TYPE_I"}
     target_support = lcm(support, q_left, q_right)
+    if target_support <= support:
+        raise AssertionError("nonterminal complete-excess target must increase support")
     multiplier = target_support // support
     cofactor = pow(4 * target_support, -1, prime)
     target_capacity = target_support * cofactor
@@ -194,12 +196,11 @@ def serialize_endpoint(
     if strict != (cofactor < prime - 1):
         raise AssertionError("strict multiplier/cofactor equivalence changed")
     boundary = (prime - 1) ** 2 // 4
+    if not (target_support > support > boundary):
+        raise AssertionError("track target lost its high-support invariant")
     if not strict:
         shape = "P2_OR_OTHER_P_STUTTER_CHECKPOINT"
         ticket = None
-    elif target_support <= boundary:
-        shape = "TYPEI_ABSORB"
-        ticket = "PHASE_DROP"
     else:
         if target_residual <= prime:
             raise AssertionError("high-support target cannot lie below p")
@@ -247,32 +248,9 @@ def verify_controls() -> dict[str, object]:
     ):
         raise AssertionError("strict high-support control changed")
 
-    # A synthetic chart-valid endpoint verifies the low-support protocol split.
-    low_support = 5
-    low_cofactor = 1
-    low_capacity = low_support * low_cofactor
-    low_residual = (4 * low_capacity - 1) // 19
-    if low_residual != 1:
-        raise AssertionError("low-support control chart changed")
-    # The E5 assertion itself is symbolic: a high-support parent cannot stay
-    # CHARGED after moving to M<=B_p; it must commit to ABSORB.
-    phase_drop = {
-        "parent_protocol": "CHARGED",
-        "target_protocol": "ABSORB",
-        "target_support": low_support,
-        "boundary": (19 - 1) ** 2 // 4,
-        "ticket": "PHASE_DROP",
-    }
-    if not (
-        phase_drop["target_support"] <= phase_drop["boundary"]
-        and phase_drop["ticket"] == "PHASE_DROP"
-    ):
-        raise AssertionError("ABSORB phase-drop control changed")
-
     return {
         "source_path": first,
         "strict_high": strict_high,
-        "low_support_protocol": phase_drop,
         "fixtures_are_actual_track_evidence": False,
     }
 
@@ -281,7 +259,7 @@ def verify_manifest() -> dict[str, object]:
     payload = json.loads(RECEIPT_PATH.read_text(encoding="utf-8"))
     if not (
         payload["status"] == "PARTIAL_MATHEMATICAL_CLOSURE_INTEGRATION_AND_P2_OPEN"
-        and len(payload["open_mathematical_leaves"]) == 4
+        and len(payload["open_mathematical_leaves"]) == 6
         and "R2=CLOSED" in payload["forbidden_conclusions"]
         and "L1=L_omega" in payload["forbidden_conclusions"]
     ):
@@ -301,7 +279,11 @@ def run() -> dict[str, object]:
             "path_digest": controls["source_path"]["digest"],
             "strict_target_shape": controls["strict_high"]["target_shape"],
             "strict_ticket": controls["strict_high"]["T5_ticket"],
-            "low_support_ticket": controls["low_support_protocol"]["ticket"],
+            "target_support_exceeds_parent": (
+                controls["strict_high"]["target_support"]
+                > chart(73, 1)["A"]
+                > (73 - 1) ** 2 // 4
+            ),
             "fixtures_are_actual_track_evidence": False,
         },
     }
