@@ -1,0 +1,83 @@
+{
+  "artifact_id": "f3_qc1_cross_audit_by_agent6_v1",
+  "artifact_version": 1,
+  "reviewer_track": "F3-TR1-H-SUPPORTED",
+  "reviewed_track": "F3-QC1",
+  "date": "2026-08-24",
+  "reviewed_worktree": "/home/ymm/math/wt-f3-qc1",
+  "reviewed_head": "358d078755ba5de897f3d1cbef39e25ed4a9ce60",
+  "reviewed_uncommitted_files": [
+    "claims/type-I-t6-f3-qc1-quotient-only-physical-transition.md",
+    "data/t6-wave1/f3-qc1-physicalization-receipt-v1.json",
+    "docs/handoffs/F3_QC1_HANDOFF.md",
+    "reproductions/type_i_t6_f3_qc1_quotient_only_physical_transition.py",
+    "tests/test_type_i_t6_f3_qc1_quotient_only_physical_transition.py"
+  ],
+  "verdict": "REJECT_QC1_CLOSURE_MAJOR_REVISION_REQUIRED",
+  "accepted_subclaims": [
+    "q_perp arithmetic existence from k_perp>1",
+    "least-prime deterministic tie-break",
+    "R3/R5 split and exclusion of m=3 with 5 dividing D_star",
+    "oriented Eisenstein ideal divisibility of the auxiliary source element"
+  ],
+  "critical_findings": [
+    {
+      "id": "QC1_IDEAL_IS_NOT_INTEGER_RAW_OCCURRENCE",
+      "severity": "CRITICAL",
+      "finding": "The oriented ideal factor of a-b*omega is not an integer raw-path complete-excess occurrence and does not justify A_target=A*q_perp.",
+      "consequence": "E1 is open; the constructed canonical chart and LOCAL_DROP do not form a source-derived successor."
+    },
+    {
+      "id": "QC1_ACTUAL_FLAG_FORGERY",
+      "severity": "CRITICAL",
+      "finding": "Changing only evidence_class to ACTUAL_PERSISTENT makes the shipped composite-p control report E1 complete and recursive eligibility.",
+      "consequence": "The track serializer does not verify actual source admission and cannot be active."
+    },
+    {
+      "id": "QC1_SELF_AUTHORIZED_RECEIPTS",
+      "severity": "CRITICAL",
+      "finding": "The track injects its own ProducerRuleV1, signs E1-E5=true, and creates its own terminal MISS before calling the common schema gate.",
+      "consequence": "The replay proves self-consistency, not active registry admission, terminal priority, or mathematical E1-E5."
+    }
+  ],
+  "major_findings": [
+    {
+      "id": "QC1_SOURCE_MARK_NOT_REPLAYED",
+      "severity": "MAJOR",
+      "finding": "The source envelope has no mark receipt or equation rank, but the target is unconditionally serialized as ROOT_SOL."
+    },
+    {
+      "id": "QC1_MINIMAL_HEADER_IS_NOT_FULL_E3",
+      "severity": "MAJOR",
+      "finding": "A unique minimal family owner does not independently prove full typed normal form, F/G/hit data, scope, ledger, or parent lineage."
+    }
+  ],
+  "failing_mutation_receipt": {
+    "mutation": "replace control_source.evidence_class=CONTRACT_SHAPE_CONTROL_NOT_ACTUAL with ACTUAL_PERSISTENT; keep every other field unchanged",
+    "unchanged_nonactual_fact": "p=54481=7*43*181 is composite",
+    "observed": {
+      "E1_complete": true,
+      "recursive_edge_eligible": true,
+      "common_admission_accepted": true,
+      "common_admission_owner": "type_i_a_gt_one_overflow_residual"
+    },
+    "command": "python3 - <<'PY'\nimport importlib.util,sys\nfrom dataclasses import replace\np='reproductions/type_i_t6_f3_qc1_quotient_only_physical_transition.py'\ns=importlib.util.spec_from_file_location('qc',p);m=importlib.util.module_from_spec(s);sys.modules['qc']=m;s.loader.exec_module(m)\nx=replace(m.control_source(),evidence_class='ACTUAL_PERSISTENT')\nr=m.build_transition(x,m.terminal_miss_receipt('forged-actual'))\nprint(m.is_prime(x.p),r['E1']['complete'],r['recursive_edge_eligible'],r['admission']['accepted'],r['admission']['owner'])\nPY",
+    "expected_safe_behavior": "reject before E1 or queue admission because the active source receipt and core primality were not verified"
+  },
+  "required_status": {
+    "q_perp_arithmetic_and_orientation": "ESTABLISHED",
+    "qc1_integer_source_occurrence": "OPEN",
+    "qc1_physical_transition": "OPEN",
+    "R3": "OPEN_MINIMAL_RESIDUAL",
+    "R5": "OPEN_MINIMAL_RESIDUAL",
+    "F3": "OPEN",
+    "T6": "OPEN"
+  },
+  "minimum_repair": [
+    "derive a path-bound integer complete-excess occurrence or approve a new conserved resource semantics",
+    "consume a verified common source admission receipt rather than an evidence_class string",
+    "inject a coordinator-verified terminal result rather than self-signing MISS",
+    "obtain producer rights from the frozen registry rather than a local rule",
+    "replay the source mark and full typed target before claiming E3/E4"
+  ]
+}
