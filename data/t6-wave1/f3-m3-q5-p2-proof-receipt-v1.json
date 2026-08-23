@@ -1,0 +1,88 @@
+{
+  "schema_id": "t6_wave1_f3_m3_q5_p2_proof_receipt_v1",
+  "schema_version": 1,
+  "track_id": "F3-M3-Q5-P2",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "status": "PARTIAL_MATHEMATICAL_CLOSURE_INTEGRATION_AND_P2_OPEN",
+  "claim": "type-I-t6-f3-m3-q5-source-bound-macro-interface",
+  "established": [
+    {
+      "id": "R1_CANONICAL_RAW_TRANSCRIPT",
+      "statement": "Every source satisfying the full actual-persistent m=3,5|D_star contract has the canonical universal-p-source plus two capacity words to its root endpoint; terminal scheduler hit/miss is exhaustive.",
+      "strength": "ESTABLISHED_RELATIVE_TO_FULL_PERSISTENT_STATE_CONTRACT",
+      "not_an_edge": true
+    },
+    {
+      "id": "R2_SYNCHRONOUS_RECANONICALIZATION",
+      "statement": "Every bound primitive p-free endpoint has a unique terminal or canonical one-/two-sided target computed from maximal complete-excess blocks.",
+      "strength": "ESTABLISHED_ARITHMETIC_TARGET"
+    },
+    {
+      "id": "STRICT_PARENT_TO_FINAL_E5",
+      "statement": "If L_omega is not 1 mod p, M<=B_p uses CHARGED->ABSORB PHASE_DROP and M>B_p uses CHARGED overflow LOCAL_DROP; checkpoints are nonpersistent.",
+      "strength": "ESTABLISHED_CONTRACT_TICKET"
+    },
+    {
+      "id": "IDENTITY_LIFT",
+      "statement": "After target validation, W_source=W_target=Sol(p) and the universal lift is identity.",
+      "strength": "ESTABLISHED_CONDITIONAL_ON_TARGET_VALIDATION"
+    }
+  ],
+  "integration_requirements": [
+    {
+      "id": "R1_PATH_PAYLOAD_GATE",
+      "missing": "common header currently exposes only an opaque digest and raw_path_bound boolean, not source scope, oriented transcript, or prefix receipts",
+      "owner": "coordinator/F1 runtime"
+    },
+    {
+      "id": "ABSORB_OWNER",
+      "missing": "ordinary Sol(p) TYPEI/ABSORB family predicate and producer target right for M<=B_p",
+      "owner": "coordinator/F1 grammar"
+    },
+    {
+      "id": "OVERFLOW_PRODUCER",
+      "missing": "track producer declaration and common admitted-successor receipt for M>B_p overflow fallback",
+      "owner": "coordinator/F1 runtime"
+    }
+  ],
+  "open_mathematical_leaves": [
+    {
+      "id": "R2_M3_Q5_NONMINIMAL_ROOT_RESIDUE",
+      "missing": ["E1 continuation", "E2 target", "E3 owner", "E4 lift", "E5 ticket"],
+      "next_theorem": "For every actual m=3,5|D_star receipt with v_5(T)>=2, prove family-empty, terminal, or construct a source-bound final target with strict T5 ticket."
+    },
+    {
+      "id": "R2_M3_Q5_PURE_DYADIC",
+      "missing": ["companion recanonicalization to terminal or strict final target", "E3 re-entry"],
+      "next_theorem": "Classify the q=2 child companion complete-excess blocks and apply the strict endpoint theorem or isolate its p-stutter residual."
+    },
+    {
+      "id": "R2_M3_Q5_FULL_CAPACITY_ONE_SIDED_P2",
+      "missing": ["EMPTY/TERMINAL/final strict macro"],
+      "next_theorem": "Close the source-bound one-sided factor-pair system v=(1+p^2 chi)d, 4uw=c+p+p^3 chi."
+    },
+    {
+      "id": "R2_M3_Q5_SHORT_TWO_SIDED_P2",
+      "missing": ["EMPTY/TERMINAL/final strict atomic macro"],
+      "next_theorem": "Close the genuine two-sided system E_u,E_v>1 and E_uE_v=1+p^2 chi using actual divisor-source constraints."
+    }
+  ],
+  "forbidden_conclusions": [
+    "R1=CLOSED_IN_ACTIVE_RUNTIME",
+    "R2=CLOSED",
+    "F3=CLOSED",
+    "L1=L_omega",
+    "R_T<p with M>B_p",
+    "R_T<p alone gives CHARGED LOCAL_DROP",
+    "higher congruence closes p2",
+    "a control fixture proves actual existence"
+  ],
+  "artifacts": {
+    "claim": "claims/type-I-t6-f3-m3-q5-source-bound-macro-interface.md",
+    "verifier": "reproductions/type_i_t6_f3_m3_q5_source_bound_macro.py",
+    "tests": "tests/test_type_i_t6_f3_m3_q5_source_bound_macro.py",
+    "scope": "data/t6-wave1/f3-m3-q5-p2-scope-freeze-v1.json",
+    "matrix": "data/t6-wave1/f3-m3-q5-p2-residual-matrix-v1.json",
+    "interface_request": "data/interface-requests/f3-m3-q5-p2-target-shapes-v1.json"
+  }
+}

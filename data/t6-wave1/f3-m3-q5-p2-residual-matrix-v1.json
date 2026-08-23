@@ -19,11 +19,11 @@
       "leaf_id": "R1_M3_Q5_PATH_UNBOUND",
       "predicate": "actual persistent low proper-root, m=3, 5|D_star, terminal-first miss, raw_path_bound=false",
       "mutually_exclusive_with": ["all R2 leaves"],
-      "coverage_proof": "Boolean path-bound split from the frozen R1/R2 definition; no source path is assumed.",
+      "coverage_proof": "The source-bound macro theorem constructs the universal p-source and two canonical capacity words from every full actual-persistent parent; Boolean raw_path_bound is not used as proof.",
       "planned_closure": "VERIFIED_SUCCESSOR",
       "target_shape": "path_bound_source_receipt_v1",
-      "current_blocker": "E1 source occurrence/path digest and all priority-prefix miss receipts are not universally constructed.",
-      "missing_obligations": ["E1", "D1", "D2"]
+      "current_blocker": "The common header exposes only opaque digests and no transcript/scope/prefix payload. Coordinator must attach the established mathematical transcript to an active producer receipt.",
+      "missing_obligations": ["E1_RUNTIME_INTEGRATION", "D5", "D8"]
     },
     {
       "leaf_id": "R2_M3_Q5_NONMINIMAL_ROOT_RESIDUE",
@@ -52,8 +52,8 @@
       "coverage_proof": "Policy residue and E5 residue split are disjoint after pure-dyadic precedence.",
       "planned_closure": "VERIFIED_SUCCESSOR",
       "target_shape": "type_i_path_anchored_complete_excess_bundle_v1 -> type_i_policy_endpoint_absorb_v1 (M<=B_p) or type_i_policy_endpoint_charged_overflow_v1 (M>B_p)",
-      "current_blocker": "Arithmetic one-sided factor-pair gate is established, but common serializer, owner, target family, and parent-to-final E5 are not active.",
-      "missing_obligations": ["E2", "E3", "E5", "D5", "D7", "D8"]
+      "current_blocker": "Source/path E1, deterministic E2, identity E4 and parent-to-final E5 are established. Common producer, synchronous normalizer, ABSORB/overflow owner and queue admission remain inactive.",
+      "missing_obligations": ["E3", "D5", "D8"]
     },
     {
       "leaf_id": "R2_M3_Q5_FULL_CAPACITY_ONE_SIDED_P2",
@@ -72,8 +72,8 @@
       "coverage_proof": "Short policy and genuine two-sided maximality are explicit; complement of p^2 stutter gives strict E5 arithmetic.",
       "planned_closure": "VERIFIED_SUCCESSOR",
       "target_shape": "type_i_path_anchored_atomic_split_complete_excess_v1 -> type_i_policy_endpoint_absorb_v1 (M<=B_p) or type_i_policy_endpoint_charged_overflow_v1 (M>B_p)",
-      "current_blocker": "Conditional atomic schema supplies arithmetic E1-E4 only after common validators accept; owner, family admission, and parent-to-final E5 are absent.",
-      "missing_obligations": ["E3", "E5", "D5", "D7", "D8"]
+      "current_blocker": "Colored source/path E1, deterministic E2, identity E4 and parent-to-final E5 are established. Common producer, synchronous normalizer, ABSORB/overflow owner and queue admission remain inactive.",
+      "missing_obligations": ["E3", "D5", "D8"]
     },
     {
       "leaf_id": "R2_M3_Q5_SHORT_TWO_SIDED_P2",
