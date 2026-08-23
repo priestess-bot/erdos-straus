@@ -57,7 +57,7 @@
   ],
   "open_obligations": [
     "Prove that every actual c=8 parent has exactly one of the three required outgoing dispositions.",
-    "Construct the OTHER_VERIFIED_SUCCESSOR branch or prove that branch empty or terminal.",
+    "Use the parent-anchored second-full-excess fallback for OTHER_VERIFIED_SUCCESSOR; verify its final target through common admission.",
     "Replace pending_suffix and pending_dispatch with one common nonpersistent atomic serializer followed by a final admitted disposition.",
     "Prove parent-to-final E1-E5, including a strict fixed N^7 T5 ticket, for every nonterminal output.",
     "Prove every final F/G output re-enters an approved active family rather than merely carrying an F/G label."
@@ -69,7 +69,7 @@
     "Do not infer E3 admission from a target family or F/G/hit label.",
     "Do not infer N^7 E5 from a checkpoint-local or phase-local rank drop.",
     "Do not register pending_suffix, pending_dispatch, AtomicPendingTargetV1 or a conditional adapter as a persistent successor.",
-    "Do not treat the logical complement of DOUBLE_LOW as an existing OTHER successor.",
+    "Do not treat the logical complement of DOUBLE_LOW as an existing successor without the parent-anchored second-full-excess construction.",
     "Do not modify the shared grammar, producer registry, frontier, runtime or generated index in this track."
   ],
   "closure_rule": "This track closes only if every quantified input has a symbolic exhaustive disposition and every nonterminal final target passes actual parent/path replay, deterministic construction, common E3 admission, universal E4, parent-to-final N^7 E5 and selector re-entry. Otherwise publish the least residual predicate and keep F2 open."

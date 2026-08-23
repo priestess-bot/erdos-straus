@@ -20,7 +20,6 @@
       "atomic_grammar_arm",
       "canonical_two_color_payload",
       "canonical_target_chart_facts",
-      "recomputed_target_fiber",
       "source_tree_scope",
       "parent_n7_potential",
       "target_n7_potential",
@@ -35,6 +34,7 @@
       "pending_dispatch",
       "later_selector"
     ],
+    "paired_classifier_receipt": "AtomicFiberCertificateV1 recomputed from the full K_T factorization and bound to canonical_target_chart_facts by chart digest.",
     "deterministic_output_union": [
       "AtomicTypedTerminalV1",
       "AtomicTypedFSuccessorV1",
@@ -65,14 +65,15 @@
         "H4_A1",
         "C8_DOUBLE_LOW"
       ],
-      "existing_family_match": "Use an existing active Type-I family only when its predicate independently matches the recomputed chart facts; the F label is not itself a family match.",
-      "new_family_required": "CONDITIONAL: if no existing active family predicate matches, request type_i_atomic_f_reentry_target_v1 rather than falling back to t2_v1_atomic_pending_target.",
+      "existing_family_match": "type_i_a_gt_one_overflow_residual; A_T>A_H>B_p and R_T=3 mod 4 imply R_T>p, while the F label remains certificate context rather than an owner predicate.",
+      "new_family_required": false,
       "atomic_arm_required": false,
       "mark_behavior": "Preserve ROOT_SOL with a replayable mark receipt; no nontrivial mark is introduced.",
       "t2_request": "Extend the output contract of the existing H4_A1 and C8_DOUBLE_LOW arms from phase-local PENDING to a canonical typed-F serializer result; retain both existing arm payload schemas.",
       "t3_request": "T3v1_CURRENT_GRAPH is sufficient only if ROOT_SOL preservation and zero nontrivial-mark creation are checked by the common gate.",
       "t5_ticket_type": "LOCAL_DROP_CANDIDATE_PARENT_TO_FINAL_N7",
-      "owner_precedence_request": "After terminal-first, select the first independently matching active Type-I specialization. A conditional new atomic-F owner must be below existing geometry-specific specializations and above no-match rejection."
+      "owner_precedence_request": "Use the existing type_i_a_gt_one_overflow_residual precedence; no new atomic-F owner is requested.",
+      "capacity_one_policy": "C1_POSSIBLE_NOT_CLOSED: C=1 iff E_x=-q (mod p) in the H4 source equations; do not mark unreachable without a separate source-D/phase proof. If C=1 is admitted, same TYPEI/CHARGED complete-excess is a local minimum and needs terminal, lower protocol or phase exit."
     },
     {
       "shape_id": "AtomicTypedGSuccessorV1",
@@ -80,28 +81,30 @@
         "H4_A1",
         "C8_DOUBLE_LOW"
       ],
-      "existing_family_match": "Use an existing active Type-I family only when its predicate independently matches the recomputed chart facts; the G label is not itself a family match.",
-      "new_family_required": "CONDITIONAL: if no existing active family predicate matches, request type_i_atomic_g_reentry_target_v1 rather than falling back to t2_v1_atomic_pending_target.",
+      "existing_family_match": "type_i_a_gt_one_overflow_residual; A_T>A_H>B_p and R_T=3 mod 4 imply R_T>p, while the G label remains certificate context rather than an owner predicate.",
+      "new_family_required": false,
       "atomic_arm_required": false,
       "mark_behavior": "Preserve ROOT_SOL with a replayable mark receipt; no nontrivial mark is introduced.",
       "t2_request": "Extend the output contract of the existing H4_A1 and C8_DOUBLE_LOW arms from phase-local PENDING to a canonical typed-G serializer result; retain both existing arm payload schemas.",
       "t3_request": "T3v1_CURRENT_GRAPH is sufficient only if ROOT_SOL preservation and zero nontrivial-mark creation are checked by the common gate.",
       "t5_ticket_type": "LOCAL_DROP_CANDIDATE_PARENT_TO_FINAL_N7",
-      "owner_precedence_request": "After terminal-first, select the first independently matching active Type-I specialization. A conditional new atomic-G owner must be below existing geometry-specific specializations and above no-match rejection."
+      "owner_precedence_request": "Use the existing type_i_a_gt_one_overflow_residual precedence; no new atomic-G owner is requested.",
+      "capacity_one_policy": "C1_POSSIBLE_NOT_CLOSED for generic H4/c8 atomic targets unless the source-specific congruence is proved empty; same-protocol CHARGED continuation is blocked by the established C1 local-minimum claim."
     },
     {
       "shape_id": "C8OtherVerifiedSuccessorV1",
       "source_arms": [
-        "C8_OTHER_UNRESOLVED"
+        "C8_SECOND_FULL_EXCESS_PARENT_MACRO"
       ],
-      "existing_family_match": "UNKNOWN_UNTIL_THE_OTHER_BRANCH_CONSTRUCTION_IS_PROVED",
-      "new_family_required": "UNDECIDED_AND_BLOCKED",
-      "atomic_arm_required": "Do not reserve or register a C8_OTHER arm until the arithmetic branch supplies a canonical payload and deterministic target.",
+      "existing_family_match": "type_i_a_gt_one_overflow_residual via the deterministic second-full-excess parent macro; no new family is required.",
+      "new_family_required": false,
+      "atomic_arm_required": "Not an atomic arm: use the parent-anchored second-full-excess macro after terminal-first MISS and double-low miss.",
       "mark_behavior": "Must remain ROOT_SOL unless an explicit T3 extension is separately requested and proved.",
-      "t2_request": "A new arm request is mandatory if the eventual OTHER construction is atomic and is not exactly one of the two frozen T2v1 payloads.",
-      "t3_request": "A T3 extension is mandatory before registration if the eventual construction creates a nontrivial mark.",
-      "t5_ticket_type": "MUST_BE_PROVED_PARENT_TO_FINAL_N7",
-      "owner_precedence_request": "No owner requested before a target shape exists; fail closed at the interface."
+      "t2_request": "No atomic T2 arm: the fallback is the canonical single-side Q=(R-1)/2 complete-excess parent macro.",
+      "t3_request": "No T3 extension: ROOT_SOL is preserved and no nontrivial mark is created.",
+      "t5_ticket_type": "LOCAL_DROP_PARENT_TO_FINAL_N7",
+      "owner_precedence_request": "Use the existing type_i_a_gt_one_overflow_residual precedence; no new C8-OTHER owner is requested.",
+      "capacity_one_policy": "Universal c8 fallback satisfies 75*C=64 (mod p), hence 9<=C<=p-2 for p>=4129; C1 is excluded on this fallback."
     }
   ],
   "atomic_arm_requests": [
@@ -118,10 +121,10 @@
       "registration_status": "EXISTING_ARM_OUTPUT_EXTENSION_REQUESTED"
     },
     {
-      "arm_id": "C8_OTHER_UNRESOLVED",
-      "t2_contract_id": "UNASSIGNED",
-      "request": "FAIL_CLOSED_PENDING_A_DETERMINISTIC_MATHEMATICAL_TARGET",
-      "registration_status": "NOT_REGISTERABLE"
+      "arm_id": "C8_SECOND_FULL_EXCESS_PARENT_MACRO",
+      "t2_contract_id": "NOT_ATOMIC",
+      "request": "Register only after coordinator confirms parent-anchored source/path and common E1-E5 serializer; target capacity satisfies 9<=C<=p-2.",
+      "registration_status": "PARENT_MACRO_PROPOSAL"
     }
   ],
   "t3_request": {
@@ -134,8 +137,8 @@
   },
   "coordinator_decisions_requested": [
     "Approve AtomicPendingTargetV1 as a nonpersistent serializer input shared by H4_A1 and C8_DOUBLE_LOW.",
-    "Decide whether typed F/G outputs can always enter existing geometry families or whether conditional type_i_atomic_f_reentry_target_v1 and type_i_atomic_g_reentry_target_v1 families must be frozen.",
+    "Approve the proved projection of typed F/G outputs to existing type_i_a_gt_one_overflow_residual; do not create atomic-F or atomic-G families.",
     "Keep t2_v1_atomic_pending_target non-admissible as a final active state once the common serializer is integrated.",
-    "Reject C8_OTHER_UNRESOLVED until this track supplies a deterministic target and any needed T2/T3 request."
+    "Approve the deterministic C8 second-full-excess parent macro as the OTHER fallback; keep C8_OTHER_UNRESOLVED as a label for the complement, not as a producer arm."
   ]
 }

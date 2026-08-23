@@ -1,0 +1,105 @@
+{
+  "receipt_id": "f2_c8_atomic_reentry_proof_receipt_v1",
+  "receipt_version": 1,
+  "date": "2026-08-24",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "track_id": "F2-C8-ATOMIC",
+  "status": "CONDITIONAL_C8_OUTGOING_AND_ATOMIC_REENTRY_ESTABLISHED",
+  "quantifier": "Every actual parent-bound H4_A1 or C8_DOUBLE_LOW atomic output whose source-specific receipt proves terminal-first MISS, canonical target support A_T>A_H>B_p and final capacity c_T<C_P.",
+  "serializer": {
+    "internal_schema": "AtomicPendingTargetV1",
+    "persistent": false,
+    "forbidden_final_markers": [
+      "pending_suffix",
+      "pending_dispatch",
+      "later_selector",
+      "inherited_F_G_hit_label"
+    ],
+    "final_union": [
+      "AtomicTypedTerminalV1",
+      "AtomicTypedFSuccessorV1",
+      "AtomicTypedGSuccessorV1",
+      "REJECT_BEFORE_QUEUE"
+    ]
+  },
+  "target_classifier": {
+    "factorization_base": "full K_T factorization",
+    "precedence": [
+      "complete Bradford terminal screen",
+      "centered box hit",
+      "F subgroup membership",
+      "G subgroup nonmembership"
+    ],
+    "inherited_labels_allowed": false
+  },
+  "common_reentry": {
+    "existing_owner": "type_i_a_gt_one_overflow_residual",
+    "new_f_family_required": false,
+    "new_g_family_required": false,
+    "facts_proof": [
+      "A_T>A_H>B_p implies A_T>1",
+      "R_T>p-2 together with R_T=3 mod 4 and p=1 mod 4 implies R_T>p",
+      "A_T divides K_T",
+      "atomic_arm=NONE and dispatch_status=NONE in the final state"
+    ],
+    "common_gate": "reject_before_persistent_queue_v1"
+  },
+  "e1_e5": {
+    "E1": "actual persistent parent, terminal-first MISS, replayed macro/raw path and canonical two-color payload",
+    "E2": "unique lcm support and canonical chart",
+    "E3": "target-local terminal/hit/F/G plus common admission owner/digest",
+    "E4": "identity on Sol(p)",
+    "E5": "TYPEI/CHARGED LOCAL_DROP from parent capacity C_P to final capacity c_T in frozen N7"
+  },
+  "t2_t3": {
+    "arms": {
+      "H4_A1": "T2v1_A_H4 output extension requested",
+      "C8_DOUBLE_LOW": "T2v1_A_C8 output extension requested"
+    },
+    "mark": "ROOT_SOL preserved",
+    "t3_extension_required": false
+  },
+  "capacity_one_boundary": {
+    "c8_second_full_excess_fallback": "IMPOSSIBLE: 75*C=64 (mod p) with p>=4129 gives 9<=C<=p-2.",
+    "c8_double_low_policy": "A C1 double-low candidate need not be emitted because the universal second-full-excess fallback remains available.",
+    "h4_atomic": "POSSIBLE_NOT_CLOSED: c_q=-q/E_x (mod p), so C1 is equivalent to E_x=-q (mod p). Existing stutter closure only excludes E_x=q (mod p).",
+    "h4_c1_necessary_source_gate": "Writing p=2*d*q-1, delta_d=2*d*(4*d^2-2*d+1) and D=(M4,Q_x)*beta_x, C1 implies D=-delta_d (mod p), D divides (2*d-1)((2*d+1)q-1), 0<D<2*d*p, plus the actual phase condition d divides abs(1536-a(p)).",
+    "analysis_only_arithmetic_candidates": [
+      {"d": 23, "q": 47, "p": 2161, "D": 4140},
+      {"d": 35, "q": 71, "p": 4969, "D": 9660}
+    ],
+    "candidate_warning": "The displayed rows satisfy only the prime-q negative-residue arithmetic gate; they are not claimed to satisfy the actual 31-phase, parent/path, payload, terminal-first or admission conditions.",
+    "proof_reference": "claims/type-I-high-support-empty-improvement-c1-local-minimum-boundary.md",
+    "coordinator_rule": "Do not mark high-support C1 trace-unreachable from this track; an actual H4 source-D/phase exclusion is still required."
+  },
+  "focused_controls": [
+    {
+      "arm": "H4_A1",
+      "prime": 73,
+      "chart": [315581377367, 5759360136948, 2879680068474, 2],
+      "fiber": "F",
+      "owner": "type_i_a_gt_one_overflow_residual",
+      "control_only_not_actual_h4_claim": true
+    },
+    {
+      "arm": "C8_DOUBLE_LOW",
+      "prime": 2137,
+      "chart": [8551, 4568372, 1142093, 4],
+      "fiber": "G",
+      "owner": "type_i_a_gt_one_overflow_residual",
+      "control_only_not_actual_c8_claim": true
+    }
+  ],
+  "remaining_residuals": [
+    "C8 parent-macro producer registration and independent cross-audit",
+    "actual c8 DOUBLE_LOW occurrence existence",
+    "source-specific H4/c8 parent/path occurrence totality"
+  ],
+  "does_not_close": [
+    "GAP-O3-C8-OUTGOING",
+    "GAP-O1-ATOMIC-TARGET-CLOSURE without its actual-occurrence premise",
+    "T6-F2-NONPROPER-DISPATCH-TOTALITY",
+    "T6_GLOBAL_SELECTOR_TOTALITY",
+    "ERDOS_STRAUS_CONJECTURE"
+  ]
+}
