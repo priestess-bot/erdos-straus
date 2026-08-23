@@ -125,15 +125,13 @@ double-low occurrence。
 定义 final support 与 chart：
 
 \[
-A_T=MQ,
-\qquad
+A_T=MQ,\qquad
 c_T=\langle(4A_T)^{-1}\rangle_p,
 \tag{9}
 \]
 
 \[
-K_T=A_Tc_T,
-\qquad
+K_T=A_Tc_T,\qquad
 R_T=\frac{4K_T-1}{p}.
 \tag{10}
 \]
@@ -232,7 +230,7 @@ E5 是 (16)。若 target 为 direct/centered hit，则输出 terminal；否则 (
 focused control \(s=3279,p=157393\) 给出
 
 \[
-p-1=157392,qquad8<c_T=4198<p-1,
+p-1=157392,\qquad 8<c_T=4198<p-1,
 \tag{19}
 \]
 

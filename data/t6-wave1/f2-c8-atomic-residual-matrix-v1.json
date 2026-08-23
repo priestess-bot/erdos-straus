@@ -4,7 +4,7 @@
   "artifact_version": 1,
   "date": "2026-08-24",
   "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
-  "status": "OPEN",
+  "status": "MATHEMATICAL_TRACK_CLOSED_PENDING_COORDINATOR_REGISTRATION_AND_CROSS_AUDIT",
   "partition_order": {
     "c8_outgoing": [
       "C8-O1-TERMINAL",
@@ -23,7 +23,7 @@
     ]
   },
   "coverage_contract": {
-    "c8_outgoing": "Run the complete root and target-local terminal policy first. On MISS, apply the double-low predicate to the canonical first actual eligible raw occurrence under a fixed path order. Boolean excluded middle gives TERMINAL, DOUBLE_LOW or OTHER; it does not construct the OTHER successor.",
+    "c8_outgoing": "Run the complete root and target-local terminal policy first. On MISS, select the least fully E1-E5/common-admitted double-low receipt with split capacity 2..7; if none exists, invoke the deterministic parent-anchored second-full-excess target. Thus TERMINAL, DOUBLE_LOW and OTHER are disjoint and exhaustive, and OTHER is a named construction rather than a logical complement label.",
     "atomic_target": "For each canonical target chart, recompute the centered bounded hit set first; on no hit, test whether -1 lies in the support subgroup. This gives exactly hit, F or G. The labels alone do not prove persistent re-entry."
   },
   "leaves": [
@@ -38,7 +38,7 @@
       "coverage_proof": "First branch in the frozen precedence; all later branches require the same terminal-first receipt to be MISS.",
       "planned_closure": "TERMINAL",
       "target_shape": "AtomicTypedTerminalV1",
-      "current_blocker": "The complete terminal menu over the full actual c=8 parent domain has not yet been expressed as one symbolic dispatcher."
+      "current_blocker": "None inside this track; the terminal receipt is the first input to the executable fixed-precedence dispatcher."
     },
     {
       "leaf_id": "C8-O2-DOUBLE-LOW",
@@ -51,7 +51,7 @@
       "coverage_proof": "This is the positive double-low predicate after terminal exclusion; C8-O3 is its exact complement within the nonterminal actual-parent domain.",
       "planned_closure": "VERIFIED_SUCCESSOR",
       "target_shape": "AtomicPendingTargetV1(C8_DOUBLE_LOW) -> AtomicTypedTerminalV1 | AtomicTypedFSuccessorV1 | AtomicTypedGSuccessorV1",
-      "current_blocker": "The existing theorem is conditional on an actual double-low occurrence and stops before common persistent serialization and F/G re-entry."
+      "current_blocker": "None for a supplied actual admitted receipt; double-low existence is optional because OTHER is universal."
     },
     {
       "leaf_id": "C8-O3-OTHER",
@@ -146,9 +146,9 @@
     }
   ],
   "least_current_residuals": [
-    "C8-O3-OTHER now has a deterministic parent-anchored second-full-excess fallback; registration and upstream actual-parent totality remain open.",
-    "The H4/c8 producer output extensions are proposed but not yet installed in the coordinator-owned registry.",
-    "No active proof shows that every c8 parent has an actual double-low or OTHER occurrence with all parent/path receipts needed by the common serializer."
+    "Coordinator must install the three proposed producer/output extensions in the shared registry and grammar.",
+    "Agent 1 cross-audit must independently confirm the actual parent/path premise shared with the post-G/H4 track.",
+    "H4 C1 remains a downstream high-support residual rather than an atomic serializer residual."
   ],
   "capacity_one_subresidual": {
     "c8_other_fallback": {
