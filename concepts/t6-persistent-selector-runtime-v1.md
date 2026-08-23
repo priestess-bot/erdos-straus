@@ -36,7 +36,8 @@ authoritative 执行链。`scripts/t6_persistent_selector_runtime_v1.py` 固定�
 admitted source
   -> source receipt / owner / N7 potential replay
   -> source terminal-first schedule
-  -> registered producer branch
+  -> owner-specific fixed producer/branch precedence
+  -> replayable prior guard misses and selected-branch receipt
   -> authority-free CandidateTransitionV1
   -> coordinator-owned TargetProjectionV1
   -> independently registered E1--E4 validator
@@ -68,6 +69,11 @@ recursive_edge_eligible / persistent_queue / selector_status
 target facts 只能由 coordinator-owned projector 从 source 与 witness 重算。owner、matched families、
 owner digest 与 state ID 则继续由 noncircular state contract 独立计算。
 
+调用方也不能直接挑选 producer/branch。`run_state_once_v1` 只读取 runtime 冻结的 owner-specific
+route 顺序；每个较早分支必须返回结构化 `GuardMissV1` 才能进入下一分支。选中的 candidate
+由 runtime 签发一次性 `ProducedCandidateV1`，其 execution ID 与 dispatch receipt 绑定 source、
+完整 route order、selected index 和全部 prior guard misses。未签发或重复使用的 candidate 均失败。
+
 ## 3. E1--E5 不由 runtime 伪造
 
 branch registration 中的 claim references 只声明依赖，不能自动使 E1--E4 为真。每个 branch 必须
@@ -85,6 +91,9 @@ schema/normal-form 条件，不能预填 owner。E5 由 runtime 从语义字段�
 
 `OUTER_RANK_DROP`、`PHASE_DROP`、`LOCAL_DROP` 必须与首个严格下降坐标相符。candidate 提供的
 ticket 字符串只是请求；相等、上升或 ticket 类型不匹配均被拒绝。
+
+validator 的 evidence IDs 还必须覆盖 branch registration 的全部 proof references；任意非空字符串
+不能替代声明依赖。这只建立 dependency binding，所引用 claim 的数学正确性仍由 claim review 承担。
 
 ## 4. Terminal-first 的两个边界
 
