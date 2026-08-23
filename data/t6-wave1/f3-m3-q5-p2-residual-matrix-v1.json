@@ -1,0 +1,99 @@
+{
+  "schema_id": "t6_wave1_f3_m3_q5_p2_residual_matrix_v1",
+  "schema_version": 1,
+  "track_id": "F3-M3-Q5-P2",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "status": "OPEN",
+  "partition_order": [
+    "R1_M3_Q5_PATH_UNBOUND",
+    "R2_M3_Q5_PURE_DYADIC",
+    "R2_M3_Q5_FULL_CAPACITY_ONE_SIDED_STRICT",
+    "R2_M3_Q5_FULL_CAPACITY_ONE_SIDED_P2",
+    "R2_M3_Q5_SHORT_TWO_SIDED_STRICT",
+    "R2_M3_Q5_SHORT_TWO_SIDED_P2"
+  ],
+  "partition_contract": "R1 is selected first by raw_path_bound=false. Within R2, pure-dyadic is selected first when the first multiplier E is a power of two; otherwise policy residue W_y!=delta selects full-capacity, and W_y=delta selects short Q_pf. Each two-sided/one-sided branch is then split by L_omega mod p versus L_omega=1 mod p^2. The listed predicates are mutually exclusive and cover the declared R2 endpoint surface; second-child E5 is an obligation attached to every nonterminal R2 row, not a hidden seventh family.",
+  "leaves": [
+    {
+      "leaf_id": "R1_M3_Q5_PATH_UNBOUND",
+      "predicate": "actual persistent low proper-root, m=3, 5|D_star, terminal-first miss, raw_path_bound=false",
+      "mutually_exclusive_with": ["all R2 leaves"],
+      "coverage_proof": "Boolean path-bound split from the frozen R1/R2 definition; no source path is assumed.",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "path_bound_source_receipt_v1",
+      "current_blocker": "E1 source occurrence/path digest and all priority-prefix miss receipts are not universally constructed.",
+      "missing_obligations": ["E1", "D1", "D2"]
+    },
+    {
+      "leaf_id": "R2_M3_Q5_PURE_DYADIC",
+      "predicate": "R2 and first complete-excess multiplier E=2^a with a>=v_2(p-1)+2",
+      "mutually_exclusive_with": ["R1_M3_Q5_PATH_UNBOUND", "R2_M3_Q5_FULL_CAPACITY_ONE_SIDED_STRICT", "R2_M3_Q5_FULL_CAPACITY_ONE_SIDED_P2", "R2_M3_Q5_SHORT_TWO_SIDED_STRICT", "R2_M3_Q5_SHORT_TWO_SIDED_P2"],
+      "coverage_proof": "The pure-dyadic/odd-prime split is a disjoint factorization of the first multiplier after R2 path binding.",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "type_i_m3_q5_pure_dyadic_q2_forward_suffix_v1",
+      "current_blocker": "The q=2 selected-side cofactor drops, but the companion must be recanonicalized and admitted with E1-E4 plus parent-to-final E5.",
+      "missing_obligations": ["E2", "E3", "E5", "D7", "D8"]
+    },
+    {
+      "leaf_id": "R2_M3_Q5_FULL_CAPACITY_ONE_SIDED_STRICT",
+      "predicate": "R2, E is not pure-dyadic, W_y!=delta mod p, endpoint u=(y,K)|K, terminal-first miss, and L_omega not congruent to 1 mod p",
+      "mutually_exclusive_with": ["R1_M3_Q5_PATH_UNBOUND", "R2_M3_Q5_PURE_DYADIC", "R2_M3_Q5_FULL_CAPACITY_ONE_SIDED_P2", "R2_M3_Q5_SHORT_TWO_SIDED_STRICT", "R2_M3_Q5_SHORT_TWO_SIDED_P2"],
+      "coverage_proof": "Policy residue and E5 residue split are disjoint after pure-dyadic precedence.",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "type_i_path_anchored_complete_excess_bundle_v1",
+      "current_blocker": "Arithmetic one-sided factor-pair gate is established, but common serializer, owner, target family, and parent-to-final E5 are not active.",
+      "missing_obligations": ["E2", "E3", "E5", "D5", "D7", "D8"]
+    },
+    {
+      "leaf_id": "R2_M3_Q5_FULL_CAPACITY_ONE_SIDED_P2",
+      "predicate": "R2, E is not pure-dyadic, W_y!=delta mod p, endpoint u=(y,K)|K, terminal-first miss, and L_omega=1+p^2 chi",
+      "mutually_exclusive_with": ["R1_M3_Q5_PATH_UNBOUND", "R2_M3_Q5_PURE_DYADIC", "R2_M3_Q5_FULL_CAPACITY_ONE_SIDED_STRICT", "R2_M3_Q5_SHORT_TWO_SIDED_STRICT", "R2_M3_Q5_SHORT_TWO_SIDED_P2"],
+      "coverage_proof": "Full-capacity branch plus the p^2 residual predicate; p^2 is a subset of mod-p stutter and is separated from strict E5.",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "type_i_policy_endpoint_one_sided_p2_pending_v1",
+      "current_blocker": "The source-bound divisor menu is nonempty in principle; EMPTY/TERMINAL/paid successor and E5 must be proved. A checkpoint cannot be queued standalone.",
+      "missing_obligations": ["E2", "E3", "E5", "D5", "D7", "D8"]
+    },
+    {
+      "leaf_id": "R2_M3_Q5_SHORT_TWO_SIDED_STRICT",
+      "predicate": "R2, E is not pure-dyadic, W_y=delta mod p, endpoint short Q_pf, both E_u,E_v>1, and L_omega not congruent to 1 mod p",
+      "mutually_exclusive_with": ["R1_M3_Q5_PATH_UNBOUND", "R2_M3_Q5_PURE_DYADIC", "R2_M3_Q5_FULL_CAPACITY_ONE_SIDED_STRICT", "R2_M3_Q5_FULL_CAPACITY_ONE_SIDED_P2", "R2_M3_Q5_SHORT_TWO_SIDED_P2"],
+      "coverage_proof": "Short policy and genuine two-sided maximality are explicit; complement of p^2 stutter gives strict E5 arithmetic.",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "type_i_path_anchored_atomic_split_complete_excess_v1",
+      "current_blocker": "Conditional atomic schema supplies arithmetic E1-E4 only after common validators accept; owner, family admission, and parent-to-final E5 are absent.",
+      "missing_obligations": ["E3", "E5", "D5", "D7", "D8"]
+    },
+    {
+      "leaf_id": "R2_M3_Q5_SHORT_TWO_SIDED_P2",
+      "predicate": "R2, E is not pure-dyadic, W_y=delta mod p, endpoint short Q_pf, both E_u,E_v>1, and E_u E_v=1+p^2 chi",
+      "mutually_exclusive_with": ["R1_M3_Q5_PATH_UNBOUND", "R2_M3_Q5_PURE_DYADIC", "R2_M3_Q5_FULL_CAPACITY_ONE_SIDED_STRICT", "R2_M3_Q5_FULL_CAPACITY_ONE_SIDED_P2", "R2_M3_Q5_SHORT_TWO_SIDED_STRICT"],
+      "coverage_proof": "Short policy, genuine two-sided maximality, and the exact L_omega p^2 gate are simultaneous predicates.",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "type_i_policy_endpoint_atomic_p2_pending_v1",
+      "current_blocker": "This is the genuine two-sided residual. Higher congruences do not close it; need EMPTY, TERMINAL, or a complete atomic macro with parent-to-final T5 ticket.",
+      "missing_obligations": ["E2", "E3", "E5", "D5", "D7", "D8"]
+    }
+  ],
+  "cross_cut_obligations": [
+    {
+      "id": "SECOND_CHILD_PARENT_TO_FINAL_E5",
+      "applies_to": "every nonterminal R2 leaf",
+      "required_result": "A single macro receipt compares the original persistent parent to the final target and proves strict T5 descent; internal checkpoints are nonpersistent.",
+      "status": "OPEN"
+    },
+    {
+      "id": "R2_E3_OWNER_REENTRY",
+      "applies_to": "every R2 target shape",
+      "required_result": "Common serializer recomputes canonical target, family predicates, owner/precedence, state identity, and recursive re-entry.",
+      "status": "OPEN"
+    }
+  ],
+  "status_summary": {
+    "family_empty_leaves": 0,
+    "terminal_leaves": 0,
+    "verified_successor_leaves": 0,
+    "open_leaves": 6,
+    "conditional_or_arithmetic_only": true
+  }
+}

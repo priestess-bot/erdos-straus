@@ -1,0 +1,116 @@
+{
+  "schema_id": "t6_wave1_interface_request_f3_m3_q5_p2_target_shapes_v1",
+  "schema_version": 1,
+  "track_id": "F3-M3-Q5-P2",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "request_status": "REQUESTED_NOT_REGISTERED",
+  "coordinator_action": "Review and freeze target shapes before any active serializer or grammar change. This file does not authorize admission or alter shared grammar.",
+  "global_constraints": [
+    "Never identify L1 with L_omega",
+    "No standalone admission for an internal checkpoint",
+    "All recursive targets require common F1 header, family owner, serializer, E1-E4, and T5 ticket",
+    "Terminal-first precedes every target producer",
+    "Higher p-adic congruence is evidence only until EMPTY/TERMINAL/PAID is proved",
+    "No new mark is proposed by this track"
+  ],
+  "target_shapes": [
+    {
+      "shape_id": "path_bound_source_receipt_v1",
+      "kind": "source_provenance_artifact",
+      "produces_recursive_state": false,
+      "source": "R1 actual persistent proper-root m=3,5|D_star with unbound raw path",
+      "target_schema": "source_id + canonical raw path digest + terminal_first_miss + priority_prefix_misses + q5 occurrence digest + source_scope",
+      "existing_family_match": "none; E1 support artifact only",
+      "new_family_required": false,
+      "atomic_arm_required": false,
+      "mark_behavior": "inherit source mark; no new mark",
+      "t5_ticket": "none; not a persistent successor",
+      "owner_precedence_request": "coordinator should bind this artifact to the eventual producer without making it a family"
+    },
+    {
+      "shape_id": "type_i_m3_q5_pure_dyadic_q2_forward_suffix_v1",
+      "kind": "macro_internal_raw_checkpoint",
+      "produces_recursive_state": false,
+      "source": "R2 first multiplier E=2^a, a>=v_2(p-1)+2",
+      "target_schema": "source-bound q=2 shift=1 primitive child + recomputed companion + complete-excess receipt",
+      "existing_family_match": "path-anchored complete-excess or atomic only after final recanonicalization",
+      "new_family_required": false,
+      "atomic_arm_required": "only if companion is genuinely two-sided",
+      "mark_behavior": "inherit source mark; no reset",
+      "t5_ticket": "parent-to-final only; selected-side p-2 is not sufficient",
+      "owner_precedence_request": "no standalone owner; checkpoint owner stays inside macro"
+    },
+    {
+      "shape_id": "type_i_path_anchored_complete_excess_bundle_v1",
+      "kind": "recursive_candidate_or_terminal",
+      "produces_recursive_state": true,
+      "source": "R2 full-capacity one-sided endpoint or a one-sided companion after second child",
+      "target_schema": "persistent_selector_state_v1 linear_absorbed_support_v1 pending_dispatch with canonical lcm support, source scope, path digest, owner tuple, and target normal-form receipt",
+      "existing_family_match": "type_i_low_support_persistent_overflow or type_i_high_support_sink only after predicates pass",
+      "new_family_required": false,
+      "atomic_arm_required": false,
+      "mark_behavior": "no new mark; Sol(p) identity lift",
+      "t5_ticket": "LOCAL_DROP on canonical local tuple or OUTER_RANK_DROP; must compare original parent to final target",
+      "owner_precedence_request": "declare target family and owner digest through common admission; no caller-supplied family"
+    },
+    {
+      "shape_id": "type_i_path_anchored_atomic_split_complete_excess_v1",
+      "kind": "recursive_hyperedge_candidate_or_terminal",
+      "produces_recursive_state": true,
+      "source": "R2 short Q_pf genuine two-sided endpoint with E_u,E_v>1 and p-free blocks",
+      "target_schema": "persistent_selector_state_v1 with atomic_arm, two colored maximal payloads, canonical physical occurrence digest, lcm support, owner tuple, scope, and pending_dispatch normalization",
+      "existing_family_match": "t2_v1_atomic_pending_target only if an existing arm is semantically valid; otherwise coordinator must review a new atomic arm",
+      "new_family_required": "conditional",
+      "atomic_arm_required": true,
+      "mark_behavior": "inherit source mark; no graph mark or support reset",
+      "t5_ticket": "LOCAL_DROP/PHASE_DROP/OUTER_RANK_DROP only on final target; L_omega p^2 checkpoint has no standalone ticket",
+      "owner_precedence_request": "coordinator must decide overlap with overflow families and freeze one owner precedence"
+    },
+    {
+      "shape_id": "type_i_policy_endpoint_one_sided_p2_pending_v1",
+      "kind": "nonpersistent_p2_checkpoint",
+      "produces_recursive_state": false,
+      "source": "R2 full-capacity one-sided with L_omega=1+p^2 chi",
+      "target_schema": "canonical endpoint receipt with E_u=1, v=(1+p^2 chi)d, c,m,w divisor menu, and mandatory next action",
+      "existing_family_match": "none until EMPTY/TERMINAL/paid macro is proven",
+      "new_family_required": false,
+      "atomic_arm_required": false,
+      "mark_behavior": "inherit source mark",
+      "t5_ticket": "none standalone; parent-to-final only",
+      "owner_precedence_request": "do not register as persistent family; keep as macro checkpoint"
+    },
+    {
+      "shape_id": "type_i_policy_endpoint_atomic_p2_pending_v1",
+      "kind": "nonpersistent_p2_atomic_checkpoint",
+      "produces_recursive_state": false,
+      "source": "R2 short Q_pf genuine two-sided with E_u E_v=1+p^2 chi",
+      "target_schema": "canonical endpoint receipt with E_u,E_v>1, cross-divisor gates, p^2 identity, two colored payloads, and mandatory continuation",
+      "existing_family_match": "none until EMPTY/TERMINAL/paid macro is proven",
+      "new_family_required": false,
+      "atomic_arm_required": true,
+      "mark_behavior": "inherit source mark; no reset",
+      "t5_ticket": "none standalone; parent-to-final only",
+      "owner_precedence_request": "coordinator must not admit this checkpoint directly"
+    },
+    {
+      "shape_id": "direct_terminal_leaf",
+      "kind": "terminal_certificate",
+      "produces_recursive_state": false,
+      "source": "any R1/R2 branch after terminal-first or final endpoint terminal check",
+      "target_schema": "terminal receipt with source path, terminal witness, priority digest, and solution lift",
+      "existing_family_match": "direct_terminal_leaf",
+      "new_family_required": false,
+      "atomic_arm_required": false,
+      "mark_behavior": "terminal; no successor",
+      "t5_ticket": "none",
+      "owner_precedence_request": "existing terminal precedence remains first"
+    }
+  ],
+  "requested_coordinator_decisions": [
+    "Whether the existing type_i_low_support_persistent_overflow schema can represent a one-sided final target without new fields",
+    "Whether t2_v1_atomic_pending_target can represent the genuine two-sided payload without changing semantics",
+    "Owner precedence between atomic pending, high-support sink, and low-support overflow",
+    "Mandatory normalize_target_state and pending_dispatch contract for all R2 targets",
+    "Whether source path artifacts are stored as evidence only or attached to a future producer receipt"
+  ]
+}
