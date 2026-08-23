@@ -39,7 +39,6 @@ class CarrierHeaderV1:
     terminal_first_hit: bool = False
     root_menu_hit: bool = False
     dstar_menu_hit: bool = False
-    tr1_target_admitted: bool = False
 
 
 def factorization(value: int) -> dict[int, int]:
@@ -125,8 +124,8 @@ def classify(header: CarrierHeaderV1) -> dict[str, object]:
         if header.route_code == R4
         else r6_root_carrier(header)
     )
-    transverse_carrier = least_prime(header.d_star)
-    if header.h % transverse_carrier == 0:
+    transverse_factor = least_prime(header.d_star)
+    if header.h % transverse_factor == 0:
         raise PartitionError("D_star carrier is not transverse")
     if header.root_menu_hit:
         if root_carrier is None:
@@ -139,21 +138,16 @@ def classify(header: CarrierHeaderV1) -> dict[str, object]:
     if header.dstar_menu_hit:
         return {
             "outcome": "DSTAR_MENU_TERMINAL",
-            "transverse_carrier": transverse_carrier,
+            "transverse_factor_candidate": transverse_factor,
             "recursive": False,
-        }
-    if header.tr1_target_admitted:
-        return {
-            "outcome": "TR1_PHYSICAL_SUCCESSOR",
-            "transverse_carrier": transverse_carrier,
-            "recursive": True,
-            "boundary": "fixture_only_requires_external_E1_E5_receipt",
         }
     return {
         "outcome": "OPEN_MINIMAL_RESIDUAL",
         "residual_code": R4_RESIDUAL if header.route_code == R4 else R6_RESIDUAL,
         "root_carrier": root_carrier,
-        "transverse_carrier": transverse_carrier,
+        "transverse_factor_candidate": transverse_factor,
+        "integer_raw_occurrence_bound": False,
+        "E1_status": "OPEN",
         "whole_d_star": header.d_star,
         "k_perp": 1,
         "recursive": False,
@@ -177,7 +171,7 @@ def verify_receipt() -> None:
         raise AssertionError("carrier theorem status changed")
     if receipt.get("physicalization_status") != "OPEN_MINIMAL_RESIDUALS":
         raise AssertionError("physicalization was silently closed")
-    if receipt.get("proved_empty") != ["NO_TRANSVERSE_ARITHMETIC_CARRIER"]:
+    if receipt.get("proved_empty") != ["NO_DSTAR_ARITHMETIC_FACTOR"]:
         raise AssertionError("empty-family boundary changed")
     boundaries = set(receipt.get("does_not_claim", []))
     for item in ("TR1PhysicalTransitionV1", "R4 closure", "R6 closure", "F3 closure"):
@@ -191,7 +185,8 @@ def verify() -> None:
     if not (
         r4["residual_code"] == R4_RESIDUAL
         and r4["root_carrier"] == 31
-        and r4["transverse_carrier"] == 13
+        and r4["transverse_factor_candidate"] == 13
+        and not r4["integer_raw_occurrence_bound"]
         and r4["k_perp"] == 1
         and not r4["recursive"]
     ):
@@ -203,7 +198,7 @@ def verify() -> None:
     if not (
         r6_one["residual_code"] == R6_RESIDUAL
         and r6_one["root_carrier"] == 7
-        and r6_one["transverse_carrier"] == 17
+        and r6_one["transverse_factor_candidate"] == 17
     ):
         raise AssertionError("R6 m=1 mod3 branch changed")
 
@@ -216,7 +211,7 @@ def verify() -> None:
     r6_k_three = classify(fixture(route_code=R6, h=3 * 7, m=6, k=3, d_star=11))
     if not (
         r6_k_three["root_carrier"] is None
-        and r6_k_three["transverse_carrier"] == 11
+        and r6_k_three["transverse_factor_candidate"] == 11
         and r6_k_three["residual_code"] == R6_RESIDUAL
     ):
         raise AssertionError("R6 k=3 transverse-only leaf changed")
@@ -242,7 +237,7 @@ def verify() -> None:
 
     print("verified R4/R6 h-supported and transverse carrier partition")
     print("fixtures are typed controls, not actual persistent receipt evidence")
-    print("TR1PhysicalTransitionV1 remains open")
+    print("D_star is an arithmetic factor candidate; integer E1 and TR1 remain open")
 
 
 def main() -> None:

@@ -30,13 +30,14 @@
       "D_star_value",
       "D_star_factorization_receipt",
       "selected_factor_or_divisor",
-      "selected_factor_occurrence_id",
+      "selected_factor_arithmetic_id",
+      "integer_raw_occurrence_receipt",
       "factor_selection_rule",
       "priority_prefix_digest"
     ],
     "deterministic_factor_rule": "evaluate written whole-divisor terminal predicates in fixed order; after all miss, select the least prime factor of verified D_star",
     "required_edge_fields": [
-      "E1_actual_occurrence_and_path",
+      "E1_integer_raw_occurrence_and_path",
       "E2_deterministic_target",
       "E3_target_schema_owner_and_digest",
       "E4_universal_solution_lift",
@@ -81,20 +82,20 @@
       "new_family_required": false,
       "atomic_arm_required": false,
       "mark_behavior": "preserve ROOT_SOL only if a universal identity lift is proved",
-      "T5_ticket_type": "LOCAL_DROP or PHASE_DROP, derived from the actual parent and final target",
+      "T5_ticket_type": "for R_T>p overflow, LOCAL_DROP only after an actual parent-to-final CHARGED rank comparison; otherwise reject or use a separately typed protocol theorem",
       "owner_precedence_request": "none; common classifier determines the owner from exact raw provenance and dedicated receipts, never from this proposal list",
       "admission_requirement": "target passes the frozen common extractor, owner classifier, producer target declaration and queue gate"
     },
     {
       "shape_id": "TR1_TYPEI_ABSORB_COMMIT_V1",
       "disposition": "PERSISTENT_CANDIDATE_UNTIL_PROVED",
-      "existing_family_match": "an existing low Type-I absorb owner selected from raw target facts by common admission",
-      "new_family_required": false,
+      "existing_family_match": "an existing marked-absorb owner only if R_T<p and the full ABSORB normal form is independently verified",
+      "new_family_required": "coordinator decision required if frozen grammar cannot represent the exact ABSORB protocol",
       "atomic_arm_required": false,
       "mark_behavior": "preserve ROOT_SOL only if a universal identity lift is proved",
-      "T5_ticket_type": "TYPEI protocol drop CHARGED to ABSORB when target support M is at most B_p",
+      "T5_ticket_type": "TYPEI protocol drop CHARGED to ABSORB only after R_T<p marked-absorb semantics, irreversible protocol commit, and all ABSORB fields/rank are verified; M<=B_p alone is insufficient",
       "owner_precedence_request": "coordinator must expose the existing ABSORB owner in the frozen common grammar if not already representable",
-      "admission_requirement": "target is a verified low Type-I chart, the protocol commit is irreversible, and common admission accepts its owner"
+      "admission_requirement": "target has R_T<p, a verified marked-absorb normal form, complete ABSORB protocol coordinates, an irreversible commit, and a common-admitted owner"
     },
     {
       "shape_id": "TR1_SMALLER_MARKED_TARGET_V1",
@@ -113,7 +114,7 @@
   "grammar_change_requested": false,
   "activation_gates": [
     "symbolic exhaustive partition with no explicit residual",
-    "actual occurrence and priority proof",
+    "integer raw occurrence/E1 and priority proof",
     "deterministic target theorem",
     "full E1-E5 proof",
     "common F1 admission and re-entry",

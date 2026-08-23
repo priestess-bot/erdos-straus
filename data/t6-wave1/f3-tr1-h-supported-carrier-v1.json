@@ -21,17 +21,17 @@
     "R4": {
       "definition": "least prime q dividing kappa=k/3 with q congruent to 7 modulo 12",
       "existence": "kappa congruent to 7 modulo 24 and kappa at least 31",
-      "provenance": "k_perp=1 implies q divides h; q is not 3, hence q divides u"
+      "provenance": "k_perp=1 implies q divides h; q is not 3, hence q divides u and is eligible for the complete composite root-capacity menu; this is not raw E1"
     },
     "R6_m_mod_3_equals_1": {
       "definition": "least prime q dividing k",
       "existence": "k>1 and 3 does not divide k",
-      "provenance": "k_perp=1 implies q divides u"
+      "provenance": "k_perp=1 implies q divides u and menu eligibility, not raw E1"
     },
     "R6_m_mod_3_equals_0_k_gt_3": {
       "definition": "least prime q dividing k/3",
       "existence": "v_3(k)=1 and k/3>1",
-      "provenance": "k_perp=1 implies q divides u"
+      "provenance": "k_perp=1 implies q divides u and menu eligibility, not raw E1"
     },
     "R6_k_equals_3": {
       "definition": null,
@@ -41,7 +41,7 @@
     "transverse": {
       "definition": "least prime factor of verified D_star, with whole D_star retained",
       "existence": "D_star>1",
-      "provenance": "D_star divides actual maximal-receipt D",
+      "provenance": "D_star divides actual maximal-receipt D, yielding a source-bound arithmetic factor but not a consumable integer raw occurrence",
       "separation": "gcd(D_star,h)=1"
     }
   },
@@ -76,11 +76,12 @@
     }
   ],
   "proved_empty": [
-    "NO_TRANSVERSE_ARITHMETIC_CARRIER"
+    "NO_DSTAR_ARITHMETIC_FACTOR"
   ],
   "does_not_claim": [
     "root-supported menu totality",
     "D_star terminal-menu totality",
+    "TR1 integer raw occurrence/E1",
     "TR1PhysicalTransitionV1",
     "R4 closure",
     "R6 closure",

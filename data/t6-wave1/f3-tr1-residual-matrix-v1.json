@@ -34,7 +34,7 @@
     },
     {
       "leaf_id": "L1_H_SUPPORTED_MENU_TERMINAL",
-      "predicate": "terminal-first MISS and the deterministic least genuinely source-admissible prime q dividing gcd(h,k), q != 3, has a nonempty root-capacity terminal menu",
+      "predicate": "terminal-first MISS and the first nonempty composite root-capacity menu in the deterministic increasing list of all 1<Q|u",
       "mutually_exclusive_with": [
         "L0_TERMINAL_PRIORITY_HIT",
         "L2_H_SUPPORTED_PAID_SUCCESSOR",
@@ -43,10 +43,10 @@
         "L5_FAMILY_EMPTY",
         "L6_EXPLICIT_RESIDUAL"
       ],
-      "coverage_proof": "fixed least-q tie-break after source-occurrence and menu predicates are replayed",
+      "coverage_proof": "q_h proves actual-domain menu eligibility; terminal coverage enumerates every composite divisor Q of u and then every exact finite menu in canonical order",
       "planned_closure": "TERMINAL",
       "target_shape": "existing direct_terminal_leaf with explicit Type I certificate",
-      "current_blocker": "prove the selected q is bound to an actual admissible root-capacity occurrence for every claimed input"
+      "current_blocker": "none for exact menu evaluation; menu eligibility is not a raw occurrence or successor proof"
     },
     {
       "leaf_id": "L2_H_SUPPORTED_PAID_SUCCESSOR",
@@ -82,7 +82,7 @@
     },
     {
       "leaf_id": "L4_DSTAR_TR1_PAID_SUCCESSOR",
-      "predicate": "L0-L3 miss, D_star > 1, the canonical transverse factor occurrence is replayable, and TR1PhysicalTransitionV1 passes E1-E5 and common admission",
+      "predicate": "L0-L3 miss, D_star > 1, an independent theorem binds its canonical arithmetic factor to a consumable integer raw occurrence, and TR1PhysicalTransitionV1 passes E1-E5 and common admission",
       "mutually_exclusive_with": [
         "L0_TERMINAL_PRIORITY_HIT",
         "L1_H_SUPPORTED_MENU_TERMINAL",
@@ -91,10 +91,10 @@
         "L5_FAMILY_EMPTY",
         "L6_EXPLICIT_RESIDUAL"
       ],
-      "coverage_proof": "D_star > 1 supplies a deterministic least prime factor, but physicalization is a separate theorem obligation",
+      "coverage_proof": "D_star > 1 supplies a deterministic source-bound arithmetic factor only; integer occurrence and physicalization are separate theorem obligations",
       "planned_closure": "VERIFIED_SUCCESSOR",
       "target_shape": "TR1PhysicalTransitionV1 terminal-or-paid envelope",
-      "current_blocker": "derive a deterministic target, universal lift, authoritative parent-to-final T5 ticket and F1 re-entry"
+      "current_blocker": "derive an integer raw occurrence/E1 bridge, deterministic target, universal lift, authoritative parent-to-final T5 ticket and F1 re-entry"
     },
     {
       "leaf_id": "L5_FAMILY_EMPTY",
@@ -126,7 +126,7 @@
       "coverage_proof": "complement of the preceding ordered leaves",
       "planned_closure": "MUST_DISAPPEAR",
       "target_shape": null,
-      "current_blocker": "the no-transverse h-supported residual has not yet been proved empty, terminal or paid"
+      "current_blocker": "the D_star arithmetic factor has not been converted into an integer E1 occurrence, terminal or paid successor"
     }
   ],
   "acceptance": {
