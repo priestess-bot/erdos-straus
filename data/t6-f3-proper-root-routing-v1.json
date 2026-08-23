@@ -1,0 +1,204 @@
+{
+  "schema_id": "t6_f3_proper_root_routing_v1",
+  "version": 1,
+  "baseline": "c851bd213936b3bc8b3103b469292c139d229e97",
+  "date": "2026-08-23",
+  "theorem_status": "ESTABLISHED_DOMAIN_PARTITION",
+  "physicalization_status": "OPEN_MINIMAL_GAPS",
+  "f3_status": "OPEN",
+  "t6_status": "OPEN",
+  "domain": {
+    "source_class": "ACTUAL_PERSISTENT",
+    "required_receipt_fields": [
+      "state_id",
+      "producer_id",
+      "admission_id",
+      "source_path_digest",
+      "terminal_first_digest",
+      "maximal_receipt_digest"
+    ],
+    "arithmetic_guards": [
+      "p is prime and p congruent to 1 modulo 24",
+      "h=3u with 0<u<M0 and u dividing M0=(p^2+p+1)/3",
+      "actual active root-capacity endpoint receipt holds",
+      "terminal-first is replayed before height or carrier routing"
+    ],
+    "low_height_only_guards": [
+      "2<=h<p (LOW_PROPER_HEIGHT)",
+      "actual maximal complete-excess stutter equations hold",
+      "m>=3, D_star>1, k>=1"
+    ],
+    "excluded_source_classes": [
+      "CONDITIONAL_ADAPTER_CONTROL",
+      "ANALYSIS_ONLY",
+      "DEBUG_WORKFILE",
+      "ARITHMETIC_RECEIPT_NOT_PERSISTENT"
+    ]
+  },
+  "proper_semantics": {
+    "PROPER_FACTOR_ROOT": "0<u<M0, u divides M0, h=3u; this is the total F3 routing domain and does not imply h<p",
+    "LOW_PROPER_HEIGHT": "2<=h<p; only this subdomain may use the current Eisenstein quotient, k=1 exclusion and D_star theorems",
+    "HIGH_ENDPOINT": "u<M0 and h>p; retained in the total domain as an open residual",
+    "height_equality": "h=p is impossible because 3 divides h while p is congruent to 1 modulo 3",
+    "implication": "LOW_PROPER_HEIGHT plus h|p^2+p+1 and h=3u implies PROPER_FACTOR_ROOT, not conversely",
+    "arithmetic_control_not_actual": "(p,r,h)=(313,90,543), M0=32761=181^2, gcd(2r+1,M0)=u=181; distinguishes HIGH from LOW but is not an ACTUAL_PERSISTENT witness"
+  },
+  "route_precedence": [
+    "DOMAIN_GATE",
+    "TERMINAL_FIRST",
+    "HEIGHT_SPLIT",
+    "HIGH_ENDPOINT_RESIDUAL",
+    "K_ONE_EMPTY_THEOREM",
+    "ACTIVE_QC1_SERIALIZER",
+    "ACTIVE_TR1_SERIALIZER",
+    "EXPLICIT_RESIDUAL"
+  ],
+  "physical_route_contract": {
+    "scope": "LOW_PROPER_HEIGHT only in v1",
+    "QC1": "q divides k and one active serializer supplies E1, E2, E3, E4 and E5 for the same low-height state",
+    "TR1": "q divides D_star and one active serializer supplies E1, E2, E3, E4 and E5 for the same low-height state",
+    "arithmetic_factor_is_not_an_edge": true
+  },
+  "active_physical_serializers": {
+    "QC1": [],
+    "TR1": []
+  },
+  "covered_slices": [
+    {
+      "id": "TERMINAL_FIRST_HIT",
+      "status": "TERMINAL",
+      "scope": "an active root-terminal verifier succeeds before carrier routing"
+    },
+    {
+      "id": "K_ONE_ACTUAL_EMPTY",
+      "status": "ESTABLISHED_EMPTY",
+      "scope": "actual terminal-first-surviving LOW_PROPER_HEIGHT stutter with k=1",
+      "claim": "type-I-root-capacity-stutter-k-one-universal-exclusion"
+    }
+  ],
+  "arithmetic_only_slice_tags": [
+    {
+      "id": "K_EQUALS_3_PRIMITIVE_FIBERS",
+      "domain": "LOW_PROPER_HEIGHT",
+      "status": "ESTABLISHED_ARITHMETIC_ONLY",
+      "not_a_covered_exit": true
+    },
+    {
+      "id": "M_EQUALS_3_BIQUADRATIC_NORM",
+      "domain": "LOW_PROPER_HEIGHT",
+      "status": "ESTABLISHED_ARITHMETIC_ONLY",
+      "not_a_covered_exit": true
+    },
+    {
+      "id": "M3_Q5_RAW_POLICY_AND_P2_GATE",
+      "domain": "LOW_PROPER_HEIGHT",
+      "predicate": "m=3 and 5 divides D_star",
+      "status": "ESTABLISHED_ARITHMETIC_ONLY",
+      "routes_only_to": [
+        "R1_M3_Q5_PATH_UNBOUND",
+        "R2_M3_Q5_PATH_BOUND_NO_SERIALIZER"
+      ],
+      "active_serializer": null,
+      "p2_gate_status": "OPEN"
+    }
+  ],
+  "residual_definition": {
+    "total_guard": "ACTUAL_PERSISTENT, PROPER_FACTOR_ROOT, terminal-first miss, no active physical serializer",
+    "height_partition": "HIGH_ENDPOINT h>p, or LOW_PROPER_HEIGHT 2<=h<p; h=p is impossible",
+    "low_guard": "LOW_PROPER_HEIGHT, k>1, D_star>1",
+    "quotient_only_part": "k_perp=product over q|k and q not dividing h of q^v_q(k)"
+  },
+  "residual_families": [
+    {
+      "id": "HIGH_ENDPOINT_RESIDUAL",
+      "predicate": "PROPER_FACTOR_ROOT and h>p after terminal-first miss",
+      "principal_open_route": "HIGH_ENDPOINT_FAMILY_EMPTY_TERMINAL_OR_PAID_SUCCESSOR",
+      "active_serializer": null,
+      "forbidden_low_height_inferences": [
+        "N=h*k and k>=1",
+        "k=1 actual empty",
+        "D_star>1",
+        "QC1/TR1 quotient routing"
+      ],
+      "status": "OPEN_MINIMAL_GAP"
+    },
+    {
+      "id": "R1_M3_Q5_PATH_UNBOUND",
+      "predicate": "m=3 and 5|D_star and raw_path_bound=false",
+      "principal_open_route": "TR1_M3_Q5_SOURCE_PATH_COVERAGE",
+      "status": "OPEN_MINIMAL_GAP"
+    },
+    {
+      "id": "R2_M3_Q5_PATH_BOUND_NO_SERIALIZER",
+      "predicate": "m=3 and 5|D_star and raw_path_bound=true",
+      "principal_open_route": "TR1_M3_Q5_TARGET_SERIALIZER_AND_P2_GATE",
+      "status": "OPEN_MINIMAL_GAP"
+    },
+    {
+      "id": "R3_M3_NONQ5_QUOTIENT_ONLY",
+      "predicate": "m=3 and 5 does not divide D_star and k_perp>1",
+      "principal_open_route": "QC1_QUOTIENT_ONLY_PHYSICALIZATION",
+      "status": "OPEN_MINIMAL_GAP"
+    },
+    {
+      "id": "R4_M3_NONQ5_H_SUPPORTED",
+      "predicate": "m=3 and 5 does not divide D_star and k_perp=1",
+      "principal_open_route": "QC1_H_SUPPORTED_OR_TR1_TRANSVERSE",
+      "status": "OPEN_MINIMAL_GAP"
+    },
+    {
+      "id": "R5_MGT3_QUOTIENT_ONLY",
+      "predicate": "m>3 and k_perp>1",
+      "principal_open_route": "QC1_QUOTIENT_ONLY_PHYSICALIZATION",
+      "status": "OPEN_MINIMAL_GAP"
+    },
+    {
+      "id": "R6_MGT3_H_SUPPORTED",
+      "predicate": "m>3 and k_perp=1",
+      "principal_open_route": "QC1_H_SUPPORTED_OR_TR1_TRANSVERSE",
+      "status": "OPEN_MINIMAL_GAP"
+    }
+  ],
+  "open_minimal_gaps": [
+    {
+      "id": "OPEN_HIGH_ENDPOINT_TOTAL_EXIT",
+      "required_result": "prove every ACTUAL_PERSISTENT PROPER_FACTOR_ROOT state with h>p is family-empty, terminal, or has a paid successor without importing low-height k/D_star claims"
+    },
+    {
+      "id": "OPEN_QC1_PHYSICAL_SERIALIZER",
+      "required_result": "an active deterministic E1-E5 serializer on a quantified QC1 family"
+    },
+    {
+      "id": "OPEN_TR1_PHYSICAL_SERIALIZER",
+      "required_result": "an active deterministic E1-E5 serializer on a quantified TR1 family"
+    },
+    {
+      "id": "OPEN_M3_Q5_SOURCE_PATH_COVERAGE",
+      "required_result": "bind the raw policy to every state claimed by its quantified family"
+    },
+    {
+      "id": "OPEN_M3_Q5_TARGET_AND_SECOND_CHILD",
+      "required_result": "complete target typing, atomic/second-child canonicalization, universal lift and E5"
+    },
+    {
+      "id": "OPEN_M3_Q5_P2_GATE",
+      "required_result": "prove L_omega congruent to 1 modulo p^2 is empty, terminal, or a paid successor"
+    },
+    {
+      "id": "OPEN_F1_GRAMMAR_REENTRY",
+      "required_result": "after grammar freeze, prove every selected target has an active owner and recursive re-entry"
+    }
+  ],
+  "does_not_claim": [
+    "F3 closure",
+    "QC1 closure",
+    "TR1 closure",
+    "the h>p proper-factor domain is empty or already covered",
+    "low-height Eisenstein quotient or D_star theorems apply when h>p",
+    "m=3 q=5 is the whole proper-root domain",
+    "an arithmetic carrier is an actual source occurrence",
+    "an active serializer exists",
+    "F1, F2, F4, F5 or T6 closure",
+    "the Erdos-Straus conjecture"
+  ]
+}

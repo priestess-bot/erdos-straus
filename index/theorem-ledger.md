@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 31 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 887 |
+| 数学状态 | `established` | 889 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 40 |
-| 证明来源 | `repository_derivation` | 717 |
+| 证明来源 | `repository_derivation` | 719 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 20 |
-| 审阅状态 | `internal_review` | 865 |
+| 审阅状态 | `internal_review` | 867 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -888,6 +888,8 @@
 | [T5 完整状态合同层全局良基性](../claims/type-I-t5-full-contract-level-global-well-foundedness.md) (`type-I-t5-full-contract-level-global-well-foundedness`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [T5 对当前状态合同 persistent transition surface 的穷尽分类](../claims/type-I-t5-full-transition-surface-exhaustion.md) (`type-I-t5-full-transition-surface-exhaustion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [T6 当前具名边闭包的 ordinary-mark 不变量与 atomic surface 审计](../claims/type-I-t6-current-named-reachability-t2-t3-coverage-audit.md) (`type-I-t6-current-named-reachability-t2-t3-coverage-audit`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-18 |
+| [T6-F3 p-free policy 终点的 p² divisor-source 正规形](../claims/type-I-t6-f3-policy-endpoint-p2-divisor-source-normal-form.md) (`type-I-t6-f3-policy-endpoint-p2-divisor-source-normal-form`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-23 |
+| [T6-F3 proper-root 的确定域路由与显式 residual 穷尽](../claims/type-I-t6-f3-proper-root-routing-with-explicit-residuals.md) (`type-I-t6-f3-proper-root-routing-with-explicit-residuals`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-23 |
 | [五亿普通双尾遗漏的 B=1 偶源桥边界](../claims/type-I-tail-reverse-b1-even-source-boundary-500m.md) (`type-I-tail-reverse-b1-even-source-boundary-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿普通双尾遗漏的偶源 B=8 精确低溢出边界](../claims/type-I-tail-reverse-even-small-b-boundary-500m.md) (`type-I-tail-reverse-even-small-b-boundary-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿普通尾遗漏的偶源反向二尾闭合](../claims/type-I-tail-reverse-even-source-closure-500m.md) (`type-I-tail-reverse-even-source-closure-500m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
