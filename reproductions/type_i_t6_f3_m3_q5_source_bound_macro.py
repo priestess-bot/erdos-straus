@@ -259,7 +259,7 @@ def verify_manifest() -> dict[str, object]:
     payload = json.loads(RECEIPT_PATH.read_text(encoding="utf-8"))
     if not (
         payload["status"] == "PARTIAL_MATHEMATICAL_CLOSURE_INTEGRATION_AND_P2_OPEN"
-        and len(payload["open_mathematical_leaves"]) == 6
+        and len(payload["open_mathematical_leaves"]) == 4
         and "R2=CLOSED" in payload["forbidden_conclusions"]
         and "L1=L_omega" in payload["forbidden_conclusions"]
     ):
