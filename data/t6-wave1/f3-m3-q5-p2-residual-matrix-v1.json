@@ -7,104 +7,147 @@
   "partition_order": [
     "R1_M3_Q5_PATH_UNBOUND",
     "R2_M3_Q5_NONMINIMAL_ROOT_RESIDUE",
-    "R2_M3_Q5_PURE_DYADIC",
-    "R2_M3_Q5_FULL_CAPACITY_ONE_SIDED_STRICT",
-    "R2_M3_Q5_FULL_CAPACITY_ONE_SIDED_P2",
-    "R2_M3_Q5_SHORT_TWO_SIDED_STRICT",
-    "R2_M3_Q5_SHORT_TWO_SIDED_P2"
+    "R2_M3_Q5_TERMINAL",
+    "R2_M3_Q5_DYADIC_ENDPOINT_STRICT",
+    "R2_M3_Q5_FULL_CAPACITY_ENDPOINT_STRICT",
+    "R2_M3_Q5_SHORT_ENDPOINT_STRICT",
+    "R2_M3_Q5_P_STUTTER_RAW_SOURCE",
+    "R2_M3_Q5_P_STUTTER_REGENERATION",
+    "R2_M3_Q5_P_STUTTER_RESIDUAL_STRICT",
+    "R2_M3_Q5_P2_ONE_SIDED",
+    "R2_M3_Q5_P2_TWO_SIDED"
   ],
-  "partition_contract": "R1 is selected first by raw_path_bound=false. Within R2, the q=5 valuation split comes next: v_5(T)>=2 (equivalently the oriented root residue varrho=11 mod 25) is the nonminimal leaf; only v_5(D_star)=v_5(T)=1 and 5 not dividing E enters the minimal leaf. Within the minimal leaf, pure-dyadic is selected first when E is a power of two; otherwise policy residue W_y!=delta selects full-capacity, and W_y=delta selects short Q_pf. Each two-sided/one-sided branch is then split by L_omega mod p versus L_omega=1 mod p^2. These predicates are mutually exclusive and cover the declared R2 arithmetic surface; second-child E5 is an obligation attached to every nonterminal R2 row, not a hidden family.",
+  "partition_contract": "R1 is selected first by missing bound path payload. Within R2, v_5(T)>=2 is the nonminimal leaf; its complement is the minimal leaf v_5(D_star)=v_5(T)=1, 5 not dividing E. The minimal leaf uses one deterministic raw policy kind: DYADIC_Q2 when E is a power of two, ODD_FULL when W_y!=delta, and ODD_SHORT when W_y=delta. Every exposed prefix and final endpoint first returns TERMINAL on the scheduler's first hit. A nonterminal recanonicalized endpoint has L_omega. If L_omega is not 1 mod p it is a strict leaf. Otherwise write L_omega=1+p*theta and split theta mod p into -1, 0, 1, or OTHER. The zero class is exactly L_omega=1 mod p^2 and is finally split by one-sided versus genuine two-sided maximal blocks. These predicates are mutually exclusive and exhaustive; L1 is never substituted for L_omega.",
   "leaves": [
     {
       "leaf_id": "R1_M3_Q5_PATH_UNBOUND",
-      "predicate": "actual persistent low proper-root, m=3, 5|D_star, terminal-first miss, raw_path_bound=false",
+      "predicate": "actual persistent low proper-root, m=3, 5|D_star, terminal-first miss, canonical path payload not yet attached",
       "mutually_exclusive_with": ["all R2 leaves"],
-      "coverage_proof": "The source-bound macro theorem constructs the universal p-source and two canonical capacity words from every full actual-persistent parent; Boolean raw_path_bound is not used as proof.",
       "planned_closure": "VERIFIED_SUCCESSOR",
       "target_shape": "path_bound_source_receipt_v1",
-      "current_blocker": "The common header exposes only opaque digests and no transcript/scope/prefix payload. Coordinator must attach the established mathematical transcript to an active producer receipt.",
+      "coverage_proof": "The source-bound macro theorem constructs the universal p-source and two capacity words from every full actual-persistent parent.",
+      "current_blocker": "Coordinator must attach transcript, scope and prefix payload to an active producer receipt; a Boolean is not proof.",
       "missing_obligations": ["E1_RUNTIME_INTEGRATION", "D5", "D8"]
     },
     {
       "leaf_id": "R2_M3_Q5_NONMINIMAL_ROOT_RESIDUE",
-      "predicate": "R2 and v_5(T)>=2, equivalently root parameter varrho=11 mod 25; this includes every higher D_star layer and every complete-excess 5 branch identified by the existing valuation theorem",
+      "predicate": "R2 and v_5(T)>=2, equivalently root parameter varrho=11 mod 25",
       "mutually_exclusive_with": ["R1_M3_Q5_PATH_UNBOUND", "all minimal-q5 R2 leaves"],
-      "coverage_proof": "Existing q=5 valuation classification proves the exact split: the only complementary minimal leaf has v_5(D_star)=v_5(T)=1, 5 not dividing E, and v_5(R-h)=2.",
       "planned_closure": "VERIFIED_SUCCESSOR",
       "target_shape": "type_i_m3_q5_nonminimal_root_residue_pending_v1",
-      "current_blocker": "The root residue varrho=11 mod 25 is only an arithmetic orientation. No terminal, actual serializer, universal lift, or T5 ticket is established for the whole leaf.",
+      "coverage_proof": "The q=5 valuation theorem proves the complementary minimal leaf has v_5(D_star)=v_5(T)=1, 5 not dividing E, and v_5(R-h)=2.",
+      "current_blocker": "Arithmetic orientation only; no universal terminal or paid target.",
       "missing_obligations": ["E1", "E2", "E3", "E4", "E5", "D3", "D5", "D6", "D7", "D8"]
     },
     {
-      "leaf_id": "R2_M3_Q5_PURE_DYADIC",
-      "predicate": "R2 minimal-q5 leaf and first complete-excess multiplier E=2^a with a>=v_2(p-1)+2",
-      "mutually_exclusive_with": ["R1_M3_Q5_PATH_UNBOUND", "R2_M3_Q5_NONMINIMAL_ROOT_RESIDUE", "R2_M3_Q5_FULL_CAPACITY_ONE_SIDED_STRICT", "R2_M3_Q5_FULL_CAPACITY_ONE_SIDED_P2", "R2_M3_Q5_SHORT_TWO_SIDED_STRICT", "R2_M3_Q5_SHORT_TWO_SIDED_P2"],
-      "coverage_proof": "The pure-dyadic/odd-prime split is a disjoint factorization of the first multiplier after R2 path binding.",
-      "planned_closure": "VERIFIED_SUCCESSOR",
-      "target_shape": "type_i_m3_q5_pure_dyadic_q2_forward_suffix_v1",
-      "current_blocker": "The q=2 selected-side cofactor drops, but the companion must be recanonicalized and admitted with E1-E4 plus parent-to-final E5.",
-      "missing_obligations": ["E2", "E3", "E5", "D7", "D8"]
+      "leaf_id": "R2_M3_Q5_TERMINAL",
+      "predicate": "R2 minimal leaf and the common terminal scheduler hits at a policy prefix or the final endpoint has Q_u=Q_v=1",
+      "mutually_exclusive_with": ["all nonterminal R2 leaves"],
+      "planned_closure": "TERMINAL",
+      "target_shape": "direct_terminal_leaf",
+      "coverage_proof": "Terminal-first is evaluated before every continuation; Q_u=Q_v=1 implies uv|K and gives bottom Type I.",
+      "current_blocker": "Common scheduler integration is required for active runtime, but the mathematical leaf is terminal.",
+      "missing_obligations": ["TERMINAL_RUNTIME_INTEGRATION"]
     },
     {
-      "leaf_id": "R2_M3_Q5_FULL_CAPACITY_ONE_SIDED_STRICT",
-      "predicate": "R2 minimal-q5 leaf, E is not pure-dyadic, W_y!=delta mod p, endpoint u=(y,K)|K, terminal-first miss, and L_omega not congruent to 1 mod p",
-      "mutually_exclusive_with": ["R1_M3_Q5_PATH_UNBOUND", "R2_M3_Q5_NONMINIMAL_ROOT_RESIDUE", "R2_M3_Q5_PURE_DYADIC", "R2_M3_Q5_FULL_CAPACITY_ONE_SIDED_P2", "R2_M3_Q5_SHORT_TWO_SIDED_STRICT", "R2_M3_Q5_SHORT_TWO_SIDED_P2"],
-      "coverage_proof": "Policy residue and E5 residue split are disjoint after pure-dyadic precedence.",
+      "leaf_id": "R2_M3_Q5_DYADIC_ENDPOINT_STRICT",
+      "predicate": "R2 minimal leaf, E=2^a, deterministic q=2 child is nonterminal, and its recanonicalized L_omega is not 1 mod p",
+      "mutually_exclusive_with": ["all other partition leaves"],
       "planned_closure": "VERIFIED_SUCCESSOR",
-      "target_shape": "type_i_path_anchored_complete_excess_bundle_v1 -> type_i_policy_endpoint_absorb_v1 (M<=B_p) or type_i_policy_endpoint_charged_overflow_v1 (M>B_p)",
-      "current_blocker": "Source/path E1, deterministic E2, identity E4 and parent-to-final E5 are established. Common producer, synchronous normalizer, ABSORB/overflow owner and queue admission remain inactive.",
+      "target_shape": "type_i_m3_q5_pure_dyadic_q2_forward_suffix_v1 -> one-/two-sided occurrence -> CHARGED overflow",
+      "coverage_proof": "The q=2 child is actual, primitive and p-free; common endpoint normalization is deterministic.",
+      "current_blocker": "E1/E2/E4/E5 are established; common E3 owner/producer/re-entry remains.",
       "missing_obligations": ["E3", "D5", "D8"]
     },
     {
-      "leaf_id": "R2_M3_Q5_FULL_CAPACITY_ONE_SIDED_P2",
-      "predicate": "R2 minimal-q5 leaf, E is not pure-dyadic, W_y!=delta mod p, endpoint u=(y,K)|K, terminal-first miss, and L_omega=1+p^2 chi",
-      "mutually_exclusive_with": ["R1_M3_Q5_PATH_UNBOUND", "R2_M3_Q5_NONMINIMAL_ROOT_RESIDUE", "R2_M3_Q5_PURE_DYADIC", "R2_M3_Q5_FULL_CAPACITY_ONE_SIDED_STRICT", "R2_M3_Q5_SHORT_TWO_SIDED_STRICT", "R2_M3_Q5_SHORT_TWO_SIDED_P2"],
-      "coverage_proof": "Full-capacity branch plus the p^2 residual predicate; p^2 is a subset of mod-p stutter and is separated from strict E5.",
+      "leaf_id": "R2_M3_Q5_FULL_CAPACITY_ENDPOINT_STRICT",
+      "predicate": "R2 minimal leaf, E is not pure-dyadic, W_y!=delta, full-capacity endpoint is nonterminal, and L_omega is not 1 mod p",
+      "mutually_exclusive_with": ["all other partition leaves"],
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "type_i_path_anchored_complete_excess_bundle_v1 -> CHARGED overflow",
+      "coverage_proof": "Full-capacity word is deterministic and its nonterminal endpoint is one-sided.",
+      "current_blocker": "E1/E2/E4/E5 are established; common E3 owner/producer/re-entry remains.",
+      "missing_obligations": ["E3", "D5", "D8"]
+    },
+    {
+      "leaf_id": "R2_M3_Q5_SHORT_ENDPOINT_STRICT",
+      "predicate": "R2 minimal leaf, E is not pure-dyadic, W_y=delta, short Q_pf endpoint is nonterminal, and L_omega is not 1 mod p",
+      "mutually_exclusive_with": ["all other partition leaves"],
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "one-sided complete-excess or two-sided atomic occurrence -> CHARGED overflow",
+      "coverage_proof": "Safe-prime or two-bad-occurrence tie-break is deterministic; endpoint blocks are recomputed rather than inherited.",
+      "current_blocker": "E1/E2/E4/E5 are established; common E3 owner/producer/re-entry remains.",
+      "missing_obligations": ["E3", "D5", "D8"]
+    },
+    {
+      "leaf_id": "R2_M3_Q5_P_STUTTER_RAW_SOURCE",
+      "predicate": "R2 minimal nonterminal endpoint, L_omega=1+p*theta, and theta=-1 mod p",
+      "mutually_exclusive_with": ["all other partition leaves"],
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "type_i_policy_endpoint_raw_p_source_relay_pending_v1",
+      "coverage_proof": "Exact d=1 arithmetic dispatch; disjoint from theta=0,1,OTHER.",
+      "current_blocker": "Alternate source has arithmetic capacity 1, but continuous source/path, E3 owner and final macro ticket are not active.",
+      "missing_obligations": ["E1_SUFFIX", "E3", "E5", "D5", "D7", "D8"]
+    },
+    {
+      "leaf_id": "R2_M3_Q5_P_STUTTER_REGENERATION",
+      "predicate": "R2 minimal nonterminal endpoint, L_omega=1+p*theta, and theta=1 mod p",
+      "mutually_exclusive_with": ["all other partition leaves"],
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "type_i_policy_endpoint_regeneration_pending_v1",
+      "coverage_proof": "Exact d=1 arithmetic dispatch; finite valuation countdown until a non-regeneration digit.",
+      "current_blocker": "The countdown can end in p-free failure; continuous E1, owner/re-entry and final E5 are not universally closed.",
+      "missing_obligations": ["E1_SUFFIX", "E3", "E5", "D5", "D7", "D8"]
+    },
+    {
+      "leaf_id": "R2_M3_Q5_P_STUTTER_RESIDUAL_STRICT",
+      "predicate": "R2 minimal nonterminal endpoint, L_omega=1+p*theta, and theta mod p is not -1,0,1",
+      "mutually_exclusive_with": ["all other partition leaves"],
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "type_i_policy_endpoint_residual_capacity_pending_v1",
+      "coverage_proof": "Exact d=1 arithmetic dispatch gives a strict residual-capacity arithmetic target.",
+      "current_blocker": "Continuous suffix E1, synchronous target owner and parent-to-final E5 receipt are not active.",
+      "missing_obligations": ["E1_SUFFIX", "E3", "E5", "D5", "D7", "D8"]
+    },
+    {
+      "leaf_id": "R2_M3_Q5_P2_ONE_SIDED",
+      "predicate": "R2 minimal nonterminal endpoint, L_omega=1+p^2*chi, and exactly one of E_u,E_v is 1",
+      "mutually_exclusive_with": ["all other partition leaves"],
       "planned_closure": "VERIFIED_SUCCESSOR",
       "target_shape": "type_i_policy_endpoint_one_sided_p2_pending_v1",
-      "current_blocker": "The source-bound divisor menu is nonempty in principle; EMPTY/TERMINAL/paid successor and E5 must be proved. A checkpoint cannot be queued standalone.",
-      "missing_obligations": ["E2", "E3", "E5", "D5", "D7", "D8"]
+      "coverage_proof": "The exact endpoint normal form and factor-pair divisor gates apply independently of DYADIC/FULL/SHORT origin.",
+      "current_blocker": "Need EMPTY, TERMINAL or a final strict paid macro; checkpoint has no standalone ticket.",
+      "missing_obligations": ["E2_FINAL", "E3", "E5", "D5", "D7", "D8"]
     },
     {
-      "leaf_id": "R2_M3_Q5_SHORT_TWO_SIDED_STRICT",
-      "predicate": "R2 minimal-q5 leaf, E is not pure-dyadic, W_y=delta mod p, endpoint short Q_pf, both E_u,E_v>1, and L_omega not congruent to 1 mod p",
-      "mutually_exclusive_with": ["R1_M3_Q5_PATH_UNBOUND", "R2_M3_Q5_NONMINIMAL_ROOT_RESIDUE", "R2_M3_Q5_PURE_DYADIC", "R2_M3_Q5_FULL_CAPACITY_ONE_SIDED_STRICT", "R2_M3_Q5_FULL_CAPACITY_ONE_SIDED_P2", "R2_M3_Q5_SHORT_TWO_SIDED_P2"],
-      "coverage_proof": "Short policy and genuine two-sided maximality are explicit; complement of p^2 stutter gives strict E5 arithmetic.",
-      "planned_closure": "VERIFIED_SUCCESSOR",
-      "target_shape": "type_i_path_anchored_atomic_split_complete_excess_v1 -> type_i_policy_endpoint_absorb_v1 (M<=B_p) or type_i_policy_endpoint_charged_overflow_v1 (M>B_p)",
-      "current_blocker": "Colored source/path E1, deterministic E2, identity E4 and parent-to-final E5 are established. Common producer, synchronous normalizer, ABSORB/overflow owner and queue admission remain inactive.",
-      "missing_obligations": ["E3", "D5", "D8"]
-    },
-    {
-      "leaf_id": "R2_M3_Q5_SHORT_TWO_SIDED_P2",
-      "predicate": "R2 minimal-q5 leaf, E is not pure-dyadic, W_y=delta mod p, endpoint short Q_pf, both E_u,E_v>1, and E_u E_v=1+p^2 chi",
-      "mutually_exclusive_with": ["R1_M3_Q5_PATH_UNBOUND", "R2_M3_Q5_NONMINIMAL_ROOT_RESIDUE", "R2_M3_Q5_PURE_DYADIC", "R2_M3_Q5_FULL_CAPACITY_ONE_SIDED_STRICT", "R2_M3_Q5_FULL_CAPACITY_ONE_SIDED_P2", "R2_M3_Q5_SHORT_TWO_SIDED_STRICT"],
-      "coverage_proof": "Short policy, genuine two-sided maximality, and the exact L_omega p^2 gate are simultaneous predicates.",
+      "leaf_id": "R2_M3_Q5_P2_TWO_SIDED",
+      "predicate": "R2 minimal nonterminal endpoint, E_u,E_v>1, and E_u*E_v=1+p^2*chi",
+      "mutually_exclusive_with": ["all other partition leaves"],
       "planned_closure": "VERIFIED_SUCCESSOR",
       "target_shape": "type_i_policy_endpoint_atomic_p2_pending_v1",
-      "current_blocker": "This is the genuine two-sided residual. Higher congruences do not close it; need EMPTY, TERMINAL, or a complete atomic macro with parent-to-final T5 ticket.",
-      "missing_obligations": ["E2", "E3", "E5", "D5", "D7", "D8"]
+      "coverage_proof": "The exact two-sided divisor-source normal form applies independently of DYADIC/SHORT origin.",
+      "current_blocker": "Need EMPTY, TERMINAL or a final strict atomic macro; higher congruence is not closure.",
+      "missing_obligations": ["E2_FINAL", "E3", "E5", "D5", "D7", "D8"]
     }
   ],
   "cross_cut_obligations": [
     {
       "id": "SECOND_CHILD_PARENT_TO_FINAL_E5",
-      "applies_to": "every nonterminal R2 leaf",
-      "required_result": "A single macro receipt compares the original persistent parent to the final target and proves strict T5 descent; internal checkpoints are nonpersistent.",
-      "status": "OPEN"
+      "status": "PARTIAL_STRICT_BRANCHES_ESTABLISHED",
+      "established_scope": "all L_omega not congruent to 1 mod p endpoints",
+      "open_scope": "three nonzero-theta continuation leaves and both p^2 leaves"
     },
     {
       "id": "R2_E3_OWNER_REENTRY",
-      "applies_to": "every R2 target shape",
-      "required_result": "Common serializer recomputes canonical target, family predicates, owner/precedence, state identity, and recursive re-entry.",
-      "status": "OPEN"
+      "status": "OPEN",
+      "required_result": "Common producer, synchronous normalizer, overflow owner and recursive re-entry."
     }
   ],
   "status_summary": {
     "family_empty_leaves": 0,
-    "terminal_leaves": 0,
+    "terminal_leaves": 1,
     "verified_successor_leaves": 0,
-    "open_leaves": 7,
+    "open_leaves": 10,
     "conditional_or_arithmetic_only": true
   }
 }

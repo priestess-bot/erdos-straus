@@ -70,8 +70,9 @@ class TypeIT6F3M3Q5SourceBoundMacroTests(unittest.TestCase):
             "PARTIAL_MATHEMATICAL_CLOSURE_INTEGRATION_AND_P2_OPEN",
         )
         self.assertIn("R2_M3_Q5_NONMINIMAL_ROOT_RESIDUE", result["open_leaf_ids"])
-        self.assertIn("R2_M3_Q5_SHORT_TWO_SIDED_P2", result["open_leaf_ids"])
+        self.assertIn("R2_M3_Q5_P2_TWO_SIDED", result["open_leaf_ids"])
         self.assertFalse(result["control_summary"]["fixtures_are_actual_track_evidence"])
+        self.assertTrue(result["control_summary"]["target_support_exceeds_parent"])
 
 
 if __name__ == "__main__":

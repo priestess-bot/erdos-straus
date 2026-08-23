@@ -12,11 +12,11 @@ statement: >-
   对此后任一由同一 transcript 到达的 primitive p-free endpoint u+v=R，重新计算唯一
   complete-excess blocks Q_u,Q_v，令 M=lcm(A,Q_u,Q_v)、L_omega=M/A、
   c=<C L_omega^{-1}>_p，其中 C=K/A=p-1。terminal-first miss 后若 L_omega!=1 mod p，
-  则 c<p-1，canonical target 的 parent-to-final T5 ticket 精确分为：M<=B_p 时提交
-  CHARGED->ABSORB 的 PHASE_DROP；M>B_p 时必有 R_T>p，并以 CHARGED local tuple
-  (0,p-1,eta)->(0,c,0) 的 LOCAL_DROP 支付。全部中间 raw/atomic/p^2 checkpoints 不入队。
+  则 M>A>B_p，因而 R_T>p，且以 CHARGED local tuple
+  (0,p-1,eta)->(0,c,0) 的 LOCAL_DROP 支付 parent-to-final T5 ticket。全部中间
+  raw/atomic/p^2 checkpoints 不入队。
   该定理建立 R1 的数学路径覆盖、R2 的确定 E2、Sol(p) 恒等 E4 与 strict branch E5，
-  但活动 common producer、完整 terminal scheduler、ABSORB owner 与 admission serializer
+  但活动 common producer、完整 terminal scheduler 与 overflow admission serializer
   仍须 coordinator 接入；L_omega=1 mod p、特别是 p^2 gate，以及 nonminimal q=5 leaf
   均不由本定理关闭。
 claim_status: established
@@ -233,24 +233,30 @@ L_\omega\equiv1\pmod p.
 ### 定理 2（second-child parent-to-final E5）
 
 所有 first child、raw suffix、atomic split 与 (p^2) chart 只作 macro internal
-checkpoint。对 original persistent parent (1) 与最终 target (13)，strict branch (15)
-有且只有以下 support 二分：
+checkpoint。由 (12)，非终止 endpoint 有
 
-1. (M\le B_p)。target 提交到 `TYPEI/ABSORB` protocol；
-   `CHARGED -> ABSORB` 是不可回返 protocol drop，给 `PHASE_DROP`。这里不能保持
-   CHARGED，因为其第一 local coordinate 会从 (0) 升为
-   (lfloor B_p/M\rfloor\ge1)。
-2. (M>B_p)。若 (R_T<p)，则
-   (M\le K_T=(pR_T+1)/4\le B_p)，矛盾；故 (R_T>p)，target 是
-   `TYPEI/CHARGED OVERFLOW`。两端 local ranks 为
-   
-   \[
-   (0,p-1,\eta_S,0)
-   \quad\text{和}\quad
-   (0,c_T,0,0),
-   \]
-   
-   (15) 给 `LOCAL_DROP`。
+\[
+M=A L_\omega>A>B_p.
+\tag{16}
+\]
+
+若 (R_T<p)，则 (R_T\le p-2)，而 (M\mid K_T) 给
+
+\[
+M\le K_T=\frac{pR_T+1}{4}\le\frac{(p-1)^2}{4}=B_p,
+\]
+
+与 (16) 矛盾。因此 target 唯一属于 `TYPEI/CHARGED OVERFLOW`。对 original
+persistent parent (1) 与最终 target (13)，两端 local ranks 为
+
+\[
+(0,p-1,\eta_S,0)
+\quad\text{和}\quad
+(0,c_T,0,0).
+\tag{17}
+\]
+
+strict branch (15) 给 `LOCAL_DROP`。
 
 因此 strict one-sided 与 strict two-sided branches 都有固定 parent-to-final T5 ticket；
 不会使用 selected-side formal cofactor，也不会把 checkpoint 的局部升降计入 persistent
@@ -262,17 +268,17 @@ graph。
 |---|---|
 | E1 | 定理 1 加 first-child/(omega_{\rm pf}) forward suffix；必须保存完整 payload 与 prefix receipts |
 | E2 | (11)--(13) 是 source/path 的确定函数；tie-break 已固定 |
-| E3 | occurrence owner 可唯一内容寻址；最终 state 必同步 normalize。`M<=B_p` 需要新 ABSORB owner，`M>B_p` 可投影到既有 overflow fallback；active producer 仍由 coordinator 注册 |
+| E3 | occurrence owner 可唯一内容寻址；最终 state 必同步 normalize，并投影到既有 high-support overflow fallback；active producer 仍由 coordinator 注册 |
 | E4 | source/target marked sets 同为图表无关 (operatorname{Sol}(p))，lift 为恒等映射 |
 | E5 | 定理 2；只比较 original parent 与 final target |
-| re-entry | ABSORB family 尚未在 F1 grammar；overflow target 只有 common producer rule 接入后才算 re-entry |
+| re-entry | target 的 arithmetic owner 是既有 overflow fallback；只有 common producer rule 接入后才算 actual re-entry |
 
 所以 strict arithmetic leaves 已不再缺数学 E1、E2、E4 或 E5；它们只缺 common E3
 integration。相反，
 
 \[
 L_\omega\equiv1\pmod p
-\tag{16}
+\tag{18}
 \]
 
 没有上述 ticket。特别地 (L_\omega=1+p^2\chi) 的 parent/target CHARGED rank stutter
@@ -284,7 +290,7 @@ root-residue orientation。继续提高同余阶不改变这两个 OPEN 结论�
 本定理不声称 `R1/R2/F3 CLOSED`。活动闭合仍需：
 
 1. coordinator 接入完整 path/prefix receipt，而不是接受 `raw_path_bound` boolean；
-2. common producer、同步 normalizer、ABSORB owner 与 overflow owner re-entry；
+2. common producer、同步 normalizer与 overflow owner re-entry；
 3. pure-dyadic companion 的最终 recanonicalization；
 4. nonminimal (q=5) root-residue leaf 的 EMPTY/TERMINAL/PAID theorem；
 5. full-capacity one-sided 和 genuine two-sided (E_uE_v=1+p^2\chi) 的最终 exit。
