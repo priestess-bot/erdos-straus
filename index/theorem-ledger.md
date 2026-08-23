@@ -15,14 +15,14 @@
 | 数学状态 | `conditional` | 31 |
 | 数学状态 | `contradicted` | 2 |
 | 数学状态 | `established` | 887 |
-| 数学状态 | `open` | 12 |
+| 数学状态 | `open` | 13 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 40 |
-| 证明来源 | `repository_derivation` | 717 |
+| 证明来源 | `repository_derivation` | 718 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 20 |
-| 审阅状态 | `internal_review` | 865 |
+| 审阅状态 | `internal_review` | 866 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -202,6 +202,7 @@
 | [六条显式因子证书分支的共同残余有 4 维筛界](../claims/six-branch-sieve-residual.md) (`six-branch-sieve-residual`) | `established` | `unspecified` | `unspecified` | `elsholtz_tao2013`, `ventas2026` | 2026-07-23 |
 | [两条无条件标准大尾递降的有限覆盖审计](../claims/standard-tail-descent-finite-audit.md) (`standard-tail-descent-finite-audit`) | `computationally_reproduced` | `unspecified` | `unspecified` | `elsholtz_tao2013` | 2026-07-24 |
 | [标准大尾提升恰为 Type I 证书的第二分母窗口](../claims/standard-tail-type-I-coordinate-equivalence.md) (`standard-tail-type-I-coordinate-equivalence`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-24 |
+| [T6-F1 可达持久状态闭世界的条件引理与当前最小断点](../claims/t6-f1-reachable-state-closed-world-v1.md) (`t6-f1-reachable-state-closed-world-v1`) | `open` | `repository_derivation` | `internal_review` | - | 2026-08-23 |
 | [3 的倍数标准源解不能保留两项提升到核心素数](../claims/three-divisible-standard-source-lift-obstruction.md) (`three-divisible-standard-source-lift-obstruction`) | `established` | `unspecified` | `unspecified` | `elsholtz_tao2013` | 2026-07-23 |
 | [三倍数标准源保留大尾并重组两项的完整递降族](../claims/three-divisible-standard-two-tail-descent.md) (`three-divisible-standard-two-tail-descent`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-24 |
 | [三倍数标准大尾提升的有效窗口定位](../claims/three-divisible-tail-window-localization.md) (`three-divisible-tail-window-localization`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-24 |
