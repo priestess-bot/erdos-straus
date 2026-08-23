@@ -26,6 +26,16 @@
       "id": "IDENTITY_LIFT",
       "statement": "After target validation, W_source=W_target=Sol(p) and the universal lift is identity.",
       "strength": "ESTABLISHED_CONDITIONAL_ON_TARGET_VALIDATION"
+    },
+    {
+      "id": "ORDINARY_RAW_AND_RESIDUAL_CHANNELS",
+      "statement": "theta=-1 alternate-source and theta=OTHER residual-capacity suffixes have source-bound E1, deterministic final target, identity E4 and parent-to-final LOCAL_DROP.",
+      "strength": "ESTABLISHED_RELATIVE_TO_COMMON_E3_ADMISSION"
+    },
+    {
+      "id": "NONMINIMAL_Q5_EXCESS_CHILD",
+      "statement": "On the nonminimal q=5 leaf, 5|E gives a deterministic actual primitive p-free q=5 first child; no selected-side E5 is claimed.",
+      "strength": "ESTABLISHED_E1_REDUCTION_ONLY"
     }
   ],
   "integration_requirements": [
@@ -47,19 +57,9 @@
       "next_theorem": "For every actual m=3,5|D_star receipt with v_5(T)>=2, prove family-empty, terminal, or construct a source-bound final target with strict T5 ticket."
     },
     {
-      "id": "R2_M3_Q5_P_STUTTER_RAW_SOURCE",
-      "missing": ["continuous alternate-source E1", "E3 re-entry", "parent-to-final E5"],
-      "next_theorem": "Compose the theta=-1 alternate source with endpoint recanonicalization into a terminal or strict final overflow macro."
-    },
-    {
       "id": "R2_M3_Q5_P_STUTTER_REGENERATION",
       "missing": ["terminal classification of the first non-regeneration digit", "continuous E1", "E3 re-entry", "parent-to-final E5"],
       "next_theorem": "Prove every finite regeneration countdown ends in terminal or a strict final overflow macro rather than p-free failure."
-    },
-    {
-      "id": "R2_M3_Q5_P_STUTTER_RESIDUAL_STRICT",
-      "missing": ["continuous suffix E1", "E3 re-entry", "parent-to-final E5"],
-      "next_theorem": "Serialize the ordinary strict residual-capacity suffix through the common final overflow owner."
     },
     {
       "id": "R2_M3_Q5_P2_ONE_SIDED",

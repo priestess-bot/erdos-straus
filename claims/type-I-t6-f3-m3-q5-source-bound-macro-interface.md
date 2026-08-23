@@ -28,6 +28,7 @@ depends_on:
   - type-I-path-anchored-atomic-split-complete-excess-admission
   - type-I-t6-f3-policy-endpoint-p2-divisor-source-normal-form
   - type-I-t5-full-contract-level-global-well-foundedness
+  - type-I-overflow-full-product-d-one-a-one-single-endpoint-stutter-guarded-relay
 topics:
   - type-I
   - t6
@@ -285,14 +286,74 @@ L_\omega\equiv1\pmod p
 仍必须继续到最终 strict target 或 terminal。nonminimal (v_5(T)\ge2) leaf 同样只有
 root-residue orientation。继续提高同余阶不改变这两个 OPEN 结论。
 
-## 6. 未闭合量词
+### 5.1 两个 ordinary (p)-stutter channels 的 guarded closure
+
+在 (18) 的 stutter 行唯一写
+
+\[
+L_\omega=1+p\theta,
+\qquad
+\theta>0.
+\tag{19}
+\]
+
+由 (a=1,d=1) ordinary relay，target checkpoint 的下一 multiplier 模 (p) 恰为
+(	heta)。因此：
+
+1. 若 (	heta\equiv-1\pmod p)，ordinary (p)-source 失败，但规范最小互素素数
+   alternate source 的 arithmetic capacity 精确为 (1)。定理 1 的 source-bound path
+   与该 alternate suffix 连续拼接；所有 checkpoint 不入队，最终 local cofactor
+   (1<p-1)，所以 parent-to-final 是 `LOCAL_DROP`。
+2. 若 (	heta\not\equiv-1,0,1\pmod p)，下一 ordinary residual capacity 为
+
+   \[
+   c_\theta=\langle-\theta^{-1}\rangle_p\le p-2.
+   \]
+
+   同理，forward suffix、恒等 lift和 original-parent-to-final `LOCAL_DROP` 完整。
+
+两支只剩 common producer/normalizer/owner 接入，不再是数学 E1 或 E5 residual。
+若 (	heta\equiv1\pmod p)，regeneration valuation 有限下降，但首个 non-regeneration
+digit 仍可能落到 (p)-free failure；所以该支保持 OPEN。若 (	heta\equiv0\pmod p)，
+正是 (L_\omega\equiv1\pmod {p^2}) 的两类 hard residual。
+
+## 6. Nonminimal (q=5) 的 first-child 收缩
+
+对 nonminimal leaf，若 (5\mid E)，则 complete-excess 定义保证 root endpoint
+((z,h)) 的 (z)-side 有 actual (q=5) overcapacity。唯一 shift 为 (4)，给
+
+\[
+(z,h,1)\longmapsto(z/5,R-z/5,1).
+\tag{20}
+\]
+
+它保持 primitive。两侧还必 (p)-free：(p\nmid z/5)；若
+(p\mid R-z/5)，则 (z/5\equiv R\equiv1\pmod p)，从
+(z=R-h\equiv1-h\pmod p) 得 (h=p-4)。但 q=5 管有
+
+\[
+p\equiv11\pmod {25},
+\qquad
+h\equiv9\pmod {25},
+\]
+
+而 (p-4\equiv7\pmod {25})，矛盾。因此 (20) 是确定、source-bound、p-free
+first child，并可进入第 3 节的同步 recanonicalizer。
+
+这里不声称 selected-side support 必下降。因为 (5\mid p-1)，一次除以 5 后的指数
+可能恰落到 (K) 容量层，canonical support 会吸收 formal drop。真正 E5 仍只由最终
+(L_\omega) target 判断。nonminimal 且 (5\nmid E) 时，q=5 在 root endpoint 没有
+overcapacity occurrence，仍是该 leaf 最小的 E1/exit residual。
+
+## 7. 未闭合量词
 
 本定理不声称 `R1/R2/F3 CLOSED`。活动闭合仍需：
 
 1. coordinator 接入完整 path/prefix receipt，而不是接受 `raw_path_bound` boolean；
 2. common producer、同步 normalizer与 overflow owner re-entry；
 3. pure-dyadic companion 的最终 recanonicalization；
-4. nonminimal (q=5) root-residue leaf 的 EMPTY/TERMINAL/PAID theorem；
+4. nonminimal (q=5) 中 (5\nmid E) 子叶的 EMPTY/TERMINAL/PAID theorem，以及
+   (5\mid E) child recanonicalization 后的 non-strict channels；
 5. full-capacity one-sided 和 genuine two-sided (E_uE_v=1+p^2\chi) 的最终 exit。
 
 这些正是 proof receipt 中保留的最小 gaps。

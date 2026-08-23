@@ -86,8 +86,8 @@
       "planned_closure": "VERIFIED_SUCCESSOR",
       "target_shape": "type_i_policy_endpoint_raw_p_source_relay_pending_v1",
       "coverage_proof": "Exact d=1 arithmetic dispatch; disjoint from theta=0,1,OTHER.",
-      "current_blocker": "Alternate source has arithmetic capacity 1, but continuous source/path, E3 owner and final macro ticket are not active.",
-      "missing_obligations": ["E1_SUFFIX", "E3", "E5", "D5", "D7", "D8"]
+      "current_blocker": "Continuous source/path and parent-to-final LOCAL_DROP are established; common producer, E3 owner and re-entry are not active.",
+      "missing_obligations": ["E3", "D5", "D8"]
     },
     {
       "leaf_id": "R2_M3_Q5_P_STUTTER_REGENERATION",
@@ -106,8 +106,8 @@
       "planned_closure": "VERIFIED_SUCCESSOR",
       "target_shape": "type_i_policy_endpoint_residual_capacity_pending_v1",
       "coverage_proof": "Exact d=1 arithmetic dispatch gives a strict residual-capacity arithmetic target.",
-      "current_blocker": "Continuous suffix E1, synchronous target owner and parent-to-final E5 receipt are not active.",
-      "missing_obligations": ["E1_SUFFIX", "E3", "E5", "D5", "D7", "D8"]
+      "current_blocker": "Continuous source/path and parent-to-final LOCAL_DROP are established; common producer, E3 owner and re-entry are not active.",
+      "missing_obligations": ["E3", "D5", "D8"]
     },
     {
       "leaf_id": "R2_M3_Q5_P2_ONE_SIDED",
