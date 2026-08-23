@@ -27,12 +27,12 @@
       "raw_guard": "terminal_first=MISS and actual complete-excess source occurrence yields canonical same-chart M>A with A|M, M/A>=2",
       "effective_guard": "F2-00 failed and same-chart receipt passes every source, target, and strict parent-to-target rank check",
       "mutually_exclusive_with": ["F2-02-joined-reset", "F2-03-fixed-n", "F2-04-M", "F2-05-total-cofactor", "F2-06-high-support", "F2-07-C1-empty", "F2-08-Cgt1-empty", "F2-09-p409", "F2-10-explicit-residual"],
-      "coverage_proof": "type-I-overflow-unbounded-same-chart-promotion-persistence-boundary proves the local rank formula under its actual-source guard",
-      "current_status": "CONDITIONAL_ADAPTER",
+      "coverage_proof": "The same-chart theorem proves the local rank formula under its actual-source guard; the determinant prepartition proves every bound receipt with b=M/A>=2 enters this leaf.",
+      "current_status": "RELATIVE_THEOREM_COMMON_E3_OPEN",
       "planned_closure": "VERIFIED_SUCCESSOR",
       "target_shape": "existing type_i_low_support_persistent_overflow or type_i_high_support_sink after common E3 retyping",
       "current_blocker": "No shared producer serializer/admission path proves actual source occurrence for every candidate; A>B_p parent-to-target comparison must be retained.",
-      "evidence": ["claims/type-I-overflow-unbounded-same-chart-promotion-persistence-boundary.md", "reproductions/type_i_overflow_unbounded_same_chart_promotion_persistence_boundary.py"]
+      "evidence": ["claims/type-I-overflow-unbounded-same-chart-promotion-persistence-boundary.md", "claims/type-I-f2-overflow-determinant-prepartition.md", "reproductions/type_i_f2_overflow_determinant_prepartition.py"]
     },
     {
       "leaf_id": "F2-02-joined-reset",
@@ -50,15 +50,15 @@
     {
       "leaf_id": "F2-03-fixed-n",
       "precedence": 4,
-      "raw_guard": "terminal_first=MISS, prior guards failed, and deterministic L|Md (or fixed-s L|rd) satisfies A<L<=B_p, positivity, canonical chart identity, and strict Lambda drop",
-      "effective_guard": "F2-00..F2-02 failed and bounded fixed-n/fixed-s divisor receipt is complete",
+      "raw_guard": "terminal_first=MISS, prior guards failed, and either (i) b=1,A<=B_p,d>=2 with deterministic unbounded full-product L=Md=Ad, or (ii) another bounded L|Md/fixed-s L|rd satisfies positivity, canonical chart identity, and strict Lambda drop",
+      "effective_guard": "F2-00..F2-02 failed and the full-product or bounded fixed-n/fixed-s receipt is complete",
       "mutually_exclusive_with": ["F2-04-M", "F2-05-total-cofactor", "F2-06-high-support", "F2-07-C1-empty", "F2-08-Cgt1-empty", "F2-09-p409", "F2-10-explicit-residual"],
-      "coverage_proof": "fixed-n and fixed-s determinant identities give R_L/K_L and identity lift when the stated divisor inequalities hold",
-      "current_status": "CONDITIONAL_ADAPTER",
+      "coverage_proof": "The determinant prepartition proves the full-product branch universally on bound receipts with b=1,A<=B_p,d>=2 and proves its target remains overflow; other bounded-divisor refinements retain their written guards.",
+      "current_status": "RELATIVE_FULL_PRODUCT_THEOREM_COMMON_E3_OPEN",
       "planned_closure": "VERIFIED_SUCCESSOR",
-      "target_shape": "existing type_i_a_gt_one_overflow_residual or marked_absorb with normal_form overflow_fixed_{n,s}_bounded_divisor_v1",
-      "current_blocker": "The existence condition is not universal; source provenance, terminal-first receipt, and target owner must be supplied by common admission.",
-      "evidence": ["claims/type-I-overflow-fixed-n-bounded-divisor-saturation.md", "claims/type-I-overflow-fixed-s-bounded-divisor-saturation.md"]
+      "target_shape": "full-product target is existing type_i_a_gt_one_overflow_residual/high-support overflow; other bounded branches may also require the requested generic charged marked-absorb family when R_L<p",
+      "current_blocker": "Not every generic actual overflow header supplies a bound determinant occurrence; every target still requires common E3 admission. Other bounded branches retain conditional divisor existence.",
+      "evidence": ["claims/type-I-f2-overflow-determinant-prepartition.md", "claims/type-I-overflow-unbounded-full-product-quotient-fold.md", "claims/type-I-overflow-fixed-n-bounded-divisor-saturation.md", "claims/type-I-overflow-fixed-s-bounded-divisor-saturation.md"]
     },
     {
       "leaf_id": "F2-04-M",
@@ -76,15 +76,15 @@
     {
       "leaf_id": "F2-05-total-cofactor",
       "precedence": 6,
-      "raw_guard": "terminal_first=MISS, all previous routes fail, source has registered persistent determinant receipt and canonical total-cofactor quotient t>0",
-      "effective_guard": "F2-00..F2-04 failed and total-cofactor source registration plus independent source/target retyping passes",
+      "raw_guard": "terminal_first=MISS, all previous routes fail, source has a registered persistent determinant receipt and proposes total-cofactor",
+      "effective_guard": "F2-00..F2-04 failed; b>=2 is already preempted by same-chart, while b=1 forces t=0 canonical stutter",
       "mutually_exclusive_with": ["F2-06-high-support", "F2-07-C1-empty", "F2-08-Cgt1-empty", "F2-09-p409", "F2-10-explicit-residual"],
-      "coverage_proof": "canonical projection theorem gives unique target and strict K/A decrease when the source is truly persistent and t>0",
-      "current_status": "CONDITIONAL_ADAPTER",
-      "planned_closure": "VERIFIED_SUCCESSOR",
-      "target_shape": "existing TYPEI/CHARGED canonical target with independently recomputed hit/F/G classification",
-      "current_blocker": "Current adapter consumes caller-supplied registration and fixture persistent_queue flags; it does not prove registration for all actual overflow states. C=1 is a stutter and excluded.",
-      "evidence": ["claims/type-I-overflow-total-cofactor-typed-projection-dispatch.md", "claims/type-I-overflow-total-cofactor-canonical-projection-persistence-rank.md", "reproductions/type_i_overflow_total_cofactor_typed_adapter.py"]
+      "coverage_proof": "The determinant prepartition proves an ordered dichotomy: b>=2 has an earlier strict same-chart route; b=1 means C_A=p-d and total-cofactor is exactly t=0.",
+      "current_status": "EMPTY_AS_ORDERED_STRICT_BRANCH",
+      "planned_closure": "EMPTY",
+      "target_shape": null,
+      "current_blocker": null,
+      "evidence": ["claims/type-I-f2-overflow-determinant-prepartition.md", "claims/type-I-overflow-total-cofactor-typed-projection-dispatch.md", "claims/type-I-overflow-total-cofactor-canonical-projection-persistence-rank.md"]
     },
     {
       "leaf_id": "F2-06-high-support-nonempty",
@@ -132,11 +132,11 @@
       "effective_guard": "F2-00..F2-08 fail and numeric state is the recorded noncanonical H=(409,251,25665;5) or its unsupported S/T history",
       "mutually_exclusive_with": ["F2-10-explicit-residual"],
       "coverage_proof": "canonical_chart(409,5)=(11,1125), while H is a raw anchor; no verified predecessor to H or S exists",
-      "current_status": "EXPLICIT_RESIDUAL",
-      "planned_closure": "VERIFIED_SUCCESSOR",
-      "target_shape": "new noncanonical_low_anchor_charged_history_v1 macro only; raw H must remain transient until a direction-correct parent bridge is proved",
-      "current_blocker": "Missing parent receipt, scope, state identity, and E1 path; existing outgoing S edge cannot be inverted into a predecessor.",
-      "evidence": ["claims/type-I-p409-a5-charged-history-parent-replay-boundary.md", "reproductions/type_i_representation_dual_capacity_selector.py"]
+      "current_status": "DISPOSED_BY_DOMAIN_OR_EARLIER_PRECEDENCE",
+      "planned_closure": "EMPTY",
+      "target_shape": "none for the current record; if an exact actual S determinant is later supplied, use existing same-chart promotion A=5->250",
+      "current_blocker": null,
+      "evidence": ["claims/type-I-p409-a5-charged-history-parent-replay-boundary.md", "claims/type-I-f2-overflow-determinant-prepartition.md", "data/t6-wave1/f2-overflow-determinant-prepartition-v1.json"]
     },
     {
       "leaf_id": "F2-10-explicit-residual",
@@ -154,10 +154,11 @@
   ],
   "residual_summary": {
     "closed_as_terminal": 0,
+    "disposed_before_final_residual": 2,
     "local_no_go_but_not_closed": 1,
-    "conditional_successor_leaves": 6,
+    "conditional_successor_leaves": 5,
     "explicit_open_residuals": 3,
-    "final_residual_leaf_ids": ["F2-07-C1-empty", "F2-08-Cgt1-empty", "F2-09-p409", "F2-10-explicit-residual"],
+    "final_residual_leaf_ids": ["F2-07-C1-empty", "F2-08-Cgt1-empty", "F2-10-explicit-residual"],
     "closure_rule": "The track cannot be marked closed while any final residual row lacks EMPTY, TERMINAL, or a common-admission E1-E5 successor receipt. In particular, C=1 no-go is not itself closure and C>1 cannot inherit it."
   },
   "forbidden_shortcuts": [
