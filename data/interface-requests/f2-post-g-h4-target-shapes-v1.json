@@ -1,0 +1,218 @@
+{
+  "request_id": "f2_post_g_h4_target_shapes_v1",
+  "request_version": 1,
+  "track_id": "F2-POST-G-H4",
+  "date": "2026-08-24",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "status": "PROPOSAL_NOT_REGISTERED",
+  "coordinator_action": "Review these shapes during Gate 2. No shape in this proposal grants recursive authority before common admission and grammar freeze.",
+  "target_shapes": [
+    {
+      "shape_id": "POST_G_FULL_CARRIER_ROOT_V1",
+      "source_domains": ["ordinary_q_one_G", "ordinary_positive_q_G"],
+      "schema_summary": "ordinary Sol(p) Type-I root with p-only chart, A=1, fresh_source_tree_only, preserved actual G parent receipt",
+      "existing_family_match": "type_i_full_carrier_post_g",
+      "new_family_required": false,
+      "atomic_arm_required": "NONE",
+      "mark_behavior": "ROOT_SOL identity",
+      "t5_ticket_type": "PHASE_DROP",
+      "owner_precedence_request": "existing type_i_full_carrier_post_g fallback after specialized Type-I owners",
+      "producer_target_set_request": ["type_i_full_carrier_post_g"],
+      "current_admission_status": "requires common serializer and actual source binding"
+    },
+    {
+      "shape_id": "C3_SOURCE_LINEAGE_TYPEI_SEED_V1",
+      "source_domains": ["c3_source_lineage_G"],
+      "schema_summary": "fresh-scope Type-I seed preserving the c=3 lineage receipt and ordinary Sol(p) mark",
+      "existing_family_match": "type_i_full_carrier_post_g",
+      "new_family_required": false,
+      "atomic_arm_required": "NONE",
+      "mark_behavior": "ROOT_SOL identity; nontrivial mark forbidden",
+      "t5_ticket_type": "PHASE_DROP then LOCAL_DROP",
+      "owner_precedence_request": "existing full-carrier fallback unless its target facts match an existing overflow specialization",
+      "producer_target_set_request": ["type_i_full_carrier_post_g", "type_i_a_one_overflow", "type_i_a_gt_one_overflow_residual"],
+      "current_admission_status": "conditional lineage actualness unresolved"
+    },
+    {
+      "shape_id": "POST_G_FIRST_CHILD_V1",
+      "source_domains": ["full_carrier_Type_I_root"],
+      "schema_summary": "parity-determined first Type-I child with original handoff parent chain and charged support",
+      "existing_family_match": "type_i_full_carrier_post_g",
+      "new_family_required": false,
+      "atomic_arm_required": "NONE",
+      "mark_behavior": "ROOT_SOL identity",
+      "t5_ticket_type": "LOCAL_DROP",
+      "owner_precedence_request": "specialized overflow owner before full-carrier fallback when predicates overlap",
+      "producer_target_set_request": ["type_i_full_carrier_post_g", "type_i_a_gt_one_overflow_residual"],
+      "current_admission_status": "family-local receipt only"
+    },
+    {
+      "shape_id": "POST_G_SECOND_ANCHOR_TARGET_V1",
+      "source_domains": ["post_G_first_Type_I_child", "second_anchor_descendant"],
+      "schema_summary": "final persistent endpoint of the fixed-n second-anchor macro; internal rising checkpoints excluded",
+      "existing_family_match": "type_i_full_carrier_post_g",
+      "new_family_required": false,
+      "atomic_arm_required": "NONE",
+      "mark_behavior": "ROOT_SOL identity",
+      "t5_ticket_type": "LOCAL_DROP",
+      "owner_precedence_request": "existing overflow specialization before full-carrier fallback",
+      "producer_target_set_request": ["type_i_full_carrier_post_g", "type_i_a_gt_one_overflow_residual", "type_i_high_support_sink"],
+      "current_admission_status": "common envelope and continuous predecessor binding missing"
+    },
+    {
+      "shape_id": "D1_RELAY_TARGET_V1",
+      "source_domains": ["d_one_relay_descendant"],
+      "schema_summary": "terminal-preempted p-free relay target preserving the actual postmacro receiver and complete-excess occurrence",
+      "existing_family_match": "multiple existing families depending on recomputed target facts",
+      "new_family_required": false,
+      "atomic_arm_required": "NONE",
+      "mark_behavior": "ROOT_SOL identity",
+      "t5_ticket_type": "LOCAL_DROP",
+      "owner_precedence_request": "C2/high-support/overflow specialization before full-carrier fallback",
+      "producer_target_set_request": ["type_i_c2_19_macro_target", "type_i_high_support_sink", "type_i_a_gt_one_overflow_residual", "type_i_full_carrier_post_g"],
+      "current_admission_status": "full actual source-domain theorem and serializer missing"
+    },
+    {
+      "shape_id": "C2_H3_PERSISTENT_TARGET_V1",
+      "source_domains": ["high_C2_19_phase_descendant"],
+      "schema_summary": "H3 endpoint of the complete parent-anchored three-anchor word; H0-H2 remain nonpersistent checkpoints",
+      "existing_family_match": "type_i_c2_19_macro_target",
+      "new_family_required": false,
+      "atomic_arm_required": "NONE",
+      "mark_behavior": "ROOT_SOL identity",
+      "t5_ticket_type": "LOCAL_DROP",
+      "owner_precedence_request": "type_i_c2_19_macro_target before generic overflow/full-carrier fallbacks",
+      "producer_target_set_request": ["type_i_c2_19_macro_target"],
+      "current_admission_status": "active macro exposes arithmetic summary only"
+    },
+    {
+      "shape_id": "C2_NON19_RESIDUAL_TARGET_V1",
+      "source_domains": ["C2_terminal_first_miss_outside_named_19_phase"],
+      "schema_summary": "explicit C2 complement target retained only if the complement cannot be proved empty or terminal",
+      "existing_family_match": "none proven",
+      "new_family_required": true,
+      "proposed_new_family_id": "type_i_c2_non19_residual",
+      "atomic_arm_required": "NONE",
+      "mark_behavior": "ROOT_SOL identity unless a future proof supplies a reviewed mark serializer",
+      "t5_ticket_type": "LOCAL_DROP or PHASE_DROP must be proved; no request to pre-authorize",
+      "owner_precedence_request": "after named C2 specialization, before generic overflow/full-carrier fallback",
+      "producer_target_set_request": ["type_i_c2_non19_residual"],
+      "current_admission_status": "NEW_FAMILY_REQUEST_CONDITIONAL_ON_NONEMPTY_RESIDUAL"
+    },
+    {
+      "shape_id": "H4_A1_ATOMIC_PENDING_TARGET_V1",
+      "source_domains": ["H4_proper_top_a_alt_one_clean_q"],
+      "schema_summary": "parent-anchored H4 atomic target with source macro/path digest, target-local terminal-first classifier, canonical payload and charged scope",
+      "existing_family_match": "t2_v1_atomic_pending_target",
+      "new_family_required": false,
+      "atomic_arm_required": "H4_A1",
+      "mark_behavior": "ROOT_SOL identity",
+      "t5_ticket_type": "LOCAL_DROP comparing the persistent parent with final admitted target",
+      "owner_precedence_request": "atomic pending specialization before C2/overflow/full-carrier owners",
+      "producer_target_set_request": ["t2_v1_atomic_pending_target"],
+      "current_admission_status": "awaiting Agent 3 shared AtomicPendingTargetV1 serializer"
+    },
+    {
+      "shape_id": "H4_NONCLEAN_Q_DESCENDANT_V1",
+      "source_domains": ["H4_proper_top_a_alt_one_nonclean_q"],
+      "schema_summary": "typed H4 non-clean-q descendant preserving parent occurrence and failed clean-q predicate",
+      "existing_family_match": "h4_non_v1_branch_or_descendant",
+      "new_family_required": false,
+      "atomic_arm_required": "NONE unless the mathematical constructor proves an atomic payload",
+      "mark_behavior": "ROOT_SOL identity",
+      "t5_ticket_type": "not assigned until a paid constructor is proved",
+      "owner_precedence_request": "h4_non_v1_branch_or_descendant before generic overflow/full-carrier fallback",
+      "producer_target_set_request": ["h4_non_v1_branch_or_descendant"],
+      "current_admission_status": "no E1-E5 constructor"
+    },
+    {
+      "shape_id": "H4_A_ALT_GT_ONE_DESCENDANT_V1",
+      "source_domains": ["H4_proper_top_a_alt_greater_than_one"],
+      "schema_summary": "typed H4 a_alt>1 residual with all capacity and overlap witnesses retained",
+      "existing_family_match": "h4_non_v1_branch_or_descendant",
+      "new_family_required": false,
+      "atomic_arm_required": "new H4 arm only if a complete atomic payload is proved",
+      "mark_behavior": "ROOT_SOL identity",
+      "t5_ticket_type": "not assigned until parent-to-final-target descent is proved",
+      "owner_precedence_request": "h4_non_v1_branch_or_descendant before generic fallbacks",
+      "producer_target_set_request": ["h4_non_v1_branch_or_descendant"],
+      "current_admission_status": "no terminal/empty/paid-successor theorem"
+    },
+    {
+      "shape_id": "H4_NONTOP_DESCENDANT_V1",
+      "source_domains": ["H4_proper_nontop_capacity"],
+      "schema_summary": "typed H4 proper-overlap nontop-capacity residual",
+      "existing_family_match": "h4_non_v1_branch_or_descendant",
+      "new_family_required": false,
+      "atomic_arm_required": "NONE unless later justified",
+      "mark_behavior": "ROOT_SOL identity",
+      "t5_ticket_type": "not assigned until a paid constructor is proved",
+      "owner_precedence_request": "h4_non_v1_branch_or_descendant before generic fallbacks",
+      "producer_target_set_request": ["h4_non_v1_branch_or_descendant"],
+      "current_admission_status": "no terminal/empty/paid-successor theorem"
+    },
+    {
+      "shape_id": "H4_NONPROPER_DESCENDANT_V1",
+      "source_domains": ["H4_nonproper_overlap"],
+      "schema_summary": "typed H4 nonproper-overlap residual with failed proper-overlap receipt",
+      "existing_family_match": "h4_non_v1_branch_or_descendant",
+      "new_family_required": false,
+      "atomic_arm_required": "NONE unless later justified",
+      "mark_behavior": "ROOT_SOL identity",
+      "t5_ticket_type": "not assigned until a paid constructor is proved",
+      "owner_precedence_request": "h4_non_v1_branch_or_descendant before generic fallbacks",
+      "producer_target_set_request": ["h4_non_v1_branch_or_descendant"],
+      "current_admission_status": "no terminal/empty/paid-successor theorem"
+    },
+    {
+      "shape_id": "H4_F_DESCENDANT_V1",
+      "source_domains": ["any H4 branch producing a nonterminal F target"],
+      "schema_summary": "ordinary ROOT_SOL Type-I F state with H4 parent/macro occurrence and freshly recomputed fiber witness",
+      "existing_family_match": "h4_non_v1_branch_or_descendant initially; downstream owner may specialize after grammar review",
+      "new_family_required": false,
+      "atomic_arm_required": "propagate originating arm if atomic; otherwise NONE",
+      "mark_behavior": "ROOT_SOL identity",
+      "t5_ticket_type": "originating H4 parent-to-target LOCAL_DROP",
+      "owner_precedence_request": "H4 provenance specialization before generic overflow/full-carrier fallback",
+      "producer_target_set_request": ["h4_non_v1_branch_or_descendant", "t2_v1_atomic_pending_target"],
+      "current_admission_status": "requires Agent 3 atomic serializer when atomic and a downstream total dispatch"
+    },
+    {
+      "shape_id": "H4_G_DESCENDANT_V1",
+      "source_domains": ["any H4 branch producing a nonterminal G target"],
+      "schema_summary": "ordinary ROOT_SOL Type-I G state with H4 occurrence and freshly recomputed separating character",
+      "existing_family_match": "h4_non_v1_branch_or_descendant initially",
+      "new_family_required": false,
+      "atomic_arm_required": "propagate originating arm if atomic; otherwise NONE",
+      "mark_behavior": "ROOT_SOL identity",
+      "t5_ticket_type": "originating H4 parent-to-target LOCAL_DROP followed only later by any proved phase handoff",
+      "owner_precedence_request": "H4 provenance specialization before generic fallback; do not conflate Type-I G with Type-II G handoff",
+      "producer_target_set_request": ["h4_non_v1_branch_or_descendant", "t2_v1_atomic_pending_target"],
+      "current_admission_status": "no active re-entry/continuation theorem"
+    }
+  ],
+  "atomic_arm_requests": [
+    {
+      "arm_id": "H4_A1",
+      "request": "reuse existing v1 arm through Agent 3 common serializer"
+    },
+    {
+      "arm_id": "H4_NONCLEAN_OR_A_ALT_GT_ONE",
+      "request": "do not register now; reserve only if later mathematics produces a complete atomic payload, T2 proof and E1-E5 ticket"
+    }
+  ],
+  "mark_request": {
+    "behavior": "ROOT_SOL_ONLY",
+    "new_nontrivial_mark_requested": false,
+    "reason": "No owned theorem currently constructs a reviewed finite nontrivial mark serializer or lift."
+  },
+  "precedence_summary": [
+    "terminal results are queue-external and always first",
+    "atomic pending specialization before H4/C2/generic Type-I fallbacks",
+    "H4 provenance specialization before generic overflow/full-carrier fallback",
+    "named C2 specialization before conditional C2 residual",
+    "existing overflow specializations before full-carrier fallback",
+    "unexpected overlap must fail closed"
+  ],
+  "status_boundary": "This file is a shared-interface request only. It neither edits nor freezes the active family grammar and does not establish any target as admitted."
+}

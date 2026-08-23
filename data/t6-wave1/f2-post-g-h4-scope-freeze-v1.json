@@ -1,0 +1,123 @@
+{
+  "track_id": "F2-POST-G-H4",
+  "artifact_id": "f2_post_g_h4_scope_freeze_v1",
+  "artifact_version": 1,
+  "date": "2026-08-24",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "branch": "sol/f2-post-g-h4-totality",
+  "status": "SCOPE_FROZEN_OPEN",
+  "quantifier": "For every actual persistent state S that survives the complete registered terminal-first prefix and is an ordinary q=1 G endpoint, an ordinary positive-q G endpoint, a c=3 source-lineage G endpoint, a full-carrier Type-I root or descendant through the first child/second anchor/d=1 relay, a high-C=2 19-phase descendant, any H4 selector branch, or a nonterminal F/G descendant emitted by H4: prove exactly one of FAMILY_EMPTY, TERMINAL, or VERIFIED_SUCCESSOR(E1-E5 with common-admission re-entry).",
+  "domain_requirements": [
+    "actual persistent source state with content-addressed parent identity",
+    "complete terminal-first miss receipt for the branch-specific registered prefix",
+    "source occurrence and replayable path, never fixture-derived actualness",
+    "all H4 selector guards, including branches outside the v1 a_alt=1 clean-q arm",
+    "all nonterminal F/G descendants emitted by any admitted H4 arm"
+  ],
+  "included_domains": [
+    "ordinary_q_one_G_endpoint",
+    "ordinary_positive_q_G_endpoint",
+    "c3_source_lineage_G_endpoint",
+    "full_carrier_Type_I_root",
+    "post_G_first_Type_I_child",
+    "second_anchor_descendant",
+    "d_one_relay_descendant",
+    "high_C2_19_phase_descendant",
+    "H4_proper_and_nonproper_overlap",
+    "H4_top_and_nontop_capacity",
+    "H4_a_alt_one_and_a_alt_greater_than_one",
+    "H4_clean_q_and_non_clean_q",
+    "H4_terminal_F_G_atomic_and_other_descendants",
+    "H4_nonterminal_F_G_descendant_reentry"
+  ],
+  "excluded_domains": [
+    "general_A_greater_than_one_overflow_not_generated_by_this_post_G_or_H4_track",
+    "high_support_empty_improvement_totality_owned_by_F2_overflow_track",
+    "c8_parent_outgoing_totality_owned_by_F2_atomic_track",
+    "recursive closure of shared H4_c8_atomic targets owned by_F2_atomic_track",
+    "proper_root_F3_domains",
+    "shared PersistentSelectorState runtime and family grammar",
+    "F4 selector assembly",
+    "F5 independent final audit"
+  ],
+  "existing_established_lemmas": [
+    "type-II-initial-q-one-root-terminal-or-full-carrier-dispatch",
+    "type-II-q-one-full-carrier-phase-root-entry",
+    "type-II-positive-q-G-full-carrier-phase-root-entry (relative theorem only)",
+    "type-II-q-one-c3-source-lineage-phase-root-entry (conditional source-lineage theorem only)",
+    "type-II-q-one-full-carrier-second-anchor-fixed-n-macro",
+    "type-II-q-one-full-carrier-d-one-p-free-gate-exclusion-relay",
+    "type-II-q-one-c-two-19-phase-three-anchor-persistent-macro (arithmetic and relative macro statement only)",
+    "type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-atomic-macro-checkpoint-contraction (v1 guarded arm only)",
+    "type-I-atomic-admission-v1-finite-grammar-integration",
+    "t6-persistent-selector-state-v1 conditional admission and induction kernel"
+  ],
+  "open_obligations_preserved": [
+    "actual positive-q source receipt and terminal-first binding",
+    "actual c=3 source-lineage reachability or family emptiness",
+    "continuous serialization from G endpoint through postmacro receiver",
+    "full-domain d=1 relay totality",
+    "C2 H3 target serialization and common-admission re-entry",
+    "symbolic exhaustive H4 guard partition",
+    "all H4 non-v1 branches",
+    "H4 F/G descendant recursive closure",
+    "shared atomic target handoff to Agent 3"
+  ],
+  "forbidden_inferences": [
+    "conditional adapter implies an actual edge",
+    "local or fixture control implies quantified totality",
+    "recursive_edge_eligible or persistent_queue implies actualness",
+    "family label implies E3 admission",
+    "checkpoint capacity drop implies parent-to-final-target T5 descent",
+    "finite search implies family empty",
+    "registry count implies constructor or guard exhaustion",
+    "pending_dispatch or candidate_transition is a persistent successor",
+    "a bare prime reconstructs an actual parent",
+    "H4 a_alt=1 clean-q coverage implies all H4 branches"
+  ],
+  "closure_contract": {
+    "allowed_leaf_dispositions": [
+      "FAMILY_EMPTY",
+      "TERMINAL",
+      "VERIFIED_SUCCESSOR"
+    ],
+    "verified_successor_requires": [
+      "E1 actual source occurrence, terminal-first and branch precedence",
+      "E2 deterministic target and tie-break",
+      "E3 common schema, owner, digest and admission",
+      "E4 universal lift on the full leaf",
+      "E5 strict parent-to-final-target frozen T5 N^7 ticket",
+      "recursive re-entry into the active selector domain"
+    ],
+    "track_closed_only_if": [
+      "GAP-O1-POST-G-TYPE-I has no residual leaf",
+      "GAP-O1-H4-OTHER-BRANCHES has no residual leaf",
+      "no post-G later-dispatch marker remains",
+      "no C2 arithmetic-only target remains",
+      "no H4 F/G descendant remains pending or unadmitted"
+    ]
+  },
+  "owned_files_policy": {
+    "may_add": [
+      "claims/f2-post-g-h4-*",
+      "data/t6-wave1/f2-post-g-h4-*",
+      "data/interface-requests/f2-post-g-h4-*",
+      "docs/f2-post-g-h4-*",
+      "reproductions/f2_post_g_h4_*",
+      "tests/test_f2_post_g_h4_*"
+    ],
+    "must_not_edit": [
+      "README.md",
+      "index/",
+      "data/t6-proof-frontier-v2.json",
+      "data/t6-selector-obligation-ledger-v1.json",
+      "data/t5-full-transition-taxonomy-v2.json",
+      "data/t6-constructor-inventory-v1.json",
+      "concepts/t6-persistent-selector-state-v1.md",
+      "scripts/t6_persistent_selector_state_v1.py",
+      "shared selector runtime",
+      "shared producer registry",
+      "shared family grammar"
+    ]
+  }
+}
