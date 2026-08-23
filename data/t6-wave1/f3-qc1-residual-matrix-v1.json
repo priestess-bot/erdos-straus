@@ -1,0 +1,96 @@
+{
+  "schema_id": "t6_wave1_f3_qc1_residual_matrix_v1",
+  "version": 1,
+  "track_id": "F3-QC1",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "partition_order": [
+    "QC1_R3_TERMINAL_PREEMPTED",
+    "QC1_R3_OCCURRENCE_UNBOUND",
+    "QC1_R3_OCCURRENCE_BOUND_PENDING_PHYSICALIZATION",
+    "QC1_R5_TERMINAL_PREEMPTED",
+    "QC1_R5_OCCURRENCE_UNBOUND",
+    "QC1_R5_OCCURRENCE_BOUND_PENDING_PHYSICALIZATION"
+  ],
+  "leaves": [
+    {
+      "leaf_id": "QC1_R3_TERMINAL_PREEMPTED",
+      "predicate": "R3 domain input whose ordered active terminal-first replay returns a verified terminal",
+      "mutually_exclusive_with": [
+        "QC1_R3_OCCURRENCE_UNBOUND",
+        "QC1_R3_OCCURRENCE_BOUND_PENDING_PHYSICALIZATION",
+        "all R5 leaves"
+      ],
+      "coverage_proof": "Terminal-first status is replayed before q_perp is consumed.",
+      "planned_closure": "TERMINAL",
+      "target_shape": "no persistent target",
+      "current_blocker": "none beyond binding the active terminal verifier in the final envelope"
+    },
+    {
+      "leaf_id": "QC1_R3_OCCURRENCE_UNBOUND",
+      "predicate": "R3 terminal-first miss; canonical q_perp exists arithmetically, but no replayable actual occurrence/path token for q_perp is bound to the source state",
+      "mutually_exclusive_with": [
+        "QC1_R3_TERMINAL_PREEMPTED",
+        "QC1_R3_OCCURRENCE_BOUND_PENDING_PHYSICALIZATION",
+        "all R5 leaves"
+      ],
+      "coverage_proof": "After a terminal miss, the occurrence receipt is either present and valid or absent/invalid; this is the absent/invalid branch.",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "QC1PhysicalTransitionV1",
+      "current_blocker": "Prove a universal actual source occurrence theorem for q_perp; q_perp|k alone is not E1."
+    },
+    {
+      "leaf_id": "QC1_R3_OCCURRENCE_BOUND_PENDING_PHYSICALIZATION",
+      "predicate": "R3 terminal-first miss with a replayable q_perp occurrence/path token bound to the actual source",
+      "mutually_exclusive_with": [
+        "QC1_R3_TERMINAL_PREEMPTED",
+        "QC1_R3_OCCURRENCE_UNBOUND",
+        "all R5 leaves"
+      ],
+      "coverage_proof": "Complement of the unbound occurrence branch inside terminal-first-surviving R3.",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "QC1PhysicalTransitionV1",
+      "current_blocker": "Derive deterministic target arithmetic, common E3 normalization/admission, universal E4 lift, fixed-N7 E5, and re-entry."
+    },
+    {
+      "leaf_id": "QC1_R5_TERMINAL_PREEMPTED",
+      "predicate": "R5 domain input whose ordered active terminal-first replay returns a verified terminal",
+      "mutually_exclusive_with": [
+        "QC1_R5_OCCURRENCE_UNBOUND",
+        "QC1_R5_OCCURRENCE_BOUND_PENDING_PHYSICALIZATION",
+        "all R3 leaves"
+      ],
+      "coverage_proof": "Terminal-first status is replayed before q_perp is consumed.",
+      "planned_closure": "TERMINAL",
+      "target_shape": "no persistent target",
+      "current_blocker": "none beyond binding the active terminal verifier in the final envelope"
+    },
+    {
+      "leaf_id": "QC1_R5_OCCURRENCE_UNBOUND",
+      "predicate": "R5 terminal-first miss; canonical q_perp exists arithmetically, but no replayable actual occurrence/path token for q_perp is bound to the source state",
+      "mutually_exclusive_with": [
+        "QC1_R5_TERMINAL_PREEMPTED",
+        "QC1_R5_OCCURRENCE_BOUND_PENDING_PHYSICALIZATION",
+        "all R3 leaves"
+      ],
+      "coverage_proof": "After a terminal miss, the occurrence receipt is either present and valid or absent/invalid; this is the absent/invalid branch.",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "QC1PhysicalTransitionV1",
+      "current_blocker": "Prove a universal actual source occurrence theorem for q_perp; q_perp|k alone is not E1."
+    },
+    {
+      "leaf_id": "QC1_R5_OCCURRENCE_BOUND_PENDING_PHYSICALIZATION",
+      "predicate": "R5 terminal-first miss with a replayable q_perp occurrence/path token bound to the actual source",
+      "mutually_exclusive_with": [
+        "QC1_R5_TERMINAL_PREEMPTED",
+        "QC1_R5_OCCURRENCE_UNBOUND",
+        "all R3 leaves"
+      ],
+      "coverage_proof": "Complement of the unbound occurrence branch inside terminal-first-surviving R5.",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "QC1PhysicalTransitionV1",
+      "current_blocker": "Derive deterministic target arithmetic, common E3 normalization/admission, universal E4 lift, fixed-N7 E5, and re-entry."
+    }
+  ],
+  "coverage_statement": "Within each owned residual, terminal-first hit and miss are disjoint. On a miss, a valid q_perp occurrence receipt is either bound or unbound. The m=3 versus m>3 split makes the R3 and R5 leaves disjoint; their union is the whole F3-QC1 scope.",
+  "current_status": "OPEN_MINIMAL_GAPS"
+}
