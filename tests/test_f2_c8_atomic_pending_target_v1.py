@@ -92,6 +92,41 @@ class ChartAndFiberTests(unittest.TestCase):
         self.assertEqual(result.disposition, ATOMIC.Disposition.REJECT)
         self.assertEqual(result.reason, "TARGET_FIBER_NOT_RECOMPUTED")
 
+    def test_chart_digest_mismatch_is_rejected(self) -> None:
+        target = chart(73, 11, 201, 67, 3, ((3, 1), (67, 1)))
+        other = chart(73, 3, 55, 55, 1, ((5, 1), (11, 1)))
+        result = ATOMIC.resolve_pending(
+            pending(target),
+            terminal_first_miss=True,
+            fiber=ATOMIC.exact_fiber_certificate(other),
+        )
+        self.assertEqual(result.disposition, ATOMIC.Disposition.REJECT)
+        self.assertEqual(result.reason, "TARGET_CHART_DIGEST_MISMATCH")
+
+    def test_unsupported_arm_and_pending_marker_fail_closed(self) -> None:
+        target = chart(73, 11, 201, 67, 3, ((3, 1), (67, 1)))
+        with self.assertRaisesRegex(ATOMIC.AtomicProtocolError, "UNSUPPORTED_ATOMIC_ARM"):
+            pending(target, arm="FUTURE_ARM")
+        with self.assertRaisesRegex(ATOMIC.AtomicProtocolError, "FORBIDDEN_PENDING_MARKER"):
+            ATOMIC.make_pending(
+                source_parent_id="state:parent",
+                source_macro_id="pending_dispatch",
+                source_path_digest="path:actual",
+                terminal_first_digest="terminal:miss",
+                atomic_grammar_arm="H4_A1",
+                canonical_payload=(2, 1, 5, 1),
+                chart=target,
+                source_tree_scope="charged_history_only",
+                parent_n7_potential=(0, 72, 4, 3, 2, 1, 0),
+                t5_ticket_candidate="LOCAL_DROP",
+            )
+
+    def test_carrier_factorization_is_not_support_factorization(self) -> None:
+        with self.assertRaisesRegex(
+            ATOMIC.AtomicProtocolError, "INVALID_CARRIER_FACTORIZATION"
+        ):
+            chart(73, 11, 201, 67, 3, ((67, 1),))
+
 
 class FinalAdmissionTests(unittest.TestCase):
     def test_final_f_successor_has_no_pending_fields(self) -> None:
