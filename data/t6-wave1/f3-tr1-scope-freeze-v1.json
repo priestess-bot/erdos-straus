@@ -1,0 +1,80 @@
+{
+  "artifact_id": "f3_tr1_scope_freeze_v1",
+  "artifact_version": 1,
+  "track_id": "F3-TR1-H-SUPPORTED",
+  "agent": "Agent 6",
+  "branch": "sol/f3-h-supported-tr1",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "date": "2026-08-24",
+  "status": "SCOPE_FROZEN_RESEARCH_OPEN",
+  "owned_route_codes": [
+    "R4_M3_NONQ5_H_SUPPORTED",
+    "R6_MGT3_H_SUPPORTED"
+  ],
+  "quantifier": {
+    "source_class": "ACTUAL_PERSISTENT",
+    "root_domain": "p is a core prime with p congruent to 1 modulo 24",
+    "height_domain": "2 <= h < p",
+    "proper_root_payload": "verified low proper-height maximal complete-excess receipt",
+    "survivor_conditions": [
+      "terminal-first receipt is replayable",
+      "k > 1",
+      "k_perp = 1"
+    ],
+    "route_split": [
+      "m = 3 and 5 does not divide D_star",
+      "m > 3"
+    ]
+  },
+  "excluded_domains": [
+    "HIGH_ENDPOINT_RESIDUAL with h > p",
+    "R1_M3_Q5_PATH_UNBOUND",
+    "R2_M3_Q5_PATH_BOUND_NO_SERIALIZER",
+    "R3_M3_NONQ5_QUOTIENT_ONLY",
+    "R5_MGT3_QUOTIENT_ONLY",
+    "the empty k = 1 slice",
+    "any analysis-only tuple lacking an actual persistent admission envelope"
+  ],
+  "existing_established_lemmas": [
+    "type-I-root-capacity-stutter-positive-definite-norm-bound",
+    "type-I-root-capacity-stutter-h-overlap-m-bound",
+    "type-I-root-capacity-stutter-k-one-universal-exclusion",
+    "type-I-root-capacity-stutter-common-divisor-alignment",
+    "type-I-root-capacity-stutter-provenance-dispatch",
+    "type-I-root-capacity-stutter-receipt-factor-split",
+    "type-I-root-capacity-stutter-transverse-residual-capacity-map",
+    "type-I-root-capacity-stutter-transverse-composite-divisor-positive-quadratic-type-II-fan"
+  ],
+  "fixed_definitions": {
+    "k_perp": "product of q^v_q(k) over prime q dividing k with q not dividing h",
+    "h_supported": "every prime divisor of k divides h, equivalently k_perp = 1",
+    "transverse_carrier": "a divisor occurrence q or Q bound to the actual D_star factor in the maximal receipt",
+    "canonical_transverse_prime": "the least prime factor of verified D_star after all earlier terminal predicates miss"
+  },
+  "forbidden_inferences": [
+    "k_perp = 1 implies a quotient-only carrier exists",
+    "a divisor q of k is an actual source occurrence without a source-path receipt",
+    "a divisor q or Q of D_star is a physical successor",
+    "persistent_queue = true proves actual admission",
+    "recursive_edge_eligible = true proves actual admission",
+    "a family label proves E3",
+    "a local checkpoint decrease proves E5",
+    "a singleton two-tail lift is a universal solution-set lift",
+    "a finite search proves a family empty",
+    "the excluded m = 3 and 5 divides D_star route is covered here",
+    "low-height lemmas apply to h > p"
+  ],
+  "required_partition": [
+    "terminal",
+    "QC1 via a genuinely admissible h-supported carrier",
+    "TR1 via an actual D_star transverse carrier",
+    "family-empty",
+    "explicit residual"
+  ],
+  "completion_condition": "the explicit residual is eliminated symbolically and every nonterminal output has E1-E5 plus common F1 admission",
+  "status_boundaries": {
+    "F3": "OPEN",
+    "T6": "OPEN",
+    "erdos_straus_conjecture": "OPEN"
+  }
+}

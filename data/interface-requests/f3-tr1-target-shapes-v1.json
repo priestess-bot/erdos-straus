@@ -1,0 +1,115 @@
+{
+  "request_id": "f3_tr1_target_shapes_v1",
+  "request_version": 1,
+  "track_id": "F3-TR1-H-SUPPORTED",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "date": "2026-08-24",
+  "status": "PROPOSAL_ONLY_NOT_ACTIVE",
+  "source_owner": "proper_root_stutter_k_gt_one",
+  "producer_request": {
+    "producer_id": "tr1_h_supported_transverse_v1",
+    "constructor_status": "NOT_REGISTERED",
+    "queue_right": false,
+    "terminal_first_required": true,
+    "owned_routes": [
+      "R4_M3_NONQ5_H_SUPPORTED",
+      "R6_MGT3_H_SUPPORTED"
+    ]
+  },
+  "envelope_request": {
+    "name": "TR1PhysicalTransitionV1",
+    "purpose": "one common E1-E5 envelope for R4 and R6, with route-specific arithmetic payloads if necessary",
+    "required_source_fields": [
+      "actual_parent_state_id",
+      "active_producer_id",
+      "persistent_admission_id",
+      "root_to_endpoint_source_path_digest",
+      "maximal_complete_excess_receipt_digest",
+      "terminal_first_digest",
+      "terminal_first_miss",
+      "D_star_value",
+      "D_star_factorization_receipt",
+      "selected_factor_or_divisor",
+      "selected_factor_occurrence_id",
+      "factor_selection_rule",
+      "priority_prefix_digest"
+    ],
+    "deterministic_factor_rule": "evaluate written whole-divisor terminal predicates in fixed order; after all miss, select the least prime factor of verified D_star",
+    "required_edge_fields": [
+      "E1_actual_occurrence_and_path",
+      "E2_deterministic_target",
+      "E3_target_schema_owner_and_digest",
+      "E4_universal_solution_lift",
+      "E5_authoritative_T5_ticket",
+      "target_admission_decision",
+      "target_reentry_receipt"
+    ],
+    "forbidden_inputs": [
+      "cached family owner as an E3 proof",
+      "bare divisibility q divides D_star without an occurrence receipt",
+      "persistent_queue boolean as actualness proof",
+      "recursive_edge_eligible boolean as admission proof",
+      "singleton lift as universal E4",
+      "local checkpoint rank as parent-to-final E5"
+    ]
+  },
+  "target_shapes": [
+    {
+      "shape_id": "TR1_DIRECT_TERMINAL_V1",
+      "disposition": "TERMINAL",
+      "existing_family_match": "direct_terminal_leaf",
+      "new_family_required": false,
+      "atomic_arm_required": false,
+      "mark_behavior": "root equation terminal; no recursive mark",
+      "T5_ticket_type": null,
+      "owner_precedence_request": null,
+      "admission_requirement": "terminal verifier replays the explicit Type I or Type II certificate"
+    },
+    {
+      "shape_id": "TR1_TYPEI_CHARGED_TARGET_V1",
+      "disposition": "PERSISTENT_CANDIDATE_UNTIL_PROVED",
+      "existing_family_match": "one existing Type-I family selected from raw target facts by common admission",
+      "allowed_existing_owners": [
+        "type_i_full_carrier_post_g",
+        "type_i_low_support_persistent_overflow",
+        "type_i_a_one_overflow",
+        "type_i_a_gt_one_overflow_residual",
+        "type_i_high_support_sink"
+      ],
+      "new_family_required": false,
+      "atomic_arm_required": false,
+      "mark_behavior": "preserve ROOT_SOL only if a universal identity lift is proved",
+      "T5_ticket_type": "LOCAL_DROP or PHASE_DROP, derived from the actual parent and final target",
+      "owner_precedence_request": "none; common classifier must determine the owner from raw target facts",
+      "admission_requirement": "target passes the frozen common extractor, owner classifier, producer target declaration and queue gate"
+    },
+    {
+      "shape_id": "TR1_SMALLER_MARKED_TARGET_V1",
+      "disposition": "PERSISTENT_CANDIDATE_UNTIL_PROVED",
+      "existing_family_match": "generic_nontrivial_marked_state",
+      "new_family_required": false,
+      "atomic_arm_required": false,
+      "mark_behavior": "NONTRIVIAL_MARK bound to a strictly smaller equation rank and a universal Sol(n) to Sol(p) lift",
+      "T5_ticket_type": "OUTER_RANK_DROP",
+      "owner_precedence_request": "use existing generic-marked precedence only after mark receipt verification",
+      "admission_requirement": "strictly smaller positive equation rank, content-addressed mark receipt, universal lift and common queue admission"
+    }
+  ],
+  "new_family_request": null,
+  "new_atomic_arm_request": null,
+  "grammar_change_requested": false,
+  "activation_gates": [
+    "symbolic exhaustive partition with no explicit residual",
+    "actual occurrence and priority proof",
+    "deterministic target theorem",
+    "full E1-E5 proof",
+    "common F1 admission and re-entry",
+    "Agent 5 cross-audit",
+    "coordinator approval at target-shape and grammar gates"
+  ],
+  "status_boundaries": {
+    "OPEN_TR1_PHYSICAL_SERIALIZER": "OPEN",
+    "F3": "OPEN",
+    "T6": "OPEN"
+  }
+}
