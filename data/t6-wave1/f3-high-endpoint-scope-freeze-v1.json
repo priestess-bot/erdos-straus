@@ -1,0 +1,86 @@
+{
+  "schema_id": "t6_wave1_f3_high_endpoint_scope_freeze_v1",
+  "version": 1,
+  "artifact_id": "f3_high_endpoint_scope_freeze_v1",
+  "track_id": "F3-HIGH-ENDPOINT",
+  "branch": "sol/f3-high-endpoint",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "date": "2026-08-24",
+  "status": "SCOPE_FROZEN_RESEARCH_OPEN",
+  "quantifier": {
+    "source_class": "ACTUAL_PERSISTENT",
+    "root_domain": "PROPER_FACTOR_ROOT",
+    "height_domain": "h>p",
+    "terminal_first": "terminal_first_miss",
+    "formula": "For every actual persistent root-capacity endpoint with p prime, p=1 (mod 24), M=(p^2+p+1)/3, u=gcd(2r+1,M), 0<u<M, h=3u>p, and ordered terminal-first miss."
+  },
+  "valid_high_hypotheses": [
+    "p is prime and p congruent to 1 modulo 24",
+    "M=(p^2+p+1)/3 and u=gcd(2r+1,M)",
+    "0<u<M (proper factor root; saturated u=M is excluded)",
+    "h=3u>p",
+    "the state has an active producer, serializer, admission id, and replayable source path",
+    "the actual root-capacity endpoint has z=R-h=E*D as a maximal complete-excess receipt",
+    "the actual receipt verifies h|K, gcd(h,z)=1, D|K, and D|p*h+1",
+    "the ordered active terminal-first replay returns MISS"
+  ],
+  "required_actual_receipt_fields": [
+    "state_id",
+    "producer_id",
+    "admission_id",
+    "source_path_digest",
+    "terminal_first_digest",
+    "maximal_receipt_digest",
+    "p",
+    "r",
+    "M",
+    "u",
+    "h",
+    "R",
+    "K",
+    "z",
+    "E",
+    "D",
+    "maximality_certificate"
+  ],
+  "derived_high_relations_allowed_only_after_receipt_verification": [
+    "p does not divide E because u<M",
+    "h-1 is invertible modulo p",
+    "canonical root cofactor c=<D*(h-1)^(-1)>_p is in {1,...,p-1}",
+    "c=p-1 iff D is congruent to 1-h modulo p",
+    "c<=p-2 iff the strict carry branch is taken"
+  ],
+  "excluded_domains": [
+    "LOW_PROPER_HEIGHT with 2<=h<p",
+    "saturated root layer u=M",
+    "terminal-first hit",
+    "CONDITIONAL_ADAPTER_CONTROL",
+    "ANALYSIS_ONLY",
+    "DEBUG_WORKFILE",
+    "arithmetic tuple without an active persistent admission envelope",
+    "any state whose parent is reconstructed from p alone"
+  ],
+  "forbidden_low_height_inferences": [
+    "N=a^2-a*(e-1)+(e-1)^2=h*k",
+    "k>=1 or k=1 actual emptiness",
+    "D_star=D/gcd(D,h^2-1)>1",
+    "m>=3 or m<1+sqrt(h)",
+    "quotient-only k_perp routing",
+    "QC1 or TR1 low-height serializer",
+    "any low-height Eisenstein norm, Vieta descent, or m=3,q=5 theorem"
+  ],
+  "existing_established_lemmas": [
+    "type-I-root-capacity-general-endpoint-divisor-gate",
+    "type-I-root-capacity-strict-carry-support-rebase",
+    "type-I-overflow-full-product-d-one-complete-excess-capacity-map",
+    "type-I-root-capacity-stutter-receipt-factor-split"
+  ],
+  "required_new_result": "For the complete quantified high domain, prove FAMILY_EMPTY, TERMINAL, or a deterministic admitted successor with E1-E5. Any candidate target must retain the actual source path and be reclassified by the common grammar before admission.",
+  "status_boundary": {
+    "scope": "FROZEN",
+    "high_endpoint_total_exit": "OPEN",
+    "f3": "OPEN",
+    "t6": "OPEN",
+    "erdos_straus_conjecture": "OPEN"
+  }
+}
