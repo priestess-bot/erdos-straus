@@ -1,0 +1,191 @@
+{
+  "request_id": "f2_overflow_high_support_target_shapes_v1",
+  "request_version": 1,
+  "track_id": "T6-F2-OVERFLOW-HIGH-SUPPORT",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "created": "2026-08-24",
+  "status": "REQUESTED_NOT_ADMITTED",
+  "coordinator_action_required": [
+    "freeze producer target sets only after F1 common extractor/admission is available",
+    "reject every target shape below whose actual source receipt or E3 fields are absent",
+    "do not add a frontier family or mutate shared grammar from this request alone"
+  ],
+  "shared_constraints": {
+    "source": "actual terminal-first-surviving TYPEI/CHARGED overflow with A>1",
+    "target": "content-addressed PersistentSelectorStateV1; owner and family must be recomputed from facts, never caller supplied",
+    "lift": "Sol(4,p) identity unless a shape explicitly supplies a smaller marked/equation lift",
+    "t5": "one of OUTER_RANK_DROP, PHASE_DROP, LOCAL_DROP compared parent-to-final-target",
+    "terminal_priority": "target hit returns TERMINAL and is not queued",
+    "archive": "no archive path may appear in active producer, serializer, owner, or evidence fields"
+  },
+  "target_shapes": [
+    {
+      "shape_id": "existing.overflow_same_chart_promotion_v1",
+      "producer_id": "same_chart_support_promotion",
+      "source_guard": "actual complete-excess/source receipt, canonical chart, A>1, M>A, A|M, M/A>=2",
+      "target_schema": {
+        "family_match": ["type_i_low_support_persistent_overflow", "type_i_high_support_sink"],
+        "normal_form": "overflow_same_chart_support_promotion_v1",
+        "state_class": "overflow",
+        "fields": ["p", "R", "K", "absorbed_support=A_to_M", "source_tree_scope", "Sol(4,p)", "typed_classification", "owner_digest"]
+      },
+      "mark_behavior": "preserve Sol(4,p) identity",
+      "t5_ticket": "LOCAL_DROP on (floor(B_p/A),K/A,eta)",
+      "owner_precedence_request": "refine existing overflow specialization; no new family",
+      "admission_status": "BLOCKED_UNTIL_COMMON_E3",
+      "known_evidence": ["claims/type-I-overflow-unbounded-same-chart-promotion-persistence-boundary.md"]
+    },
+    {
+      "shape_id": "existing.overflow_joined_support_reset_v1",
+      "producer_id": "joined_support_outer_reset",
+      "source_guard": "actual dual d/r receipt, A'=lcm(A,t)>A, A'|K_t, strict charged rank",
+      "target_schema": {
+        "family_match": ["type_i_a_gt_one_overflow_residual", "type_i_high_support_sink", "type_i_low_support_persistent_overflow"],
+        "normal_form": "overflow_outer_rank_reset_v1",
+        "state_class": "overflow_or_marked_absorb_by_R_t",
+        "fields": ["p", "R_t", "K_t", "absorbed_support=A_prime", "dual_side", "support_debt", "source_scope", "owner_digest"]
+      },
+      "mark_behavior": "preserve Sol(4,p) identity",
+      "t5_ticket": "LOCAL_DROP on charged support; RESET protocol forbidden when old support is joined",
+      "owner_precedence_request": "remain under existing A>1/high-support refinement; no new family",
+      "admission_status": "BLOCKED_UNTIL_COMMON_E3",
+      "known_evidence": ["claims/type-I-overflow-outer-rank-reset.md"]
+    },
+    {
+      "shape_id": "existing.overflow_fixed_divisor_v1",
+      "producer_id": "high_carrier_fixed_n_descent",
+      "source_guard": "actual determinant receipt and deterministic L divisor satisfying positivity, bound, canonical identity, strict rank",
+      "target_schema": {
+        "family_match": ["type_i_a_gt_one_overflow_residual", "type_i_high_support_sink"],
+        "normal_form": "overflow_fixed_n_or_s_bounded_divisor_v1",
+        "state_class": "overflow_or_marked_absorb_by_R_L",
+        "fields": ["p", "R_L", "K_L", "absorbed_support=L", "source_determinant", "selection_rule", "scope", "owner_digest"]
+      },
+      "mark_behavior": "preserve Sol(4,p) identity",
+      "t5_ticket": "LOCAL_DROP on floor(B_p/A)",
+      "owner_precedence_request": "remain existing A>1 overflow; fixed-s is a branch of the producer, not a new family",
+      "admission_status": "BLOCKED_UNTIL_UNIVERSAL_CANDIDATE_RULE",
+      "known_evidence": ["claims/type-I-overflow-fixed-n-bounded-divisor-saturation.md", "claims/type-I-overflow-fixed-s-bounded-divisor-saturation.md"]
+    },
+    {
+      "shape_id": "requested.overflow_M_complete_excess_v1",
+      "producer_id": "M_complete_excess",
+      "source_guard": "actual source plus full-block Q, M=lcm(A,Q)>A; terminal-first miss; no transient-only parent",
+      "target_schema": {
+        "family_match": ["type_i_low_support_persistent_overflow", "type_i_high_support_sink", "type_i_a_gt_one_overflow_residual"],
+        "normal_form": "overflow_M_complete_excess_v1",
+        "state_class": "recomputed overflow_or_marked_absorb",
+        "fields": ["p", "R_M", "K_M", "absorbed_support=M", "Q", "beta", "source_occurrence", "typed_classification", "owner_digest"]
+      },
+      "mark_behavior": "preserve Sol(4,p) only after target retyping",
+      "t5_ticket": "LOCAL_DROP if parent-to-target sharp rank decreases",
+      "owner_precedence_request": "coordinator must decide whether existing overflow residual predicates are sufficient; otherwise emit a new family request",
+      "admission_status": "NEW_ADAPTER_REQUIRED",
+      "known_evidence": ["claims/type-I-marked-g-universal-anchor-complete-excess-exit.md", "docs/M-H-final-two-problem-audit-2026-08-20.md"]
+    },
+    {
+      "shape_id": "existing.total_cofactor_canonical_projection_v1",
+      "producer_id": "total_cofactor_typed_projection_v1",
+      "source_guard": "external persistent registration, parent digest, terminal-first miss, determinant pn=4Md+1, t>0",
+      "target_schema": {
+        "family_match": ["type_i_low_support_persistent_overflow", "type_i_a_gt_one_overflow_residual", "type_i_high_support_sink"],
+        "normal_form": "type_i_total_cofactor_charged_v1",
+        "state_class": "recomputed marked_absorb_or_overflow",
+        "fields": ["p", "canonical R_A", "canonical K_A", "A", "d_A", "n_A", "source/target hit-F-G", "scope", "owner_digest"]
+      },
+      "mark_behavior": "preserve Sol(4,p) identity; target hit is terminal",
+      "t5_ticket": "LOCAL_DROP when quotient t>0; reject t=0 stutter",
+      "owner_precedence_request": "existing TYPEI/CHARGED family after common admission",
+      "admission_status": "CONDITIONAL_ADAPTER_NOT_AN_ACTIVE_PRODUCER",
+      "known_evidence": ["claims/type-I-overflow-total-cofactor-typed-projection-dispatch.md"]
+    },
+    {
+      "shape_id": "existing.high_support_rank_aware_bundle_v1",
+      "producer_id": "high_support_rank_aware_sink_bundle",
+      "source_guard": "A>B_p, actual sink-SCC path, complete candidate map; select shortest path then minimum c_Q among c_Q<K/A",
+      "target_schema": {
+        "family_match": ["type_i_high_support_sink", "type_i_low_support_persistent_overflow", "type_i_a_gt_one_overflow_residual"],
+        "normal_form": "high_support_rank_aware_bundle_v1",
+        "state_class": "recomputed F/G overflow_or_marked_absorb",
+        "fields": ["p", "R", "K", "A", "source_path_digest", "sink_node", "Q", "beta", "M", "c_Q", "classification", "owner_digest"]
+      },
+      "mark_behavior": "preserve Sol(4,p) identity after source/target retyping",
+      "t5_ticket": "LOCAL_DROP on C=K/A, parent-to-final-target",
+      "owner_precedence_request": "high-support specialization before generic A>1 residual",
+      "admission_status": "FOCUSED_CONTROL_ONLY",
+      "known_evidence": ["claims/type-I-high-support-rank-aware-sink-bundle-selector.md"]
+    },
+    {
+      "shape_id": "requested.high_support_C1_paid_exit_v1",
+      "producer_id": "high_support_C1_exit",
+      "source_guard": "A>B_p, C=1, terminal-first miss, no same-protocol improvement",
+      "target_schema": {
+        "family_match": ["type_i_a_gt_one_overflow_residual", "generic_nontrivial_marked_state", "direct_terminal_leaf"],
+        "normal_form": "high_support_C1_paid_exit_v1",
+        "state_class": "terminal_or_lower_protocol/phase target",
+        "fields": ["parent_state_id", "exit_kind", "target_or_terminal_receipt", "rho/protocol transition", "scope", "owner_digest"]
+      },
+      "mark_behavior": "identity only if target remains Sol(4,p); otherwise explicit smaller marked/equation lift required",
+      "t5_ticket": "OUTER_RANK_DROP, PHASE_DROP, or a paid lower-protocol ticket; same CHARGED C=1 LOCAL_DROP is impossible",
+      "owner_precedence_request": "no new family authorized until a concrete exit is proved",
+      "admission_status": "OPEN_RESIDUAL",
+      "known_evidence": ["claims/type-I-high-support-empty-improvement-c1-local-minimum-boundary.md"]
+    },
+    {
+      "shape_id": "requested.high_support_Cgt1_empty_improvement_v1",
+      "producer_id": "high_support_Cgt1_empty_exit",
+      "source_guard": "A>B_p, C>1, terminal-first miss, all candidate c_Q>=C and previous routes fail",
+      "target_schema": {
+        "family_match": ["type_i_a_gt_one_overflow_residual", "type_i_high_support_sink", "direct_terminal_leaf"],
+        "normal_form": "high_support_Cgt1_empty_improvement_v1",
+        "state_class": "terminal_or_paid alternate/lower-protocol target",
+        "fields": ["parent_state_id", "complete_candidate_census_digest", "exit_kind", "target", "source_scope", "owner_digest"]
+      },
+      "mark_behavior": "must be recomputed; no C=1 inheritance",
+      "t5_ticket": "OUTER_RANK_DROP or PHASE/PROTOCOL drop; C=1 same-protocol route is forbidden",
+      "owner_precedence_request": "retain explicit residual until a proof identifies existing family or requests a new one",
+      "admission_status": "OPEN_RESIDUAL",
+      "known_evidence": ["docs/M-H-final-two-problem-audit-2026-08-20.md"]
+    },
+    {
+      "shape_id": "requested.p409_noncanonical_low_anchor_bridge_v1",
+      "producer_id": "p409_noncanonical_low_anchor_bridge",
+      "source_guard": "exact p=409,A=5 anomaly with raw H=(409,251,25665;5), no canonical charged parent currently known",
+      "target_schema": {
+        "family_match": ["type_i_a_gt_one_overflow_residual"],
+        "normal_form": "noncanonical_low_anchor_charged_history_v1",
+        "state_class": "transient raw anchor plus direction-correct parent-bound target only",
+        "fields": ["parent_state_id", "J_to_H_receipt", "H_raw_digest", "S_projection_digest", "T_target_digest", "scope_chain", "owner_digest"]
+      },
+      "mark_behavior": "identity only across a fully verified same-equation chain",
+      "t5_ticket": "must compare the true parent to final target; no transient-to-target payment",
+      "owner_precedence_request": "new adapter request; do not register a new family or invert outgoing S edge",
+      "admission_status": "BLOCKED_MISSING_PARENT",
+      "known_evidence": ["claims/type-I-p409-a5-charged-history-parent-replay-boundary.md"]
+    },
+    {
+      "shape_id": "requested.f2_explicit_residual_v1",
+      "producer_id": "f2_explicit_residual",
+      "source_guard": "complement of every preceding F2 precedence guard",
+      "target_schema": {
+        "family_match": ["UNASSIGNED"],
+        "normal_form": "f2_explicit_residual_v1",
+        "state_class": "analysis_evidence_only_until_new_admission",
+        "fields": ["parent_state_id", "residual_guard_digest", "complete_precedence_trace", "candidate_or_terminal_payload"]
+      },
+      "mark_behavior": "must not be inferred; explicit mark receipt required",
+      "t5_ticket": "none until a new proof supplies OUTER_RANK_DROP, PHASE_DROP, or LOCAL_DROP",
+      "owner_precedence_request": "coordinator rejection by default; new family/producer requires a separate request",
+      "admission_status": "REJECT_UNTIL_PROVED",
+      "known_evidence": ["data/t6-wave1/f2-overflow-high-support-residual-matrix-v1.json"]
+    }
+  ],
+  "new_family_requests": [],
+  "explicit_nonrequests": [
+    "Do not add a generic overflow family to absorb M, C1, C>1, or p409 residuals.",
+    "Do not add a C=1 family merely to encode a no-go theorem.",
+    "Do not register total_cofactor_typed_projection_v1 as an actual producer without upstream source registration.",
+    "Do not treat high-support p=73 control as a producer target set for all p.",
+    "Do not admit raw noncanonical p409 H as a persistent state."
+  ]
+}
