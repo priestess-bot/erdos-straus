@@ -221,7 +221,17 @@ a^2C\equiv (pa)^2+(pa)a+a^2
 \]
 
 这里 \(N>0\) 来自 \(a>b\ge0\)。式 (11) 仅是本节从 high 假设推出的结果，不是把
-low-height \(k\) 定理移植过来；后续 low 的 \(k=1\) 无限下降仍不可调用。
+low-height \(k\) 定理移植过来；后续 low 的 \(k=1\) 无限下降仍不可调用。由 (10) 的
+\(a\) 奇性可进一步得到 \(N\) 为奇数；\(h\) 也是奇数，故
+
+\[
+\boxed{k\ \text{is odd},\qquad k=1\ \text{or}\ k\ge3.}
+\tag{11a}
+\]
+
+high \(k=1\) 支的正确定义与 Pell 型参数化见
+type-I-t6-f3-high-endpoint-k-one-pell-residual-v1；它不是现有 low \(k=1\)
+empty theorem 的适用域。
 
 再令
 
