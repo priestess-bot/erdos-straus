@@ -214,6 +214,20 @@ class AtomicDisposition:
     chart_digest: str
 
 
+def canonical_charged_n7(chart: ChartFacts) -> tuple[int, ...]:
+    """Return the frozen T5 N7 potential for this final TYPEI/CHARGED chart."""
+    boundary = (chart.prime - 1) ** 2 // 4
+    return (
+        chart.prime,
+        2,
+        4,
+        boundary // chart.support,
+        chart.capacity,
+        0,
+        0,
+    )
+
+
 def _require_token(value: Any, name: str) -> str:
     if not isinstance(value, str) or not value:
         raise AtomicProtocolError("MISSING_PARENT_PATH", f"{name} is empty")
@@ -251,8 +265,16 @@ def make_pending(
     if not payload or any(not isinstance(value, int) or isinstance(value, bool) for value in payload):
         raise AtomicProtocolError("INVALID_ATOMIC_PAYLOAD", "payload must be nonempty integer tuple")
     potential = tuple(parent_n7_potential)
-    if len(potential) != 7 or any(not isinstance(value, int) or value < 0 for value in potential):
+    if (
+        len(potential) != 7
+        or any(not isinstance(value, int) or value < 0 for value in potential)
+        or potential[:3] != (chart.prime, 2, 4)
+    ):
         raise AtomicProtocolError("INVALID_N7_POTENTIAL", "parent potential must be N^7")
+    if t5_ticket_candidate != "LOCAL_DROP":
+        raise AtomicProtocolError(
+            "INVALID_T5_TICKET", "H4/c8 atomic final targets require LOCAL_DROP"
+        )
     bare = {
         "schema_id": SCHEMA_ID,
         "schema_version": SCHEMA_VERSION,
@@ -462,6 +484,11 @@ def finalize_successor(
     target_rank = tuple(target_n7_potential)
     if len(target_rank) != 7 or any(not isinstance(value, int) or value < 0 for value in target_rank):
         raise AtomicProtocolError("INVALID_N7_POTENTIAL", "target potential must be N^7")
+    expected_target_rank = canonical_charged_n7(pending.chart)
+    if target_rank != expected_target_rank:
+        raise AtomicProtocolError(
+            "N7_TARGET_MISMATCH", "target potential does not replay from its chart"
+        )
     if not target_rank < pending.parent_n7_potential:
         raise AtomicProtocolError("N7_NOT_STRICT", "parent-to-final target is not strict")
     if not reentry_verified:
@@ -504,6 +531,7 @@ __all__ = [
     "exact_fiber_certificate",
     "finalize_successor",
     "make_pending",
+    "canonical_charged_n7",
     "resolve_pending",
     "verify_fiber_certificate",
 ]

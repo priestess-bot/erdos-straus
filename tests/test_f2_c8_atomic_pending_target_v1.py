@@ -23,6 +23,16 @@ def chart(prime: int, residual: int, carrier: int, support: int, capacity: int, 
 
 
 def pending(target_chart, arm="H4_A1"):
+    target_rank = ATOMIC.canonical_charged_n7(target_chart)
+    parent_rank = (
+        target_rank[0],
+        target_rank[1],
+        target_rank[2],
+        target_rank[3] + 1,
+        target_chart.prime - 1,
+        0,
+        0,
+    )
     return ATOMIC.make_pending(
         source_parent_id="state:parent",
         source_macro_id="macro:actual",
@@ -32,7 +42,7 @@ def pending(target_chart, arm="H4_A1"):
         canonical_payload=(2, 1, 5, 1),
         chart=target_chart,
         source_tree_scope="charged_history_only",
-        parent_n7_potential=(0, 72, 4, 3, 2, 1, 0),
+        parent_n7_potential=parent_rank,
         t5_ticket_candidate="LOCAL_DROP",
     )
 
@@ -127,7 +137,7 @@ class ChartAndFiberTests(unittest.TestCase):
                 canonical_payload=(2, 1, 5, 1),
                 chart=target,
                 source_tree_scope="charged_history_only",
-                parent_n7_potential=(0, 72, 4, 3, 2, 1, 0),
+                parent_n7_potential=(73, 2, 4, 20, 72, 0, 0),
                 t5_ticket_candidate="LOCAL_DROP",
             )
 
@@ -160,7 +170,7 @@ class FinalAdmissionTests(unittest.TestCase):
             disposition,
             target_state_id="state:target",
             target_owner="type_i_full_carrier_post_g",
-            target_n7_potential=(0, 60, 4, 3, 2, 1, 0),
+            target_n7_potential=ATOMIC.canonical_charged_n7(target),
             e4_lift_digest="lift:id",
             reentry_verified=True,
         )
@@ -170,7 +180,10 @@ class FinalAdmissionTests(unittest.TestCase):
 
     def test_final_successor_requires_strict_parent_to_final_rank(self) -> None:
         target = chart(73, 11, 201, 67, 3, ((3, 1), (67, 1)))
-        item = pending(target, arm="C8_DOUBLE_LOW")
+        item = replace(
+            pending(target, arm="C8_DOUBLE_LOW"),
+            parent_n7_potential=ATOMIC.canonical_charged_n7(target),
+        )
         disposition = ATOMIC.resolve_pending(
             item,
             terminal_first_miss=True,
@@ -182,7 +195,7 @@ class FinalAdmissionTests(unittest.TestCase):
                 disposition,
                 target_state_id="state:target",
                 target_owner="type_i_full_carrier_post_g",
-                target_n7_potential=item.parent_n7_potential,
+                target_n7_potential=ATOMIC.canonical_charged_n7(target),
                 e4_lift_digest="lift:id",
                 reentry_verified=True,
             )
@@ -201,9 +214,30 @@ class FinalAdmissionTests(unittest.TestCase):
                 disposition,
                 target_state_id="state:target",
                 target_owner="type_i_full_carrier_post_g",
-                target_n7_potential=(0, 60, 4, 3, 2, 1, 0),
+                target_n7_potential=ATOMIC.canonical_charged_n7(target),
                 e4_lift_digest="lift:id",
                 reentry_verified=False,
+            )
+
+    def test_forged_smaller_target_rank_is_rejected(self) -> None:
+        target = chart(73, 383, 6_990, 233, 30, ((2, 1), (3, 1), (5, 1), (233, 1)))
+        item = pending(target)
+        disposition = ATOMIC.resolve_pending(
+            item,
+            terminal_first_miss=True,
+            fiber=ATOMIC.exact_fiber_certificate(target),
+        )
+        forged = list(ATOMIC.canonical_charged_n7(target))
+        forged[3] = max(0, forged[3] - 1)
+        with self.assertRaisesRegex(ATOMIC.AtomicProtocolError, "N7_TARGET_MISMATCH"):
+            ATOMIC.finalize_successor(
+                item,
+                disposition,
+                target_state_id="state:target",
+                target_owner="type_i_a_gt_one_overflow_residual",
+                target_n7_potential=forged,
+                e4_lift_digest="lift:id",
+                reentry_verified=True,
             )
 
 

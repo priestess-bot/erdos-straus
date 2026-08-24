@@ -22,6 +22,7 @@ from f2_c8_atomic_pending_target_v1 import (
     AtomicPendingTargetV1,
     AtomicProtocolError,
     Disposition,
+    canonical_charged_n7,
     finalize_successor,
 )
 
@@ -172,7 +173,11 @@ def build_raw_final_target(
         )
     _require_evidence(evidence)
     target_rank = tuple(target_n7_potential)
-    if len(target_rank) != 7 or target_rank >= pending.parent_n7_potential:
+    if target_rank != canonical_charged_n7(pending.chart):
+        raise AtomicProtocolError(
+            "N7_TARGET_MISMATCH", "target potential does not replay from its chart"
+        )
+    if target_rank >= pending.parent_n7_potential:
         raise AtomicProtocolError(
             "N7_NOT_STRICT", "parent-to-final target is not a strict N7 decrease"
         )
