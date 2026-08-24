@@ -40,12 +40,12 @@ class C8OutgoingTrichotomyTests(unittest.TestCase):
         result = TRI.dispatch_c8_outgoing(terminal, [candidate(101)])
         self.assertEqual(result.disposition, TRI.C8Disposition.TERMINAL)
 
-    def test_least_fully_verified_double_low_is_deterministic(self) -> None:
+    def test_caller_candidate_list_cannot_choose_an_active_double_low(self) -> None:
         result = TRI.dispatch_c8_outgoing(
             miss(), [candidate(103), candidate(101), candidate(97, verified=False)]
         )
-        self.assertEqual(result.disposition, TRI.C8Disposition.DOUBLE_LOW)
-        self.assertEqual(result.selected_raw_prime, 101)
+        self.assertEqual(result.disposition, TRI.C8Disposition.OTHER)
+        self.assertIsNone(result.selected_raw_prime)
 
     def test_no_double_low_uses_real_named_other_constructor(self) -> None:
         result = TRI.dispatch_c8_outgoing(miss(), [])

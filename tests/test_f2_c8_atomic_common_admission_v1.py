@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import importlib.util
-import json
 from dataclasses import replace
 from pathlib import Path
 import sys
@@ -26,14 +25,6 @@ def load(name: str):
 
 PENDING = load("f2_c8_atomic_pending_target_v1")
 ADMISSION = load("f2_c8_atomic_common_admission_v1")
-
-EVIDENCE = {
-    "E1": "actual-parent-and-path",
-    "E2": "canonical-lcm-target",
-    "E3": "target-local-fiber-recomputation",
-    "E4": "identity-Sol-p-lift",
-}
-
 
 def pending_for(chart, arm):
     parent_rank = ADMISSION.n7_charged_potential(
@@ -90,7 +81,7 @@ class CommonAdmissionTests(unittest.TestCase):
             ),
         )
 
-    def test_h4_and_c8_f_g_targets_enter_existing_overflow_residual(self) -> None:
+    def test_h4_and_c8_f_g_targets_generate_existing_owner_proposals(self) -> None:
         for arm, chart, expected_fiber in self.cases():
             with self.subTest(arm=arm):
                 item = pending_for(chart, arm)
@@ -109,17 +100,15 @@ class CommonAdmissionTests(unittest.TestCase):
                     support=chart.support,
                     capacity=chart.capacity,
                 )
-                receipt = ADMISSION.admit_final_target(
+                proposal = ADMISSION.propose_final_target(
                     item,
                     disposition,
                     target_n7_potential=target_rank,
-                    evidence=EVIDENCE,
                 )
-                self.assertTrue(receipt.decision.accepted)
-                self.assertEqual(receipt.decision.owner, ADMISSION.TARGET_OWNER)
-                self.assertEqual(receipt.raw_state["facts"]["atomic_arm"], "NONE")
-                self.assertEqual(receipt.raw_state["facts"]["dispatch_status"], "NONE")
-                self.assertNotIn("pending_", json.dumps(receipt.final_successor))
+                self.assertTrue(proposal.status.startswith("PROPOSAL_NOT_ACTIVE"))
+                self.assertEqual(proposal.required_target_owner, ADMISSION.TARGET_OWNER)
+                self.assertEqual(proposal.facts["atomic_arm"], "NONE")
+                self.assertEqual(proposal.facts["dispatch_status"], "NONE")
 
     def test_atomic_target_cannot_enter_without_strict_n7(self) -> None:
         arm, chart, _ = self.cases()[0]
@@ -136,14 +125,13 @@ class CommonAdmissionTests(unittest.TestCase):
             ),
         )
         with self.assertRaisesRegex(PENDING.AtomicProtocolError, "N7_NOT_STRICT"):
-            ADMISSION.admit_final_target(
+            ADMISSION.propose_final_target(
                 item,
                 disposition,
                 target_n7_potential=PENDING.canonical_charged_n7(chart),
-                evidence=EVIDENCE,
             )
 
-    def test_atomic_target_cannot_enter_without_e1_e4_evidence(self) -> None:
+    def test_track_local_module_cannot_invoke_shared_admission(self) -> None:
         arm, chart, _ = self.cases()[1]
         item = pending_for(chart, arm)
         disposition = PENDING.resolve_pending(
@@ -152,7 +140,7 @@ class CommonAdmissionTests(unittest.TestCase):
             fiber=PENDING.exact_fiber_certificate(chart),
         )
         with self.assertRaisesRegex(
-            PENDING.AtomicProtocolError, "INCOMPLETE_E1_E4_EVIDENCE"
+            PENDING.AtomicProtocolError, "SHARED_ADMISSION_NOT_INSTALLED"
         ):
             ADMISSION.admit_final_target(
                 item,
@@ -162,7 +150,6 @@ class CommonAdmissionTests(unittest.TestCase):
                     support=chart.support,
                     capacity=chart.capacity,
                 ),
-                evidence={"E1": "only-one"},
             )
 
 

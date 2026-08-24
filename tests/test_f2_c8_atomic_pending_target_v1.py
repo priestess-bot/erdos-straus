@@ -172,11 +172,13 @@ class FinalAdmissionTests(unittest.TestCase):
             target_owner="type_i_full_carrier_post_g",
             target_n7_potential=ATOMIC.canonical_charged_n7(target),
             e4_lift_digest="lift:id",
-            reentry_verified=True,
         )
-        self.assertEqual(receipt["status"], "VERIFIED_SUCCESSOR")
+        self.assertEqual(
+            receipt["status"], "FINAL_CANDIDATE_NOT_ACTIVE_SHARED_ADMISSION_REQUIRED"
+        )
         self.assertEqual(receipt["target_fiber"], "F")
         self.assertNotIn("pending", json.dumps(receipt))
+        self.assertTrue(receipt["requires_shared_reentry_receipt"])
 
     def test_final_successor_requires_strict_parent_to_final_rank(self) -> None:
         target = chart(73, 11, 201, 67, 3, ((3, 1), (67, 1)))
@@ -197,10 +199,9 @@ class FinalAdmissionTests(unittest.TestCase):
                 target_owner="type_i_full_carrier_post_g",
                 target_n7_potential=ATOMIC.canonical_charged_n7(target),
                 e4_lift_digest="lift:id",
-                reentry_verified=True,
             )
 
-    def test_final_successor_requires_reentry(self) -> None:
+    def test_candidate_always_requires_shared_reentry(self) -> None:
         target = chart(73, 11, 201, 67, 3, ((3, 1), (67, 1)))
         item = pending(target)
         disposition = ATOMIC.resolve_pending(
@@ -208,16 +209,15 @@ class FinalAdmissionTests(unittest.TestCase):
             terminal_first_miss=True,
             fiber=ATOMIC.exact_fiber_certificate(target),
         )
-        with self.assertRaisesRegex(ATOMIC.AtomicProtocolError, "REENTRY_NOT_VERIFIED"):
-            ATOMIC.finalize_successor(
-                item,
-                disposition,
-                target_state_id="state:target",
-                target_owner="type_i_full_carrier_post_g",
-                target_n7_potential=ATOMIC.canonical_charged_n7(target),
-                e4_lift_digest="lift:id",
-                reentry_verified=False,
-            )
+        receipt = ATOMIC.finalize_successor(
+            item,
+            disposition,
+            target_state_id="state:target",
+            target_owner="type_i_full_carrier_post_g",
+            target_n7_potential=ATOMIC.canonical_charged_n7(target),
+            e4_lift_digest="lift:id",
+        )
+        self.assertTrue(receipt["requires_shared_reentry_receipt"])
 
     def test_forged_smaller_target_rank_is_rejected(self) -> None:
         target = chart(73, 383, 6_990, 233, 30, ((2, 1), (3, 1), (5, 1), (233, 1)))
@@ -237,7 +237,6 @@ class FinalAdmissionTests(unittest.TestCase):
                 target_owner="type_i_a_gt_one_overflow_residual",
                 target_n7_potential=forged,
                 e4_lift_digest="lift:id",
-                reentry_verified=True,
             )
 
 

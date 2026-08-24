@@ -12,9 +12,10 @@ statement: >-
   139，与 p>=4129 矛盾，故 9<=c_T<=p-2。因 P 的 capacity 是 p-1，且 A_T>M>B_p，
   比较真实 persistent endpoints 得固定 T5 N7 严降 P->T；H->T 的局部升容只是
   macro internal checkpoint。target terminal/hit/F/G 从整数重算，hit 终止，F/G 通过
-  type_i_a_gt_one_overflow_residual owner 重入。因此每个 terminal-first-surviving actual
-  c8 parent 都有此 deterministic OTHER verified successor/terminal fallback，不依赖
-  double-low endpoint 存在。本结论不关闭上游 c8 parent reachability 或全局 T6。
+  type_i_a_gt_one_overflow_residual owner 的投影形状。因此每个带真实 terminal-first MISS、
+  actual parent/path 与完整 target classifier receipt 的 c8 parent 有 deterministic OTHER
+  arithmetic fallback；shared producer/admission/re-entry 仍是外部义务。本结论不关闭 active
+  c8 selector、上游 c8 parent reachability 或全局 T6。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -200,9 +201,10 @@ T.
 \]
 
 E1 由 actual persistent \(P\)、既有 \(P\Rightarrow H\) relay receipt、(5)--(7) 的
-actual path 与 unique complete-excess block 支付。E2 由 (9)--(10) 支付。E3 绑定
-parent id、两个 path digest、scope、target integers 与完整 \(K_T\) factorization，并按
-完整 Bradford/centered hit/F/G policy 从头重算，禁止继承 \(H\) 的标签。E4 是
+actual path、unique complete-excess block 与真实 complete terminal-first MISS 支付。E2 由
+(9)--(10) 支付。E3 仍须 shared producer、source/terminal receipt、target-local full-\(K_T\)
+factorization 与 Bradford/centered hit/F/G receipt；本卡只给出需重算的数学输入，不以字符串
+或本地 booleans 伪造 common admission。E4 是
 
 \[
 W_T=W_P=\operatorname{Sol}(p),\qquad \Phi_{T\to P}=\operatorname{id}.
@@ -210,18 +212,19 @@ W_T=W_P=\operatorname{Sol}(p),\qquad \Phi_{T\to P}=\operatorname{id}.
 \]
 
 E5 是 (16)。若 target 为 direct/centered hit，则输出 terminal；否则 (9)、
-\(A_T>B_p\) 与 \(R_T\equiv3\pmod4\) 给出 \(R_T>p\)，因此 F/G final target 通过现有
-`type_i_a_gt_one_overflow_residual` owner 重入 common selector。
+\(A_T>B_p\) 与 \(R_T\equiv3\pmod4\) 给出 \(R_T>p\)，因此 F/G final target 具有现有
+`type_i_a_gt_one_overflow_residual` owner shape。actual common-selector re-entry 要等共享
+registry 与 downstream totality 安装后才可声称。
 
 ## 5. c8 outgoing 三分
 
 固定 precedence：
 
 1. 完整 terminal-first 命中则 `TERMINAL`；
-2. MISS 后若固定 candidate order 中存在第一个 actual double-low receipt，可选择已有
-   `DOUBLE_LOW_VERIFIED_SUCCESSOR`；
-3. 否则无条件执行 (17)，得到 target-local terminal 或
-   `OTHER_VERIFIED_SUCCESSOR`。
+2. MISS 后，未来 shared runtime 可以在完整 source-bound candidate universe 中选择
+   double-low receipt；本地 track 不从调用者给的列表推断该 universe；
+3. 对真实 MISS，(17) 给出 deterministic OTHER arithmetic target，随后仍须 target-local
+   classifier、shared admission 与 downstream re-entry。
 
 第 3 项其实对第 2 项也可用；保留 double-low 优先只为了兼容冻结三分和较短目标选择。
 因此 double-low existence 不再是 c8 outgoing totality 的前提，non-double-low complement
@@ -249,9 +252,9 @@ R_T=3649834292583515308444175375033627543.
 该素数自身会被更早 terminal-first 抢占，所以 (19)--(21) 只检验公式和 macro
 端点比较，不作为 terminal-free actual control。
 
-本结果关闭 `GAP-O3-C8-OUTGOING` 的数学 outgoing existence，但 shared producer
-registration、F1 grammar freeze 与独立 cross-audit 仍由 coordinator 处理；它不宣称
-上游所有 c8 parent 已经实际可达，也不关闭全局 F2/T6。
+本结果建立 `GAP-O3-C8-OUTGOING` 的条件性 arithmetic fallback；active selector 层仍缺
+shared producer registration、真实 terminal MISS、full target classifier 与 downstream overflow
+re-entry。它不宣称上游所有 c8 parent 已经实际可达，也不关闭全局 F2/T6。
 
 聚焦验证：
 

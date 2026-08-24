@@ -50,19 +50,14 @@ class C8SecondFullExcessParentMacroTests(unittest.TestCase):
         self.assertGreater(receipt.target_n7, checkpoint_rank)
         self.assertLess(receipt.target_n7, receipt.parent_n7)
 
-    def test_final_target_passes_common_overflow_residual_gate(self) -> None:
+    def test_terminal_preempted_control_never_manufactures_a_miss(self) -> None:
         receipt = MACRO.parent_to_final_receipt(3_279)
-        decision = MACRO.common_admission(
-            receipt,
-            {
-                "E1": "parent-and-path",
-                "E2": "canonical-target",
-                "E3": "target-reclassification",
-                "E4": "identity-lift",
-            },
-        )
-        self.assertTrue(decision.accepted)
-        self.assertEqual(decision.owner, MACRO.TARGET_OWNER)
+        terminal = MACRO.terminal_control(3_279)
+        self.assertEqual(terminal.outcome, "HIT")
+        self.assertIsNotNone(terminal.denominators)
+        proposal = MACRO.propose_after_actual_miss(receipt)
+        self.assertTrue(proposal.status.startswith("PROPOSAL_NOT_ACTIVE"))
+        self.assertEqual(proposal.required_target_owner, MACRO.TARGET_OWNER)
 
 
 if __name__ == "__main__":

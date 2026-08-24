@@ -11,32 +11,11 @@ from __future__ import annotations
 
 import argparse
 from dataclasses import dataclass
-import importlib.util
+from fractions import Fraction
 from math import gcd
-from pathlib import Path
-import sys
-from typing import Any, Mapping
 
 import type_i_q_one_full_carrier_d_one_c_eight_double_low_parent_anchored_atomic_macro as parent_macro
 import type_i_q_one_full_carrier_d_one_c_eight_full_excess_carry_obstruction as c8
-
-ROOT = Path(__file__).resolve().parents[1]
-
-
-def _load_common():
-    path = ROOT / "scripts" / "t6_persistent_selector_state_v1.py"
-    name = "t6_persistent_selector_state_v1_c8_fallback"
-    spec = importlib.util.spec_from_file_location(name, path)
-    if spec is None or spec.loader is None:  # pragma: no cover
-        raise RuntimeError(f"cannot import {path}")
-    module = importlib.util.module_from_spec(spec)
-    sys.modules[name] = module
-    spec.loader.exec_module(module)
-    return module
-
-
-common = _load_common()
-
 
 PRODUCER_ID = "f2_c8_second_full_excess_final_target_v1"
 BRANCH_ID = "c8_second_full_excess_final_target"
@@ -59,6 +38,25 @@ class ParentToFinalReceipt:
     target_residual: int
     parent_n7: tuple[int, ...]
     target_n7: tuple[int, ...]
+
+
+@dataclass(frozen=True)
+class TerminalControl:
+    prime: int
+    outcome: str
+    denominators: tuple[int, int, int] | None
+    scope: str
+
+
+@dataclass(frozen=True)
+class FallbackAdmissionProposal:
+    status: str
+    required_producer_id: str
+    required_branch_id: str
+    required_source_owner: str
+    required_target_owner: str
+    target_n7: tuple[int, ...]
+    required_evidence: tuple[str, ...]
 
 
 def n7(prime: int, support: int, capacity: int, eta_p: int = 0) -> tuple[int, ...]:
@@ -135,103 +133,41 @@ def symbolic_capacity_bounds(prime: int, capacity: int) -> bool:
     return low_excluded and parent_stutter_excluded and 9 <= capacity <= prime - 2
 
 
-def producer_rule() -> common.ProducerRuleV1:
-    """Return this track's proposed, not-yet-shared producer rule."""
-    return common.ProducerRuleV1(
-        producer_id=PRODUCER_ID,
-        queue_gate=common.ADMITTED_SUCCESSOR,
-        branch_ids=frozenset({BRANCH_ID}),
-        source_owners=frozenset({"c8_terminal_first_surviving_parent"}),
-        target_owners=frozenset({TARGET_OWNER}),
-    )
+def terminal_control(s: int) -> TerminalControl:
+    """Return known terminal evidence; unknown controls are not silently a MISS."""
+    target = c8.c_eight_target(s)
+    if target.prime == 157_393:
+        denominators = (39_375, 57_920_624, 2_280_624_570_000)
+        if Fraction(4, target.prime) != sum(
+            (Fraction(1, value) for value in denominators), Fraction(0, 1)
+        ):
+            raise AssertionError("stored c8 terminal control changed")
+        return TerminalControl(target.prime, "HIT", denominators, "gap-seven-control")
+    return TerminalControl(target.prime, "UNRESOLVED", None, "no-terminal-control")
 
 
-def common_admission(
-    receipt: ParentToFinalReceipt, evidence: Mapping[str, str]
-) -> common.QueueAdmissionDecisionV1:
-    """Project the final chart, not the internal c8 checkpoint, through F1."""
-    if set(evidence) != {"E1", "E2", "E3", "E4"} or any(
-        not isinstance(value, str) or not value for value in evidence.values()
-    ):
-        raise ValueError("complete E1-E4 evidence digests are required")
-    facts: dict[str, Any] = {
-        "major_phase": "TYPEI",
-        "endpoint_fiber": "NONE",
-        "relation_q": None,
-        "provenance_kind": "OVERFLOW",
-        "full_carrier_scope": False,
-        "atomic_arm": "NONE",
-        "dispatch_status": "NONE",
-        "proper_root_k": None,
-        "is_overflow": True,
-        "support_A": receipt.target_support,
-        "carrier_M": None,
-        "overflow_d": None,
-        "chart_R": receipt.target_residual,
-        "chart_K": receipt.target_carrier,
-        "sink_scc_receipt": False,
-        "same_chart_promotion_receipt": False,
-    }
-    terminal = common.seal_receipt_v1(
-        {
-            "schema_id": common.TERMINAL_FIRST_SCHEMA_ID,
-            "schema_version": 1,
-            "receipt_id": f"terminal:c8-second-full:{receipt.parent_state_id}",
-            "scope": "complete_parent_and_final_target_terminal_screen",
-            "outcome": "MISS",
-        }
+def propose_after_actual_miss(
+    receipt: ParentToFinalReceipt,
+) -> FallbackAdmissionProposal:
+    """State shared-admission requirements without granting a queue right."""
+    return FallbackAdmissionProposal(
+        status="PROPOSAL_NOT_ACTIVE_ACTUAL_MISS_AND_SHARED_ADMISSION_REQUIRED",
+        required_producer_id=PRODUCER_ID,
+        required_branch_id=BRANCH_ID,
+        required_source_owner="c8_terminal_first_surviving_parent",
+        required_target_owner=TARGET_OWNER,
+        target_n7=receipt.target_n7,
+        required_evidence=(
+            "admitted_c8_parent_trace",
+            "complete_terminal_first_miss_receipt",
+            "parent_to_checkpoint_path_receipt",
+            "canonical_p_source_complete_excess_receipt",
+            "target_local_terminal_hit_F_G_receipt",
+            "shared_producer_registry_entry",
+            "shared_common_gate_acceptance",
+            "downstream_overflow_totality",
+        ),
     )
-    source = common.seal_receipt_v1(
-        {
-            "schema_id": common.SUCCESSOR_RECEIPT_SCHEMA_ID,
-            "schema_version": 1,
-            "receipt_id": f"edge:c8-second-full:{receipt.parent_state_id}",
-            "producer_id": PRODUCER_ID,
-            "branch_id": BRANCH_ID,
-            "root_context": receipt.prime,
-            "equation_rank": receipt.prime,
-            "target_facts_digest": common.canonical_digest_v1(facts),
-            "terminal_first_digest": terminal["digest"],
-            "status": "VERIFIED_EDGE",
-            "parent_state_id": receipt.parent_state_id,
-            "E1": True,
-            "E2": True,
-            "E3": True,
-            "E4": True,
-            "E5": True,
-            "T5_ticket": "LOCAL_DROP",
-        }
-    )
-    mark = common.seal_receipt_v1(
-        {
-            "schema_id": common.MARK_SCHEMA_ID,
-            "schema_version": 1,
-            "receipt_id": "mark:c8-second-full-root-sol",
-            "kind": common.ROOT_SOL,
-            "root_context": receipt.prime,
-            "equation_rank": receipt.prime,
-        }
-    )
-    raw = {
-        "schema_id": common.STATE_SCHEMA_ID,
-        "schema_version": common.STATE_SCHEMA_VERSION,
-        "state_id": "pending-content-address",
-        "artifact_class": "persistent_state",
-        "consumer": "t6_selector",
-        "queue_gate": common.ADMITTED_SUCCESSOR,
-        "producer_id": PRODUCER_ID,
-        "branch_id": BRANCH_ID,
-        "parent_state_id": receipt.parent_state_id,
-        "root_context": receipt.prime,
-        "equation_rank": receipt.prime,
-        "mark": mark,
-        "terminal_first": terminal,
-        "source_receipt": source,
-        "facts": facts,
-    }
-    raw["state_id"] = common.build_state_id_v1(raw)
-    rule = producer_rule()
-    return common.reject_before_persistent_queue_v1(raw, {PRODUCER_ID: rule})
 
 
 def verify() -> None:
@@ -251,20 +187,18 @@ def verify() -> None:
         and symbolic_capacity_bounds(receipt.prime, receipt.target_capacity)
     ):
         raise AssertionError("stored c8 parent-to-final fallback control changed")
-    decision = common_admission(
-        receipt,
-        {
-            "E1": "persistent-parent-and-c8-p-source-path",
-            "E2": "unique-Q-and-canonical-final-chart",
-            "E3": "target-local-terminal-hit-F-G-recomputation",
-            "E4": "identity-Sol-p-lift",
-        },
-    )
-    if not (decision.accepted and decision.owner == TARGET_OWNER):
-        raise AssertionError("c8 fallback failed common admission")
+    terminal = terminal_control(3_279)
+    proposal = propose_after_actual_miss(receipt)
+    if not (
+        terminal.outcome == "HIT"
+        and terminal.denominators is not None
+        and proposal.status.startswith("PROPOSAL_NOT_ACTIVE")
+        and proposal.required_target_owner == TARGET_OWNER
+    ):
+        raise AssertionError("c8 terminal/proposal boundary changed")
     print(
         "verified c8 second-full-excess parent macro: internal 8->4198 rise, "
-        "persistent parent 157392->4198 strict N7 drop"
+        "persistent parent 157392->4198 strict N7 drop; stored control is terminal"
     )
 
 
