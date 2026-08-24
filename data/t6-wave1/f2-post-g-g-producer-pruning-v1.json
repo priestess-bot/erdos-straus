@@ -26,8 +26,9 @@
     },
     {
       "producer_id": "positive_q_g_full_carrier_phase_root",
-      "disposition": "NONRECURSIVE_RELATIVE_THEOREM_NO_FROZEN_SOURCE",
+      "disposition": "DEFER_UNTIL_F1_GRAMMAR_FREEZE_RETAIN_RELATIVE_PRODUCER",
       "source_family_status": "FAMILY_EMPTY_IN_FROZEN_SELECTED_GRAPH",
+      "required_resolution": "source-empty only after F1 proves no new seed; otherwise activate through common admission",
       "reopen_condition": "a new admitted producer or initializer creates a positive-q Type-II F/G seed"
     },
     {

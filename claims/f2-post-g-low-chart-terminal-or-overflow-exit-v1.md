@@ -7,9 +7,10 @@ statement: >-
   S=(p,R,K;A) with 3<=R<=p-2, A|K and mark Sol(p)，反复执行确定规则：从
   universal p-source 到 anchor (1,R-1,1)；若 R-1|K 则输出直接 Type-I terminal；
   否则取 R-1 相对 K 的唯一 maximal complete-excess block Q，令 M=lcm(A,Q)，
-  并构造 M 的 canonical chart。每个非终止步骤满足 M>A 且 M/A>=2，并由实际
-  source/path、确定 target、独立 reclassification、Sol(p) identity lift 和 T5
-  LOCAL_DROP 给出 E1-E5。若 target 仍是低 chart，则 M<=B_p 且继续同一规则；
+  并构造 M 的 canonical chart。每个非终止步骤满足 M>A 且 M/A>=2，数学上给出
+  actual source/path、确定 target、Sol(p) identity lift 与 T5 LOCAL_DROP；只有
+  target projection 经共享 E3 admission 后才成为完整 E1-E5 edge。若 target 仍是低
+  chart，则 M<=B_p 且继续同一规则；
   support 每步至少翻倍，所以至多 floor(log_2(B_p/A))+1 步后必终止或进入
   R>p 的 A=M>1 overflow target。该结果把 post-G 低 chart 的 later-dispatch
   全称量词闭合为 direct terminal 或对既有 type_i_a_gt_one_overflow_residual family
@@ -151,18 +152,19 @@ R_{i+1}>p.
 
 第一类仍是 low marked state；第二类是 overflow target。
 
-## 3. 每一步的 E1--E5
+## 3. 每一步的数学合同与 E3 边界
 
 | 合同 | 回执 |
 |---|---|
 | E1 | persistent (S_i)、terminal-first miss、(3) 的 actual p-source/path 与 (5) 的唯一 maximal block。 |
 | E2 | (6)--(8) 唯一确定 target；无需 oracle 或事后选择 carrier。 |
-| E3 | target 从 ((p,R_{i+1},K_{i+1},M_i,\sigma)) 重新计算 F/G/hit、normal form 与 state identity；不继承 source 标签。 |
+| E3 | 数学 target shape 由 ((p,R_{i+1},K_{i+1},M_i,\sigma)) 唯一确定；F/G/hit、normal form 与 state identity 必须由 coordinator 的 common serializer 重算并 admission，本卡不宣称该 runtime 已接入。 |
 | E4 | (W_{S_i}=W_{S_{i+1}}=\operatorname{Sol}(p))，lift 是 identity。 |
 | E5 | source 为 low state，故 (A_i\le B_p)；由 (7)，
   \(\lfloor B_p/M_i\rfloor<\lfloor B_p/A_i\rfloor\)。 |
 
-所以每个 nonterminal step 都是 `TYPEI/CHARGED LOCAL_DROP`。若 target-local classifier
+所以每个 nonterminal step 都有 `TYPEI/CHARGED LOCAL_DROP` 的数学 ticket；它只有在 common
+E3 admission 成功后才是 active verified edge。若 target-local classifier
 给 hit，则 terminal 优先并停止；否则 target 才有递归资格。
 
 ## 4. 有限性

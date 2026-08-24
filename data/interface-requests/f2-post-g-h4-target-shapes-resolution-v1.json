@@ -8,7 +8,7 @@
     "C2_NON19_RESIDUAL_TARGET_V1 new-family request",
     "separate H4_F_DESCENDANT persistent family",
     "separate H4_G_DESCENDANT persistent family",
-    "positive-q G as an active frozen-graph producer",
+    "unconditional disposition of positive-q G before F1 grammar freeze",
     "c3 source-lineage relay as an active selected producer",
     "standalone H3 persistent target"
   ],
@@ -26,7 +26,7 @@
     },
     {
       "old_shape": "positive-q G active handoff",
-      "resolution": "NONRECURSIVE_RELATIVE_THEOREM_NO_FROZEN_SOURCE",
+      "resolution": "DEFER_DISPOSITION_UNTIL_F1_FREEZE; retain relative producer",
       "evidence": "f2-post-g-ordinary-g-producer-pruning-v1"
     },
     {
@@ -71,7 +71,7 @@
     }
   ],
   "producer_requests": [
-    "q_one_g_full_carrier_phase_root as the sole selected G producer",
+    "q_one_g_full_carrier_phase_root as the sole selected frozen-graph G producer; positive-q disposition deferred until F1 freeze",
     "post_g_low_chart_complete_excess_exit_v1",
     "q_one_d_one_c2_19_h4_fused_exit_v1"
   ],
@@ -83,6 +83,10 @@
       "evidence": "type-II-q-one-full-carrier-d-one-capacity-one-exclusion"
     }
   ],
+  "cross_track_capacity_boundary": {
+    "immediate_q_one_d1": "C1 family-empty and nonterminal C>=2",
+    "H4_final": "C1 POSSIBLE_NOT_CLOSED because c_T=1 iff E_x=-q mod p; do not propagate the immediate exclusion"
+  },
   "new_family_required": false,
   "new_nontrivial_mark_required": false,
   "new_atomic_arm_required": false,

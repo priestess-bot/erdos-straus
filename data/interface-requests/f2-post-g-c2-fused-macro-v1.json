@@ -9,11 +9,9 @@
     "source_owner": "type_i_full_carrier_post_g",
     "branch_id": "capacity_two_19_phase_fused_h4",
     "target_owners": [
-      "h4_non_v1_branch_or_descendant",
-      "t2_v1_atomic_pending_target",
       "type_i_a_gt_one_overflow_residual",
-      "type_i_full_carrier_post_g",
-      "direct_terminal_leaf"
+      "type_i_high_support_sink",
+      "type_i_full_carrier_post_g"
     ],
     "T5_ticket": "LOCAL_DROP",
     "mark_behavior": "ROOT_SOL identity"
@@ -26,6 +24,8 @@
     "H4": "NONPERSISTENT_INTERNAL",
     "only_final_target_may_enter_queue": true
   },
+  "queue_external_dispositions": ["direct_terminal_leaf"],
+  "synchronous_nonpersistent_artifacts": ["AtomicPendingTargetV1(H4_A1)"],
   "family_request_update": {
     "family_id": "type_i_c2_non19_residual",
     "previous_disposition": "conditional request if residual nonempty",

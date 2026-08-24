@@ -1,7 +1,7 @@
 # F2 post-G / C2 / H4 wave-1 handoff
 
-基线：`9215f8c92c53c0eb1081849b0a03e5cb922facad`  
-分支：`sol/f2-post-g-h4-totality`  
+基线：`9215f8c92c53c0eb1081849b0a03e5cb922facad`
+分支：`sol/f2-post-g-h4-totality`
 状态：`OPEN_MINIMAL_RESIDUAL_EXTERNAL_INTERFACES`
 
 ## 1. 本轨道完成的数学收缩
@@ -17,6 +17,7 @@ nonrecursive alternate。
 这是 frozen-graph induction，不是 F1 semantic constructor exhaustion。coordinator 在 grammar
 freeze 必须确认没有未登记 Type-II seed；若发现 positive-q G source，则已有相对 theorem
 仍对每个 actual source 给出同一个 p-only handoff，但必须把 serializer 接入 common admission。
+因此 positive-q relative producer 在 freeze 前不得撤销。
 
 ### 1.2 post-G low Type-I continuation
 
@@ -42,8 +43,8 @@ checkpoints。E5 始终比较原 parent `(0,p-1)` 和最终 `(0,c_T)`。
 - proper nontop capacity 直接严格；
 - top `a_alt>1` 由 d=1 suffix 严格离开；
 - top `a_alt=1` 自动产生 `gcd(q,K4)=1` 的 clean q carrier，non-clean complement 为空；
-- clean-q endpoint 的 y-block 非空、p-primary 为空、first stutter 为空，因此 terminal 或
-  strict single-side/atomic target，最终 `c_T<=p-2`。
+- clean-q endpoint 的两侧 block 均非空、p-primary 为空、first stutter 为空，因此 terminal 或
+  strict atomic target，最终 `c_T<=p-2`。
 
 这覆盖计划要求的 proper/nonproper、top/nontop、a-coordinate、clean/non-clean 及 target
 hit/F/G/atomic 的算术层分派。
@@ -61,6 +62,10 @@ R_T=(4M_Tc_T-1)/p>p.
 所以它们统一是 high-support A>1 overflow；F/G 只属于 target-local certificate context，
 不需要新 H4-F/H4-G persistent family。若有实际 sink receipt，使用 narrower
 `type_i_high_support_sink`；否则使用 existing `type_i_a_gt_one_overflow_residual`。
+
+注意 immediate q=1 d=1 image 的 `C=1` exclusion 不传播到 H4 final target。H4 有
+`c_T=1 iff E_x=-q (mod p)`；现有 stutter theorem 只排除正号 `E_x=q`。所以 H4 C1
+保持为 Agent 2 的 possible high-support residual。
 
 ## 2. 为什么本分支不能声明 closed
 
@@ -122,3 +127,17 @@ python3 -m unittest \
   历史产物，也未再次运行完整 suite。
 
 因此本分支的 track-specific checks 通过，但不能声称完整仓库 suite 绿色。
+
+## 6. Cross-Audits
+
+Agent 3 对 immutable `3e69b4d` 的独立审查位于
+`115616d8627348d920abdab18145f80743602ebd`，其确认低 chart doubling、C2 non-19、
+H4 arithmetic/E5 和 overflow owner shape 均正确，同时要求 defer positive-q until F1 freeze、
+移除 queue-forbidden target owners、保留 H4 C1、并使用 single-side exclusion；这些修正已纳入
+本 follow-up。
+
+本轨对 Agent 3 `742cf58`、`916e349`、`14e1217` 的独立审查见
+[F2 C8 / Atomic Cross-Audit](audits/F2_C8_ATOMIC_CROSS_AUDIT_2026-08-24.md)。c8 universal
+fallback algebra可保留为 relative macro，但 local admission 仍从 caller strings/booleans
+fabricate MISS、E1--E4、N7 与 reentry，且 fiber classifier 有未证明的 work limit。因此 Agent 3
+成果不能在修复 shared runtime 前作为 active closure 接入。
