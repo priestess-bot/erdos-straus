@@ -473,9 +473,8 @@ def finalize_successor(
     target_owner: str,
     target_n7_potential: Sequence[int],
     e4_lift_digest: str,
-    reentry_verified: bool,
 ) -> dict[str, Any]:
-    """Return a final successor receipt; never return a pending queue item."""
+    """Return a non-active final candidate; shared admission remains external."""
     if disposition.disposition not in {Disposition.F_SUCCESSOR, Disposition.G_SUCCESSOR}:
         raise AtomicProtocolError("NOT_A_NONTERMINAL_DISPOSITION", disposition.disposition.value)
     _require_token(target_state_id, "target_state_id")
@@ -491,13 +490,11 @@ def finalize_successor(
         )
     if not target_rank < pending.parent_n7_potential:
         raise AtomicProtocolError("N7_NOT_STRICT", "parent-to-final target is not strict")
-    if not reentry_verified:
-        raise AtomicProtocolError("REENTRY_NOT_VERIFIED", "target has no common-selector re-entry proof")
     fiber_name = disposition.fiber_kind.value if disposition.fiber_kind else "UNKNOWN"
     result = {
-        "schema_id": "atomic_final_successor_v1",
+        "schema_id": "atomic_final_candidate_v1",
         "schema_version": 1,
-        "status": "VERIFIED_SUCCESSOR",
+        "status": "FINAL_CANDIDATE_NOT_ACTIVE_SHARED_ADMISSION_REQUIRED",
         "source_parent_id": pending.source_parent_id,
         "source_macro_id": pending.source_macro_id,
         "source_path_digest": pending.source_path_digest,
@@ -509,11 +506,11 @@ def finalize_successor(
         "parent_n7_potential": list(pending.parent_n7_potential),
         "t5_ticket": pending.t5_ticket_candidate,
         "e4_lift_digest": e4_lift_digest,
-        "reentry_verified": True,
+        "requires_shared_reentry_receipt": True,
     }
     if any(marker in json.dumps(result) for marker in FORBIDDEN_MARKERS):
         raise AtomicProtocolError("FORBIDDEN_PENDING_MARKER", "final receipt retains pending marker")
-    result["receipt_digest"] = "successor:" + digest(result)
+    result["receipt_digest"] = "candidate:" + digest(result)
     return result
 
 

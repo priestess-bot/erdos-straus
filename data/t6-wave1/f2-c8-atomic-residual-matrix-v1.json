@@ -4,7 +4,7 @@
   "artifact_version": 1,
   "date": "2026-08-24",
   "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
-  "status": "MATHEMATICAL_TRACK_CLOSED_PENDING_COORDINATOR_REGISTRATION_AND_CROSS_AUDIT",
+  "status": "CONDITIONAL_ARITHMETIC_REDUCTION_ACTIVE_SELECTOR_OPEN",
   "partition_order": {
     "c8_outgoing": [
       "C8-O1-TERMINAL",
@@ -23,7 +23,7 @@
     ]
   },
   "coverage_contract": {
-    "c8_outgoing": "Run the complete root and target-local terminal policy first. On MISS, select the least fully E1-E5/common-admitted double-low receipt with split capacity 2..7; if none exists, invoke the deterministic parent-anchored second-full-excess target. Thus TERMINAL, DOUBLE_LOW and OTHER are disjoint and exhaustive, and OTHER is a named construction rather than a logical complement label.",
+    "c8_outgoing": "Given a real complete terminal-first receipt, HIT is terminal. Given a real MISS, the second-full-excess macro supplies a deterministic arithmetic OTHER target. Optional double-low precedence is not active until a source-bound complete candidate universe and shared admission exist.",
     "atomic_target": "For each canonical target chart, recompute the centered bounded hit set first; on no hit, test whether -1 lies in the support subgroup. This gives exactly hit, F or G. The labels alone do not prove persistent re-entry."
   },
   "leaves": [
@@ -38,7 +38,7 @@
       "coverage_proof": "First branch in the frozen precedence; all later branches require the same terminal-first receipt to be MISS.",
       "planned_closure": "TERMINAL",
       "target_shape": "AtomicTypedTerminalV1",
-      "current_blocker": "None inside this track; the terminal receipt is the first input to the executable fixed-precedence dispatcher."
+      "current_blocker": "The shared runtime must replay the complete terminal policy; the local dispatcher accepts only a receipt shape and cannot certify its actualness."
     },
     {
       "leaf_id": "C8-O2-DOUBLE-LOW",
@@ -51,7 +51,7 @@
       "coverage_proof": "This is the positive double-low predicate after terminal exclusion; C8-O3 is its exact complement within the nonterminal actual-parent domain.",
       "planned_closure": "VERIFIED_SUCCESSOR",
       "target_shape": "AtomicPendingTargetV1(C8_DOUBLE_LOW) -> AtomicTypedTerminalV1 | AtomicTypedFSuccessorV1 | AtomicTypedGSuccessorV1",
-      "current_blocker": "None for a supplied actual admitted receipt; double-low existence is optional because OTHER is universal."
+      "current_blocker": "A complete actual candidate universe, canonical priority and shared E1-E5/common-admission replay are missing; this track does not activate caller-supplied double-low candidates."
     },
     {
       "leaf_id": "C8-O3-OTHER",
@@ -64,7 +64,7 @@
       "coverage_proof": "Exact complement of C8-O2 after C8-O1 is excluded; this logical partition is not a successor construction.",
       "planned_closure": "VERIFIED_SUCCESSOR",
       "target_shape": "C8SecondFullExcessParentMacroV1 -> AtomicTypedTerminalV1 | existing type_i_a_gt_one_overflow_residual successor",
-      "current_blocker": "Coordinator must register the parent-macro producer and independently cross-audit the actual c8 parent/path premise."
+      "current_blocker": "Parent-to-final arithmetic is established, but actual terminal MISS, target-local classifier, producer registration and shared admission/re-entry remain uninstalled."
     },
     {
       "leaf_id": "H4-T1-TERMINAL",
@@ -146,8 +146,8 @@
     }
   ],
   "least_current_residuals": [
-    "Coordinator must install the three proposed producer/output extensions in the shared registry and grammar.",
-    "Agent 1 cross-audit must independently confirm the actual parent/path premise shared with the post-G/H4 track.",
+    "Coordinator must install the three proposed producer/output extensions in the shared registry and grammar, then replay actual parent traces.",
+    "Agent 1 cross-audit confirms arithmetic but reports active E1/E3/re-entry blocked by synthetic local inputs.",
     "H4 C1 remains a downstream high-support residual rather than an atomic serializer residual."
   ],
   "capacity_one_subresidual": {
@@ -156,8 +156,8 @@
       "proof": "75*C=64 (mod p), p>=4129, excludes C=1,...,8 and C=p-1; hence 9<=C<=p-2."
     },
     "c8_double_low": {
-      "status": "NOT_REQUIRED_FOR_TOTALITY",
-      "proof": "Any C1 double-low candidate may be bypassed by the deterministic second-full-excess fallback, whose capacity is at least 9."
+      "status": "NOT_SELECTED_BY_LOCAL_PROPOSAL",
+      "proof": "A future real selector may bypass C1 double-low through the second-full-excess arithmetic fallback, but terminal MISS and shared admission must be replayed first."
     },
     "h4_atomic": {
       "status": "POSSIBLE_NOT_CLOSED",

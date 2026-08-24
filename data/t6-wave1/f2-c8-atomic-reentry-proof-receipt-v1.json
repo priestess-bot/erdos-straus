@@ -4,7 +4,7 @@
   "date": "2026-08-24",
   "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
   "track_id": "F2-C8-ATOMIC",
-  "status": "CONDITIONAL_C8_OUTGOING_AND_ATOMIC_REENTRY_ESTABLISHED",
+  "status": "CONDITIONAL_ARITHMETIC_AND_TARGET_SHAPE_ESTABLISHED_ACTIVE_ADMISSION_OPEN",
   "quantifier": "Every actual parent-bound H4_A1 or C8_DOUBLE_LOW atomic output whose source-specific receipt proves terminal-first MISS, canonical target support A_T>A_H>B_p and final capacity c_T<C_P.",
   "serializer": {
     "internal_schema": "AtomicPendingTargetV1",
@@ -42,12 +42,12 @@
       "A_T divides K_T",
       "atomic_arm=NONE and dispatch_status=NONE in the final state"
     ],
-    "common_gate": "reject_before_persistent_queue_v1"
+    "common_gate": "COORDINATOR_OWNED: local track emits only a projection proposal"
   },
   "e1_e5": {
     "E1": "actual persistent parent, terminal-first MISS, replayed macro/raw path and canonical two-color payload",
     "E2": "unique lcm support and canonical chart",
-    "E3": "target-local terminal/hit/F/G plus common admission owner/digest",
+    "E3": "target-local terminal/hit/F/G and common admission are required but not established by this track-local receipt",
     "E4": "identity on Sol(p)",
     "E5": "TYPEI/CHARGED LOCAL_DROP from parent capacity C_P to final capacity c_T in frozen N7"
   },
@@ -91,7 +91,8 @@
     }
   ],
   "remaining_residuals": [
-    "C8 parent-macro producer registration and independent cross-audit",
+    "Actual parent trace, complete terminal-first MISS and target-local full-K classifier receipt",
+    "C8 parent-macro producer registration and shared common-gate replay",
     "actual c8 DOUBLE_LOW occurrence existence",
     "source-specific H4/c8 parent/path occurrence totality"
   ],
@@ -102,10 +103,11 @@
     "ERDOS_STRAUS_CONJECTURE"
   ],
   "track_closure": {
-    "GAP-O3-C8-OUTGOING": "MATHEMATICALLY_CLOSED_BY_TERMINAL_DOUBLE_LOW_OTHER_TRICHOTOMY",
-    "GAP-O1-ATOMIC-TARGET-CLOSURE": "CLOSED_FOR_ACTUAL_ADMITTED_H4_A1_AND_C8_DOUBLE_LOW_OUTPUTS",
+    "GAP-O3-C8-OUTGOING": "CONDITIONAL_ARITHMETIC_FALLBACK_ESTABLISHED_ACTIVE_SELECTOR_OPEN",
+    "GAP-O1-ATOMIC-TARGET-CLOSURE": "TARGET_SHAPE_ESTABLISHED_ACTIVE_COMMON_ADMISSION_OPEN",
     "pending_markers_in_final_output": 0,
     "shared_registry_changes_applied": false,
-    "independent_cross_audit_complete": false
+    "independent_cross_audit_complete": true,
+    "cross_audit_verdict": "ACTIVE_E1_E3_REENTRY_BLOCKED"
   }
 }

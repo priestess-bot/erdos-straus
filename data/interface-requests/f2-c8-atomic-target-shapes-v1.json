@@ -143,12 +143,12 @@
   ],
   "producer_requests": [
     {
-      "producer_id": "f2_h4_atomic_final_target_v1",
-      "branch_id": "h4_atomic_final_target",
-      "source_owners": ["type_i_c2_19_macro_target"],
+      "producer_id": "f2_h4_fused_atomic_final_target_v1",
+      "branch_id": "h4_fused_atomic_final_target",
+      "source_owners": ["type_i_full_carrier_post_g"],
       "target_owners": ["type_i_a_gt_one_overflow_residual"],
       "queue_gate": "ADMITTED_SUCCESSOR",
-      "guard": "actual parent-bound H4_A1 output; terminal-first MISS; terminal/hit/F/G recomputed; parent-to-final N7 strict",
+      "guard": "actual q=1 d=1 fused parent with full H0-H4 path receipt; terminal-first MISS; H4_A1 target terminal/hit/F/G recomputed; parent-to-final N7 strict",
       "t2_t3": ["T2v1_A_H4 output extension", "T3v1 ROOT_SOL preservation"]
     },
     {

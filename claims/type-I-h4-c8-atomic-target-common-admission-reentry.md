@@ -11,12 +11,13 @@ statement: >-
   pending_dispatch 与 inherited label 均不成为最终状态。若非终止 target support
   A_T 严格大于 high checkpoint support A_H>B_p，且 target capacity c_T<C_P，
   则 R_T>p、A_T>1，common PersistentSelectorStateV1 facts 必命中现有
-  type_i_a_gt_one_overflow_residual owner；固定 T5 N7 势由
+  type_i_a_gt_one_overflow_residual owner shape；固定 T5 N7 势由
   (p,TYPEI,CHARGED,0,C_P,0,0) 严降至
   (p,TYPEI,CHARGED,0,c_T,0,0)，E4 为 Sol(p) 恒等 lift。于是所有实际满足这些
-  parent/path/low-capacity guards 的 H4/c8 F/G 输出可通过同一 common gate 重入，不需
-  新 atomic F/G family 或非平凡 mark。本结论不证明 actual c8 double-low occurrence
-  存在，也不关闭 c8 OTHER complement 或 H4 非 atomic 分支。
+  parent/path/low-capacity guards 的 H4/c8 F/G 输出有同一 common-gate projection proposal，
+  不需新 atomic F/G family 或非平凡 mark；shared producer/actual receipt/re-entry 未安装前
+  不可声称 ACCEPT。本结论不证明 actual c8 double-low occurrence 存在，也不关闭 active c8
+  OTHER selector 或 H4 non-atomic branches。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -196,7 +197,8 @@ owner 的定义。故接口请求中的新 `type_i_atomic_f_reentry_target_v1`�
 5. \(A_T>A_H>B_p\) 与 \(c_T<C_P\)，其中 \(C_P\) 是 persistent parent 的
    CHARGED capacity。
 
-则 E1 是第 1--3 项，E2 是第 4 项，E3 是第 2 节重分类及第 3 节 common gate，E4 为
+则 E1 是第 1--3 项，E2 是第 4 项；E3 还必须由 coordinator-owned common gate 的 actual
+producer/source/terminal receipt 支付，本卡只给 shape/projection；E4 为
 
 \[
 W_T=W_P=\operatorname{Sol}(p),
@@ -223,8 +225,8 @@ regeneration token，故 \(\eta_p=0\)。第 5 项给出
 \]
 
 major phase/protocol 均保持 `TYPEI/CHARGED`，所以 (12) 是 parent-to-final 的
-`LOCAL_DROP`，不是 checkpoint-local 排名。finalizer 在 target N7 不严格或 common
-re-entry 未通过时失败闭合。
+`LOCAL_DROP`，不是 checkpoint-local 排名。track-local finalizer 只产生 candidate；共享
+re-entry receipt缺失时不得升级为 successor。
 
 ## 5. 两个 common-gate 控制与证明边界
 
@@ -305,10 +307,9 @@ focused verifier 使用两个独立 chart 控制：
 2. \(p=2137\) 的 \((R,K;A,c)=(8551,4568372;1142093,4)\)。完整 \(K\)-support
    在模 \(R\) 的 subgroup 不含 \(-1\)，故独立重算为 G。
 
-两者分别以 `H4_A1`、`C8_DOUBLE_LOW` producer proposal 投影，真实调用 common
-`reject_before_persistent_queue_v1`，均得到 owner
-`type_i_a_gt_one_overflow_residual`。它们检验实现与定理接口；它们不证明这两个 chart
-就是 actual H4/c8 output，也不代替上述全称条件证明。
+两者分别以 `H4_A1`、`C8_DOUBLE_LOW` producer proposal 投影，均命中 owner shape
+`type_i_a_gt_one_overflow_residual`。track-local module 不调用 common queue gate；它们不证明
+这两个 chart 就是 actual H4/c8 output，也不代替上述全称条件证明。
 
 本定理关闭的是：
 
@@ -317,14 +318,14 @@ actual admitted H4/c8 low-capacity atomic output
     -> no pending marker
     -> target-local terminal/F/G
     -> existing overflow owner
-    -> common admission and strict N7 re-entry
+    -> common-admission projection proposal and strict N7 candidate
 ```
 
 它没有关闭：
 
 ```text
-c8 outgoing existence
-c8 non-double-low complement
+active c8 outgoing selector
+shared common admission and downstream re-entry
 H4 non-atomic branches
 source-specific actual occurrence existence
 F2 totality or global T6
