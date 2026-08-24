@@ -9,10 +9,10 @@ statement: >-
   R4=0 的同锚 source repair、以及 R4=1 的 proper-overlap small-anchor renewal
   均可归约为 terminal 或与 P 比较严格下降的最终容量 c<=p-2；R4=1 的 full-overlap
   实际前驱为空，top-capacity a>1 由 d=1 handoff 严格离开，a=1 由 clean-q bridge
-  的 y-block、p-primary 与首层 stutter source gates 归约为 c_q<=p-2 的 single-side
-  或 atomic target-local dispatch。因此在这些 actual 前置与各引用定理的 checkpoint
+  的 y-block、p-primary、首层 stutter 与 single-side exclusion 归约为
+  c_q<=p-2 的 atomic target-local dispatch。因此在这些 actual 前置与各引用定理的 checkpoint
   guards 下，H4 算术 guard partition 没有未分类的 capacity leaf；唯一未付的是把
-  single-side/atomic target 接入共享 PersistentSelector admission、完成 target re-entry
+  atomic target 接入共享 PersistentSelector admission、完成 target re-entry
   与其后的 selector。该结果是 track-local arithmetic reduction，不关闭 F2 或 T6。
 claim_status: established
 proof_provenance: mixed
@@ -30,6 +30,7 @@ depends_on:
   - type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-y-block-nonempty
   - type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-p-primary-endpoint-exclusion
   - type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-universal-stutter-source-d-gate-closure
+  - type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-single-side-exclusion
   - type-II-q-one-c-two-19-phase-h4-clean-q-e1-e5-relative-macro-closure
 topics:
   - F2
@@ -198,12 +199,11 @@ clean-carrier theorem 已从 actual (a_{\rm alt}=1) receipt 证明
 \tag{13}
 \]
 
-所以 `non-clean-q` 不是此 actual branch 的独立补集，而是空分支。因此，若 endpoint
-不是 terminal，则恰有两类算术 payload：
+所以 `non-clean-q` 不是此 actual branch 的独立补集，而是空分支。进一步，已有
+single-side exclusion 在同一 actual high-H4 scope 中证明 (Q_x>1)。结合
+(Q_y>1)，若 endpoint 不是 terminal，则唯一 live 算术 payload 是
 
 \[
-Q_x=1<Q_y
-\quad\text{或}\quad
 Q_x,Q_y>1,
 \tag{14}
 \]
@@ -215,8 +215,8 @@ M_q=\operatorname{lcm}(M_4,Q_x,Q_y)
 \tag{15}
 \]
 
-的 canonical capacity 满足 (1\le c_q\le p-2)。第一类是 p-free single-side，第二类
-是 p-free atomic split。已有 clean-q relative macro 在 upstream H4 receipt、priority
+的 canonical capacity 满足 (1\le c_q\le p-2)。它是 p-free atomic split。
+已有 clean-q relative macro 在 upstream H4 receipt、priority
 prefix、target validator 和 serializer guards 全部通过时给出 E1--E5；其 E5 仍是
 从 P 的 (2) 比较最终 (c_q)，不是比较 H4 内部 checkpoint。
 
@@ -239,7 +239,7 @@ full-overlap exclusion 使 `nonproper` 补支为空；(c_{\rm alt}\le p-2) 与
 (a_{\rm alt}>1) 穷尽，而 (13) 又删除 non-clean-q。故计划要求的
 proper/nonproper、top/nontop、a-coordinate 和 clean/non-clean 四层算术 guard 均已符号分派。
 
-但“算术分派无第四分支”不等于 F2 closed：(Q_x=1<Q_y) 与双色 atomic 输出仍需
+但“算术分派无第四分支”不等于 F2 closed：双色 atomic 输出仍需
 统一 target serializer、owner/admission、scope continuity 与 successor re-entry；
 它们产生的 typed F/G descendants 也仍需 total continuation。数学 branch 已分派，语义 continuation
 尚未闭合。
@@ -250,7 +250,7 @@ proper/nonproper、top/nontop、a-coordinate 和 clean/non-clean 四层算术 gu
 
 ```text
 H4_ARITHMETIC_RESIDUAL = NONE under the stated actual-H3/H4 guards
-H4_SEMANTIC_RESIDUAL = single-side/atomic target common-admission and re-entry
+H4_SEMANTIC_RESIDUAL = atomic target common-admission and re-entry
 H4_F_G_DESCENDANT_TOTALITY = OPEN
 F2_POST_G_H4 = OPEN
 ```

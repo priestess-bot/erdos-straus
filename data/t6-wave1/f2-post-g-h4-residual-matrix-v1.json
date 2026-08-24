@@ -5,6 +5,7 @@
   "date": "2026-08-24",
   "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
   "status": "OPEN_PARTITION_DESIGN",
+  "superseded_by": "data/t6-wave1/f2-post-g-h4-minimal-residual-v1.json",
   "partition_root": "actual_persistent AND terminal_first_miss AND owned_post_G_C2_H4_domain",
   "coverage_strategy": "First partition by source lineage (ordinary q=1 G, ordinary positive-q G, c=3 lineage G, post-G Type-I, C2 19-phase, H4). Within H4 use the ordered Boolean DAG terminal hit; overlap properness; capacity topness; a_alt equality; q cleanliness; target direct-hit/F/G/atomic/other. Each child includes the negations of all earlier siblings, so leaves are pairwise disjoint by construction. Exhaustiveness requires a symbolic theorem that every actual source supplies each queried typed guard and that every final target classifier has no residual outside hit/F/G/atomic/registered-other.",
   "leaves": [

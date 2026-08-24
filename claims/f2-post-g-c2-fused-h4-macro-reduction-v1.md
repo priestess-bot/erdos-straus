@@ -10,7 +10,7 @@ statement: >-
   入队：将 d=1 relay、三 p-anchor、最大第四 anchor及 H4 residue/clean-q exit 组成
   一个以原 d=1 receiver P 为唯一 source 的确定、有限宏。H0--H4 只是 terminal-first 和
   arithmetic checkpoints，最终输出 terminal，或一个从 P 的 (0,p-1) 严格降到
-  (0,c_T), c_T<=p-2 的 single-side/atomic/ordinary Type-I target。E1 保留整条 actual
+  (0,c_T), c_T<=p-2 的 atomic/ordinary Type-I target。E1 保留整条 actual
   path，E2 target 确定，E4 为 Sol(p) identity，E5 比较 P 与最终 target；E3 和 re-entry
   仍须由共享 serializer/admission 或 Agent 3 atomic contract 完成。因此该结果消除
   C2 non-19 family 与 H3 standalone serializer 义务，但不把融合宏升级为 active
@@ -138,8 +138,8 @@ suffix 虽可依输入变化，但 p-adic rank 每步严格下降，故仍是确
    (c_T\le p-2)；
 2. (R_4\equiv0\pmod p)：least-coprime same-anchor source repair 后进入同一分派；
 3. (R_4\equiv1\pmod p)：full-overlap predecessor 为空，proper nontop 直接严格，
-   top (a>1) 经 d=1 suffix 严格，top (a=1) 的 clean-q endpoint 只有
-   p-free single-side/atomic 两类，且 (c_T\le p-2)。
+   top (a>1) 经 d=1 suffix 严格，top (a=1) 的 clean-q single-side branch 为空，
+   唯一 nonterminal endpoint 是 p-free atomic target，且 (c_T\le p-2)。
 
 所以在引用 claims 的 actual guards 下，fused macro 的算术输出只有
 
@@ -172,7 +172,7 @@ T\text{ with }1\le c_T\le p-2.
 ## 5. 仍需共享接口完成的部分
 
 若 (6) 的 nonterminal target 是 clean-q atomic output，必须交给 Agent 3 的共同
-`AtomicPendingTargetV1` serializer；single-side 或其它 ordinary output 必须投影到共享
+`AtomicPendingTargetV1` serializer；其它 ordinary output 必须投影到共享
 PersistentSelectorState 并重新分类 owner。只有 final target 通过 common gate，融合宏才是
 active verified successor。
 

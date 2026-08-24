@@ -9,7 +9,7 @@
     {
       "id": "G_PRODUCER_PRUNING",
       "status": "ESTABLISHED_FOR_FROZEN_SELECTED_GRAPH",
-      "result": "positive-q G has no seed; c3 is a precedence-superseded alternate; q1 full-carrier is the sole selected G producer"
+      "result": "positive-q G has no frozen-graph seed but its runtime disposition is deferred until F1 freeze; c3 is a precedence-superseded alternate"
     },
     {
       "id": "POST_G_LOW_CHART_EXIT",
@@ -24,7 +24,7 @@
     {
       "id": "H4_GUARD_DAG_ARITHMETIC_TOTALITY",
       "status": "ESTABLISHED_UNDER_ACTUAL_H3_H4_GUARDS",
-      "result": "nonproper/full overlap empty; nontop strict; top a>1 strict; a=1 is automatically clean-q and ends terminal or strict single-side/atomic"
+      "result": "nonproper/full overlap empty; nontop strict; top a>1 strict; a=1 is automatically clean-q; single-side is empty; live nonterminal output is strict atomic"
     },
     {
       "id": "H4_TARGET_OWNER",
@@ -77,18 +77,9 @@
         "terminal-or-successor totality for type_i_a_gt_one_overflow_residual",
         "empty-improvement closure when the narrower high-support owner matches"
       ],
-      "source_constraint": "For the q=1 immediate d=1 image, C=1 is impossible and every nonterminal target has C>=2.",
+      "source_constraint": "For the q=1 immediate d=1 image, C=1 is impossible and every nonterminal target has C>=2. This does not apply after H4.",
+      "H4_capacity_one": "POSSIBLE_NOT_CLOSED: c_T=1 iff E_x=-q mod p; Agent 2 must keep this leaf.",
       "closure_required": "Every handed-off target is terminal or has an admitted E1-E5 successor."
-    },
-    {
-      "residual_id": "R-EXT-CROSS-AUDIT",
-      "owner": "Agent 3 independent cross-audit",
-      "quantifier": "All Agent 1 mathematical reductions and target requests",
-      "missing": [
-        "independent check for quantifier shrinkage",
-        "independent check that H4 target ownership agrees with shared atomic normalization"
-      ],
-      "closure_required": "D10 independent replay/review passes."
     }
   ],
   "definition_of_done": {
@@ -101,7 +92,7 @@
     "D7_E5": "PASS_PARENT_TO_FINAL_TARGET",
     "D8_reentry": "OPEN_EXTERNAL",
     "D9_negative_controls": "FOCUSED_SCOPE_BOUNDARIES_PASS; SHARED_RUNTIME_NEGATIVES_EXTERNAL",
-    "D10_independent_replay": "OPEN_CROSS_AUDIT"
+    "D10_independent_replay": "PASS_WITH_MAJOR_FINDINGS_AT_115616d_CORRECTIONS_APPLIED"
   },
   "validation": {
     "kb_validate": "PASS_1402_DOCUMENTS",
@@ -112,6 +103,29 @@
     "constructor_inventory_audit_after_fix": "PASS_STRUCTURAL_CLOSURE_READY_FALSE",
     "constructor_inventory_tests_after_fix": "PASS_8",
     "ruff_and_py_compile": "PASS",
+    "independent_cross_audit": {
+      "commit": "115616d8627348d920abdab18145f80743602ebd",
+      "verdict": "OPEN_MAJOR_INTEGRATION_BLOCKERS",
+      "positive_results": "low-chart doubling, C2 non19, conditional H4 partition, parent-to-final E5 and owner shape sound",
+      "corrections_applied": [
+        "positive-q pruning deferred until F1 grammar freeze",
+        "persistent target owners exclude AtomicPendingTargetV1 and terminal",
+        "H4 C1 retained as possible downstream residual",
+        "single-side branch removed by established exclusion",
+        "AtomicPending made synchronous and nonpersistent"
+      ]
+    },
+    "agent3_c8_atomic_cross_audit": {
+      "reviewed_commits": ["742cf58", "916e349", "14e1217"],
+      "document": "docs/audits/F2_C8_ATOMIC_CROSS_AUDIT_2026-08-24.md",
+      "verdict": "C8_FALLBACK_ARITHMETIC_SOUND_ACTIVE_E3_AND_TOTALITY_BLOCKED",
+      "blocking_findings": [
+        "synthetic caller-provided MISS/E1-E4/reentry can pass local common admission",
+        "fiber classifier has unproved 250000-node work limit",
+        "terminal-preempted p=157393 control can be admitted as MISS",
+        "H4 source-owner protocol conflicts with the fused macro"
+      ]
+    },
     "full_suite_once": {
       "tests_run": 1163,
       "result": "FAILED_13_BASELINE_MISSING_ARTIFACT_ERRORS_PLUS_1_TRACK_SIGNAL_FAILURE_AT_SUITE_SNAPSHOT",

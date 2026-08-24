@@ -4,7 +4,7 @@
   "date": "2026-08-24",
   "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
   "status": "TARGET_SHAPE_ESTABLISHED_COMMON_ADMISSION_OPEN",
-  "quantifier": "Every nonterminal single-side or atomic final target of the actual H4 clean-q macro",
+  "quantifier": "Every nonterminal atomic final target of the actual H4 clean-q macro after single-side exclusion",
   "symbolic_bounds": {
     "support": "M_T>M4>p^4/8>B_p",
     "capacity": "1<=c_T<=p-2",
@@ -38,5 +38,11 @@
     "Agent 3 atomic arm for atomic occurrence payload",
     "Agent 2 totality for high-support/A>1 overflow"
   ],
+  "capacity_one_boundary": {
+    "immediate_q_one_image": "C1 family-empty only before H0/H4",
+    "H4_final_target": "POSSIBLE_NOT_CLOSED: c_T=1 iff E_x=-q mod p",
+    "existing_stutter_exclusion": "excludes E_x=+q mod p only",
+    "downstream_requirement": "Agent 2 must supply terminal, lower protocol/phase, or family-empty proof for any admitted H4 C1 target"
+  },
   "status_boundary": "Owner shape is proved; active E3 admission and descendant totality are not."
 }

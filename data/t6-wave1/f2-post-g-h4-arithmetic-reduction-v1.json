@@ -62,17 +62,18 @@
       "predicate": "R4 == 1 mod p, h < p+1, c_alt == p-1, a_alt == 1, clean-q branch",
       "mutually_exclusive_with": ["H4-R4-MOD-1-PROPER-DIRECT", "H4-R4-MOD-1-PROPER-TOP-A-GT-1", "H4-R4-MOD-1-FULL-OVERLAP", "H4-R4-MOD-0", "H4-R4-MOD-OTHER"],
       "coverage": "clean q raw bridge: Q_y>1, p-primary exclusion, universal first-stutter source gate",
-      "arithmetic_disposition": "TERMINAL_OR_STRICT_SINGLE_SIDE_OR_ATOMIC_TARGET",
+      "arithmetic_disposition": "TERMINAL_OR_STRICT_ATOMIC_TARGET",
       "target_capacity_bound": "c_q <= p-2",
       "proof_receipts": [
         "type-II-q-one-c-two-19-phase-h4-a-one-q-carrier-clean-raw-bridge",
         "type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-y-block-nonempty",
         "type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-p-primary-endpoint-exclusion",
         "type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-universal-stutter-source-d-gate-closure",
+        "type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-single-side-exclusion",
         "type-II-q-one-c-two-19-phase-h4-clean-q-e1-e5-relative-macro-closure"
       ],
       "semantic_status": "OPEN_TARGET_ADMISSION",
-      "blocker": "single-side/atomic target must pass shared serializer, owner, admission and recursive re-entry"
+      "blocker": "atomic target must pass shared synchronous serializer, owner, admission and recursive re-entry"
     },
     {
       "leaf_id": "H4-R4-MOD-1-PROPER-TOP-A-1-OTHER",
@@ -104,7 +105,7 @@
   "summary": {
     "residue_partition_exhaustive": true,
     "arithmetic_capacity_residual_under_stated_guards": "NONE",
-    "semantic_residual": "single-side_or_atomic_target_common_admission_and_reentry",
+    "semantic_residual": "atomic_target_common_admission_and_reentry",
     "guard_DAG": "proper/nonproper, top/nontop, a_alt and clean/non-clean are symbolically partitioned; target descendant totality remains open",
     "F2_POST_G_H4": "OPEN",
     "T6": "OPEN"

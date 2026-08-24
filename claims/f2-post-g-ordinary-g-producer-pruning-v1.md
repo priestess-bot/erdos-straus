@@ -99,7 +99,9 @@ S\in\mathcal R_p^{\rm sel},\ S\text{ ordinary Type-II G}
 \]
 
 特别地，registered `positive_q_g_full_carrier_phase_root` 在当前 selected graph 没有 source。
-它仍可保留为相对 theorem/control，但不能作为 activity inventory 中必须实现的 queue producer。
+它仍须保留为相对 theorem/producer proposal，直到 F1 semantic constructor inventory 冻结：
+若 F1 证明没有新 positive-q seed，才可将其 disposition 设为 source-empty；若发现 seed，
+则必须把已有 universal relative handoff 接入 common admission。
 
 ## 4. c=3 alternate 被 precedence 严格支配
 
@@ -144,10 +146,12 @@ c3_source_lineage_even_tail_root_receipt_v1
 
 ```text
 POSITIVE_Q_G_IN_FROZEN_SELECTED_GRAPH = FAMILY_EMPTY
+POSITIVE_Q_RUNTIME_DISPOSITION = DEFER_UNTIL_F1_GRAMMAR_FREEZE
 C3_LINEAGE_RELAY_SELECTED_PRODUCER = NONRECURSIVE_SUPERSEDED_ALTERNATE
 ABSTRACT_POSITIVE_Q_G_RELATIVE_THEOREM = RETAINED
 F2_POST_G_TYPEI_TOTALITY = OPEN
 ```
 
-该 producer pruning 只消除两个不必要的 runtime actualization 分支；q=1 full-carrier 后的
-Type-I continuation 仍需单独闭合。
+该 producer pruning 立即消除 c=3 的 selected runtime 分支，并为 positive-q 提供一个
+F1-freeze 后的二择接口；它不能在 freeze 前撤掉 positive-q 相对 producer。q=1 full-carrier
+后的 Type-I continuation 仍需单独闭合。

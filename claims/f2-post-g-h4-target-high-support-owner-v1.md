@@ -3,8 +3,8 @@ kind: claim
 claim_id: f2-post-g-h4-target-high-support-owner-v1
 title: H4 clean-q final target 的高支撑 overflow 归属与 F/G owner 解耦
 statement: >-
-  在 actual q=1 high-C=2 19-phase H4 clean-q macro 的任一 nonterminal single-side
-  或 atomic endpoint 上，canonical support M_T=lcm(M4,Q_x,Q_y) 满足
+  在 actual q=1 high-C=2 19-phase H4 clean-q macro 的任一 nonterminal atomic
+  endpoint 上，canonical support M_T=lcm(M4,Q_x,Q_y) 满足
   M_T>M4>p^4/8>B_p，且既有 stutter closure 给 1<=c_T<=p-2。于是
   R_T=(4M_Tc_T-1)/p>p，A_T=M_T>1，A_T|K_T；target 必是 high-support
   Type-I overflow。target-local F/G classifier 只重算 certificate_context，不能改变
@@ -21,6 +21,7 @@ depends_on:
   - type-II-q-one-c-two-19-phase-h4-clean-q-e1-e5-relative-macro-closure
   - type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-y-block-nonempty
   - type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-universal-stutter-source-d-gate-closure
+  - type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-single-side-exclusion
   - t6-persistent-selector-state-v1
 topics:
   - F2
@@ -59,7 +60,7 @@ R_T=\frac{4K_T-1}{p}.
 \tag{1}
 \]
 
-actual endpoint 已证明只有 (Q_x=1<Q_y) 或 (Q_x,Q_y>1)，并且
+actual endpoint 已证明 (Q_x,Q_y>1)，并且
 
 \[
 1\le c_T\le p-2.
@@ -130,7 +131,7 @@ mark、support 或 H4 edge provenance。
 - 否则 `type_i_a_gt_one_overflow_residual` 必命中。
 
 因此无需创建 `H4_F_DESCENDANT` 或 `H4_G_DESCENDANT` persistent family。H4 source/path、
-single-side/atomic occurrence 与 target-local F/G receipt保存在 edge payload；owner 由 target
+atomic occurrence 与 target-local F/G receipt保存在 edge payload；owner 由 target
 直接 facts 决定。
 
 ## 5. E3 与总性边界
@@ -141,6 +142,21 @@ single-side/atomic occurrence 与 target-local F/G receipt保存在 edge payload
 1. shared `PersistentSelectorStateV1` serializer 和 common gate 的实际调用；
 2. atomic output 的 Agent 3 arm/owner payload；
 3. `type_i_a_gt_one_overflow_residual` 或 `type_i_high_support_sink` 的全称 outgoing exit。
+
+还必须保留一个与 immediate q=1 image 不同的容量边界。H4 target 的精确式是
+
+\[
+c_T\equiv-qE_x^{-1}\pmod p,
+\qquad
+c_T=1\Longleftrightarrow E_x\equiv-q\pmod p.
+\tag{7}
+\]
+
+此前 stutter theorem 排除的是 (E_x\equiv q\pmod p)，不能推出 (7) 为空。因此
+immediate d=1 image 的 (C=1) exclusion 不能传播到 H4 final target。若 actual H4
+(C=1) 通过 admission，它仍归入上述 high-support owner，但后续 same-protocol CHARGED
+rank 已在 ((0,1,0,0)) 局部最小元；Agent 2 必须给 terminal、lower protocol/phase 或
+family-empty proof。
 
 所以准确组合接口是
 
