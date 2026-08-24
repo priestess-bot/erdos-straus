@@ -146,6 +146,7 @@ def build_receipt() -> dict[str, object]:
         "status": "CONDITIONAL_LOW_DUAL_TARGET_E1_E3_REENTRY_OPEN",
         "controls": controls,
         "conclusion": {
+            "E1": "RELATIVE_ESTABLISHED_ON_ACTUAL_DETERMINANT_BOUND_M_EQUALS_A_SLICE; OPEN_ON_GENERIC_HIGH_SUPPORT",
             "E2": "ESTABLISHED_BY_DETERMINANT_DUAL_IDENTITIES",
             "E4": "IDENTITY_ON_Sol_4_p_RELATIVE_TO_ADMISSION",
             "E5": "CHARGED_TO_ABSORB_PHASE_DROP_RELATIVE_TO_ADMISSION",

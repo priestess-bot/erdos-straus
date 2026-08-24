@@ -6,7 +6,7 @@
   "status": "CONDITIONAL_LOW_DUAL_TARGET_E1_E3_REENTRY_OPEN",
   "scope": {
     "parent": "actual terminal-first-surviving canonical TYPEI/CHARGED high-support overflow: K=A*C, A>B_p, 1<=C<p, p<R<4A",
-    "source_boundary": "The state-derived determinant gives arithmetic E2 only. A producer-specific source event remains required for E1."
+    "source_boundary": "On the actual determinant-bound slice with M=A, an inherited parent/source determinant receipt supplies relative E1 provenance. A generic high-support chart without that receipt still needs a producer-specific E1 source event."
   },
   "constructor": {
     "determinant": {
@@ -29,7 +29,7 @@
     "guarantee": "selected R is in [3,p-2] and selected carrier divides selected K"
   },
   "admission_boundary": {
-    "E1": "OPEN_PRODUCER_SPECIFIC_SOURCE_EVENT",
+    "E1": "RELATIVE_ESTABLISHED_ON_ACTUAL_DETERMINANT_BOUND_M_EQUALS_A_SLICE; OPEN_ON_GENERIC_HIGH_SUPPORT",
     "E2": "ESTABLISHED_BY_DETERMINANT_DUAL_IDENTITIES",
     "E3": "OPEN_TARGET_TERMINAL_TYPING_OWNER_SERIALIZER_AND_ABSORB_CURSOR",
     "E4": "IDENTITY_ON_Sol_4_p_RELATIVE_TO_ADMISSION",

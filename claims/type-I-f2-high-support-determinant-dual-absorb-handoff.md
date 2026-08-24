@@ -73,8 +73,16 @@ pR+1=4AC.
 \]
 
 The parent must be actual and terminal-first surviving if this construction is
-ever used as a producer. The lemma proves only the deterministic arithmetic
-target generated from its chart facts.
+ever used as a producer. There are two distinct provenance scopes:
+
+1. In the determinant-bound F2 slice, the parent also carries a replayable
+   receipt whose carrier is \(M=A\). Its existing source/path identity and
+   determinant can be inherited by a new dual producer.
+2. A generic high-support chart may satisfy the same displayed identities
+   without such a bound receipt. Its E1 source event remains open.
+
+The lemma proves the deterministic arithmetic target in both scopes, but only
+the first scope has a relative inherited E1 basis.
 
 Put
 
@@ -204,8 +212,8 @@ This would use the identity map on \(\operatorname{Sol}(4,p)\) and the frozen
 protocol drop for E5. It is not an active edge because the following remain
 unproved:
 
-1. a producer-specific E1 source event which turns the chart-derived
-   determinant into an authorized successor construction;
+1. outside the determinant-bound slice, a producer-specific E1 source event
+   which turns the chart-derived determinant into an authorized construction;
 2. target-local terminal/F/G typing and a generic ordinary E3 owner;
 3. a replayable ABSORB cursor \((m,r_\varepsilon)\), not merely \(R_\star<p\);
 4. an ABSORB re-entry theorem which never returns upward at the same equation
@@ -216,8 +224,8 @@ The special \(C=1\) case has \(r=(3p+1)/4\), and (9) selects
 
 ## Boundary
 
-This result does not assert that every high-support F/G source carries an
-admitted determinant-dual producer, that a low dual is terminal, or that the
-low chart has a current selector family. It supplies a deterministic target
-and isolates the remaining E1/E3/re-entry work; it does not close C=1, C>1,
-F2, T6, or the conjecture.
+This result does not assert that every high-support F/G source carries a bound
+determinant receipt, that a low dual is terminal, or that the low chart has a
+current selector family. It supplies a deterministic target and isolates the
+remaining E1/E3/re-entry work; it does not close C=1, C>1, F2, T6, or the
+conjecture.
