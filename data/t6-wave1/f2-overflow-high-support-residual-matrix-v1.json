@@ -105,12 +105,19 @@
       "raw_guard": "A>B_p, C=1, terminal_first=MISS, all prior routes fail, and high-support improvement set is empty",
       "effective_guard": "F2-00..F2-06 failed, C=1, and no nonempty high-support candidate exists",
       "mutually_exclusive_with": ["F2-08-Cgt1-empty", "F2-09-p409", "F2-10-explicit-residual"],
-      "coverage_proof": "C=1 is a fixed TYPEI/CHARGED local minimum. In addition, the q=1 immediate image, c8 universal fallback, and actual H4_A1 clean-q atomic target have independent capacity-one exclusion theorems.",
-      "current_status": "LOCAL_NO_GO_WITH_THREE_PRODUCER_EXCLUSIONS",
+      "coverage_proof": "C=1 is a fixed TYPEI/CHARGED local minimum. The direct-cofactor subfamily is now exhausted: the three-phase identity plus the positive-phase source barrier forces h=0, then c=t=1 and an exact same-chart return. The q=1 immediate image, c8 universal fallback, and actual H4_A1 clean-q atomic target also have independent capacity-one exclusion theorems.",
+      "current_status": "LOCAL_NO_GO_WITH_DIRECT_COFACTOR_SUBFAMILY_EXHAUSTED",
       "planned_closure": "TERMINAL",
       "target_shape": "not yet supplied; must be a terminal certificate, OUTER_RANK_DROP, lower-protocol/phase target, or a family-empty proof",
-      "current_blocker": "The local no-go supplies no paid exit. The three exclusions do not yet prove trace-unreachability because all current/future producer target sets, including H4 non-atomic branches, are not frozen as C1-free.",
-      "evidence": ["claims/type-I-high-support-empty-improvement-c1-local-minimum-boundary.md", "claims/type-II-q-one-full-carrier-d-one-capacity-one-exclusion.md", "claims/type-I-h4-atomic-capacity-one-source-gate-exclusion.md", "data/t6-wave1/f2-h4-atomic-capacity-one-exclusion-v1.json"]
+      "current_blocker": "The direct-cofactor no-go supplies no paid exit. The remaining non-direct exclusions do not yet prove trace-unreachability because all current/future producer target sets, including H4 non-atomic branches, are not frozen as C1-free.",
+      "resolved_subfamilies": {
+        "direct_cofactor_r_chart": {
+          "status": "EMPTY_AS_PAID_E5_EDGE",
+          "reason": "h>0 contradicts A>B_p, while h=0 forces c=t=1 and exact same-chart return",
+          "claim": "type-I-f2-high-support-c1-direct-cofactor-return-v1"
+        }
+      },
+      "evidence": ["claims/type-I-f2-high-support-c1-direct-cofactor-return-v1.md", "data/t6-wave1/f2-high-support-c1-direct-cofactor-return-v1.json", "claims/type-I-high-support-empty-improvement-c1-local-minimum-boundary.md", "claims/type-II-q-one-full-carrier-d-one-capacity-one-exclusion.md", "claims/type-I-h4-atomic-capacity-one-source-gate-exclusion.md", "data/t6-wave1/f2-h4-atomic-capacity-one-exclusion-v1.json"]
     },
     {
       "leaf_id": "F2-08-Cgt1-empty",
