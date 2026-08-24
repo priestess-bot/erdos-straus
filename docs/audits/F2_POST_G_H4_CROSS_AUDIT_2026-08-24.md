@@ -270,3 +270,20 @@ owner facts。此 shape 结论与 Agent 3 的 atomic normalization 一致。
 最终建议：`3e69b4d` 可作为数学 reduction input 合并，但不能作为 F2 closure receipt。先修
 MAJOR-1/2/3，等待 F1 grammar freeze、common producer admission 与 Agent 2 overflow totality；
 之后再评估 `GAP-O1-POST-G-TYPE-I` 和 `GAP-O1-H4-OTHER-BRANCHES` 是否可清零。
+
+## 5. Re-review: `849ad0f`
+
+作者在 follow-up `849ad0fac17dbed063df0f353ae60037128eb438` 中逐项修正了本审查的
+integration findings。只读复核确认：
+
+1. positive-q disposition 已明确延后到 F1 grammar freeze；若出现 seed，必须激活现有 relative
+   handoff，而不是静默删除 producer；
+2. fused producer request 已移除 `t2_v1_atomic_pending_target` 与 terminal 作为 persistent
+   target owner；AtomicPending 被标为 synchronous/nonpersistent；
+3. H4 final C1 现在明确为 `POSSIBLE_NOT_CLOSED`，并交给 Agent 2 的 high-support owner；
+4. live clean-q endpoint 已引用 established single-side exclusion，收紧为 atomic-only；
+5. preliminary target-shape request 带 `superseded_by`，机器消费者可确定采用 resolution。
+
+因此上文的 MAJOR-1/2/3 作为 snapshot `3e69b4d` 的 findings 已修复。仍保持开放的
+`R-EXT-F1-GRAMMAR-FREEZE`、common admission、atomic serializer integration 与 Agent 2
+overflow totality 是正确的研究边界，不应被解释成 Agent 1 的局部代数错误。
