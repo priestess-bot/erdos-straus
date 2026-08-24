@@ -6,7 +6,7 @@
     "TERMINAL_FIRST",
     "SAME_CHART_SUPPORT_PROMOTION",
     "FULL_PRODUCT_FIXED_N_DESCENT",
-    "LOW_SUPPORT_D_ONE_SATURATED_RESIDUAL",
+    "LOW_SUPPORT_D_ONE_COMPLETE_EXCESS_OUTER_DROP",
     "HIGH_SUPPORT_CANONICAL_C_ONE_RESIDUAL",
     "HIGH_SUPPORT_CANONICAL_C_GT_ONE_RESIDUAL"
   ],
@@ -35,14 +35,15 @@
     },
     {
       "source": {"name": "low_support_d_one", "p": 73, "R": 359, "K": 6552, "A": 91, "M": 91, "d": 1, "n": 5},
-      "branch": "LOW_SUPPORT_D_ONE_SATURATED_RESIDUAL",
+      "branch": "LOW_SUPPORT_D_ONE_COMPLETE_EXCESS_OUTER_DROP",
       "guard": {"b": 1, "A_le_Bp": true, "d": 1},
-      "target": null,
+      "target": {"p": 73, "R": 37487, "K": 684138, "A": 16289, "capacity": 42, "multiplier": 179},
       "source_rank": [14, 72],
-      "target_rank": null,
-      "ticket": null,
+      "target_rank": [0, 42],
+      "ticket": "LOCAL_DROP",
+      "target_is_overflow": true,
       "canonical_capacity": 72,
-      "contract_boundary": "explicit_residual_no_successor_claim"
+      "contract_boundary": "relative_to_actual_source_and_common_E3_admission"
     },
     {
       "source": {"name": "high_support_c_one", "p": 73, "R": 75, "K": 1369, "A": 1369, "M": 1369, "d": 72, "n": 5401},
@@ -89,9 +90,8 @@
     "strict_later_branch": "EMPTY"
   },
   "open_after_partition": [
-    "low_support_M=A_d=1",
     "high_support_M=A_C=1",
     "high_support_M=A_C>1",
-    "common_E3_admission_for_the_two_strict_branches"
+    "common_E3_admission_for_the_three_strict_branch_types"
   ]
 }

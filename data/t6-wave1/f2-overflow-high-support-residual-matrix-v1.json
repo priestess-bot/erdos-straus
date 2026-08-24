@@ -63,15 +63,15 @@
     {
       "leaf_id": "F2-04-M",
       "precedence": 5,
-      "raw_guard": "terminal_first=MISS, all previous routes fail, full-block complete-excess Q exists on an actual source and M=lcm(A,Q)>A",
-      "effective_guard": "F2-00..F2-03 failed and M source/target has independent E3 typing, owner, serializer, and re-entry",
+      "raw_guard": "terminal_first=MISS, all previous routes fail, and either (i) b=d=1,A<=B_p with the unique d=1 full-excess multiplier, or (ii) another full-block complete-excess Q exists on an actual source with M=lcm(A,Q)>A",
+      "effective_guard": "F2-00..F2-03 failed and the d=1 full-excess or other M source/target has independent E3 typing, owner, serializer, and re-entry",
       "mutually_exclusive_with": ["F2-05-total-cofactor", "F2-06-high-support", "F2-07-C1-empty", "F2-08-Cgt1-empty", "F2-09-p409", "F2-10-explicit-residual"],
-      "coverage_proof": "complete-excess arithmetic gives M/A>=2 and a local rank drop only under an actual source receipt",
-      "current_status": "OPEN_E3_AND_ACTUALNESS",
+      "coverage_proof": "For b=d=1,A<=B_p, the exact multiplier E has both p-gates automatically, M=AE>p^2>B_p, target R_M>p, and a strict parent-to-target first rank coordinate. Other M adapters retain their written guards.",
+      "current_status": "RELATIVE_D_ONE_THEOREM_COMMON_E3_OPEN",
       "planned_closure": "VERIFIED_SUCCESSOR",
-      "target_shape": "interface-requested overflow_M_complete_excess_v1, projected to existing overflow/high-support family only after classifier success",
-      "current_blocker": "The marked-G M adapter is explicitly conditional on E3/surface admission; no active producer registration or global M target serializer exists.",
-      "evidence": ["claims/type-I-marked-g-universal-anchor-complete-excess-exit.md", "reproductions/type_i_marked_g_universal_anchor_complete_excess_exit.py", "docs/M-H-final-two-problem-audit-2026-08-20.md"]
+      "target_shape": "low d=1 target is existing TYPEI/CHARGED overflow; high-support M target is necessarily existing TYPEI/CHARGED overflow; only low non-hit M rechart may require the requested ABSORB owner",
+      "current_blocker": "The low d=1 theorem still needs common E3 producer registration/serializer. The marked-G M adapter remains conditional on E3/surface admission outside this d=1 source family.",
+      "evidence": ["claims/type-I-overflow-full-product-d-one-complete-excess-capacity-map.md", "claims/type-I-overflow-full-product-d-one-p-adic-regeneration-countdown.md", "claims/type-I-marked-g-universal-anchor-complete-excess-exit.md"]
     },
     {
       "leaf_id": "F2-05-total-cofactor",
@@ -141,7 +141,7 @@
     {
       "leaf_id": "F2-10-explicit-residual",
       "precedence": 9,
-      "raw_guard": "A>1 actual overflow survives terminal-first and every named route, including high-support C partition and p=409 special case",
+      "raw_guard": "A>1 actual overflow survives terminal-first and every named route, including all determinant-bound low-support branches, high-support C partition and p=409 special case",
       "effective_guard": "all previous effective guards fail",
       "mutually_exclusive_with": [],
       "coverage_proof": "definition of the complement of the ordered guards; this row is the only allowed catch-all and cannot be enqueued by a generic overflow label",
