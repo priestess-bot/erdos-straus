@@ -388,6 +388,12 @@ def target_arithmetic(
 def target_facts(source: QuotientOnlySourceV1, target: Mapping[str, object]) -> dict[str, object]:
     return {
         "major_phase": "TYPEI",
+        "type_i_protocol": "CHARGED",
+        "t5_eta_p": 0,
+        "pre_a": None,
+        "absorb_m": None,
+        "absorb_r_epsilon": 0,
+        "reset_carrier": None,
         "endpoint_fiber": "NONE",
         "relation_q": None,
         "provenance_kind": "OVERFLOW",
@@ -395,6 +401,8 @@ def target_facts(source: QuotientOnlySourceV1, target: Mapping[str, object]) -> 
         "atomic_arm": "NONE",
         "dispatch_status": "NONE",
         "proper_root_k": None,
+        "proper_root_height_class": "NONE",
+        "proper_root_height": None,
         "is_overflow": True,
         "support_A": int(target["support"]),
         "carrier_M": int(target["support"]),
