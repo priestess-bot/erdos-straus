@@ -91,6 +91,12 @@ F2、F3、F4、F5、T6 与 Erdős--Straus 猜想也均不由本合同升级。
 
 ```text
 major_phase
+type_i_protocol
+t5_eta_p
+pre_a
+absorb_m
+absorb_r_epsilon
+reset_carrier
 endpoint_fiber
 relation_q
 provenance_kind
@@ -98,6 +104,8 @@ full_carrier_scope
 atomic_arm
 dispatch_status
 proper_root_k
+proper_root_height_class
+proper_root_height
 is_overflow
 support_A
 carrier_M
@@ -117,8 +125,10 @@ same_chart_promotion_receipt
 \tag{2}
 \]
 
-以及所声明 provenance 所需的基本 typed 条件。例如 overflow 要求 `R>p`，proper-root
-要提供正整数 `k`，atomic pending 要给出冻结 arm 与 `PENDING`。这些是 owner predicate
+以及所声明 provenance 所需的基本 typed 条件。例如 overflow 要求 `CHARGED` 与 `R>p`；
+ordinary marked-absorb 要求 `ABSORB` 与 `R<p`；proper-root 必须声明 `LOW/HIGH`，且只有
+`LOW` 提供正整数 `k`；atomic pending 要给出冻结 arm 与 `PENDING`。protocol 的规范 rank
+字段也进入 facts，runtime 不能从外部 cache 读取 T5 descriptor。这些是 owner predicate
 的输入，不是假设“某个完整 normal form 已被 normalizer 接纳”。
 
 ### 2.3 明确禁止的循环输入
@@ -164,8 +174,9 @@ target_owners
 不在声明域都会失败。这样 future constructor 不能只靠添加一个 family 字符串绕过 firewall。
 
 `initial_core_root` 是 initializer 的输入义务，`direct_terminal_leaf` 是 terminal-first 的输出义务；
-二者都不进入 persistent queue。因此 persistent owner 表包含 frontier 的其余 14 个 family，
-而不是把 root input 或 terminal leaf 伪装成递归状态。
+二者都不进入 persistent queue。wave1 Freeze B 又新增两个精确 owner：不读取 low-height `k`
+的 `proper_root_high_endpoint`，以及 ordinary ROOT_SOL 的 `type_i_absorb_marked_residual`。它们
+分别修复 high-root 量词与 `R<p` ABSORB protocol，不是 broad fallback。
 
 ## 4. family predicates 与固定 precedence
 
@@ -176,20 +187,22 @@ target_owners
 1. `generic_nontrivial_marked_state`；
 2. `type_ii_relation_f_endpoint`；
 3. `type_ii_relation_g_endpoint`；
-4. `t2_v1_atomic_pending_target`；
-5. `h4_non_v1_branch_or_descendant`；
-6. `c8_terminal_first_surviving_parent`；
-7. `type_i_c2_19_macro_target`；
+4. `h4_non_v1_branch_or_descendant`；
+5. `c8_terminal_first_surviving_parent`；
+6. `type_i_c2_19_macro_target`；
+7. `proper_root_high_endpoint`；
 8. `proper_root_stutter_k_one`；
 9. `proper_root_stutter_k_gt_one`；
-10. `type_i_a_one_overflow`；
-11. `type_i_high_support_sink`；
-12. `type_i_low_support_persistent_overflow`；
-13. `type_i_a_gt_one_overflow_residual`；
-14. `type_i_full_carrier_post_g`。
+10. `type_i_absorb_marked_residual`；
+11. `type_i_a_one_overflow`；
+12. `type_i_high_support_sink`；
+13. `type_i_low_support_persistent_overflow`；
+14. `type_i_a_gt_one_overflow_residual`；
+15. `type_i_full_carrier_post_g`。
 
-前 9 项由 mark/phase/provenance、endpoint `F/G`、atomic arm 或 proper-root `k=1/k>1`
-直接决定。overflow 层使用
+前 10 项由 mark/phase/protocol/provenance、endpoint `F/G` 与 proper-root
+height class 与 low-height `k=1/k>1` 直接决定。marked-absorb 只接受
+`TYPEI/ABSORB + MARKED_ABSORB + R<p`。overflow 层使用
 
 \[
 B_p=\frac{(p-1)^2}{4}
@@ -347,7 +360,7 @@ ruff check \
 ```
 
 测试覆盖 extractor 成功而 family 零命中、cached owner/normal-form 拒绝、receipt 篡改、terminal
-隔离、unknown producer/gate、14 个 predicate 的直接 witness、合法/非法 overlap、precedence digest、
+隔离、unknown producer/gate、15 个 predicate 的直接 witness、合法/非法 overlap、precedence digest、
 未声明 target、conditional total-cofactor 自报 persistent 的真实负控、initializer/successor trace
 与 parent/source-owner 负控。它们验证实现遵守本合同，
 不替代第 7 节的逐 constructor 符号证明。

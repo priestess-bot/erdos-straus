@@ -37,6 +37,12 @@ SUCCESSOR = "fixture_successor_v1"
 def facts(**updates):
     result = {
         "major_phase": "TYPEI",
+        "type_i_protocol": "CHARGED",
+        "t5_eta_p": 0,
+        "pre_a": None,
+        "absorb_m": None,
+        "absorb_r_epsilon": 0,
+        "reset_carrier": None,
         "endpoint_fiber": "NONE",
         "relation_q": None,
         "provenance_kind": "FULL_CARRIER_POST_G",
@@ -44,6 +50,8 @@ def facts(**updates):
         "atomic_arm": "NONE",
         "dispatch_status": "NONE",
         "proper_root_k": None,
+        "proper_root_height_class": "NONE",
+        "proper_root_height": None,
         "is_overflow": False,
         "support_A": 5,
         "carrier_M": None,
@@ -258,6 +266,7 @@ class FamilyPredicateTests(unittest.TestCase):
         witnesses = {
             "type_ii_relation_f_endpoint": facts(
                 major_phase="TYPEII_REL",
+                type_i_protocol=None,
                 endpoint_fiber="F",
                 relation_q=2,
                 provenance_kind="ORDINARY_ENDPOINT",
@@ -268,6 +277,7 @@ class FamilyPredicateTests(unittest.TestCase):
             ),
             "type_ii_relation_g_endpoint": facts(
                 major_phase="TYPEII_G_HANDOFF",
+                type_i_protocol=None,
                 endpoint_fiber="G",
                 relation_q=1,
                 provenance_kind="ORDINARY_ENDPOINT",
@@ -277,11 +287,6 @@ class FamilyPredicateTests(unittest.TestCase):
                 chart_K=None,
             ),
             "type_i_full_carrier_post_g": facts(),
-            "t2_v1_atomic_pending_target": facts(
-                provenance_kind="ATOMIC_PENDING",
-                atomic_arm="H4_A1",
-                dispatch_status="PENDING",
-            ),
             "h4_non_v1_branch_or_descendant": facts(
                 provenance_kind="H4_RESIDUAL"
             ),
@@ -290,10 +295,31 @@ class FamilyPredicateTests(unittest.TestCase):
             ),
             "type_i_c2_19_macro_target": facts(provenance_kind="C2_19_MACRO"),
             "proper_root_stutter_k_one": facts(
-                provenance_kind="PROPER_ROOT", proper_root_k=1
+                provenance_kind="PROPER_ROOT",
+                proper_root_k=1,
+                proper_root_height_class="LOW",
+                proper_root_height=3,
             ),
             "proper_root_stutter_k_gt_one": facts(
-                provenance_kind="PROPER_ROOT", proper_root_k=2
+                provenance_kind="PROPER_ROOT",
+                proper_root_k=2,
+                proper_root_height_class="LOW",
+                proper_root_height=3,
+            ),
+            "proper_root_high_endpoint": facts(
+                provenance_kind="PROPER_ROOT",
+                proper_root_k=None,
+                proper_root_height_class="HIGH",
+                proper_root_height=219,
+            ),
+            "type_i_absorb_marked_residual": facts(
+                type_i_protocol="ABSORB",
+                provenance_kind="MARKED_ABSORB",
+                support_A=5,
+                chart_R=3,
+                chart_K=55,
+                absorb_m=3,
+                absorb_r_epsilon=0,
             ),
             "type_i_a_one_overflow": facts(
                 provenance_kind="OVERFLOW",
@@ -338,6 +364,7 @@ class FamilyPredicateTests(unittest.TestCase):
             ),
             "generic_nontrivial_marked_state": facts(
                 major_phase="GENERIC_MARKED",
+                type_i_protocol=None,
                 provenance_kind="GENERIC_MARKED",
                 full_carrier_scope=False,
                 support_A=None,
@@ -448,6 +475,50 @@ class FamilyPredicateTests(unittest.TestCase):
             CONTRACT.verify_owner_digest_v1(header, classification, "owner:bad")
         self.assertEqual(
             caught.exception.code, CONTRACT.RejectCode.OWNER_DIGEST_MISMATCH
+        )
+
+    def test_high_proper_root_cannot_smuggle_low_height_k(self) -> None:
+        raw = make_state(
+            facts(
+                provenance_kind="PROPER_ROOT",
+                proper_root_height_class="HIGH",
+                proper_root_height=219,
+                proper_root_k=2,
+            )
+        )
+        decision = CONTRACT.reject_before_persistent_queue_v1(raw, registry())
+        self.assertEqual(
+            decision.reason_code, CONTRACT.RejectCode.MALFORMED_SELECTOR_FACTS
+        )
+
+    def test_absorb_requires_semantic_low_chart_and_rank_fields(self) -> None:
+        invalid = facts(
+            type_i_protocol="ABSORB",
+            provenance_kind="MARKED_ABSORB",
+            support_A=37,
+            chart_R=75,
+            chart_K=1369,
+            absorb_m=3,
+        )
+        decision = CONTRACT.reject_before_persistent_queue_v1(
+            make_state(invalid), registry()
+        )
+        self.assertEqual(
+            decision.reason_code, CONTRACT.RejectCode.UNKNOWN_HEADER_VALUE
+        )
+
+    def test_atomic_pending_checkpoint_cannot_be_queued(self) -> None:
+        raw = make_state(
+            facts(
+                provenance_kind="ATOMIC_PENDING",
+                atomic_arm="H4_A1",
+                dispatch_status="PENDING",
+            )
+        )
+        decision = CONTRACT.reject_before_persistent_queue_v1(raw, registry())
+        self.assertEqual(
+            decision.reason_code,
+            CONTRACT.RejectCode.PENDING_OUTPUT_NOT_PERSISTENT,
         )
 
 
