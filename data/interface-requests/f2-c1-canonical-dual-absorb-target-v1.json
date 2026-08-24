@@ -1,0 +1,56 @@
+{
+  "request_id": "f2_c1_canonical_dual_absorb_target_v1",
+  "request_version": 1,
+  "track_id": "T6-F2-OVERFLOW-HIGH-SUPPORT",
+  "status": "REQUESTED_NOT_AUTHORIZED",
+  "purpose": "Freeze one concrete semantic TYPEI/ABSORB target shape for the high-support C=1 canonical dual handoff; this request does not register a producer or change active grammar.",
+  "source_guard": {
+    "parent": "actual terminal-first-surviving TYPEI/CHARGED canonical high-support C=1 state with p core, 4*A=p*R+1, K=A, A>B_p",
+    "required_receipts": [
+      "admitted parent_state_id",
+      "replayable parent source receipt",
+      "parent terminal-first MISS",
+      "target terminal-first result",
+      "producer-specific derived-determinant replay"
+    ]
+  },
+  "target_shape": {
+    "producer_id_proposal": "high_support_c1_canonical_dual_absorb_v1",
+    "branch_id_proposal": "r_three_canonical_dual",
+    "normal_form": "type_i_high_support_c1_r_three_dual_absorb_v1",
+    "equation": "p*3+1=4*N, N=(3*p+1)/4",
+    "facts_required": {
+      "major_phase": "TYPEI",
+      "endpoint_fiber": "target-local F/G/HIT recomputation",
+      "provenance_kind": "OVERFLOW",
+      "is_overflow": false,
+      "chart_R": 3,
+      "chart_K": "(3*p+1)/4",
+      "support_A": "(3*p+1)/4",
+      "mark": "ROOT_SOL",
+      "protocol": "ABSORB (coordinator-owned extension)"
+    },
+    "mark_behavior": "identity on Sol(4,p), conditional on target admission",
+    "terminal_precedence": "target-local terminal HIT returns terminal before any persistent target",
+    "t5_ticket": "PHASE_DROP from TYPEI/CHARGED to TYPEI/ABSORB after E1-E4",
+    "owner_request": "semantic ordinary ABSORB owner; it must not be inferred from chart_R<p alone"
+  },
+  "mathematical_basis": {
+    "claim": "type-I-f2-high-support-c1-canonical-dual-absorb-handoff",
+    "selected_target": "(R,K;A)=(3,(3*p+1)/4;(3*p+1)/4)",
+    "unselected_dual": "(p-2,(p-1)^2/4), known G"
+  },
+  "required_coordinator_decisions": [
+    "Whether a parent-derived canonical dual is an authorized producer source or requires additional occurrence provenance.",
+    "Exact ABSORB predicate, serializer, owner precedence, and allowed source owners.",
+    "Target terminal-first implementation and F/G/HIT retyping.",
+    "A non-upward ABSORB continuation or a proof that target-local terminal dispatch is total.",
+    "F1 producer inventory, common admission, and target re-entry tests."
+  ],
+  "nonclaims": [
+    "No active producer is registered by this file.",
+    "No target family is added by this file.",
+    "No E3 or re-entry proof is supplied.",
+    "The R=3 target is not claimed terminal."
+  ]
+}

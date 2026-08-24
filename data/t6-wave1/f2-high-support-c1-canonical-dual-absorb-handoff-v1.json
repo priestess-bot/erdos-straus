@@ -1,0 +1,78 @@
+{
+  "artifact_id": "f2_high_support_c1_canonical_dual_absorb_handoff_v1",
+  "artifact_version": 1,
+  "track_id": "T6-F2-OVERFLOW-HIGH-SUPPORT",
+  "claim_id": "type-I-f2-high-support-c1-canonical-dual-absorb-handoff",
+  "status": "CONDITIONAL_E2_E4_E5_HANDOFF_E3_REENTRY_OPEN",
+  "source_scope": {
+    "parent": "actual terminal-first-surviving TYPEI/CHARGED canonical C=1 chart: 4*A=p*R+1, A>B_p, K=A",
+    "source_requirement": "The proposed producer must bind the admitted parent_state_id and its replayable source receipt; chart arithmetic alone is not E1."
+  },
+  "deterministic_construction": {
+    "alpha": "(3*p+1)/4",
+    "derived_determinant": {
+      "M": "A",
+      "d": "p-1",
+      "n": "(p-1)*R+1",
+      "identity": "p*n=4*M*d+1"
+    },
+    "dual_targets": {
+      "d_side": {
+        "R": "p-2",
+        "K": "(p-1)^2/4",
+        "disposition": "known G chart; not selected"
+      },
+      "alpha_side": {
+        "R": 3,
+        "K": "(3*p+1)/4",
+        "support_A": "(3*p+1)/4",
+        "tie_break": "minimum positive canonical R",
+        "disposition": "target terminal-first; then requested TYPEI/ABSORB owner on MISS"
+      }
+    }
+  },
+  "obligation_status": {
+    "E1": "RELATIVE_TO_ACTUAL_PARENT_AND_NEW_PRODUCER_REGISTRATION",
+    "E2": "ESTABLISHED_BY_CANONICAL_DUAL_IDENTITIES",
+    "E3": "OPEN_GENERIC_ORDINARY_ABSORB_OWNER_AND_SERIALIZER",
+    "E4": "IDENTITY_ON_Sol_4_p_RELATIVE_TO_ADMISSION",
+    "E5": "PHASE_DROP_CHARGED_TO_ABSORB_RELATIVE_TO_ADMISSION",
+    "reentry": "OPEN"
+  },
+  "t5_ticket": {
+    "source": "TYPEI/CHARGED",
+    "target": "TYPEI/ABSORB",
+    "kind": "PHASE_DROP",
+    "requirement": "same equation rank and all E1-E4 completed before admission"
+  },
+  "controls": [
+    {
+      "p": 73,
+      "A": 1369,
+      "R": 75,
+      "alpha_target": [3, 55, 55],
+      "d_target": [71, 1296, 1296]
+    },
+    {
+      "p": 97,
+      "A": 2401,
+      "R": 99,
+      "alpha_target": [3, 73, 73],
+      "d_target": [95, 2304, 2304]
+    },
+    {
+      "p": 241,
+      "A": 14641,
+      "R": 243,
+      "alpha_target": [3, 181, 181],
+      "d_target": [239, 14400, 14400],
+      "r3_control": "G; target is not automatically terminal"
+    }
+  ],
+  "forbidden_inferences": [
+    "derived determinant identity alone establishes E1",
+    "R=3 target is always terminal or F",
+    "requested ABSORB owner is an active grammar family",
+    "PHASE_DROP supplies E3 or recursive re-entry"
+  ]
+}
