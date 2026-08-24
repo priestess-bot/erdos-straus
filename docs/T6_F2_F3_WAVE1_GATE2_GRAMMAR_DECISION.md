@@ -31,7 +31,8 @@ scripts/t6_persistent_selector_runtime_v1.py
 
 \[
 \operatorname{ROOT\_SOL}\land\operatorname{TYPEI/CHARGED}
-\land\operatorname{PROPER\_ROOT}\land h>p\land k=\varnothing.
+\land\operatorname{PROPER\_ROOT}\land
+M=(p^2+p+1)/3\land u=(2r+1,M)\land0<u<M\land h=3u>p\land k=\varnothing.
 \]
 
 It exists solely to preserve the F3 high endpoint quantifier. A high endpoint cannot be

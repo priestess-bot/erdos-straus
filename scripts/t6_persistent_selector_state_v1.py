@@ -22,6 +22,7 @@ import hashlib
 import json
 from dataclasses import dataclass
 from enum import Enum
+from math import gcd
 from types import MappingProxyType
 from typing import Any, Callable, Iterable, Mapping, Sequence
 
@@ -234,6 +235,7 @@ FACT_FIELDS = frozenset(
         "proper_root_k",
         "proper_root_height_class",
         "proper_root_height",
+        "proper_root_r",
         "is_overflow",
         "support_A",
         "carrier_M",
@@ -515,6 +517,7 @@ def _validate_facts(value: Any, root_context: int, mark_kind: str) -> Mapping[st
         "absorb_m",
         "reset_carrier",
         "proper_root_height",
+        "proper_root_r",
     ):
         if facts[name] is not None and (
             not _is_plain_int(facts[name]) or facts[name] <= 0
@@ -610,6 +613,7 @@ def _validate_facts(value: Any, root_context: int, mark_kind: str) -> Mapping[st
             "chart_K",
             "proper_root_k",
             "proper_root_height",
+            "proper_root_r",
             "pre_a",
             "absorb_m",
             "reset_carrier",
@@ -697,10 +701,26 @@ def _validate_facts(value: Any, root_context: int, mark_kind: str) -> Mapping[st
 
     if provenance == "PROPER_ROOT":
         height = facts["proper_root_height"]
-        if type_i_protocol != "CHARGED" or not _is_plain_int(height):
+        root_parameter = facts["proper_root_r"]
+        if not (
+            type_i_protocol == "CHARGED"
+            and _is_plain_int(height)
+            and _is_plain_int(root_parameter)
+            and root_parameter >= 1
+        ):
             raise StateContractError(
                 RejectCode.MALFORMED_SELECTOR_FACTS,
-                "PROPER_ROOT requires CHARGED and a positive root height",
+                "PROPER_ROOT requires CHARGED, root r>=1 and a positive root height",
+            )
+        root_modulus = (root_context * root_context + root_context + 1) // 3
+        u_value = gcd(2 * root_parameter + 1, root_modulus)
+        if not (
+            0 < u_value < root_modulus
+            and height == 3 * u_value
+        ):
+            raise StateContractError(
+                RejectCode.MALFORMED_SELECTOR_FACTS,
+                "proper-root height does not replay from r and the cyclotomic modulus",
             )
         if height_class == "LOW":
             if not (
@@ -726,6 +746,7 @@ def _validate_facts(value: Any, root_context: int, mark_kind: str) -> Mapping[st
     elif not (
         facts["proper_root_k"] is None
         and facts["proper_root_height"] is None
+        and facts["proper_root_r"] is None
         and height_class == "NONE"
     ):
         raise StateContractError(

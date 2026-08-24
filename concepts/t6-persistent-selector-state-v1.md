@@ -106,6 +106,7 @@ dispatch_status
 proper_root_k
 proper_root_height_class
 proper_root_height
+proper_root_r
 is_overflow
 support_A
 carrier_M
@@ -126,7 +127,8 @@ same_chart_promotion_receipt
 \]
 
 以及所声明 provenance 所需的基本 typed 条件。例如 overflow 要求 `CHARGED` 与 `R>p`；
-ordinary marked-absorb 要求 `ABSORB` 与 `R<p`；proper-root 必须声明 `LOW/HIGH`，且只有
+ordinary marked-absorb 要求 `ABSORB` 与 `R<p`；proper-root 必须声明 `LOW/HIGH` 和 root
+parameter `r`，并直接重算 (M=(p^2+p+1)/3)、(u=(2r+1,M))、(h=3u) 及真因子门；只有
 `LOW` 提供正整数 `k`；atomic pending 要给出冻结 arm 与 `PENDING`。protocol 的规范 rank
 字段也进入 facts，runtime 不能从外部 cache 读取 T5 descriptor。这些是 owner predicate
 的输入，不是假设“某个完整 normal form 已被 normalizer 接纳”。

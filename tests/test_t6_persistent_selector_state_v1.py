@@ -52,6 +52,7 @@ def facts(**updates):
         "proper_root_k": None,
         "proper_root_height_class": "NONE",
         "proper_root_height": None,
+        "proper_root_r": None,
         "is_overflow": False,
         "support_A": 5,
         "carrier_M": None,
@@ -65,14 +66,18 @@ def facts(**updates):
     return result
 
 
-def mark_receipt(kind: str = CONTRACT.ROOT_SOL, equation_rank: int = P):
+def mark_receipt(
+    kind: str = CONTRACT.ROOT_SOL,
+    equation_rank: int = P,
+    root_context: int = P,
+):
     return CONTRACT.seal_receipt_v1(
         {
             "schema_id": CONTRACT.MARK_SCHEMA_ID,
             "schema_version": 1,
             "receipt_id": f"mark:{kind}:{equation_rank}",
             "kind": kind,
-            "root_context": P,
+            "root_context": root_context,
             "equation_rank": equation_rank,
         }
     )
@@ -99,6 +104,7 @@ def make_state(
     parent_state_id: str | None = None,
     mark_kind: str = CONTRACT.ROOT_SOL,
     equation_rank: int = P,
+    root_context: int = P,
     terminal_outcome: str = "MISS",
 ):
     selector_facts = facts() if selector_facts is None else selector_facts
@@ -108,7 +114,7 @@ def make_state(
         "receipt_id": f"source:{producer}:{branch}:{parent_state_id}",
         "producer_id": producer,
         "branch_id": branch,
-        "root_context": P,
+        "root_context": root_context,
         "equation_rank": equation_rank,
         "target_facts_digest": CONTRACT.canonical_digest_v1(selector_facts),
         "terminal_first_digest": terminal["digest"],
@@ -146,9 +152,9 @@ def make_state(
         "producer_id": producer,
         "branch_id": branch,
         "parent_state_id": parent_state_id,
-        "root_context": P,
+        "root_context": root_context,
         "equation_rank": equation_rank,
-        "mark": mark_receipt(mark_kind, equation_rank),
+        "mark": mark_receipt(mark_kind, equation_rank, root_context),
         "terminal_first": terminal,
         "source_receipt": source,
         "facts": selector_facts,
@@ -299,18 +305,23 @@ class FamilyPredicateTests(unittest.TestCase):
                 proper_root_k=1,
                 proper_root_height_class="LOW",
                 proper_root_height=3,
+                proper_root_r=1,
             ),
             "proper_root_stutter_k_gt_one": facts(
                 provenance_kind="PROPER_ROOT",
                 proper_root_k=2,
                 proper_root_height_class="LOW",
                 proper_root_height=3,
+                proper_root_r=1,
             ),
             "proper_root_high_endpoint": facts(
                 provenance_kind="PROPER_ROOT",
                 proper_root_k=None,
                 proper_root_height_class="HIGH",
-                proper_root_height=219,
+                proper_root_height=543,
+                proper_root_r=90,
+                chart_R=3,
+                chart_K=235,
             ),
             "type_i_absorb_marked_residual": facts(
                 type_i_protocol="ABSORB",
@@ -380,6 +391,8 @@ class FamilyPredicateTests(unittest.TestCase):
                     "mark_kind": CONTRACT.NONTRIVIAL_MARK,
                     "equation_rank": 37,
                 }
+            elif expected == "proper_root_high_endpoint":
+                kwargs = {"root_context": 313, "equation_rank": 313}
             with self.subTest(family=expected):
                 self.assertEqual(self.classify(selector_facts, **kwargs).owner, expected)
 
@@ -483,10 +496,26 @@ class FamilyPredicateTests(unittest.TestCase):
                 provenance_kind="PROPER_ROOT",
                 proper_root_height_class="HIGH",
                 proper_root_height=219,
+                proper_root_r=1,
                 proper_root_k=2,
             )
         )
         decision = CONTRACT.reject_before_persistent_queue_v1(raw, registry())
+        self.assertEqual(
+            decision.reason_code, CONTRACT.RejectCode.MALFORMED_SELECTOR_FACTS
+        )
+
+    def test_proper_root_height_must_replay_from_cyclotomic_root_data(self) -> None:
+        forged = facts(
+            provenance_kind="PROPER_ROOT",
+            proper_root_height_class="HIGH",
+            proper_root_height=74,
+            proper_root_r=1,
+            proper_root_k=None,
+        )
+        decision = CONTRACT.reject_before_persistent_queue_v1(
+            make_state(forged), registry()
+        )
         self.assertEqual(
             decision.reason_code, CONTRACT.RejectCode.MALFORMED_SELECTOR_FACTS
         )
