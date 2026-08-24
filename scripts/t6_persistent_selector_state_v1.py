@@ -46,6 +46,7 @@ NONTRIVIAL_MARK = "NONTRIVIAL_MARK"
 PHASES = frozenset(
     {"TYPEII_REL", "TYPEII_G_HANDOFF", "TYPEI", "GENERIC_MARKED"}
 )
+TYPE_I_PROTOCOLS = frozenset({"CHARGED", "PRE", "ABSORB", "RESET"})
 ENDPOINT_FIBERS = frozenset({"NONE", "F", "G"})
 PROVENANCE_KINDS = frozenset(
     {
@@ -57,6 +58,7 @@ PROVENANCE_KINDS = frozenset(
         "H4_RESIDUAL",
         "C2_19_MACRO",
         "ATOMIC_PENDING",
+        "MARKED_ABSORB",
         "GENERIC_MARKED",
     }
 )
@@ -91,6 +93,7 @@ class RejectCode(str, Enum):
     INVALID_CORE_CONTEXT = "INVALID_CORE_CONTEXT"
     INVALID_CHART_FACTS = "INVALID_CHART_FACTS"
     INVALID_ADMISSION_TICKET = "INVALID_ADMISSION_TICKET"
+    PENDING_OUTPUT_NOT_PERSISTENT = "PENDING_OUTPUT_NOT_PERSISTENT"
     STATE_ID_MISMATCH = "STATE_ID_MISMATCH"
     FAMILY_NO_MATCH = "FAMILY_NO_MATCH"
     FAMILY_ILLEGAL_OVERLAP = "FAMILY_ILLEGAL_OVERLAP"
@@ -216,6 +219,12 @@ TOP_LEVEL_FIELDS = frozenset(
 FACT_FIELDS = frozenset(
     {
         "major_phase",
+        "type_i_protocol",
+        "t5_eta_p",
+        "pre_a",
+        "absorb_m",
+        "absorb_r_epsilon",
+        "reset_carrier",
         "endpoint_fiber",
         "relation_q",
         "provenance_kind",
@@ -223,6 +232,8 @@ FACT_FIELDS = frozenset(
         "atomic_arm",
         "dispatch_status",
         "proper_root_k",
+        "proper_root_height_class",
+        "proper_root_height",
         "is_overflow",
         "support_A",
         "carrier_M",
@@ -285,6 +296,10 @@ def build_state_id_v1(raw_state: Mapping[str, Any]) -> str:
 
 def _is_plain_int(value: Any) -> bool:
     return isinstance(value, int) and not isinstance(value, bool)
+
+
+def _nonnegative_plain_int(value: Any) -> bool:
+    return _is_plain_int(value) and value >= 0
 
 
 def _expect_mapping(value: Any, code: RejectCode, name: str) -> Mapping[str, Any]:
@@ -451,6 +466,7 @@ def _validate_facts(value: Any, root_context: int, mark_kind: str) -> Mapping[st
         facts, FACT_FIELDS, RejectCode.MALFORMED_SELECTOR_FACTS, "facts"
     )
     phase = facts["major_phase"]
+    type_i_protocol = facts["type_i_protocol"]
     endpoint = facts["endpoint_fiber"]
     provenance = facts["provenance_kind"]
     atomic_arm = facts["atomic_arm"]
@@ -458,6 +474,11 @@ def _validate_facts(value: Any, root_context: int, mark_kind: str) -> Mapping[st
     if phase not in PHASES:
         raise StateContractError(
             RejectCode.UNKNOWN_HEADER_VALUE, f"unknown major_phase {phase!r}"
+        )
+    if type_i_protocol is not None and type_i_protocol not in TYPE_I_PROTOCOLS:
+        raise StateContractError(
+            RejectCode.UNKNOWN_HEADER_VALUE,
+            f"unknown type_i_protocol {type_i_protocol!r}",
         )
     if endpoint not in ENDPOINT_FIBERS:
         raise StateContractError(
@@ -490,6 +511,10 @@ def _validate_facts(value: Any, root_context: int, mark_kind: str) -> Mapping[st
         "overflow_d",
         "chart_R",
         "chart_K",
+        "pre_a",
+        "absorb_m",
+        "reset_carrier",
+        "proper_root_height",
     ):
         if facts[name] is not None and (
             not _is_plain_int(facts[name]) or facts[name] <= 0
@@ -498,6 +523,19 @@ def _validate_facts(value: Any, root_context: int, mark_kind: str) -> Mapping[st
                 RejectCode.MALFORMED_SELECTOR_FACTS,
                 f"facts.{name} must be null or a positive integer",
             )
+    for name in ("t5_eta_p", "absorb_r_epsilon"):
+        if not _nonnegative_plain_int(facts[name]):
+            raise StateContractError(
+                RejectCode.MALFORMED_SELECTOR_FACTS,
+                f"facts.{name} must be a nonnegative integer",
+            )
+
+    height_class = facts["proper_root_height_class"]
+    if height_class not in {"NONE", "LOW", "HIGH"}:
+        raise StateContractError(
+            RejectCode.UNKNOWN_HEADER_VALUE,
+            f"unknown proper_root_height_class {height_class!r}",
+        )
 
     if mark_kind == ROOT_SOL and phase == "GENERIC_MARKED":
         raise StateContractError(
@@ -557,14 +595,75 @@ def _validate_facts(value: Any, root_context: int, mark_kind: str) -> Mapping[st
                 RejectCode.INVALID_CHART_FACTS,
                 "TYPEI base chart must satisfy 4K=pR+1 and A divides K",
             )
-    elif any(facts[name] is not None for name in ("support_A", "carrier_M", "overflow_d", "chart_R", "chart_K", "proper_root_k")):
+        if type_i_protocol not in TYPE_I_PROTOCOLS:
+            raise StateContractError(
+                RejectCode.UNKNOWN_HEADER_VALUE,
+                "TYPEI requires an explicit frozen protocol",
+            )
+    elif type_i_protocol is not None or any(
+        facts[name] is not None
+        for name in (
+            "support_A",
+            "carrier_M",
+            "overflow_d",
+            "chart_R",
+            "chart_K",
+            "proper_root_k",
+            "proper_root_height",
+            "pre_a",
+            "absorb_m",
+            "reset_carrier",
+        )
+    ):
         raise StateContractError(
             RejectCode.INVALID_CHART_FACTS,
-            "non-Type-I states cannot carry Type-I chart coordinates",
+            "non-Type-I states cannot carry Type-I protocol/chart coordinates",
         )
 
+    if phase == "TYPEI":
+        protocol_payloads = {
+            "CHARGED": (
+                facts["pre_a"] is None
+                and facts["absorb_m"] is None
+                and facts["absorb_r_epsilon"] == 0
+                and facts["reset_carrier"] is None
+            ),
+            "PRE": (
+                _is_plain_int(facts["pre_a"])
+                and facts["pre_a"] > 0
+                and facts["t5_eta_p"] == 0
+                and facts["absorb_m"] is None
+                and facts["absorb_r_epsilon"] == 0
+                and facts["reset_carrier"] is None
+            ),
+            "ABSORB": (
+                facts["pre_a"] is None
+                and facts["t5_eta_p"] == 0
+                and _is_plain_int(facts["absorb_m"])
+                and facts["absorb_m"] > 0
+                and facts["reset_carrier"] is None
+            ),
+            "RESET": (
+                facts["pre_a"] is None
+                and facts["t5_eta_p"] == 0
+                and facts["absorb_m"] is None
+                and facts["absorb_r_epsilon"] == 0
+                and _is_plain_int(facts["reset_carrier"])
+                and facts["reset_carrier"] > 0
+            ),
+        }
+        if not protocol_payloads[type_i_protocol]:
+            raise StateContractError(
+                RejectCode.MALFORMED_SELECTOR_FACTS,
+                f"facts do not match TYPEI/{type_i_protocol} rank schema",
+            )
+
     if facts["is_overflow"]:
-        if phase != "TYPEI" or provenance != "OVERFLOW":
+        if (
+            phase != "TYPEI"
+            or type_i_protocol != "CHARGED"
+            or provenance != "OVERFLOW"
+        ):
             raise StateContractError(
                 RejectCode.UNKNOWN_HEADER_VALUE,
                 "overflow facts require TYPEI/OVERFLOW",
@@ -579,29 +678,69 @@ def _validate_facts(value: Any, root_context: int, mark_kind: str) -> Mapping[st
             "OVERFLOW provenance requires is_overflow=true",
         )
 
-    if provenance == "PROPER_ROOT" and facts["proper_root_k"] is None:
+    if provenance == "MARKED_ABSORB":
+        if not (
+            phase == "TYPEI"
+            and type_i_protocol == "ABSORB"
+            and not facts["is_overflow"]
+            and facts["chart_R"] < root_context
+        ):
+            raise StateContractError(
+                RejectCode.UNKNOWN_HEADER_VALUE,
+                "MARKED_ABSORB requires TYPEI/ABSORB, R<p and non-overflow",
+            )
+    elif type_i_protocol == "ABSORB":
         raise StateContractError(
-            RejectCode.MALFORMED_SELECTOR_FACTS,
-            "PROPER_ROOT requires proper_root_k",
+            RejectCode.UNKNOWN_HEADER_VALUE,
+            "ordinary ABSORB targets require MARKED_ABSORB provenance",
         )
-    if provenance != "PROPER_ROOT" and facts["proper_root_k"] is not None:
-        raise StateContractError(
-            RejectCode.MALFORMED_SELECTOR_FACTS,
-            "proper_root_k is reserved for PROPER_ROOT provenance",
-        )
-    if provenance == "ATOMIC_PENDING" and not (
-        atomic_arm in {"H4_A1", "C8_DOUBLE_LOW"} and dispatch == "PENDING"
+
+    if provenance == "PROPER_ROOT":
+        height = facts["proper_root_height"]
+        if type_i_protocol != "CHARGED" or not _is_plain_int(height):
+            raise StateContractError(
+                RejectCode.MALFORMED_SELECTOR_FACTS,
+                "PROPER_ROOT requires CHARGED and a positive root height",
+            )
+        if height_class == "LOW":
+            if not (
+                2 <= height < root_context
+                and _is_plain_int(facts["proper_root_k"])
+                and facts["proper_root_k"] > 0
+            ):
+                raise StateContractError(
+                    RejectCode.MALFORMED_SELECTOR_FACTS,
+                    "LOW proper root requires 2<=h<p and positive k",
+                )
+        elif height_class == "HIGH":
+            if not (height > root_context and facts["proper_root_k"] is None):
+                raise StateContractError(
+                    RejectCode.MALFORMED_SELECTOR_FACTS,
+                    "HIGH proper root requires h>p and no low-height k",
+                )
+        else:
+            raise StateContractError(
+                RejectCode.MALFORMED_SELECTOR_FACTS,
+                "PROPER_ROOT requires LOW or HIGH height class",
+            )
+    elif not (
+        facts["proper_root_k"] is None
+        and facts["proper_root_height"] is None
+        and height_class == "NONE"
     ):
         raise StateContractError(
             RejectCode.MALFORMED_SELECTOR_FACTS,
-            "ATOMIC_PENDING requires a registered arm and PENDING status",
+            "proper-root fields are reserved for PROPER_ROOT provenance",
         )
-    if provenance != "ATOMIC_PENDING" and (
-        atomic_arm != "NONE" or dispatch != "NONE"
-    ):
+    if provenance == "ATOMIC_PENDING" or dispatch == "PENDING":
+        raise StateContractError(
+            RejectCode.PENDING_OUTPUT_NOT_PERSISTENT,
+            "atomic pending output is a macro checkpoint, not a queue state",
+        )
+    if atomic_arm != "NONE" or dispatch != "NONE":
         raise StateContractError(
             RejectCode.MALFORMED_SELECTOR_FACTS,
-            "atomic fields are reserved for ATOMIC_PENDING provenance",
+            "atomic arm fields belong in edge receipts, not persistent states",
         )
     return MappingProxyType(copy.deepcopy(dict(facts)))
 
@@ -828,14 +967,15 @@ def _family_predicates_v1() -> tuple[FamilyPredicateV1, ...]:
 
     ``initial_core_root`` is an initializer input and ``direct_terminal_leaf``
     is removed by terminal-first.  They are boundary dispositions, not
-    persistent queue owners.  The remaining fourteen frontier families appear
-    below in a stable order.
+    persistent queue owners.  The frozen frontier owners plus the two wave1
+    protocol/height refinements appear below in a stable order.
     """
 
     def fact(name: str) -> Callable[[VerifiedSelectorHeaderV1], Any]:
         return lambda header: header.facts[name]
 
     phase = fact("major_phase")
+    protocol = fact("type_i_protocol")
     provenance = fact("provenance_kind")
     support = fact("support_A")
     root_k = fact("proper_root_k")
@@ -860,50 +1000,67 @@ def _family_predicates_v1() -> tuple[FamilyPredicateV1, ...]:
             and h.facts["endpoint_fiber"] == "G",
         ),
         FamilyPredicateV1(
-            "t2_v1_atomic_pending_target",
-            lambda h: _ordinary(h)
-            and phase(h) == "TYPEI"
-            and provenance(h) == "ATOMIC_PENDING"
-            and h.facts["dispatch_status"] == "PENDING"
-            and h.facts["atomic_arm"] in {"H4_A1", "C8_DOUBLE_LOW"},
-        ),
-        FamilyPredicateV1(
             "h4_non_v1_branch_or_descendant",
             lambda h: _ordinary(h)
             and phase(h) == "TYPEI"
+            and protocol(h) == "CHARGED"
             and provenance(h) == "H4_RESIDUAL",
         ),
         FamilyPredicateV1(
             "c8_terminal_first_surviving_parent",
             lambda h: _ordinary(h)
             and phase(h) == "TYPEI"
+            and protocol(h) == "CHARGED"
             and provenance(h) == "C8_PARENT",
         ),
         FamilyPredicateV1(
             "type_i_c2_19_macro_target",
             lambda h: _ordinary(h)
             and phase(h) == "TYPEI"
+            and protocol(h) == "CHARGED"
             and provenance(h) == "C2_19_MACRO",
+        ),
+        FamilyPredicateV1(
+            "proper_root_high_endpoint",
+            lambda h: _ordinary(h)
+            and phase(h) == "TYPEI"
+            and protocol(h) == "CHARGED"
+            and provenance(h) == "PROPER_ROOT"
+            and h.facts["proper_root_height_class"] == "HIGH",
         ),
         FamilyPredicateV1(
             "proper_root_stutter_k_one",
             lambda h: _ordinary(h)
             and phase(h) == "TYPEI"
+            and protocol(h) == "CHARGED"
             and provenance(h) == "PROPER_ROOT"
+            and h.facts["proper_root_height_class"] == "LOW"
             and root_k(h) == 1,
         ),
         FamilyPredicateV1(
             "proper_root_stutter_k_gt_one",
             lambda h: _ordinary(h)
             and phase(h) == "TYPEI"
+            and protocol(h) == "CHARGED"
             and provenance(h) == "PROPER_ROOT"
+            and h.facts["proper_root_height_class"] == "LOW"
             and _is_plain_int(root_k(h))
             and root_k(h) > 1,
+        ),
+        FamilyPredicateV1(
+            "type_i_absorb_marked_residual",
+            lambda h: _ordinary(h)
+            and phase(h) == "TYPEI"
+            and protocol(h) == "ABSORB"
+            and provenance(h) == "MARKED_ABSORB"
+            and not h.facts["is_overflow"]
+            and h.facts["chart_R"] < h.root_context,
         ),
         FamilyPredicateV1(
             "type_i_a_one_overflow",
             lambda h: _ordinary(h)
             and phase(h) == "TYPEI"
+            and protocol(h) == "CHARGED"
             and h.facts["is_overflow"]
             and support(h) == 1
             and _is_plain_int(h.facts["overflow_d"])
@@ -913,6 +1070,7 @@ def _family_predicates_v1() -> tuple[FamilyPredicateV1, ...]:
             "type_i_high_support_sink",
             lambda h: _ordinary(h)
             and phase(h) == "TYPEI"
+            and protocol(h) == "CHARGED"
             and h.facts["is_overflow"]
             and _is_plain_int(support(h))
             and support(h) > (h.root_context - 1) ** 2 // 4
@@ -922,6 +1080,7 @@ def _family_predicates_v1() -> tuple[FamilyPredicateV1, ...]:
             "type_i_low_support_persistent_overflow",
             lambda h: _ordinary(h)
             and phase(h) == "TYPEI"
+            and protocol(h) == "CHARGED"
             and h.facts["is_overflow"]
             and h.facts["same_chart_promotion_receipt"]
             and _is_plain_int(support(h))
@@ -933,6 +1092,7 @@ def _family_predicates_v1() -> tuple[FamilyPredicateV1, ...]:
             "type_i_a_gt_one_overflow_residual",
             lambda h: _ordinary(h)
             and phase(h) == "TYPEI"
+            and protocol(h) == "CHARGED"
             and h.facts["is_overflow"]
             and _is_plain_int(support(h))
             and support(h) > 1,
@@ -941,6 +1101,7 @@ def _family_predicates_v1() -> tuple[FamilyPredicateV1, ...]:
             "type_i_full_carrier_post_g",
             lambda h: _ordinary(h)
             and phase(h) == "TYPEI"
+            and protocol(h) == "CHARGED"
             and provenance(h) == "FULL_CARRIER_POST_G"
             and h.facts["full_carrier_scope"],
         ),

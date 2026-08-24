@@ -385,6 +385,7 @@ def compute_t5_potential_v1(
         and descriptor.induction_rank == equation_rank
         and descriptor.major_phase in PHASE_RANKS
         and facts.get("major_phase") == descriptor.major_phase
+        and facts.get("type_i_protocol") == descriptor.type_i_protocol
     ):
         raise RuntimeContractError(
             RuntimeRejectCode.T5_DESCRIPTOR_INVALID,
@@ -425,6 +426,7 @@ def compute_t5_potential_v1(
                 and _positive_int(chart_k)
                 and chart_k % support == 0
                 and _nonnegative_int(descriptor.eta_p)
+                and facts.get("t5_eta_p") == descriptor.eta_p
             ):
                 raise RuntimeContractError(
                     RuntimeRejectCode.T5_DESCRIPTOR_INVALID,
@@ -438,7 +440,10 @@ def compute_t5_potential_v1(
                 0,
             )
         elif protocol == "PRE":
-            if not _positive_int(descriptor.pre_a):
+            if not (
+                _positive_int(descriptor.pre_a)
+                and facts.get("pre_a") == descriptor.pre_a
+            ):
                 raise RuntimeContractError(
                     RuntimeRejectCode.T5_DESCRIPTOR_INVALID,
                     "PRE requires positive a",
@@ -450,6 +455,9 @@ def compute_t5_potential_v1(
                 _positive_int(chart_r)
                 and _positive_int(descriptor.absorb_m)
                 and _nonnegative_int(descriptor.absorb_r_epsilon)
+                and facts.get("absorb_m") == descriptor.absorb_m
+                and facts.get("absorb_r_epsilon")
+                == descriptor.absorb_r_epsilon
             ):
                 raise RuntimeContractError(
                     RuntimeRejectCode.T5_DESCRIPTOR_INVALID,
@@ -462,7 +470,10 @@ def compute_t5_potential_v1(
                 0,
             )
         else:
-            if not _positive_int(descriptor.reset_carrier):
+            if not (
+                _positive_int(descriptor.reset_carrier)
+                and facts.get("reset_carrier") == descriptor.reset_carrier
+            ):
                 raise RuntimeContractError(
                     RuntimeRejectCode.T5_DESCRIPTOR_INVALID,
                     "RESET requires a positive carrier",
@@ -639,7 +650,7 @@ class PersistentSelectorRuntimeV1:
             raise ValueError(f"dispatch registry mismatch: missing={missing}, extra={extra}")
         self.dispatch_precedence = MappingProxyType(normalized_dispatch)
         self._queue: list[RuntimeQueueItemV1] = []
-        self._known_state_ids: set[str] = set()
+        self._known_items: dict[str, RuntimeQueueItemV1] = {}
         self._issued_candidates: dict[str, tuple[str, str]] = {}
 
     def producer_rules_v1(self) -> Mapping[str, state_contract.ProducerRuleV1]:
@@ -672,12 +683,12 @@ class PersistentSelectorRuntimeV1:
         return tuple(self._queue)
 
     def _enqueue_admitted_target_v1(self, item: RuntimeQueueItemV1) -> None:
-        if item.state_id in self._known_state_ids:
+        if item.state_id in self._known_items:
             raise RuntimeContractError(
                 RuntimeRejectCode.DUPLICATE_STATE,
                 f"state {item.state_id} was already enqueued",
             )
-        self._known_state_ids.add(item.state_id)
+        self._known_items[item.state_id] = item
         self._queue.append(item)
 
     def bootstrap_nonterminal_v1(
@@ -716,10 +727,16 @@ class PersistentSelectorRuntimeV1:
     def verify_source_state_v1(
         self, item: RuntimeQueueItemV1
     ) -> SourceExecutionContextV1:
-        if item.state_id not in self._known_state_ids:
+        stored = self._known_items.get(item.state_id)
+        if stored is None:
             raise RuntimeContractError(
                 RuntimeRejectCode.SOURCE_NOT_ADMITTED,
                 "source is not in the runtime admitted-state set",
+            )
+        if item != stored:
+            raise RuntimeContractError(
+                RuntimeRejectCode.SOURCE_NOT_ADMITTED,
+                "source queue item differs from the runtime-enqueued record",
             )
         rules = self.producer_rules_v1()
         header = state_contract.extract_verified_selector_header_v1(

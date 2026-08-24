@@ -266,6 +266,28 @@ class RuntimeBoundaryTests(unittest.TestCase):
                 "LOCAL_DROP", [1, 2, 3, 4, 5, 6, 7], [1, 2, 3, 4, 5, 6, 7]
             )
 
+    def test_t5_descriptor_must_match_state_protocol_fields(self):
+        selector_facts = FIX.facts(
+            type_i_protocol="ABSORB",
+            provenance_kind="MARKED_ABSORB",
+            support_A=5,
+            chart_R=3,
+            chart_K=55,
+            absorb_m=3,
+            absorb_r_epsilon=0,
+        )
+        with self.assertRaises(runtime.RuntimeContractError):
+            runtime.compute_t5_potential_v1(
+                descriptor=runtime.T5StateDescriptorV1(
+                    induction_rank=73,
+                    major_phase="TYPEI",
+                    type_i_protocol="CHARGED",
+                ),
+                facts=selector_facts,
+                root_context=73,
+                equation_rank=73,
+            )
+
     def test_source_terminal_preempts_producer(self):
         terminal_runtime = runtime_setup(source_terminal=True)
         root = terminal_runtime.bootstrap_nonterminal_v1(
@@ -332,6 +354,21 @@ class RuntimeBoundaryTests(unittest.TestCase):
         self.assertFalse(decision.accepted)
         self.assertEqual(
             decision.reason_code, runtime.RuntimeRejectCode.PRODUCER_RESULT_INVALID
+        )
+
+    def test_same_state_id_with_mutated_queue_metadata_is_not_a_source(self):
+        forged = runtime.RuntimeQueueItemV1(
+            raw_state=self.root.raw_state,
+            owner=self.root.owner,
+            owner_digest=self.root.owner_digest,
+            t5_descriptor=self.root.t5_descriptor,
+            potential_receipt=self.root.potential_receipt,
+            transition_receipt={"forged": True},
+        )
+        decision = self.runtime.run_state_once_v1(forged)
+        self.assertFalse(decision.accepted)
+        self.assertEqual(
+            decision.reason_code, runtime.RuntimeRejectCode.SOURCE_NOT_ADMITTED
         )
 
 

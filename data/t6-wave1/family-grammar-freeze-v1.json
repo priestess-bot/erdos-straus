@@ -1,0 +1,166 @@
+{
+  "schema_id": "t6_wave1_family_grammar_freeze_v1",
+  "schema_version": 1,
+  "date": "2026-08-24",
+  "integration_audited_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "runtime_protocol_commit": "11643c01d334d507d59bf71d3754d3208ef92c39",
+  "status": "FROZEN_E3_TYPE_SPACE_PRODUCERS_NOT_YET_ADMITTED",
+  "grammar_hash_algorithm": "sha256(canonical-json(grammar), jq -cS encoding plus newline)",
+  "grammar_hash": "d073a68dfd7c109f2f71fe0533d5084e78ef8fca870d229a0ea98e85c0ce02e1",
+  "grammar": {
+    "state_schema_id": "persistent_selector_state_v1",
+    "state_schema_version": 1,
+    "major_phases": [
+      "TYPEII_REL",
+      "TYPEII_G_HANDOFF",
+      "TYPEI",
+      "GENERIC_MARKED"
+    ],
+    "type_i_protocols": [
+      "CHARGED",
+      "PRE",
+      "ABSORB",
+      "RESET"
+    ],
+    "mark_behaviors": [
+      "ROOT_SOL",
+      "NONTRIVIAL_MARK_STRICT_LOWER_EQUATION"
+    ],
+    "proper_root_height_classes": [
+      "LOW",
+      "HIGH"
+    ],
+    "persistent_owner_precedence": [
+      "generic_nontrivial_marked_state",
+      "type_ii_relation_f_endpoint",
+      "type_ii_relation_g_endpoint",
+      "h4_non_v1_branch_or_descendant",
+      "c8_terminal_first_surviving_parent",
+      "type_i_c2_19_macro_target",
+      "proper_root_high_endpoint",
+      "proper_root_stutter_k_one",
+      "proper_root_stutter_k_gt_one",
+      "type_i_absorb_marked_residual",
+      "type_i_a_one_overflow",
+      "type_i_high_support_sink",
+      "type_i_low_support_persistent_overflow",
+      "type_i_a_gt_one_overflow_residual",
+      "type_i_full_carrier_post_g"
+    ],
+    "allowed_overlap_class": {
+      "overflow_refinement_only": [
+        "type_i_a_one_overflow",
+        "type_i_high_support_sink",
+        "type_i_low_support_persistent_overflow",
+        "type_i_a_gt_one_overflow_residual"
+      ]
+    },
+    "persistent_pending_families": [],
+    "edge_receipt_atomic_arms": [
+      "H4_A1",
+      "C8_DOUBLE_LOW"
+    ],
+    "provenance_refinements": {
+      "proper_root_high_endpoint": "PROPER_ROOT + HIGH + h>p + proper_root_k=null",
+      "proper_root_low_endpoint": "PROPER_ROOT + LOW + 2<=h<p + proper_root_k>0",
+      "type_i_absorb_marked_residual": "MARKED_ABSORB + TYPEI/ABSORB + ROOT_SOL + R<p + terminal miss",
+      "type_i_overflow": "OVERFLOW + TYPEI/CHARGED + ROOT_SOL + R>p"
+    }
+  },
+  "target_shape_decisions": [
+    {
+      "decision_id": "POST_G_EXISTING_FAMILIES",
+      "tracks": ["F2-POST-G-H4"],
+      "decision": "ACCEPT_TYPE_SPACE_ONLY",
+      "target_owners": [
+        "type_i_full_carrier_post_g",
+        "type_i_a_gt_one_overflow_residual",
+        "type_i_high_support_sink"
+      ],
+      "boundary": "Producer admission still requires continuous serialized predecessor, source terminal schedule, independent E1-E4 validator and N7 ticket."
+    },
+    {
+      "decision_id": "C2_NON19_FAMILY_REQUEST",
+      "tracks": ["F2-POST-G-H4"],
+      "decision": "REJECT_FAMILY_REQUEST",
+      "reason": "Track theorem reduces the non-19 capacity-two residual to FAMILY_EMPTY; no state owner is required."
+    },
+    {
+      "decision_id": "ATOMIC_PENDING_PERSISTENCE",
+      "tracks": ["F2-POST-G-H4", "F2-C8-ATOMIC"],
+      "decision": "REJECT_PERSISTENT_FAMILY",
+      "reason": "AtomicPendingTargetV1 is a macro-internal occurrence envelope. Final terminal/F/G output is synchronously recomputed before common admission.",
+      "retained_edge_arms": ["H4_A1", "C8_DOUBLE_LOW"],
+      "final_target_owner": "type_i_a_gt_one_overflow_residual"
+    },
+    {
+      "decision_id": "ORDINARY_MARKED_ABSORB",
+      "tracks": ["F2-OVERFLOW-HIGH-SUPPORT"],
+      "decision": "ACCEPT_NEW_EXACT_OWNER",
+      "owner": "type_i_absorb_marked_residual",
+      "guard": "ROOT_SOL, TYPEI/ABSORB, MARKED_ABSORB, terminal miss, R<p, A|K, complete ABSORB rank fields",
+      "ticket_boundary": "CHARGED to ABSORB uses PHASE_DROP only after E1-E4; M<=B_p alone never selects this owner."
+    },
+    {
+      "decision_id": "PROPER_FACTOR_HIGH_SOURCE",
+      "tracks": ["F3-HIGH-ENDPOINT"],
+      "decision": "ACCEPT_NEW_EXACT_OWNER",
+      "owner": "proper_root_high_endpoint",
+      "guard": "ROOT_SOL, TYPEI/CHARGED, PROPER_ROOT, HIGH, h>p, k absent",
+      "reason": "Prevents forbidden import of low-height k/D_star fields and preserves the full proper-factor quantifier."
+    },
+    {
+      "decision_id": "HIGH_STRICT_TARGET",
+      "tracks": ["F3-HIGH-ENDPOINT"],
+      "decision": "ACCEPT_EXISTING_OWNER_TYPE_SPACE",
+      "owner": "type_i_a_gt_one_overflow_residual",
+      "guard": "recomputed R_T>p TYPEI/CHARGED overflow; sink owner requires independent sink receipt",
+      "ticket_boundary": "LOCAL_DROP must be parent-to-final and independently validated."
+    },
+    {
+      "decision_id": "QC1_NEW_FAMILY_CANDIDATE",
+      "tracks": ["F3-QC1"],
+      "decision": "REJECT_UNTIL_INTEGER_OCCURRENCE_THEOREM",
+      "reason": "A quotient ideal factor or q|k does not create an integer raw complete-excess occurrence, support charge, E1 path or target."
+    },
+    {
+      "decision_id": "TR1_TARGET_TYPE_SPACE",
+      "tracks": ["F3-H-SUPPORTED-TR1"],
+      "decision": "NO_NEW_OWNER",
+      "target_owners": [
+        "type_i_absorb_marked_residual",
+        "type_i_a_gt_one_overflow_residual",
+        "generic_nontrivial_marked_state"
+      ],
+      "boundary": "q|D_star is only an arithmetic source factor until an integer occurrence/consumption theorem supplies E1. Target protocol follows R<p marked-absorb versus R>p overflow, never M<=B_p alone."
+    },
+    {
+      "decision_id": "M3_Q5_OCCURRENCE_ENVELOPES",
+      "tracks": ["F3-M3-Q5-P2"],
+      "decision": "NO_NEW_OWNER",
+      "reason": "One-sided/two-sided colored payloads stay in edge receipts; final strict targets are high-support R_T>p CHARGED overflow. p2 and raw checkpoints are nonpersistent."
+    },
+    {
+      "decision_id": "F2_OPEN_RESIDUAL_LABELS",
+      "tracks": ["F2-OVERFLOW-HIGH-SUPPORT"],
+      "decision": "REJECT_GENERIC_RESIDUAL_FAMILY",
+      "reason": "C1, C>1 empty-improvement, M actualness and catch-all residuals must be EMPTY, TERMINAL or a concrete admitted successor; a family label cannot close them."
+    },
+    {
+      "decision_id": "TOTAL_COFACTOR_LATER_PRODUCER",
+      "tracks": ["F2-OVERFLOW-HIGH-SUPPORT"],
+      "decision": "DO_NOT_REGISTER_IN_ORDERED_F2_DISPATCH",
+      "reason": "b>=2 is preempted by same-chart; b=1 is the t=0 stutter. Target typing remains reusable by another independently proved caller."
+    }
+  ],
+  "forbidden_inferences": [
+    "family type-space acceptance implies producer admission",
+    "M<=B_p implies ABSORB",
+    "R<p is compatible with M>B_p when M|K",
+    "atomic pending output is a persistent state",
+    "q divides k or D_star implies an actual consumable occurrence",
+    "caller-supplied F/G, owner, family or protocol grants E3",
+    "a p2 or raw checkpoint receives a standalone T5 ticket"
+  ],
+  "frontier_update_boundary": "The active frontier and theorem status remain unchanged until Gate 3 producer freeze and Gate 4 track admission."
+}
