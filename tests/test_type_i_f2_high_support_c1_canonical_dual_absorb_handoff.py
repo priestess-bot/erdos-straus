@@ -46,6 +46,13 @@ class F2HighSupportC1CanonicalDualAbsorbHandoffTests(unittest.TestCase):
         )
         self.assertEqual(receipt["conclusion"]["E3_and_reentry"], "OPEN")
 
+    def test_canonical_r_three_cursor_is_not_reentry(self) -> None:
+        stored = MODULE.json.loads(MODULE.RECEIPT_PATH.read_text(encoding="utf-8"))
+        cursor = stored["canonical_absorb_cursor"]
+        self.assertEqual(cursor["formal_pair"], [1, 2, 1])
+        self.assertEqual(cursor["local_rank_payload"], [3, 1, 1])
+        self.assertIn("nonrecursive", cursor["boundary"])
+
 
 if __name__ == "__main__":
     unittest.main()

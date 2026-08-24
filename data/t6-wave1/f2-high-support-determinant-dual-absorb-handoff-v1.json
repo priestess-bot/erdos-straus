@@ -31,10 +31,18 @@
   "admission_boundary": {
     "E1": "RELATIVE_ESTABLISHED_ON_ACTUAL_DETERMINANT_BOUND_M_EQUALS_A_SLICE; OPEN_ON_GENERIC_HIGH_SUPPORT",
     "E2": "ESTABLISHED_BY_DETERMINANT_DUAL_IDENTITIES",
-    "E3": "OPEN_TARGET_TERMINAL_TYPING_OWNER_SERIALIZER_AND_ABSORB_CURSOR",
+    "E3": "CANONICAL_CURSOR_PAYLOAD_ESTABLISHED; OPEN_TARGET_TERMINAL_TYPING_OWNER_AND_SERIALIZER",
     "E4": "IDENTITY_ON_Sol_4_p_RELATIVE_TO_ADMISSION",
     "E5": "CHARGED_TO_ABSORB_PHASE_DROP_RELATIVE_TO_ADMISSION",
     "reentry": "OPEN"
+  },
+  "canonical_absorb_cursor": {
+    "formal_pair": ["1", "R_star-1", 1],
+    "identity": "1+(R_star-1)=R_star*1 and gcd(1,R_star-1)=1",
+    "epsilon": "min",
+    "local_rank_payload": ["R_star", 1, 1],
+    "source_relation": "the same pair is the anchor of the target universal p-source",
+    "boundary": "This payload does not authorize E3 or re-entry; R_star=3 has a known terminal-free formal self-loop that remains nonrecursive."
   },
   "controls": [
     {

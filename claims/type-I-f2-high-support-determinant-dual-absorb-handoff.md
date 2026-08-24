@@ -214,10 +214,39 @@ unproved:
 
 1. outside the determinant-bound slice, a producer-specific E1 source event
    which turns the chart-derived determinant into an authorized construction;
-2. target-local terminal/F/G typing and a generic ordinary E3 owner;
-3. a replayable ABSORB cursor \((m,r_\varepsilon)\), not merely \(R_\star<p\);
-4. an ABSORB re-entry theorem which never returns upward at the same equation
+2. target-local terminal/F/G typing and a generic ordinary E3 owner/serializer;
+3. an ABSORB re-entry theorem which never returns upward at the same equation
    rank.
+
+### Canonical target-local ABSORB cursor
+
+The target has a canonical formal cursor independent of any factorization:
+
+\[
+(u,v,m)=(1,R_\star-1,1),
+\qquad
+(u,v)=1,
+\qquad
+u+v=R_\star m.
+\tag{12}
+\]
+
+Choose the frozen \(\varepsilon=\min\) direction. Then
+
+\[
+(R,m,r_\varepsilon)=(R_\star,1,1)
+\tag{13}
+\]
+
+is a structurally valid ABSORB local-rank payload. It is also the anchor of
+the target's universal \(p\)-source. This solves the cursor-selection part of
+the proposed E3 schema; it does **not** make E3 complete, because the generic
+owner, serializer, terminal result, and source-to-target admission still need
+to be established.
+
+In particular, the \(R_\star=3\) specialization has cursor \((1,2,1)\).
+The known formal binary self-loop shows why this payload alone cannot prove
+ABSORB totality or re-entry; nondecreasing cursor transitions remain rejected.
 
 The special \(C=1\) case has \(r=(3p+1)/4\), and (9) selects
 \(R_\star=3\), so the C=1 handoff is a specialization.

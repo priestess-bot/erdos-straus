@@ -174,9 +174,9 @@ For this specific target:
 |---|---|---|
 | E1 | relative | An actual parent and its source receipt are required; a new registered producer must bind them to (4). |
 | E2 | established | Equations (2)--(8) reconstruct one target without a factor choice. |
-| E3 | open | The active grammar has no generic ordinary TYPEI/ABSORB owner, serializer, or canonical ABSORB cursor \((m,r_\varepsilon)\) for this target. |
+| E3 | open | The canonical anchor gives cursor \((m,r_\varepsilon)=(1,1)\), but the active grammar has no generic ordinary TYPEI/ABSORB owner or serializer. |
 | E4 | established relative to E3 | Both charts have root \(p\); use the identity on \(\operatorname{Sol}(4,p)\). |
-| E5 | established relative to E3 | Once E3 supplies a valid ABSORB cursor, the frozen T5 protocol order makes CHARGED to ABSORB a phase-drop. |
+| E5 | established relative to E3 | The frozen T5 protocol order makes CHARGED to ABSORB a phase-drop once E3 admits the target. |
 | re-entry | open | An admitted ABSORB target needs a total, non-upward continuation. |
 
 Thus (8) is a precise target-shape and phase-ticket proposal, not an active
@@ -185,7 +185,9 @@ edge.
 ## Why this is not a terminal theorem
 
 The \(R=3\) target is not automatically a Type I terminal, an F state, or an
-ABSORB cursor. For
+ABSORB continuation. Its canonical anchor is \((1,2,1)\), but its binary
+formal transition has a known self-loop and therefore cannot itself be used as
+a recursive ABSORB edge. For
 example, at \(p=241\),
 
 \[
@@ -203,7 +205,7 @@ This handoff does **not** prove that:
 
 - every high-support C=1 parent has a current active constructor;
 - the current F1 grammar accepts the target;
-- the target has the cursor required by the existing ABSORB protocol;
+- the target has a recursively total ABSORB continuation;
 - the target is terminal;
 - an ABSORB continuation is total;
 - high-support C=1, F2, T6, or the conjecture is closed.

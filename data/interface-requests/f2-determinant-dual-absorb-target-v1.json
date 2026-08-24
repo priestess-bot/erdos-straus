@@ -29,7 +29,7 @@
       "chart_K": "K_star",
       "dual_carrier": "t in {d,A mod p}",
       "mark": "ROOT_SOL",
-      "protocol": "ABSORB only with an independently derived cursor (m,r_epsilon)"
+      "protocol": "ABSORB only with the canonical target-local cursor (u,v,m)=(1,R_star-1,1), epsilon=min, r_epsilon=1; this payload alone does not establish owner/admission"
     },
     "mark_behavior": "identity on Sol(4,p), conditional on admission",
     "terminal_precedence": "target-local terminal HIT returns terminal before persistent admission",
@@ -39,7 +39,7 @@
   "required_coordinator_decisions": [
     "Whether the inherited determinant-bound parent receipt is sufficient source authority for this producer, and what additional source event is required outside that slice.",
     "Exact low-chart target classifier and target terminal-first route.",
-    "Generic ABSORB owner, serializer, and canonical cursor construction.",
+    "Generic ABSORB owner and serializer using the already specified canonical cursor; do not treat the cursor alone as admission.",
     "Allowed source owners and precedence against atomic/proper-root families.",
     "A total non-upward ABSORB continuation and common admission tests."
   ],

@@ -152,6 +152,14 @@ def build_receipt() -> dict[str, object]:
             "E5": "CHARGED_TO_ABSORB_PHASE_DROP_RELATIVE_TO_ADMISSION",
             "E1_E3_reentry": "OPEN",
         },
+        "canonical_absorb_cursor": {
+            "formal_pair": ["1", "R_star-1", 1],
+            "identity": "1+(R_star-1)=R_star*1 and gcd(1,R_star-1)=1",
+            "epsilon": "min",
+            "local_rank_payload": ["R_star", 1, 1],
+            "source_relation": "the same pair is the anchor of the target universal p-source",
+            "boundary": "This payload does not authorize E3 or re-entry; R_star=3 has a known terminal-free formal self-loop that remains nonrecursive.",
+        },
     }
 
 
@@ -164,6 +172,8 @@ def verify() -> dict[str, object]:
         raise AssertionError("stored status changed")
     if stored["controls"] != receipt["controls"]:
         raise AssertionError("stored controls changed")
+    if stored["canonical_absorb_cursor"] != receipt["canonical_absorb_cursor"]:
+        raise AssertionError("stored canonical ABSORB cursor changed")
     return receipt
 
 

@@ -44,6 +44,14 @@ class F2HighSupportDeterminantDualAbsorbHandoffTests(unittest.TestCase):
         )
         self.assertEqual(receipt["conclusion"]["E1_E3_reentry"], "OPEN")
 
+    def test_canonical_cursor_is_well_formed_but_not_admission(self) -> None:
+        receipt = MODULE.build_receipt()
+        cursor = receipt["canonical_absorb_cursor"]
+        self.assertEqual(cursor["formal_pair"], ["1", "R_star-1", 1])
+        self.assertEqual(cursor["epsilon"], "min")
+        self.assertEqual(cursor["local_rank_payload"], ["R_star", 1, 1])
+        self.assertIn("does not authorize", cursor["boundary"])
+
 
 if __name__ == "__main__":
     unittest.main()
