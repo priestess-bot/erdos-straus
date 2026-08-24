@@ -972,7 +972,10 @@ def _family_predicates_v1() -> tuple[FamilyPredicateV1, ...]:
     """
 
     def fact(name: str) -> Callable[[VerifiedSelectorHeaderV1], Any]:
-        return lambda header: header.facts[name]
+        # Direct shape-controls may construct a header without first passing
+        # the extractor. Missing v1 grammar fields must fail predicates rather
+        # than raising KeyError or becoming an implicit default.
+        return lambda header: header.facts.get(name)
 
     phase = fact("major_phase")
     protocol = fact("type_i_protocol")
