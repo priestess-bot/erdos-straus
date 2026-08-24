@@ -30,7 +30,7 @@ class F2OverflowDeterminantPrepartitionTests(unittest.TestCase):
             [
                 "SAME_CHART_SUPPORT_PROMOTION",
                 "FULL_PRODUCT_FIXED_N_DESCENT",
-                "LOW_SUPPORT_D_ONE_SATURATED_RESIDUAL",
+                "LOW_SUPPORT_D_ONE_COMPLETE_EXCESS_OUTER_DROP",
                 "HIGH_SUPPORT_CANONICAL_C_ONE_RESIDUAL",
                 "HIGH_SUPPORT_CANONICAL_C_GT_ONE_RESIDUAL",
                 "SAME_CHART_SUPPORT_PROMOTION",
@@ -40,7 +40,7 @@ class F2OverflowDeterminantPrepartitionTests(unittest.TestCase):
     def test_strict_branches_compare_real_parent_to_target(self) -> None:
         receipt = MODULE.build_receipt()
         strict = [row for row in receipt["controls"] if row["ticket"] is not None]
-        self.assertEqual(len(strict), 3)
+        self.assertEqual(len(strict), 4)
         for row in strict:
             with self.subTest(source=row["source"]["name"]):
                 self.assertLess(tuple(row["target_rank"]), tuple(row["source_rank"]))

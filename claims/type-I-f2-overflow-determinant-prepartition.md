@@ -9,8 +9,10 @@ statement: >-
   Lambda_p^sharp=(floor(B_p/A),K/A) 严格下降。若 b=1、A<=B_p 且 d>=2，
   则 full-product fixed-n 选择 L=Md=Ad 产生严格 outer-rank target
   (R_L,K_L;L)=((p-1)n-1,L(p-1);L)，且该 target 仍为 overflow。
-  所以在这两条相对 adapter 完成共同 E3 admission 后，带 determinant receipt 的
-  A>1 域只剩 b=d=1 的低支撑 d=1 饱和分支，或 b=1、A>B_p 的 canonical
+  若 b=d=1 且 A<=B_p，则 5<=n<=p-4，d=1 complete-excess 的两条 p 门自动
+  通过，唯一 support multiplier E>1 产生 M'=AE>p^2>B_p 的 overflow target，
+  因而同样以第一 charged-rank 坐标严格下降。所以在这三类相对 adapter 完成共同
+  E3 admission 后，带 determinant receipt 的 A>1 域只剩 b=1、A>B_p 的 canonical
   high-support C=p-d 分支；后者再精确分成 C=1 与 C>1。仓库 p=409,A=5
   记录目前因缺 predecessor 不属于 actual 域；若未来其精确
   (M,d,n)=(250,200,489) receipt 被实际绑定，则 b=50，必须由更早的同图表严格
@@ -26,6 +28,7 @@ review_status: internal_review
 depends_on:
   - type-I-overflow-unbounded-same-chart-promotion-persistence-boundary
   - type-I-overflow-unbounded-full-product-quotient-fold
+  - type-I-overflow-full-product-d-one-complete-excess-capacity-map
   - type-I-p409-a5-charged-history-parent-replay-boundary
   - type-I-t5-full-contract-level-global-well-foundedness
   - denominator-escape-state-contract
@@ -46,6 +49,8 @@ sources:
     role: b-at-least-two same-chart strict edge
   - claim: type-I-overflow-unbounded-full-product-quotient-fold
     role: low-support b-one d-at-least-two full-product edge
+  - claim: type-I-overflow-full-product-d-one-complete-excess-capacity-map
+    role: low-support b-equals-d-equals-one complete-excess outer drop
   - claim: type-I-p409-a5-charged-history-parent-replay-boundary
     role: p409 missing-parent and noncanonical-anchor boundary
   - reproduction: reproductions/type_i_f2_overflow_determinant_prepartition.py
@@ -198,7 +203,7 @@ R_T=(p-1)n-1>p.
 在 terminal-first miss 之后，先执行第 2 节，再执行第 3 节。其补集满足 \(b=1\)，并且
 恰落入以下三类之一：
 
-### 4.1 低支撑饱和 (d=1)
+### 4.1 低支撑饱和 (d=1) 也有 strict complete-excess 出口
 
 \[
 A\le B_p,
@@ -208,8 +213,52 @@ A\le B_p,
 \]
 
 此时 \(K=A(p-1)\)，source 已是 support \(A\) 的 canonical capacity \(p-1\)，而
-full-product 取 \(L=A\) 精确 stutter。这就是 `LOW_SUPPORT_D_ONE_SATURATED_RESIDUAL`，
-本卡不声称它已有出口。
+full-product 取 \(L=A\) 的确 stutter。但 source overflow 还给
+
+\[
+A=\frac{pn-1}{4},
+\qquad
+R=(p-1)n-1>p.
+\tag{15a}
+\]
+
+由 \(n\equiv1\pmod4\) 与 \(R>p\) 有 \(n\ge5\)。又由 \(A\le B_p\) 得
+\(n\le p-4\)，所以
+
+\[
+5\le n\le p-4.
+\tag{15b}
+\]
+
+既有 d=1 complete-excess 定理令
+
+\[
+g=\gcd\left(\frac{p+1}{2},\frac{n+1}{2}\right),
+\qquad
+E=\frac{(p-1)n-2}{2g}>1,
+\qquad
+M'=AE.
+\tag{15c}
+\]
+
+(15b) 使 primitive raw-source 与 p-free 两门自动通过，并且
+
+\[
+M'>p^2>B_p.
+\tag{15d}
+\]
+
+其 canonical target \(T\) 强制仍有 \(R_T>p\)。无论 target capacity 是严格小于
+\(p-1\)，还是处于后续 regeneration residue，真实 parent-to-target rank 的第一坐标已经满足
+
+\[
+\left\lfloor\frac{B_p}{M'}\right\rfloor=0
+<
+\left\lfloor\frac{B_p}{A}\right\rfloor.
+\tag{15e}
+\]
+
+所以该分支是 `LOW_SUPPORT_D_ONE_COMPLETE_EXCESS_OUTER_DROP`，不是 residual。
 
 ### 4.2 高支撑 canonical (C=1)
 
@@ -238,6 +287,27 @@ C=1 terminal、outer-rank、lower-protocol/phase 或 family-empty 证明，不�
 set 非空时可取严格 \(c_Q<C\) target；空集时仍是本 track 的主要 residual，不能由 C=1
 no-go 代替。
 
+这里不需要为 high-support complete-excess target 预留一个低图表 owner。若一个合法
+bundle 有 \(M>A>B_p\)，其 canonical target 满足 \(M\mid K_M\)。若反设
+\(R_M<p\)，则 \(R_M\equiv3\pmod4\) 与 \(p\equiv1\pmod4\) 给
+
+\[
+R_M\le p-2,
+\qquad
+K_M=\frac{pR_M+1}{4}\le B_p<M,
+\tag{17a}
+\]
+
+矛盾于 \(M\mid K_M\)。故
+
+\[
+\boxed{A>B_p,\ M>A\Longrightarrow R_M>p.}
+\tag{17b}
+\]
+
+因此 high-support rank-aware/M target 始终留在 `TYPEI/CHARGED` overflow owner；只有
+低支撑 rechart 可能需要 `TYPEI/ABSORB` protocol drop。
+
 因此 relative determinant 子域被严格压成
 
 \[
@@ -255,7 +325,9 @@ b=1,\ A\le B_p,\ d\ge2
 \tag{19}
 \]
 
-以及 (15)--(17) 的三个显式 residual。不存在未命名的第四类 determinant leaf。
+并且 \(b=1,A\le B_p,d=1\) 由 (15a)--(15e) 也严格退出。因此 relative determinant
+子域的所有低支撑 leaf 都有 strict 算术出口；真正 residual 只剩 (16)--(17) 的两个
+high-support canonical leaf。不存在未命名的第四类 determinant leaf。
 
 ## 5. (p=409,A=5) 的精确处置
 
@@ -344,14 +416,15 @@ control。结论只是：在本 track 固定的 actual determinant precedence �
 
 ## 7. 尚未闭合的合同层
 
-第 2--3 节的 E1 仍依赖输入中真实绑定的 source/determinant receipt；它们没有证明每个 actual
-overflow 都携带此 occurrence。两个 target 还必须投影到 coordinator 的共同
+第 2--4.1 节的 E1 仍依赖输入中真实绑定的 source/determinant receipt；它们没有证明每个 actual
+overflow 都携带此 occurrence。三个 strict target 类型还必须投影到 coordinator 的共同
 `PersistentSelectorStateV1`，独立重算 hit/F/G、owner 与 state ID，并通过唯一 admission gate。
 
 所以本卡的准确状态是：
 
 ```text
 F2_DETERMINANT_RECEIPT_PREPARTITION = ESTABLISHED
+F2_DETERMINANT_RECEIPT_LOW_SUPPORT_ARITHMETIC_TOTALITY = ESTABLISHED_RELATIVE
 P409_CURRENT_RECORD = OUTSIDE_ACTUAL_DOMAIN
 P409_IF_ACTUAL_WITH_EXACT_RECEIPT = SAME_CHART_STRICT
 ORDERED_TOTAL_COFACTOR_STRICT_BRANCH = EMPTY

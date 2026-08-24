@@ -78,8 +78,8 @@
         "fields": ["p", "R_M", "K_M", "absorbed_support=M", "Q", "beta", "source_occurrence", "typed_classification", "owner_digest"]
       },
       "mark_behavior": "preserve Sol(4,p) only after target retyping",
-      "t5_ticket": "R_M>p: TYPEI/CHARGED LOCAL_DROP only after true parent-to-target sharp rank decreases; R_M<p non-hit: TYPEI/ABSORB PHASE_DROP after full E1-E4. M<=B_p is neither necessary nor sufficient for ABSORB.",
-      "owner_precedence_request": "overflow target uses existing predicates; low non-hit target uses semantic ABSORB owner",
+      "t5_ticket": "A>B_p and M>A force R_M>p, so high-support M target is TYPEI/CHARGED LOCAL_DROP after true parent-to-target sharp rank decreases. Only low-support M rechart may require ABSORB PHASE_DROP after full E1-E4. M<=B_p is neither necessary nor sufficient for ABSORB.",
+      "owner_precedence_request": "high-support overflow target uses existing predicates; only low non-hit target uses semantic ABSORB owner",
       "admission_status": "NEW_ADAPTER_REQUIRED",
       "known_evidence": ["claims/type-I-marked-g-universal-anchor-complete-excess-exit.md", "docs/M-H-final-two-problem-audit-2026-08-20.md"]
     },
