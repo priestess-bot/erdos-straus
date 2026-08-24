@@ -43,6 +43,19 @@ last_checked: '2026-08-24'
 
 # High-support C=1 R=3 terminal-or-G split
 
+## Terminal-First Preemption
+
+Before constructing the \(R=3\) dual, run the existing \(p+4\) terminal
+predicate. If a prime \(q\mid p+4\) satisfies \(q\equiv3\pmod4\), then
+
+\[
+m=q,\qquad x=\frac{p+q}{4},\qquad q\mid x+1
+\]
+
+gives a direct Type II certificate for \(4/p\). Such a parent is terminal
+before any dual or ABSORB handoff. The remaining branch has no
+\(3\bmod4\) factor in \(p+4\).
+
 ## R=3 Dual
 
 For a high-support C=1 parent, the canonical dual handoff constructs
@@ -117,9 +130,11 @@ target-local split is
 \[
 \boxed{
 \begin{array}{ccl}
-\exists q\mid N,\ q\equiv2\pmod3
+\exists q\mid(p+4),\ q\equiv3\pmod4
 &\Longrightarrow& \mathrm{TERMINAL},\\
-\forall q\mid N,\ q\equiv1\pmod3
+\text{otherwise and }\exists q\mid N,\ q\equiv2\pmod3
+&\Longrightarrow& \mathrm{TERMINAL},\\
+\text{otherwise and }\forall q\mid N,\ q\equiv1\pmod3
 &\Longrightarrow& \mathrm{R3\_G\_RESIDUAL}.
 \end{array}}
 \tag{7}

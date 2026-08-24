@@ -40,6 +40,11 @@ class F2HighSupportC1RThreeTerminalSplitTests(unittest.TestCase):
                 row = MODULE.r3_g_residual(prime)
                 self.assertEqual(row["classification"], "R3_G_RESIDUAL")
 
+    def test_p_plus_four_preemption_is_explicit(self) -> None:
+        self.assertEqual(MODULE.p_plus_four_q3(73), [7, 11])
+        self.assertEqual(MODULE.p_plus_four_q3(241), [7])
+        self.assertEqual(MODULE.p_plus_four_q3(97), [])
+
 
 if __name__ == "__main__":
     unittest.main()

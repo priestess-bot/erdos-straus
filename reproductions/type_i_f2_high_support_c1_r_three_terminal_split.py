@@ -95,6 +95,10 @@ def r3_g_residual(prime: int) -> dict[str, int | str]:
     return {"p": prime, "N": N, "classification": "R3_G_RESIDUAL"}
 
 
+def p_plus_four_q3(prime: int) -> list[int]:
+    return sorted({factor for factor in factorization(prime + 4) if factor % 4 == 3})
+
+
 def build_receipt() -> dict[str, object]:
     terminal_rows = [terminal_certificate(73, 5), terminal_certificate(313, 5)]
     residual_rows = [r3_g_residual(97), r3_g_residual(241)]
@@ -106,20 +110,25 @@ def build_receipt() -> dict[str, object]:
             "r": row["r"],
             "gap": row["gap"],
             "certificate": [row["x"], row["y"], row["z"]],
+            "p_plus_four_q3": p_plus_four_q3(row["p"]),
         }
         for row in terminal_rows
     ]
-    controls.extend(residual_rows)
+    controls.extend(
+        {**row, "p_plus_four_q3": p_plus_four_q3(int(row["p"]))}
+        for row in residual_rows
+    )
     controls[-1]["boundary"] = "p has an independent gap-7 Type II terminal"
     if controls != [
-        {"p": 73, "N": 55, "q": 5, "r": 4, "gap": 7, "certificate": [20, 220, 4015]},
-        {"p": 313, "N": 235, "q": 5, "r": 16, "gap": 7, "certificate": [80, 3760, 73555]},
-        {"p": 97, "N": 73, "classification": "R3_G_RESIDUAL"},
+        {"p": 73, "N": 55, "q": 5, "r": 4, "gap": 7, "certificate": [20, 220, 4015], "p_plus_four_q3": [7, 11]},
+        {"p": 313, "N": 235, "q": 5, "r": 16, "gap": 7, "certificate": [80, 3760, 73555], "p_plus_four_q3": []},
+        {"p": 97, "N": 73, "classification": "R3_G_RESIDUAL", "p_plus_four_q3": []},
         {
             "p": 241,
             "N": 181,
             "classification": "R3_G_RESIDUAL",
             "boundary": "p has an independent gap-7 Type II terminal",
+            "p_plus_four_q3": [7],
         },
     ]:
         raise AssertionError("C1 R=3 terminal split controls changed")

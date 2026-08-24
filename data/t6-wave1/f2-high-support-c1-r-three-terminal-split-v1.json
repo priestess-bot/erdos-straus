@@ -10,6 +10,8 @@
     "origin": "canonical high-support C=1 determinant dual"
   },
   "partition": {
+    "preemptive_guard": "p+4 has a prime factor q congruent to 3 modulo 4",
+    "preemptive_output": "direct Type II terminal for 4/p before R=3 dual",
     "terminal_guard": "N has a prime factor q congruent to 2 modulo 3",
     "terminal_output": "direct Type I certificate for 4/p using q,r=(N/q+1)/3,m=(4q+1)/3",
     "residual_guard": "every prime factor of N is congruent to 1 modulo 3",
@@ -19,6 +21,7 @@
     {
       "p": 73,
       "N": 55,
+      "p_plus_four_q3": [7, 11],
       "q": 5,
       "r": 4,
       "gap": 7,
@@ -27,6 +30,7 @@
     {
       "p": 313,
       "N": 235,
+      "p_plus_four_q3": [],
       "q": 5,
       "r": 16,
       "gap": 7,
@@ -35,11 +39,13 @@
     {
       "p": 97,
       "N": 73,
+      "p_plus_four_q3": [],
       "classification": "R3_G_RESIDUAL"
     },
     {
       "p": 241,
       "N": 181,
+      "p_plus_four_q3": [7],
       "classification": "R3_G_RESIDUAL",
       "boundary": "p has an independent gap-7 Type II terminal"
     }
