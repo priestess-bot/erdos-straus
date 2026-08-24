@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 31 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 889 |
+| 数学状态 | `established` | 903 |
 | 数学状态 | `open` | 13 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
-| 证明来源 | `mixed` | 40 |
-| 证明来源 | `repository_derivation` | 720 |
+| 证明来源 | `mixed` | 42 |
+| 证明来源 | `repository_derivation` | 732 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 20 |
-| 审阅状态 | `internal_review` | 868 |
+| 审阅状态 | `internal_review` | 882 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -58,6 +58,11 @@
 | [偶数源非标准二项分裂的完整递降族](../claims/even-split-source-descent.md) (`even-split-source-descent`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-24 |
 | [偶数标准源保留一项并重组两尾的完整递降族](../claims/even-standard-two-tail-descent.md) (`even-standard-two-tail-descent`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-24 |
 | [外部源条件给出精确的 Type I 证书](../claims/external-source-type-I-certificate.md) (`external-source-type-I-certificate`) | `established` | `unspecified` | `unspecified` | `ventas2026`, `bello2026`, `bradford2024` | 2026-07-23 |
+| [q=1 容量二的 19-phase 穷尽与 receiver-to-H4 融合宏](../claims/f2-post-g-c2-fused-h4-macro-reduction-v1.md) (`f2-post-g-c2-fused-h4-macro-reduction-v1`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-24 |
+| [F2 post-G/H4 的 H4 算术分支完备化与唯一语义接口](../claims/f2-post-g-h4-arithmetic-totality-reduction-v1.md) (`f2-post-g-h4-arithmetic-totality-reduction-v1`) | `established` | `mixed` | `internal_review` | - | 2026-08-24 |
+| [H4 clean-q final target 的高支撑 overflow 归属与 F/G owner 解耦](../claims/f2-post-g-h4-target-high-support-owner-v1.md) (`f2-post-g-h4-target-high-support-owner-v1`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-24 |
+| [post-G 低 Type-I chart 的有限 support-doubling 终端或 overflow 出口](../claims/f2-post-g-low-chart-terminal-or-overflow-exit-v1.md) (`f2-post-g-low-chart-terminal-or-overflow-exit-v1`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-24 |
+| [冻结 selected graph 中 positive-q G 的无种子性与 c=3 alternate 的 precedence 消去](../claims/f2-post-g-ordinary-g-producer-pruning-v1.md) (`f2-post-g-ordinary-g-producer-pruning-v1`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-24 |
 | [三项 ceiling-FCT 与外部 source Type I 证书的精确等价](../claims/fct-three-term-type-I-equivalence.md) (`fct-three-term-type-I-equivalence`) | `established` | `unspecified` | `unspecified` | `ventas2026`, `bradford2024` | 2026-07-25 |
 | [五条显式因子证书分支的共同残余有 7/2 维筛界](../claims/five-branch-sieve-residual.md) (`five-branch-sieve-residual`) | `established` | `unspecified` | `unspecified` | `elsholtz_tao2013`, `bradford2024` | 2026-07-23 |
 | [5 mod 8 非标准双尾源解不能作单项提升](../claims/five-mod-eight-nonstandard-source-lift-obstruction.md) (`five-mod-eight-nonstandard-source-lift-obstruction`) | `established` | `unspecified` | `unspecified` | `subramanian2026`, `elsholtz_tao2013` | 2026-07-24 |
@@ -253,6 +258,7 @@
 | [底层汇 SCC 的完整超额 bundle 选择器与线性源 overflow 收缩](../claims/type-I-bottom-sink-scc-complete-excess-bundle-selector.md) (`type-I-bottom-sink-scc-complete-excess-bundle-selector`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-11 |
 | [底层路径字的格正规形、有限 Pareto 前沿与周期容量选择器](../claims/type-I-bottom-word-lattice-pareto-cycle-capacity-selector.md) (`type-I-bottom-word-lattice-pareto-cycle-capacity-selector`) | `established` | `mixed` | `internal_review` | - | 2026-08-01 |
 | [固定素数的有界单调支撑相位秩](../claims/type-I-bounded-monotone-support-phase-rank.md) (`type-I-bounded-monotone-support-phase-rank`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
+| [c8 第二完整超额的 parent-anchored 全称 fallback 严降宏](../claims/type-I-c8-second-full-excess-parent-anchored-universal-fallback.md) (`type-I-c8-second-full-excess-parent-anchored-universal-fallback`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-24 |
 | [规范完全换支撑重图表及其普适 G 态终点](../claims/type-I-canonical-complete-support-rechart-g-obstruction.md) (`type-I-canonical-complete-support-rechart-g-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [任意 Type I 图表的最小互素素数一步锚源与 d=1 raw 门消除](../claims/type-I-chart-least-coprime-prime-anchor-source.md) (`type-I-chart-least-coprime-prime-anchor-source`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
 | [完整 d 整除 x 的 Type I 层的规范因子正规形](../claims/type-I-complete-divisor-layer-normal-form.md) (`type-I-complete-divisor-layer-normal-form`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
@@ -335,6 +341,7 @@
 | [F 型目标对合的 target-odd Fourier 能量与 q-primary 相位塌缩](../claims/type-I-f-target-involution-fourier-phase-collapse.md) (`type-I-f-target-involution-fourier-phase-collapse`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [F 型关系格对偶的双方向相位需求映射](../claims/type-I-f-two-direction-phase-demand-map.md) (`type-I-f-two-direction-phase-demand-map`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [F 型小对偶双方向需求的跨状态容量边界](../claims/type-I-f-two-direction-small-dual-candidate-census.md) (`type-I-f-two-direction-small-dual-candidate-census`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
+| [F2 A>1 overflow 的 determinant receipt 前置分拆与 p=409 异常处置](../claims/type-I-f2-overflow-determinant-prepartition.md) (`type-I-f2-overflow-determinant-prepartition`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-24 |
 | [无因数分解中心 hit 的 Type I 终端序列化](../claims/type-I-factorization-free-centered-hit-terminal-serializer.md) (`type-I-factorization-free-centered-hit-terminal-serializer`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [固定 D 一跳 F/G source-map 的 canonical—SNF—owner 闭合三分](../claims/type-I-fg-canonical-d-lattice-owner-closure.md) (`type-I-fg-canonical-d-lattice-owner-closure`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [F/G 相关角色物理义务的求值配对、广义 Rado 与张量和选择器](../claims/type-I-fg-dependent-role-evaluation-rado-tensor-selector.md) (`type-I-fg-dependent-role-evaluation-rado-tensor-selector`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-10 |
@@ -484,6 +491,8 @@
 | [H19-k23 十四条残存进程的统一常数 Type I 边界](../claims/type-I-h19-uniform-constant-boundary.md) (`type-I-h19-uniform-constant-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [H19双固定尺度边界的全变量偶尺度外源审计](../claims/type-I-h19-variable-even-scale-after-k6-1b.md) (`type-I-h19-variable-even-scale-after-k6-1b`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `ventas2026` | 2026-07-27 |
 | [H19变量偶尺度剩余的纯除子剩余障碍](../claims/type-I-h19-variable-even-scale-residue-boundary-1b.md) (`type-I-h19-variable-even-scale-residue-boundary-1b`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
+| [H4 clean q 原子目标容量一的负 D 残数全称 source-gate 排除](../claims/type-I-h4-atomic-capacity-one-source-gate-exclusion.md) (`type-I-h4-atomic-capacity-one-source-gate-exclusion`) | `established` | `mixed` | `internal_review` | - | 2026-08-24 |
+| [H4/c8 原子目标的共用终结序列化与既有 overflow owner 重入](../claims/type-I-h4-c8-atomic-target-common-admission-reentry.md) (`type-I-h4-c8-atomic-target-common-admission-reentry`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-24 |
 | [automatic q 高锚的全相位仿射 target 与外层秩出口](../claims/type-I-high-anchor-automatic-q-affine-all-phase-exit.md) (`type-I-high-anchor-automatic-q-affine-all-phase-exit`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [automatic-q 高锚来源的 gap-3/gap-7 terminal-priority 边界](../claims/type-I-high-anchor-automatic-q-gap3-gap7-priority-boundary.md) (`type-I-high-anchor-automatic-q-gap3-gap7-priority-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [最小 automatic q 来源的 gap-3/gap-7 prefix 生存筛](../claims/type-I-high-anchor-automatic-q-gap3-gap7-survivor-sieve.md) (`type-I-high-anchor-automatic-q-gap3-gap7-survivor-sieve`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
@@ -889,8 +898,13 @@
 | [T5 完整状态合同层全局良基性](../claims/type-I-t5-full-contract-level-global-well-foundedness.md) (`type-I-t5-full-contract-level-global-well-foundedness`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [T5 对当前状态合同 persistent transition surface 的穷尽分类](../claims/type-I-t5-full-transition-surface-exhaustion.md) (`type-I-t5-full-transition-surface-exhaustion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [T6 当前具名边闭包的 ordinary-mark 不变量与 atomic surface 审计](../claims/type-I-t6-current-named-reachability-t2-t3-coverage-audit.md) (`type-I-t6-current-named-reachability-t2-t3-coverage-audit`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-18 |
+| [T6-F3 R4/R6 的规范 h-menu 资格与 D-star 算术余项分派](../claims/type-I-t6-f3-h-supported-canonical-carrier-partition.md) (`type-I-t6-f3-h-supported-canonical-carrier-partition`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-24 |
+| [F3 high endpoint 的 k=1 Pell 型残差参数化](../claims/type-I-t6-f3-high-endpoint-k-one-pell-residual-v1.md) (`type-I-t6-f3-high-endpoint-k-one-pell-residual-v1`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-24 |
+| [F3 high endpoint 的高域正规形、strict overflow 分流与 stutter 残差](../claims/type-I-t6-f3-high-endpoint-normal-form-v1.md) (`type-I-t6-f3-high-endpoint-normal-form-v1`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-24 |
+| [F3 m=3,q=5 的 source-bound raw word、同步 target 与 parent-to-final E5](../claims/type-I-t6-f3-m3-q5-source-bound-macro-interface.md) (`type-I-t6-f3-m3-q5-source-bound-macro-interface`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-24 |
 | [T6-F3 p-free policy 终点的 p² divisor-source 正规形](../claims/type-I-t6-f3-policy-endpoint-p2-divisor-source-normal-form.md) (`type-I-t6-f3-policy-endpoint-p2-divisor-source-normal-form`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-23 |
 | [T6-F3 proper-root 的确定域路由与显式 residual 穷尽](../claims/type-I-t6-f3-proper-root-routing-with-explicit-residuals.md) (`type-I-t6-f3-proper-root-routing-with-explicit-residuals`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-23 |
+| [F3 R3/R5 quotient-only 的规范 ideal factor 与整数 occurrence 边界](../claims/type-I-t6-f3-qc1-quotient-only-occurrence-boundary.md) (`type-I-t6-f3-qc1-quotient-only-occurrence-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-24 |
 | [五亿普通双尾遗漏的 B=1 偶源桥边界](../claims/type-I-tail-reverse-b1-even-source-boundary-500m.md) (`type-I-tail-reverse-b1-even-source-boundary-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿普通双尾遗漏的偶源 B=8 精确低溢出边界](../claims/type-I-tail-reverse-even-small-b-boundary-500m.md) (`type-I-tail-reverse-even-small-b-boundary-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿普通尾遗漏的偶源反向二尾闭合](../claims/type-I-tail-reverse-even-source-closure-500m.md) (`type-I-tail-reverse-even-source-closure-500m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |

@@ -1,0 +1,22 @@
+# T6 F2/F3 Wave1 Residual Frontier
+
+Machine-readable source: `data/t6-wave1/t6-f2-f3-residual-frontier-v1.json`.
+
+The wave has completed integration baseline, runtime protocol Freeze A, and E3 type-space Freeze B.
+It has not passed Gate 3 producer freeze. The table below therefore records only exact residual groups,
+not informal “almost complete” status.
+
+| Area | Exact remaining obstruction | First missing obligation |
+|---|---|---|
+| F1 | 9 inventoried unknown source/runtime items; no proof every legacy write uses the runtime | D1/D2/D3 |
+| F2 post-G/H4/c8 | arithmetic reductions exist, but actual source terminal schedules and final runtime re-entry are not continuous | E1/E3 |
+| F2 high C=1 | same-protocol, direct-cofactor, q1/c8/H4 subfamilies excluded; no global terminal/protocol/outer-rank exit | E2/E5 |
+| F2 high C>1 | checkpoint/carry alone cannot force bounded descent; no actual-source alternate exit | E1/E5 |
+| F3 high | strict carry waits for E3; high stutter splits into Pell (k=1) and odd (k\ge3) residuals | E3 / all |
+| F3 QC1 | ideal factor has no integer raw occurrence or conserved support charge | E1 |
+| F3 TR1 | h-menu/D-star factors are only arithmetic eligibility, not consumable occurrences | E1 |
+| F3 m3 q5 | nonminimal, regeneration p-free failure, one-sided and two-sided (p^2) leaves remain | E1/E2/E3/E5 |
+
+No source factor, local checkpoint, synthetic receipt, finite control or status field is counted as a closure.
+The next run should consume this ledger directly and update a group only after the entire stated quantified
+domain becomes `FAMILY_EMPTY`, `TERMINAL`, or `VERIFIED_SUCCESSOR_E1_E5_REENTRY`.

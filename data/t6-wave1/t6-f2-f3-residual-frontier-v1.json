@@ -1,0 +1,187 @@
+{
+  "schema_id": "t6_f2_f3_residual_frontier_v1",
+  "schema_version": 1,
+  "date": "2026-08-24",
+  "integration_branch": "integration/t6-f2-f3-wave1",
+  "baseline_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "grammar_hash": "d073a68dfd7c109f2f71fe0533d5084e78ef8fca870d229a0ea98e85c0ce02e1",
+  "status": {
+    "F1": "OPEN_MINIMAL_GAPS",
+    "F2": "OPEN",
+    "F3": "OPEN_MINIMAL_GAPS",
+    "T6": "OPEN"
+  },
+  "closure_contract": [
+    "FAMILY_EMPTY",
+    "TERMINAL",
+    "VERIFIED_SUCCESSOR_E1_E5_REENTRY"
+  ],
+  "cross_cut_blockers": [
+    {
+      "id": "F1-PRODUCER-PROJECTION",
+      "quantifier": "Every active recursive source signal and every actual nonterminal target it emits.",
+      "current_fact": "18 source signals are inventoried; 9 unknown items remain; no legacy queue mutation path is proven to use the wave1 runtime.",
+      "missing": ["D1", "D2", "D3", "D5", "D8"],
+      "next_minimal_theorem": "Producer Projection and Exclusive Admission Theorem v1 for one real producer chain, starting with q1 root -> full-carrier -> first child."
+    },
+    {
+      "id": "F1-ACTIVE-PRODUCER-FREEZE",
+      "quantifier": "Every branch proposed by F2/F3 tracks before it enters the active dispatch registry.",
+      "current_fact": "Freeze A runtime and Freeze B type space are implemented, but no all-producer registry hash exists.",
+      "missing": ["D2", "D3", "D5", "D8", "D9", "D10"],
+      "next_minimal_theorem": "Bind one accepted producer to source terminal schedule, runtime-issued candidate, independent validator and final target owner."
+    }
+  ],
+  "f2_residuals": [
+    {
+      "id": "F2-POSTG-CONTINUOUS-RUNTIME",
+      "quantifier": "Actual ordinary q1 G and post-G full-carrier path through first child, second anchor, d1 relay, C2/H4 descendants after full terminal-first priority.",
+      "established_reductions": [
+        "q1 immediate C1 empty",
+        "C2 non19 family empty",
+        "low post-G charts terminal or finite support-doubling to A>1 overflow",
+        "H4 guard DAG reduces live output to atomic/overflow shapes",
+        "H4 clean-q atomic C1 family empty"
+      ],
+      "exact_blocker": "No continuous actual producer projection/terminal schedule/runtime re-entry; positive-q and c3 source status is not semantically frozen.",
+      "missing": ["E1", "E3", "D1", "D2", "D5", "D8"],
+      "next_minimal_theorem": "Serialize the q1 root-to-first-child producer chain into the common runtime without changing any arithmetic theorem."
+    },
+    {
+      "id": "F2-C8-ATOMIC-ACTUALIZATION",
+      "quantifier": "Every actual q1 full-carrier d1 c8 parent and each nonterminal H4/c8 arm output.",
+      "established_reductions": [
+        "c8 terminal/double-low/OTHER arithmetic trichotomy",
+        "OTHER capacity lies in 9..p-2",
+        "atomic target fiber is recomputed rather than inherited",
+        "parent-to-final N7 formula is available conditionally"
+      ],
+      "exact_blocker": "Current c8/H4 harness still uses synthetic source/MISS/evidence fields rather than the common runtime; source-owner conflict and complete actual parent coverage remain open.",
+      "missing": ["E1", "E3", "D1", "D3", "D5", "D8", "D10"],
+      "next_minimal_theorem": "Implement an actual parent-bound H4_A1 or C8_DOUBLE_LOW runtime producer with independently replayed source terminal schedule and final chart validator."
+    },
+    {
+      "id": "F2-HIGH-SUPPORT-C1",
+      "quantifier": "Actual terminal-first-surviving TYPEI/CHARGED overflow with A>Bp and C=K/A=1.",
+      "established_reductions": [
+        "same-protocol complete-excess local minimum",
+        "q1 immediate, c8 OTHER and H4_A1 clean-q producer subfamilies are C1-free",
+        "direct-cofactor r-chart returns the same chart",
+        "no generic C1 family is admitted"
+      ],
+      "exact_blocker": "A terminal, outer-rank, phase/protocol or paid reset exit for the remaining actual C1 family is missing.",
+      "missing": ["E2", "E3", "E5", "D2", "D5", "D7", "D8"],
+      "next_minimal_theorem": "Classify one deterministic lower-protocol/ABSORB or terminal exit for actual C1 parents, or prove the residual family empty from complete source constraints."
+    },
+    {
+      "id": "F2-HIGH-SUPPORT-CGT1",
+      "quantifier": "Actual terminal-first-surviving TYPEI/CHARGED overflow with A>Bp and C=K/A>1 whose improvement set is empty.",
+      "established_reductions": [
+        "determinant-bound low-support branches all strictly exit",
+        "checkpoint product collapses to one final multiplier",
+        "arbitrarily long C=2 carry stutter controls rule out a bounded carry-only descent theorem"
+      ],
+      "exact_blocker": "No actual-source terminal/phase/outer-rank exit covers the empty-improvement complement; carry/checkpoint facts do not pay E5.",
+      "missing": ["E1", "E2", "E3", "E4", "E5", "D2", "D5", "D7", "D8"],
+      "next_minimal_theorem": "Prove an actual lower-protocol/terminal/outer-rank dichotomy for C>1 empty-improvement, not another bounded carry lemma."
+    }
+  ],
+  "f3_residuals": [
+    {
+      "id": "F3-HIGH-STRICT-CARRY",
+      "quantifier": "ACTUAL_PERSISTENT proper-factor root with h>p, terminal miss and high-domain c<=p-2.",
+      "established_reductions": ["high-domain normal form", "canonical target is R_T>p overflow", "identity lift and conditional parent-to-final local drop"],
+      "exact_blocker": "Actual high source owner/runtime projection and final E3 admission/re-entry are absent.",
+      "missing": ["E3", "D5", "D8"],
+      "next_minimal_theorem": "Bind high strict rebase to proper_root_high_endpoint source through one common runtime producer."
+    },
+    {
+      "id": "F3-HIGH-STUTTER-K1",
+      "quantifier": "ACTUAL_PERSISTENT proper-factor high root with terminal miss, c=p-1 and high-domain k=1 Pell parameterization.",
+      "established_reductions": ["exact Pell-type parameterization", "known curve shadows are nonactual or terminal-preempted"],
+      "exact_blocker": "No canonical-maximal actual receipt coverage or empty/terminal/paid successor theorem.",
+      "missing": ["E1", "E2", "E3", "E4", "E5", "D1-D8"],
+      "next_minimal_theorem": "Show every Pell parameter tuple violates actual maximality/terminal-first, or construct a high-domain successor without low-height routing."
+    },
+    {
+      "id": "F3-HIGH-STUTTER-ODD-KGE3",
+      "quantifier": "ACTUAL_PERSISTENT proper-factor high root with terminal miss, c=p-1 and rederived odd k>=3.",
+      "established_reductions": ["high-domain N=h*k split", "low-height QC1/TR1 is explicitly excluded"],
+      "exact_blocker": "No bounded high-domain normal form or physical carrier theorem.",
+      "missing": ["E1", "E2", "E3", "E4", "E5", "D1-D8"],
+      "next_minimal_theorem": "Derive a high-only divisor/size dichotomy for odd k>=3."
+    },
+    {
+      "id": "F3-QC1-INTEGER-OCCURRENCE",
+      "quantifier": "R3/R5 low proper-root terminal-first survivors with k_perp>1.",
+      "established_reductions": ["canonical q_perp", "unique oriented Eisenstein ideal factor", "ideal factor is not E1"],
+      "exact_blocker": "No path-bound integer raw node/side/exponent/capacity occurrence and no one-use support-charge conservation theorem.",
+      "missing": ["E1", "E2", "E3", "E4", "E5", "D3-D8"],
+      "next_minimal_theorem": "Ideal-to-integer occurrence/conservation bridge or an alternate terminal theorem for each R3/R5 survivor."
+    },
+    {
+      "id": "F3-TR1-PHYSICAL-OCCURRENCE",
+      "quantifier": "R4/R6 low proper-root terminal-first survivors with k_perp=1, excluding m3 q5.",
+      "established_reductions": ["h-menu eligibility", "D_star arithmetic factor", "complete composite-Q terminal menu ordering"],
+      "exact_blocker": "Neither h-menu eligibility nor q|D_star is a consumable integer raw occurrence; no full terminal/physical TR1 exhaustion theorem.",
+      "missing": ["E1", "E2", "E3", "E4", "E5", "D3-D8"],
+      "next_minimal_theorem": "D_star arithmetic-factor to integer occurrence theorem with deterministic consumption and terminal precedence."
+    },
+    {
+      "id": "F3-M3Q5-R1-RUNTIME-BINDING",
+      "quantifier": "R1 m3 q5 actual persistent source with canonical transcript not attached to active producer receipt.",
+      "established_reductions": ["canonical source-forward transcript"],
+      "exact_blocker": "Runtime does not yet bind transcript scope and priority-prefix misses to a registered producer.",
+      "missing": ["E1", "E3", "D5", "D8"],
+      "next_minimal_theorem": "Attach the transcript as a verified source receipt in one real wave1 producer."
+    },
+    {
+      "id": "F3-M3Q5-NONMINIMAL",
+      "quantifier": "R2 m3 q5 terminal miss with v5(T)>=2 (varrho=11 mod25).",
+      "established_reductions": ["exact separation from minimal-q5 Lomega theorem", "primitive p-free q5 child when 5|E"],
+      "exact_blocker": "No universal terminal or paid target, especially when 5 does not divide E.",
+      "missing": ["E1", "E2", "E3", "E4", "E5", "D3-D8"],
+      "next_minimal_theorem": "Classify nonminimal q5 branches by 5|E versus 5∤E into terminal or a physical final macro."
+    },
+    {
+      "id": "F3-M3Q5-REGENERATION-PFREE-FAILURE",
+      "quantifier": "R2 minimal q5 nonterminal endpoint with theta_omega=1 mod p whose regeneration ends in p-free failure.",
+      "established_reductions": ["ordinary theta=-1 and other strict channels have source-bound E5"],
+      "exact_blocker": "No continuous suffix E1 and final E5 exit through p-free failure.",
+      "missing": ["E1", "E3", "E5", "D5", "D7", "D8"],
+      "next_minimal_theorem": "Prove regeneration-to-p-free failure terminates or produces one parent-to-final paid macro."
+    },
+    {
+      "id": "F3-M3Q5-P2-ONE-SIDED",
+      "quantifier": "R2 minimal q5 terminal miss with Lomega=1+p^2 chi and exactly one of Eu,Ev equal to 1.",
+      "established_reductions": ["source-bound divisor factor-pair normal form", "no standalone checkpoint ticket"],
+      "exact_blocker": "No EMPTY/TERMINAL/final strict macro for the one-sided p2 factor-pair system.",
+      "missing": ["E2", "E3", "E5", "D5", "D7", "D8"],
+      "next_minimal_theorem": "Solve the one-sided p2 factor-pair system by terminal construction, contradiction or final strict macro."
+    },
+    {
+      "id": "F3-M3Q5-P2-TWO-SIDED",
+      "quantifier": "R2 minimal q5 terminal miss with Eu,Ev>1 and EuEv=1+p^2 chi.",
+      "established_reductions": ["two-sided divisor-source normal form", "L1 and Lomega are separated", "checkpoint cannot queue"],
+      "exact_blocker": "No EMPTY/TERMINAL/final atomic macro with parent-to-final strict ticket.",
+      "missing": ["E2", "E3", "E5", "D5", "D7", "D8"],
+      "next_minimal_theorem": "Derive a two-sided p2 terminal or a source-preserving final atomic macro with strict N7 ticket."
+    }
+  ],
+  "counters": {
+    "f1_explicit_unknown_items": 9,
+    "f2_open_residual_groups": 4,
+    "f3_open_residual_groups": 10,
+    "active_verified_wave1_producers": 0,
+    "active_pending_queue_states_allowed": 0,
+    "conditional_actual_edges_admitted": 0,
+    "t5_ticket_failures_admitted": 0
+  },
+  "forbidden_status_updates": [
+    "F1=CLOSED",
+    "F2=CLOSED",
+    "F3=CLOSED",
+    "T6=CLOSED",
+    "ERDOS_STRAUS_CONJECTURE=CLOSED"
+  ]
+}
