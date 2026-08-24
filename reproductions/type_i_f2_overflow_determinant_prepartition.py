@@ -311,7 +311,8 @@ def verify() -> None:
         raise AssertionError("stored determinant prepartition receipt is stale")
     print(
         "verified F2 determinant prepartition: b>=2 same-chart; "
-        "b=1 low-support d>=2 full-product; exact low-d1/high-support residuals; "
+        "b=1 low-support d>=2 full-product; b=d=1 low-support complete-excess; "
+        "only high-support canonical residuals; "
         "p=409 preempted-or-out-of-domain"
     )
 
