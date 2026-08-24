@@ -11,7 +11,7 @@
 This track owns only actual persistent, terminal-first-surviving low proper-root states with
 
 \[
-m=3,qquad 5\mid D_*,qquad 2\le h<p,
+m=3,\qquad 5\mid D_*,\qquad 2\le h<p,
 \]
 
 split into `R1_M3_Q5_PATH_UNBOUND` and `R2_M3_Q5_PATH_BOUND_NO_SERIALIZER`.
@@ -67,12 +67,12 @@ The proof receipt retains four mathematical open groups:
 3. `R2_M3_Q5_P2_ONE_SIDED`: close
    
    \[
-   v=(1+p^2\chi)d,qquad 4uw=c+p+p^3\chi.
+   v=(1+p^2\chi)d,\qquad 4uw=c+p+p^3\chi.
    \]
 4. `R2_M3_Q5_P2_TWO_SIDED`: close
    
    \[
-   E_u,E_v>1,qquad E_uE_v=1+p^2\chi
+   E_u,E_v>1,\qquad E_uE_v=1+p^2\chi
    \]
    
    under the actual cross-divisor and path constraints.
