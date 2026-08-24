@@ -27,29 +27,29 @@
     },
     {
       "leaf_id": "QC1_R3_OCCURRENCE_UNBOUND",
-      "predicate": "R3 terminal-first miss; canonical q_perp exists arithmetically, but no replayable actual occurrence/path token for q_perp is bound to the source state",
+      "predicate": "R3 terminal-first miss; canonical q_perp and its oriented ideal factor exist, but a path-bound integer raw occurrence plus one-use charge-conservation receipt is absent or invalid",
       "mutually_exclusive_with": [
         "QC1_R3_TERMINAL_PREEMPTED",
         "QC1_R3_OCCURRENCE_BOUND_PENDING_PHYSICALIZATION",
         "all R5 leaves"
       ],
-      "coverage_proof": "After a terminal miss, the occurrence receipt is either present and valid or absent/invalid; this is the absent/invalid branch.",
-      "planned_closure": "VERIFIED_SUCCESSOR",
-      "target_shape": "QC1PhysicalTransitionV1",
-      "current_blocker": "Prove a universal actual source occurrence theorem for q_perp; q_perp|k alone is not E1."
+      "coverage_proof": "After a terminal miss, the conjunction of an integer occurrence receipt and charge-conservation receipt is either valid or not valid; this is the not-valid branch.",
+      "planned_closure": "PROVE_INTEGER_OCCURRENCE_AND_CONSERVATION_OR_ALTERNATE_TERMINAL",
+      "target_shape": "conditional QC1PhysicalTransitionV1 shape",
+      "current_blocker": "The canonical oriented ideal factor is not a path-bound integer raw occurrence and has no support charge-conservation theorem."
     },
     {
       "leaf_id": "QC1_R3_OCCURRENCE_BOUND_PENDING_PHYSICALIZATION",
-      "predicate": "R3 terminal-first miss with a replayable q_perp occurrence/path token bound to the actual source",
+      "predicate": "R3 terminal-first miss with both a replayable path-bound integer q_perp occurrence and a valid one-use charge-conservation receipt bound to the actual source",
       "mutually_exclusive_with": [
         "QC1_R3_TERMINAL_PREEMPTED",
         "QC1_R3_OCCURRENCE_UNBOUND",
         "all R5 leaves"
       ],
-      "coverage_proof": "Complement of the unbound occurrence branch inside terminal-first-surviving R3.",
-      "planned_closure": "VERIFIED_SUCCESSOR",
+      "coverage_proof": "Complement of the missing/invalid integer-occurrence-or-conservation branch inside terminal-first-surviving R3.",
+      "planned_closure": "CONDITIONAL_TARGET_THEN_SHARED_RUNTIME_ADMISSION",
       "target_shape": "QC1PhysicalTransitionV1",
-      "current_blocker": "Derive deterministic target arithmetic, common E3 normalization/admission, universal E4 lift, fixed-N7 E5, and re-entry."
+      "current_blocker": "On this conditional leaf E1 occurrence/conservation is assumed; real source/mark/scope replay, target terminal dispatch, universal E4 lift and shared runtime admission remain open."
     },
     {
       "leaf_id": "QC1_R5_TERMINAL_PREEMPTED",
@@ -66,31 +66,31 @@
     },
     {
       "leaf_id": "QC1_R5_OCCURRENCE_UNBOUND",
-      "predicate": "R5 terminal-first miss; canonical q_perp exists arithmetically, but no replayable actual occurrence/path token for q_perp is bound to the source state",
+      "predicate": "R5 terminal-first miss; canonical q_perp and its oriented ideal factor exist, but a path-bound integer raw occurrence plus one-use charge-conservation receipt is absent or invalid",
       "mutually_exclusive_with": [
         "QC1_R5_TERMINAL_PREEMPTED",
         "QC1_R5_OCCURRENCE_BOUND_PENDING_PHYSICALIZATION",
         "all R3 leaves"
       ],
-      "coverage_proof": "After a terminal miss, the occurrence receipt is either present and valid or absent/invalid; this is the absent/invalid branch.",
-      "planned_closure": "VERIFIED_SUCCESSOR",
-      "target_shape": "QC1PhysicalTransitionV1",
-      "current_blocker": "Prove a universal actual source occurrence theorem for q_perp; q_perp|k alone is not E1."
+      "coverage_proof": "After a terminal miss, the conjunction of an integer occurrence receipt and charge-conservation receipt is either valid or not valid; this is the not-valid branch.",
+      "planned_closure": "PROVE_INTEGER_OCCURRENCE_AND_CONSERVATION_OR_ALTERNATE_TERMINAL",
+      "target_shape": "conditional QC1PhysicalTransitionV1 shape",
+      "current_blocker": "The canonical oriented ideal factor is not a path-bound integer raw occurrence and has no support charge-conservation theorem."
     },
     {
       "leaf_id": "QC1_R5_OCCURRENCE_BOUND_PENDING_PHYSICALIZATION",
-      "predicate": "R5 terminal-first miss with a replayable q_perp occurrence/path token bound to the actual source",
+      "predicate": "R5 terminal-first miss with both a replayable path-bound integer q_perp occurrence and a valid one-use charge-conservation receipt bound to the actual source",
       "mutually_exclusive_with": [
         "QC1_R5_TERMINAL_PREEMPTED",
         "QC1_R5_OCCURRENCE_UNBOUND",
         "all R3 leaves"
       ],
-      "coverage_proof": "Complement of the unbound occurrence branch inside terminal-first-surviving R5.",
-      "planned_closure": "VERIFIED_SUCCESSOR",
+      "coverage_proof": "Complement of the missing/invalid integer-occurrence-or-conservation branch inside terminal-first-surviving R5.",
+      "planned_closure": "CONDITIONAL_TARGET_THEN_SHARED_RUNTIME_ADMISSION",
       "target_shape": "QC1PhysicalTransitionV1",
-      "current_blocker": "Derive deterministic target arithmetic, common E3 normalization/admission, universal E4 lift, fixed-N7 E5, and re-entry."
+      "current_blocker": "On this conditional leaf E1 occurrence/conservation is assumed; real source/mark/scope replay, target terminal dispatch, universal E4 lift and shared runtime admission remain open."
     }
   ],
-  "coverage_statement": "Within each owned residual, terminal-first hit and miss are disjoint. On a miss, a valid q_perp occurrence receipt is either bound or unbound. The m=3 versus m>3 split makes the R3 and R5 leaves disjoint; their union is the whole F3-QC1 scope.",
-  "current_status": "OPEN_MINIMAL_GAPS"
+  "coverage_statement": "Within each owned residual, terminal-first hit and miss are disjoint. On a miss, the conjunction of a path-bound integer q_perp occurrence and one-use charge conservation is either valid or not valid. The m=3 versus m>3 split makes the R3 and R5 leaves disjoint; their union is the whole F3-QC1 scope.",
+  "current_status": "OPEN_MINIMAL_RESIDUALS"
 }

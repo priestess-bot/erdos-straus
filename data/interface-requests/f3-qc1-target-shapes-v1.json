@@ -6,6 +6,7 @@
   "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
   "request_type": "SHARED_TRANSITION_ENVELOPE_AND_TARGET_ADMISSION",
   "requested_symbol": "QC1PhysicalTransitionV1",
+  "requested_source_provenance": "qc1_path_bound_integer_occurrence_and_charge_v1",
   "source_residuals": [
     "R3_M3_NONQ5_QUOTIENT_ONLY",
     "R5_MGT3_QUOTIENT_ONLY"
@@ -14,7 +15,7 @@
     "definition": "q_perp=min{q prime: q divides k and q does not divide h}",
     "deterministic": true,
     "arithmetic_existence": "proved whenever k_perp>1",
-    "e1_boundary": "The envelope must reject unless a producer-issued occurrence token proves that this exact q_perp occurs on the replayable actual source path and survives terminal precedence."
+    "e1_boundary": "The oriented ideal factor (q_perp,omega-lambda)|(a-b*omega) is algebraic evidence only. The requested envelope must additionally bind this q_perp to a specific integer raw side/node/path above current K capacity and prove one-use support charge conservation."
   },
   "common_envelope_fields": [
     "envelope_version",
@@ -32,8 +33,15 @@
     "k",
     "k_perp",
     "q_perp",
-    "q_perp_occurrence_id",
-    "q_perp_occurrence_path_digest",
+    "q_perp_ideal_factor_id",
+    "integer_occurrence_id",
+    "integer_occurrence_side",
+    "integer_occurrence_node",
+    "integer_occurrence_path_digest",
+    "integer_occurrence_exponent",
+    "current_K_capacity_exponent",
+    "one_use_owner_id",
+    "charge_conservation_receipt",
     "target_core",
     "target_state_id",
     "target_owner",
@@ -44,12 +52,12 @@
   "target_shapes": [
     {
       "shape_id": "QC1_EXISTING_TYPEI_CHARGED_TARGET",
-      "existing_family_match": "type_i_low_support_persistent_overflow | type_i_a_gt_one_overflow_residual | type_i_high_support_sink, selected only by common predicates",
+      "existing_family_match": "type_i_a_gt_one_overflow_residual",
       "new_family_required": false,
       "atomic_arm_required": false,
       "mark_behavior": "preserve ordinary Sol(p); no nontrivial mark may be introduced",
       "t5_ticket_type": "LOCAL_DROP in the fixed T5 N7 TYPEI/CHARGED rank, or reject",
-      "owner_precedence_request": "run terminal first, then existing Type-I family predicates under coordinator-frozen precedence",
+      "owner_precedence_request": "run terminal first; on MISS the target uniquely matches the existing type_i_a_gt_one_overflow_residual predicate",
       "admission_requirement": "target must be rebuilt by the common serializer and accepted by the common admission gate"
     },
     {
@@ -74,7 +82,7 @@
     }
   ],
   "e1_e5_contract": {
-    "E1": "Actual source envelope plus producer-issued q_perp occurrence/path token and terminal-first miss; divisibility q_perp|k is necessary but insufficient.",
+    "E1": "Actual source envelope plus a path-bound integer q_perp occurrence with side/node/exponent/capacity and one-use charge conservation; ideal divisibility and q_perp|k are insufficient.",
     "E2": "One deterministic integer target from q_perp and the verified source payload, with all tie-breaks fixed.",
     "E3": "Target passes the coordinator-owned common serializer, family predicates, unique owner selection, digest verification, and admission gate.",
     "E4": "A total solution lift over the entire selected branch, not a fixture or witness-only map.",
@@ -83,9 +91,11 @@
   },
   "requested_coordinator_decisions": [
     "approve the QC1PhysicalTransitionV1 envelope name and version",
-    "freeze accepted existing-family predicates and precedence for QC1 targets",
+    "do not approve an ideal-norm charge rule until an integer occurrence and conservation theorem is supplied",
+    "defer producer registration until the integer occurrence/conservation theorem exists; the eventual rule would use R3/R5 branch ids, proper_root_stutter_k_gt_one source owner, and type_i_a_gt_one_overflow_residual target owner",
+    "freeze the common terminal dispatcher consumed before target admission",
     "provide the common admission API binding used for E3 and re-entry",
-    "decide whether any proved QC1 target requires a new family after concrete target arithmetic is available"
+    "confirm that no new family, mark, atomic arm, or T2/T3 extension is required"
   ],
-  "status": "PROPOSED_NOT_REGISTERED"
+  "status": "CONDITIONAL_TARGET_SHAPE_OPEN_E1_AND_RUNTIME"
 }
