@@ -28,7 +28,8 @@
       "chart_K": "(3*p+1)/4",
       "support_A": "(3*p+1)/4",
       "mark": "ROOT_SOL",
-      "protocol": "ABSORB (coordinator-owned extension)"
+      "protocol": "ABSORB (coordinator-owned extension)",
+      "absorb_cursor": "a target-local, replayable (m,r_epsilon) satisfying the frozen ABSORB semantics; low chart_R alone is insufficient"
     },
     "mark_behavior": "identity on Sol(4,p), conditional on target admission",
     "terminal_precedence": "target-local terminal HIT returns terminal before any persistent target",
@@ -42,7 +43,7 @@
   },
   "required_coordinator_decisions": [
     "Whether a parent-derived canonical dual is an authorized producer source or requires additional occurrence provenance.",
-    "Exact ABSORB predicate, serializer, owner precedence, and allowed source owners.",
+    "Exact ABSORB predicate, serializer, owner precedence, allowed source owners, and a canonical target-local (m,r_epsilon) cursor.",
     "Target terminal-first implementation and F/G/HIT retyping.",
     "A non-upward ABSORB continuation or a proof that target-local terminal dispatch is total.",
     "F1 producer inventory, common admission, and target re-entry tests."

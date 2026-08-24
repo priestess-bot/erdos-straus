@@ -34,7 +34,7 @@
   "obligation_status": {
     "E1": "RELATIVE_TO_ACTUAL_PARENT_AND_NEW_PRODUCER_REGISTRATION",
     "E2": "ESTABLISHED_BY_CANONICAL_DUAL_IDENTITIES",
-    "E3": "OPEN_GENERIC_ORDINARY_ABSORB_OWNER_AND_SERIALIZER",
+    "E3": "OPEN_GENERIC_ORDINARY_ABSORB_OWNER_SERIALIZER_AND_CURSOR",
     "E4": "IDENTITY_ON_Sol_4_p_RELATIVE_TO_ADMISSION",
     "E5": "PHASE_DROP_CHARGED_TO_ABSORB_RELATIVE_TO_ADMISSION",
     "reentry": "OPEN"
@@ -43,7 +43,7 @@
     "source": "TYPEI/CHARGED",
     "target": "TYPEI/ABSORB",
     "kind": "PHASE_DROP",
-    "requirement": "same equation rank and all E1-E4 completed before admission"
+    "requirement": "same equation rank, a valid ABSORB cursor (m,r_epsilon), and all E1-E4 completed before admission"
   },
   "controls": [
     {
