@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import importlib.util
 import json
+from dataclasses import replace
 from pathlib import Path
 import sys
 import unittest
@@ -122,7 +123,10 @@ class CommonAdmissionTests(unittest.TestCase):
 
     def test_atomic_target_cannot_enter_without_strict_n7(self) -> None:
         arm, chart, _ = self.cases()[0]
-        item = pending_for(chart, arm)
+        item = replace(
+            pending_for(chart, arm),
+            parent_n7_potential=PENDING.canonical_charged_n7(chart),
+        )
         disposition = PENDING.resolve_pending(
             item,
             terminal_first_miss=True,
@@ -135,7 +139,7 @@ class CommonAdmissionTests(unittest.TestCase):
             ADMISSION.admit_final_target(
                 item,
                 disposition,
-                target_n7_potential=item.parent_n7_potential,
+                target_n7_potential=PENDING.canonical_charged_n7(chart),
                 evidence=EVIDENCE,
             )
 
