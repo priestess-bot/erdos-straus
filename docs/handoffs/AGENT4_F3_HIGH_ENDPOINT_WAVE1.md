@@ -99,6 +99,16 @@ proper_root_k split and no height-class fact. The coordinator must add an
 exact high-source predicate or envelope before a high source is admitted; the
 existing low family names cannot silently absorb this domain.
 
+Gate 2 subsequently accepted the type-space refinement:
+
+PROPER_ROOT + HIGH + h>p + proper_root_k=null
+  -> proper_root_high_endpoint
+
+and accepted the strict target's existing overflow type. The type-space change
+does not yet prove the full source quantifier: a source producer/validator must
+still replay the root-factor equations from its actual receipt. A bare
+caller-supplied HIGH height field is not that proof.
+
 ## Next Theorem
 
 Prove either that every actual high \(k=1\) Pell point is noncanonical or
@@ -113,3 +123,5 @@ actual maximality, terminal-first priority, and the persistent source envelope.
 - 94b60ae: strict overflow owner refinement.
 - d19e2d8: high \(k=1\) Pell residual.
 - c3d00d2: final three-leaf high residual matrix.
+- 076c228: Gate 2 type-space freeze, reviewed on this branch.
+- adf7f41: actual high stutter root-quotient and capacity divisor gates.
