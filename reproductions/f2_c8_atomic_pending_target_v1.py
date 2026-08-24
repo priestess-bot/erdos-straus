@@ -26,7 +26,6 @@ ARMS = frozenset({"H4_A1", "C8_DOUBLE_LOW"})
 FORBIDDEN_MARKERS = frozenset(
     {"pending_suffix", "pending_dispatch", "later_selector", "inherited_F_G_hit_label"}
 )
-MAX_EXACT_SUBGROUP_NODES = 250_000
 
 
 class AtomicProtocolError(ValueError):
@@ -293,14 +292,20 @@ def exact_fiber_certificate(
     chart: ChartFacts,
     *,
     unbounded_f_witness: Sequence[int] | None = None,
-    max_nodes: int = MAX_EXACT_SUBGROUP_NODES,
+    max_nodes: int | None = None,
 ) -> FiberCertificate:
-    """Compute hit and subgroup membership independently from target integers."""
+    """Compute hit and subgroup membership independently from target integers.
+
+    The production default has no artificial cutoff: both finite sets are
+    mathematically bounded by the supplied factorization and residual.  Tests
+    or callers may request a fail-closed resource limit explicitly, but such a
+    limited call is not a total classifier receipt.
+    """
     factors = chart.carrier_factors
     box_size = 1
     for _, exponent in factors:
         box_size *= 2 * exponent + 1
-    if box_size > max_nodes:
+    if max_nodes is not None and box_size > max_nodes:
         raise AtomicProtocolError("FIBER_WORK_LIMIT", f"bounded hit box has {box_size} points")
     hit_vectors: list[tuple[int, ...]] = []
     for vector in itertools.product(*[range(-e, e + 1) for _, e in factors]):
@@ -340,7 +345,7 @@ def exact_fiber_certificate(
                         subgroup.add(successor)
                         frontier.append(successor)
                         nodes += 1
-                        if nodes > max_nodes:
+                        if max_nodes is not None and nodes > max_nodes:
                             raise AtomicProtocolError("FIBER_WORK_LIMIT", "subgroup closure exceeds limit")
         minus_one_in_subgroup = chart.residual - 1 in subgroup
         subgroup_size = len(subgroup)
