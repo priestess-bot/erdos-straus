@@ -137,6 +137,14 @@ class ChartAndFiberTests(unittest.TestCase):
         ):
             chart(73, 11, 201, 67, 3, ((67, 1),))
 
+    def test_resource_limit_is_explicit_not_the_total_classifier_default(self) -> None:
+        target = chart(73, 11, 201, 67, 3, ((3, 1), (67, 1)))
+        self.assertEqual(
+            ATOMIC.exact_fiber_certificate(target).kind, ATOMIC.FiberKind.G
+        )
+        with self.assertRaisesRegex(ATOMIC.AtomicProtocolError, "FIBER_WORK_LIMIT"):
+            ATOMIC.exact_fiber_certificate(target, max_nodes=2)
+
 
 class FinalAdmissionTests(unittest.TestCase):
     def test_final_f_successor_has_no_pending_fields(self) -> None:
