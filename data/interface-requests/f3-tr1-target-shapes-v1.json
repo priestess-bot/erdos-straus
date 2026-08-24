@@ -109,9 +109,13 @@
       "admission_requirement": "strictly smaller positive equation rank, content-addressed mark receipt, universal lift and common queue admission"
     }
   ],
-  "new_family_request": null,
+  "new_family_request": {
+    "status": "CONDITIONAL_PENDING_TARGET_THEOREM",
+    "condition": "a proved TR1 target has R_T<p and full marked-absorb/ABSORB protocol semantics but no exact frozen owner predicate",
+    "default_disposition": "reject before queue until coordinator freezes the owner and overlap policy"
+  },
   "new_atomic_arm_request": null,
-  "grammar_change_requested": false,
+  "grammar_change_requested": "CONDITIONAL_ONLY_IF_THE_EXACT_TYPED_TARGET_IS_NOT_REPRESENTABLE",
   "activation_gates": [
     "symbolic exhaustive partition with no explicit residual",
     "integer raw occurrence/E1 and priority proof",
