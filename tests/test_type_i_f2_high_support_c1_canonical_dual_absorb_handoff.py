@@ -53,6 +53,12 @@ class F2HighSupportC1CanonicalDualAbsorbHandoffTests(unittest.TestCase):
         self.assertEqual(cursor["local_rank_payload"], [3, 1, 1])
         self.assertIn("nonrecursive", cursor["boundary"])
 
+    def test_r_three_terminal_split_is_explicit(self) -> None:
+        stored = MODULE.json.loads(MODULE.RECEIPT_PATH.read_text(encoding="utf-8"))
+        split = stored["target_terminal_split"]
+        self.assertEqual(split["two_mod_three_factor"], "DIRECT_TYPE_I_TERMINAL")
+        self.assertEqual(split["all_factors_one_mod_three"], "R3_G_RESIDUAL")
+
 
 if __name__ == "__main__":
     unittest.main()

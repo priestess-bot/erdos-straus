@@ -182,9 +182,14 @@ For this specific target:
 Thus (8) is a precise target-shape and phase-ticket proposal, not an active
 edge.
 
+The first target-local terminal split is already exact: if
+\(N=(3p+1)/4\) has a prime factor \(2\pmod3\), the three-p-plus-one
+certificate terminates the original root equation directly. Only the
+all-\(1\pmod3\) factor case remains the R=3-G branch considered below.
+
 ## Why this is not a terminal theorem
 
-The \(R=3\) target is not automatically a Type I terminal, an F state, or an
+The all-\(1\pmod3\) \(R=3\) target is not automatically a Type I terminal, an F state, or an
 ABSORB continuation. Its canonical anchor is \((1,2,1)\), but its binary
 formal transition has a known self-loop and therefore cannot itself be used as
 a recursive ABSORB edge. For
