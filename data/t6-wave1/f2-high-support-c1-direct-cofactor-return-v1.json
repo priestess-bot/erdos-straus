@@ -1,0 +1,83 @@
+{
+  "artifact_id": "f2_high_support_c1_direct_cofactor_return_v1",
+  "artifact_version": 1,
+  "track_id": "T6-F2-OVERFLOW-HIGH-SUPPORT",
+  "status": "DIRECT_COFACTOR_SUBFAMILY_EXACT_RETURN",
+  "claim_id": "type-I-f2-high-support-c1-direct-cofactor-return-v1",
+  "scope": {
+    "prime_condition": "p is a core prime, p congruent to 1 modulo 24",
+    "parent": "4*K=p*R+1, K=A, A>B_p=((p-1)^2)/4, p<R<4*A",
+    "candidate": "1<=r,C<p; A_C=lcm(A,C); A_C divides r*C; p*R_T+1=4*r*C; R_T>0",
+    "actualness": "The arithmetic receipt is not an actual-source proof; E1 remains required at selector admission."
+  },
+  "derivation": [
+    "Three-phase theorem gives h=(r*C-A)/(p*A) in {0,1,2}.",
+    "Positive phase implies A<=((p-1)^2)/(p+1)<p.",
+    "A>B_p>p for core p>=73, so h>0 is impossible.",
+    "For h=0, write g=gcd(A,C), A=g*a, C=g*c, r=a*t; then r*C=A*c*t=A forces c=t=1.",
+    "Therefore A_C=A, r*C=A, R_T=R, and the arithmetic chart is an exact return."
+  ],
+  "conclusion": {
+    "direct_cofactor_paid_E5_edge": "EMPTY",
+    "same_chart_return": "UNIVERSAL_ON_DECLARED_ARITHMETIC_DOMAIN",
+    "whole_C1_leaf": "OPEN",
+    "global_F2_or_T6": "OPEN"
+  },
+  "controls": [
+    {
+      "p": 73,
+      "A": 1369,
+      "R": 75,
+      "r": 37,
+      "C": 37,
+      "A_C": 1369,
+      "h": 0,
+      "target": [75, 1369, 1369]
+    },
+    {
+      "p": 97,
+      "A": 2401,
+      "R": 99,
+      "r": 49,
+      "C": 49,
+      "A_C": 2401,
+      "h": 0,
+      "target": [99, 2401, 2401]
+    },
+    {
+      "p": 193,
+      "A": 9409,
+      "R": 195,
+      "r": 97,
+      "C": 97,
+      "A_C": 9409,
+      "h": 0,
+      "target": [195, 9409, 9409]
+    },
+    {
+      "p": 241,
+      "A": 14641,
+      "R": 243,
+      "r": 121,
+      "C": 121,
+      "A_C": 14641,
+      "h": 0,
+      "target": [243, 14641, 14641]
+    },
+    {
+      "p": 313,
+      "A": 24649,
+      "R": 315,
+      "r": 157,
+      "C": 157,
+      "A_C": 24649,
+      "h": 0,
+      "target": [315, 24649, 24649]
+    }
+  ],
+  "forbidden_inferences": [
+    "same-chart arithmetic return implies actual source receipt",
+    "C=1 local minimum implies family empty",
+    "direct-cofactor no-go implies lower-protocol or outer-rank successor"
+  ]
+}
