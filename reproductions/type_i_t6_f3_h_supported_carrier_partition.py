@@ -167,8 +167,8 @@ def fixture(**updates: object) -> CarrierHeaderV1:
 
 def verify_receipt() -> None:
     receipt = json.loads(RECEIPT_PATH.read_text(encoding="utf-8"))
-    if receipt.get("theorem_status") != "ESTABLISHED_CARRIER_PARTITION":
-        raise AssertionError("carrier theorem status changed")
+    if receipt.get("theorem_status") != "ESTABLISHED_MENU_FACTOR_PARTITION":
+        raise AssertionError("menu/factor theorem status changed")
     if receipt.get("physicalization_status") != "OPEN_MINIMAL_RESIDUALS":
         raise AssertionError("physicalization was silently closed")
     if receipt.get("proved_empty") != ["NO_DSTAR_ARITHMETIC_FACTOR"]:
@@ -235,7 +235,7 @@ def verify() -> None:
     if classify(fixture(terminal_first_hit=True))["outcome"] != "TERMINAL_FIRST":
         raise AssertionError("terminal-first lost precedence")
 
-    print("verified R4/R6 h-supported and transverse carrier partition")
+    print("verified R4/R6 h-menu eligibility and D_star factor partition")
     print("fixtures are typed controls, not actual persistent receipt evidence")
     print("D_star is an arithmetic factor candidate; integer E1 and TR1 remain open")
 

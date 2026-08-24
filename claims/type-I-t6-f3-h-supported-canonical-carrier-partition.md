@@ -1,7 +1,7 @@
 ---
 kind: claim
 claim_id: type-I-t6-f3-h-supported-canonical-carrier-partition
-title: T6-F3 R4/R6 的规范 h-支撑载体与实际横向余项分派
+title: T6-F3 R4/R6 的规范 h-menu 资格与 D-star 算术余项分派
 statement: >-
   对一份 actual persistent、terminal-first 后仍非终止的 low proper-height
   stutter receipt，设 2<=h=3u<p、k>1、D*=D/gcd(D,h^2-1)>1，且
@@ -17,7 +17,7 @@ statement: >-
   source-bound arithmetic factor，并严格属于 transverse arithmetic provenance；
   它仍不是可消费的 raw occurrence/E1。于是 R4/R6 被全称分为 terminal、规范
   root-supported menu、规范 D*-terminal menu、k=3 transverse 子叶及一个
-  最小 unphysicalized TR1 residual。该结果证明 carrier existence 与 provenance，
+  最小 unphysicalized TR1 residual。该结果证明 menu/factor existence 与算术来源分类，
   但不证明 root menu 必命中，也不从 D* 构造 target、全域 lift 或 T5 ticket；
   因而 OPEN_TR1_PHYSICAL_SERIALIZER、F3 与 T6 仍开放。
 claim_status: established
@@ -46,7 +46,7 @@ sources:
 visibility: public
 last_checked: '2026-08-24'
 ---
-# T6-F3 R4/R6 的规范 h-支撑载体与实际横向余项分派
+# T6-F3 R4/R6 的规范 h-menu 资格与 (D_*) 算术余项分派
 
 ## 1. 量词域
 
@@ -118,7 +118,7 @@ external-source menu 的输入类型，不是 quotient-only chart。这里没有
 occurrence，也没有授权把 (q_h) 收费进新的 Type-I support；menu eligibility 不等于 E1。
 
 这仍不证明该有限菜单命中。对 (q\mid u) 的菜单可以为空；已有
-((p,q)=(457,7)) 是严格负控制。因此 R4 的非 3 carrier existence 不能误写成
+((p,q)=(457,7)) 是严格负控制。因此 R4 的非 3 menu-factor existence 不能误写成
 terminal totality。
 
 ## 3. R6 的规范载体与唯一 (k=3) 例外
@@ -130,6 +130,7 @@ m\not\equiv2\pmod3,
 \qquad
 3\mid k\Longleftrightarrow m\equiv0\pmod3.
 \tag{8}
+\]
 
 ### 3.1 (m\equiv1\pmod3)
 
@@ -258,7 +259,7 @@ absence of any accepted TR1 target/ticket
 缺失的是 arithmetic factor 到 integer occurrence/E1 再到 successor 的数学桥。准确状态为：
 
 ```text
-H_SUPPORTED_CARRIER_PARTITION = ESTABLISHED
+H_SUPPORTED_MENU_FACTOR_PARTITION = ESTABLISHED
 NO_DSTAR_ARITHMETIC_FACTOR = EMPTY
 TR1_INTEGER_RAW_OCCURRENCE = OPEN
 TR1_PHYSICAL_TRANSITION_V1 = OPEN
