@@ -43,7 +43,7 @@
       "coverage_proof": "joined-support rule preserves old charged support and pays reset through the same charged local rank",
       "current_status": "CONDITIONAL_ADAPTER",
       "planned_closure": "VERIFIED_SUCCESSOR",
-      "target_shape": "existing TYPEI/CHARGED overflow or marked_absorb target with joined support A'",
+      "target_shape": "R_t>p: existing TYPEI/CHARGED overflow with joined support A'; R_t<p non-hit: requested semantic TYPEI/ABSORB target with PHASE_DROP",
       "current_blocker": "The finite dual-channel verifier does not establish universal candidate existence or a common target serializer.",
       "evidence": ["claims/type-I-overflow-outer-rank-reset.md", "claims/type-I-overflow-fixed-s-dual-outer-rank-descent.md"]
     },
@@ -56,7 +56,7 @@
       "coverage_proof": "The determinant prepartition proves the full-product branch universally on bound receipts with b=1,A<=B_p,d>=2 and proves its target remains overflow; other bounded-divisor refinements retain their written guards.",
       "current_status": "RELATIVE_FULL_PRODUCT_THEOREM_COMMON_E3_OPEN",
       "planned_closure": "VERIFIED_SUCCESSOR",
-      "target_shape": "full-product target is existing type_i_a_gt_one_overflow_residual/high-support overflow; other bounded branches may also require the requested generic charged marked-absorb family when R_L<p",
+      "target_shape": "full-product target is existing TYPEI/CHARGED overflow; other bounded branches with R_L<p non-hit require the requested semantic TYPEI/ABSORB owner and PHASE_DROP",
       "current_blocker": "Not every generic actual overflow header supplies a bound determinant occurrence; every target still requires common E3 admission. Other bounded branches retain conditional divisor existence.",
       "evidence": ["claims/type-I-f2-overflow-determinant-prepartition.md", "claims/type-I-overflow-unbounded-full-product-quotient-fold.md", "claims/type-I-overflow-fixed-n-bounded-divisor-saturation.md", "claims/type-I-overflow-fixed-s-bounded-divisor-saturation.md"]
     },
@@ -105,12 +105,12 @@
       "raw_guard": "A>B_p, C=1, terminal_first=MISS, all prior routes fail, and high-support improvement set is empty",
       "effective_guard": "F2-00..F2-06 failed, C=1, and no nonempty high-support candidate exists",
       "mutually_exclusive_with": ["F2-08-Cgt1-empty", "F2-09-p409", "F2-10-explicit-residual"],
-      "coverage_proof": "C=1 is a fixed TYPEI/CHARGED local minimum: same-protocol complete-excess cannot lower and total-cofactor is identity",
-      "current_status": "LOCAL_NO_GO_ONLY",
+      "coverage_proof": "C=1 is a fixed TYPEI/CHARGED local minimum. In addition, the q=1 immediate image, c8 universal fallback, and actual H4_A1 clean-q atomic target have independent capacity-one exclusion theorems.",
+      "current_status": "LOCAL_NO_GO_WITH_THREE_PRODUCER_EXCLUSIONS",
       "planned_closure": "TERMINAL",
       "target_shape": "not yet supplied; must be a terminal certificate, OUTER_RANK_DROP, lower-protocol/phase target, or a family-empty proof",
-      "current_blocker": "The known no-go only rules out same-protocol routes; it does not provide a paid exit or prove the actual family empty.",
-      "evidence": ["claims/type-I-high-support-empty-improvement-c1-local-minimum-boundary.md", "reproductions/type_i_high_support_c1_local_minimum_boundary.py"]
+      "current_blocker": "The local no-go supplies no paid exit. The three exclusions do not yet prove trace-unreachability because all current/future producer target sets, including H4 non-atomic branches, are not frozen as C1-free.",
+      "evidence": ["claims/type-I-high-support-empty-improvement-c1-local-minimum-boundary.md", "claims/type-II-q-one-full-carrier-d-one-capacity-one-exclusion.md", "claims/type-I-h4-atomic-capacity-one-source-gate-exclusion.md", "data/t6-wave1/f2-h4-atomic-capacity-one-exclusion-v1.json"]
     },
     {
       "leaf_id": "F2-08-Cgt1-empty",
