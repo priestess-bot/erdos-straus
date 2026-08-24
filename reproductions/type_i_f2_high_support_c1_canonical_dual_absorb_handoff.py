@@ -120,13 +120,26 @@ def verify() -> dict[str, object]:
     expected_status = {
         "E1": "RELATIVE_TO_ACTUAL_PARENT_AND_NEW_PRODUCER_REGISTRATION",
         "E2": "ESTABLISHED_BY_CANONICAL_DUAL_IDENTITIES",
-        "E3": "OPEN_GENERIC_ORDINARY_ABSORB_OWNER_SERIALIZER_AND_CURSOR",
+        "E3": "CANONICAL_CURSOR_PAYLOAD_ESTABLISHED; OPEN_GENERIC_ORDINARY_ABSORB_OWNER_AND_SERIALIZER",
         "E4": "IDENTITY_ON_Sol_4_p_RELATIVE_TO_ADMISSION",
         "E5": "PHASE_DROP_CHARGED_TO_ABSORB_RELATIVE_TO_ADMISSION",
         "reentry": "OPEN",
     }
     if stored["obligation_status"] != expected_status:
         raise AssertionError("stored obligation boundary changed")
+    if stored["canonical_absorb_cursor"] != {
+        "formal_pair": [1, 2, 1],
+        "epsilon": "min",
+        "local_rank_payload": [3, 1, 1],
+        "boundary": "The R=3 binary formal self-loop remains nonrecursive; cursor payload alone does not establish E3 or re-entry.",
+    }:
+        raise AssertionError("stored C1 ABSORB cursor changed")
+    if stored["target_terminal_split"] != {
+        "N": "(3*p+1)/4",
+        "two_mod_three_factor": "DIRECT_TYPE_I_TERMINAL",
+        "all_factors_one_mod_three": "R3_G_RESIDUAL",
+    }:
+        raise AssertionError("stored C1 R=3 terminal split changed")
     return receipt
 
 
