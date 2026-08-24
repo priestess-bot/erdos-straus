@@ -9,6 +9,7 @@
     "R2_M3_Q5_NONMINIMAL_ROOT_RESIDUE",
     "R2_M3_Q5_TERMINAL",
     "R2_M3_Q5_DYADIC_ENDPOINT_STRICT",
+    "R2_M3_Q5_ODD_FIRST_CHILD_STRICT",
     "R2_M3_Q5_FULL_CAPACITY_ENDPOINT_STRICT",
     "R2_M3_Q5_SHORT_ENDPOINT_STRICT",
     "R2_M3_Q5_P_STUTTER_RAW_SOURCE",
@@ -17,7 +18,7 @@
     "R2_M3_Q5_P2_ONE_SIDED",
     "R2_M3_Q5_P2_TWO_SIDED"
   ],
-  "partition_contract": "R1 is selected first by missing bound path payload. Within R2, v_5(T)>=2 is the nonminimal leaf; its complement is the minimal leaf v_5(D_star)=v_5(T)=1, 5 not dividing E. The minimal leaf uses one deterministic raw policy kind: DYADIC_Q2 when E is a power of two, ODD_FULL when W_y!=delta, and ODD_SHORT when W_y=delta. Every exposed prefix and final endpoint first returns TERMINAL on the scheduler's first hit. A nonterminal recanonicalized endpoint has L_omega. If L_omega is not 1 mod p it is a strict leaf. Otherwise write L_omega=1+p*theta and split theta mod p into -1, 0, 1, or OTHER. The zero class is exactly L_omega=1 mod p^2 and is finally split by one-sided versus genuine two-sided maximal blocks. These predicates are mutually exclusive and exhaustive; L1 is never substituted for L_omega.",
+  "partition_contract": "R1 is selected first by missing bound path payload. Within R2, v_5(T)>=2 is the nonminimal leaf; its complement is the minimal leaf v_5(D_star)=v_5(T)=1, 5 not dividing E. In the minimal leaf, E pure-dyadic selects the q=2 child. Otherwise the odd first child is terminal, strict when its canonical L1 is not 1 mod p, or an internal stutter checkpoint when L1 is 1 mod p. Only that last case invokes omega_pf: ODD_FULL when W_y!=delta and ODD_SHORT when W_y=delta. Every exposed prefix/final endpoint first returns TERMINAL on the scheduler's first hit. A nonterminal recanonicalized dyadic/omega endpoint has L_omega. If L_omega is not 1 mod p it is a strict leaf. Otherwise write L_omega=1+p*theta_omega and split theta_omega mod p into -1,0,1,OTHER. The zero class is exactly L_omega=1 mod p^2 and is split by one-sided versus genuine two-sided blocks. Predicates are mutually exclusive/exhaustive; no theta_omega or p2 rule reads first-child L1.",
   "leaves": [
     {
       "leaf_id": "R1_M3_Q5_PATH_UNBOUND",
@@ -60,6 +61,16 @@
       "missing_obligations": ["E3", "D5", "D8"]
     },
     {
+      "leaf_id": "R2_M3_Q5_ODD_FIRST_CHILD_STRICT",
+      "predicate": "R2 minimal leaf, E has an odd prime factor ell, the deterministic excess-ell child is nonterminal, and its canonical first-child multiplier L1 is not 1 mod p",
+      "mutually_exclusive_with": ["all other partition leaves"],
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "odd excess-ell one-sided/atomic occurrence -> CHARGED overflow",
+      "coverage_proof": "The first-child complete-excess dichotomy is exhaustive; F_y not congruent to ell mod p is exactly the strict atomic branch, while the one-sided branch has cofactor p-ell.",
+      "current_blocker": "Source/path E1, deterministic E2, identity E4 and parent-to-final E5 are established; common E3 owner/producer/re-entry remains.",
+      "missing_obligations": ["E3", "D5", "D8"]
+    },
+    {
       "leaf_id": "R2_M3_Q5_FULL_CAPACITY_ENDPOINT_STRICT",
       "predicate": "R2 minimal leaf, E is not pure-dyadic, W_y!=delta, full-capacity endpoint is nonterminal, and L_omega is not 1 mod p",
       "mutually_exclusive_with": ["all other partition leaves"],
@@ -81,7 +92,7 @@
     },
     {
       "leaf_id": "R2_M3_Q5_P_STUTTER_RAW_SOURCE",
-      "predicate": "R2 minimal nonterminal endpoint, L_omega=1+p*theta, and theta=-1 mod p",
+      "predicate": "R2 minimal nonterminal dyadic/omega endpoint, L_omega=1+p*theta_omega, and theta_omega=-1 mod p",
       "mutually_exclusive_with": ["all other partition leaves"],
       "planned_closure": "VERIFIED_SUCCESSOR",
       "target_shape": "type_i_policy_endpoint_raw_p_source_relay_pending_v1",
@@ -91,7 +102,7 @@
     },
     {
       "leaf_id": "R2_M3_Q5_P_STUTTER_REGENERATION",
-      "predicate": "R2 minimal nonterminal endpoint, L_omega=1+p*theta, and theta=1 mod p",
+      "predicate": "R2 minimal nonterminal dyadic/omega endpoint, L_omega=1+p*theta_omega, and theta_omega=1 mod p",
       "mutually_exclusive_with": ["all other partition leaves"],
       "planned_closure": "VERIFIED_SUCCESSOR",
       "target_shape": "type_i_policy_endpoint_regeneration_pending_v1",
@@ -101,7 +112,7 @@
     },
     {
       "leaf_id": "R2_M3_Q5_P_STUTTER_RESIDUAL_STRICT",
-      "predicate": "R2 minimal nonterminal endpoint, L_omega=1+p*theta, and theta mod p is not -1,0,1",
+      "predicate": "R2 minimal nonterminal dyadic/omega endpoint, L_omega=1+p*theta_omega, and theta_omega mod p is not -1,0,1",
       "mutually_exclusive_with": ["all other partition leaves"],
       "planned_closure": "VERIFIED_SUCCESSOR",
       "target_shape": "type_i_policy_endpoint_residual_capacity_pending_v1",
@@ -111,7 +122,7 @@
     },
     {
       "leaf_id": "R2_M3_Q5_P2_ONE_SIDED",
-      "predicate": "R2 minimal nonterminal endpoint, L_omega=1+p^2*chi, and exactly one of E_u,E_v is 1",
+      "predicate": "R2 minimal nonterminal dyadic/omega endpoint, L_omega=1+p^2*chi, and exactly one of E_u,E_v is 1",
       "mutually_exclusive_with": ["all other partition leaves"],
       "planned_closure": "VERIFIED_SUCCESSOR",
       "target_shape": "type_i_policy_endpoint_one_sided_p2_pending_v1",
@@ -121,7 +132,7 @@
     },
     {
       "leaf_id": "R2_M3_Q5_P2_TWO_SIDED",
-      "predicate": "R2 minimal nonterminal endpoint, E_u,E_v>1, and E_u*E_v=1+p^2*chi",
+      "predicate": "R2 minimal nonterminal dyadic/omega endpoint, E_u,E_v>1, and E_u*E_v=1+p^2*chi",
       "mutually_exclusive_with": ["all other partition leaves"],
       "planned_closure": "VERIFIED_SUCCESSOR",
       "target_shape": "type_i_policy_endpoint_atomic_p2_pending_v1",
@@ -147,7 +158,7 @@
     "family_empty_leaves": 0,
     "terminal_leaves": 1,
     "verified_successor_leaves": 0,
-    "open_leaves": 10,
+    "open_leaves": 11,
     "conditional_or_arithmetic_only": true
   }
 }

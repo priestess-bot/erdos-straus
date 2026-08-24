@@ -263,6 +263,12 @@ strict branch (15) 给 `LOCAL_DROP`。
 不会使用 selected-side formal cofactor，也不会把 checkpoint 的局部升降计入 persistent
 graph。
 
+同一证明还覆盖 odd first child 的 strict branch：若 first-child one-sided，cofactor
+为 (p-ell<p-1)；若是 atomic，(F_y\not\equiv\ell\pmod p) 等价于 canonical
+first-child cofactor 小于 (p-1)。两者都直接使用 original parent 与该 final first-child
+target 的 `LOCAL_DROP`，不需要调用 (omega_{\rm pf})。只有 first-child atomic
+stutter (F_y\equiv\ell\pmod p) 才进入后续 policy endpoint 与 (L_\omega) 分派。
+
 ## 5. E1--E5 与 re-entry 边界
 
 | obligation | 结论 |
