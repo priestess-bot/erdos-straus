@@ -39,7 +39,9 @@ CANONICAL_INVENTORY = json.loads(INVENTORY_PATH.read_text(encoding="utf-8"))
 BASELINE_SOURCE_SIGNALS = tuple(
     row["anchor"] for row in CANONICAL_INVENTORY["source_signal_anchors"]
 )
-BASELINE_QUEUE_SIGNALS: tuple[str, ...] = ()
+BASELINE_QUEUE_SIGNALS = tuple(
+    CANONICAL_INVENTORY["runtime_surface"]["queue_api_anchors"]
+)
 
 
 def audit_inventory_document(inventory: dict):
@@ -79,6 +81,34 @@ def mutate_registered_edge_targets(root: Path, edge_id: str, targets: list[str])
 
 
 class ConstructorInventoryNegativeControls(unittest.TestCase):
+    def test_persistent_runtime_queue_anchor_is_discovered(self) -> None:
+        discovered = AUDIT.discover_queue_api_signals(
+            ROOT, CANONICAL_INVENTORY["scope"]["active_source_roots"]
+        )
+        self.assertEqual(discovered, BASELINE_QUEUE_SIGNALS)
+
+    def test_generic_append_is_not_treated_as_persistent_queue(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            scripts = root / "scripts"
+            scripts.mkdir()
+            (scripts / "ordinary_bfs.py").write_text(
+                "class Ordinary:\n"
+                "    def visit(self, item):\n"
+                "        self._queue.append(item)\n",
+                encoding="utf-8",
+            )
+            self.assertEqual(AUDIT.discover_queue_api_signals(root, ["scripts"]), ())
+
+    def test_local_runtime_does_not_close_f1(self) -> None:
+        result = AUDIT.audit_inventory(ROOT)
+        self.assertTrue(result.ok, result.errors)
+        self.assertFalse(result.closure_ready)
+        self.assertTrue(
+            any("local queue runtime exists" in warning for warning in result.warnings),
+            result.warnings,
+        )
+
     def test_missing_constructor_symbol_fails_closed(self) -> None:
         inventory = copy.deepcopy(CANONICAL_INVENTORY)
         entry = inventory["entries"][0]

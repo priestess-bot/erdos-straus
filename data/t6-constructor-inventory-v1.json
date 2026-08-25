@@ -16,7 +16,7 @@
     ],
     "archive_policy": "archive and docs/archive are evidence-only and are excluded from discovery",
     "discovery_rule": "The source census is built from active Python syntax that can emit a non-false recursive_edge_eligible value or can manufacture/accept a non-false persistent_queue flag. Registry entries are cross-checked separately; registry cardinality is never used as source completeness evidence.",
-    "completeness_boundary": "The active tree has no constructor marker protocol, selector runtime, canonical re-entry extractor, or queue API. The conservative syntax census is reproducible but cannot prove that every mathematically meaningful constructor uses one of the scanned signals."
+    "completeness_boundary": "The active tree contains one frozen local runtime protocol and its single queue mutation anchor, but it covers only the q=1 handoff/contraction slice and deliberately ends at a DEAD_END. The conservative syntax census is reproducible but cannot prove that every mathematically meaningful constructor uses the local runtime or one global admission surface."
   },
   "runtime_surface": {
     "selector_runtime": "UNASSIGNED",
@@ -24,6 +24,23 @@
     "persistent_queue_implementation": "UNASSIGNED",
     "global_enqueue_gate": "UNASSIGNED",
     "constructor_registration_marker": "UNASSIGNED",
+    "queue_api_anchors": [
+      "scripts/t6_persistent_selector_runtime_v1.py:PersistentSelectorRuntimeV1._enqueue_admitted_target_v1:self._queue.append"
+    ],
+    "local_protocols": [
+      {
+        "id": "t6_persistent_selector_runtime_v1",
+        "status": "FROZEN_LOCAL_PROTOCOL",
+        "implementation": "scripts/t6_persistent_selector_runtime_v1.py:PersistentSelectorRuntimeV1",
+        "state_admission": "scripts/t6_persistent_selector_state_v1.py:reject_before_persistent_queue_v1",
+        "queue_mutation_anchor": "scripts/t6_persistent_selector_runtime_v1.py:PersistentSelectorRuntimeV1._enqueue_admitted_target_v1:self._queue.append",
+        "registration_protocol": "InitializerRegistrationV1/ProducerRegistrationV1/BranchRegistrationV1",
+        "instantiated_slice": "scripts/t6_q_one_full_carrier_runtime_slice_v1.py:build_runtime",
+        "covered_routes": 2,
+        "final_reentry": "OPEN_DEAD_END",
+        "global_coverage": false
+      }
+    ],
     "closed_world_from_source": false
   },
   "entries": [
@@ -320,9 +337,9 @@
     {"anchor": "reproductions/type_ii_relation_scc_proper_endpoint_descent.py:proper_endpoint_dispatch:recursive_edge_eligible_nonfalse", "disposition": "REGISTERED_PRIMARY", "maps_to": "type_ii_proper_endpoint_descent"}
   ],
   "unknown_items": [
-    {"id": "U-A0-01", "kind": "RUNTIME", "status": "OPEN", "detail": "No active selector runtime or canonical constructor protocol makes semantic source completeness provable."},
-    {"id": "U-A0-02", "kind": "ENQUEUE", "status": "OPEN", "detail": "No active persistent queue implementation or global enqueue gate was found."},
-    {"id": "U-A0-03", "kind": "REENTRY", "status": "OPEN", "detail": "No canonical extractor/normalizer consumes every emitted target schema and returns a family owner."},
+    {"id": "U-A0-01", "kind": "RUNTIME", "status": "OPEN", "detail": "A frozen local runtime protocol exists only for the q=1 handoff/contraction slice; no all-constructor runtime or semantic source-completeness theorem exists."},
+    {"id": "U-A0-02", "kind": "ENQUEUE", "status": "OPEN", "detail": "The local runtime has one audited queue mutation anchor, but no theorem shows every legacy/current constructor reaches it or that no external bypass exists."},
+    {"id": "U-A0-03", "kind": "REENTRY", "status": "OPEN", "detail": "The noncircular extractor/classifier exists, but no common runtime consumes every emitted target schema and returns a recursively routed owner."},
     {"id": "U-A0-04", "kind": "SOURCE_DRIFT", "status": "OPEN", "detail": "Six non-false eligible producers in type_i_representation_dual_capacity_selector.py are not uniquely represented by the frozen registry."},
     {"id": "U-A0-05", "kind": "SOURCE_DRIFT", "status": "OPEN", "detail": "The total-cofactor typed adapter accepts a persistent_queue flag manufactured by controls but has no upstream enqueue producer registered in the frozen surface."},
     {"id": "U-A0-06", "kind": "SERIALIZER", "status": "OPEN", "detail": "The high-C=2 macro exposes H3 only as arithmetic fields; its downstream pending-dispatch class is nonrecursive in the active transition taxonomy and no H3 source/target serializer is present."},

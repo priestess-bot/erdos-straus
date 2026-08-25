@@ -1,0 +1,51 @@
+{
+  "schema_id": "t6_f2_high_support_noncanonical_normalizer_request_v1",
+  "version": 1,
+  "date": "2026-08-25",
+  "track_id": "F2-OVERFLOW-HIGH-SUPPORT",
+  "status": "REQUESTED_NOT_REGISTERED",
+  "source_quantifier": "ACTUAL_PERSISTENT TYPEI/CHARGED overflow with A>B_p, terminal-first MISS, K=A*C and C>=p+1",
+  "arithmetic_normalizer": {
+    "canonical_cofactor": "c=< (4A)^(-1) >_p",
+    "excess": "t=(C-c)/p>=1",
+    "target": "(p,R-4*A*t,A*c;A)",
+    "established": [
+      "deterministic E2 target",
+      "identity solution lift E4",
+      "strict local charged rank E5",
+      "target remains TYPEI/CHARGED overflow"
+    ]
+  },
+  "required_source_receipt": [
+    "admitted parent state_id and owner digest",
+    "source-specific terminal-first schedule and MISS",
+    "independent proof that this canonicality normalizer is an authorized source action rather than a chart reparameterization",
+    "branch precedence receipt",
+    "parent-to-final T5 ticket"
+  ],
+  "target_shape": {
+    "existing_family_match": "type_i_a_gt_one_overflow_residual unless a separately verified sink refinement applies",
+    "projector": "F2NoncanonicalTotalCofactorNormalizerV1",
+    "validator": "independent E1-E4 validator plus target terminal-first dispatcher",
+    "reentry": "shared runtime dispatch for the recomputed target owner"
+  },
+  "forbidden_inferences": [
+    "M=K,d=p-1,n=4K-R is an E1 determinant receipt",
+    "sink_scc_receipt boolean implies canonicality or an empty improvement set",
+    "the canonical C=1/C>1 determinant dual applies when C>=p+1",
+    "a local rank decrease admits a persistent successor"
+  ],
+  "activation_gates": [
+    "source-bound E1 theorem",
+    "complete target terminal priority",
+    "common E3 projector/owner/admission",
+    "universal E4 verification",
+    "shared-runtime re-entry"
+  ],
+  "does_not_claim": [
+    "an active producer",
+    "F2 high-support closure",
+    "F1 closure",
+    "a selector successor"
+  ]
+}

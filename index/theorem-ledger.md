@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 33 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 925 |
+| 数学状态 | `established` | 927 |
 | 数学状态 | `open` | 13 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 42 |
-| 证明来源 | `repository_derivation` | 756 |
+| 证明来源 | `repository_derivation` | 758 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 20 |
-| 审阅状态 | `internal_review` | 906 |
+| 审阅状态 | `internal_review` | 908 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -346,6 +346,7 @@
 | [High-support C=1 R=3 canonical anchor has no T5-admissible re-entry](../claims/type-I-f2-high-support-c1-r-three-anchor-no-reentry.md) (`type-I-f2-high-support-c1-r-three-anchor-no-reentry`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [R=3 G hard-core 11-character bridge and P-min mixed-gap partition](../claims/type-I-f2-high-support-c1-r-three-hard-core-arithmetic-partition.md) (`type-I-f2-high-support-c1-r-three-hard-core-arithmetic-partition`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [High-support C=1 R=3 dual terminal-or-G split](../claims/type-I-f2-high-support-c1-r-three-terminal-g-split.md) (`type-I-f2-high-support-c1-r-three-terminal-g-split`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
+| [High-support canonicality split and noncanonical total-cofactor normalization](../claims/type-I-f2-high-support-canonicality-total-cofactor-boundary.md) (`type-I-f2-high-support-canonicality-total-cofactor-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [High-support C>1 SPF saturation is not a physical same-chart edge](../claims/type-I-f2-high-support-cgt1-spf-saturation-provenance-barrier.md) (`type-I-f2-high-support-cgt1-spf-saturation-provenance-barrier`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [Canonical high-support determinant dual gives a deterministic low-chart handoff](../claims/type-I-f2-high-support-determinant-dual-absorb-handoff.md) (`type-I-f2-high-support-determinant-dual-absorb-handoff`) | `conditional` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [F2 high-support R=3 raw-menu obstruction and C>1 external-rechart lock](../claims/type-I-f2-high-support-r-three-raw-menu-and-external-rechart-boundary.md) (`type-I-f2-high-support-r-three-raw-menu-and-external-rechart-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
@@ -920,6 +921,7 @@
 | [F3 R3/R5 quotient-only 的规范 ideal factor 与整数 occurrence 边界](../claims/type-I-t6-f3-qc1-quotient-only-occurrence-boundary.md) (`type-I-t6-f3-qc1-quotient-only-occurrence-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [TR1 dyadic-fresh endpoint has a strict complete-excess child normal form](../claims/type-I-t6-f3-tr1-dyadic-fresh-child-normalization.md) (`type-I-t6-f3-tr1-dyadic-fresh-child-normalization`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [TR1 D-star factors split exactly into fresh raw factors and capacity-saturated factors](../claims/type-I-t6-f3-tr1-fresh-dstar-endpoint-split.md) (`type-I-t6-f3-tr1-fresh-dstar-endpoint-split`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
+| [R4 h-supported TR1 has no dyadic-fresh subleaf](../claims/type-I-t6-f3-tr1-r-four-dyadic-fresh-exclusion.md) (`type-I-t6-f3-tr1-r-four-dyadic-fresh-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [五亿普通双尾遗漏的 B=1 偶源桥边界](../claims/type-I-tail-reverse-b1-even-source-boundary-500m.md) (`type-I-tail-reverse-b1-even-source-boundary-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿普通双尾遗漏的偶源 B=8 精确低溢出边界](../claims/type-I-tail-reverse-even-small-b-boundary-500m.md) (`type-I-tail-reverse-even-small-b-boundary-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿普通尾遗漏的偶源反向二尾闭合](../claims/type-I-tail-reverse-even-source-closure-500m.md) (`type-I-tail-reverse-even-source-closure-500m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |

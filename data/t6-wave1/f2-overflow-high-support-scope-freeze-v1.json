@@ -8,10 +8,11 @@
   "status": "SCOPE_FROZEN_F2_OPEN",
   "quantifier": {
     "statement": "For every actual persistent Type-I/CHARGED overflow state S=(p,R,K;A,sigma) that survives the declared terminal-first dispatcher, with p a core prime p congruent to 1 modulo 24, A>1, 4K=pR+1, A|K, R>p, and Sol(4,p) as the chart-independent mark, the fixed precedence below must return exactly one of TERMINAL, FAMILY_EMPTY, or a common-admission VERIFIED_SUCCESSOR(E1-E5).",
-    "high_support_subdomain": "A>B_p=((p-1)^2)/4 and the source carries an actual sink/SCC receipt or an explicitly classified empty-improvement result.",
+    "high_support_subdomain": "A>B_p=((p-1)^2)/4. First split canonical 1<=C=K/A<=p-1 from noncanonical C>=p+1; only a canonical source with an actual sink/SCC receipt may use the sink candidate census.",
     "cofactor_subdomains": [
       "C=K/A=1, including the fixed-protocol local minimum boundary",
-      "C=K/A>1, including nonempty and empty rank-improvement sets"
+      "2<=C=K/A<=p-1, including nonempty and empty canonical rank-improvement sets",
+      "C=K/A>=p+1, a noncanonical total-cofactor normalizer residual"
     ],
     "actualness": [
       "source_state_id is content-addressed and parent-bound",
@@ -38,7 +39,7 @@
       "p=73 as a universal theorem; p=73 is retained only as a negative/positive control",
       "archive/ and docs/archive/ as active source or proof authority"
     ],
-    "C_definition": "C=K/A; C=1 and C>1 are separate leaves and no C=1 route may be reused for C>1 without a new proof."
+    "C_definition": "C=K/A. The canonicality identity C=c+p*t with c=< (4A)^(-1) >_p gives C in [1,p-1] exactly when R<4A; C>=p+1 must be normalized before any C=1/C>1 determinant-dual theorem is used."
   },
   "fixed_precedence": [
     {
@@ -73,11 +74,16 @@
     },
     {
       "rank": 7,
-      "id": "high_support_routing",
-      "meaning": "For A>B_p, use the complete sink/SCC candidate map with deterministic path and c_Q tie-break; split C=1 and C>1 empty-improvement cases before accepting any route."
+      "id": "noncanonical_total_cofactor_normalization",
+      "meaning": "For A>B_p and C>=p+1, recompute the unique canonical support-A chart with cofactor c=< (4A)^(-1) >_p. It has a strict local rank drop but remains nonrecursive until an independent E1 source event, target terminal-first and common E3 admission are supplied."
     },
     {
       "rank": 8,
+      "id": "high_support_routing",
+      "meaning": "For canonical A>B_p states, use the complete sink/SCC candidate map with deterministic path and c_Q tie-break; split C=1 and 2<=C<=p-1 empty-improvement cases before accepting any route."
+    },
+    {
+      "rank": 9,
       "id": "explicit_residual",
       "meaning": "Anything surviving all prior guards is an explicit residual. It may not be queued under a generic overflow label; it must be proven EMPTY, TERMINAL, or supplied a new E1-E5 target shape and admission request."
     }

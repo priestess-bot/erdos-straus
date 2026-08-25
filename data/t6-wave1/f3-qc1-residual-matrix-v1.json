@@ -25,7 +25,7 @@
     "single_side": "source-forward q_perp deflation has support A*E/q^mu and strict cofactor <-q^mu>_p",
     "atomic_strict": "the opposite multiplier F_y is not q^mu modulo p",
     "atomic_rank_stutter": "F_y is q^mu modulo p",
-    "boundary": "A verified persistent source path is still required for E1; the universal root word alone is analysis evidence."
+    "boundary": "A verified persistent source path is still required for E1; the universal root word alone is analysis evidence. Its target A*E/q^mu with cofactor <-q^mu>_p is not the existing norm-ideal QC1PhysicalTransitionV1 target A*q_perp with cofactor <-q_perp^(-1)>_p."
   },
   "leaves": [
     {
@@ -64,8 +64,8 @@
       ],
       "coverage_proof": "Complement of the missing/invalid integer-occurrence-or-conservation branch inside terminal-first-surviving R3.",
       "planned_closure": "CONDITIONAL_TARGET_THEN_SHARED_RUNTIME_ADMISSION",
-      "target_shape": "QC1PhysicalTransitionV1",
-      "current_blocker": "On this conditional leaf E1 occurrence/conservation is assumed; real source/mark/scope replay, target terminal dispatch, universal E4 lift and shared runtime admission remain open."
+      "target_shape": "QC1 norm-ideal shape only if its own occurrence theorem applies; q_perp|E uses the separate QC1EndpointExcessDeflationV1 shape",
+      "current_blocker": "On this conditional leaf E1 occurrence/conservation is assumed; endpoint-deflation additionally needs its distinct deterministic E2 projector, target terminal dispatch, universal E4 lift and shared runtime admission."
     },
     {
       "leaf_id": "QC1_R5_TERMINAL_PREEMPTED",
@@ -103,8 +103,8 @@
       ],
       "coverage_proof": "Complement of the missing/invalid integer-occurrence-or-conservation branch inside terminal-first-surviving R5.",
       "planned_closure": "CONDITIONAL_TARGET_THEN_SHARED_RUNTIME_ADMISSION",
-      "target_shape": "QC1PhysicalTransitionV1",
-      "current_blocker": "On this conditional leaf E1 occurrence/conservation is assumed; real source/mark/scope replay, target terminal dispatch, universal E4 lift and shared runtime admission remain open."
+      "target_shape": "QC1 norm-ideal shape only if its own occurrence theorem applies; q_perp|E uses the separate QC1EndpointExcessDeflationV1 shape",
+      "current_blocker": "On this conditional leaf E1 occurrence/conservation is assumed; endpoint-deflation additionally needs its distinct deterministic E2 projector, target terminal dispatch, universal E4 lift and shared runtime admission."
     }
   ],
   "coverage_statement": "Within each owned residual, terminal-first hit and miss are disjoint. On a miss, the conjunction of a path-bound integer q_perp occurrence and one-use charge conservation is either valid or not valid. The m=3 versus m>3 split makes the R3 and R5 leaves disjoint; their union is the whole F3-QC1 scope.",

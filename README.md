@@ -281,6 +281,16 @@ prefix 的 terminal-first receipt 绑定到同一 target。详见
 这三条结论及下一步的 proof order 见
 [`docs/T6_F2_F3_FOURTH_WAVE_BOUNDARIES_2026-08-25.md`](docs/T6_F2_F3_FOURTH_WAVE_BOUNDARIES_2026-08-25.md)。
 
+### Gate 审计更新（2026-08-25）
+
+当前共享 runtime 的唯一 queue mutation 已被 source audit 精确识别，但它只覆盖两条 q=1
+局部 route，terminal schedule 也不是完整 p-level oracle；因此 F1 仍有 9 个 unknown，
+不能把该 runtime MISS 当 C8/H4/F3 的 complete terminal-first receipt。F2 high-support
+同时补入 canonical/noncanonical 分流：仅 \(1\le K/A<p\) 可调用现有 C=1/C>1
+determinant-dual 定理，\(K/A\ge p+1\) 是独立的 E1/E3-open normalizer residual。QC1
+endpoint-excess deflation 也获得独立 target-shape request，不能复用 norm-ideal target。
+详见 [T6 F2/F3 Gate Audit](docs/T6_F2_F3_GATE_AUDIT_2026-08-25.md)。
+
 ## 快速使用
 
 ```bash

@@ -96,6 +96,41 @@ def _function_owner(node: ast.AST, parents: Mapping[ast.AST, ast.AST]) -> str:
     return "<module>"
 
 
+def _class_owner(node: ast.AST, parents: Mapping[ast.AST, ast.AST]) -> str:
+    current = node
+    while current in parents:
+        current = parents[current]
+        if isinstance(current, ast.ClassDef):
+            return current.name
+    return "<module>"
+
+
+def _is_persistent_runtime_queue_append(
+    node: ast.Call, parents: Mapping[ast.AST, ast.AST], relative: str
+) -> bool:
+    """Recognize the one concrete queue mutation in the shared runtime.
+
+    Generic list.append calls in reproductions are often search/BFS
+    bookkeeping. This deliberately recognizes only the internal queue owned
+    by PersistentSelectorRuntimeV1.
+    """
+    if relative != "scripts/t6_persistent_selector_runtime_v1.py":
+        return False
+    if not (
+        isinstance(node.func, ast.Attribute)
+        and node.func.attr == "append"
+        and isinstance(node.func.value, ast.Attribute)
+        and node.func.value.attr == "_queue"
+        and isinstance(node.func.value.value, ast.Name)
+        and node.func.value.value.id == "self"
+    ):
+        return False
+    return (
+        _class_owner(node, parents) == "PersistentSelectorRuntimeV1"
+        and _function_owner(node, parents) == "_enqueue_admitted_target_v1"
+    )
+
+
 def _is_literal_false(node: ast.AST | None) -> bool:
     return isinstance(node, ast.Constant) and node.value is False
 
@@ -181,6 +216,12 @@ def discover_queue_api_signals(root: Path, active_roots: Iterable[str]) -> tuple
                 parents[child] = node
         for node in ast.walk(tree):
             if not isinstance(node, ast.Call):
+                continue
+            if _is_persistent_runtime_queue_append(node, parents, relative):
+                signals.add(
+                    f"{relative}:PersistentSelectorRuntimeV1."
+                    "_enqueue_admitted_target_v1:self._queue.append"
+                )
                 continue
             call_name = ""
             if isinstance(node.func, ast.Name):
@@ -511,10 +552,50 @@ def audit_inventory(
             "constructor_registration_marker",
         )
     )
-    if queue_discovered and runtime.get("persistent_queue_implementation") == "UNASSIGNED":
-        errors.append(f"QUEUE_API_UNINVENTORIED: {list(queue_discovered)}")
-    if not queue_discovered and runtime.get("persistent_queue_implementation") != "UNASSIGNED":
-        errors.append("runtime claims a persistent queue but no queue mutation API was found")
+    queue_anchors = runtime.get("queue_api_anchors", [])
+    if not isinstance(queue_anchors, list) or not all(
+        isinstance(item, str) and item for item in queue_anchors
+    ):
+        errors.append("runtime_surface.queue_api_anchors must be a string list")
+        queue_anchors = []
+    missing_queue_anchors = sorted(set(queue_discovered) - set(queue_anchors))
+    stale_queue_anchors = sorted(set(queue_anchors) - set(queue_discovered))
+    if missing_queue_anchors:
+        errors.append(f"QUEUE_API_UNINVENTORIED: {missing_queue_anchors}")
+    if stale_queue_anchors:
+        errors.append(f"INVENTORY_QUEUE_API_NOT_IN_SOURCE: {stale_queue_anchors}")
+
+    local_protocols = runtime.get("local_protocols", [])
+    if not isinstance(local_protocols, list):
+        errors.append("runtime_surface.local_protocols must be a list")
+        local_protocols = []
+    local_protocol_ids: set[str] = set()
+    for index, protocol in enumerate(local_protocols):
+        if not isinstance(protocol, dict):
+            errors.append(f"runtime_surface.local_protocols[{index}] must be an object")
+            continue
+        protocol_id = protocol.get("id")
+        if not isinstance(protocol_id, str) or not protocol_id:
+            errors.append(f"runtime_surface.local_protocols[{index}].id is missing")
+            continue
+        if protocol_id in local_protocol_ids:
+            errors.append(f"duplicate local runtime protocol id: {protocol_id}")
+        local_protocol_ids.add(protocol_id)
+        for field in (
+            "status",
+            "implementation",
+            "state_admission",
+            "queue_mutation_anchor",
+            "registration_protocol",
+            "global_coverage",
+        ):
+            if field not in protocol:
+                errors.append(f"local runtime protocol {protocol_id} missing {field}")
+        anchor = protocol.get("queue_mutation_anchor")
+        if isinstance(anchor, str) and anchor not in queue_anchors:
+            errors.append(
+                f"local runtime protocol {protocol_id} uses unregistered queue anchor"
+            )
 
     all_entry_gates_assigned = all(
         isinstance(entry.get("serializer"), dict)
@@ -549,6 +630,11 @@ def audit_inventory(
         )
     if not queue_discovered:
         warnings.append("F1 remains OPEN: no concrete enqueue/queue mutation API was found")
+    elif not runtime_assigned:
+        warnings.append(
+            "F1 remains OPEN: local queue runtime exists, but global constructor "
+            "routing/reentry coverage is unproved"
+        )
     if not runtime_assigned:
         warnings.append("F1 remains OPEN: selector runtime/extractor/queue contracts are unassigned")
 

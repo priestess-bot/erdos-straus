@@ -17,6 +17,13 @@
     "arithmetic_existence": "proved whenever k_perp>1",
     "e1_boundary": "The oriented ideal factor (q_perp,omega-lambda)|(a-b*omega) is algebraic evidence only. The requested envelope must additionally bind this q_perp to a specific integer raw side/node/path above current K capacity and prove one-use support charge conservation."
   },
+  "endpoint_excess_deflation_refinement": {
+    "status": "SEPARATE_TARGET_SHAPE_REQUIRED",
+    "guard": "q_perp divides the canonical endpoint multiplier E and a replayable source-forward raw occurrence z -> z/q_perp has been independently verified",
+    "target_formula": "A_T=A*E/q_perp^mu, c_T=<-q_perp^mu>_p, with mu=1 or v_q(p-1)+1 from the endpoint valuation boundary",
+    "nonidentity_with_norm_shape": "The existing norm-ideal proposal A_T=A*q_perp, c_T=<-q_perp^(-1)>_p agrees only under an additional unproved relation on E. It must not be reused as this endpoint-deflation projector.",
+    "status_boundary": "This is E2/E3 target typing only after E1 is supplied; it is not a producer request or a physical edge."
+  },
   "common_envelope_fields": [
     "envelope_version",
     "source_state_id",
@@ -67,6 +74,16 @@
       "admission_requirement": "target must be rebuilt by the common serializer and accepted by the common admission gate"
     },
     {
+      "shape_id": "QC1_ENDPOINT_EXCESS_DEFLATION_TARGET",
+      "existing_family_match": "type_i_a_gt_one_overflow_residual when the independently recomputed chart has R_T>p and A_T>1",
+      "new_family_required": false,
+      "atomic_arm_required": "only if the independently recomputed opposite-side maximal block is nontrivial",
+      "mark_behavior": "preserve ordinary Sol(p); no nontrivial mark may be introduced",
+      "t5_ticket_type": "LOCAL_DROP from the actual persistent parent to the final target, never from a raw checkpoint",
+      "owner_precedence_request": "run target terminal-first and recompute owner from the endpoint-deflation chart; do not inherit QC1 norm-ideal owner or cofactor",
+      "admission_requirement": "requires a distinct endpoint-deflation projector, validator and re-entry proof; QC1PhysicalTransitionV1 norm-ideal output is not interchangeable"
+    },
+    {
       "shape_id": "QC1_NEW_FAMILY_CANDIDATE",
       "existing_family_match": null,
       "new_family_required": true,
@@ -96,12 +113,13 @@
     "reentry": "Every nonterminal target is admitted into the frozen F1 grammar, otherwise the result remains a rejected candidate."
   },
   "requested_coordinator_decisions": [
-    "approve the QC1PhysicalTransitionV1 envelope name and version",
+    "approve the QC1PhysicalTransitionV1 norm-ideal envelope name and version only after an integer occurrence theorem is supplied",
+    "create a separate QC1EndpointExcessDeflationV1 projector/validator before any q_perp|E source is considered for admission",
     "do not approve an ideal-norm charge rule until an integer occurrence and conservation theorem is supplied",
     "defer producer registration until the integer occurrence/conservation theorem exists; the eventual rule would use R3/R5 branch ids, proper_root_stutter_k_gt_one source owner, and type_i_a_gt_one_overflow_residual target owner",
     "freeze the common terminal dispatcher consumed before target admission",
     "provide the common admission API binding used for E3 and re-entry",
     "confirm that no new family, mark, atomic arm, or T2/T3 extension is required"
   ],
-  "status": "CONDITIONAL_TARGET_SHAPE_OPEN_E1_AND_RUNTIME"
+  "status": "CONDITIONAL_NORM_SHAPE_AND_ENDPOINT_DEFLECTION_E2_OPEN"
 }
