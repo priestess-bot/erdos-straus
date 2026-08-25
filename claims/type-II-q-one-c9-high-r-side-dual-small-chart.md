@@ -67,7 +67,7 @@ M=2(140k+11)(40k+3),
 Thus the support residue is the inverse of \(36\) modulo \(p\):
 
 \[
-r:=M\bmod p,\qquad 36r\equiv1\pmod p.
+1\le r:=M\bmod p<p,\qquad 36r\equiv1\pmod p.
 \tag{3}
 \]
 
