@@ -141,9 +141,11 @@ K_T=L(p-d),\quad K_T=L(p-r),\quad K_T=L(p-S/L),
 
 with the corresponding positivity guards \(1\le d,r,S/L<p\). Same-chart
 promotion has the same \(K_T=M(p-d)\) form. The q=1 runtime root starts with
-\(A=1\); its contraction targets use (5), and its optional third-anchor target
+\(A=1\); its contraction targets use (8), and its optional third-anchor target
 has fixed cofactor \(C_T=9\), with \(9<p\) on the declared branch. The q=1
-relay targets have cofactor at most (p-1) (or (p-2) before regeneration).
+relay targets have cofactor \(c\le p-2\) on non-regeneration steps; the
+immediate regeneration target has \(c=p-1\), after which the next target again
+has \(c\le p-2\).
 Thus the image of the currently executable runtime contains no state with
 
 \[

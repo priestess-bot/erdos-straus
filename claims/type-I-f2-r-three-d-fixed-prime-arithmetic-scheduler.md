@@ -84,7 +84,7 @@ guards in this order:
 3. \(\gcd(A,B)=1\);
 4. \(g=\gcd(h,D)\).
 
-Failure of any of the first three guards is FAMILY_EMPTY for that row. If
+Failure of any of the first three guards is the row-local FAMILY_EMPTY leaf. If
 \(g=1\), the row is not a \(D\)-contact. If \(g=h\), it is delegated to the
 previously isolated full-contact branch. The only new terminal leaf is
 \[
@@ -124,6 +124,8 @@ Conversely, take a row passing the first three guards and \(1<g<h\). Equation
 \[
 A+B=Km.
 \]
+Consequently \(p+m=4ABC\), and \(m\mid A+B\) is already encoded by this
+identity.
 The order and coprimality guards make the AC normal form legal. The standard
 reconstruction
 \[
