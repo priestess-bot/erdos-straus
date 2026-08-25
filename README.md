@@ -263,6 +263,24 @@ C8 relay、fresh scope、E1 或 re-entry。
 prefix 的 terminal-first receipt 绑定到同一 target。详见
 [`docs/T6_F2_F3_THIRD_WAVE_PROOF_REVIEW_2026-08-25.md`](docs/T6_F2_F3_THIRD_WAVE_PROOF_REVIEW_2026-08-25.md)。
 
+### 第四轮数学收缩（2026-08-25）
+
+后续推导进一步缩小了三条剩余路线，但仍没有新增 selector edge。
+
+- F2 R=3 hard core 中，\(D=2p-3\) 不能整体充当新的 Type II AC defining factor：唯一
+  两个整数可能分别被 gap-7 terminal 和 \(p+4\) hard-core 条件排除。剩余 Type II 机制
+  必须是 \(q\mid D\) 的 mixed cofactor completion，同时满足两条显式同余；固定 Type I
+  模板也满足 \(m\mid D\iff m\mid2A+3B\)。
+- canonical q=1 root 的 direct single-side/atomic landing 已有完整 lcm/maximality 与 E5
+  门。大 root prime-power sector 为空，但 \(p=73\) 的静态 atomic countercontrol 表明
+  不能用 carrier bound 把整个 smooth sector 删除。
+- TR1 dyadic-fresh \(2\mid(D_*,E)\) 强制精确 2-adic 正规形，并把 child 缩为 terminal、
+  strict one-sided、strict atomic 或一个 atomic companion gate；后者仍缺 source-bound
+  recanonicalization。
+
+这三条结论及下一步的 proof order 见
+[`docs/T6_F2_F3_FOURTH_WAVE_BOUNDARIES_2026-08-25.md`](docs/T6_F2_F3_FOURTH_WAVE_BOUNDARIES_2026-08-25.md)。
+
 ## 快速使用
 
 ```bash

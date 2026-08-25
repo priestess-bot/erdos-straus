@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 33 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 922 |
+| 数学状态 | `established` | 925 |
 | 数学状态 | `open` | 13 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 42 |
-| 证明来源 | `repository_derivation` | 753 |
+| 证明来源 | `repository_derivation` | 756 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 20 |
-| 审阅状态 | `internal_review` | 903 |
+| 审阅状态 | `internal_review` | 906 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -350,6 +350,7 @@
 | [Canonical high-support determinant dual gives a deterministic low-chart handoff](../claims/type-I-f2-high-support-determinant-dual-absorb-handoff.md) (`type-I-f2-high-support-determinant-dual-absorb-handoff`) | `conditional` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [F2 high-support R=3 raw-menu obstruction and C>1 external-rechart lock](../claims/type-I-f2-high-support-r-three-raw-menu-and-external-rechart-boundary.md) (`type-I-f2-high-support-r-three-raw-menu-and-external-rechart-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [F2 A>1 overflow 的 determinant receipt 前置分拆与 p=409 异常处置](../claims/type-I-f2-overflow-determinant-prepartition.md) (`type-I-f2-overflow-determinant-prepartition`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-24 |
+| [R=3 hard-core D-contact cannot directly carry a new Type II terminal](../claims/type-I-f2-r-three-d-contact-terminal-boundary.md) (`type-I-f2-r-three-d-contact-terminal-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [无因数分解中心 hit 的 Type I 终端序列化](../claims/type-I-factorization-free-centered-hit-terminal-serializer.md) (`type-I-factorization-free-centered-hit-terminal-serializer`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [固定 D 一跳 F/G source-map 的 canonical—SNF—owner 闭合三分](../claims/type-I-fg-canonical-d-lattice-owner-closure.md) (`type-I-fg-canonical-d-lattice-owner-closure`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [F/G 相关角色物理义务的求值配对、广义 Rado 与张量和选择器](../claims/type-I-fg-dependent-role-evaluation-rado-tensor-selector.md) (`type-I-fg-dependent-role-evaluation-rado-tensor-selector`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-10 |
@@ -917,6 +918,7 @@
 | [T6-F3 proper-root 的确定域路由与显式 residual 穷尽](../claims/type-I-t6-f3-proper-root-routing-with-explicit-residuals.md) (`type-I-t6-f3-proper-root-routing-with-explicit-residuals`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-23 |
 | [QC1 endpoint-excess q deflation has a canonical strict target](../claims/type-I-t6-f3-qc1-endpoint-excess-deflation.md) (`type-I-t6-f3-qc1-endpoint-excess-deflation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [F3 R3/R5 quotient-only 的规范 ideal factor 与整数 occurrence 边界](../claims/type-I-t6-f3-qc1-quotient-only-occurrence-boundary.md) (`type-I-t6-f3-qc1-quotient-only-occurrence-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
+| [TR1 dyadic-fresh endpoint has a strict complete-excess child normal form](../claims/type-I-t6-f3-tr1-dyadic-fresh-child-normalization.md) (`type-I-t6-f3-tr1-dyadic-fresh-child-normalization`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [TR1 D-star factors split exactly into fresh raw factors and capacity-saturated factors](../claims/type-I-t6-f3-tr1-fresh-dstar-endpoint-split.md) (`type-I-t6-f3-tr1-fresh-dstar-endpoint-split`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [五亿普通双尾遗漏的 B=1 偶源桥边界](../claims/type-I-tail-reverse-b1-even-source-boundary-500m.md) (`type-I-tail-reverse-b1-even-source-boundary-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿普通双尾遗漏的偶源 B=8 精确低溢出边界](../claims/type-I-tail-reverse-even-small-b-boundary-500m.md) (`type-I-tail-reverse-even-small-b-boundary-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
@@ -1217,6 +1219,7 @@
 | [q=1 C=9 high target 的确定性 r-side dual 至 R=11/23/35](../claims/type-II-q-one-c9-high-r-side-dual-small-chart.md) (`type-II-q-one-c9-high-r-side-dual-small-chart`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [q=1 C=9 R=23 row 的固定尾终端子射线](../claims/type-II-q-one-c9-r23-fixed-tail-terminal-ray.md) (`type-II-q-one-c9-r23-fixed-tail-terminal-ray`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [q=1 规范根的默认入口容量缺口](../claims/type-II-q-one-canonical-root-default-entry-capacity-gap.md) (`type-II-q-one-canonical-root-default-entry-capacity-gap`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
+| [Canonical q=1 root direct complete-excess landing has an exact integer kernel](../claims/type-II-q-one-canonical-root-direct-complete-excess-landing-gate.md) (`type-II-q-one-canonical-root-direct-complete-excess-landing-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [q=1 规范根的一步完整乘积前驱刚性](../claims/type-II-q-one-canonical-root-full-product-predecessor-rigidity.md) (`type-II-q-one-canonical-root-full-product-predecessor-rigidity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 G 退出的规范根切片：严格 carry 与源支撑互素屏障](../claims/type-II-q-one-canonical-root-slice-support-disjointness.md) (`type-II-q-one-canonical-root-slice-support-disjointness`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 载体保留的 Type II 因子对终端与严格递降射线](../claims/type-II-q-one-carrier-preserving-factor-pair-ray.md) (`type-II-q-one-carrier-preserving-factor-pair-ray`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |

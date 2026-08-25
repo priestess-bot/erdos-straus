@@ -78,9 +78,10 @@
         "if P=p+4 is composite, h=spf(P) gives an exact m=3h mixed-residue terminal screen that can still miss",
         "the canonical R=3 universal-anchor Q=2 continuation is T5-inadmissible",
         "the universal R=3 raw source has a complete non-p first-label menu q|2p-3; p=2521 is a hard-core control with 2p-3 prime, so no universal non-anchor first-edge theorem is possible",
+        "a Type II AC defining factor cannot itself divide D=2p-3 in the hard core; the only arithmetic possibilities are already terminal or contradict p+4 hard-core",
         "no generic C1 family is admitted"
       ],
-      "exact_blocker": "For the exact R=3-G hard-core branch, the canonical universal anchor is an ABSORB-to-CHARGED T5 ascent and cannot be hidden in a macro. The universal raw source does not uniformly supply a non-anchor first edge. No inherited-scope non-bottom/Type-II route, complete target terminal schedule, E3 ABSORB admission, or non-upward re-entry theorem exists.",
+      "exact_blocker": "For the exact R=3-G hard-core branch, the canonical universal anchor is an ABSORB-to-CHARGED T5 ascent and cannot be hidden in a macro. The universal raw source does not uniformly supply a non-anchor first edge, and D=2p-3 cannot itself be a new Type II defining factor. No inherited-scope non-bottom route, mixed q|D Type-II cofactor-completion terminal, E3 ABSORB admission, or non-upward re-entry theorem exists.",
       "missing": ["E1", "E2", "E3", "E5", "D2", "D5", "D7", "D8"],
       "next_minimal_theorem": "Construct a terminal or actual source-preserving non-anchor raw/Type-II route whose endpoint admits without upward ABSORB re-entry, or prove the hard-core family empty."
     },
@@ -137,8 +138,8 @@
     {
       "id": "F3-TR1-PHYSICAL-OCCURRENCE",
       "quantifier": "R4/R6 low proper-root terminal-first survivors with k_perp=1, excluding m3 q5.",
-      "established_reductions": ["actual root-height u supports complete composite-Q terminal menus", "R6 k=3 forces u>1 and therefore cannot skip that menu", "D_star has an exact fresh-versus-capacity-saturated endpoint split through gcd(D_star,E)", "a dyadic fresh factor gives a conditional p-free raw suffix", "complete terminal menu ordering"],
-      "exact_blocker": "Every 1<Q|u menu must be replayed before D_star routing. A D_star prime is consumable only in the fresh gcd(D_star,E)>1 subcase and only after a source-bound endpoint transcript; the saturated complement has no current paid factor. No full terminal/physical TR1 exhaustion theorem exists.",
+      "established_reductions": ["actual root-height u supports complete composite-Q terminal menus", "R6 k=3 forces u>1 and therefore cannot skip that menu", "D_star has an exact fresh-versus-capacity-saturated endpoint split through gcd(D_star,E)", "a dyadic fresh factor gives a conditional p-free raw suffix", "the dyadic-fresh subcase has an exact 2-adic child normal form and only one atomic companion stutter gate", "complete terminal menu ordering"],
+      "exact_blocker": "Every 1<Q|u menu must be replayed before D_star routing. A D_star prime is consumable only in the fresh gcd(D_star,E)>1 subcase and only after a source-bound endpoint transcript; the dyadic fresh child still needs terminal priority, target typing and an atomic-companion p-block resolution. The saturated complement has no current paid factor. No full terminal/physical TR1 exhaustion theorem exists.",
       "missing": ["E1", "E2", "E3", "E4", "E5", "D3-D8"],
       "next_minimal_theorem": "Replay the full Q|u terminal prefix, then prove a D_star factor has a fresh integer raw occurrence and select the least such factor with deterministic consumption."
     },
@@ -190,6 +191,14 @@
       "established": "c_T=1, high-support TYPEI/CHARGED target, and conditional parent-to-final LOCAL_DROP.",
       "continuation": "F2-HIGH-SUPPORT-C1 terminal-or-R3-G residual.",
       "missing": ["E1_ACTIVE_PRODUCER", "E3_TERMINAL_SERIALIZER_AND_ADMISSION", "F2_REENTRY"],
+      "status": "OPEN_CROSS_TRACK_HANDOFF"
+    },
+    {
+      "id": "Q1-CANONICAL-ROOT-DIRECT-LANDING",
+      "guard": "Ordinary same-protocol single-side or atomic complete-excess target has support exactly the canonical q=1 root support.",
+      "established": "Exact lcm/valuation kernels, a direct E5 low-support filter, a large-prime-power EMPTY sector, and a static atomic countercontrol in the remaining smooth-root sector.",
+      "continuation": "Bind one actual fresh source path to the root-landing kernel, then run terminal priority, target admission and re-entry.",
+      "missing": ["E1_SOURCE_SCOPE_AND_TRANSCRIPT", "E3_COMMON_ADMISSION", "E4_LIFT_RECEIPT", "E5_PARENT_TO_FINAL_MACRO_WHEN_NOT_DIRECT", "F3_REENTRY"],
       "status": "OPEN_CROSS_TRACK_HANDOFF"
     }
   ],
