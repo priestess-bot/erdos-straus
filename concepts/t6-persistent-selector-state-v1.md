@@ -126,9 +126,17 @@ same_chart_promotion_receipt
 \tag{2}
 \]
 
-以及所声明 provenance 所需的基本 typed 条件。例如 overflow 要求 `CHARGED` 与 `R>p`；
-ordinary marked-absorb 要求 `ABSORB` 与 `R<p`；proper-root 必须声明 `LOW/HIGH` 和 root
-parameter `r`，并直接重算 (M=(p^2+p+1)/3)、(u=(2r+1,M))、(h=3u) 及真因子门；只有
+以及所声明 provenance 所需的基本 typed 条件。`is_overflow` 是 chart 几何而不是 source
+lineage：对 `TYPEI/CHARGED`，它当且仅当 `R>p`；generic `OVERFLOW` provenance 必须带该
+几何，但 `C8_PARENT` 与 `PROPER_ROOT` 也可以同时为 overflow。ordinary marked-absorb 要求
+`ABSORB` 与 `R<p`；proper-root 必须声明 `LOW/HIGH` 和 root parameter `r`，并直接重算
+
+\[
+g=(p+1)/2,\quad A=g(p^2r-g),\quad K=A(p-1),\quad
+R=2p^3r-p^2-2pr-p+1,
+\]
+
+以及 \(M=(p^2+p+1)/3\)、\(u=(2r+1,M)\)、\(h=3u\) 和真因子门；只有
 `LOW` 提供正整数 `k`；atomic pending 要给出冻结 arm 与 `PENDING`。protocol 的规范 rank
 字段也进入 facts，runtime 不能从外部 cache 读取 T5 descriptor。这些是 owner predicate
 的输入，不是假设“某个完整 normal form 已被 normalizer 接纳”。
@@ -218,13 +226,22 @@ Type-I header 的无条件 fallback。
 
 ### 4.2 合法重叠不是任意 first-match
 
-谓词不被假定两两不交。当前只允许一类可解释重叠：
+谓词不被假定两两不交。当前只允许两类可解释重叠：
 
-- 四个 overflow 层之间的 refinement/fallback 重叠。
+- 四个 overflow 层之间的 refinement/fallback 重叠；
+- `c8_terminal_first_surviving_parent` 与其显式列出的 overflow refinement，以及三个
+  proper-root owner 与 high-support overflow refinement。
+
+后一类不是把来源谱系抹成 generic `OVERFLOW`。例如真实 c=8 parent 与 proper-root chart
+都可有 \(R>p\)：固定 precedence 仍选择 C8/proper-root owner，而 overflow predicate 只提供
+它的图表细分。allowlist 不包含 C8 与 proper-root 的交叠，也不包含任何 post-G、H4、C2 或
+未来谱系的隐式交叠。
 
 特别地，H4、c=8、C=2、atomic pending、proper-root 与 overflow 不得只因仍携带某个历史
-full-carrier scope 就命中 post-G owner；它们必须由自己的 source provenance 分类。这个限制避免
-用最后一个宽泛 predicate 掩盖缺失的专用 receipt。
+full-carrier scope 就命中 post-G owner；它们必须由自己的 source provenance 分类。C8 relay、
+proper-root fresh scope 和 raw transcript 仍必须由 future producer receipt 支付；本合同只修复
+header 的图表/谱系一致性，不能把这些缺失回执变成 E1。这个限制避免用最后一个宽泛 predicate
+掩盖缺失的专用 receipt。
 
 若命中集合为
 

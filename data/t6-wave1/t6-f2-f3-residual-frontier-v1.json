@@ -4,7 +4,7 @@
   "date": "2026-08-25",
   "integration_branch": "integration/t6-f2-f3-wave1",
   "baseline_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
-  "grammar_hash": "c099fdecf9ac0b98ed769a6bc52628991aba26027cfb1853b5b3f8b168e8a7da",
+  "grammar_hash": "ffba0a082073127ba1090eb02fd666aa7621fd55ef0045061d549a3e2defb00a",
   "status": {
     "F1": "OPEN_MINIMAL_GAPS",
     "F2": "OPEN",
@@ -56,9 +56,10 @@
         "OTHER capacity lies in 9..p-2",
         "atomic target fiber is recomputed rather than inherited",
         "parent-to-final N7 formula is available conditionally",
-        "terminal-first q_star=103 c8 source reduced to two exact 34608-modulus rays"
+        "terminal-first q_star=103 c8 source reduced to two exact 34608-modulus rays",
+        "C8 parent lineage is now represented as a high-support overflow without removing its specific owner"
       ],
-      "exact_blocker": "Current c8/H4 harness still uses synthetic source/MISS/evidence fields rather than the common runtime. The c8 q_star=103 source is narrowed to two rough rays, but a complete terminal-first MISS, parent trace, source-owner resolution and common re-entry remain open.",
+      "exact_blocker": "Current c8/H4 harness still uses synthetic source/MISS/evidence fields rather than the common runtime. The c8 q_star=103 source is narrowed to two rough rays, but a complete terminal-first MISS, parent trace/relay receipt, source-tree scope continuity and common re-entry remain open.",
       "missing": ["E1", "E3", "D1", "D3", "D5", "D8", "D10"],
       "next_minimal_theorem": "Implement an actual parent-bound H4_A1 or C8_DOUBLE_LOW runtime producer with independently replayed source terminal schedule and final chart validator."
     },
@@ -76,9 +77,10 @@
         "the hard core has gcd(p+4,(3p+1)/4)=1 and the Jacobi bridge (33/N)=(P/11)",
         "if P=p+4 is composite, h=spf(P) gives an exact m=3h mixed-residue terminal screen that can still miss",
         "the canonical R=3 universal-anchor Q=2 continuation is T5-inadmissible",
+        "the universal R=3 raw source has a complete non-p first-label menu q|2p-3; p=2521 is a hard-core control with 2p-3 prime, so no universal non-anchor first-edge theorem is possible",
         "no generic C1 family is admitted"
       ],
-      "exact_blocker": "For the exact R=3-G hard-core branch, the canonical universal anchor is an ABSORB-to-CHARGED T5 ascent and cannot be hidden in a macro. No E1-bound non-anchor raw/Type-II route, complete target terminal schedule, E3 ABSORB admission, or non-upward re-entry theorem exists. The 11-character and P-min screens only refine the arithmetic residual.",
+      "exact_blocker": "For the exact R=3-G hard-core branch, the canonical universal anchor is an ABSORB-to-CHARGED T5 ascent and cannot be hidden in a macro. The universal raw source does not uniformly supply a non-anchor first edge. No inherited-scope non-bottom/Type-II route, complete target terminal schedule, E3 ABSORB admission, or non-upward re-entry theorem exists.",
       "missing": ["E1", "E2", "E3", "E5", "D2", "D5", "D7", "D8"],
       "next_minimal_theorem": "Construct a terminal or actual source-preserving non-anchor raw/Type-II route whose endpoint admits without upward ABSORB re-entry, or prove the hard-core family empty."
     },
@@ -91,9 +93,10 @@
         "arbitrarily long C=2 carry stutter controls rule out a bounded carry-only descent theorem",
         "fixed-n/fixed-s and total-cofactor cannot lower the high-support cofactor",
         "arithmetic support saturation A->A*spf(C) lowers C but is structurally outside the existing determinant ledger because spf(C) does not divide d=p-C",
-        "a full q-excess block necessarily re-charts and cannot realize same-chart SPF saturation"
+        "a full q-excess block necessarily re-charts and cannot realize same-chart SPF saturation",
+        "every current full-excess external rechart with M=lcm(A,Q)>A remains TYPEI/CHARGED overflow and, on empty-improvement, cannot pay LOCAL_DROP"
       ],
-      "exact_blocker": "No actual-source terminal/phase/outer-rank exit covers the empty-improvement complement. The tempting q|C saturation route has neither fixed-n nor same-chart full-excess E1 provenance; carry/checkpoint facts do not pay E5.",
+      "exact_blocker": "No actual-source terminal/phase/outer-rank exit covers the empty-improvement complement. The tempting q|C saturation route has neither fixed-n nor same-chart full-excess E1 provenance; the current external full-excess rechart cannot supply an ABSORB phase drop or E5 payment.",
       "missing": ["E1", "E2", "E3", "E4", "E5", "D2", "D5", "D7", "D8"],
       "next_minimal_theorem": "Prove an actual lower-protocol/terminal/outer-rank dichotomy for C>1 empty-improvement, not another bounded carry lemma."
     }
@@ -102,8 +105,8 @@
     {
       "id": "F3-HIGH-STRICT-CARRY",
       "quantifier": "ACTUAL_PERSISTENT proper-factor root with h>p, terminal miss and high-domain c<=p-2.",
-      "established_reductions": ["high-domain normal form", "current q1/positive-q G entries directly produce only low full-carrier charts", "canonical target is R_T>p overflow", "identity lift and conditional parent-to-final local drop"],
-      "exact_blocker": "High arithmetic identity is replayed from r/M/u/h facts, but no target-independent high charged source path, final E3 admission, or re-entry is active.",
+      "established_reductions": ["high-domain normal form", "root chart A/K/R is coupled to r in the shared type contract", "current q1/positive-q G entries directly produce only low full-carrier charts", "canonical target is R_T>p overflow", "the default fresh two-step menu cannot reach a high root by a third canonical full-product fold", "identity lift and conditional parent-to-final local drop"],
+      "exact_blocker": "No target-independent high charged source path, source-tree scope continuity, final E3 admission, or re-entry is active. Single-side complete-excess and atomic third steps remain outside the new narrow full-product obstruction.",
       "missing": ["E1", "E3", "D5", "D8"],
       "next_minimal_theorem": "Bind high strict rebase to a proper_root_high_endpoint source receipt and common runtime producer."
     },
@@ -126,16 +129,16 @@
     {
       "id": "F3-QC1-INTEGER-OCCURRENCE",
       "quantifier": "R3/R5 low proper-root terminal-first survivors with k_perp>1.",
-      "established_reductions": ["canonical q_perp", "unique oriented Eisenstein ideal factor", "nonactual control q_perp|N but q_perp does not divide R-h, D, E, or K", "q_perp|E gives a canonical source-forward raw deflation and strict arithmetic target", "ideal factor is not E1"],
-      "exact_blocker": "When q_perp does not divide E, no canonical endpoint occurrence is known. When it does, the deflation is arithmetic-ready but still lacks verified persistent source-path E1, common admission, universal lift, and re-entry.",
+      "established_reductions": ["canonical q_perp", "unique oriented Eisenstein ideal factor", "nonactual control q_perp|N but q_perp does not divide R-h, D, E, or K", "q_perp|E gives a canonical source-forward raw deflation and strict arithmetic target", "the atomic rank-stutter leaf has a deterministic second raw deflation with strict selected-side arithmetic", "ideal factor is not E1"],
+      "exact_blocker": "When q_perp does not divide E, no canonical endpoint occurrence is known. When it does, both first and rank-stutter second deflations still lack a replayable persistent source-path receipt, child terminal priority, common admission, universal lift and re-entry.",
       "missing": ["E1", "E2", "E3", "E4", "E5", "D3-D8"],
       "next_minimal_theorem": "Prove a verified source-forward path for q_perp|E and common admission of its strict target; separately prove an endpoint-occurrence/terminal theorem for q_perp not dividing E and resolve the explicit atomic rank-stutter leaf."
     },
     {
       "id": "F3-TR1-PHYSICAL-OCCURRENCE",
       "quantifier": "R4/R6 low proper-root terminal-first survivors with k_perp=1, excluding m3 q5.",
-      "established_reductions": ["actual root-height u supports complete composite-Q terminal menus", "R6 k=3 forces u>1 and therefore cannot skip that menu", "D_star arithmetic factors", "complete terminal menu ordering"],
-      "exact_blocker": "Every 1<Q|u menu must be replayed before D_star routing. Neither a menu factor nor q|D_star is a consumable integer raw occurrence, and the least D_star factor can be capacity-saturated; no full terminal/physical TR1 exhaustion theorem exists.",
+      "established_reductions": ["actual root-height u supports complete composite-Q terminal menus", "R6 k=3 forces u>1 and therefore cannot skip that menu", "D_star has an exact fresh-versus-capacity-saturated endpoint split through gcd(D_star,E)", "a dyadic fresh factor gives a conditional p-free raw suffix", "complete terminal menu ordering"],
+      "exact_blocker": "Every 1<Q|u menu must be replayed before D_star routing. A D_star prime is consumable only in the fresh gcd(D_star,E)>1 subcase and only after a source-bound endpoint transcript; the saturated complement has no current paid factor. No full terminal/physical TR1 exhaustion theorem exists.",
       "missing": ["E1", "E2", "E3", "E4", "E5", "D3-D8"],
       "next_minimal_theorem": "Replay the full Q|u terminal prefix, then prove a D_star factor has a fresh integer raw occurrence and select the least such factor with deterministic consumption."
     },

@@ -33,17 +33,21 @@ class Wave1FamilyGrammarFreezeTests(unittest.TestCase):
             contract.FAMILY_PRECEDENCE_V1,
         )
 
-    def test_only_overflow_refinements_may_overlap(self) -> None:
-        overflow = frozenset(
-            self.manifest["grammar"]["allowed_overlap_class"][
-                "overflow_refinement_only"
-            ]
-        )
+    def test_only_declared_overflow_refinements_may_overlap(self) -> None:
+        overlap_classes = self.manifest["grammar"]["allowed_overlap_class"]
+        overflow = frozenset(overlap_classes["overflow_refinement_only"])
         expected = frozenset(
             frozenset({left, right})
             for left in overflow
             for right in overflow
             if left != right
+        )
+        expected |= frozenset(
+            frozenset({lineage, overflow_owner})
+            for lineage, overflow_owners in overlap_classes[
+                "lineage_overflow_refinements"
+            ].items()
+            for overflow_owner in overflow_owners
         )
         self.assertEqual(contract.ALLOWED_FAMILY_OVERLAPS_V1, expected)
 

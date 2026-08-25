@@ -6,7 +6,7 @@
 >
 > Freeze status: `FROZEN_E3_TYPE_SPACE_PRODUCERS_NOT_YET_ADMITTED`
 >
-> Grammar hash: `c099fdecf9ac0b98ed769a6bc52628991aba26027cfb1853b5b3f8b168e8a7da`
+> Grammar hash: `ffba0a082073127ba1090eb02fd666aa7621fd55ef0045061d549a3e2defb00a`
 
 ## 1. Decision Scope
 
@@ -32,7 +32,11 @@ scripts/t6_persistent_selector_runtime_v1.py
 \[
 \operatorname{ROOT\_SOL}\land\operatorname{TYPEI/CHARGED}
 \land\operatorname{PROPER\_ROOT}\land
+\begin{gathered}
+g=(p+1)/2,\quad A=g(p^2r-g),\quad K=A(p-1),\\
+R=2p^3r-p^2-2pr-p+1,\quad \texttt{is\_overflow}=\mathrm{true},\\
 M=(p^2+p+1)/3\land u=(2r+1,M)\land0<u<M\land h=3u>p\land k=\varnothing.
+\end{gathered}
 \]
 
 It exists solely to preserve the F3 high endpoint quantifier. A high endpoint cannot be
@@ -40,7 +44,21 @@ forced to fill low-height fields such as (k) or (D_*). Its strict rebase target,
 proved and admitted, is an existing `TYPEI/CHARGED` overflow owner; its high stutter
 leaf remains open.
 
-### 2.2 Ordinary marked absorb
+### 2.2 Lineage and overflow are independent axes
+
+`C8_PARENT` and `PROPER_ROOT` name a source lineage; `is_overflow` names the
+chart geometry. For `TYPEI/CHARGED`, the contract now requires
+`is_overflow` exactly when (R>p). Generic `OVERFLOW` remains a provenance value
+for a chart with no finer lineage, but it is no longer forced onto a genuine C8 or
+proper-root source.
+
+The freeze permits only the explicit overlaps in the machine-readable grammar:
+C8 may refine an overflow owner, and each coupled proper-root owner may refine the
+high-support sink or the (A>1) overflow residual. Existing precedence retains the
+lineage owner. This is a type correction only: C8 relay proof, fresh source scope,
+actual E1, common admission and re-entry are still absent.
+
+### 2.3 Ordinary marked absorb
 
 `type_i_absorb_marked_residual` is the only new ordinary Type-I family. Its exact guard is:
 
@@ -56,7 +74,7 @@ E1--E4 and then use `PHASE_DROP` into ABSORB. Conversely, a target with (R>p) is
 CHARGED overflow even when its support is at most (B_p), and must prove its own
 `LOCAL_DROP` or `OUTER_RANK_DROP`.
 
-### 2.3 Atomic payloads
+### 2.4 Atomic payloads
 
 `AtomicPendingTargetV1` is an edge-receipt occurrence envelope, not a persistent family.
 The old `t2_v1_atomic_pending_target` remains historical T2 vocabulary in the frozen
@@ -98,6 +116,10 @@ The freeze incorporates early cross-review corrections:
 4. c8 OTHER excludes C=1 on its own universal fallback. The later source-gate theorem
    establishes that H4_A1 actual clean-q atomic C=1 is empty. It does not establish
    that non-atomic H4, future producers, or global high-support C=1 are empty.
+5. A header-local root chart is now tied to its proper-root parameter. The shared v1
+   receipt still lacks `source_tree_scope`, `state_origin`, raw transcript and
+   per-prefix terminal receipts, so this correction does not turn a type-space root
+   into an actual fresh-lineage source.
 
 ## 5. What Gate 2 Does Not Establish
 

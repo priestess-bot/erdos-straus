@@ -662,19 +662,18 @@ def _validate_facts(value: Any, root_context: int, mark_kind: str) -> Mapping[st
                 f"facts do not match TYPEI/{type_i_protocol} rank schema",
             )
 
+    if phase == "TYPEI" and type_i_protocol == "CHARGED":
+        chart_is_overflow = facts["chart_R"] > root_context
+        if facts["is_overflow"] != chart_is_overflow:
+            raise StateContractError(
+                RejectCode.INVALID_CHART_FACTS,
+                "TYPEI/CHARGED must classify overflow exactly by R>p",
+            )
     if facts["is_overflow"]:
-        if (
-            phase != "TYPEI"
-            or type_i_protocol != "CHARGED"
-            or provenance != "OVERFLOW"
-        ):
+        if phase != "TYPEI" or type_i_protocol != "CHARGED":
             raise StateContractError(
                 RejectCode.UNKNOWN_HEADER_VALUE,
-                "overflow facts require TYPEI/OVERFLOW",
-            )
-        if facts["chart_R"] <= root_context:
-            raise StateContractError(
-                RejectCode.INVALID_CHART_FACTS, "overflow requires R>p"
+                "overflow facts require TYPEI/CHARGED",
             )
     elif provenance == "OVERFLOW":
         raise StateContractError(
@@ -722,6 +721,30 @@ def _validate_facts(value: Any, root_context: int, mark_kind: str) -> Mapping[st
                 RejectCode.MALFORMED_SELECTOR_FACTS,
                 "proper-root height does not replay from r and the cyclotomic modulus",
             )
+        root_half = (root_context + 1) // 2
+        root_support = root_half * (root_context * root_context * root_parameter - root_half)
+        root_carrier = root_support * (root_context - 1)
+        root_residual = (
+            2 * root_context**3 * root_parameter
+            - root_context * root_context
+            - 2 * root_context * root_parameter
+            - root_context
+            + 1
+        )
+        if (
+            facts["support_A"],
+            facts["chart_K"],
+            facts["chart_R"],
+        ) != (root_support, root_carrier, root_residual):
+            raise StateContractError(
+                RejectCode.INVALID_CHART_FACTS,
+                "PROPER_ROOT chart must replay from p and r",
+            )
+        if not facts["is_overflow"]:
+            raise StateContractError(
+                RejectCode.INVALID_CHART_FACTS,
+                "PROPER_ROOT chart is a TYPEI/CHARGED overflow",
+            )
         if height_class == "LOW":
             if not (
                 2 <= height < root_context
@@ -752,6 +775,16 @@ def _validate_facts(value: Any, root_context: int, mark_kind: str) -> Mapping[st
         raise StateContractError(
             RejectCode.MALFORMED_SELECTOR_FACTS,
             "proper-root fields are reserved for PROPER_ROOT provenance",
+        )
+    if provenance == "C8_PARENT" and not (
+        phase == "TYPEI"
+        and type_i_protocol == "CHARGED"
+        and facts["is_overflow"]
+        and facts["support_A"] > 1
+    ):
+        raise StateContractError(
+            RejectCode.INVALID_CHART_FACTS,
+            "C8_PARENT is a high-support TYPEI/CHARGED overflow lineage",
         )
     if provenance == "ATOMIC_PENDING" or dispatch == "PENDING":
         raise StateContractError(
@@ -1144,6 +1177,19 @@ _OVERFLOW_SPECIALIZATIONS = frozenset(
     }
 )
 
+_LINEAGE_OVERFLOW_REFINEMENTS = {
+    "c8_terminal_first_surviving_parent": _OVERFLOW_SPECIALIZATIONS,
+    "proper_root_high_endpoint": frozenset(
+        {"type_i_high_support_sink", "type_i_a_gt_one_overflow_residual"}
+    ),
+    "proper_root_stutter_k_one": frozenset(
+        {"type_i_high_support_sink", "type_i_a_gt_one_overflow_residual"}
+    ),
+    "proper_root_stutter_k_gt_one": frozenset(
+        {"type_i_high_support_sink", "type_i_a_gt_one_overflow_residual"}
+    ),
+}
+
 
 def _pair(left: str, right: str) -> frozenset[str]:
     return frozenset({left, right})
@@ -1155,6 +1201,11 @@ ALLOWED_FAMILY_OVERLAPS_V1 = frozenset(
         for left in _OVERFLOW_SPECIALIZATIONS
         for right in _OVERFLOW_SPECIALIZATIONS
         if left != right
+    }
+    | {
+        _pair(lineage, overflow)
+        for lineage, allowed_overflows in _LINEAGE_OVERFLOW_REFINEMENTS.items()
+        for overflow in allowed_overflows
     }
 )
 

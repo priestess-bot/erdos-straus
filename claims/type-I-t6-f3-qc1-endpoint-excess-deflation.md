@@ -12,7 +12,11 @@ statement: >-
   is <-q^mu>_p in [1,p-2], and Mx>A, so the selected-side charged rank
   strictly falls. This is a conditional arithmetic E2/E5 route; it needs a
   verified persistent source path for E1 and still lacks common admission,
-  universal lift, and re-entry. It does not close QC1.
+  universal lift, and re-entry. If the first two-sided child has the sole
+  rank-stutter congruence F_y=q^mu modulo p, a deterministic second raw
+  deflation by the least prime factor of F_y not congruent to 1 modulo p
+  restores a strict selected-side cofactor. It too remains a conditional raw
+  continuation, not a QC1 closure.
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -91,4 +95,69 @@ This theorem only supplies a raw occurrence when the parent already carries a
 verified source-forward persistent path to \((z,h)\). The universal root word
 alone remains analysis evidence. If the opposite side is also excess, its
 atomic target is strict unless its multiplier is \(q^\mu\) modulo \(p\);
-that equality is retained as a separate rank-stutter residual.
+that equality has the following deterministic second suffix.
+
+## 2. The atomic rank-stutter leaf has a second raw suffix
+
+Suppose the first child is genuinely two-sided, its opposite-side p-free
+complete-excess multiplier is \(F_y\), and
+
+\[
+F_y\equiv q^\mu\pmod p.
+\tag{5}
+\]
+
+The first atomic target has cofactor \(p-1\), but (5) is not a raw dead end.
+Since \(q^\mu\not\equiv1\pmod p\), also
+
+\[
+F_y\not\equiv1\pmod p,
+\qquad p\nmid F_y.
+\tag{6}
+\]
+
+Hence some prime factor of \(F_y\) is not \(1\pmod p\). Fix the least such
+prime
+
+\[
+s=\min\{\ell:\ell\mid F_y,\ \ell\not\equiv1\pmod p\}.
+\tag{7}
+\]
+
+For the selected child side, write
+
+\[
+a_s=v_s(A),\qquad r_s=v_s(p-1),\qquad b_s=v_s(y)>a_s+r_s,
+\tag{8}
+\]
+
+and set
+
+\[
+\mu_s=
+\begin{cases}
+1,&b_s\ge a_s+r_s+2,\\
+r_s+1,&b_s=a_s+r_s+1.
+\end{cases}
+\tag{9}
+\]
+
+Because \(s\) is carried by the selected complete-excess block, the second
+source-forward raw deflation \(y\mapsto y/s\) has recomputed support
+
+\[
+M_2=\frac{M_{\rm at}}{s^{\mu_s}},
+\qquad
+\left\langle(4M_2)^{-1}\right\rangle_p
+=\left\langle-s^{\mu_s}\right\rangle_p<p-1.
+\tag{10}
+\]
+
+The same residue exclusion used for (4) proves the strict inequality in (10).
+Thus the former atomic rank-stutter leaf has a deterministic strict
+selected-side arithmetic continuation. It still needs a replayable source path,
+second-child terminal priority, full recanonicalization, E3/E4 and re-entry;
+an opposite-side excess may also remain. For example, the formal control
+\(p=337,A=421,q=7,E=7^2\cdot619,F_y=4093\) has
+\(F_y\equiv49=q^\mu\pmod{337}\), but \(s=4093\) gives second cofactor
+\(288\). This control is arithmetic only, not an actual F3 witness.

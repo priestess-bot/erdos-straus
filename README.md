@@ -237,6 +237,32 @@ TR1 修正见 [`docs/handoffs/F3_TR1_HANDOFF.md`](docs/handoffs/F3_TR1_HANDOFF.m
 Gate-3 producer/admission surface，并为每个 admitted target 提供非上升 re-entry。任何
 只增加局部同余、因子或 checkpoint 的结果都不会改变 F1/F2/F3/T6 的开放状态。
 
+### 第三轮证明复核（2026-08-25）
+
+本轮没有新增 active producer，也没有改变 `F1=OPEN`、`F2=OPEN`、`F3=OPEN` 或
+`T6=OPEN`。其价值是把若干潜在误桥精确排除，并修复 shared type space 的一个语义错误：
+`is_overflow` 现在严格表示 \(R>p\) 的 chart 几何，而 `C8_PARENT`、`PROPER_ROOT` 保留为
+来源谱系；proper-root header 还必须从 \((p,r)\) 重算完整 \((A,K,R)\) 图表。该修复不产生
+C8 relay、fresh scope、E1 或 re-entry。
+
+- F2 high-support \(C=1\) 的 R=3 hard core 中，universal raw source 的非 \(p\) 首 label
+  完全由 \(2p-3\) 的因子给出。hard-core control \(p=2521\) 有 \(2p-3=5039\) 为素数，
+  所以不存在“必有 non-anchor 首边”的全称证明；当前 full-excess formal route 仍只会回到
+  已拒绝的 anchor loop。
+- F2 \(C>1\) 的当前 full-excess external rechart 一律仍是 CHARGED overflow；在
+  empty-improvement 叶它既不能转为 ABSORB，也不能支付 `LOCAL_DROP`。
+- F3 high default tree 的第三个 canonical full-product fold 不能抵达 canonical high root；
+  single-side/atomic complete-excess 仍开放，且需要实际 source path。
+- F3 QC1 的 first atomic rank-stutter 有 deterministic 第二 raw deflation；TR1 的
+  \(D_*\) 因子则精确分为 fresh \((D_*,E)>1\) 与 capacity-saturated 两类。两项均仍缺
+  source-bound transcript、child terminal priority、E3 与 re-entry。
+
+下一份必须完成的材料不是新的裸同余筛，而是
+[`f3_proper_root_endpoint_path_receipt_v1`](data/interface-requests/f3-proper-root-endpoint-path-receipt-v1.json)：
+它要把 admitted parent、immutable source scope、完整 root chart、ordered raw word 与每个
+prefix 的 terminal-first receipt 绑定到同一 target。详见
+[`docs/T6_F2_F3_THIRD_WAVE_PROOF_REVIEW_2026-08-25.md`](docs/T6_F2_F3_THIRD_WAVE_PROOF_REVIEW_2026-08-25.md)。
+
 ## 快速使用
 
 ```bash

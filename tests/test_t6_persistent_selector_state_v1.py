@@ -66,6 +66,31 @@ def facts(**updates):
     return result
 
 
+def proper_root_chart(prime: int, root_parameter: int) -> dict[str, int]:
+    half = (prime + 1) // 2
+    support = half * (prime * prime * root_parameter - half)
+    carrier = support * (prime - 1)
+    residual = (
+        2 * prime**3 * root_parameter
+        - prime * prime
+        - 2 * prime * root_parameter
+        - prime
+        + 1
+    )
+    return {"support_A": support, "chart_K": carrier, "chart_R": residual}
+
+
+def c8_parent_chart(prime: int, s: int) -> dict[str, int]:
+    assert prime == 48 * s + 1
+    n = 132 * s + 1
+    support = (prime * n - 1) // 4
+    return {
+        "support_A": support,
+        "chart_K": support * (prime - 1),
+        "chart_R": (prime - 1) * n - 1,
+    }
+
+
 def mark_receipt(
     kind: str = CONTRACT.ROOT_SOL,
     equation_rank: int = P,
@@ -297,31 +322,41 @@ class FamilyPredicateTests(unittest.TestCase):
                 provenance_kind="H4_RESIDUAL"
             ),
             "c8_terminal_first_surviving_parent": facts(
-                provenance_kind="C8_PARENT"
+                provenance_kind="C8_PARENT",
+                full_carrier_scope=False,
+                is_overflow=True,
+                **c8_parent_chart(157_393, 3_279),
             ),
             "type_i_c2_19_macro_target": facts(provenance_kind="C2_19_MACRO"),
             "proper_root_stutter_k_one": facts(
                 provenance_kind="PROPER_ROOT",
+                full_carrier_scope=False,
                 proper_root_k=1,
                 proper_root_height_class="LOW",
                 proper_root_height=3,
                 proper_root_r=1,
+                is_overflow=True,
+                **proper_root_chart(73, 1),
             ),
             "proper_root_stutter_k_gt_one": facts(
                 provenance_kind="PROPER_ROOT",
+                full_carrier_scope=False,
                 proper_root_k=2,
                 proper_root_height_class="LOW",
                 proper_root_height=3,
                 proper_root_r=1,
+                is_overflow=True,
+                **proper_root_chart(73, 1),
             ),
             "proper_root_high_endpoint": facts(
                 provenance_kind="PROPER_ROOT",
+                full_carrier_scope=False,
                 proper_root_k=None,
                 proper_root_height_class="HIGH",
                 proper_root_height=543,
                 proper_root_r=90,
-                chart_R=3,
-                chart_K=235,
+                is_overflow=True,
+                **proper_root_chart(313, 90),
             ),
             "type_i_absorb_marked_residual": facts(
                 type_i_protocol="ABSORB",
@@ -391,8 +426,13 @@ class FamilyPredicateTests(unittest.TestCase):
                     "mark_kind": CONTRACT.NONTRIVIAL_MARK,
                     "equation_rank": 37,
                 }
-            elif expected == "proper_root_high_endpoint":
+            elif expected in {
+                "proper_root_high_endpoint",
+                "c8_terminal_first_surviving_parent",
+            }:
                 kwargs = {"root_context": 313, "equation_rank": 313}
+                if expected == "c8_terminal_first_surviving_parent":
+                    kwargs = {"root_context": 157_393, "equation_rank": 157_393}
             with self.subTest(family=expected):
                 self.assertEqual(self.classify(selector_facts, **kwargs).owner, expected)
 
@@ -519,6 +559,79 @@ class FamilyPredicateTests(unittest.TestCase):
         self.assertEqual(
             decision.reason_code, CONTRACT.RejectCode.MALFORMED_SELECTOR_FACTS
         )
+
+    def test_proper_root_chart_must_replay_from_root_parameter(self) -> None:
+        forged = facts(
+            provenance_kind="PROPER_ROOT",
+            full_carrier_scope=False,
+            proper_root_height_class="LOW",
+            proper_root_height=3,
+            proper_root_r=1,
+            proper_root_k=2,
+            is_overflow=False,
+        )
+        decision = CONTRACT.reject_before_persistent_queue_v1(
+            make_state(forged), registry()
+        )
+        self.assertEqual(decision.reason_code, CONTRACT.RejectCode.INVALID_CHART_FACTS)
+
+    def test_lineage_overflow_states_keep_their_specific_owner(self) -> None:
+        proper = facts(
+            provenance_kind="PROPER_ROOT",
+            full_carrier_scope=False,
+            proper_root_height_class="HIGH",
+            proper_root_height=543,
+            proper_root_r=90,
+            proper_root_k=None,
+            is_overflow=True,
+            **proper_root_chart(313, 90),
+        )
+        proper_header = extract(
+            make_state(proper, root_context=313, equation_rank=313)
+        )
+        proper_owner = CONTRACT.classify_selector_owner_v1(proper_header)
+        self.assertEqual(proper_owner.owner, "proper_root_high_endpoint")
+        self.assertEqual(
+            set(proper_owner.matched_families),
+            {"proper_root_high_endpoint", "type_i_a_gt_one_overflow_residual"},
+        )
+
+        c8 = facts(
+            provenance_kind="C8_PARENT",
+            full_carrier_scope=False,
+            is_overflow=True,
+            **c8_parent_chart(157_393, 3_279),
+        )
+        c8_header = extract(
+            make_state(c8, root_context=157_393, equation_rank=157_393)
+        )
+        c8_owner = CONTRACT.classify_selector_owner_v1(c8_header)
+        self.assertEqual(c8_owner.owner, "c8_terminal_first_surviving_parent")
+        self.assertEqual(
+            set(c8_owner.matched_families),
+            {"c8_terminal_first_surviving_parent", "type_i_a_gt_one_overflow_residual"},
+        )
+
+    def test_charged_overflow_flag_cannot_disagree_with_chart(self) -> None:
+        understated = facts(
+            provenance_kind="OVERFLOW",
+            full_carrier_scope=False,
+            is_overflow=False,
+            support_A=37,
+            carrier_M=None,
+            overflow_d=71,
+            chart_R=75,
+            chart_K=1369,
+        )
+        overstated = facts(is_overflow=True)
+        for selector_facts in (understated, overstated):
+            with self.subTest(selector_facts=selector_facts):
+                decision = CONTRACT.reject_before_persistent_queue_v1(
+                    make_state(selector_facts), registry()
+                )
+                self.assertEqual(
+                    decision.reason_code, CONTRACT.RejectCode.INVALID_CHART_FACTS
+                )
 
     def test_absorb_requires_semantic_low_chart_and_rank_fields(self) -> None:
         invalid = facts(

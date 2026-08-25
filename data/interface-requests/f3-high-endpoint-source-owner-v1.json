@@ -7,7 +7,7 @@
   "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
   "date": "2026-08-24",
   "request_status": "PROPOSAL_ONLY_NO_RUNTIME_CHANGE",
-  "problem": "The frozen v1 state contract requires provenance_kind=PROPER_ROOT to carry proper_root_k and routes only k=1/k>1 predicates. That field is a low-style conclusion and cannot define the exact ACTUAL_PERSISTENT, PROPER_FACTOR_ROOT, h>p source domain before the high-domain N=hk derivation is bound to a verified receipt.",
+  "problem": "The shared v1 state contract now couples provenance_kind=PROPER_ROOT to its p,r,A,K,R chart and separates overflow geometry from lineage. It still has no source_tree_scope, state_origin or replayable raw transcript, so it cannot define an ACTUAL_PERSISTENT fresh high-root source or bind the high-domain N=hk derivation to a verified receipt.",
   "exact_source_quantifier": "ACTUAL_PERSISTENT and PROPER_FACTOR_ROOT and h>p and terminal_first_miss",
   "requested_coordinator_decisions": [
     {
