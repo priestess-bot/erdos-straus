@@ -1,0 +1,34 @@
+{
+  "artifact_id": "f3_qc1_endpoint_excess_deflation_v1",
+  "track_id": "F3-QC1",
+  "claim_id": "type-I-t6-f3-qc1-endpoint-excess-deflation",
+  "status": "ESTABLISHED_CONDITIONAL_RAW_AND_STRICT_RANK_REDUCTION",
+  "quantifier": "R3/R5 actual low proper-root stutter receipt with q_perp|E and an independently verified source-forward persistent path to (z,h).",
+  "valuation_rule": {
+    "a": "v_q(A)",
+    "r": "v_q(p-1)",
+    "k": "a+r",
+    "b": "v_q(z)>k",
+    "mu": {
+      "b>=k+2": 1,
+      "b=k+1": "r+1"
+    }
+  },
+  "canonical_child": {
+    "support": "M_x=A*E/q^mu",
+    "cofactor": "<-q^mu>_p",
+    "rank": "(0,p-1) -> (0,cofactor)"
+  },
+  "residual_refinement": [
+    "QPERP_NOT_ENDPOINT_EXCESS",
+    "QPERP_ENDPOINT_EXCESS_SINGLE_SIDE",
+    "QPERP_ENDPOINT_EXCESS_ATOMIC_STRICT",
+    "QPERP_ENDPOINT_EXCESS_ATOMIC_RANK_STUTTER"
+  ],
+  "still_missing": [
+    "persistent source-path E1 when the root word is only analysis evidence",
+    "common E3 admission",
+    "universal E4 lift",
+    "selector re-entry"
+  ]
+}

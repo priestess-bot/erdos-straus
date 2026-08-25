@@ -1,0 +1,39 @@
+{
+  "artifact_id": "f2_c8_terminal_prefix_two_ray_reduction_v1",
+  "track_id": "F2-C8-ATOMIC",
+  "status": "ESTABLISHED_NECESSARY_SOURCE_REDUCTION_NOT_TERMINAL_TOTALITY",
+  "quantifier": "Every actual terminal-first-surviving ordinary q=1 full-carrier d=1 zero-k c=8 parent whose actual even macro selects q_star=103.",
+  "necessary_source_normal_form": {
+    "s": ["189 + 721*v", "704 + 721*v"],
+    "p": ["9073 + 34608*v", "33793 + 34608*v"],
+    "six_s_minus_one": ["103*(42*v + 11)", "103*(42*v + 41)"],
+    "v_domain": "v >= 0"
+  },
+  "derivation": [
+    "zero-k c=8 implies s = 86 + 103*u",
+    "fixed gap-7 terminal-first certificates remove p = 3,5,6 mod 7",
+    "actual q_star=103 roughness gives 7 does not divide 6*s-1",
+    "therefore u = 1 or 6 mod 7"
+  ],
+  "remaining_required_guards": [
+    "p is a core prime",
+    "ordinary q=1 G root condition",
+    "complete q_star=103 roughness: 25 does not divide 6*s-1 and no prime 7 <= ell < 103 divides 6*s-1",
+    "complete terminal-first MISS beyond the fixed gap-7 prefix",
+    "admitted parent trace and P-to-H relay receipt"
+  ],
+  "does_not_prove": [
+    "a surviving ray member exists",
+    "a complete terminal-first MISS",
+    "an admitted c8 parent",
+    "a c8 OTHER common-runtime producer",
+    "F2 or T6 closure"
+  ],
+  "evidence": [
+    "type-I-q-one-full-carrier-d-one-c-eight-second-full-excess-carry-obstruction",
+    "gap-seven-congruence-certificates",
+    "type-II-q-one-full-carrier-qstar-103-rough-selection-criterion",
+    "docs/T6-actual-reachable-coverage-audit-2026-08-17.md"
+  ],
+  "reproduction": "reproductions/type_i_q_one_c8_terminal_prefix_two_ray_reduction.py"
+}

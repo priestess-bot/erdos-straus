@@ -282,6 +282,36 @@ charts actual persistent states. It only rules out the weaker inference that
 canonical \(D\), its consequences, and the root-bottom terminal check must
 eventually break the root-lift periodicity.
 
+### 3.2 Theta-only terminal menus are recurrent
+
+Set
+
+\[
+\Theta=(p,h,u,D),
+\qquad
+m=\frac{D+h-1}{p},
+\qquad
+e=\frac{ph+1}{D},
+\qquad
+a=em-h,
+\qquad
+D_*=\frac{D}{(D,h^2-1)}.
+\tag{21}
+\]
+
+The refined subprogression fixes every entry of \(\Theta\), canonical \(D\),
+the cofactor, and the root-bottom miss. Consequently any terminal predicate
+factoring only through \(\Theta\) has identical truth value on every lift.
+This includes p-only root rules, every prime/composite external menu
+\(Q\mid u\), raw \(D\)-based menus, and any fixed-parameter \(D_*\) fan.
+Such a predicate can be part of a complete scheduler, but it cannot be the
+mechanism that breaks this periodicity.
+
+This is not a claim that those menus all miss on an actual high state. The
+current repository has no complete terminal schedule for the high proper-root
+family; a terminal rule depending on changing \(R,K,z,Q,\beta,E\) may still
+yield a new exit.
+
 ## 4. Why the low k=1 Vieta descent does not transfer
 
 The high \(k=1\) parameter surface has
@@ -289,17 +319,17 @@ The high \(k=1\) parameter surface has
 \[
 y^2+xy-x^2=c(dxy-1),\qquad d\equiv2\pmod3,
 \quad c\equiv1\pmod3,\quad 3\mid y,\quad3\nmid x.
-\tag{21}
+\tag{22}
 \]
 
 As a quadratic in \(y\), its other root is
 
 \[
 y^\sharp=(cd-1)x-y.
-\tag{22}
+\tag{23}
 \]
 
-Modulo \(3\), (22) is \(y^\sharp\equiv x\not\equiv0\). It therefore
+Modulo \(3\), (23) is \(y^\sharp\equiv x\not\equiv0\). It therefore
 does not preserve the high parameter domain. As a quadratic in \(x\), the
 other root is \(-(cd-1)y-x<0\). This gives a direct structural reason that
 the low-height \(k=1\) Vieta descent cannot simply be reused in the high
@@ -311,7 +341,7 @@ The high \(k=1\) curve control
 
 \[
 (d,x,y)=(11,101,1020)
-\tag{23}
+\tag{24}
 \]
 
 has
@@ -322,7 +352,7 @@ p&=115815206209,& h&=1169617882071,\\
 D&=1207185892628946440,& v&=11467986421,\\
 D_K&=30179647315723661,& \omega&=3161408027583.
 \end{aligned}
-\tag{24}
+\tag{25}
 \]
 
 It satisfies all static root, stutter, and two-gate identities above, and

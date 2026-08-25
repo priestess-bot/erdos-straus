@@ -199,6 +199,44 @@ high-support `C=1` trace。机器可读 frontier 见
 [`data/t6-wave1/t6-f2-f3-residual-frontier-v1.json`](data/t6-wave1/t6-f2-f3-residual-frontier-v1.json)，
 TR1 修正见 [`docs/handoffs/F3_TR1_HANDOFF.md`](docs/handoffs/F3_TR1_HANDOFF.md)。
 
+### Wave2 严格缩减（2026-08-25）
+
+第二轮没有使 F2/F3 通过 Gate 3，但删除了若干此前仍可能被误当作出口的完整候选分支。
+
+- q1 C=9 的 R=23 行在 \(p\equiv1033\pmod{11088}\) 上有直接固定尾 Type I
+  terminal：
+  \[
+  4/p=1/(K/22)+1/K+1/(pK),\qquad K=(23p+1)/4.
+  \]
+  这只覆盖该终端子射线，剩余 R=23/35/11 行仍开放。见
+  [q1 C9 R23 fixed-tail terminal ray](claims/type-II-q-one-c9-r23-fixed-tail-terminal-ray.md)。
+- c=8 的 actual \(q_\star=103\) source 在 complete terminal-first miss 的前提下
+  被压到两条 \(34608\) 模射线；但现有 \(p=157393\) local control 自身有未被 local
+  slice 检查的 p-level terminal，因而不能当作 actual MISS。完整 parent trace 与 shared
+  admission 仍缺失。
+- high-support C=1 的 canonical R=3 anchor continuation 必由 ABSORB 升回 CHARGED，
+  且相对原 high parent 增大 charged outer coordinate，故不是 T5 可接纳的 re-entry。
+  C>1 的 \(A\mapsto A\,\operatorname{spf}(C)\) 同样既不是 fixed-\(n\) 除子边，
+  也不是同图表 full-excess 边。见
+  [C1 R3 anchor no-reentry](claims/type-I-f2-high-support-c1-r-three-anchor-no-reentry.md)
+  和
+  [C>1 SPF saturation provenance barrier](claims/type-I-f2-high-support-cgt1-spf-saturation-provenance-barrier.md)。
+- QC1 现在在 \(q_\perp\mid E\) 子域有 canonical endpoint-excess raw deflation 与严格
+  arithmetic rank target；仍需 verified persistent source path、common admission 和
+  re-entry。真正 two-sided \(p^2\) canonical target 则只是根参数增大的 rechart，不能
+  作为 paid macro。见
+  [QC1 endpoint-excess deflation](claims/type-I-t6-f3-qc1-endpoint-excess-deflation.md)
+  和
+  [m3 q5 p2 canonical rechart boundary](claims/type-I-t6-f3-m3-q5-p2-canonical-rechart-boundary.md)。
+- F3 high-stutter 的 refined lift 还保持每个只依赖
+  \(\Theta=(p,h,u,D)\) 的 terminal predicate，包括 \(Q\mid u\) external menu 与
+  fixed-\(D_*\) fan。因而这种谓词不能打破 root-lift 周期；真正的 high terminal
+  机制必须使用变化的 \(R,K,z,Q,\beta,E\) 数据，或建立新的 high-source bridge。
+
+因此下一步的真实瓶颈仍是：把仍存的 terminal MISS 绑定到 actual source path，经过同一
+Gate-3 producer/admission surface，并为每个 admitted target 提供非上升 re-entry。任何
+只增加局部同余、因子或 checkpoint 的结果都不会改变 F1/F2/F3/T6 的开放状态。
+
 ## 快速使用
 
 ```bash

@@ -287,6 +287,48 @@ def verify_recanonicalization_noninvariance_control() -> dict[str, int]:
     }
 
 
+def verify_two_sided_canonical_rechart_boundary() -> dict[str, int]:
+    """Show a genuine p^2 target is a larger root-chart reparameterization."""
+
+    prime, parameter = 73, 57
+    source = chart(prime, parameter)
+    anchor = prime + 1
+    departure = source["residual"] - anchor
+    right = departure // prime
+    left = source["residual"] - right
+    endpoint = factor_endpoint(
+        prime,
+        source["support"],
+        source["capacity"],
+        left,
+        right,
+    )
+    chi = verify_p2_identity(endpoint)
+    multiplier = endpoint.multiplier
+    g = (prime + 1) // 2
+    T = prime * prime * parameter - g
+    parameter_prime = parameter + chi * T
+    T_prime = prime * prime * parameter_prime - g
+    if not (
+        multiplier == 1 + prime * prime * chi
+        and endpoint.target_cofactor == prime - 1
+        and T_prime == multiplier * T
+        and g * T_prime == source["support"] * multiplier
+        and source["capacity"] * multiplier
+        == g * T_prime * (prime - 1)
+        and parameter_prime > parameter
+    ):
+        raise AssertionError("two-sided p^2 canonical rechart boundary changed")
+    return {
+        "prime": prime,
+        "parameter": parameter,
+        "parameter_prime": parameter_prime,
+        "multiplier": multiplier,
+        "chi": chi,
+        "cofactor": endpoint.target_cofactor,
+    }
+
+
 def verify_manifest() -> dict[str, object]:
     with DATA_PATH.open(encoding="utf-8") as handle:
         payload = json.load(handle)
@@ -316,6 +358,9 @@ def run_verifier() -> dict[str, object]:
         "one_sided_control": verify_full_capacity_one_sided_control(),
         "recanonicalization_noninvariance_control": (
             verify_recanonicalization_noninvariance_control()
+        ),
+        "two_sided_canonical_rechart_boundary": (
+            verify_two_sided_canonical_rechart_boundary()
         ),
     }
 

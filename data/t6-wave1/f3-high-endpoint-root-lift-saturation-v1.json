@@ -22,7 +22,8 @@
       "capacity_divisor_gate",
       "all normal-form data depending only on p,h,D,m,e,a,k",
       "canonical maximal-receipt divisor D on the refined subprogression",
-      "root-bottom complete-excess terminal miss Q>1 on the refined subprogression"
+      "root-bottom complete-excess terminal miss Q>1 on the refined subprogression",
+      "every terminal predicate factoring only through Theta=(p,h,u,D)"
     ]
   },
   "vieta_boundary": {
@@ -48,7 +49,7 @@
   },
   "required_next_information": [
     "a full valuation predicate proved nonrecurrent under the canonical-D subprogression",
-    "a complete terminal-first schedule rather than only the root-bottom check",
+    "a complete terminal-first schedule containing a predicate not determined only by Theta",
     "actual source/path/admission restriction"
   ],
   "canonical_receipt_control": {

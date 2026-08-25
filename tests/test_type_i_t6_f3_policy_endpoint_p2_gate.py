@@ -35,6 +35,11 @@ class TypeIT6F3PolicyEndpointP2GateTests(unittest.TestCase):
         self.assertNotEqual(result["endpoint_multiplier_mod_p"], 1)
         self.assertEqual(result["endpoint_target_cofactor"], 2)
 
+    def test_two_sided_p2_rechart_has_no_strict_canonical_target(self):
+        result = gate.verify_two_sided_canonical_rechart_boundary()
+        self.assertGreater(result["parameter_prime"], result["parameter"])
+        self.assertEqual(result["cofactor"], result["prime"] - 1)
+
     def test_manifest_keeps_b5_and_f3_open(self):
         result = gate.run_verifier()
         self.assertEqual(result["normal_form_status"], "ESTABLISHED")
