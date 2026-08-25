@@ -94,7 +94,8 @@ actually supplied.
 ## Exact divisor-image split
 
 There is a sharper purely arithmetic statement for a fixed noncanonical chart.
-Let \(C=K/A\ge p+1\). A proper determinant decomposition with \(M=Ab<K\)
+Assume \(pR+1=4K\), \(K=AC\), \(R>p\), and \(C=K/A\ge p+1\).
+A proper determinant decomposition with \(M=Ab<K\)
 is equivalent to a divisor
 
 \[
@@ -111,10 +112,9 @@ b=C/c,\qquad M=Ab,\qquad d=p-c,\qquad n=4M-R.
 \tag{6}
 \]
 
-Then \(n>0\), \(K=Mc=M(p-d)\), and the chart identity \(pR+1=4K\) gives
-
+Using \(K=Mc=M(p-d)\) and \(pR+1=4K\),
 \[
-pn=4M(p-d)+1=4Md+1.
+pn=p(4M-R)=4pM-(4K-1)=4Md+1>0.
 \tag{7}
 \]
 
@@ -136,11 +136,11 @@ use one of the following target forms:
 
 \[
 K_T=L(p-d),\quad K_T=L(p-r),\quad K_T=L(p-S/L),
-\tag{5}
+\tag{8}
 \]
 
 with the corresponding positivity guards \(1\le d,r,S/L<p\). Same-chart
-promotion has the same (K_T=M(p-d)) form. The q=1 runtime root starts with
+promotion has the same \(K_T=M(p-d)\) form. The q=1 runtime root starts with
 \(A=1\); its contraction targets use (5), and its optional third-anchor target
 has fixed cofactor \(C_T=9\), with \(9<p\) on the declared branch. The q=1
 relay targets have cofactor at most (p-1) (or (p-2) before regeneration).
