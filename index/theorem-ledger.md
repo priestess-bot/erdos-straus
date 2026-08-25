@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 33 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 913 |
+| 数学状态 | `established` | 914 |
 | 数学状态 | `open` | 13 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 42 |
-| 证明来源 | `repository_derivation` | 744 |
+| 证明来源 | `repository_derivation` | 745 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 20 |
-| 审阅状态 | `internal_review` | 894 |
+| 审阅状态 | `internal_review` | 895 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -1208,6 +1208,7 @@
 | [q=1 高 C=2 的 19 相位第三 p-anchor 有限容量分裂](../claims/type-II-q-one-c-two-19-phase-third-p-anchor-finite-capacity-split.md) (`type-II-q-one-c-two-19-phase-third-p-anchor-finite-capacity-split`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 高 C=2 的 19 相位三 p-anchor persistent 宏出口](../claims/type-II-q-one-c-two-19-phase-three-anchor-persistent-macro.md) (`type-II-q-one-c-two-19-phase-three-anchor-persistent-macro`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 G 到 c=3 source-lineage 根及 R=11 RESET 的单向 phase relay](../claims/type-II-q-one-c3-source-lineage-phase-root-entry.md) (`type-II-q-one-c3-source-lineage-phase-root-entry`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
+| [q=1 C=9 high target 的确定性 r-side dual 至 R=11/23/35](../claims/type-II-q-one-c9-high-r-side-dual-small-chart.md) (`type-II-q-one-c9-high-r-side-dual-small-chart`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [q=1 规范根的默认入口容量缺口](../claims/type-II-q-one-canonical-root-default-entry-capacity-gap.md) (`type-II-q-one-canonical-root-default-entry-capacity-gap`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 规范根的一步完整乘积前驱刚性](../claims/type-II-q-one-canonical-root-full-product-predecessor-rigidity.md) (`type-II-q-one-canonical-root-full-product-predecessor-rigidity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 G 退出的规范根切片：严格 carry 与源支撑互素屏障](../claims/type-II-q-one-canonical-root-slice-support-disjointness.md) (`type-II-q-one-canonical-root-slice-support-disjointness`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |

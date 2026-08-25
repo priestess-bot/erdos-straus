@@ -1,0 +1,37 @@
+{
+  "schema_id": "t6_wave1_q1_c9_high_r_side_dual_small_chart_v1",
+  "version": 1,
+  "artifact_id": "q1_c9_high_r_side_dual_small_chart_v1",
+  "track_id": "F2-POST-G-H4",
+  "date": "2026-08-25",
+  "claim_id": "type-II-q-one-c9-high-r-side-dual-small-chart",
+  "status": "ESTABLISHED_PRE_ADMISSION_C9_TO_SMALL_ABSORB_DUAL",
+  "domain": "q=1 odd low-final third-anchor C=9 target, p=336*k+25",
+  "source": {
+    "support_M": "2*(140*k+11)*(40*k+3)",
+    "cofactor": 9,
+    "residue": "r=M mod p=36^(-1) mod p"
+  },
+  "selected_r_side_dual": {
+    "k_mod_3": {
+      "0": {"R": 23, "support": "(23*p+1)/36", "K": "(23*p+1)/4"},
+      "1": {"R": 35, "support": "(35*p+1)/36", "K": "(35*p+1)/4"},
+      "2": {"R": 11, "support": "(11*p+1)/36", "K": "(11*p+1)/4"}
+    },
+    "selection_proof": "R_d-R_r=4*(p-9-r)>0",
+    "protocol": "TYPEI/ABSORB + MARKED_ABSORB on terminal MISS",
+    "cursor": ["1", "R_r-1", "1"],
+    "ticket": "PHASE_DROP"
+  },
+  "controls": [
+    {"p": 1033, "k": 3, "R": 23, "support": 660, "K": 5940},
+    {"p": 2713, "k": 8, "R": 11, "support": 829, "K": 7461},
+    {"p": 9433, "k": 28, "R": 35, "support": 9171, "K": 82539}
+  ],
+  "does_not_claim": [
+    "R=11,23,35 terminal families are total",
+    "a final target runtime route",
+    "an active shared Gate-3 producer",
+    "F2 or T6 totality"
+  ]
+}

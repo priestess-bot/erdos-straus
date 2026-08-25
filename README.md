@@ -163,6 +163,12 @@ overflow/`LOCAL_DROP`。两者的 final state 都被显式验证为 `DEAD_END`�
 并不宣称 post-G re-entry 已经解决。见
 [`type-II-q-one-full-carrier-runtime-slice`](claims/type-II-q-one-full-carrier-runtime-slice.md)。
 
+对 \(p\equiv25\pmod {336}\) 的 C=9 high target，进一步的确定性 r-side dual 会落到
+\(R=23,35,11\) 三张固定低图表（依 \(k\bmod3\) 而定），并有 `PHASE_DROP` 到
+ABSORB 的预准入 ticket。这让后续研究可以直接复用固定-R terminal/descent families；其
+全域 re-entry 尚未建立。见
+[`type-II-q-one-c9-high-r-side-dual-small-chart`](claims/type-II-q-one-c9-high-r-side-dual-small-chart.md)。
+
 ## 快速使用
 
 ```bash
