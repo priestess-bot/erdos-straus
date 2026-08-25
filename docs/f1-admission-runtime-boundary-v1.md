@@ -28,6 +28,13 @@ The current q=1 local executors now use the fail-closed adapter, proving the
 bridge on a real runtime slice. This does not add a second queue path or
 relax E1--E5.
 
+The runtime now also has first-class terminal-only registration types:
+TerminalOnlyBranchRegistrationV1, TerminalOnlyProducerRegistrationV1 and
+TerminalDispatchEntryV1. They are excluded from persistent producer rules,
+cannot return CandidateTransition, and return verified drafts before queue
+mutation. The protocol is implemented and negatively tested, but no
+mathematical terminal producer is registered yet.
+
 ## What The Runtime Actually Requires
 
 The runtime path is already strict:

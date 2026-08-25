@@ -74,6 +74,7 @@ class RuntimeRejectCode(str, Enum):
     PRODUCER_RESULT_INVALID = "PRODUCER_RESULT_INVALID"
     BRANCH_GUARD_MISS = "BRANCH_GUARD_MISS"
     CANDIDATE_AUTHORITY_FIELD = "CANDIDATE_AUTHORITY_FIELD"
+    TERMINAL_ONLY_CANDIDATE = "TERMINAL_ONLY_CANDIDATE"
     PROJECTOR_MISSING = "PROJECTOR_MISSING"
     PROJECTOR_OUTPUT_INVALID = "PROJECTOR_OUTPUT_INVALID"
     TERMINAL_SCHEDULE_MISSING = "TERMINAL_SCHEDULE_MISSING"
@@ -146,6 +147,12 @@ class CandidateTransitionV1:
 
 @dataclass(frozen=True)
 class DispatchEntryV1:
+    producer_id: str
+    branch_id: str
+
+
+@dataclass(frozen=True)
+class TerminalDispatchEntryV1:
     producer_id: str
     branch_id: str
 
@@ -226,6 +233,52 @@ class BranchRegistrationV1:
             raise ValueError(
                 "branch requires projector, transition validator and both terminal schedules"
             )
+
+
+@dataclass(frozen=True)
+class TerminalOnlyBranchRegistrationV1:
+    """A source branch that can only return a verified terminal or a miss."""
+
+    branch_id: str
+    source_owners: frozenset[str]
+    evidence_refs: tuple[str, ...]
+    source_terminal_schedule_id: str
+    terminal_verifier_ids: frozenset[str]
+
+    def __post_init__(self) -> None:
+        if not self.branch_id or not self.source_owners:
+            raise ValueError("terminal-only branch needs an ID and source owners")
+        if not self.evidence_refs or any(not item for item in self.evidence_refs):
+            raise ValueError("terminal-only branch needs proof evidence")
+        if not self.source_terminal_schedule_id:
+            raise ValueError("terminal-only branch needs a source schedule")
+        if not self.terminal_verifier_ids:
+            raise ValueError("terminal-only branch needs terminal verifiers")
+
+
+@dataclass(frozen=True)
+class TerminalOnlyProducerRegistrationV1:
+    """Registration metadata deliberately excluded from persistent rules."""
+
+    producer_id: str
+    implementation_ref: str
+    branches: tuple[TerminalOnlyBranchRegistrationV1, ...]
+
+    def __post_init__(self) -> None:
+        if not self.producer_id or not self.implementation_ref or not self.branches:
+            raise ValueError("terminal-only producer registration is incomplete")
+        branch_ids = tuple(branch.branch_id for branch in self.branches)
+        if len(branch_ids) != len(set(branch_ids)):
+            raise ValueError("terminal-only producer has duplicate branch IDs")
+
+    def branch(self, branch_id: str) -> TerminalOnlyBranchRegistrationV1:
+        for branch in self.branches:
+            if branch.branch_id == branch_id:
+                return branch
+        raise RuntimeContractError(
+            RuntimeRejectCode.UNKNOWN_BRANCH,
+            f"{self.producer_id!r} has no terminal-only branch {branch_id!r}",
+        )
 
 
 @dataclass(frozen=True)
@@ -595,9 +648,23 @@ class PersistentSelectorRuntimeV1:
         target_terminal_schedulers: Mapping[str, TargetTerminalSchedulerV1],
         terminal_verifiers: Mapping[str, TerminalVerifierV1],
         dispatch_precedence: Mapping[str, Sequence[DispatchEntryV1]],
+        terminal_producers: Sequence[TerminalOnlyProducerRegistrationV1] = (),
+        terminal_executors: Mapping[str, ProducerExecutorV1] | None = None,
+        terminal_dispatch_precedence: Mapping[
+            str, Sequence[TerminalDispatchEntryV1]
+        ]
+        | None = None,
     ) -> None:
         if len({item.producer_id for item in producers}) != len(producers):
             raise ValueError("duplicate producer registration")
+        if len({item.producer_id for item in terminal_producers}) != len(
+            terminal_producers
+        ):
+            raise ValueError("duplicate terminal-only producer registration")
+        successor_ids = {item.producer_id for item in producers}
+        terminal_ids = {item.producer_id for item in terminal_producers}
+        if successor_ids & terminal_ids:
+            raise ValueError("a producer ID cannot mix successor and terminal-only branches")
         self.initializer = initializer
         self.producers = MappingProxyType(
             {item.producer_id: item for item in producers}
@@ -614,6 +681,18 @@ class PersistentSelectorRuntimeV1:
             dict(target_terminal_schedulers)
         )
         self.terminal_verifiers = MappingProxyType(dict(terminal_verifiers))
+        self.terminal_producers = MappingProxyType(
+            {item.producer_id: item for item in terminal_producers}
+        )
+        self.terminal_executors = MappingProxyType(
+            dict(terminal_executors or {})
+        )
+        missing_terminal_executors = terminal_ids - set(self.terminal_executors)
+        if missing_terminal_executors:
+            raise ValueError(
+                "terminal-only producers lack executors: "
+                + repr(sorted(missing_terminal_executors))
+            )
         normalized_dispatch: dict[str, tuple[DispatchEntryV1, ...]] = {}
         expected_routes: set[tuple[str, str, str]] = set()
         for producer in producers:
@@ -649,6 +728,56 @@ class PersistentSelectorRuntimeV1:
             extra = sorted(observed_routes - expected_routes)
             raise ValueError(f"dispatch registry mismatch: missing={missing}, extra={extra}")
         self.dispatch_precedence = MappingProxyType(normalized_dispatch)
+        terminal_dispatch = terminal_dispatch_precedence or {}
+        expected_terminal_routes: set[tuple[str, str, str]] = set()
+        for producer in terminal_producers:
+            for branch in producer.branches:
+                for owner in branch.source_owners:
+                    expected_terminal_routes.add(
+                        (owner, producer.producer_id, branch.branch_id)
+                    )
+        observed_terminal_routes: set[tuple[str, str, str]] = set()
+        normalized_terminal_dispatch: dict[
+            str, tuple[TerminalDispatchEntryV1, ...]
+        ] = {}
+        for owner, entries_value in terminal_dispatch.items():
+            entries = tuple(entries_value)
+            if not entries:
+                raise ValueError(f"terminal dispatch owner {owner!r} has no routes")
+            if len(entries) != len(set(entries)):
+                raise ValueError(
+                    f"terminal dispatch owner {owner!r} has duplicate routes"
+                )
+            schedules: set[str] = set()
+            for entry in entries:
+                producer = self.terminal_producers.get(entry.producer_id)
+                if producer is None:
+                    raise ValueError(
+                        f"unknown terminal-only producer {entry.producer_id!r}"
+                    )
+                branch = producer.branch(entry.branch_id)
+                if owner not in branch.source_owners:
+                    raise ValueError(
+                        f"terminal route {entry} cannot consume owner {owner!r}"
+                    )
+                observed_terminal_routes.add(
+                    (owner, entry.producer_id, entry.branch_id)
+                )
+                schedules.add(branch.source_terminal_schedule_id)
+            if len(schedules) != 1:
+                raise ValueError(
+                    f"all terminal routes for owner {owner!r} must share one source schedule"
+                )
+            normalized_terminal_dispatch[owner] = entries
+        if observed_terminal_routes != expected_terminal_routes:
+            missing = sorted(expected_terminal_routes - observed_terminal_routes)
+            extra = sorted(observed_terminal_routes - expected_terminal_routes)
+            raise ValueError(
+                f"terminal dispatch registry mismatch: missing={missing}, extra={extra}"
+            )
+        self.terminal_dispatch_precedence = MappingProxyType(
+            normalized_terminal_dispatch
+        )
         self._queue: list[RuntimeQueueItemV1] = []
         self._known_items: dict[str, RuntimeQueueItemV1] = {}
         self._issued_candidates: dict[str, tuple[str, str]] = {}
@@ -782,6 +911,56 @@ class PersistentSelectorRuntimeV1:
             raise RuntimeContractError(
                 RuntimeRejectCode.TERMINAL_RESULT_INVALID,
                 "branch did not declare this terminal verifier",
+            )
+        verifier = self.terminal_verifiers.get(draft.verifier_id)
+        if verifier is None:
+            raise RuntimeContractError(
+                RuntimeRejectCode.TERMINAL_VERIFIER_MISSING,
+                f"no verifier for {draft.verifier_id!r}",
+            )
+        payload = copy.deepcopy(dict(draft.certificate_payload))
+        if not draft.lift_evidence_id or not verifier(
+            source, payload, draft.lift_evidence_id
+        ):
+            raise RuntimeContractError(
+                RuntimeRejectCode.TERMINAL_VERIFICATION_FAILED,
+                f"terminal verifier {draft.verifier_id!r} rejected payload",
+            )
+        certificate_id = "terminal:" + canonical_digest_v1(
+            {
+                "verifier_id": draft.verifier_id,
+                "payload": payload,
+                "lift_evidence_id": draft.lift_evidence_id,
+            }
+        )
+        return VerifiedTerminalV1(
+            source_state_id=source.state_id,
+            producer_id=producer_id,
+            branch_id=branch.branch_id,
+            verifier_id=draft.verifier_id,
+            certificate_id=certificate_id,
+            lift_evidence_id=draft.lift_evidence_id,
+            certificate_payload=MappingProxyType(payload),
+            dispatch_receipt=(
+                MappingProxyType(copy.deepcopy(dict(dispatch_receipt)))
+                if dispatch_receipt is not None
+                else None
+            ),
+        )
+
+    def _verified_terminal_only_v1(
+        self,
+        *,
+        source: SourceExecutionContextV1,
+        producer_id: str,
+        branch: TerminalOnlyBranchRegistrationV1,
+        draft: TerminalDraftV1,
+        dispatch_receipt: Mapping[str, Any] | None = None,
+    ) -> VerifiedTerminalV1:
+        if draft.verifier_id not in branch.terminal_verifier_ids:
+            raise RuntimeContractError(
+                RuntimeRejectCode.TERMINAL_RESULT_INVALID,
+                "terminal-only branch did not declare this verifier",
             )
         verifier = self.terminal_verifiers.get(draft.verifier_id)
         if verifier is None:
@@ -955,6 +1134,41 @@ class PersistentSelectorRuntimeV1:
             raise RuntimeContractError(
                 RuntimeRejectCode.TERMINAL_RESULT_INVALID,
                 "source terminal miss schedule does not match registration",
+            )
+        return result
+
+    def _source_terminal_only_first_v1(
+        self,
+        *,
+        source: SourceExecutionContextV1,
+        producer_id: str,
+        branch: TerminalOnlyBranchRegistrationV1,
+    ) -> TerminalMissV1 | VerifiedTerminalV1:
+        scheduler = self.source_terminal_schedulers.get(
+            branch.source_terminal_schedule_id
+        )
+        if scheduler is None:
+            raise RuntimeContractError(
+                RuntimeRejectCode.TERMINAL_SCHEDULE_MISSING,
+                f"no terminal-only source schedule {branch.source_terminal_schedule_id!r}",
+            )
+        result = scheduler(source)
+        if isinstance(result, TerminalDraftV1):
+            return self._verified_terminal_only_v1(
+                source=source,
+                producer_id=producer_id,
+                branch=branch,
+                draft=result,
+            )
+        if not isinstance(result, TerminalMissV1):
+            raise RuntimeContractError(
+                RuntimeRejectCode.TERMINAL_RESULT_INVALID,
+                "terminal-only source scheduler returned an invalid object",
+            )
+        if result.schedule_id != branch.source_terminal_schedule_id:
+            raise RuntimeContractError(
+                RuntimeRejectCode.TERMINAL_RESULT_INVALID,
+                "terminal-only source miss schedule does not match registration",
             )
         return result
 
@@ -1308,11 +1522,90 @@ class PersistentSelectorRuntimeV1:
 
         try:
             source = self.verify_source_state_v1(source_item)
+            terminal_routes = self.terminal_dispatch_precedence.get(
+                source.owner, ()
+            )
             routes = self.dispatch_precedence.get(source.owner)
-            if not routes:
+            if not routes and not terminal_routes:
                 raise RuntimeContractError(
                     RuntimeRejectCode.DEAD_END,
                     f"owner {source.owner!r} has no dispatch routes",
+                )
+            terminal_guard_misses: list[dict[str, str]] = []
+            for index, entry in enumerate(terminal_routes):
+                registration = self.terminal_producers[entry.producer_id]
+                branch = registration.branch(entry.branch_id)
+                source_terminal = self._source_terminal_only_first_v1(
+                    source=source,
+                    producer_id=registration.producer_id,
+                    branch=branch,
+                )
+                if isinstance(source_terminal, VerifiedTerminalV1):
+                    return RuntimeDecisionV1(
+                        accepted=True,
+                        reason_code=RuntimeRejectCode.ACCEPT,
+                        detail="terminal-only source schedule preempted dispatch",
+                        terminal=source_terminal,
+                    )
+                executor = self.terminal_executors[registration.producer_id]
+                output = executor(source, entry.branch_id)
+                if isinstance(output, GuardMissV1):
+                    terminal_guard_misses.append(
+                        {
+                            "producer_id": entry.producer_id,
+                            "branch_id": entry.branch_id,
+                            "reason_code": output.reason_code,
+                        }
+                    )
+                    continue
+                if isinstance(output, CandidateTransitionV1):
+                    raise RuntimeContractError(
+                        RuntimeRejectCode.TERMINAL_ONLY_CANDIDATE,
+                        "terminal-only producer returned a candidate",
+                    )
+                if not isinstance(output, TerminalDraftV1):
+                    raise RuntimeContractError(
+                        RuntimeRejectCode.PRODUCER_RESULT_INVALID,
+                        "terminal-only producer returned an unsupported result",
+                    )
+                dispatch_receipt = seal_v1(
+                    {
+                        "schema_id": "runtime_terminal_dispatch_receipt_v1",
+                        "schema_version": 1,
+                        "source_state_id": source.state_id,
+                        "source_owner": source.owner,
+                        "ordered_routes": [
+                            {
+                                "producer_id": route.producer_id,
+                                "branch_id": route.branch_id,
+                            }
+                            for route in terminal_routes
+                        ],
+                        "selected_index": index,
+                        "selected_producer_id": entry.producer_id,
+                        "selected_branch_id": entry.branch_id,
+                        "prior_guard_misses": terminal_guard_misses,
+                        "source_terminal_miss": source_terminal.evidence_id,
+                    }
+                )
+                terminal = self._verified_terminal_only_v1(
+                    source=source,
+                    producer_id=registration.producer_id,
+                    branch=branch,
+                    draft=output,
+                    dispatch_receipt=dispatch_receipt,
+                )
+                return RuntimeDecisionV1(
+                    accepted=True,
+                    reason_code=RuntimeRejectCode.ACCEPT,
+                    detail="terminal-only producer returned an independently verified terminal",
+                    terminal=terminal,
+                )
+            if not routes:
+                return RuntimeDecisionV1(
+                    accepted=False,
+                    reason_code=RuntimeRejectCode.DEAD_END,
+                    detail=f"all terminal-only guards missed: {terminal_guard_misses}",
                 )
             first_registration = self.producers[routes[0].producer_id]
             first_branch = first_registration.branch(routes[0].branch_id)
@@ -1435,6 +1728,8 @@ class PersistentSelectorRuntimeV1:
 
 __all__ = [
     "BranchRegistrationV1",
+    "TerminalOnlyBranchRegistrationV1",
+    "TerminalOnlyProducerRegistrationV1",
     "CandidateTransitionV1",
     "GuardMissV1",
     "IDENTITY_MARK",
@@ -1444,6 +1739,7 @@ __all__ = [
     "ProducerRegistrationV1",
     "ProducedCandidateV1",
     "DispatchEntryV1",
+    "TerminalDispatchEntryV1",
     "RuntimeContractError",
     "RuntimeDecisionV1",
     "RuntimeQueueItemV1",

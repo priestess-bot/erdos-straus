@@ -4,7 +4,7 @@
   "track_id": "F1-ADMISSION",
   "base_sha": "332c0f7ed48d453ca76d35639a618659d9b559ca",
   "created": "2026-08-25",
-  "status": "ADAPTER_IMPLEMENTED_FAIL_CLOSED_NOT_REGISTERED",
+  "status": "TERMINAL_ONLY_SCHEMA_IMPLEMENTED_NOT_REGISTERED",
   "implemented_boundary": {
     "module": "scripts/t6_arithmetic_scheduler_adapter_v1.py",
     "test": "tests/test_t6_arithmetic_scheduler_adapter_v1.py",
@@ -17,6 +17,22 @@
       "target terminal schedule",
       "T5 ticket and recursive re-entry"
     ]
+  },
+  "terminal_only_registration": {
+    "runtime_types": [
+      "scripts/t6_persistent_selector_runtime_v1.py:TerminalOnlyBranchRegistrationV1",
+      "scripts/t6_persistent_selector_runtime_v1.py:TerminalOnlyProducerRegistrationV1",
+      "scripts/t6_persistent_selector_runtime_v1.py:TerminalDispatchEntryV1"
+    ],
+    "negative_control_test": "tests/test_t6_terminal_only_registration_v1.py",
+    "properties": [
+      "terminal-only producers are excluded from persistent ProducerRuleV1",
+      "terminal-only branches have no target owner, projector, validator or T5 ticket authority",
+      "CandidateTransition output fails closed",
+      "terminal draft verification returns before queue mutation",
+      "terminal-only and successor registrations cannot share a producer ID"
+    ],
+    "status": "PROTOCOL_IMPLEMENTED_NO_MATH_PRODUCER_REGISTERED"
   },
   "coordinator_action_required": [
     "accept or reject the explicit NONRECURSIVE_CONTROL disposition in the F1 inventory",
