@@ -87,6 +87,10 @@ This proves that a \(D_*\) divisor is not automatically a fresh consumable facto
 
 ## Branch specializations
 
+The two (p\pm1) overlap tables below are for odd (q) only. The (q=2)
+factor is the separate R6 dyadic route and must use its dedicated 2-adic
+normalization rather than these odd-prime formulas.
+
 For \(q\mid m\), with
 \(b=v_q(m)=v_q(p+1)=v_q(h-1)\) and \(t=v_q(D)-b\),
 

@@ -169,6 +169,10 @@ occurrence theorem.
 
 ## 3. Branch tables
 
+The following two overlap tables are for odd (q). The (q=2) case is the
+separate R6 dyadic branch and is governed by its own 2-adic normalization; it
+is not substituted into the odd-prime overlap formulas.
+
 For the \(p+1,h-1,m\) overlap, put
 
 \[
