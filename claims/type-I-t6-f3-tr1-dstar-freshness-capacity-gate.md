@@ -241,6 +241,27 @@ low-height domain. No actual R4/R6 saturated receipt is claimed here.
 
 ## 5. Consequences for TR1
 
+Two established local terminal implications must be applied before a freshness
+decision can create a TR1 residual:
+
+\[
+q\mid(D_*,m),\quad q\equiv3\pmod4
+\Longrightarrow\text{ direct Type-I terminal},
+\tag{18a}
+\]
+
+and
+
+\[
+q\mid(D_*,m+2,2p+1),\quad q\equiv5\pmod8
+\Longrightarrow\text{ direct Type-II terminal}.
+\tag{18b}
+\]
+
+Thus a terminal-first MISS removes these two residue subdomains from the
+remaining saturated or fresh-factor search. The complementary (p-1,h+1)
+overlap and the other pure-(T) residues remain open.
+
 The full (W_y) word is an arithmetic macro only with a frozen occurrence order
 (for example, nondecreasing prime order) and a terminal-first replay at every
 internal prefix. If an internal prefix hits a terminal, the macro returns that

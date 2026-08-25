@@ -133,6 +133,19 @@ No actual R4/R6 capacity-saturated receipt has been claimed or found in this han
 
 ## Consequences for TR1
 
+The terminal-first residual must first exclude the established local terminal
+subdomains
+
+\[
+q\mid(D_*,m), q\equiv3\pmod4
+\quad	ext{and}quad
+q\mid(D_*,m+2,2p+1), q\equiv5\pmod8.
+\]
+
+The first gives a direct Type-I certificate and the second a direct Type-II
+certificate. Their complement, especially the (p-1,h+1) overlap and the
+other pure-(T) residues, is not closed by this filter.
+
 The full (W_y) word must use a frozen occurrence order and replay terminal-first
 at every internal prefix. An internal terminal returns immediately; the initial
 child MISS is not a receipt for all later prefixes. Subject to those prefix
