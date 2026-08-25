@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 33 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 912 |
+| 数学状态 | `established` | 913 |
 | 数学状态 | `open` | 13 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 42 |
-| 证明来源 | `repository_derivation` | 743 |
+| 证明来源 | `repository_derivation` | 744 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 20 |
-| 审阅状态 | `internal_review` | 893 |
+| 审阅状态 | `internal_review` | 894 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -1231,6 +1231,7 @@
 | [q=1 full-carrier 首 child 的第二 anchor 低重图表严格 no-go](../claims/type-II-q-one-full-carrier-second-anchor-overflow.md) (`type-II-q-one-full-carrier-second-anchor-overflow`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 H3 掩码的 p+1 商上半区桥容量与单项式边界](../claims/type-II-q-one-mask-p-plus-one-upper-bridge-boundary.md) (`type-II-q-one-mask-p-plus-one-upper-bridge-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 odd second-anchor low final 的模 336 分类与 gap-7 预占](../claims/type-II-q-one-odd-low-final-gap-seven-preemption.md) (`type-II-q-one-odd-low-final-gap-seven-preemption`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
+| [q=1 odd low-final p=25 mod336 的第三-anchor C=9 contraction](../claims/type-II-q-one-odd-low-final-third-anchor-contraction.md) (`type-II-q-one-odd-low-final-third-anchor-contraction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [p=73 规范根三 bundle path-anchored 容量 no-go](../claims/type-II-q-one-p73-three-bundle-path-anchored-capacity-no-go.md) (`type-II-q-one-p73-three-bundle-path-anchored-capacity-no-go`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-08-15 |
 | [q=1 源到低 Type I 图表的精确载体 rail 与首个分派](../claims/type-II-q-one-type-I-carrier-rail-dispatch.md) (`type-II-q-one-type-I-carrier-rail-dispatch`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [Type II q 层请求的来源 CRT 纤维集中与唯一候选](../claims/type-II-q-prefix-source-crt-fiber-concentration.md) (`type-II-q-prefix-source-crt-fiber-concentration`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |

@@ -44,7 +44,7 @@ class QOneFullCarrierRuntimeSliceTests(unittest.TestCase):
         assert root is not None and final is not None
         self.assertNotEqual(root.source_state_id, root.target_state_id)
         self.assertEqual(final.source_state_id, root.target_state_id)
-        self.assertEqual(final.t5_ticket_receipt["ticket_type"], "PHASE_DROP")
+        self.assertEqual(final.t5_ticket_receipt["ticket_type"], "LOCAL_DROP")
 
 
 if __name__ == "__main__":

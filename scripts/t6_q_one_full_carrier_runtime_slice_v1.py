@@ -23,6 +23,7 @@ for directory in (ROOT / "reproductions", ROOT / "scripts"):
 
 import t6_persistent_selector_runtime_v1 as runtime  # noqa: E402
 import type_ii_q_one_full_carrier_phase_root_entry as q_one  # noqa: E402
+import type_ii_q_one_odd_low_final_third_anchor_contraction as third_anchor  # noqa: E402
 import type_ii_q_one_full_carrier_root_second_anchor_contraction as contraction  # noqa: E402
 import type_ii_q_one_type_i_carrier_rail_dispatch as rail  # noqa: E402
 
@@ -217,14 +218,16 @@ def _anchor_sink_draft(prime: int, chart_r: int, chart_k: int) -> runtime.Termin
     )
 
 
-def _checkpoint_miss_record(prime: int, chart_r: int, chart_k: int) -> dict[str, str]:
+def _checkpoint_miss_record(
+    prime: int, chart_r: int, chart_k: int, scope: str
+) -> dict[str, str]:
     """Seal the macro-internal anchor check without making it a queue state."""
     if _anchor_sink_draft(prime, chart_r, chart_k) is not None:
         raise AssertionError("a checkpoint terminal must preempt the contraction")
     payload = {
         "schema_id": "q1_checkpoint_anchor_terminal_miss_v1",
         "schema_version": 1,
-        "scope": "q1_first_child_anchor_sink",
+        "scope": scope,
         "prime": prime,
         "R": chart_r,
         "K": chart_k,
@@ -236,22 +239,82 @@ def _checkpoint_miss_record(prime: int, chart_r: int, chart_k: int) -> dict[str,
     }
 
 
+def _contraction_macro(prime: int) -> dict[str, Any]:
+    """Return the final target after all nonpersistent q=1 checkpoints."""
+    second = contraction.root_second_anchor_contraction(prime)
+    second_final = second["final_target"]
+    checkpoints: dict[str, Any] = {
+        "first_child": second["checkpoints"]["first_child"],
+        "second_anchor_high_determinant": second["checkpoints"][
+            "second_anchor_high_determinant"
+        ],
+    }
+    final = {
+        "R": second_final["R"],
+        "K": second_final["K"],
+        "support": second_final["support"],
+        "ticket": second_final["ticket"],
+        "provenance_kind": second_final["facts"]["provenance_kind"],
+    }
+    mode = "second_anchor_final"
+    if prime % 336 == 25:
+        third = third_anchor.low_checkpoint_to_c9(prime)
+        checkpoints["odd_low_final"] = {
+            "R": second_final["R"],
+            "K": second_final["K"],
+            "support": second_final["support"],
+        }
+        checkpoints["third_anchor"] = third["low_checkpoint"]
+        final = {
+            "R": third["final_high"]["R"],
+            "K": third["final_high"]["K"],
+            "support": third["final_high"]["support"],
+            "ticket": "LOCAL_DROP",
+            "provenance_kind": "OVERFLOW",
+        }
+        mode = "second_anchor_then_c9"
+    return {
+        "prime": prime,
+        "t": second["t"],
+        "mode": mode,
+        "checkpoints": checkpoints,
+        "final_target": final,
+    }
+
+
 def _contraction_witness(prime: int, receipt: Mapping[str, Any]) -> dict[str, Any]:
     """Bind all nonpersistent checkpoint arithmetic into the runtime candidate."""
     child = receipt["checkpoints"]["first_child"]
-    checkpoint_miss = _checkpoint_miss_record(prime, int(child["R"]), int(child["K"]))
+    checkpoint_misses = [
+        _checkpoint_miss_record(
+            prime,
+            int(child["R"]),
+            int(child["K"]),
+            "q1_first_child_anchor_sink",
+        )["digest"]
+    ]
+    low_checkpoint = receipt["checkpoints"].get("odd_low_final")
+    if isinstance(low_checkpoint, Mapping):
+        checkpoint_misses.append(
+            _checkpoint_miss_record(
+                prime,
+                int(low_checkpoint["R"]),
+                int(low_checkpoint["K"]),
+                "q1_odd_low_final_anchor_sink",
+            )["digest"]
+        )
     material = {
         "prime": prime,
         "t": receipt["t"],
-        "first_child": child,
-        "second_anchor_high_determinant": receipt["checkpoints"]["second_anchor_high_determinant"],
+        "mode": receipt["mode"],
+        "checkpoints": receipt["checkpoints"],
         "final_target": receipt["final_target"],
     }
     return {
         "prime": prime,
-        "macro": "root_second_anchor",
+        "macro": receipt["mode"],
         "t": receipt["t"],
-        "checkpoint_terminal_miss": checkpoint_miss["digest"],
+        "checkpoint_terminal_misses": checkpoint_misses,
         "macro_replay_digest": runtime.canonical_digest_v1(material),
     }
 
@@ -342,7 +405,7 @@ def _root_facts(prime: int) -> dict[str, Any]:
 
 
 def _final_facts(prime: int) -> tuple[dict[str, Any], runtime.T5StateDescriptorV1, str]:
-    receipt = contraction.root_second_anchor_contraction(prime)
+    receipt = _contraction_macro(prime)
     final = receipt["final_target"]
     target_r, target_k, support = final["R"], final["K"], final["support"]
     if not all(isinstance(value, int) for value in (target_r, target_k, support)):
@@ -360,7 +423,7 @@ def _final_facts(prime: int) -> tuple[dict[str, Any], runtime.T5StateDescriptorV
         }
     )
     ticket = str(final["ticket"])
-    if final["facts"]["provenance_kind"] == "OVERFLOW":
+    if final["provenance_kind"] == "OVERFLOW":
         facts.update(
             {
                 "type_i_protocol": "CHARGED",
@@ -414,7 +477,7 @@ def _contraction_executor(
     if branch_id != CONTRACTION_BRANCH:
         return runtime.GuardMissV1("UNKNOWN_BRANCH", branch_id)
     prime = source.header.root_context
-    receipt = contraction.root_second_anchor_contraction(prime)
+    receipt = _contraction_macro(prime)
     final = receipt["final_target"]
     return runtime.CandidateTransitionV1(
         producer_id=CONTRACTION_PRODUCER,
@@ -452,7 +515,7 @@ def _contraction_projector(
     source: runtime.SourceExecutionContextV1, candidate: runtime.CandidateTransitionV1
 ) -> runtime.TargetProjectionV1:
     prime = source.header.root_context
-    receipt = contraction.root_second_anchor_contraction(prime)
+    receipt = _contraction_macro(prime)
     if candidate.witness_payload != _contraction_witness(prime, receipt):
         raise runtime.RuntimeContractError(
             runtime.RuntimeRejectCode.PROJECTOR_OUTPUT_INVALID,
@@ -517,7 +580,7 @@ def _contraction_validator(
     projection: runtime.TargetProjectionV1,
 ) -> runtime.TransitionValidationV1:
     prime = source.header.root_context
-    receipt = contraction.root_second_anchor_contraction(prime)
+    receipt = _contraction_macro(prime)
     root_facts = source.header.facts
     final = receipt["final_target"]
     e1 = bool(
@@ -534,7 +597,7 @@ def _contraction_validator(
         4 * projection.facts["chart_K"]
         == prime * projection.facts["chart_R"] + 1
         and projection.facts["chart_K"] % projection.facts["support_A"] == 0
-        and projection.facts["provenance_kind"] == final["facts"]["provenance_kind"]
+        and projection.facts["provenance_kind"] == final["provenance_kind"]
     )
     e4 = source.header.mark_kind == CONTRACT.ROOT_SOL
     return runtime.TransitionValidationV1(
@@ -548,6 +611,7 @@ def _contraction_validator(
         E4=e4,
         evidence_ids=(
             "claim:type-II-q-one-full-carrier-root-second-anchor-contraction",
+            "claim:type-II-q-one-odd-low-final-third-anchor-contraction",
         ),
     )
 
@@ -599,7 +663,10 @@ def build_runtime() -> runtime.PersistentSelectorRuntimeV1:
         target_owners=frozenset(
             {"type_i_a_gt_one_overflow_residual", "type_i_absorb_marked_residual"}
         ),
-        evidence_refs=("claim:type-II-q-one-full-carrier-root-second-anchor-contraction",),
+        evidence_refs=(
+            "claim:type-II-q-one-full-carrier-root-second-anchor-contraction",
+            "claim:type-II-q-one-odd-low-final-third-anchor-contraction",
+        ),
         allowed_tickets=frozenset({"LOCAL_DROP", "PHASE_DROP"}),
         projector_id="q1.contraction.projector",
         transition_validator_id="q1.contraction.validator",
@@ -719,7 +786,7 @@ def verify() -> None:
         raise AssertionError("p=601 odd-low gap-7 preemption changed")
     for prime, expected_owner, expected_ticket in (
         (73, "type_i_a_gt_one_overflow_residual", "LOCAL_DROP"),
-        (1033, "type_i_absorb_marked_residual", "PHASE_DROP"),
+        (1033, "type_i_a_gt_one_overflow_residual", "LOCAL_DROP"),
     ):
         result = run_q_one_runtime_slice(prime)
         final = result["final"]

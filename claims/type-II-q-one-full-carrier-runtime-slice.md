@@ -23,6 +23,7 @@ depends_on:
   - type-II-q-one-full-carrier-phase-root-entry
   - type-II-q-one-full-carrier-root-second-anchor-contraction
   - type-II-q-one-odd-low-final-gap-seven-preemption
+  - type-II-q-one-odd-low-final-third-anchor-contraction
   - t6-persistent-selector-runtime-v1
   - t6-persistent-selector-state-v1
 topics:
@@ -143,14 +144,15 @@ For \(p=73\), the final target is the overflow
 \]
 
 with `LOCAL_DROP`. The \(p=601\) odd-low control is now preempted at gap 7.
-For \(p=1033\), the local slice instead reaches the low chart
+For \(p=1033\), the remaining low checkpoint is contracted once more to
+the structured high \(C=9\) chart
 
 \[
-(R,K;A)=(247,63788;862)
+(R,K;A)=(3695,954234;106026)
 \tag{6}
 \]
 
-with `TYPEI/ABSORB`, cursor \((1,246,1)\), and `PHASE_DROP`. These are
+with `TYPEI/CHARGED` and `LOCAL_DROP`. These are
 not numerical-only controls: both paths are executed through the shared
 queue and state classifier.
 
