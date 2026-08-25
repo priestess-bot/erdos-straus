@@ -10,8 +10,8 @@ not informal “almost complete” status.
 |---|---|---|
 | F1 | 9 inventoried unknown source/runtime items; no proof every legacy write uses the runtime | D1/D2/D3 |
 | F2 post-G/H4/c8 | arithmetic reductions exist, but actual source terminal schedules and final runtime re-entry are not continuous | E1/E3 |
-| F2 high C=1 | same-protocol, direct-cofactor, q1/c8/H4 subfamilies excluded; no global terminal/protocol/outer-rank exit | E2/E5 |
-| F2 high C>1 | checkpoint/carry alone cannot force bounded descent; no actual-source alternate exit | E1/E5 |
+| F2 high C=1 | two terminal sieves reduce it to the exact (R=3)-G hard-core branch; its ABSORB cursor has a formal self-loop | E1/E3/E5 |
+| F2 high C>1 | checkpoint/carry alone cannot force bounded descent; factor-saturation lacks structural E1 provenance | E1/E5 |
 | F3 high | strict carry waits for E3; high stutter splits into Pell (k=1) and odd (k\ge3) residuals | E3 / all |
 | F3 QC1 | ideal factor has no integer raw occurrence or conserved support charge | E1 |
 | F3 TR1 | h-menu/D-star factors are only arithmetic eligibility, not consumable occurrences | E1 |

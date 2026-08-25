@@ -67,11 +67,15 @@
         "same-protocol complete-excess local minimum",
         "q1 immediate, c8 OTHER and H4_A1 clean-q producer subfamilies are C1-free",
         "direct-cofactor r-chart returns the same chart",
+        "deterministic low dual has a canonical R=3 ABSORB cursor only as a nonrecursive formal cursor",
+        "p+4 with a 3 mod 4 prime factor gives a Type II terminal before the dual",
+        "otherwise N=(3p+1)/4 with a 2 mod 3 prime factor gives a Type I terminal",
+        "the residual is precisely p+4 hard-core together with N all 1 mod 3, an R=3-G branch",
         "no generic C1 family is admitted"
       ],
-      "exact_blocker": "A terminal, outer-rank, phase/protocol or paid reset exit for the remaining actual C1 family is missing.",
-      "missing": ["E2", "E3", "E5", "D2", "D5", "D7", "D8"],
-      "next_minimal_theorem": "Classify one deterministic lower-protocol/ABSORB or terminal exit for actual C1 parents, or prove the residual family empty from complete source constraints."
+      "exact_blocker": "For the exact R=3-G hard-core branch, the low cursor has a formal self-loop and no E1 root-entry, target terminal schedule, E3 ABSORB admission or non-upward re-entry theorem.",
+      "missing": ["E1", "E2", "E3", "E5", "D2", "D5", "D7", "D8"],
+      "next_minimal_theorem": "Give the R=3-G hard-core branch a terminal, an actual source-preserving ABSORB entry with nonreturn, or a family-empty theorem."
     },
     {
       "id": "F2-HIGH-SUPPORT-CGT1",
@@ -79,7 +83,9 @@
       "established_reductions": [
         "determinant-bound low-support branches all strictly exit",
         "checkpoint product collapses to one final multiplier",
-        "arbitrarily long C=2 carry stutter controls rule out a bounded carry-only descent theorem"
+        "arbitrarily long C=2 carry stutter controls rule out a bounded carry-only descent theorem",
+        "fixed-n/fixed-s and total-cofactor cannot lower the high-support cofactor",
+        "arithmetic support saturation A->A*spf(C) lowers C but is structurally outside the existing determinant ledger because spf(C) does not divide d=p-C"
       ],
       "exact_blocker": "No actual-source terminal/phase/outer-rank exit covers the empty-improvement complement; carry/checkpoint facts do not pay E5.",
       "missing": ["E1", "E2", "E3", "E4", "E5", "D2", "D5", "D7", "D8"],
@@ -91,14 +97,14 @@
       "id": "F3-HIGH-STRICT-CARRY",
       "quantifier": "ACTUAL_PERSISTENT proper-factor root with h>p, terminal miss and high-domain c<=p-2.",
       "established_reductions": ["high-domain normal form", "canonical target is R_T>p overflow", "identity lift and conditional parent-to-final local drop"],
-      "exact_blocker": "Actual high source owner/runtime projection and final E3 admission/re-entry are absent.",
-      "missing": ["E3", "D5", "D8"],
-      "next_minimal_theorem": "Bind high strict rebase to proper_root_high_endpoint source through one common runtime producer."
+      "exact_blocker": "High arithmetic identity is replayed from r/M/u/h facts, but the actual source path/receipt, final E3 admission and re-entry are absent.",
+      "missing": ["E1", "E3", "D5", "D8"],
+      "next_minimal_theorem": "Bind high strict rebase to a proper_root_high_endpoint source receipt and common runtime producer."
     },
     {
       "id": "F3-HIGH-STUTTER-K1",
       "quantifier": "ACTUAL_PERSISTENT proper-factor high root with terminal miss, c=p-1 and high-domain k=1 Pell parameterization.",
-      "established_reductions": ["exact Pell-type parameterization", "known curve shadows are nonactual or terminal-preempted"],
+      "established_reductions": ["exact Pell-type parameterization", "two high-domain actual divisor gates", "known curve shadows are nonactual or terminal-preempted"],
       "exact_blocker": "No canonical-maximal actual receipt coverage or empty/terminal/paid successor theorem.",
       "missing": ["E1", "E2", "E3", "E4", "E5", "D1-D8"],
       "next_minimal_theorem": "Show every Pell parameter tuple violates actual maximality/terminal-first, or construct a high-domain successor without low-height routing."
@@ -106,7 +112,7 @@
     {
       "id": "F3-HIGH-STUTTER-ODD-KGE3",
       "quantifier": "ACTUAL_PERSISTENT proper-factor high root with terminal miss, c=p-1 and rederived odd k>=3.",
-      "established_reductions": ["high-domain N=h*k split", "low-height QC1/TR1 is explicitly excluded"],
+      "established_reductions": ["high-domain N=h*k split", "two high-domain actual divisor gates", "low-height QC1/TR1 is explicitly excluded"],
       "exact_blocker": "No bounded high-domain normal form or physical carrier theorem.",
       "missing": ["E1", "E2", "E3", "E4", "E5", "D1-D8"],
       "next_minimal_theorem": "Derive a high-only divisor/size dichotomy for odd k>=3."
