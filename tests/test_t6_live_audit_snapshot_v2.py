@@ -464,20 +464,50 @@ class T6LiveAuditSnapshotV2Tests(unittest.TestCase):
         manifest = {"head_sha": head}
         api = MockGitHubApi(head_sha=head)
         with mock.patch.dict(os.environ, {}, clear=True):
-            provenance = AUDIT._verify_github_run_provenance(
+            local_provenance = AUDIT._verify_github_run_provenance(
                 locator=locator(),
                 manifest=manifest,
                 manifest_bytes=MANIFEST_BYTES,
                 api_client=api,
                 now=PROVENANCE_NOW,
             )
-        self.assertEqual(provenance["success_basis"], "BOTH")
+        same_run_environment = {
+            "GITHUB_ACTIONS": "true",
+            "GITHUB_REPOSITORY": locator().repository,
+            "GITHUB_RUN_ID": str(locator().run_id),
+            "GITHUB_RUN_ATTEMPT": str(locator().run_attempt),
+            "GITHUB_SHA": head,
+            "GITHUB_EVENT_NAME": "push",
+            "GITHUB_REF": "refs/heads/main",
+        }
+        with mock.patch.dict(os.environ, same_run_environment, clear=True):
+            same_run_provenance = AUDIT._verify_github_run_provenance(
+                locator=locator(),
+                manifest=manifest,
+                manifest_bytes=MANIFEST_BYTES,
+                api_client=api,
+                now=PROVENANCE_NOW,
+            )
+        historical_environment = dict(same_run_environment)
+        historical_environment["GITHUB_RUN_ID"] = "32999999999"
+        historical_environment["GITHUB_SHA"] = "f" * 40
+        with mock.patch.dict(os.environ, historical_environment, clear=True):
+            historical_provenance = AUDIT._verify_github_run_provenance(
+                locator=locator(),
+                manifest=manifest,
+                manifest_bytes=MANIFEST_BYTES,
+                api_client=api,
+                now=PROVENANCE_NOW,
+            )
+        self.assertEqual(local_provenance, same_run_provenance)
+        self.assertEqual(local_provenance, historical_provenance)
         self.assertEqual(
-            provenance["artifact_digest"],
-            "sha256:" + hashlib.sha256(MANIFEST_BYTES).hexdigest(),
+            local_provenance["gate_zero_success_basis"],
+            "GATE_ZERO_JOB_COMPLETED_SUCCESS",
         )
         self.assertEqual(
-            provenance["environment_cross_check"]["status"], "NOT_PRESENT"
+            local_provenance["artifact_digest"],
+            "sha256:" + hashlib.sha256(MANIFEST_BYTES).hexdigest(),
         )
         Draft202012Validator(
             json.loads(
@@ -486,7 +516,7 @@ class T6LiveAuditSnapshotV2Tests(unittest.TestCase):
                 )
             ),
             format_checker=FormatChecker(),
-        ).validate(provenance)
+        ).validate(local_provenance)
 
     def test_api_provenance_mutation_matrix_fails_closed(self) -> None:
         head = AUDIT.resolve_head(self.repository)
@@ -537,14 +567,25 @@ class T6LiveAuditSnapshotV2Tests(unittest.TestCase):
         api = MockGitHubApi(
             head_sha=head, run_status="in_progress", run_conclusion=None
         )
-        provenance = AUDIT._verify_github_run_provenance(
+        in_progress_provenance = AUDIT._verify_github_run_provenance(
             locator=locator(),
             manifest={"head_sha": head},
             manifest_bytes=MANIFEST_BYTES,
             api_client=api,
             now=PROVENANCE_NOW,
         )
-        self.assertEqual(provenance["success_basis"], "JOB_SUCCESS")
+        completed_provenance = AUDIT._verify_github_run_provenance(
+            locator=locator(),
+            manifest={"head_sha": head},
+            manifest_bytes=MANIFEST_BYTES,
+            api_client=MockGitHubApi(head_sha=head),
+            now=PROVENANCE_NOW,
+        )
+        self.assertEqual(in_progress_provenance, completed_provenance)
+        self.assertEqual(
+            in_progress_provenance["gate_zero_success_basis"],
+            "GATE_ZERO_JOB_COMPLETED_SUCCESS",
+        )
         api.jobs[0]["conclusion"] = "skipped"
         with self.assertRaisesRegex(AUDIT.SnapshotError, "Gate-0 job"):
             AUDIT._verify_github_run_provenance(
@@ -558,7 +599,16 @@ class T6LiveAuditSnapshotV2Tests(unittest.TestCase):
     def test_environment_is_only_a_cross_check(self) -> None:
         head = AUDIT.resolve_head(self.repository)
         api = MockGitHubApi(head_sha=head)
-        with mock.patch.dict(os.environ, {"GITHUB_RUN_ID": "wrong"}, clear=True):
+        environment = {
+            "GITHUB_ACTIONS": "true",
+            "GITHUB_REPOSITORY": locator().repository,
+            "GITHUB_RUN_ID": str(locator().run_id),
+            "GITHUB_RUN_ATTEMPT": str(locator().run_attempt),
+            "GITHUB_SHA": "0" * 40,
+            "GITHUB_EVENT_NAME": "push",
+            "GITHUB_REF": "refs/heads/main",
+        }
+        with mock.patch.dict(os.environ, environment, clear=True):
             with self.assertRaisesRegex(AUDIT.SnapshotError, "cross-check"):
                 AUDIT._verify_github_run_provenance(
                     locator=locator(),

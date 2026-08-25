@@ -80,6 +80,19 @@ not create provenance. A local file carrying plausible run IDs, or a manifest
 sealed without executing the workflow, cannot satisfy the service metadata and
 artifact digest gate.
 
+Environment values are not stored in the permanent basis. They are checked
+strictly when verification runs inside the same GitHub run named by the
+locator; local replay and a later workflow replaying an older green run rely on
+the official API and immutable artifact instead of inheriting unrelated current
+run variables.
+
+The overall workflow run is still `in_progress` while its dependent snapshot
+job executes. That transient run status is checked but is not sealed into the
+permanent Gate-0 basis. The stable basis records the already completed and
+successful `gate-zero` job. A later replay of the same successful run therefore
+produces identical provenance after the run changes to `completed`; if the
+completed run instead has a non-success conclusion, replay fails closed.
+
 ## State machine
 
 Let `H` be the API-attested Gate-0 HEAD and `C` the current observed HEAD.
@@ -105,4 +118,3 @@ conjecture. The current implementation deliberately emits
 `current_digest_audit.status = MISSING` unless an independent reviewer supplies
 an exact current-HEAD digest-vector basis. Consequently the present integration
 must keep `status_upgrade_allowed = false` even when its Gate-0 HEAD is verified.
-

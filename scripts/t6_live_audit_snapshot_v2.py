@@ -237,9 +237,7 @@ GITHUB_PROVENANCE_KEYS = frozenset(
         "run_event",
         "run_head_branch",
         "head_repository_id",
-        "run_status",
-        "run_conclusion",
-        "success_basis",
+        "gate_zero_success_basis",
         "job_id",
         "job_name",
         "job_status",
@@ -252,7 +250,6 @@ GITHUB_PROVENANCE_KEYS = frozenset(
         "artifact_digest",
         "artifact_workflow_run_id",
         "artifact_workflow_run_head_sha",
-        "environment_cross_check",
     }
 )
 
@@ -859,9 +856,7 @@ def _replay_gate0_manifest_content(
     return manifest, manifest_bytes, content_basis
 
 
-def _environment_cross_check(
-    *, locator: Gate0RunLocatorV1, head_sha: str
-) -> dict[str, Any]:
+def _environment_cross_check(*, locator: Gate0RunLocatorV1, head_sha: str) -> None:
     expected = {
         "GITHUB_REPOSITORY": locator.repository,
         "GITHUB_RUN_ID": str(locator.run_id),
@@ -870,11 +865,17 @@ def _environment_cross_check(
         "GITHUB_EVENT_NAME": "push",
         "GITHUB_REF": "refs/heads/main",
     }
+    if os.environ.get("GITHUB_ACTIONS") != "true":
+        return
+    observed_run_id = os.environ.get("GITHUB_RUN_ID")
+    if observed_run_id is None:
+        raise SnapshotError("GitHub environment cross-check is missing GITHUB_RUN_ID")
+    if observed_run_id != expected["GITHUB_RUN_ID"]:
+        return
     present = {key: os.environ[key] for key in expected if key in os.environ}
-    if os.environ.get("GITHUB_ACTIONS") == "true":
-        missing = sorted(set(expected) - set(present))
-        if missing:
-            raise SnapshotError(f"GitHub environment cross-check is missing {missing}")
+    missing = sorted(set(expected) - set(present))
+    if missing:
+        raise SnapshotError(f"GitHub environment cross-check is missing {missing}")
     mismatches = {
         key: {"observed": present[key], "expected": expected[key]}
         for key in present
@@ -882,13 +883,6 @@ def _environment_cross_check(
     }
     if mismatches:
         raise SnapshotError(f"GitHub environment cross-check failed: {mismatches}")
-    if not present:
-        status = "NOT_PRESENT"
-    elif set(present) == set(expected):
-        status = "FULL_MATCH"
-    else:
-        status = "PARTIAL_MATCH"
-    return {"status": status, "checked_fields": sorted(present)}
 
 
 def _verify_github_run_provenance(
@@ -971,9 +965,8 @@ def _verify_github_run_provenance(
     if run_status == "completed":
         if run_conclusion != "success":
             raise SnapshotError("completed GitHub run did not conclude successfully")
-        success_basis = "BOTH"
     elif run_status == "in_progress" and run_conclusion is None:
-        success_basis = "JOB_SUCCESS"
+        pass
     else:
         raise SnapshotError("GitHub run status is not eligible for Gate-0 provenance")
 
@@ -1015,7 +1008,7 @@ def _verify_github_run_provenance(
         if artifact_run.get(field) != expected_value:
             raise SnapshotError(f"GitHub artifact workflow_run {field} is stale")
 
-    environment = _environment_cross_check(locator=locator, head_sha=str(head_sha))
+    _environment_cross_check(locator=locator, head_sha=str(head_sha))
     return {
         "schema_id": "t6_gate0_run_provenance_v1",
         "schema_version": 1,
@@ -1032,9 +1025,7 @@ def _verify_github_run_provenance(
         "run_event": "push",
         "run_head_branch": "main",
         "head_repository_id": TRUSTED_REPOSITORY_ID,
-        "run_status": run_status,
-        "run_conclusion": run_conclusion,
-        "success_basis": success_basis,
+        "gate_zero_success_basis": "GATE_ZERO_JOB_COMPLETED_SUCCESS",
         "job_id": locator.job_id,
         "job_name": TRUSTED_GATE0_JOB_NAME,
         "job_status": job.get("status"),
@@ -1047,7 +1038,6 @@ def _verify_github_run_provenance(
         "artifact_digest": expected_server_digest,
         "artifact_workflow_run_id": locator.run_id,
         "artifact_workflow_run_head_sha": head_sha,
-        "environment_cross_check": environment,
     }
 
 
