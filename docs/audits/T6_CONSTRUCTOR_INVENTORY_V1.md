@@ -1,5 +1,11 @@
 # T6 constructor inventory v1：活动源码与活动 data 的双向清单
 
+> Current-state note (2026-08-25): the historical audit below predates the
+> local PersistentSelectorRuntimeV1 queue anchor. The current audit recognizes
+> that anchor and classifies nine former source signals as explicit nonruntime
+> controls; four global F1 unknowns remain. The historical baseline claims and
+> counts are retained below for provenance.
+
 日期：2026-08-23
 
 基线：`c851bd213936b3bc8b3103b469292c139d229e97`

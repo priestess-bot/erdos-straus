@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 33 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 927 |
+| 数学状态 | `established` | 929 |
 | 数学状态 | `open` | 13 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 42 |
-| 证明来源 | `repository_derivation` | 758 |
+| 证明来源 | `repository_derivation` | 760 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 20 |
-| 审阅状态 | `internal_review` | 908 |
+| 审阅状态 | `internal_review` | 910 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -351,6 +351,7 @@
 | [Canonical high-support determinant dual gives a deterministic low-chart handoff](../claims/type-I-f2-high-support-determinant-dual-absorb-handoff.md) (`type-I-f2-high-support-determinant-dual-absorb-handoff`) | `conditional` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [F2 high-support R=3 raw-menu obstruction and C>1 external-rechart lock](../claims/type-I-f2-high-support-r-three-raw-menu-and-external-rechart-boundary.md) (`type-I-f2-high-support-r-three-raw-menu-and-external-rechart-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [F2 A>1 overflow 的 determinant receipt 前置分拆与 p=409 异常处置](../claims/type-I-f2-overflow-determinant-prepartition.md) (`type-I-f2-overflow-determinant-prepartition`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-24 |
+| [R=3 hard-core D-contact completion dichotomy](../claims/type-I-f2-r-three-d-contact-completion-dichotomy.md) (`type-I-f2-r-three-d-contact-completion-dichotomy`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [R=3 hard-core D-contact cannot directly carry a new Type II terminal](../claims/type-I-f2-r-three-d-contact-terminal-boundary.md) (`type-I-f2-r-three-d-contact-terminal-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [无因数分解中心 hit 的 Type I 终端序列化](../claims/type-I-factorization-free-centered-hit-terminal-serializer.md) (`type-I-factorization-free-centered-hit-terminal-serializer`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [固定 D 一跳 F/G source-map 的 canonical—SNF—owner 闭合三分](../claims/type-I-fg-canonical-d-lattice-owner-closure.md) (`type-I-fg-canonical-d-lattice-owner-closure`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
@@ -919,6 +920,7 @@
 | [T6-F3 proper-root 的确定域路由与显式 residual 穷尽](../claims/type-I-t6-f3-proper-root-routing-with-explicit-residuals.md) (`type-I-t6-f3-proper-root-routing-with-explicit-residuals`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-23 |
 | [QC1 endpoint-excess q deflation has a canonical strict target](../claims/type-I-t6-f3-qc1-endpoint-excess-deflation.md) (`type-I-t6-f3-qc1-endpoint-excess-deflation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [F3 R3/R5 quotient-only 的规范 ideal factor 与整数 occurrence 边界](../claims/type-I-t6-f3-qc1-quotient-only-occurrence-boundary.md) (`type-I-t6-f3-qc1-quotient-only-occurrence-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
+| [R6 dyadic atomic companion has a p-free full-capacity raw continuation](../claims/type-I-t6-f3-r6-dyadic-companion-full-capacity-pfree.md) (`type-I-t6-f3-r6-dyadic-companion-full-capacity-pfree`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [TR1 dyadic-fresh endpoint has a strict complete-excess child normal form](../claims/type-I-t6-f3-tr1-dyadic-fresh-child-normalization.md) (`type-I-t6-f3-tr1-dyadic-fresh-child-normalization`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [TR1 D-star factors split exactly into fresh raw factors and capacity-saturated factors](../claims/type-I-t6-f3-tr1-fresh-dstar-endpoint-split.md) (`type-I-t6-f3-tr1-fresh-dstar-endpoint-split`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [R4 h-supported TR1 has no dyadic-fresh subleaf](../claims/type-I-t6-f3-tr1-r-four-dyadic-fresh-exclusion.md) (`type-I-t6-f3-tr1-r-four-dyadic-fresh-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |

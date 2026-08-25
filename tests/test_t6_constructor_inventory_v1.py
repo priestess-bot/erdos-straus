@@ -32,7 +32,12 @@ class T6ConstructorInventoryV1Tests(unittest.TestCase):
         cls.source_signals = AUDIT.discover_source_signals(ROOT, ("reproductions", "scripts"))
         cls.queue_signals = AUDIT.discover_queue_api_signals(ROOT, ("reproductions", "scripts"))
 
-    def audit_mutation(self, inventory: dict[str, Any]):
+    def audit_mutation(
+        self,
+        inventory: dict[str, Any],
+        *,
+        queue_signals=None,
+    ):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "inventory.json"
             path.write_text(json.dumps(inventory), encoding="utf-8")
@@ -40,7 +45,9 @@ class T6ConstructorInventoryV1Tests(unittest.TestCase):
                 ROOT,
                 path,
                 source_signals=self.source_signals,
-                queue_api_signals=self.queue_signals,
+                queue_api_signals=(
+                    self.queue_signals if queue_signals is None else queue_signals
+                ),
             )
 
     def test_canonical_inventory_is_honest_but_not_closure_ready(self) -> None:
@@ -51,7 +58,14 @@ class T6ConstructorInventoryV1Tests(unittest.TestCase):
         )
         self.assertTrue(result.ok, "\n".join(result.errors))
         self.assertFalse(result.closure_ready)
-        self.assertEqual(result.queue_api_signals, ())
+        self.assertEqual(
+            result.queue_api_signals,
+            (
+                "scripts/t6_persistent_selector_runtime_v1.py:"
+                "PersistentSelectorRuntimeV1._enqueue_admitted_target_v1:"
+                "self._queue.append",
+            ),
+        )
         self.assertTrue(
             any("total_cofactor_typed_adapter.py:registration" in item for item in result.source_signals)
         )
@@ -106,7 +120,7 @@ class T6ConstructorInventoryV1Tests(unittest.TestCase):
         inventory["entries"][0]["serializer"]["enqueue_gate"] = (
             "reproductions/type_ii_initial_q_one_root_dispatch.py:initial_dispatch"
         )
-        result = self.audit_mutation(inventory)
+        result = self.audit_mutation(inventory, queue_signals=())
         self.assertFalse(result.ok)
         self.assertTrue(any("claims enqueue gate" in error for error in result.errors))
 
@@ -121,7 +135,7 @@ class T6ConstructorInventoryV1Tests(unittest.TestCase):
         self.assertEqual({row["maps_to"] for row in rows.values()}, {"UNASSIGNED"})
         self.assertEqual(
             {row["disposition"] for row in rows.values()},
-            {"UNREGISTERED_RELATIVE_ADAPTER_INPUT", "FIXTURE_MANUFACTURED_QUEUE_FLAG"},
+            {"NONRUNTIME_RELATIVE_ADAPTER"},
         )
 
     def test_f1_cannot_be_upgraded_while_unknowns_remain(self) -> None:

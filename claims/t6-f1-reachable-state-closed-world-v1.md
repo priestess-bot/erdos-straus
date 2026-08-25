@@ -7,7 +7,8 @@ statement: >-
   经固定 precedence 有唯一 owner；新 admission gate 对零命中、非法重叠、未知 producer
   和未声明 target 均在入队前失败；并且在 initializer 基础步 B、逐 constructor 重入步 S
   与唯一 gate 假设 X 下，有限迹归纳给出所有实际可达持久状态均有唯一 owner。但是当前
-  活动源码既无统一 persistent queue/enqueue gate，也有 9 个 unresolved producer/serializer
+  活动源码只有局部 persistent queue/runtime；全局 enqueue/re-entry 仍未闭合，当前有 4 个
+  unresolved producer/serializer
   项；C=2 的 H3 仅到 nonrecursive pending-dispatch，若干 registry edge 只有 conditional
   controls，另有未登记的 recursive-edge signals。因此 A2 的逐 constructor guard partition、
   A3 的 family totality、实际 re-entry 与无旁路迹归纳均未建立，T6-F1 必须保持 OPEN。
@@ -242,7 +243,7 @@ nonrecursive surface。没有 serializer 将 (8) 投影成
 | 所有真实 enqueue 均经过新 gate | `OPEN` | 当前没有统一 queue 或 mutation site |
 | 所有 nonterminal target 实际重入同一域 | `OPEN` | C=2/H4/c=8/overflow 等 serializer 缺失 |
 | initializer 基础步 B | `OPEN_INTEGRATION` | 算术 owner 已证，v1 serializer/gate 未接入 |
-| successor 步 S | `OPEN` | inventory unknown 为 9 |
+| successor 步 S | `OPEN` | inventory unknown 为 4；另有局部 nonruntime controls 不进入递归 surface |
 | 无旁路假设 X | `OPEN` | authoritative runtime surface 尚未定义 |
 | B、S、X 下的迹归纳 | `ESTABLISHED_CONDITIONAL` | 纯结构归纳，不由有限 trace 测试替代 |
 

@@ -35,6 +35,11 @@ REGISTERED_DISPOSITIONS = {
     "REGISTERED_PRIMARY",
     "REGISTERED_ALIAS",
 }
+NONRUNTIME_CONTROL_DISPOSITIONS = {
+    "NONRUNTIME_ARITHMETIC_CONTROL",
+    "NONRUNTIME_RELATIVE_ADAPTER",
+    "NONRUNTIME_FIXED_CONTROL",
+}
 
 
 @dataclass(frozen=True)
@@ -242,6 +247,53 @@ def _top_level_symbols(path: Path) -> set[str]:
         for node in tree.body
         if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef))
     }
+
+
+def _function_has_runtime_mutation(root: Path, anchor: str) -> bool:
+    """Reject a nonruntime disposition if its anchored function calls the runtime."""
+    parts = anchor.split(":")
+    if len(parts) < 2:
+        return True
+    relative, function_name = parts[0], parts[1]
+    path = root / relative
+    try:
+        tree = ast.parse(path.read_text(encoding="utf-8"), filename=relative)
+    except (OSError, SyntaxError, UnicodeError):
+        return True
+    function = next(
+        (
+            node
+            for node in tree.body
+            if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef))
+            and node.name == function_name
+        ),
+        None,
+    )
+    if function is None:
+        return True
+    forbidden_names = {
+        "PersistentSelectorRuntimeV1",
+        "reject_before_persistent_queue_v1",
+        "enqueue",
+        "put",
+        "put_nowait",
+        "ProducerRegistrationV1",
+        "BranchRegistrationV1",
+    }
+    for node in ast.walk(function):
+        if isinstance(node, ast.Call):
+            if isinstance(node.func, ast.Name) and node.func.id in forbidden_names:
+                return True
+            if isinstance(node.func, ast.Attribute):
+                if node.func.attr in forbidden_names:
+                    return True
+                if (
+                    node.func.attr == "append"
+                    and isinstance(node.func.value, ast.Attribute)
+                    and node.func.value.attr == "_queue"
+                ):
+                    return True
+    return False
 
 
 def _as_object_list(value: object, *, name: str, errors: list[str]) -> list[dict[str, Any]]:
@@ -513,6 +565,35 @@ def audit_inventory(
         if disposition in REGISTERED_DISPOSITIONS:
             if mapping not in known_mapping_ids:
                 errors.append(f"{anchor}: registered disposition maps to unknown id {mapping!r}")
+        elif disposition in NONRUNTIME_CONTROL_DISPOSITIONS:
+            profile = row.get("nonruntime_control")
+            if not isinstance(profile, dict):
+                errors.append(f"{anchor}: nonruntime disposition lacks control profile")
+                continue
+            required_profile = (
+                "recursive_runtime",
+                "persistent_state_projection",
+                "queue_mutation",
+                "reason",
+            )
+            for field in required_profile:
+                if field not in profile:
+                    errors.append(f"{anchor}: nonruntime profile missing {field}")
+            for field in required_profile[:3]:
+                if profile.get(field) is not False:
+                    errors.append(
+                        f"{anchor}: nonruntime profile {field} must be false"
+                    )
+            if not isinstance(profile.get("reason"), str) or not profile["reason"]:
+                errors.append(f"{anchor}: nonruntime profile reason must be nonempty")
+            if _function_has_runtime_mutation(root, anchor):
+                errors.append(
+                    f"{anchor}: nonruntime function references runtime/queue mutation"
+                )
+            if mapping != "UNASSIGNED":
+                errors.append(
+                    f"{anchor}: nonruntime disposition must map to UNASSIGNED"
+                )
         else:
             unresolved_signal_count += 1
             if mapping != "UNASSIGNED":
@@ -615,7 +696,7 @@ def audit_inventory(
     if not isinstance(assessment, dict):
         errors.append("closure_assessment must be an object")
     else:
-        if assessment.get("unknown_item_count") != len(unknown_items):
+        if assessment.get("unknown_item_count") != len(open_unknowns):
             errors.append("closure_assessment.unknown_item_count is stale")
         if assessment.get("F1_reachable_state_exhaustion") != "OPEN" and not closure_ready:
             errors.append("inventory upgrades F1 despite unresolved constructor surface")

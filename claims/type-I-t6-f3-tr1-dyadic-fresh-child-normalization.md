@@ -137,14 +137,17 @@ block of the opposite side.
 |---|---|
 | \(Q_y=1\) | one-sided strict complete-excess kernel with support \(M_x\) |
 | \(Q_y>1\), \(F_y\not\equiv2^\mu\pmod p\) | genuine atomic split with strict cofactor \(\langle-2^\mu F_y^{-1}\rangle_p\) |
-| \(Q_y>1\), \(F_y\equiv2^\mu\pmod p\) | the unique atomic companion stutter gate |
+| \(Q_y>1\), \(F_y\equiv2^\mu\pmod p\) | R6 full-capacity \(W_y\)-word to a p-free terminal-or-single-side endpoint |
 
-Here \(F_y=Q_y/(A,Q_y)\). The final row admits the QC1-style second raw
-factor algebraically, but its companion may acquire a p-block: the residue
-condition selecting that factor does not exclude \(s\equiv y\pmod p\).
-Therefore it is not yet a finished macro.
+Here \(F_y=Q_y/(A,Q_y)\). The R6-specific full-capacity theorem proves
+\(W_y\not\equiv(h+1)/2\pmod p\), so stripping the complete \(W_y\) word,
+with terminal-first replay at every internal prefix, reaches a p-free endpoint
+with \(Q_u=1\). The endpoint is therefore terminal or single-side arithmetic,
+not a genuine atomic endpoint. Canonical final lcm/rank, E3/E4 and re-entry
+remain open.
 
-The result reduces the dyadic-fresh TR1 subleaf to an explicit four-way
-partition. It still requires an actual source receipt, every child terminal
-receipt, canonical target typing, universal lift and shared re-entry before it
-can be counted as a selector successor.
+The result reduces the dyadic-fresh TR1 arithmetic subleaf to terminal,
+one-sided or a remaining canonical lcm/rank branch. It still requires an
+actual source receipt, every child terminal receipt, canonical target typing,
+universal lift and shared re-entry before it can be counted as a selector
+successor.

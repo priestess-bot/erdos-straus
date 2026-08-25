@@ -17,7 +17,7 @@
   "partition_semantics": "Each predicate includes the negations of all earlier leaves. This makes the leaves disjoint by construction; symbolic coverage and elimination of L6 remain proof obligations.",
   "dyadic_refinement": {
     "R4_M3_NONQ5_H_SUPPORTED": "EMPTY for the dyadic-fresh subleaf: m=3 with p,h odd gives D=3p+1-h odd, hence D_star is odd.",
-    "R6_MGT3_H_SUPPORTED": "The first dyadic q=2 child is conditionally p-free after a source-bound endpoint path. Its atomic-companion gate remains open; no m=3 q=5 short-word policy is imported."
+    "R6_MGT3_H_SUPPORTED": "The first dyadic q=2 child is conditionally p-free after a source-bound endpoint path. In the atomic rank-stutter congruence, the R6-specific full-capacity W_y word has W_y != (h+1)/2 mod p, so the final endpoint is p-free and terminal-or-single-side arithmetic; canonical lcm/rank and physical admission remain open. No m=3 q=5 short-word policy is imported."
   },
   "leaves": [
     {

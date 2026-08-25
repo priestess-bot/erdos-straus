@@ -17,8 +17,10 @@
   S（逐 constructor 重入）和 X（无 queue 旁路）三个外部前提的有限 persistent trace。
 - Status: `OPEN_MINIMAL_GAPS`。
 
-这次结果修复了旧 F1 包的定义循环，但没有证明 B、S、X。活动树没有统一 selector runtime、
-persistent queue 或 enqueue API；18 个源码递归语义信号中有 9 个 unresolved disposition。
+这次结果修复了旧 F1 包的定义循环，但没有证明 B、S、X。当前已有一个仅覆盖 q=1
+局部路径的 selector runtime 和 queue mutation；全局 persistent queue/re-entry 仍未证明。
+18 个源码递归语义信号中有 4 个 unresolved disposition，另有 9 个被明确标成 nonruntime
+controls。
 因此没有发布 F1 grammar freeze，F1、F2、F3、F4、F5、T6 和猜想状态均不升级。
 
 ## EVIDENCE
@@ -63,9 +65,9 @@ persistent queue 或 enqueue API；18 个源码递归语义信号中有 9 个 un
 
 | Criterion | Verdict | Evidence |
 |---|---|---|
-| inventory 双向一致且未知项为零 | **FAIL** | data surface 双向一致；源码有 9 个 unresolved signals |
+| inventory 双向一致且未知项为零 | **FAIL** | data surface 双向一致；仍有 4 个 unresolved signals |
 | 合法状态不依赖 normalizer/owner | **PASS** | noncircular extractor and zero-hit control |
-| 所有真实 enqueue gates 已发现 | **FAIL** | 活动树没有 queue API，无法证明无旁路 |
+| 所有真实 enqueue gates 已发现 | **FAIL** | 已发现一个局部 runtime queue anchor，但无法证明全局无旁路 |
 | 每个 constructor 有完整 guard partition | **FAIL** | 仅 initializer 完整；其余 15 项缺共同 serializer/partition |
 | 所有 nonterminal target 可由 extractor 重分类 | **FAIL** | C=2/H4/c=8/overflow 等没有统一 target projection |
 | 固定 precedence 下 owner 唯一 | **PASS, conditional** | nonempty legal hit-set theorem |

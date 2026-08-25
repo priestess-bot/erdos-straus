@@ -69,18 +69,21 @@ v_2(m+2)=\lambda.
 \]
 
 dyadic child 不会耗尽 selected complete-excess：它保留 \(E_x>1\)，并有
-strict cofactor \(\langle-2^\mu\rangle_p<p-1\)。child terminal-first miss 后仅剩：
+strict cofactor \(\langle-2^\mu\rangle_p<p-1\)。在 R6 的 atomic rank-stutter
+中，新的 full-capacity \(W_y\) 定理排除坏 residue \(W_y\equiv(h+1)/2\pmod p\)，
+因此内部 terminal-first 重放后最终 endpoint 是 p-free，且只剩：
 
 ```text
 one-sided strict complete-excess
-atomic strict complete-excess
-atomic companion stutter
+terminal-or-single-side full-capacity macro
 ```
 
-最后一项是真正的唯一 companion gate；现有 residue 信息不能排除其第二 child 获得
-\(p\)-block。于是 TR1 的下一步可精确集中为：为该四路分流补充 source transcript、
-child terminal receipts 与 atomic companion 的最终 recanonicalization，而不是继续研究裸
-\(D_*\) 因子。
+这消除了 R6 的 atomic-companion p-block arithmetic gate；剩余是 source transcript、
+每个内部 prefix 的 terminal receipts、canonical final lcm/rank、E3/E4 与 re-entry，
+而不是继续研究裸 \(D_*\) 因子。该 full-capacity word 长度由 excess multiplicity
+决定，不是固定步数；m=3,q=5 的短-word策略仍不外推到 R6。
+正式命题见
+[type-I-t6-f3-r6-dyadic-companion-full-capacity-pfree](../claims/type-I-t6-f3-r6-dyadic-companion-full-capacity-pfree.md)。
 
 完整命题见
 [`type-I-t6-f3-tr1-dyadic-fresh-child-normalization`](../claims/type-I-t6-f3-tr1-dyadic-fresh-child-normalization.md)。
@@ -98,3 +101,13 @@ child terminal receipts 与 atomic companion 的最终 recanonicalization，而�
 
 F2 的 mixed \(D\)-completion 则应独立走 terminal proof，不应以 raw source 或 F3
 receipt 代替 Type II certificate。
+
+进一步的 F2 mixed-D 定理已把这条 terminal proof 的算术域精确化：若
+\(g=(h,D)>1\)，则 \(h=gs,D=gr,T=gt,L=g\ell\) 必满足
+\[
+r+t=2sm,\qquad t=4AC\ell-3s,\qquad
+B=(Kr+\ell)/(2s)\in\mathbb N,\quad B\ge A,\quad(A,B)=1.
+\]
+因此 \(D\) 为素数的子域是 FAMILY_EMPTY；复合 \(D\) 仍有实际证书控制，
+不能被整体排除。见
+[type-I-f2-r-three-d-contact-completion-dichotomy](../claims/type-I-f2-r-three-d-contact-completion-dichotomy.md)。

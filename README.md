@@ -274,9 +274,9 @@ prefix 的 terminal-first receipt 绑定到同一 target。详见
 - canonical q=1 root 的 direct single-side/atomic landing 已有完整 lcm/maximality 与 E5
   门。大 root prime-power sector 为空，但 \(p=73\) 的静态 atomic countercontrol 表明
   不能用 carrier bound 把整个 smooth sector 删除。
-- TR1 dyadic-fresh \(2\mid(D_*,E)\) 强制精确 2-adic 正规形，并把 child 缩为 terminal、
-  strict one-sided、strict atomic 或一个 atomic companion gate；后者仍缺 source-bound
-  recanonicalization。
+- TR1 dyadic-fresh \(2\mid(D_*,E)\) 强制精确 2-adic 正规形；R6 的 full-capacity
+  \(W_y\)-word 已排除 atomic-companion bad residue，child 算术输出缩为 terminal 或
+  one-sided macro，仍缺 source-bound transcript、canonical rank 与 admission。
 
 这三条结论及下一步的 proof order 见
 [`docs/T6_F2_F3_FOURTH_WAVE_BOUNDARIES_2026-08-25.md`](docs/T6_F2_F3_FOURTH_WAVE_BOUNDARIES_2026-08-25.md)。
@@ -284,12 +284,15 @@ prefix 的 terminal-first receipt 绑定到同一 target。详见
 ### Gate 审计更新（2026-08-25）
 
 当前共享 runtime 的唯一 queue mutation 已被 source audit 精确识别，但它只覆盖两条 q=1
-局部 route，terminal schedule 也不是完整 p-level oracle；因此 F1 仍有 9 个 unknown，
+局部 route，terminal schedule 也不是完整 p-level oracle；因此 F1 仍有 4 个真正 unknown
+（另有 9 个信号已明确归类为 nonruntime controls），
 不能把该 runtime MISS 当 C8/H4/F3 的 complete terminal-first receipt。F2 high-support
 同时补入 canonical/noncanonical 分流：仅 \(1\le K/A<p\) 可调用现有 C=1/C>1
 determinant-dual 定理，\(K/A\ge p+1\) 是独立的 E1/E3-open normalizer residual。QC1
 endpoint-excess deflation 也获得独立 target-shape request，不能复用 norm-ideal target。
-详见 [T6 F2/F3 Gate Audit](docs/T6_F2_F3_GATE_AUDIT_2026-08-25.md)。
+F2 R=3 hard-core 的 \(D\)-contact 现已精确分为 prime-\(D\) 空子叶与 composite-D
+参数化残余；R6 dyadic companion 的 full-capacity bad-residue gate 也已排除，但最终
+canonical rank 与 admission 仍开放。详见 [T6 F2/F3 Gate Audit](docs/T6_F2_F3_GATE_AUDIT_2026-08-25.md)。
 
 ## 快速使用
 

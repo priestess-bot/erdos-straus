@@ -27,7 +27,9 @@ p=241441,\qquad x=60363,\qquad d=1083
 
 lies outside that local schedule. Therefore a local runtime MISS cannot
 provide the complete terminal-first receipt required by C8, H4, F2 or F3.
-The inventory correctly retains all nine F1 unknown items.
+The inventory retains four genuine F1 unknown items; nine source signals are
+now explicitly classified as nonruntime controls and must be reopened if a
+future producer integrates them.
 
 ## F2 High-Support Repair
 
@@ -72,14 +74,26 @@ The second needs its own projector and validator after a genuine source-bound
 \(q_\perp\mid E\) occurrence. An ideal factor does not supply that occurrence.
 
 For TR1, the R4 dyadic-fresh subleaf is empty because \(m=3\) makes \(D\)
-odd. The R6 dyadic first child remains conditionally p-free, but its atomic
-companion is still unresolved. The short multi-step raw-word policy belongs to
-the separate m=3,q=5 lineage and is not imported into R6.
+odd. The R6 dyadic first child remains conditionally p-free, and the
+R6-specific full-capacity theorem excludes the bad companion residue, reducing
+the final arithmetic endpoint to terminal-or-single-side. Canonical rank,
+source receipts and admission remain open. The short multi-step raw-word policy
+belongs to the separate m=3,q=5 lineage and is not imported into R6.
 
 For m=3,q=5, the existing source-bound macro accepts arbitrary state IDs and
 scopes as digest inputs; it is not an admitted-source proof. The next actual
 F3 activation remains the versioned endpoint-path receipt plus a registered
 source owner and independent validator.
+
+The F2 R=3 hard-core \(D=2p-3\) contact has now been parameterized exactly:
+the prime-\(D\) stratum is family-empty, while composite \(D\) requires the
+full quotient cofactor/order/gcd gate and has positive arithmetic controls.
+This is a terminal-search reduction, not a global terminal theorem.
+
+The R6 dyadic companion congruence has also been reduced: the full-capacity
+\(W_y\) word cannot equal the bad residue \((h+1)/2\), so after source-bound
+prefix replay the arithmetic endpoint is p-free and terminal-or-single-side.
+Its canonical final rank and common admission are still open.
 
 ## Current Gate Status
 
@@ -88,7 +102,7 @@ source owner and independent validator.
 | Gate 0 baseline | Current checkout audited | Historical workpack remains historical; current sources are separately audited. |
 | Gate 1 runtime protocol | Local only | Two q=1 routes, partial terminal scope, no all-constructor coverage. |
 | Gate 2 target grammar | Type-space only | No F2/F3 producer has passed complete E1-E5 admission. |
-| Gate 3 F1 grammar | Open | Nine inventory unknowns, unregistered source signals, no all-constructor re-entry theorem. |
+| Gate 3 F1 grammar | Open | Four inventory unknowns, no all-constructor re-entry theorem, and unresolved global queue coverage. |
 | Gate 4 track admission | Open | Every F2/F3 nonterminal result still lacks at least E1, E3 or re-entry. |
 
 The next proof-producing work must attach an actual source, complete terminal
