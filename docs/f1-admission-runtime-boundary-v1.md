@@ -1,7 +1,7 @@
 # F1 Admission Runtime Boundary v1
 
-Date: 2026-08-25  
-Base: `332c0f7ed48d453ca76d35639a618659d9b559ca`  
+Date: 2026-08-25
+Base: `332c0f7ed48d453ca76d35639a618659d9b559ca`
 Track: `F1-ADMISSION`
 
 ## Result
