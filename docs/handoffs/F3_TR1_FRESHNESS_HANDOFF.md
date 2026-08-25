@@ -142,7 +142,7 @@ subdomains
 
 \[
 q\mid(D_*,m), q\equiv3\pmod4
-\quad	ext{and}quad
+\quad\text{and}\quad
 q\mid(D_*,m+2,2p+1), q\equiv5\pmod8.
 \]
 

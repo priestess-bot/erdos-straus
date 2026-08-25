@@ -3,8 +3,10 @@ kind: claim
 claim_id: type-I-t6-f3-r6-dyadic-companion-full-capacity-pfree
 title: R6 dyadic atomic companion has a p-free full-capacity raw continuation
 statement: >-
-  In an actual source-bound R6 dyadic-fresh endpoint, after the first q=2
-  child and a terminal-first MISS, suppose the opposite side has Q_y>1 and
+  In an actual source-bound low R6 dyadic-fresh endpoint with 2<=h<p and
+  R congruent to 1 modulo p, after the first q=2 child is p-free and the
+  initial child and every internal W_y prefix all return terminal-first MISS,
+  suppose the opposite side has Q_y>1 and
   F_y=W_y*J_y is congruent to 2^mu modulo p. With the same K=A(p-1),
   dyadic valuation shape forces W_y != delta=(h+1)/2. Therefore the complete
   W_y raw word reaches Y_K=(y,K) with a p-free primitive endpoint; its
@@ -16,9 +18,10 @@ claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
 depends_on:
-  - type-I-t6-f3-tr1-dyadic-fresh-child-normalization
   - type-I-t6-f3-tr1-fresh-dstar-endpoint-split
   - type-I-t6-f3-qc1-endpoint-excess-deflation
+  - type-I-root-capacity-stutter-receipt-factor-split
+  - type-I-root-capacity-stutter-transverse-residual-capacity-map
 topics:
   - type-I
   - F3
@@ -30,8 +33,8 @@ topics:
   - p-free
   - proof-boundary
 sources:
-  - claim: type-I-t6-f3-tr1-dyadic-fresh-child-normalization
-    role: dyadic valuation and first-child shape
+  - claim: type-I-t6-f3-tr1-fresh-dstar-endpoint-split
+    role: source-bound fresh-factor and primitive-child hypotheses
   - reproduction: reproductions/type_i_f3_r6_dyadic_companion_boundary.py
     role: fixed arithmetic identities and scope controls
 visibility: public
@@ -40,15 +43,17 @@ last_checked: '2026-08-25'
 
 # R6 dyadic companion full-capacity continuation
 
-Assume the actual source-bound R6 hypotheses, including \(m>3\), a dyadic
-fresh first child
+Assume the actual source-bound low R6 hypotheses, including
+\(2\le h<p\), \(m>3\), \(R\equiv1\pmod p\), and a p-free dyadic
+fresh first child:
 
 \[
 x=z/2,\qquad y=R-x,
 \tag{1}
 \]
 
-and a target-local terminal-first MISS. Let \(K=A(p-1)\), write
+The initial child and every internal prefix of the fixed occurrence-ordered
+\(W_y\) word have terminal-first MISS receipts. Let \(K=A(p-1)\), write
 \(\lambda=v_2(p-1)\), and suppose the opposite side has
 
 \[
@@ -102,24 +107,28 @@ contradict \(0<H\le J_yL\) and oddness. Hence
 \tag{6}
 \]
 
-Consequently the deterministic full-capacity raw word, with repeated prime
-occurrences ordered nondecreasingly and terminal-first replayed at every
-internal prefix, strips all \(W_y\)
-reaches
+Along the fixed nondecreasing occurrence order, run terminal-first at every
+internal prefix. If any prefix is a terminal HIT, return that terminal
+immediately. If all prefixes MISS, the deterministic full-capacity raw word
+strips all \(W_y\) and reaches
 
 \[
 Y_K=(y,K),
 \tag{7}
 \]
 
-and the complement \(R-Y_K\) is \(p\)-free: a \(p\)-block would require
-\(W_y\equiv\delta\pmod p\), excluded by (6). Since \(Y_K\mid K\), its
+Since \(x=(R-h)/2\) and \(R\equiv1\pmod p\), the opposite child satisfies
+\(y=R-x\equiv(h+1)/2=\delta\pmod p\). Therefore
+\(p\mid R-Y_K\) is equivalent to \(W_y\equiv\delta\pmod p\), excluded by
+(6), so the complement \(R-Y_K\) is \(p\)-free. Since \(Y_K\mid K\), its
 canonical excess block is empty. The endpoint is therefore either a direct
 Type-I terminal (if the complement also divides \(K\)) or a one-sided
 complete-excess endpoint. It is never a genuine two-sided atomic endpoint
 after this full word.
 
 The raw word is source-bound and primitive under the assumed path receipt.
-Its canonical support/rank still requires capacity-aware recomputation; no
+The fixed occurrence order makes the word deterministic; an internal terminal
+would preempt the next occurrence by hypothesis. Its canonical support/rank
+still requires capacity-aware recomputation; no
 claim here supplies a persistent target, common E3 admission, universal E4,
 parent-to-final E5 or recursive re-entry.

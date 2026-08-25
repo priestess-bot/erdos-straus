@@ -107,6 +107,24 @@ determinant image exists exactly when \(C\) has a divisor \(2\le c<p\);
 \(c=1\) is the forbidden post-hoc \(M=K,d=p-1\) form. Neither statement
 creates an E1 occurrence for an unregistered producer.
 
+The latest independent reviews add three precise boundaries without changing
+the open statuses:
+
+- The C8 \(q_\star=103\) rays avoid Bradford's named finite \(k=0\)
+  congruence list along explicit primitive progressions, but the
+  factor-dependent fixed-gap terminal MISS predicate remains open.
+- The F3 high/QC1 review adds an exact high-\(k=1\) Pell integrality gate
+  \(a\mid(T-1)(T^2-T-1)\), and confirms that ideal \(q_\perp\)-divisibility
+  still does not identify an integer endpoint occurrence.
+- The genuine two-sided \(m=3,q=5\), \(p^2\)-leaf has deterministic canonical
+  image \(c=p-1\) and an increasing root rechart, so it supplies no E5 ticket;
+  it remains an explicit residual rather than a queued target.
+
+F1's admission review now records 18/18 source anchors, nine nonrecursive
+controls and four remaining unknown items. Existing arithmetic schedulers
+still cannot enter the runtime without a source envelope, authority-free
+candidate, projector, independent E1--E4 validator and common re-entry.
+
 The R6 dyadic companion congruence has also been reduced: the full-capacity
 \(W_y\) word cannot equal the bad residue \((h+1)/2\), so after source-bound
 prefix replay the arithmetic endpoint is p-free and terminal-or-single-side.

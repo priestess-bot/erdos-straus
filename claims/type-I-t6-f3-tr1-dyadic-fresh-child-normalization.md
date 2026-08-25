@@ -137,13 +137,13 @@ block of the opposite side.
 |---|---|
 | \(Q_y=1\) | one-sided strict complete-excess kernel with support \(M_x\) |
 | \(Q_y>1\), \(F_y\not\equiv2^\mu\pmod p\) | genuine atomic split with strict cofactor \(\langle-2^\mu F_y^{-1}\rangle_p\) |
-| \(Q_y>1\), \(F_y\equiv2^\mu\pmod p\) | R6 full-capacity \(W_y\)-word to a p-free terminal-or-single-side endpoint |
+| \(Q_y>1\), \(F_y\equiv2^\mu\pmod p\) | R6-specific full-capacity \(W_y\)-word branch; its p-free conclusion is proved in the separate R6 claim |
 
-Here \(F_y=Q_y/(A,Q_y)\). The R6-specific full-capacity theorem proves
-\(W_y\not\equiv(h+1)/2\pmod p\), so stripping the complete \(W_y\) word,
-with terminal-first replay at every internal prefix, reaches a p-free endpoint
-with \(Q_u=1\). The endpoint is therefore terminal or single-side arithmetic,
-not a genuine atomic endpoint. Canonical final lcm/rank, E3/E4 and re-entry
+Here \(F_y=Q_y/(A,Q_y)\). This card does not prove the R6-specific
+full-capacity congruence or its internal-prefix terminal policy; those are
+established separately in the R6 full-capacity claim. Subject to that
+separate corollary, the endpoint is terminal or single-side arithmetic rather
+than a genuine atomic endpoint. Canonical final lcm/rank, E3/E4 and re-entry
 remain open.
 
 The result reduces the dyadic-fresh TR1 arithmetic subleaf to terminal,
