@@ -9,6 +9,21 @@
 **Execution mode:** 1 coordinator thread + up to 7 concurrent subagents
 **Status discipline:** No theorem-status upgrade until all quantified leaves satisfy the exact acceptance contract below.
 
+## Current Integration Snapshot
+
+The mechanical baseline for the active wave is now:
+
+~~~text
+branch: integration/t6-f2-f3-wave1
+commit: 60f3c3b8eb543e37383c1df0b30757971f26905f
+remote: origin/integration/t6-f2-f3-wave1
+~~~
+
+The cherry-pick sequence in Section 2 records the historical construction of
+the wave and must not be replayed on this checkout. All current claims,
+scope freezes, residual matrices and handoffs are evaluated from the snapshot
+above; generated indexes must be rebuilt after any further integration commit.
+
 ---
 
 ## 1. Mission
