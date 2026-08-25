@@ -1,0 +1,49 @@
+{
+  "schema_id": "t6_wave1_f2_high_support_c1_r_three_hard_core_arithmetic_partition_v1",
+  "version": 1,
+  "artifact_id": "f2_high_support_c1_r_three_hard_core_arithmetic_partition_v1",
+  "track_id": "T6-F2-OVERFLOW-HIGH-SUPPORT",
+  "date": "2026-08-25",
+  "claim_id": "type-I-f2-high-support-c1-r-three-hard-core-arithmetic-partition",
+  "status": "ESTABLISHED_ARITHMETIC_PARTITION_ONLY",
+  "hard_core": {
+    "P": "p+4 with every prime factor 1 mod 4",
+    "N": "(3*p+1)/4 with every prime factor 1 mod 3",
+    "identities": [
+      "3*P-4*N=11",
+      "gcd(P,N)=1",
+      "p is not 7 mod 11",
+      "Jacobi(33,N)=Jacobi(P,11)"
+    ],
+    "character_partition": {
+      "minus_one": [2, 3, 4, 6, 9],
+      "plus_one": [1, 5, 8, 10],
+      "modulus": 11,
+      "meaning": "The minus-one row forces an odd total exponent of N-primes q with Jacobi(33,q)=-1."
+    }
+  },
+  "p_min_mixed_gap_screen": {
+    "guard": "P is composite and h=spf(P)",
+    "gap": "m=3*h",
+    "first_denominator": "x=(p+3*h)/4",
+    "type_I": "exists d|x^2 with d=2 mod 3 and d=-4^(-1) mod h",
+    "type_II": "exists d|x^2 with d=2 mod 3 and d=1 mod h; paired divisor supplies d<=x",
+    "miss_output": "P_MIN_MIXED_RESIDUE_RESIDUAL"
+  },
+  "control": {
+    "p": 118801,
+    "P_factorization": "5*23761",
+    "N_factorization": "89101",
+    "X_factorization": "7*4243",
+    "legal_h_divisors": [1, 5, 23761],
+    "all_legal_m3h_screens_miss": true,
+    "existing_low_gap_boundary": "gaps 3 through 55 miss; gap 59 is Type II with divisor 21"
+  },
+  "does_not_claim": [
+    "the R3_G hard core is family-empty",
+    "the P-min screen is a universal terminal",
+    "an actual high-support C1 parent exists or has E1 provenance",
+    "an ABSORB E3 serializer or re-entry",
+    "F2 or T6 closure"
+  ]
+}

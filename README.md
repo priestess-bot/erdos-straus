@@ -124,6 +124,23 @@ v2 不删除其中任何数学 gap，只把 O4 流程义务改造成 admission f
 [`claims/type-I-root-capacity-stutter-m-three-biquadratic-norm-reduction.md`](claims/type-I-root-capacity-stutter-m-three-biquadratic-norm-reduction.md)
 和 [`docs/T6-current-progress-2026-08-17.md`](docs/T6-current-progress-2026-08-17.md)。
 
+### Wave1 高端点边界（2026-08-25）
+
+F3 high-stutter 的两条 actual divisor gate 现已作出更强的负向澄清：固定
+\((p,h,D)\) 后，`D | K` 仅将 root parameter \(\omega\) 限制在一个 CRT
+同余类，且该类给出无穷多个保持两 gate 的形式 root lift。因此不能再把附加的同类
+divisor-gate 算术当作 high Pell 或 odd-\(k\) 残余的 family-empty 证明。真正需要的是
+canonical complete-excess valuation、terminal-first 或 actual source/path 对该周期的非不变
+限制；F3、T6 与猜想的状态均不改变。精确命题与控制见
+[`type-I-t6-f3-high-endpoint-root-lift-saturation-boundary`](claims/type-I-t6-f3-high-endpoint-root-lift-saturation-boundary.md)。
+
+同日，F2 high-support \(C=1\) 的 `R=3 G` hard core 也得到一个更精确的算术分割：
+\(P=p+4\) 与 \(N=(3p+1)/4\) 互素，并满足
+\(\left(\frac{33}{N}\right)=\left(\frac P{11}\right)\)；当 \(P\) 合成时，其最小
+素因子还确定一张完整的 mixed-residue gap screen。控制 \(p=118801\) 表明这两项仍可
+共同 miss，因此它们没有改变 F2/T6 的开放状态。见
+[`type-I-f2-high-support-c1-r-three-hard-core-arithmetic-partition`](claims/type-I-f2-high-support-c1-r-three-hard-core-arithmetic-partition.md)。
+
 ## 快速使用
 
 ```bash

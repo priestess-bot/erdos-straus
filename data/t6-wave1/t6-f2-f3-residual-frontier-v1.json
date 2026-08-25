@@ -22,7 +22,7 @@
       "quantifier": "Every active recursive source signal and every actual nonterminal target it emits.",
       "current_fact": "18 source signals are inventoried; 9 unknown items remain; no legacy queue mutation path is proven to use the wave1 runtime.",
       "missing": ["D1", "D2", "D3", "D5", "D8"],
-      "next_minimal_theorem": "Producer Projection and Exclusive Admission Theorem v1 for one real producer chain, starting with q1 root -> full-carrier -> first child."
+      "next_minimal_theorem": "Producer Projection and Exclusive Admission Theorem v1 for one real chain, starting with q1 initializer -> full-carrier only after a target-local schedule and first-child protocol are proven."
     },
     {
       "id": "F1-ACTIVE-PRODUCER-FREEZE",
@@ -43,9 +43,9 @@
         "H4 guard DAG reduces live output to atomic/overflow shapes",
         "H4 clean-q atomic C1 family empty"
       ],
-      "exact_blocker": "No continuous actual producer projection/terminal schedule/runtime re-entry; positive-q and c3 source status is not semantically frozen.",
+      "exact_blocker": "No continuous actual producer projection, full terminal schedule, or runtime re-entry. The q1 source proves only a gap-3-local terminal scope; the full-carrier target has no target-local schedule, and its old first-child CHARGED/LOCAL_DROP normalization conflicts with Freeze-B ordinary R<p ABSORB cursor requirements.",
       "missing": ["E1", "E3", "D1", "D2", "D5", "D8"],
-      "next_minimal_theorem": "Serialize the q1 root-to-first-child producer chain into the common runtime without changing any arithmetic theorem."
+      "next_minimal_theorem": "Prove a source-preserving q1 full-carrier first-child CHARGED-to-ABSORB entry with terminal schedule and cursor, or prove a valid retained-CHARGED classification; only then bind the q1 phase-root chain to runtime."
     },
     {
       "id": "F2-C8-ATOMIC-ACTUALIZATION",
@@ -71,11 +71,13 @@
         "p+4 with a 3 mod 4 prime factor gives a Type II terminal before the dual",
         "otherwise N=(3p+1)/4 with a 2 mod 3 prime factor gives a Type I terminal",
         "the residual is precisely p+4 hard-core together with N all 1 mod 3, an R=3-G branch",
+        "the hard core has gcd(p+4,(3p+1)/4)=1 and the Jacobi bridge (33/N)=(P/11)",
+        "if P=p+4 is composite, h=spf(P) gives an exact m=3h mixed-residue terminal screen that can still miss",
         "no generic C1 family is admitted"
       ],
-      "exact_blocker": "For the exact R=3-G hard-core branch, the low cursor has a formal self-loop and no E1 root-entry, target terminal schedule, E3 ABSORB admission or non-upward re-entry theorem.",
+      "exact_blocker": "For the exact R=3-G hard-core branch, the low cursor has a formal self-loop and no E1 root-entry, target terminal schedule, E3 ABSORB admission or non-upward re-entry theorem. The 11-character and P-min screens only refine the arithmetic residual.",
       "missing": ["E1", "E2", "E3", "E5", "D2", "D5", "D7", "D8"],
-      "next_minimal_theorem": "Give the R=3-G hard-core branch a terminal, an actual source-preserving ABSORB entry with nonreturn, or a family-empty theorem."
+      "next_minimal_theorem": "Convert the 11-character N-factor constraint or a mixed-gap residual into a terminal or actual source-preserving ABSORB entry with nonreturn, or prove the hard-core family empty."
     },
     {
       "id": "F2-HIGH-SUPPORT-CGT1",
@@ -104,18 +106,18 @@
     {
       "id": "F3-HIGH-STUTTER-K1",
       "quantifier": "ACTUAL_PERSISTENT proper-factor high root with terminal miss, c=p-1 and high-domain k=1 Pell parameterization.",
-      "established_reductions": ["exact Pell-type parameterization", "two high-domain actual divisor gates", "known curve shadows are nonactual or terminal-preempted"],
-      "exact_blocker": "No canonical-maximal actual receipt coverage or empty/terminal/paid successor theorem.",
+      "established_reductions": ["exact Pell-type parameterization", "two high-domain actual divisor gates", "root-lift saturation: the divisor gates leave an infinite formal omega class for fixed p,h,D", "known curve shadows are nonactual or terminal-preempted"],
+      "exact_blocker": "No canonical-maximal actual receipt coverage or empty/terminal/paid successor theorem; static divisor gates cannot by themselves bound the root parameter.",
       "missing": ["E1", "E2", "E3", "E4", "E5", "D1-D8"],
-      "next_minimal_theorem": "Show every Pell parameter tuple violates actual maximality/terminal-first, or construct a high-domain successor without low-height routing."
+      "next_minimal_theorem": "Use canonical maximal-receipt valuations, terminal-first, or actual source data to break root-lift periodicity; then show every surviving Pell tuple is terminal/empty or construct a high-domain successor."
     },
     {
       "id": "F3-HIGH-STUTTER-ODD-KGE3",
       "quantifier": "ACTUAL_PERSISTENT proper-factor high root with terminal miss, c=p-1 and rederived odd k>=3.",
-      "established_reductions": ["high-domain N=h*k split", "two high-domain actual divisor gates", "low-height QC1/TR1 is explicitly excluded"],
-      "exact_blocker": "No bounded high-domain normal form or physical carrier theorem.",
+      "established_reductions": ["high-domain N=h*k split", "two high-domain actual divisor gates", "root-lift saturation: the divisor gates leave an infinite formal omega class for fixed p,h,D", "low-height QC1/TR1 is explicitly excluded"],
+      "exact_blocker": "No bounded high-domain normal form or physical carrier theorem; static divisor gates alone cannot bound the root parameter.",
       "missing": ["E1", "E2", "E3", "E4", "E5", "D1-D8"],
-      "next_minimal_theorem": "Derive a high-only divisor/size dichotomy for odd k>=3."
+      "next_minimal_theorem": "Derive a high-only canonical-valuation, terminal, or source-lineage dichotomy for odd k>=3 that breaks root-lift periodicity."
     },
     {
       "id": "F3-QC1-INTEGER-OCCURRENCE",

@@ -17,6 +17,19 @@
     "residual_guard": "every prime factor of N is congruent to 1 modulo 3",
     "residual_output": "R3_G_RESIDUAL; no claim of global terminal failure"
   },
+  "hard_core_refinement": {
+    "claim_id": "type-I-f2-high-support-c1-r-three-hard-core-arithmetic-partition",
+    "definitions": {
+      "P": "p+4",
+      "N": "(3*p+1)/4"
+    },
+    "established": [
+      "3*P-4*N=11 and gcd(P,N)=1 in the hard core",
+      "Jacobi(33,N)=Jacobi(P,11)",
+      "if P is composite, h=spf(P) gives an exact legal m=3h mixed-residue Type I/II screen"
+    ],
+    "boundary": "The character bridge and P-min screen are arithmetic partitions only. They do not make R3_G terminal, construct ABSORB E3, or prove re-entry."
+  },
   "controls": [
     {
       "p": 73,
