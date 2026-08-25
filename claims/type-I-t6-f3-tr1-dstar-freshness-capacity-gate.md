@@ -241,10 +241,15 @@ low-height domain. No actual R4/R6 saturated receipt is claimed here.
 
 ## 5. Consequences for TR1
 
-The deterministic TR1 factor rule must therefore replay all prior terminal menus,
-recompute (4)--(7) from the actual maximal receipt, reject capacity-saturated
-factors as non-consumable raw labels, and select the least factor with a
-separately verified fresh integer occurrence before attempting E1--E5.
+The full (W_y) word is an arithmetic macro only with a frozen occurrence order
+(for example, nondecreasing prime order) and a terminal-first replay at every
+internal prefix. If an internal prefix hits a terminal, the macro returns that
+terminal immediately; an initial MISS does not silently certify all later
+prefixes. After all prefix misses, the deterministic TR1 factor rule must replay
+all prior terminal menus, recompute (4)--(7) from the actual maximal receipt,
+reject capacity-saturated factors as non-consumable raw labels, and select the
+least factor with a separately verified fresh integer occurrence before
+attempting E1--E5.
 
 The lemma proves no family empty, Type-I/II terminal, or persistent successor for
 the remaining fresh factors. It removes only the invalid shortcut

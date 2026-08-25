@@ -133,7 +133,10 @@ No actual R4/R6 capacity-saturated receipt has been claimed or found in this han
 
 ## Consequences for TR1
 
-The only valid deterministic selection rule is:
+The full (W_y) word must use a frozen occurrence order and replay terminal-first
+at every internal prefix. An internal terminal returns immediately; the initial
+child MISS is not a receipt for all later prefixes. Subject to those prefix
+receipts, the only valid deterministic selection rule is:
 
 1. replay terminal-first and the complete \(1<Q\mid u\) root menu;
 2. replay written \(D_*\) terminal menus;
