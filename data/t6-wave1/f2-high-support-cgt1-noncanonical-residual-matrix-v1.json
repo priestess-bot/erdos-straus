@@ -11,17 +11,22 @@
     {
       "leaf_id": "CGT1-00-terminal-first",
       "precedence": 1,
+      "predicate": "terminal_first(S)=HIT",
       "effective_guard": "terminal_first(S)=HIT",
+      "mutually_exclusive_with": ["CGT1-01-small-divisor-source-bound", "CGT1-02-small-divisor-no-receipt", "CGT1-03-p-rough-no-small-divisor", "CGT1-04-posthoc-only-negative-control", "CGT1-05-explicit-catchall"],
       "planned_closure": "TERMINAL",
       "current_status": "ESTABLISHED_LOCAL",
       "target_shape": null,
+      "coverage_proof": "Terminal-first has highest precedence and a HIT is nonrecursive.",
       "current_blocker": null,
       "evidence": ["data/t5-full-transition-taxonomy-v2.json", "concepts/t5-global-well-foundedness-contract-v2.md"]
     },
     {
       "leaf_id": "CGT1-01-small-divisor-source-bound",
       "precedence": 2,
+      "predicate": "terminal-first MISS AND D(C) nonempty AND an independently replayed source-bound receipt M=A*b<K with C=b*c, 2<=c<p",
       "effective_guard": "terminal-first MISS, D(C) nonempty, and an independently replayed source-bound receipt M=A*b<K with C=b*c, 2<=c<p",
+      "mutually_exclusive_with": ["CGT1-00-terminal-first", "CGT1-02-small-divisor-no-receipt", "CGT1-03-p-rough-no-small-divisor", "CGT1-04-posthoc-only-negative-control", "CGT1-05-explicit-catchall"],
       "planned_closure": "VERIFIED_SUCCESSOR",
       "current_status": "ARITHMETIC_IMAGE_ONLY_E1_E3_REENTRY_OPEN",
       "target_shape": "same_chart_small_divisor_bound_receipt_v1",
@@ -32,7 +37,9 @@
     {
       "leaf_id": "CGT1-02-small-divisor-no-receipt",
       "precedence": 3,
+      "predicate": "terminal-first MISS AND D(C) nonempty AND no independently bound proper determinant occurrence",
       "effective_guard": "terminal-first MISS, D(C) nonempty, but no independently bound proper determinant occurrence is available",
+      "mutually_exclusive_with": ["CGT1-00-terminal-first", "CGT1-01-small-divisor-source-bound", "CGT1-03-p-rough-no-small-divisor", "CGT1-04-posthoc-only-negative-control", "CGT1-05-explicit-catchall"],
       "planned_closure": "VERIFIED_SUCCESSOR",
       "current_status": "OPEN_SOURCE_OCCURRENCE",
       "target_shape": "same_chart_small_divisor_bound_receipt_v1 or another E1-E5 route",
@@ -43,7 +50,9 @@
     {
       "leaf_id": "CGT1-03-p-rough-no-small-divisor",
       "precedence": 4,
+      "predicate": "terminal-first MISS AND D(C) is empty",
       "effective_guard": "terminal-first MISS and D(C) is empty",
+      "mutually_exclusive_with": ["CGT1-00-terminal-first", "CGT1-01-small-divisor-source-bound", "CGT1-02-small-divisor-no-receipt", "CGT1-04-posthoc-only-negative-control", "CGT1-05-explicit-catchall"],
       "planned_closure": "TERMINAL",
       "alternative_closure": "FAMILY_EMPTY or VERIFIED_SUCCESSOR",
       "current_status": "OPEN_NO_DETERMINANT_IMAGE",
@@ -55,7 +64,9 @@
     {
       "leaf_id": "CGT1-04-posthoc-only-negative-control",
       "precedence": 5,
+      "predicate": "only c=1,M=K,d=p-1 remains after proper-image split",
       "effective_guard": "D(C) empty or no accepted proper divisor and only c=1,M=K,d=p-1 remains",
+      "mutually_exclusive_with": ["CGT1-00-terminal-first", "CGT1-01-small-divisor-source-bound", "CGT1-02-small-divisor-no-receipt", "CGT1-03-p-rough-no-small-divisor", "CGT1-05-explicit-catchall"],
       "planned_closure": "EMPTY",
       "current_status": "REJECTED_NONPRODUCER",
       "target_shape": null,
@@ -66,7 +77,9 @@
     {
       "leaf_id": "CGT1-05-explicit-catchall",
       "precedence": 6,
+      "predicate": "all named rows fail or a future producer uses a target shape outside this freeze",
       "effective_guard": "all named rows fail or a future producer uses a target shape outside this freeze",
+      "mutually_exclusive_with": ["CGT1-00-terminal-first", "CGT1-01-small-divisor-source-bound", "CGT1-02-small-divisor-no-receipt", "CGT1-03-p-rough-no-small-divisor", "CGT1-04-posthoc-only-negative-control"],
       "planned_closure": "VERIFIED_SUCCESSOR",
       "alternative_closure": "TERMINAL or FAMILY_EMPTY",
       "current_status": "OPEN",

@@ -22,6 +22,8 @@
       "shape_id": "same_chart_small_divisor_bound_receipt_v1",
       "producer_id": "f2_high_support_same_chart_small_divisor_v1",
       "source_guard": "actual source-bound determinant receipt with M=A*b<K, C=b*c, c in [2,p-1], and c|C",
+      "source_owners": ["type_i_a_gt_one_overflow_residual"],
+      "target_owners": ["type_i_low_support_persistent_overflow", "type_i_high_support_sink", "type_i_a_gt_one_overflow_residual"],
       "target_schema": {
         "family_match": ["type_i_low_support_persistent_overflow", "type_i_high_support_sink", "type_i_a_gt_one_overflow_residual"],
         "normal_form": "overflow_same_chart_small_divisor_v1",
@@ -29,8 +31,10 @@
         "fields": ["parent_state_id", "source_receipt", "terminal_first_digest", "p", "R", "K", "support_M=A*(C/c)", "cofactor_c", "scope", "owner_digest"]
       },
       "deterministic_rule": "consume the source-provided receipt; never choose c or M from C alone; if multiple receipts are supplied, select lexicographically by sealed receipt digest",
+      "atomic_arms": [],
       "mark_behavior": "preserve Sol(4,p) identity only after independent target retyping",
       "t5_ticket": "LOCAL_DROP on (0,C)->(0,c) when A>B_p and M>A",
+      "owner_precedence": "recompute target owner; no caller-supplied family or owner",
       "e1_requirements": ["admitted parent state_id", "raw determinant occurrence", "path digest", "terminal-first MISS", "branch precedence receipt"],
       "e3_requirements": ["independent projector", "owner recomputation", "target terminal schedule", "common admission gate", "content-addressed target"],
       "e4_requirements": ["universal identity lift over the source scope"],
@@ -42,6 +46,8 @@
       "shape_id": "p_rough_no_small_divisor_terminal_or_normalizer_v1",
       "producer_id": "f2_high_support_p_rough_exit_v1",
       "source_guard": "actual source with D(C)=empty after terminal-first MISS",
+      "source_owners": ["type_i_a_gt_one_overflow_residual"],
+      "target_owners": ["direct_terminal_leaf", "type_i_a_gt_one_overflow_residual", "type_i_high_support_sink"],
       "target_schema": {
         "family_match": ["direct_terminal_leaf", "type_i_a_gt_one_overflow_residual", "type_i_high_support_sink"],
         "normal_form": "p_rough_noncanonical_exit_v1",
@@ -49,8 +55,10 @@
         "fields": ["parent_state_id", "p_rough_certificate", "terminal_or_target", "scope", "owner_digest"]
       },
       "deterministic_rule": "terminal-first proof has priority; absent a terminal, a separate source-bound normalizer or other E1-E5 constructor is required",
+      "atomic_arms": [],
       "mark_behavior": "identity only for same-equation target; smaller lift must be explicit otherwise",
       "t5_ticket": "TERMINAL, OUTER_RANK_DROP, PHASE_DROP or LOCAL_DROP only after full E1-E5",
+      "owner_precedence": "recompute target owner; no caller-supplied family or owner",
       "admission_status": "NO_ARITHMETIC_AUTHORITY_YET",
       "known_evidence": ["claims/type-I-f2-high-support-cgt1-small-divisor-p-rough-boundary.md"]
     }
