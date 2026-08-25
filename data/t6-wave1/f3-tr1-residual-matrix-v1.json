@@ -43,7 +43,7 @@
         "L5_FAMILY_EMPTY",
         "L6_EXPLICIT_RESIDUAL"
       ],
-      "coverage_proof": "q_h proves actual-domain menu eligibility; terminal coverage enumerates every composite divisor Q of u and then every exact finite menu in canonical order",
+      "coverage_proof": "the actual root-height modulus u is replayed first; terminal coverage enumerates every composite divisor Q of u and then every exact finite menu in canonical order. q_h is only one proof that u>1, while the k=3 primitive system supplies u>1 directly.",
       "planned_closure": "TERMINAL",
       "target_shape": "existing direct_terminal_leaf with explicit Type I certificate",
       "current_blocker": "none for exact menu evaluation; menu eligibility is not a raw occurrence or successor proof"
@@ -82,7 +82,7 @@
     },
     {
       "leaf_id": "L4_DSTAR_TR1_PAID_SUCCESSOR",
-      "predicate": "L0-L3 miss, D_star > 1, an independent theorem binds its canonical arithmetic factor to a consumable integer raw occurrence, and TR1PhysicalTransitionV1 passes E1-E5 and common admission",
+      "predicate": "L0-L3 miss, D_star > 1, an independent theorem binds at least one D_star factor to a fresh consumable integer raw occurrence, the least such verified factor is selected, and TR1PhysicalTransitionV1 passes E1-E5 and common admission",
       "mutually_exclusive_with": [
         "L0_TERMINAL_PRIORITY_HIT",
         "L1_H_SUPPORTED_MENU_TERMINAL",
@@ -91,7 +91,7 @@
         "L5_FAMILY_EMPTY",
         "L6_EXPLICIT_RESIDUAL"
       ],
-      "coverage_proof": "D_star > 1 supplies a deterministic source-bound arithmetic factor only; integer occurrence and physicalization are separate theorem obligations",
+      "coverage_proof": "D_star > 1 supplies source-bound arithmetic factors only. A least arithmetic factor can be capacity-saturated, so integer occurrence is proved before the physical tie-break is applied.",
       "planned_closure": "VERIFIED_SUCCESSOR",
       "target_shape": "TR1PhysicalTransitionV1 terminal-or-paid envelope",
       "current_blocker": "derive an integer raw occurrence/E1 bridge, deterministic target, universal lift, authoritative parent-to-final T5 ticket and F1 re-entry"
@@ -126,7 +126,7 @@
       "coverage_proof": "complement of the preceding ordered leaves",
       "planned_closure": "MUST_DISAPPEAR",
       "target_shape": null,
-      "current_blocker": "the D_star arithmetic factor has not been converted into an integer E1 occurrence, terminal or paid successor"
+      "current_blocker": "the full root-height Q|u menu must first be replayed, and no D_star factor has been converted into a fresh integer E1 occurrence, terminal or paid successor"
     }
   ],
   "acceptance": {

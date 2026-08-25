@@ -27,14 +27,14 @@
         "K": "(3*p+1)/4",
         "support_A": "(3*p+1)/4",
         "tie_break": "minimum positive canonical R",
-        "disposition": "target terminal-first; then requested TYPEI/ABSORB owner on MISS"
+        "disposition": "target terminal-first; then common classification into the marked-ABSORB type-space owner on MISS"
       }
     }
   },
   "obligation_status": {
     "E1": "RELATIVE_TO_ACTUAL_PARENT_AND_NEW_PRODUCER_REGISTRATION",
     "E2": "ESTABLISHED_BY_CANONICAL_DUAL_IDENTITIES",
-    "E3": "CANONICAL_CURSOR_PAYLOAD_ESTABLISHED; OPEN_GENERIC_ORDINARY_ABSORB_OWNER_AND_SERIALIZER",
+    "E3": "CANONICAL_CURSOR_PAYLOAD_ESTABLISHED; TYPE_SPACE_OWNER_ACCEPTED; PRODUCER_SERIALIZER_COMMON_ADMISSION_REENTRY_OPEN",
     "E4": "IDENTITY_ON_Sol_4_p_RELATIVE_TO_ADMISSION",
     "E5": "PHASE_DROP_CHARGED_TO_ABSORB_RELATIVE_TO_ADMISSION",
     "reentry": "OPEN"
@@ -83,7 +83,7 @@
   "forbidden_inferences": [
     "derived determinant identity alone establishes E1",
     "R=3 target is always terminal or F",
-    "requested ABSORB owner is an active grammar family",
+    "type-space ABSORB owner alone proves E3 or active admission",
     "PHASE_DROP supplies E3 or recursive re-entry"
   ]
 }

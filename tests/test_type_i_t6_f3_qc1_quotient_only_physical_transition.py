@@ -103,6 +103,12 @@ class QuotientOnlyQC1Tests(unittest.TestCase):
         self.assertFalse(result["E1"]["support_charge_conservation"])
         self.assertIsNone(result["T5_ticket"])
 
+    def test_norm_factor_does_not_locate_the_distinguished_stutter_side(self) -> None:
+        self.assertEqual(
+            QC1.raw_side_nonimplication_control(),
+            {"q_perp": 61, "v_z": 0, "v_D": 0, "v_E": 0, "v_K": 0},
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

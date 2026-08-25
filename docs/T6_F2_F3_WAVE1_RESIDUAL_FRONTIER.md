@@ -12,9 +12,9 @@ not informal “almost complete” status.
 | F2 post-G/H4/c8 | q1 root-to-final slice preempts one low class, contracts the other to C=9, then identifies fixed R=11/23/35 duals, but final routes remain open | E1/E3 |
 | F2 high C=1 | two terminal sieves reduce it to the exact (R=3)-G hard-core branch; 11-character and P-min screens refine it, but its ABSORB cursor has a formal self-loop | E1/E3/E5 |
 | F2 high C>1 | checkpoint/carry alone cannot force bounded descent; factor-saturation lacks structural E1 provenance | E1/E5 |
-| F3 high | strict carry waits for E3; high stutter splits into Pell (k=1) and odd (k\ge3) residuals, and its two divisor gates are root-lift saturated | E3 / canonical valuation, terminal, or source data |
-| F3 QC1 | ideal factor has no integer raw occurrence or conserved support charge | E1 |
-| F3 TR1 | h-menu/D-star factors are only arithmetic eligibility, not consumable occurrences | E1 |
+| F3 high | strict carry waits for E3; high stutter splits into Pell (k=1) and odd (k\ge3) residuals, and an explicit lift preserves its divisor gates, canonical D, and root-bottom miss | E3 / full nonrecurrent valuation predicate, terminal schedule, or source data |
+| F3 QC1 | ideal norm factor does not locate a raw side or conserved support charge | E1 |
+| F3 TR1 | every root-height Q|u menu must miss before D-star routing; D-star factors are only arithmetic eligibility, not consumable occurrences | E1 |
 | F3 m3 q5 | nonminimal, regeneration p-free failure, one-sided and two-sided (p^2) leaves remain | E1/E2/E3/E5 |
 
 No source factor, local checkpoint, synthetic receipt, finite control or status field is counted as a closure.

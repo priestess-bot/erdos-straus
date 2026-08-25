@@ -18,7 +18,7 @@
     "R2_M3_Q5_P2_ONE_SIDED",
     "R2_M3_Q5_P2_TWO_SIDED"
   ],
-  "partition_contract": "R1 is selected first by missing bound path payload. Within R2, v_5(T)>=2 is the nonminimal leaf; its complement is the minimal leaf v_5(D_star)=v_5(T)=1, 5 not dividing E. In the minimal leaf, E pure-dyadic selects the q=2 child. Otherwise the odd first child is terminal, strict when its canonical L1 is not 1 mod p, or an internal stutter checkpoint when L1 is 1 mod p. Only that last case invokes omega_pf: ODD_FULL when W_y!=delta and ODD_SHORT when W_y=delta. Every exposed prefix/final endpoint first returns TERMINAL on the scheduler's first hit. A nonterminal recanonicalized dyadic/omega endpoint has L_omega. If L_omega is not 1 mod p it is a strict leaf. Otherwise write L_omega=1+p*theta_omega and split theta_omega mod p into -1,0,1,OTHER. The zero class is exactly L_omega=1 mod p^2 and is split by one-sided versus genuine two-sided blocks. Predicates are mutually exclusive/exhaustive; no theta_omega or p2 rule reads first-child L1.",
+  "partition_contract": "R1 is selected first by missing bound path payload. Within R2, v_5(T)>=2 is the nonminimal leaf; its complement is the minimal leaf v_5(D_star)=v_5(T)=1, 5 not dividing E. In the minimal leaf, E pure-dyadic selects the q=2 child. Otherwise the odd first child is terminal, strict when its canonical L1 is not 1 mod p, or an internal stutter checkpoint when L1 is 1 mod p. Only that last case invokes omega_pf: ODD_FULL when W_y!=delta and ODD_SHORT when W_y=delta. Every exposed prefix/final endpoint first returns TERMINAL on the scheduler's first hit. A nonterminal recanonicalized dyadic/omega endpoint has L_omega. If L_omega is not 1 mod p it is a strict leaf; its c_T=1 subcase is exactly L_omega=-1 mod p and hands off to F2 high-support C1. Otherwise write L_omega=1+p*theta_omega and split theta_omega mod p into -1,0,1,OTHER. The zero class is exactly L_omega=1 mod p^2 and is split by one-sided versus genuine two-sided blocks. FULL/SHORT predicates still need explicit L1-stutter and prefix-terminal receipts for independent machine replay; no theta_omega or p2 rule reads first-child L1.",
   "leaves": [
     {
       "leaf_id": "R1_M3_Q5_PATH_UNBOUND",
@@ -152,6 +152,14 @@
       "id": "R2_E3_OWNER_REENTRY",
       "status": "OPEN",
       "required_result": "Common producer, synchronous normalizer, overflow owner and recursive re-entry."
+    },
+    {
+      "id": "STRICT_C1_F2_HANDOFF",
+      "status": "OPEN_CROSS_TRACK_HANDOFF",
+      "guard": "bound strict R2 endpoint with L_omega=-1 mod p",
+      "established": "c_T=1, high-support TYPEI/CHARGED target, and conditional parent-to-final LOCAL_DROP",
+      "continuation": "F2-HIGH-SUPPORT-C1 terminal-or-R3-G split",
+      "missing": "active E1/E3, target terminal serializer, and F2 re-entry"
     }
   ],
   "status_summary": {

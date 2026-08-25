@@ -43,7 +43,7 @@ sources:
   - reproduction: reproductions/type_i_f2_high_support_determinant_dual_absorb_handoff.py
     role: independent exact dual reconstruction
 visibility: public
-last_checked: '2026-08-24'
+last_checked: '2026-08-25'
 ---
 
 # High-support determinant dual handoff
@@ -206,7 +206,8 @@ unproved:
 
 1. a producer-specific E1 source event which turns the chart-derived
    determinant into an authorized successor construction;
-2. target-local terminal/F/G typing and a generic ordinary E3 owner;
+2. target-local terminal/F/G typing plus shared serialization and admission
+   into the existing marked-ABSORB type-space owner;
 3. a replayable ABSORB cursor \((m,r_\varepsilon)\), not merely \(R_\star<p\);
 4. an ABSORB re-entry theorem which never returns upward at the same equation
    rank.

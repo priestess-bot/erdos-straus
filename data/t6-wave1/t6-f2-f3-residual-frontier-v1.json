@@ -1,7 +1,7 @@
 {
   "schema_id": "t6_f2_f3_residual_frontier_v1",
   "schema_version": 1,
-  "date": "2026-08-24",
+  "date": "2026-08-25",
   "integration_branch": "integration/t6-f2-f3-wave1",
   "baseline_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
   "grammar_hash": "c099fdecf9ac0b98ed769a6bc52628991aba26027cfb1853b5b3f8b168e8a7da",
@@ -106,34 +106,34 @@
     {
       "id": "F3-HIGH-STUTTER-K1",
       "quantifier": "ACTUAL_PERSISTENT proper-factor high root with terminal miss, c=p-1 and high-domain k=1 Pell parameterization.",
-      "established_reductions": ["exact Pell-type parameterization", "two high-domain actual divisor gates", "root-lift saturation: the divisor gates leave an infinite formal omega class for fixed p,h,D", "known curve shadows are nonactual or terminal-preempted"],
-      "exact_blocker": "No canonical-maximal actual receipt coverage or empty/terminal/paid successor theorem; static divisor gates cannot by themselves bound the root parameter.",
+      "established_reductions": ["exact Pell-type parameterization", "two high-domain actual divisor gates", "root-lift saturation: an explicit infinite formal omega subprogression preserves the divisor gates, canonical D, and root-bottom terminal miss", "known curve shadows are nonactual or terminal-preempted"],
+      "exact_blocker": "No complete terminal-first schedule, actual receipt coverage, or empty/terminal/paid successor theorem; static gates and canonical-D data cannot by themselves bound the root parameter.",
       "missing": ["E1", "E2", "E3", "E4", "E5", "D1-D8"],
-      "next_minimal_theorem": "Use canonical maximal-receipt valuations, terminal-first, or actual source data to break root-lift periodicity; then show every surviving Pell tuple is terminal/empty or construct a high-domain successor."
+      "next_minimal_theorem": "Prove a full valuation predicate is nonrecurrent under the canonical-D subprogression, or use a complete terminal-first/source-lineage dichotomy; then show every surviving Pell tuple is terminal/empty or construct a high-domain successor."
     },
     {
       "id": "F3-HIGH-STUTTER-ODD-KGE3",
       "quantifier": "ACTUAL_PERSISTENT proper-factor high root with terminal miss, c=p-1 and rederived odd k>=3.",
-      "established_reductions": ["high-domain N=h*k split", "two high-domain actual divisor gates", "root-lift saturation: the divisor gates leave an infinite formal omega class for fixed p,h,D", "low-height QC1/TR1 is explicitly excluded"],
-      "exact_blocker": "No bounded high-domain normal form or physical carrier theorem; static divisor gates alone cannot bound the root parameter.",
+      "established_reductions": ["high-domain N=h*k split", "two high-domain actual divisor gates", "root-lift saturation: an explicit infinite formal omega subprogression preserves the divisor gates, canonical D, and root-bottom terminal miss", "low-height QC1/TR1 is explicitly excluded"],
+      "exact_blocker": "No bounded high-domain normal form or physical carrier theorem; static gates and canonical-D data alone cannot bound the root parameter.",
       "missing": ["E1", "E2", "E3", "E4", "E5", "D1-D8"],
-      "next_minimal_theorem": "Derive a high-only canonical-valuation, terminal, or source-lineage dichotomy for odd k>=3 that breaks root-lift periodicity."
+      "next_minimal_theorem": "Derive a full high-only valuation predicate with a proved nonrecurrence property, a complete terminal dichotomy, or a source-lineage route for odd k>=3."
     },
     {
       "id": "F3-QC1-INTEGER-OCCURRENCE",
       "quantifier": "R3/R5 low proper-root terminal-first survivors with k_perp>1.",
-      "established_reductions": ["canonical q_perp", "unique oriented Eisenstein ideal factor", "ideal factor is not E1"],
-      "exact_blocker": "No path-bound integer raw node/side/exponent/capacity occurrence and no one-use support-charge conservation theorem.",
+      "established_reductions": ["canonical q_perp", "unique oriented Eisenstein ideal factor", "nonactual control q_perp|N but q_perp does not divide R-h, D, E, or K", "ideal factor is not E1"],
+      "exact_blocker": "No path-bound integer raw node/side/exponent/capacity occurrence and no one-use support-charge conservation theorem. Norm data alone cannot place q_perp on the required raw side.",
       "missing": ["E1", "E2", "E3", "E4", "E5", "D3-D8"],
-      "next_minimal_theorem": "Ideal-to-integer occurrence/conservation bridge or an alternate terminal theorem for each R3/R5 survivor."
+      "next_minimal_theorem": "Ideal-to-integer raw-side occurrence/conservation bridge, a q_perp|(W-eta)-or-terminal theorem, or an alternate terminal theorem for each R3/R5 survivor."
     },
     {
       "id": "F3-TR1-PHYSICAL-OCCURRENCE",
       "quantifier": "R4/R6 low proper-root terminal-first survivors with k_perp=1, excluding m3 q5.",
-      "established_reductions": ["h-menu eligibility", "D_star arithmetic factor", "complete composite-Q terminal menu ordering"],
-      "exact_blocker": "Neither h-menu eligibility nor q|D_star is a consumable integer raw occurrence; no full terminal/physical TR1 exhaustion theorem.",
+      "established_reductions": ["actual root-height u supports complete composite-Q terminal menus", "R6 k=3 forces u>1 and therefore cannot skip that menu", "D_star arithmetic factors", "complete terminal menu ordering"],
+      "exact_blocker": "Every 1<Q|u menu must be replayed before D_star routing. Neither a menu factor nor q|D_star is a consumable integer raw occurrence, and the least D_star factor can be capacity-saturated; no full terminal/physical TR1 exhaustion theorem exists.",
       "missing": ["E1", "E2", "E3", "E4", "E5", "D3-D8"],
-      "next_minimal_theorem": "D_star arithmetic-factor to integer occurrence theorem with deterministic consumption and terminal precedence."
+      "next_minimal_theorem": "Replay the full Q|u terminal prefix, then prove a D_star factor has a fresh integer raw occurrence and select the least such factor with deterministic consumption."
     },
     {
       "id": "F3-M3Q5-R1-RUNTIME-BINDING",
@@ -174,6 +174,16 @@
       "exact_blocker": "No EMPTY/TERMINAL/final atomic macro with parent-to-final strict ticket.",
       "missing": ["E2", "E3", "E5", "D5", "D7", "D8"],
       "next_minimal_theorem": "Derive a two-sided p2 terminal or a source-preserving final atomic macro with strict N7 ticket."
+    }
+  ],
+  "cross_track_handoffs": [
+    {
+      "id": "F3-M3Q5-STRICT-C1-F2-HANDOFF",
+      "guard": "Bound R2 strict endpoint with Lomega=-1 mod p.",
+      "established": "c_T=1, high-support TYPEI/CHARGED target, and conditional parent-to-final LOCAL_DROP.",
+      "continuation": "F2-HIGH-SUPPORT-C1 terminal-or-R3-G residual.",
+      "missing": ["E1_ACTIVE_PRODUCER", "E3_TERMINAL_SERIALIZER_AND_ADMISSION", "F2_REENTRY"],
+      "status": "OPEN_CROSS_TRACK_HANDOFF"
     }
   ],
   "counters": {

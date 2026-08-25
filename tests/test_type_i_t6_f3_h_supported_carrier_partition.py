@@ -61,6 +61,9 @@ class HSupportedCarrierPartitionTests(unittest.TestCase):
         self.assertEqual(m_one["root_carrier"], 7)
         self.assertEqual(m_zero["root_carrier"], 7)
         self.assertIsNone(k_three["root_carrier"])
+        self.assertEqual(k_three["root_menu_modulus"], 7)
+        self.assertTrue(k_three["root_menu_required"])
+        self.assertEqual(k_three["residual_code"], PARTITION.R6_K3_RESIDUAL)
         self.assertEqual(k_three["transverse_factor_candidate"], 11)
 
     def test_quotient_only_and_m3_q5_fail_closed(self) -> None:

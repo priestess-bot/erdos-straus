@@ -7,7 +7,8 @@
   "reason": "a source-bound D_star arithmetic factor is universal, but no theorem turns it into a consumable integer raw occurrence/E1 or maps every terminal-menu miss to an admitted E1-E5 target",
   "residual_codes": [
     "R4_H_MENU_AND_DSTAR_TERMINALS_MISS_NO_TR1_TARGET",
-    "R6_H_MENU_AND_DSTAR_TERMINALS_MISS_NO_TR1_TARGET"
+    "R6_H_MENU_AND_DSTAR_TERMINALS_MISS_NO_TR1_TARGET",
+    "R6_K3_U_MENU_MISS_DSTAR_NO_TR1_TARGET"
   ],
   "required_receipt_fields": [
     "actual_parent_state_id",
@@ -24,14 +25,16 @@
     "root_supported_menu_miss_digest",
     "D_star_terminal_menu_miss_digest",
     "selected_transverse_arithmetic_factor_id",
+    "fresh_raw_occurrence_factor_set",
+    "fresh_raw_occurrence_selection_rule",
     "integer_raw_occurrence_status",
     "selected_transverse_factor",
     "TR1_rejection_code"
   ],
   "deterministic_selection": {
-    "root_supported": "R4 uses least 7 mod 12 prime of k/3; R6 uses least nonthree prime of k when it exists",
-    "transverse": "least prime factor of D_star after all declared terminal menus miss",
-    "dyadic_rule": "if the least factor is 2, do not invoke odd-prime TR1 menus"
+    "root_supported": "run every 1<Q|u root-capacity composite menu in fixed increasing order; q_h only proves nonempty eligibility in selected subcases, while R6 k=3 has u>1 directly",
+    "transverse": "retain all D_star arithmetic factors after terminal menus miss; select only the least factor with an independently verified fresh integer raw occurrence",
+    "dyadic_rule": "a dyadic arithmetic factor is not an odd-prime TR1 menu; it requires its own fresh-occurrence proof"
   },
   "known_counter_boundaries": [
     {

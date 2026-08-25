@@ -13,13 +13,16 @@
     "capacity_equivalence": "D divides K iff omega = 3*v*(p^2)^(-1) mod D_K",
     "root_parameter": "r=(u*omega-1)/2",
     "period": "omega_t=omega+2*D_K*v*t, t>=0",
+    "canonical_receipt_subprogression": "If the initial D is canonical and z=R-h has Q>1, set A=K/(p-1), H=p*h+1, L=(A*K*z*H)^2, and omega_j=omega_0+2*D_K*v*L*j.",
     "invariants": [
       "gcd(2*r_t+1,M)=u",
       "D divides K_t",
       "D divides R_t-h",
       "root_quotient_divisor_gate",
       "capacity_divisor_gate",
-      "all normal-form data depending only on p,h,D,m,e,a,k"
+      "all normal-form data depending only on p,h,D,m,e,a,k",
+      "canonical maximal-receipt divisor D on the refined subprogression",
+      "root-bottom complete-excess terminal miss Q>1 on the refined subprogression"
     ]
   },
   "vieta_boundary": {
@@ -44,10 +47,20 @@
     ]
   },
   "required_next_information": [
-    "canonical complete-excess valuation data that is nonperiodic in omega",
-    "target-local terminal-first proof",
+    "a full valuation predicate proved nonrecurrent under the canonical-D subprogression",
+    "a complete terminal-first schedule rather than only the root-bottom check",
     "actual source/path/admission restriction"
   ],
+  "canonical_receipt_control": {
+    "kind": "noncore valuation control only",
+    "p": 67,
+    "h": 93,
+    "r": 25311,
+    "canonical_D": 1558,
+    "canonical_Q": 19540216,
+    "H": 6232,
+    "note": "The control verifies the valuation-preserving algebra but is outside the core high-stutter quantifier."
+  },
   "does_not_claim": [
     "an actual persistent high stutter state exists",
     "the k=1 or odd-k residual is family-empty",

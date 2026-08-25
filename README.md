@@ -4,7 +4,7 @@
 可核查数学主张和计算复现。`研究进展综述.md` 是阅读入口；`papers/`、
 `claims/`、`concepts/` 中的 Markdown/YAML 文件是知识库的事实源。
 
-当前文献快照审计至 2026-07-31；当前证明前沿和本轮旗舰命题核验至 2026-08-20。论文卡、
+当前文献快照审计至 2026-07-31；当前证明前沿和本轮旗舰命题核验至 2026-08-25。论文卡、
 主张卡、概念卡及各状态的实时数量以 `python scripts/kb.py status` 和自动生成的
 `index/theorem-ledger.md` 为准，不在入口文档手工复制。其中被撤回论文和存在关键证明
 缺口的预印本仍会收录，但用独立状态标出。
@@ -128,10 +128,11 @@ v2 不删除其中任何数学 gap，只把 O4 流程义务改造成 admission f
 
 F3 high-stutter 的两条 actual divisor gate 现已作出更强的负向澄清：固定
 \((p,h,D)\) 后，`D | K` 仅将 root parameter \(\omega\) 限制在一个 CRT
-同余类，且该类给出无穷多个保持两 gate 的形式 root lift。因此不能再把附加的同类
-divisor-gate 算术当作 high Pell 或 odd-\(k\) 残余的 family-empty 证明。真正需要的是
-canonical complete-excess valuation、terminal-first 或 actual source/path 对该周期的非不变
-限制；F3、T6 与猜想的状态均不改变。精确命题与控制见
+同余类，且该类给出无穷多个保持两 gate 的形式 root lift。进一步的显式子列连 canonical
+maximal-receipt divisor \(D\) 与 root-bottom terminal miss 也一并保持。因此不能再把
+附加的同类 divisor-gate 算术或“\(D\) 已 canonical”当作 high Pell 或 odd-\(k\)
+残余的 family-empty 证明。真正需要的是已证明对该子列非重复的**完整** valuation predicate、
+完整 terminal-first schedule 或 actual source/path/admission 限制；F3、T6 与猜想的状态均不改变。精确命题与控制见
 [`type-I-t6-f3-high-endpoint-root-lift-saturation-boundary`](claims/type-I-t6-f3-high-endpoint-root-lift-saturation-boundary.md)。
 
 同日，F2 high-support \(C=1\) 的 `R=3 G` hard core 也得到一个更精确的算术分割：
@@ -168,6 +169,35 @@ overflow/`LOCAL_DROP`。两者的 final state 都被显式验证为 `DEAD_END`�
 ABSORB 的预准入 ticket。这让后续研究可以直接复用固定-R terminal/descent families；其
 全域 re-entry 尚未建立。见
 [`type-II-q-one-c9-high-r-side-dual-small-chart`](claims/type-II-q-one-c9-high-r-side-dual-small-chart.md)。
+
+### Wave1 复核边界（2026-08-25）
+
+本轮独立复核没有新增 F2、F3 或 T6 闭合，但修正了四个会影响后续证明方向的边界。
+
+1. QC1 中的 \(q_\perp\mid N(a-b\omega)\) 和有向 Eisenstein ideal 因子并不定位一个
+   可消费的 raw complete-excess side。现有 nonactual 控制甚至满足 \(q_\perp\mid N\)，
+   但 \(q_\perp\nmid R-h,D,E,K\)。因此下一条 QC1 定理必须建立 path-bound side occurrence
+   与 one-use charge conservation，不能再从 norm/ideal data 直接跳到 E1。
+2. TR1 的 R6 \(k=3\) 子叶不能跳过 root-capacity menu。primitive reduction 强制
+   \(u=h/3>1\)，所以所有 \(1<Q\mid u\) 的 menu 必须先按固定顺序重放；之后才可讨论
+   \(D_*\)。同时，\(D_*\) 的最小算术因子可能已 capacity-saturated，未来 physical rule
+   只能选取已独立验证为 fresh raw occurrence 的最小因子。
+3. m=3,q=5 的 strict endpoint 在 \(L_\omega\equiv-1\pmod p\) 时精确落入
+   high-support \(C=1\) target，并有条件性的 `LOCAL_DROP`；它只是转交 F2 的 R=3-G
+   hard core，不提供 re-entry。
+4. q1 C=9 source 的 \(L=2M\) fixed-\(n\) target 确有严格 `LOCAL_DROP`，但它不是现有
+   generic selector 的 canonical output，且 target 当前无 dispatch。因此只保留为
+   source-specific local candidate，不计入 Gate 3 或任何 residual closure。
+   其精确量词和 non-admission 边界见
+   [`docs/T6_F2_F3_WAVE1_C9_FIXED_N_CANDIDATE.md`](docs/T6_F2_F3_WAVE1_C9_FIXED_N_CANDIDATE.md)。
+
+Freeze B 已包含精确的 `type_i_absorb_marked_residual` **type-space** owner。所有旧的
+“没有 ordinary ABSORB owner”表述均应理解为“没有已注册 producer、shared serializer、common
+admission 或 re-entry”；type-space owner 本身不支付 E3。H4 的 `C=1` source-gate 排除同样
+只覆盖 retained `H4_A1` actual clean-q atomic arm，不覆盖其它 H4/future producer 或全局
+high-support `C=1` trace。机器可读 frontier 见
+[`data/t6-wave1/t6-f2-f3-residual-frontier-v1.json`](data/t6-wave1/t6-f2-f3-residual-frontier-v1.json)，
+TR1 修正见 [`docs/handoffs/F3_TR1_HANDOFF.md`](docs/handoffs/F3_TR1_HANDOFF.md)。
 
 ## 快速使用
 

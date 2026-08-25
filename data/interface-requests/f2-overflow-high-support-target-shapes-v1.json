@@ -40,14 +40,14 @@
       "producer_id": "joined_support_outer_reset",
       "source_guard": "actual dual d/r receipt, A'=lcm(A,t)>A, A'|K_t, strict charged rank",
       "target_schema": {
-        "family_match": ["type_i_a_gt_one_overflow_residual", "type_i_high_support_sink", "type_i_low_support_persistent_overflow", "REQUESTED_type_i_absorb_marked_residual"],
+        "family_match": ["type_i_a_gt_one_overflow_residual", "type_i_high_support_sink", "type_i_low_support_persistent_overflow", "type_i_absorb_marked_residual"],
         "normal_form": "overflow_outer_rank_reset_v1",
         "state_class": "overflow_or_marked_absorb_by_R_t",
         "fields": ["p", "R_t", "K_t", "absorbed_support=A_prime", "dual_side", "support_debt", "source_scope", "owner_digest"]
       },
       "mark_behavior": "preserve Sol(4,p) identity",
       "t5_ticket": "R_t>p: remain TYPEI/CHARGED and require LOCAL_DROP; R_t<p non-hit: enter TYPEI/ABSORB and use PHASE_DROP. M<=B_p alone does not authorize ABSORB.",
-      "owner_precedence_request": "R_t>p remains existing A>1/high-support refinement; R_t<p requests the semantic ABSORB owner",
+      "owner_precedence_request": "R_t>p remains existing A>1/high-support refinement; R_t<p must pass common classification into the existing marked-ABSORB type-space owner",
       "admission_status": "BLOCKED_UNTIL_COMMON_E3",
       "known_evidence": ["claims/type-I-overflow-outer-rank-reset.md"]
     },
@@ -56,15 +56,15 @@
       "producer_id": "high_carrier_fixed_n_descent",
       "source_guard": "actual determinant receipt and deterministic L divisor satisfying positivity, bound, canonical identity, strict rank",
       "target_schema": {
-        "family_match": ["type_i_a_gt_one_overflow_residual", "type_i_high_support_sink", "REQUESTED_type_i_absorb_marked_residual"],
+        "family_match": ["type_i_a_gt_one_overflow_residual", "type_i_high_support_sink", "type_i_absorb_marked_residual"],
         "normal_form": "overflow_fixed_n_or_s_bounded_divisor_v1",
         "state_class": "overflow_or_marked_absorb_by_R_L",
         "fields": ["p", "R_L", "K_L", "absorbed_support=L", "source_determinant", "selection_rule", "scope", "owner_digest"]
       },
       "mark_behavior": "preserve Sol(4,p) identity",
       "t5_ticket": "R_L>p: remain TYPEI/CHARGED and use LOCAL_DROP on the charged tuple; R_L<p non-hit: enter TYPEI/ABSORB and use PHASE_DROP. The universal full-product subbranch proved in this track always has R_L>p.",
-      "owner_precedence_request": "overflow target remains existing A>1 owner; low non-hit target requests semantic ABSORB owner; fixed-s is a producer branch, not a family",
-      "admission_status": "FULL_PRODUCT_RELATIVE_THEOREM; COMMON_E3_AND_LOW_TARGET_FAMILY_OPEN",
+      "owner_precedence_request": "overflow target remains existing A>1 owner; low non-hit target must pass common classification into the existing marked-ABSORB type-space owner; fixed-s is a producer branch, not a family",
+      "admission_status": "FULL_PRODUCT_RELATIVE_THEOREM; COMMON_E3_AND_LOW_TARGET_ADMISSION_OPEN",
       "known_evidence": ["claims/type-I-overflow-fixed-n-bounded-divisor-saturation.md", "claims/type-I-overflow-fixed-s-bounded-divisor-saturation.md"]
     },
     {
@@ -72,14 +72,14 @@
       "producer_id": "M_complete_excess",
       "source_guard": "actual source plus full-block Q, M=lcm(A,Q)>A; terminal-first miss; no transient-only parent",
       "target_schema": {
-        "family_match": ["type_i_low_support_persistent_overflow", "type_i_high_support_sink", "type_i_a_gt_one_overflow_residual", "REQUESTED_type_i_absorb_marked_residual"],
+        "family_match": ["type_i_low_support_persistent_overflow", "type_i_high_support_sink", "type_i_a_gt_one_overflow_residual", "type_i_absorb_marked_residual"],
         "normal_form": "overflow_M_complete_excess_v1",
         "state_class": "recomputed overflow_or_marked_absorb",
         "fields": ["p", "R_M", "K_M", "absorbed_support=M", "Q", "beta", "source_occurrence", "typed_classification", "owner_digest"]
       },
       "mark_behavior": "preserve Sol(4,p) only after target retyping",
       "t5_ticket": "A>B_p and M>A force R_M>p, so high-support M target is TYPEI/CHARGED LOCAL_DROP after true parent-to-target sharp rank decreases. Only low-support M rechart may require ABSORB PHASE_DROP after full E1-E4. M<=B_p is neither necessary nor sufficient for ABSORB.",
-      "owner_precedence_request": "high-support overflow target uses existing predicates; only low non-hit target uses semantic ABSORB owner",
+      "owner_precedence_request": "high-support overflow target uses existing predicates; only low non-hit target must pass common classification into the existing marked-ABSORB type-space owner",
       "admission_status": "NEW_ADAPTER_REQUIRED",
       "known_evidence": ["claims/type-I-marked-g-universal-anchor-complete-excess-exit.md", "docs/M-H-final-two-problem-audit-2026-08-20.md"]
     },
@@ -183,14 +183,14 @@
   "new_family_requests": [
     {
       "family_id_proposal": "type_i_absorb_marked_residual",
-      "need": "Fixed-n/fixed-s, M complete-excess, joined-reset, and total-cofactor arithmetic can produce R_T<p non-hit F/G targets with ROOT_SOL mark. These are semantic TYPEI/ABSORB states, not CHARGED residuals. The current grammar has no generic ordinary ABSORB owner.",
+      "need": "Fixed-n/fixed-s, M complete-excess, joined-reset, and total-cofactor arithmetic can produce R_T<p non-hit F/G targets with ROOT_SOL mark. These are semantic TYPEI/ABSORB states, not CHARGED residuals. Freeze B now has the exact type-space owner type_i_absorb_marked_residual; active producer, serializer, common admission and re-entry remain open.",
       "predicate_inputs": ["major_phase=TYPEI", "protocol=ABSORB (new coordinator-owned fact or equivalent)", "provenance_kind=ABSORB_RECHART (or equivalent)", "is_overflow=false", "chart_R<p", "support_A|chart_K", "terminal_first=MISS", "ROOT_SOL mark", "target-local non-hit typing"],
       "precedence_request": "after atomic/proper-root dedicated families and before overflow refinements/full-carrier fallback; exact placement is coordinator-owned",
       "allowed_overlap_request": "none with FULL_CARRIER_POST_G unless a producer explicitly declares that origin; no generic first-match fallback",
       "producer_targets_needing_it": ["joined_support_outer_reset", "high_carrier_fixed_n_descent", "M_complete_excess", "total_cofactor_typed_projection_v1"],
       "ticket_contract": "CHARGED source -> ABSORB target uses PHASE_DROP only after E1-E4; M<=B_p alone never authorizes this owner or ticket.",
       "t2_t3": "T2 not applicable unless an atomic arm is added; T3 remains ROOT_SOL only",
-      "status": "REQUESTED_FOR_GATE2_NOT_AUTHORIZED"
+      "status": "SUPERSEDED_BY_GATE2_TYPE_SPACE_ACCEPTANCE"
     }
   ],
   "explicit_nonrequests": [

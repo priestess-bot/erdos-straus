@@ -49,12 +49,13 @@
     "k_perp": "product of q^v_q(k) over prime q dividing k with q not dividing h",
     "h_supported": "every prime divisor of k divides h, equivalently k_perp = 1",
     "transverse_arithmetic_factor": "a source-bound arithmetic factor q or Q of D_star; it is not a consumable integer raw occurrence until a separate E1 theorem binds one",
-    "canonical_transverse_prime": "the least prime factor of verified D_star after all earlier terminal predicates miss"
+    "canonical_transverse_prime": "the least prime factor of verified D_star with an independently verified fresh integer raw occurrence, after all earlier terminal predicates miss"
   },
   "forbidden_inferences": [
     "k_perp = 1 implies a quotient-only carrier exists",
     "a divisor q of k is an actual source occurrence without a source-path receipt",
     "a divisor q or Q of D_star is a physical successor",
+    "the least arithmetic factor of D_star is automatically a fresh raw occurrence",
     "persistent_queue = true proves actual admission",
     "recursive_edge_eligible = true proves actual admission",
     "a family label proves E3",
@@ -65,7 +66,7 @@
     "low-height lemmas apply to h > p"
   ],
   "required_partition": [
-    "terminal",
+    "terminal, including every 1<Q|u root-capacity menu before D_star routing",
     "QC1 via a genuinely admissible h-supported carrier",
     "TR1 via a D_star arithmetic factor after an independently proved integer raw occurrence/E1 bridge",
     "family-empty",

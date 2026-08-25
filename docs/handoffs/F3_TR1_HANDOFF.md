@@ -38,7 +38,9 @@ R6_MGT3_H_SUPPORTED:    m>3
    也不是 raw occurrence/E1。
 2. **R6 h-menu eligibility。** 若 (m\equiv1\pmod3)，取 (k) 的最小素因子；
    若 (m\equiv0\pmod3,k>3)，符号证明 (v_3(k)=1)，取 (k/3) 的最小素因子。
-   两者都整除 (u)。(k=3) 是唯一没有非 3 h-menu factor 的 R6 子叶。
+   两者都整除 (u)。当 (k=3) 时没有来自 (k) 的非 3 factor，但 primitive system
+   强制 (u=h/3>1)，所以仍必须枚举全部 (1<Q\mid u) 的 root-capacity menu，不能
+   直接跳到 (D_*)。
 3. **(D_*) factor existence。** 对全部 R4/R6，既有 actual theorem 给 (D_*>1) 且
    ((D_*,h)=1)。因此 least prime of (D_*) 与 whole (D_*) 是 source-bound
    arithmetic factors；“没有 (D_*) factor”子域为空。
@@ -63,6 +65,7 @@ R6_MGT3_H_SUPPORTED:    m>3
 ```text
 R4_H_MENU_AND_DSTAR_TERMINALS_MISS_NO_TR1_TARGET
 R6_H_MENU_AND_DSTAR_TERMINALS_MISS_NO_TR1_TARGET
+R6_K3_U_MENU_MISS_DSTAR_NO_TR1_TARGET
 ```
 
 二者共同缺失的最小定理是：
@@ -79,15 +82,15 @@ family-empty theorem；有限搜索不合格。
 | Gate | 状态 | 证据/缺口 |
 |---|---|---|
 | D1 exact quantifier | PASS | scope freeze 与 claim §1 |
-| D2 exhaustive partition | PARTIAL | terminal/menu/factor/residual 有序穷尽；最终 residual 非空 |
+| D2 exhaustive partition | PARTIAL | k=3 已修正为先枚举全体 Q|u menu；最终 residual 仍非空 |
 | D3 E1 | FAIL | (D_*) 只有 arithmetic factor，未绑定 integer raw occurrence |
 | D4 E2 | FAIL | 没有全域 deterministic target theorem |
 | D5 E3 | FAIL | 没有 target normal form、owner、digest、active admission |
 | D6 E4 | FAIL | 没有 target，因而没有 universal lift |
 | D7 E5 | FAIL | 没有 authoritative parent-to-final ticket；support 大小不决定 protocol |
 | D8 re-entry | FAIL | 没有 admitted target |
-| D9 negative controls | PASS（局部） | quotient-only、m3-q5、terminal priority、arithmetic-factor self-authorization 均 fail closed |
-| D10 independent replay | PASS（局部） | Agent 5 反审修正了 occurrence/protocol 过强表述；不构成 D3–D8 证明 |
+| D9 negative controls | PARTIAL | 现有控制只覆盖 typed fixtures，未覆盖 shared gate、未知/overlap 或 actual all-Q replay |
+| D10 independent replay | NOT_EVIDENCED | 已有 QC1 cross-review 不等于 TR1 的独立 source-to-runtime replay |
 
 ## Agent 5 QC1 交叉审查
 

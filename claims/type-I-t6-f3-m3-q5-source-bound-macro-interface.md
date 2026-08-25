@@ -45,7 +45,7 @@ sources:
   - reproduction: reproductions/type_i_t6_f3_m3_q5_source_bound_macro.py
     role: focused-path-target-rank-and-boundary-replay
 visibility: public
-last_checked: '2026-08-24'
+last_checked: '2026-08-25'
 ---
 
 # F3 (m=3,q=5) 的 source-bound raw word、同步 target 与 parent-to-final E5
@@ -258,6 +258,19 @@ persistent parent (1) 与最终 target (13)，两端 local ranks 为
 \]
 
 strict branch (15) 给 `LOCAL_DROP`。
+
+Within that strict branch, the capacity-one subcase is exact:
+
+\[
+\boxed{c_T=1\Longleftrightarrow L_\omega\equiv-1\pmod p.}
+\tag{15a}
+\]
+
+It is not a \(p^2\) gate, since \(L_\omega\equiv1\pmod{p^2}\) is instead
+the stutter case. By (16) the target remains high-support
+`TYPEI/CHARGED OVERFLOW`, so (15a) has the same conditional parent-to-final
+`LOCAL_DROP`. Its continuation is the F2 high-support C=1 problem: no
+ordinary ABSORB or R=3-G conclusion is supplied here.
 
 因此 strict one-sided 与 strict two-sided branches 都有固定 parent-to-final T5 ticket；
 不会使用 selected-side formal cofactor，也不会把 checkpoint 的局部升降计入 persistent

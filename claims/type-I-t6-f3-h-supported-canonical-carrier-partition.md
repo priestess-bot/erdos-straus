@@ -11,14 +11,17 @@ statement: >-
   root-capacity source-menu 输入域，绝非 quotient-only，但这只是菜单资格而非
   raw occurrence/E1。若 m>3，则 m=0 或 1 mod3；在
   m=1 mod3 时 3 不整除 k，最小素因子 q_h 整除 u；在 m=0 mod3 时
-  v_3(k)=1，故 k>3 时 k/3 的最小素因子 q_h 整除 u，而 k=3 是唯一没有
-  非 3 h-carrier 的子叶。另一方面，D*>1 且 gcd(D*,h)=1，故 D* 的规范
-  最小素因子（或 whole D*）是由 actual maximal receipt 的 D 确定的
-  source-bound arithmetic factor，并严格属于 transverse arithmetic provenance；
-  它仍不是可消费的 raw occurrence/E1。于是 R4/R6 被全称分为 terminal、规范
-  root-supported menu、规范 D*-terminal menu、k=3 transverse 子叶及一个
-  最小 unphysicalized TR1 residual。该结果证明 menu/factor existence 与算术来源分类，
-  但不证明 root menu 必命中，也不从 D* 构造 target、全域 lift 或 T5 ticket；
+  v_3(k)=1，故 k>3 时 k/3 的最小素因子 q_h 整除 u。k=3 虽没有非 3
+  h-carrier from k，但 primitive system 强制 u=h/3>1，故仍必须先枚举所有
+  1<Q|u 的 root-capacity menu。另一方面，D*>1 且 gcd(D*,h)=1，故 D* 的
+  因子是由 actual maximal receipt 的 D 确定的 source-bound arithmetic factor，
+  并严格属于 transverse arithmetic provenance；它仍不是可消费的 raw occurrence/E1。
+  A physical TR1 rule may select only an independently verified fresh raw
+  occurrence, not automatically the least prime of D*. Thus R4/R6 are
+  partitioned into terminal, root-supported menu, D*-terminal menu, and an
+  unphysicalized TR1 residual. This proves menu/factor existence and
+  arithmetic provenance classification, but not root-menu totality, a D*
+  target, a universal lift, or a T5 ticket;
   因而 OPEN_TR1_PHYSICAL_SERIALIZER、F3 与 T6 仍开放。
 claim_status: established
 proof_provenance: repository_derivation
@@ -44,7 +47,7 @@ sources:
   - reproduction: reproductions/type_i_t6_f3_h_supported_carrier_partition.py
     role: focused-partition-and-reason-code-controls
 visibility: public
-last_checked: '2026-08-24'
+last_checked: '2026-08-25'
 ---
 # T6-F3 R4/R6 的规范 h-menu 资格与 (D_*) 算术余项分派
 
@@ -178,9 +181,30 @@ A^2-AB+B^2\equiv(A+B)^2\equiv1\pmod3.
 \]
 
 若 (k>3)，则 (kappa>1)。定义 (q_h) 为 (kappa) 的最小素因子；它不等于
-3，并由 (3) 再次满足 (q_h\mid u)。若 (k=3)，则 (kappa=1)，这是 R6
-中唯一没有非 3 h-supported carrier 的子叶；不得把素数 3 伪装成
-(q\mid u) source，因为 (3\nmid u)。
+3，并由 (3) 再次满足 (q_h\mid u)。若 (k=3)，则 (kappa=1)，这是 R6 中唯一
+没有来自 (k) 的非 3 h-supported carrier 的子叶；不得把素数 3 伪装成
+(q\mid u) source，因为 (3\nmid u)。但这并不使 root-capacity menu 为空。
+The k=3 primitive system gives
+
+\[
+u=A^2-AB+B^2,
+\qquad 1\le A<B,
+\qquad 3\nmid u.
+\tag{13a}
+\]
+
+Writing \(B=A+d\) gives \(u=A^2+Ad+d^2\ge3\). Equality would force
+\((A,B)=(1,2)\), contradicting \(3\nmid u\). Hence
+
+\[
+\boxed{u>1.}
+\tag{13b}
+\]
+
+Every actual k=3 input therefore has one or more valid composite-menu
+moduli \(1<Q\mid u\). The absence of a `q_h` tie-break from \(k\) only means
+that the whole \(Q\mid u\) menu must be replayed directly; it cannot justify
+skipping that menu and entering \(D_*\) routing.
 
 ## 4. Source-bound transverse arithmetic factor 对每个输入都存在
 
@@ -198,7 +222,7 @@ D_*>1.
 \tag{15}
 \]
 
-令
+For arithmetic bookkeeping only, let
 
 \[
 q_T(S)=\min\{q:q\text{ prime},\ q\mid D_*\}.
@@ -209,8 +233,13 @@ q_T(S)=\min\{q:q\text{ prime},\ q\mid D_*\}.
 (D) 来自 actual maximal decomposition (R-h=ED)。这使 (16) 成为
 source-bound arithmetic factor，而不是任意外部输入；但它仍未证明某条 raw path 上有可消费
 的 complete-excess block，也不支付 E1。式 (15) 只表明该 factor 与 h-supported
-root menu 的算术支撑严格不同。若 (q_T=2)，则它进入 dyadic transverse 子叶；不得调用只对
-奇素数成立的 low-gap/negative-root menus。
+root menu 的算术支撑严格不同。A maximal-normalization factor of \(D_*\) may be
+capacity-saturated and satisfy \(q\nmid E\); therefore the least arithmetic
+prime \(q_T\) is not an authorized physical tie-break. A future TR1 rule must
+choose the least factor with an independently verified fresh integer raw
+occurrence, or report no TR1 candidate after all such occurrences are checked.
+If \(q_T=2\), it is only a dyadic arithmetic candidate; no odd-prime menu may
+be invoked from it.
 
 这只证明“没有 (D_*>1) arithmetic factor”的 family 为空。它没有证明
 `TR1PhysicalTransitionV1` 存在：integer raw occurrence/E1、确定 target、E3 owner、全域
@@ -221,8 +250,10 @@ E4 与 parent-to-final E5 均仍缺失。
 对每个 (1)--(4) 的输入依次执行：
 
 1. 重放活动 terminal-first；命中即 direct terminal。
-2. 若存在第 2--3 节的 (q_h)，按所有 (1<Q\mid u) 的递增顺序运行完整
-   root-capacity composite external menu；首个命中是 direct Type I terminal。
+2. Whenever \(u>1\), run the complete root-capacity composite external menu
+   for every \(1<Q\mid u\) in increasing order; the first hit is a direct
+   Type I terminal. The R4/R6 carrier lemmas prove this eligibility in their
+   listed subcases, and the k=3 primitive lemma supplies it directly.
 3. 重放当前声明的 whole-(D_*)、native raw、quadratic positive、local overlap 与
    reflected negative terminal menus；首个命中是 direct terminal。
 4. 若仍 miss，记录 (16) 的 source-bound arithmetic factor；只有另一个定理把它绑定成
@@ -240,18 +271,20 @@ E4 与 parent-to-final E5 均仍缺失。
 ```text
 R4_H_MENU_AND_DSTAR_TERMINALS_MISS_NO_TR1_TARGET
 R6_H_MENU_AND_DSTAR_TERMINALS_MISS_NO_TR1_TARGET
+R6_K3_U_MENU_MISS_DSTAR_NO_TR1_TARGET
 ```
 
-R6 的 `k=3` 只把第一段 h-menu 置为空；它仍有 (14)--(16) 的 source-bound transverse
-factor candidate。一个最小失败 receipt 必须保存：
+R6 的 `k=3` has no nonthree factor from \(k\), but it has \(u>1\) and must
+retain the full root-menu miss digest before any transverse factor is examined.
+A minimal failed receipt must save:
 
 ```text
 actual parent/admission/source path
 terminal-first complete miss digest
 m, k, k_perp, D_star and their verified factorizations
-q_h/root-menu miss digest when q_h exists
+complete root-menu miss digest over every 1<Q|u
 D_star terminal-menu miss digest
-q_T arithmetic-factor id inside actual D
+all D_star arithmetic factors and the subset with independently verified fresh raw occurrence
 integer raw occurrence status = UNBOUND
 absence of any accepted TR1 target/ticket
 ```

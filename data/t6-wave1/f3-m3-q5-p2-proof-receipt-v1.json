@@ -23,6 +23,11 @@
       "strength": "ESTABLISHED_CONTRACT_TICKET"
     },
     {
+      "id": "STRICT_C1_F2_HANDOFF",
+      "statement": "Within the strict branch, target capacity c_T=1 iff L_omega=-1 mod p. The target is still high-support TYPEI/CHARGED overflow with conditional LOCAL_DROP, and its continuation is F2-HIGH-SUPPORT-C1 rather than an ABSORB conclusion.",
+      "strength": "ESTABLISHED_CROSS_TRACK_ARITHMETIC_HANDOFF"
+    },
+    {
       "id": "IDENTITY_LIFT",
       "statement": "After target validation, W_source=W_target=Sol(p) and the universal lift is identity.",
       "strength": "ESTABLISHED_CONDITIONAL_ON_TARGET_VALIDATION"
@@ -80,6 +85,7 @@
     "R_T<p for a nonterminal track target",
     "M<=B_p for a nonterminal track target",
     "higher congruence closes p2",
+    "L_omega=-1 mod p closes the F2 high-support C1 continuation",
     "a control fixture proves actual existence"
   ],
   "artifacts": {

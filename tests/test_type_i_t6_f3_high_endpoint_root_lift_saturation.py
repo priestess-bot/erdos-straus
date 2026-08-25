@@ -28,6 +28,9 @@ class HighEndpointRootLiftSaturationTests(unittest.TestCase):
     def test_crt_constructs_an_odd_primitive_capacity_lift(self) -> None:
         SATURATION.check_crt_primitive_lift()
 
+    def test_canonical_receipt_divisor_can_remain_periodic(self) -> None:
+        SATURATION.check_canonical_receipt_lift_saturation()
+
     def test_high_vieta_map_leaves_the_parameter_slice(self) -> None:
         SATURATION.check_high_vieta_noninvariance()
 

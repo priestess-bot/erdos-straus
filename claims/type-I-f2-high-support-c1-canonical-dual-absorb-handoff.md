@@ -13,8 +13,10 @@ statement: >-
   into a semantic TYPEI/ABSORB owner has a deterministic CHARGED-to-ABSORB
   phase-drop with the identity map on Sol(4,p). This establishes E2, E4, and
   the conditional E5 ticket; it does not establish the new producer's
-  registration, generic ABSORB E3 owner, target terminal-first serializer, or
-  recursive ABSORB re-entry. Hence it is a conditional handoff, not a verified
+  registration, shared ABSORB serializer/admission, target terminal-first
+  serializer, or recursive ABSORB re-entry. Freeze B contains an exact
+  type-space marked-ABSORB owner, but not an active producer or re-entry.
+  Hence it is a conditional handoff, not a verified
   successor or C=1/F2/T6 closure.
 claim_status: conditional
 proof_provenance: repository_derivation
@@ -45,7 +47,7 @@ sources:
   - reproduction: reproductions/type_i_f2_high_support_c1_canonical_dual_absorb_handoff.py
     role: symbolic dual replay and R=3 control
 visibility: public
-last_checked: '2026-08-24'
+last_checked: '2026-08-25'
 ---
 
 # High-support C=1 canonical dual ABSORB handoff
@@ -174,7 +176,7 @@ For this specific target:
 |---|---|---|
 | E1 | relative | An actual parent and its source receipt are required; a new registered producer must bind them to (4). |
 | E2 | established | Equations (2)--(8) reconstruct one target without a factor choice. |
-| E3 | open | The canonical anchor gives cursor \((m,r_\varepsilon)=(1,1)\), but the active grammar has no generic ordinary TYPEI/ABSORB owner or serializer. |
+| E3 | open | The canonical anchor gives cursor \((m,r_\varepsilon)=(1,1)\). Freeze B has the exact `type_i_absorb_marked_residual` type-space owner, but no producer, shared serializer, common admission, or re-entry for this target. |
 | E4 | established relative to E3 | Both charts have root \(p\); use the identity on \(\operatorname{Sol}(4,p)\). |
 | E5 | established relative to E3 | The frozen T5 protocol order makes CHARGED to ABSORB a phase-drop once E3 admits the target. |
 | re-entry | open | An admitted ABSORB target needs a total, non-upward continuation. |

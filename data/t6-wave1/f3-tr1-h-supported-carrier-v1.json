@@ -34,14 +34,15 @@
       "provenance": "k_perp=1 implies q divides u and menu eligibility, not raw E1"
     },
     "R6_k_equals_3": {
-      "definition": null,
-      "disposition": "NO_NONTHREE_H_CARRIER_USE_DSTAR_TR1",
-      "forbidden_relabel": "3 does not divide u"
+      "definition": "whole root-height modulus u=h/3; enumerate every 1<Q dividing u",
+      "existence": "the k=3 primitive system gives u=A^2-A*B+B^2>1 and 3 does not divide u",
+      "disposition": "ROOT_MENU_REQUIRED_BEFORE_DSTAR",
+      "forbidden_relabel": "3 does not divide u, but the absence of a nonthree factor from k does not make the Q|u menu empty"
     },
     "transverse": {
-      "definition": "least prime factor of verified D_star, with whole D_star retained",
+      "definition": "all factors of verified D_star; a physical rule may select only the least independently verified fresh raw occurrence",
       "existence": "D_star>1",
-      "provenance": "D_star divides actual maximal-receipt D, yielding a source-bound arithmetic factor but not a consumable integer raw occurrence",
+      "provenance": "D_star divides actual maximal-receipt D, yielding source-bound arithmetic factors but not consumable integer raw occurrences; a least arithmetic factor can be capacity-saturated",
       "separation": "gcd(D_star,h)=1"
     }
   },
@@ -67,6 +68,8 @@
       "code": "R6_H_MENU_AND_DSTAR_TERMINALS_MISS_NO_TR1_TARGET",
       "route": "R6_MGT3_H_SUPPORTED",
       "includes_k_equals_3_subleaf": true,
+      "k_equals_3_residual_code": "R6_K3_U_MENU_MISS_DSTAR_NO_TR1_TARGET",
+      "k_equals_3_boundary": "the full 1<Q|u root menu has been replayed and missed; it is not skipped before D_star",
       "missing": [
         "deterministic admitted target",
         "universal E4 lift",

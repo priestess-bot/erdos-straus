@@ -519,6 +519,25 @@ def control_source() -> QuotientOnlySourceV1:
     )
 
 
+def raw_side_nonimplication_control() -> dict[str, int]:
+    """Show that the norm factor alone does not locate a stutter-side factor."""
+
+    source = control_source()
+    arithmetic = rebuild_source(source)
+    q = canonical_q_perp(source.k, source.h)
+    z = source.chart_R - source.h
+    D = int(arithmetic["D"])
+    E = z // D
+    values = {"z": z, "D": D, "E": E, "K": source.chart_K}
+    if not (
+        int(arithmetic["norm"]) == source.h * source.k
+        and source.k % q == 0
+        and all(valuation(value, q) == 0 for value in values.values())
+    ):
+        raise AssertionError("QC1 norm-to-stutter-side boundary changed")
+    return {"q_perp": q, **{f"v_{name}": valuation(value, q) for name, value in values.items()}}
+
+
 def verify() -> dict[str, object]:
     source = control_source()
     if is_prime(source.p):
@@ -538,6 +557,9 @@ def verify() -> dict[str, object]:
         and result["recursive_edge_eligible"] is False
     ):
         raise AssertionError("focused QC1 quotient-only transition changed")
+    nonimplication = raw_side_nonimplication_control()
+    if nonimplication != {"q_perp": 61, "v_z": 0, "v_D": 0, "v_E": 0, "v_K": 0}:
+        raise AssertionError("QC1 raw-side nonimplication control changed")
 
     for bad_source in (
         QuotientOnlySourceV1(**{**asdict(source), "k": source.h}),

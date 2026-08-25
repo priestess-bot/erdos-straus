@@ -27,15 +27,19 @@
       "maximal_complete_excess_receipt_digest",
       "terminal_first_digest",
       "terminal_first_miss",
+      "root_height_u",
+      "root_q_menu_replay",
+      "root_q_menu_complete_miss_digest",
       "D_star_value",
       "D_star_factorization_receipt",
-      "selected_factor_or_divisor",
-      "selected_factor_arithmetic_id",
+      "fresh_raw_occurrence_factor_set",
+      "selected_fresh_factor_or_divisor",
+      "selected_fresh_factor_arithmetic_id",
       "integer_raw_occurrence_receipt",
       "factor_selection_rule",
       "priority_prefix_digest"
     ],
-    "deterministic_factor_rule": "evaluate written whole-divisor terminal predicates in fixed order; after all miss, select the least prime factor of verified D_star",
+    "deterministic_factor_rule": "replay every 1<Q|u root-capacity menu and all written terminal predicates in fixed order; after all miss, select the least D_star factor with an independently verified fresh integer raw occurrence. A least arithmetic D_star factor may be capacity-saturated and is not selectable by itself.",
     "required_edge_fields": [
       "E1_integer_raw_occurrence_and_path",
       "E2_deterministic_target",
@@ -89,12 +93,12 @@
     {
       "shape_id": "TR1_TYPEI_ABSORB_COMMIT_V1",
       "disposition": "PERSISTENT_CANDIDATE_UNTIL_PROVED",
-      "existing_family_match": "an existing marked-absorb owner only if R_T<p and the full ABSORB normal form is independently verified",
-      "new_family_required": "coordinator decision required if frozen grammar cannot represent the exact ABSORB protocol",
+      "existing_family_match": "type_i_absorb_marked_residual only if R_T<p and the full MARKED_ABSORB / ABSORB normal form is independently verified",
+      "new_family_required": "coordinator decision required only if frozen grammar cannot represent the exact ABSORB protocol",
       "atomic_arm_required": false,
       "mark_behavior": "preserve ROOT_SOL only if a universal identity lift is proved",
       "T5_ticket_type": "TYPEI protocol drop CHARGED to ABSORB only after R_T<p marked-absorb semantics, irreversible protocol commit, and all ABSORB fields/rank are verified; M<=B_p alone is insufficient",
-      "owner_precedence_request": "coordinator must expose the existing ABSORB owner in the frozen common grammar if not already representable",
+      "owner_precedence_request": "the frozen type-space owner exists; common classification, producer authorization and admission remain required",
       "admission_requirement": "target has R_T<p, a verified marked-absorb normal form, complete ABSORB protocol coordinates, an irreversible commit, and a common-admitted owner"
     },
     {

@@ -23,6 +23,7 @@ R6 = "R6_MGT3_H_SUPPORTED"
 
 R4_RESIDUAL = "R4_H_MENU_AND_DSTAR_TERMINALS_MISS_NO_TR1_TARGET"
 R6_RESIDUAL = "R6_H_MENU_AND_DSTAR_TERMINALS_MISS_NO_TR1_TARGET"
+R6_K3_RESIDUAL = "R6_K3_U_MENU_MISS_DSTAR_NO_TR1_TARGET"
 
 
 class PartitionError(ValueError):
@@ -107,6 +108,23 @@ def r6_root_carrier(header: CarrierHeaderV1) -> int | None:
     return carrier
 
 
+def root_menu_modulus(header: CarrierHeaderV1) -> int:
+    """Return u=h/3, whose whole-divisor menu precedes D_star routing."""
+
+    if header.h % 3:
+        raise PartitionError("root-height must be divisible by three")
+    modulus = header.h // 3
+    if modulus < 1:
+        raise PartitionError("root-height modulus is not positive")
+    if header.route_code == R6 and header.k == 3:
+        # The k=3 primitive reduction gives u=A^2-A*B+B^2>1 and 3 does not
+        # divide u. It has no nonthree factor from k, but its full Q|u menu
+        # must still run before transverse routing.
+        if modulus == 1 or modulus % 3 == 0:
+            raise PartitionError("k=3 primitive root-menu modulus is invalid")
+    return modulus
+
+
 def classify(header: CarrierHeaderV1) -> dict[str, object]:
     if header.route_code not in {R4, R6}:
         raise PartitionError("route is not owned by Agent 6")
@@ -124,15 +142,17 @@ def classify(header: CarrierHeaderV1) -> dict[str, object]:
         if header.route_code == R4
         else r6_root_carrier(header)
     )
+    root_modulus = root_menu_modulus(header)
     transverse_factor = least_prime(header.d_star)
     if header.h % transverse_factor == 0:
         raise PartitionError("D_star carrier is not transverse")
     if header.root_menu_hit:
-        if root_carrier is None:
-            raise PartitionError("k=3 has no nonthree root carrier")
+        if root_modulus <= 1:
+            raise PartitionError("root menu requires a nontrivial Q|u modulus")
         return {
             "outcome": "ROOT_SUPPORTED_MENU_TERMINAL",
             "root_carrier": root_carrier,
+            "root_menu_modulus": root_modulus,
             "recursive": False,
         }
     if header.dstar_menu_hit:
@@ -143,8 +163,16 @@ def classify(header: CarrierHeaderV1) -> dict[str, object]:
         }
     return {
         "outcome": "OPEN_MINIMAL_RESIDUAL",
-        "residual_code": R4_RESIDUAL if header.route_code == R4 else R6_RESIDUAL,
+        "residual_code": (
+            R4_RESIDUAL
+            if header.route_code == R4
+            else R6_K3_RESIDUAL
+            if header.k == 3
+            else R6_RESIDUAL
+        ),
         "root_carrier": root_carrier,
+        "root_menu_modulus": root_modulus,
+        "root_menu_required": root_modulus > 1,
         "transverse_factor_candidate": transverse_factor,
         "integer_raw_occurrence_bound": False,
         "E1_status": "OPEN",
@@ -211,10 +239,29 @@ def verify() -> None:
     r6_k_three = classify(fixture(route_code=R6, h=3 * 7, m=6, k=3, d_star=11))
     if not (
         r6_k_three["root_carrier"] is None
+        and r6_k_three["root_menu_modulus"] == 7
+        and r6_k_three["root_menu_required"]
         and r6_k_three["transverse_factor_candidate"] == 11
-        and r6_k_three["residual_code"] == R6_RESIDUAL
+        and r6_k_three["residual_code"] == R6_K3_RESIDUAL
     ):
-        raise AssertionError("R6 k=3 transverse-only leaf changed")
+        raise AssertionError("R6 k=3 root-menu priority changed")
+
+    r6_k_three_terminal = classify(
+        fixture(
+            route_code=R6,
+            h=3 * 7,
+            m=6,
+            k=3,
+            d_star=11,
+            root_menu_hit=True,
+        )
+    )
+    if not (
+        r6_k_three_terminal["outcome"] == "ROOT_SUPPORTED_MENU_TERMINAL"
+        and r6_k_three_terminal["root_carrier"] is None
+        and r6_k_three_terminal["root_menu_modulus"] == 7
+    ):
+        raise AssertionError("R6 k=3 root menu was skipped")
 
     try:
         classify(fixture(h=3 * 31, k=3 * 31 * 37))

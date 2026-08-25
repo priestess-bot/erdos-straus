@@ -46,7 +46,7 @@ sources:
   - reproduction: reproductions/type_i_t6_f3_qc1_quotient_only_physical_transition.py
     role: algebraic factor, conditional target shape, fail-closed and common-kernel shape controls
 visibility: public
-last_checked: '2026-08-24'
+last_checked: '2026-08-25'
 ---
 
 # F3 R3/R5 quotient-only occurrence boundary
@@ -180,6 +180,31 @@ one occurrence may be charged into `absorbed_support`. In particular,
 
 The gap in (11) is exactly the divisor-as-occurrence error prohibited by the
 wave plan.
+
+### 3.1 Norm-to-raw-side nonimplication control
+
+The current arithmetic equations do not even place \(q_\perp\) on the
+distinguished stutter side. In the explicitly nonactual control used by the
+reproducer,
+
+\[
+p=54481,\qquad h=12063,\qquad k=q_\perp=61,
+\tag{11a}
+\]
+
+so \(q_\perp\mid N=hk\). Direct recomputation nevertheless gives
+
+\[
+v_{61}(R-h)=v_{61}(D)=v_{61}(E)=v_{61}(K)=0.
+\tag{11b}
+\]
+
+The control is not an actual persistent state because its \(p\) is
+composite. It is therefore not a counterexample to a future actual-source
+theorem. It does prove that the present norm, ideal-factor, and target-chart
+identities alone cannot establish the required path-bound side occurrence.
+In particular, a complementary-coordinate terminal fan requiring a factor on
+that coordinate is not an already available QC1 exit.
 
 ## 4. Conditional target formula
 

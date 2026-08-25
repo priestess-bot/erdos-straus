@@ -38,7 +38,7 @@ sources:
   - reproduction: reproductions/type_i_f2_high_support_c1_r_three_terminal_split.py
     role: focused certificate and G controls
 visibility: public
-last_checked: '2026-08-24'
+last_checked: '2026-08-25'
 ---
 
 # High-support C=1 R=3 terminal-or-G split
@@ -148,5 +148,6 @@ handoff has not terminated.
 ## Boundary
 
 This claim strengthens the C=1 handoff by making one target-terminal branch
-explicit. It does not create the generic ABSORB owner, resolve the R=3-G
-residual, prove target re-entry, or close C=1/F2/T6.
+explicit. Freeze B already has the exact marked-ABSORB type-space owner, but
+this claim does not create a producer, serializer, common admission, or
+re-entry. It does not resolve the R=3-G residual or close C=1/F2/T6.
