@@ -24,6 +24,10 @@ The source census and its exact 18-row disposition matrix are
 and
 [`f1-admission-source-signal-residual-matrix-v1.json`](../data/t6-wave1/f1-admission-source-signal-residual-matrix-v1.json).
 
+The current q=1 local executors now use the fail-closed adapter, proving the
+bridge on a real runtime slice. This does not add a second queue path or
+relax E1--E5.
+
 ## What The Runtime Actually Requires
 
 The runtime path is already strict:

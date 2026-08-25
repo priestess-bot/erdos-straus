@@ -34,9 +34,10 @@
         "implementation": "scripts/t6_persistent_selector_runtime_v1.py:PersistentSelectorRuntimeV1",
         "state_admission": "scripts/t6_persistent_selector_state_v1.py:reject_before_persistent_queue_v1",
         "queue_mutation_anchor": "scripts/t6_persistent_selector_runtime_v1.py:PersistentSelectorRuntimeV1._enqueue_admitted_target_v1:self._queue.append",
-        "registration_protocol": "InitializerRegistrationV1/ProducerRegistrationV1/BranchRegistrationV1",
-        "instantiated_slice": "scripts/t6_q_one_full_carrier_runtime_slice_v1.py:build_runtime",
-        "covered_routes": 2,
+      "registration_protocol": "InitializerRegistrationV1/ProducerRegistrationV1/BranchRegistrationV1",
+      "instantiated_slice": "scripts/t6_q_one_full_carrier_runtime_slice_v1.py:build_runtime",
+      "scheduler_adapter": "scripts/t6_arithmetic_scheduler_adapter_v1.py:ArithmeticSchedulerAdapterV1",
+      "covered_routes": 2,
         "final_reentry": "OPEN_DEAD_END",
         "global_coverage": false
       }

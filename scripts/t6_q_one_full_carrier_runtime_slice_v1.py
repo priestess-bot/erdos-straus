@@ -22,6 +22,7 @@ for directory in (ROOT / "reproductions", ROOT / "scripts"):
         sys.path.insert(0, str(directory))
 
 import t6_persistent_selector_runtime_v1 as runtime  # noqa: E402
+import t6_arithmetic_scheduler_adapter_v1 as scheduler_adapter  # noqa: E402
 import type_ii_q_one_full_carrier_phase_root_entry as q_one  # noqa: E402
 import type_ii_q_one_odd_low_final_third_anchor_contraction as third_anchor  # noqa: E402
 import type_ii_q_one_full_carrier_root_second_anchor_contraction as contraction  # noqa: E402
@@ -674,6 +675,16 @@ def build_runtime() -> runtime.PersistentSelectorRuntimeV1:
         target_terminal_schedule_id=FINAL_TARGET_SCHEDULE,
         terminal_verifier_ids=frozenset({ANCHOR_TERMINAL_VERIFIER}),
     )
+    phase_executor = scheduler_adapter.adapt_scheduler_v1(
+        producer_id=PHASE_ROOT_PRODUCER,
+        branch_id=PHASE_ROOT_BRANCH,
+        scheduler=_phase_root_executor,
+    )
+    contraction_executor = scheduler_adapter.adapt_scheduler_v1(
+        producer_id=CONTRACTION_PRODUCER,
+        branch_id=CONTRACTION_BRANCH,
+        scheduler=_contraction_executor,
+    )
     return runtime.PersistentSelectorRuntimeV1(
         initializer=runtime.InitializerRegistrationV1(
             producer_id=INITIALIZER_ID,
@@ -693,8 +704,8 @@ def build_runtime() -> runtime.PersistentSelectorRuntimeV1:
             ),
         ),
         executors={
-            PHASE_ROOT_PRODUCER: _phase_root_executor,
-            CONTRACTION_PRODUCER: _contraction_executor,
+            PHASE_ROOT_PRODUCER: phase_executor,
+            CONTRACTION_PRODUCER: contraction_executor,
         },
         projectors={
             "q1.phase_root.projector": _phase_root_projector,
