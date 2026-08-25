@@ -111,3 +111,33 @@ B=(Kr+\ell)/(2s)\in\mathbb N,\quad B\ge A,\quad(A,B)=1.
 因此 \(D\) 为素数的子域是 FAMILY_EMPTY；复合 \(D\) 仍有实际证书控制，
 不能被整体排除。见
 [type-I-f2-r-three-d-contact-completion-dichotomy](../claims/type-I-f2-r-three-d-contact-completion-dichotomy.md)。
+
+在固定核心素数 \(p\) 后，这个 composite-\(D\) 算术子问题还可以完全有限化：
+\(A^2C\le(p-5)/4\)、\(h\mid p+4A^2C\)、\(h\le(2p-5)/3\) 且
+\(h\equiv-1\pmod{4AC}\) 的三元组构成有限表；重算
+\(K=(h+1)/(4AC)\)、\(m=(p+4A^2C)/h\)、\(B=Km-A\) 后，顺序/互素性失败是
+FAMILY_EMPTY，\(1<\gcd(h,2p-3)<h\) 则直接重构 Type-II TERMINAL。
+这是 per-prime arithmetic coverage，不是 actual E1 或全局 F2 closure。
+详见
+[type-I-f2-r-three-d-fixed-prime-arithmetic-scheduler](../claims/type-I-f2-r-three-d-fixed-prime-arithmetic-scheduler.md)。
+
+补充的两条参数化控制把 composite-\(D\) 的边界写得更清楚。固定
+\((A,C,K)=(1,14,1)\) 得到 \(h=55\)、\(g=5\) 的 mixed-D terminal ray
+\(p=769+1320t\)；其中的素数点都由同一商系统重构 Type-II terminal。相反，
+\((A,C,K)=(1,46,17)\) 给出 \(q=53\) 的 partial-contact ray
+\(p=505+1272t\)，但 \(h/q=59\) 的 cofactor 只在
+\(t\equiv56\pmod{59}\) 时通过；例如 \(p=1777\) 是 hard-core 素数而该固定
+contact 为 COFACTOR_EMPTY。这只否定“partial congruence 自动完成”的推断，
+不否定同一 p 的其它 q 或其它 terminal。
+
+另一个同步收缩是 F2-05a：若非规范高支撑状态已有
+\(M=Ab,\ K=M(p-d)\) 的 source-bound determinant receipt，则
+\(C=b(p-d)\ge p+1\) 强制 \(b\ge2\)，而 earlier same-chart target 的
+\(C_T=p-d<p\) 已经 canonical 并有严格局部 rank drop。当前可执行 q=1 runtime
+的 image 也只有 \(A=1\) 或 \(C<p\)。因此 F2-05a 的真实剩余量词仅包含没有 determinant
+receipt、或其 same-chart owner 尚未共同 admission 的语义 producer；这不是全局
+unreachability 结论。详见
+[`type-I-f2-r-three-d-composite-terminal-ray`](../claims/type-I-f2-r-three-d-composite-terminal-ray.md)、
+[`type-I-f2-r-three-d-partial-contact-cofactor-obstruction-family`](../claims/type-I-f2-r-three-d-partial-contact-cofactor-obstruction-family.md)
+和
+[`type-I-f2-high-support-noncanonical-registered-surface-boundary`](../claims/type-I-f2-high-support-noncanonical-registered-surface-boundary.md)。

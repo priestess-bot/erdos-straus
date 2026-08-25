@@ -92,12 +92,12 @@
       "raw_guard": "A>B_p, terminal_first=MISS, prior routes failed, C=K/A>=p+1 (equivalently R>4A)",
       "effective_guard": "F2-00..F2-05 failed and the source chart is noncanonical at its declared support A",
       "mutually_exclusive_with": ["F2-06-high-support", "F2-07-C1-empty", "F2-08-Cgt1-empty", "F2-09-p409", "F2-10-explicit-residual"],
-      "coverage_proof": "C=c+p*t with c=< (4A)^(-1) >_p gives a unique t>=1 and canonical support-A target (R-4At,Ac). This is an arithmetic normalizer, not an E1 occurrence.",
-      "current_status": "CONDITIONAL_E2_E4_E5_E1_E3_OPEN",
+      "coverage_proof": "C=c+p*t with c=< (4A)^(-1) >_p gives a unique t>=1 and canonical support-A target (R-4At,Ac). If a source-bound determinant receipt M=Ab, K=M(p-d), 1<=d<p already exists, then C=b(p-d)>=p+1 forces b>=2 and the earlier same-chart branch has target cofactor p-d<p; proper arithmetic determinant images are equivalently divisors 2<=c<p of C, while c=1 is the forbidden post-hoc M=K,d=p-1 case.",
+      "current_status": "SURFACE_PREEMPTION_ESTABLISHED_GLOBAL_ADMISSION_OPEN",
       "planned_closure": "VERIFIED_SUCCESSOR",
       "target_shape": "existing TYPEI/CHARGED A>1 overflow with the same support and canonical cofactor c; target terminal-first must preempt a nonterminal proposal",
-      "current_blocker": "No source-bound normalizer producer, terminal schedule, common projector/validator, or re-entry is registered. The post-hoc M=K,d=p-1 determinant identity is explicitly forbidden as E1 provenance.",
-      "evidence": ["claims/type-I-f2-high-support-canonicality-total-cofactor-boundary.md", "reproductions/type_i_f2_high_support_canonicality_normalizer.py", "data/interface-requests/f2-high-support-noncanonical-normalizer-v1.json"]
+      "current_blocker": "The residual splits into charts with a proper small divisor but no source-bound occurrence/admitted same-chart owner, and p-rough cofactor charts with no divisor 2<=c<p. No source-bound normalizer producer, terminal schedule, common projector/validator, or re-entry is registered; the post-hoc M=K,d=p-1 determinant identity remains forbidden as E1 provenance.",
+      "evidence": ["claims/type-I-f2-high-support-canonicality-total-cofactor-boundary.md", "claims/type-I-f2-high-support-noncanonical-registered-surface-boundary.md", "reproductions/type_i_f2_high_support_canonicality_normalizer.py", "data/interface-requests/f2-high-support-noncanonical-normalizer-v1.json"]
     },
     {
       "leaf_id": "F2-06-high-support-nonempty",

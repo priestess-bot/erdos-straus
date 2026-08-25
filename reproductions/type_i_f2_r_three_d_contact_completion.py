@@ -90,6 +90,58 @@ def verify_partial_contact() -> None:
         raise AssertionError("partial D-contact completion control changed")
 
 
+def verify_partial_progression() -> None:
+    """Check the fixed-q partial-contact progression and its cofactor gate."""
+    h, T, L = 3_127, 371, 53
+    q = 53
+    controls = (1, 17, 26, 37, 43, 47, 66, 92, 93, 112)
+    for index in controls:
+        prime = 505 + 1_272 * index
+        denominator = 2 * prime - 3
+        if not (
+            prime % 24 == 1
+            and denominator == 53 * (19 + 48 * index)
+            and h % q == 0
+            and T % q == 0
+            and L % q == 0
+            and denominator % q == 0
+            and (prime + 184) % q == 0
+            and (prime + 184) % 59 != 0
+            and is_prime(prime)
+            and all(factor_prime % 4 == 1 for factor_prime in factor(prime + 4))
+            and all(factor_prime % 3 == 1 for factor_prime in factor((3 * prime + 1) // 4))
+        ):
+            raise AssertionError("partial-contact progression control changed")
+    exceptional_index = 56
+    exceptional_prime = 505 + 1_272 * exceptional_index
+    if (exceptional_prime + 184) % 59 != 0:
+        raise AssertionError("cofactor congruence class changed")
+
+
+def verify_composite_terminal_progression() -> None:
+    """Check an infinite-prime arithmetic family of genuine mixed terminals."""
+    h, T, L = 55, 115, 5
+    for index in (0, 3, 5, 7, 11):
+        prime = 769 + 1_320 * index
+        m = 15 + 24 * index
+        B = 14 + 24 * index
+        D = 2 * prime - 3
+        g = gcd(h, D)
+        s, r, tq, ell = h // g, D // g, T // g, L // g
+        if not (
+            is_prime(prime)
+            and prime % 24 == 1
+            and g == 5
+            and r == 307 + 528 * index
+            and tq == 23
+            and ell == 1
+            and r + tq == 2 * s * m
+            and 2 * s * B == r + ell
+            and B == m - 1
+        ):
+            raise AssertionError("composite-D terminal progression changed")
+
+
 def factor(value: int) -> tuple[int, ...]:
     result: list[int] = []
     divisor = 2
@@ -106,6 +158,8 @@ def factor(value: int) -> tuple[int, ...]:
 def verify() -> None:
     verify_prime_d_empty()
     verify_partial_contact()
+    verify_partial_progression()
+    verify_composite_terminal_progression()
     controls = (
         (769, 1, 14, 14, 1, 15),
         (21_937, 1, 2_771, 2, 12, 231),

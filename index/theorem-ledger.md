@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 33 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 929 |
+| 数学状态 | `established` | 933 |
 | 数学状态 | `open` | 13 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 42 |
-| 证明来源 | `repository_derivation` | 760 |
+| 证明来源 | `repository_derivation` | 764 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 20 |
-| 审阅状态 | `internal_review` | 910 |
+| 审阅状态 | `internal_review` | 914 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -349,10 +349,14 @@
 | [High-support canonicality split and noncanonical total-cofactor normalization](../claims/type-I-f2-high-support-canonicality-total-cofactor-boundary.md) (`type-I-f2-high-support-canonicality-total-cofactor-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [High-support C>1 SPF saturation is not a physical same-chart edge](../claims/type-I-f2-high-support-cgt1-spf-saturation-provenance-barrier.md) (`type-I-f2-high-support-cgt1-spf-saturation-provenance-barrier`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [Canonical high-support determinant dual gives a deterministic low-chart handoff](../claims/type-I-f2-high-support-determinant-dual-absorb-handoff.md) (`type-I-f2-high-support-determinant-dual-absorb-handoff`) | `conditional` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
+| [F2 noncanonical high-support headers are preempted on the bound-receipt and registered surfaces](../claims/type-I-f2-high-support-noncanonical-registered-surface-boundary.md) (`type-I-f2-high-support-noncanonical-registered-surface-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [F2 high-support R=3 raw-menu obstruction and C>1 external-rechart lock](../claims/type-I-f2-high-support-r-three-raw-menu-and-external-rechart-boundary.md) (`type-I-f2-high-support-r-three-raw-menu-and-external-rechart-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [F2 A>1 overflow 的 determinant receipt 前置分拆与 p=409 异常处置](../claims/type-I-f2-overflow-determinant-prepartition.md) (`type-I-f2-overflow-determinant-prepartition`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-24 |
+| [R=3 hard-core composite-D mixed terminal arithmetic ray](../claims/type-I-f2-r-three-d-composite-terminal-ray.md) (`type-I-f2-r-three-d-composite-terminal-ray`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [R=3 hard-core D-contact completion dichotomy](../claims/type-I-f2-r-three-d-contact-completion-dichotomy.md) (`type-I-f2-r-three-d-contact-completion-dichotomy`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [R=3 hard-core D-contact cannot directly carry a new Type II terminal](../claims/type-I-f2-r-three-d-contact-terminal-boundary.md) (`type-I-f2-r-three-d-contact-terminal-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
+| [R=3 composite-D fixed-prime arithmetic contact scheduler](../claims/type-I-f2-r-three-d-fixed-prime-arithmetic-scheduler.md) (`type-I-f2-r-three-d-fixed-prime-arithmetic-scheduler`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
+| [R=3 hard-core composite-D partial-contact cofactor obstruction family](../claims/type-I-f2-r-three-d-partial-contact-cofactor-obstruction-family.md) (`type-I-f2-r-three-d-partial-contact-cofactor-obstruction-family`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [无因数分解中心 hit 的 Type I 终端序列化](../claims/type-I-factorization-free-centered-hit-terminal-serializer.md) (`type-I-factorization-free-centered-hit-terminal-serializer`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [固定 D 一跳 F/G source-map 的 canonical—SNF—owner 闭合三分](../claims/type-I-fg-canonical-d-lattice-owner-closure.md) (`type-I-fg-canonical-d-lattice-owner-closure`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [F/G 相关角色物理义务的求值配对、广义 Rado 与张量和选择器](../claims/type-I-fg-dependent-role-evaluation-rado-tensor-selector.md) (`type-I-fg-dependent-role-evaluation-rado-tensor-selector`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-10 |

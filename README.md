@@ -294,6 +294,31 @@ F2 R=3 hard-core 的 \(D\)-contact 现已精确分为 prime-\(D\) 空子叶与 c
 参数化残余；R6 dyadic companion 的 full-capacity bad-residue gate 也已排除，但最终
 canonical rank 与 admission 仍开放。详见 [T6 F2/F3 Gate Audit](docs/T6_F2_F3_GATE_AUDIT_2026-08-25.md)。
 
+对固定核心素数 \(p\)，R=3 composite-\(D\) 的 AC normal form 现在有一个有限除子表
+scheduler：逐项重算 \(K,m,B\)，顺序或互素性失败归为 FAMILY_EMPTY，
+\(1<\gcd(h,2p-3)<h\) 的项直接给出 Type-II TERMINAL。该结果只关闭固定-p 的
+arithmetic coverage；actual source/E1、terminal-first 全局调度和 runtime admission
+仍是 F2 残差。见
+[type-I-f2-r-three-d-fixed-prime-arithmetic-scheduler](claims/type-I-f2-r-three-d-fixed-prime-arithmetic-scheduler.md)。
+
+本轮随后又补上两条可复用的算术边界：
+
+- \(R=3\) composite-\(D\) 有显式 mixed-D terminal ray
+  \(p=769+1320t\)（素数点由固定商系统重构 Type-II 证书），同时有
+  \(p=505+1272t\) 的 \(q=53\) partial-contact ray；后者的 \(h/q=59\) cofactor
+  只在 \(t\equiv56\pmod{59}\) 时通过，\(p=1777\) 给出 hard-core
+  `COFACTOR_EMPTY` 控制。partial congruence 不再被当作 terminal 证书。
+- F2-05a 的 noncanonical high-support 若已有
+  \(M=Ab,\ K=M(p-d)\) source-bound determinant receipt，则 \(b\ge2\)，应先走
+  same-chart canonical target \(C_T=p-d<p\)；当前可执行 q=1 runtime 也只产生
+  \(A=1\) 或 \(C<p\)。这只收缩到未注册/未 admission 的语义 producer，不关闭全局 F2。
+
+对应证明卡见
+[`type-I-f2-r-three-d-composite-terminal-ray`](claims/type-I-f2-r-three-d-composite-terminal-ray.md)、
+[`type-I-f2-r-three-d-partial-contact-cofactor-obstruction-family`](claims/type-I-f2-r-three-d-partial-contact-cofactor-obstruction-family.md)
+和
+[`type-I-f2-high-support-noncanonical-registered-surface-boundary`](claims/type-I-f2-high-support-noncanonical-registered-surface-boundary.md)。
+
 ## 快速使用
 
 ```bash

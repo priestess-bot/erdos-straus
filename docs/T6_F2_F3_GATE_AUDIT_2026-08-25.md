@@ -90,6 +90,23 @@ the prime-\(D\) stratum is family-empty, while composite \(D\) requires the
 full quotient cofactor/order/gcd gate and has positive arithmetic controls.
 This is a terminal-search reduction, not a global terminal theorem.
 
+For a fixed core prime \(p\), the composite-\(D\) AC-normal-form contact
+subproblem is now exhaustively represented by a finite \((A,C,h)\) divisor
+table. Rows failing the order or coprimality guards are FAMILY_EMPTY; rows
+with \(1<\gcd(h,2p-3)<h\) reconstruct a Type-II TERMINAL. This is arithmetic
+per-prime coverage only: it does not supply an actual source receipt, a
+terminal-first runtime path, common E3 admission or re-entry. The fixed
+\(q=53\) partial-contact progression also shows why the two modulo-\(q\)
+conditions cannot be admitted without the \(h/q\) cofactor lift.
+
+The noncanonical high-support branch has an exact surface split as well. A
+bound determinant receipt \(M=Ab,\ K=M(p-d)\) forces
+\(C=b(p-d)\); if \(C\ge p+1\), then \(b\ge2\) and the earlier same-chart
+target has canonical cofactor \(p-d<p\). More generally, a proper arithmetic
+determinant image exists exactly when \(C\) has a divisor \(2\le c<p\);
+\(c=1\) is the forbidden post-hoc \(M=K,d=p-1\) form. Neither statement
+creates an E1 occurrence for an unregistered producer.
+
 The R6 dyadic companion congruence has also been reduced: the full-capacity
 \(W_y\) word cannot equal the bad residue \((h+1)/2\), so after source-bound
 prefix replay the arithmetic endpoint is p-free and terminal-or-single-side.
