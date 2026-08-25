@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 33 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 933 |
+| 数学状态 | `established` | 937 |
 | 数学状态 | `open` | 13 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 42 |
-| 证明来源 | `repository_derivation` | 764 |
+| 证明来源 | `repository_derivation` | 768 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 20 |
-| 审阅状态 | `internal_review` | 914 |
+| 审阅状态 | `internal_review` | 918 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -341,12 +341,14 @@
 | [F 型目标对合的 target-odd Fourier 能量与 q-primary 相位塌缩](../claims/type-I-f-target-involution-fourier-phase-collapse.md) (`type-I-f-target-involution-fourier-phase-collapse`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [F 型关系格对偶的双方向相位需求映射](../claims/type-I-f-two-direction-phase-demand-map.md) (`type-I-f-two-direction-phase-demand-map`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [F 型小对偶双方向需求的跨状态容量边界](../claims/type-I-f-two-direction-small-dual-candidate-census.md) (`type-I-f-two-direction-small-dual-candidate-census`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
+| [C8 q-star=103 两条必要射线的固定 gap 覆盖边界](../claims/type-I-f2-c8-qstar103-fixed-gap-cover-boundary.md) (`type-I-f2-c8-qstar103-fixed-gap-cover-boundary`) | `established` | `repository_derivation` | `internal_review` | `bradford2026` | 2026-08-25 |
 | [High-support C=1 canonical dual has a concrete R=3 ABSORB handoff](../claims/type-I-f2-high-support-c1-canonical-dual-absorb-handoff.md) (`type-I-f2-high-support-c1-canonical-dual-absorb-handoff`) | `conditional` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [High-support C=1 direct-cofactor charts are exact same-chart returns](../claims/type-I-f2-high-support-c1-direct-cofactor-return-v1.md) (`type-I-f2-high-support-c1-direct-cofactor-return-v1`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-24 |
 | [High-support C=1 R=3 canonical anchor has no T5-admissible re-entry](../claims/type-I-f2-high-support-c1-r-three-anchor-no-reentry.md) (`type-I-f2-high-support-c1-r-three-anchor-no-reentry`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [R=3 G hard-core 11-character bridge and P-min mixed-gap partition](../claims/type-I-f2-high-support-c1-r-three-hard-core-arithmetic-partition.md) (`type-I-f2-high-support-c1-r-three-hard-core-arithmetic-partition`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [High-support C=1 R=3 dual terminal-or-G split](../claims/type-I-f2-high-support-c1-r-three-terminal-g-split.md) (`type-I-f2-high-support-c1-r-three-terminal-g-split`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [High-support canonicality split and noncanonical total-cofactor normalization](../claims/type-I-f2-high-support-canonicality-total-cofactor-boundary.md) (`type-I-f2-high-support-canonicality-total-cofactor-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
+| [F2 C>=p+1 noncanonical overflow splits into small-divisor image and p-rough residual](../claims/type-I-f2-high-support-cgt1-small-divisor-p-rough-boundary.md) (`type-I-f2-high-support-cgt1-small-divisor-p-rough-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [High-support C>1 SPF saturation is not a physical same-chart edge](../claims/type-I-f2-high-support-cgt1-spf-saturation-provenance-barrier.md) (`type-I-f2-high-support-cgt1-spf-saturation-provenance-barrier`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [Canonical high-support determinant dual gives a deterministic low-chart handoff](../claims/type-I-f2-high-support-determinant-dual-absorb-handoff.md) (`type-I-f2-high-support-determinant-dual-absorb-handoff`) | `conditional` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [F2 noncanonical high-support headers are preempted on the bound-receipt and registered surfaces](../claims/type-I-f2-high-support-noncanonical-registered-surface-boundary.md) (`type-I-f2-high-support-noncanonical-registered-surface-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
@@ -919,12 +921,14 @@
 | [F3 high stutter root-lift saturation and divisor-gate boundary](../claims/type-I-t6-f3-high-endpoint-root-lift-saturation-boundary.md) (`type-I-t6-f3-high-endpoint-root-lift-saturation-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [F3 high stutter 的 root-quotient 与 capacity 双 divisor gate](../claims/type-I-t6-f3-high-endpoint-stutter-divisor-gates-v1.md) (`type-I-t6-f3-high-endpoint-stutter-divisor-gates-v1`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-24 |
 | [m=3 q=5 genuine two-sided p2 checkpoint is an unpaid root rechart](../claims/type-I-t6-f3-m3-q5-p2-canonical-rechart-boundary.md) (`type-I-t6-f3-m3-q5-p2-canonical-rechart-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
+| [Genuine two-sided m=3 q=5 p2 endpoint remains an unpaid residual](../claims/type-I-t6-f3-m3-q5-p2-two-sided-residual-boundary.md) (`type-I-t6-f3-m3-q5-p2-two-sided-residual-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [F3 m=3,q=5 的 source-bound raw word、同步 target 与 parent-to-final E5](../claims/type-I-t6-f3-m3-q5-source-bound-macro-interface.md) (`type-I-t6-f3-m3-q5-source-bound-macro-interface`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [T6-F3 p-free policy 终点的 p² divisor-source 正规形](../claims/type-I-t6-f3-policy-endpoint-p2-divisor-source-normal-form.md) (`type-I-t6-f3-policy-endpoint-p2-divisor-source-normal-form`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-23 |
 | [T6-F3 proper-root 的确定域路由与显式 residual 穷尽](../claims/type-I-t6-f3-proper-root-routing-with-explicit-residuals.md) (`type-I-t6-f3-proper-root-routing-with-explicit-residuals`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-23 |
 | [QC1 endpoint-excess q deflation has a canonical strict target](../claims/type-I-t6-f3-qc1-endpoint-excess-deflation.md) (`type-I-t6-f3-qc1-endpoint-excess-deflation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [F3 R3/R5 quotient-only 的规范 ideal factor 与整数 occurrence 边界](../claims/type-I-t6-f3-qc1-quotient-only-occurrence-boundary.md) (`type-I-t6-f3-qc1-quotient-only-occurrence-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [R6 dyadic atomic companion has a p-free full-capacity raw continuation](../claims/type-I-t6-f3-r6-dyadic-companion-full-capacity-pfree.md) (`type-I-t6-f3-r6-dyadic-companion-full-capacity-pfree`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
+| [R4/R6 h-supported transverse D-star factors have an exact freshness-capacity gate](../claims/type-I-t6-f3-tr1-dstar-freshness-capacity-gate.md) (`type-I-t6-f3-tr1-dstar-freshness-capacity-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [TR1 dyadic-fresh endpoint has a strict complete-excess child normal form](../claims/type-I-t6-f3-tr1-dyadic-fresh-child-normalization.md) (`type-I-t6-f3-tr1-dyadic-fresh-child-normalization`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [TR1 D-star factors split exactly into fresh raw factors and capacity-saturated factors](../claims/type-I-t6-f3-tr1-fresh-dstar-endpoint-split.md) (`type-I-t6-f3-tr1-fresh-dstar-endpoint-split`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [R4 h-supported TR1 has no dyadic-fresh subleaf](../claims/type-I-t6-f3-tr1-r-four-dyadic-fresh-exclusion.md) (`type-I-t6-f3-tr1-r-four-dyadic-fresh-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
