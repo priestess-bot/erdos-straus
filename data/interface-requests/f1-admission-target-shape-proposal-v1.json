@@ -191,5 +191,115 @@
       "reconstructing the source from a fixture or prime"
     ]
   },
+  "signal_mapping": [
+    {
+      "anchor": "reproductions/type_i_high_r_chart_60913_h2_nonreturn.py:same_chart_parent_replay:recursive_edge_eligible_nonfalse",
+      "current_disposition": "REGISTERED_ALIAS",
+      "shape_id": "existing.overflow_same_chart_promotion_v1",
+      "admission": "COMMON_E3_OPEN"
+    },
+    {
+      "anchor": "reproductions/type_i_high_r_chart_two_anchor.py:same_chart_parent_replay:recursive_edge_eligible_nonfalse",
+      "current_disposition": "REGISTERED_ALIAS",
+      "shape_id": "existing.overflow_same_chart_promotion_v1",
+      "admission": "COMMON_E3_OPEN"
+    },
+    {
+      "anchor": "reproductions/type_i_overflow_total_cofactor_typed_adapter.py:registration:persistent_queue_parameter",
+      "current_disposition": "NONRUNTIME_RELATIVE_ADAPTER",
+      "shape_id": "nonrecursive_control_result_v1",
+      "admission": "NEVER_QUEUE"
+    },
+    {
+      "anchor": "reproductions/type_i_overflow_total_cofactor_typed_adapter.py:verify:persistent_queue_nonfalse_call",
+      "current_disposition": "NONRUNTIME_RELATIVE_ADAPTER",
+      "shape_id": "nonrecursive_control_result_v1",
+      "admission": "NEVER_QUEUE"
+    },
+    {
+      "anchor": "reproductions/type_i_representation_dual_capacity_selector.py:overflow_a_one_dual_reset_family:recursive_edge_eligible_nonfalse",
+      "current_disposition": "REGISTERED_PRIMARY",
+      "shape_id": "existing.overflow_fixed_divisor_or_reset_v1",
+      "admission": "SOURCE_E3_OPEN"
+    },
+    {
+      "anchor": "reproductions/type_i_representation_dual_capacity_selector.py:overflow_fixed_n_bounded_divisor_outer_rank:recursive_edge_eligible_nonfalse",
+      "current_disposition": "REGISTERED_PRIMARY",
+      "shape_id": "existing.overflow_fixed_divisor_or_reset_v1",
+      "admission": "SOURCE_E3_OPEN"
+    },
+    {
+      "anchor": "reproductions/type_i_representation_dual_capacity_selector.py:overflow_fixed_n_outer_rank:recursive_edge_eligible_nonfalse",
+      "current_disposition": "NONRUNTIME_ARITHMETIC_CONTROL",
+      "shape_id": "nonrecursive_control_result_v1",
+      "admission": "NEVER_QUEUE"
+    },
+    {
+      "anchor": "reproductions/type_i_representation_dual_capacity_selector.py:overflow_fixed_s_bounded_divisor_outer_rank:recursive_edge_eligible_nonfalse",
+      "current_disposition": "NONRUNTIME_ARITHMETIC_CONTROL",
+      "shape_id": "nonrecursive_control_result_v1",
+      "admission": "NEVER_QUEUE"
+    },
+    {
+      "anchor": "reproductions/type_i_representation_dual_capacity_selector.py:overflow_fixed_s_outer_rank:recursive_edge_eligible_nonfalse",
+      "current_disposition": "NONRUNTIME_ARITHMETIC_CONTROL",
+      "shape_id": "nonrecursive_control_result_v1",
+      "admission": "NEVER_QUEUE"
+    },
+    {
+      "anchor": "reproductions/type_i_representation_dual_capacity_selector.py:overflow_outer_rank_reset:recursive_edge_eligible_nonfalse",
+      "current_disposition": "REGISTERED_PRIMARY",
+      "shape_id": "existing.overflow_fixed_divisor_or_reset_v1",
+      "admission": "SOURCE_E3_OPEN"
+    },
+    {
+      "anchor": "reproductions/type_i_representation_dual_capacity_selector.py:overflow_same_chart_support_promotion:recursive_edge_eligible_nonfalse",
+      "current_disposition": "REGISTERED_PRIMARY",
+      "shape_id": "existing.overflow_same_chart_promotion_v1",
+      "admission": "COMMON_E3_OPEN"
+    },
+    {
+      "anchor": "reproductions/type_i_representation_dual_capacity_selector.py:smooth23_k_one_fixed_n_saturation:recursive_edge_eligible_nonfalse",
+      "current_disposition": "NONRUNTIME_ARITHMETIC_CONTROL",
+      "shape_id": "nonrecursive_control_result_v1",
+      "admission": "NEVER_QUEUE"
+    },
+    {
+      "anchor": "reproductions/type_i_representation_dual_capacity_selector.py:smooth23_low_k_fixed_n_cofactor:recursive_edge_eligible_nonfalse",
+      "current_disposition": "NONRUNTIME_ARITHMETIC_CONTROL",
+      "shape_id": "nonrecursive_control_result_v1",
+      "admission": "NEVER_QUEUE"
+    },
+    {
+      "anchor": "reproductions/type_i_representation_dual_capacity_selector.py:verified_fixed_n_edge:recursive_edge_eligible_nonfalse",
+      "current_disposition": "NONRUNTIME_FIXED_CONTROL",
+      "shape_id": "nonrecursive_control_result_v1",
+      "admission": "NEVER_QUEUE"
+    },
+    {
+      "anchor": "reproductions/type_ii_initial_q_one_root_dispatch.py:initial_dispatch:recursive_edge_eligible_nonfalse",
+      "current_disposition": "INITIALIZER_PRIMARY",
+      "shape_id": "initializer.q_one_g_root_v1",
+      "admission": "GLOBAL_BOOTSTRAP_OPEN"
+    },
+    {
+      "anchor": "reproductions/type_ii_q_one_c2_19_phase_h4_clean_q_macro_verifier.py:verify_controls:recursive_edge_eligible_nonfalse",
+      "current_disposition": "NONRUNTIME_RELATIVE_ADAPTER",
+      "shape_id": "pending_dispatch_control_v1",
+      "admission": "NEVER_QUEUE"
+    },
+    {
+      "anchor": "reproductions/type_ii_relation_reach_gcd_shadow_endpoint_descent.py:gcd_shadow_dispatch:recursive_edge_eligible_nonfalse",
+      "current_disposition": "REGISTERED_PRIMARY",
+      "shape_id": "existing.type_ii_endpoint_successor_v1",
+      "admission": "ENDPOINT_SERIALIZER_OPEN"
+    },
+    {
+      "anchor": "reproductions/type_ii_relation_scc_proper_endpoint_descent.py:proper_endpoint_dispatch:recursive_edge_eligible_nonfalse",
+      "current_disposition": "REGISTERED_PRIMARY",
+      "shape_id": "existing.type_ii_endpoint_successor_v1",
+      "admission": "ENDPOINT_SERIALIZER_OPEN"
+    }
+  ],
   "decision": "Current PersistentSelectorRuntimeV1 cannot safely ingest any existing F2/F3 arithmetic scheduler directly. The adapter proposal is the smallest safe bridge; until its source receipt, terminal schedule, projector, independent validator and target re-entry are supplied, all such outputs remain analysis evidence or unadmitted conditional candidates."
 }
