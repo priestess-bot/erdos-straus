@@ -4,7 +4,7 @@
   "date": "2026-08-24",
   "integration_branch": "integration/t6-f2-f3-wave1",
   "baseline_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
-  "grammar_hash": "d073a68dfd7c109f2f71fe0533d5084e78ef8fca870d229a0ea98e85c0ce02e1",
+  "grammar_hash": "c099fdecf9ac0b98ed769a6bc52628991aba26027cfb1853b5b3f8b168e8a7da",
   "status": {
     "F1": "OPEN_MINIMAL_GAPS",
     "F2": "OPEN",
@@ -41,7 +41,7 @@
         "C2 non19 family empty",
         "low post-G charts terminal or finite support-doubling to A>1 overflow",
         "H4 guard DAG reduces live output to atomic/overflow shapes",
-        "H4 clean-q atomic C1 family empty"
+        "H4_A1 actual clean-q atomic C1 family empty; this does not cover non-atomic H4 or future producers"
       ],
       "exact_blocker": "A q1 local runtime slice now binds initializer -> full-carrier -> final high target with named gap-3/gap-7/anchor-sink terminal scopes. The odd p=265 mod336 low branch is preempted and p=25 mod336 contracts to C=9; that C=9 target has a relative r-side PHASE_DROP to fixed R=11/23/35 charts, but neither this low target nor other high final owners have registered routes. The scopes are not global terminal exhaustion, the checkpoint macro is not in the shared Gate-3 registry, and full post-G re-entry remains open.",
       "missing": ["E1", "E3", "D1", "D2", "D5", "D8"],

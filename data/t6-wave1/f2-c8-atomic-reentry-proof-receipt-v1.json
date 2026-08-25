@@ -62,15 +62,15 @@
   "capacity_one_boundary": {
     "c8_second_full_excess_fallback": "IMPOSSIBLE: 75*C=64 (mod p) with p>=4129 gives 9<=C<=p-2.",
     "c8_double_low_policy": "A C1 double-low candidate need not be emitted because the universal second-full-excess fallback remains available.",
-    "h4_atomic": "POSSIBLE_NOT_CLOSED: c_q=-q/E_x (mod p), so C1 is equivalent to E_x=-q (mod p). Existing stutter closure only excludes E_x=q (mod p).",
-    "h4_c1_necessary_source_gate": "Writing p=2*d*q-1, delta_d=2*d*(4*d^2-2*d+1) and D=(M4,Q_x)*beta_x, C1 implies D=-delta_d (mod p), D divides (2*d-1)((2*d+1)q-1), 0<D<2*d*p, plus the actual phase condition d divides abs(1536-a(p)).",
+    "h4_atomic": "SPLIT: for the retained H4_A1 actual clean-q atomic arm, C1 is EMPTY by the source-gate exclusion. This does not classify non-atomic H4 or future producer C1 targets.",
+    "h4_c1_source_gate_result": "For H4_A1, p=2*d*q-1, delta_d=2*d*(4*d^2-2*d+1), D=(M4,Q_x)*beta_x, and C1 force the negative-residue source gate. type-I-h4-atomic-capacity-one-source-gate-exclusion proves that exact actual source domain empty.",
     "analysis_only_arithmetic_candidates": [
       {"d": 23, "q": 47, "p": 2161, "D": 4140},
       {"d": 35, "q": 71, "p": 4969, "D": 9660}
     ],
     "candidate_warning": "The displayed rows satisfy only the prime-q negative-residue arithmetic gate; they are not claimed to satisfy the actual 31-phase, parent/path, payload, terminal-first or admission conditions.",
-    "proof_reference": "claims/type-I-high-support-empty-improvement-c1-local-minimum-boundary.md",
-    "coordinator_rule": "Do not mark high-support C1 trace-unreachable from this track; an actual H4 source-D/phase exclusion is still required."
+    "proof_reference": "claims/type-I-h4-atomic-capacity-one-source-gate-exclusion.md",
+    "coordinator_rule": "Do not mark global high-support C1 trace-unreachable. The H4_A1 clean-q atomic source domain is excluded, while non-atomic H4 and future producer domains remain outside this receipt."
   },
   "focused_controls": [
     {

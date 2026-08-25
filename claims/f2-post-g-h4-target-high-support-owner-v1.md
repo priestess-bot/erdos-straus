@@ -22,6 +22,7 @@ depends_on:
   - type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-y-block-nonempty
   - type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-universal-stutter-source-d-gate-closure
   - type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-single-side-exclusion
+  - type-I-h4-atomic-capacity-one-source-gate-exclusion
   - t6-persistent-selector-state-v1
 topics:
   - F2
@@ -152,11 +153,13 @@ c_T=1\Longleftrightarrow E_x\equiv-q\pmod p.
 \tag{7}
 \]
 
-此前 stutter theorem 排除的是 (E_x\equiv q\pmod p)，不能推出 (7) 为空。因此
-immediate d=1 image 的 (C=1) exclusion 不能传播到 H4 final target。若 actual H4
-(C=1) 通过 admission，它仍归入上述 high-support owner，但后续 same-protocol CHARGED
-rank 已在 ((0,1,0,0)) 局部最小元；Agent 2 必须给 terminal、lower protocol/phase 或
-family-empty proof。
+此前 stutter theorem 排除的是 (E_x\equiv q\pmod p)，不能推出 (7) 为空。随后
+`type-I-h4-atomic-capacity-one-source-gate-exclusion` 从 negative-residue source gate
+证明了 retained `H4_A1` actual clean-(q) atomic arm 的 (C=1) source domain 为空。
+该结论不能传播到 non-atomic H4、future producer 或 global high-support (C=1) trace。
+这些范围若有 actual admitted (C=1) target，仍归入上述 high-support owner，且其
+same-protocol CHARGED rank 已在 ((0,1,0,0)) 局部最小元；Agent 2 仍须给 terminal、
+lower protocol/phase 或 family-empty proof。
 
 所以准确组合接口是
 

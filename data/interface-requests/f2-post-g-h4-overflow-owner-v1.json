@@ -15,7 +15,8 @@
   ],
   "reason": "F/G is recomputed certificate_context on the same high-support overflow state and does not change persistent ownership facts.",
   "atomic_note": "Atomic occurrence metadata remains in the edge receipt and Agent 3 payload; it does not override the admitted target owner after normalization.",
-  "capacity_one_note": "Do not inherit the immediate q=1 C1 exclusion. H4 final C1 remains possible unless E_x=-q mod p is excluded on the actual phase/source domain.",
+  "capacity_one_note": "Historical proposal: do not inherit the immediate q=1 C1 exclusion without an actual phase/source theorem.",
+  "capacity_one_supersession": "type-I-h4-atomic-capacity-one-source-gate-exclusion now proves H4_A1 actual clean-q atomic C1 EMPTY. This does not cover non-atomic H4, future producers, or global high-support C1.",
   "precedence_request": "type_i_high_support_sink before type_i_a_gt_one_overflow_residual; unexpected overlap fails closed",
   "status_boundary": "Coordinator approval required; no grammar file is modified here."
 }

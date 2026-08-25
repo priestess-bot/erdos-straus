@@ -6,7 +6,7 @@
 >
 > Freeze status: `FROZEN_E3_TYPE_SPACE_PRODUCERS_NOT_YET_ADMITTED`
 >
-> Grammar hash: `d073a68dfd7c109f2f71fe0533d5084e78ef8fca870d229a0ea98e85c0ce02e1`
+> Grammar hash: `c099fdecf9ac0b98ed769a6bc52628991aba26027cfb1853b5b3f8b168e8a7da`
 
 ## 1. Decision Scope
 
@@ -95,8 +95,9 @@ The freeze incorporates early cross-review corrections:
    strict branch. Neither can be silently moved into the minimal (L_\omega) theorem.
 3. A quotient ideal factor is not a physical QC1 occurrence. Self-authenticated
    `ACTUAL_PERSISTENT`, producer, terminal miss, E1--E5 or mark records are rejected.
-4. c8 OTHER excludes C=1 on its own universal fallback, while H4 C=1 required and now has
-   a separate source-gate analysis; these conclusions cannot be generalized to future producers.
+4. c8 OTHER excludes C=1 on its own universal fallback. The later source-gate theorem
+   establishes that H4_A1 actual clean-q atomic C=1 is empty. It does not establish
+   that non-atomic H4, future producers, or global high-support C=1 are empty.
 
 ## 5. What Gate 2 Does Not Establish
 

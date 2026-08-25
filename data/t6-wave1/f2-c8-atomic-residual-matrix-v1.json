@@ -148,7 +148,7 @@
   "least_current_residuals": [
     "Coordinator must install the three proposed producer/output extensions in the shared registry and grammar, then replay actual parent traces.",
     "Agent 1 cross-audit confirms arithmetic but reports active E1/E3/re-entry blocked by synthetic local inputs.",
-    "H4 C1 remains a downstream high-support residual rather than an atomic serializer residual."
+    "H4_A1 actual clean-q atomic C1 is excluded by its source-gate theorem. Only C1 outside that exact H4_A1 domain remains a downstream high-support residual."
   ],
   "capacity_one_subresidual": {
     "c8_other_fallback": {
@@ -160,9 +160,9 @@
       "proof": "A future real selector may bypass C1 double-low through the second-full-excess arithmetic fallback, but terminal MISS and shared admission must be replayed first."
     },
     "h4_atomic": {
-      "status": "POSSIBLE_NOT_CLOSED",
-      "predicate": "C=1 iff E_x=-q (mod p).",
-      "necessary_gate": "For p=2*d*q-1, delta_d=2*d*(4*d^2-2*d+1), D=(M4,Q_x)*beta_x: D=-delta_d (mod p), D divides (2*d-1)((2*d+1)q-1), 0<D<2*d*p, and actual phase requires d divides abs(1536-a(p)).",
+      "status": "H4_A1_ACTUAL_CLEAN_Q_EMPTY; OUTSIDE_SCOPE_OPEN",
+      "predicate": "In H4_A1, C=1 iff E_x=-q (mod p).",
+      "necessary_gate": "For H4_A1 with p=2*d*q-1, delta_d=2*d*(4*d^2-2*d+1), D=(M4,Q_x)*beta_x: C1 forces D=-delta_d (mod p), D divides (2*d-1)((2*d+1)q-1), 0<D<2*d*p, and actual phase requires d divides abs(1536-a(p)). The exact H4_A1 source domain is empty by type-I-h4-atomic-capacity-one-source-gate-exclusion.",
       "analysis_only_arithmetic_candidates": [
         {"d": 23, "q": 47, "p": 2161, "D": 4140},
         {"d": 35, "q": 71, "p": 4969, "D": 9660}

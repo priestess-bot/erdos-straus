@@ -39,10 +39,13 @@
     "Agent 2 totality for high-support/A>1 overflow"
   ],
   "capacity_one_boundary": {
+    "scope": "Separate the named H4_A1 actual clean-q atomic arm from broader H4 and future producer domains.",
     "immediate_q_one_image": "C1 family-empty only before H0/H4",
-    "H4_final_target": "POSSIBLE_NOT_CLOSED: c_T=1 iff E_x=-q mod p",
-    "existing_stutter_exclusion": "excludes E_x=+q mod p only",
-    "downstream_requirement": "Agent 2 must supply terminal, lower protocol/phase, or family-empty proof for any admitted H4 C1 target"
+    "H4_final_target": "SPLIT: H4_A1 actual clean-q atomic C1 is empty; C1 outside that exact source domain remains POSSIBLE_NOT_CLOSED.",
+    "H4_A1_actual_clean_q_atomic_target": "EMPTY by type-I-h4-atomic-capacity-one-source-gate-exclusion.",
+    "outside_H4_A1": "POSSIBLE_NOT_CLOSED: the congruence c_T=1 iff E_x=-q mod p is not a global exclusion theorem.",
+    "historical_stutter_boundary": "The earlier stutter theorem excludes E_x=+q mod p only; the negative-residue source gate is separately discharged for H4_A1.",
+    "downstream_requirement": "Agent 2 must still supply terminal, lower protocol/phase, or family-empty proof for any admitted C1 target outside H4_A1 actual clean-q atomic scope."
   },
   "status_boundary": "Owner shape is proved; active E3 admission and descendant totality are not."
 }
