@@ -98,7 +98,7 @@ def intersection(
     *,
     override_prefix: int | None = None,
 ) -> tuple[str, tuple[int, ...]]:
-    phase_modulus = fixture.q**fixture.phase_exponent
+    _phase_modulus = fixture.q**fixture.phase_exponent
     prefix_modulus = fixture.q**fixture.prefix_exponent
     beta = (
         prefix_residue(fixture.p, fixture.q, fixture.prefix_exponent)

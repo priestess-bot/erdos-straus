@@ -11,7 +11,7 @@ declared input tuple.
 from __future__ import annotations
 
 import argparse
-from math import gcd, isqrt
+from math import isqrt
 
 
 def is_prime(value: int) -> bool:

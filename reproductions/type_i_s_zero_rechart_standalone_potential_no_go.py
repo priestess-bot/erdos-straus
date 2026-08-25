@@ -5,7 +5,7 @@ from __future__ import annotations
 
 import argparse
 from fractions import Fraction
-from math import gcd, isqrt
+from math import gcd
 
 
 def prime_support(n: int) -> set[int]:

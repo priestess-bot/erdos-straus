@@ -199,7 +199,7 @@ def verify_phase_compatible_cofactors() -> dict[str, object]:
 def verify_terminal_boundary() -> dict[str, object]:
     """Exhaust this one candidate N, not all Type-II parameters for p."""
     candidate = verify_candidate_fiber()
-    N = int(candidate["N"])
+    _N = int(candidate["N"])
     N0 = P + 4 * D * SOURCE_A0
     H0 = 53 * 3_671
     factors = divisors_from_factorization(N_FACTORS)

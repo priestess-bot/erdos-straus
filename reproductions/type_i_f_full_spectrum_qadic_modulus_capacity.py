@@ -7,7 +7,6 @@ import argparse
 from collections import defaultdict
 import hashlib
 import json
-import math
 from pathlib import Path
 
 

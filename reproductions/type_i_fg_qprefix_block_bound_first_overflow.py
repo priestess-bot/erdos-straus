@@ -272,7 +272,8 @@ def verify_candidate_fiber_block_bound() -> dict[str, object]:
     # The actual F edge is 0 -> e_2. Its full order-9 phase is 4 and its
     # elementary phase is 1. This affine source-line map realizes both.
     source_difference = shallow - deep
-    affine = lambda point: deep + source_difference * point[0]
+    def affine(point):
+        return deep + source_difference * point[0]
     zero = (0, 0, 0, 0)
     factor_2_edge = (1, 0, 0, 0)
     assert affine(zero) == deep and affine(factor_2_edge) == shallow
@@ -280,7 +281,8 @@ def verify_candidate_fiber_block_bound() -> dict[str, object]:
 
     beta = (-p * pow(4, -1, q**base_layer)) % q**base_layer
     tail_modulus = q**depth
-    tail = lambda value: ((value - beta) // q**base_layer) % tail_modulus
+    def tail(value):
+        return (value - beta) // q ** base_layer % tail_modulus
     assert beta == 2
     assert (tail(target), tail(deep), tail(shallow)) == (6, 6, 1)
     assert (tail(shallow) - tail(deep)) % tail_modulus == 4
@@ -294,7 +296,8 @@ def verify_candidate_fiber_block_bound() -> dict[str, object]:
     assert all(target_numerator % value == 0 for value in block)
     assert multiplicative_order(q, target_modulus) == 6
 
-    eta = lambda value: pow(value % 13, 4, 13)
+    def eta(value):
+        return pow(value % 13, 4, 13)
     assert tuple(eta(value) for value in block) == (1, 3, 9)
     assert set(eta(value) for value in block) == {1, 3, 9}
     assert eta(-1) == 1
@@ -350,7 +353,8 @@ def verify_p73_strict_no_go() -> dict[str, object]:
     z0, z1 = (0, 1), (0, 0)
     delta = tuple(right - left for left, right in zip(z0, z1))
     role_value = 2 * (15 * delta[0] + delta[1]) % q
-    affine = lambda point: 5 - 3 * point[1]
+    def affine(point):
+        return 5 - 3 * point[1]
     assert delta == (0, -1) and role_value == 1
     assert affine(z0) == 2 and affine(z1) == 5
     assert (affine(z1) - affine(z0)) // q == role_value

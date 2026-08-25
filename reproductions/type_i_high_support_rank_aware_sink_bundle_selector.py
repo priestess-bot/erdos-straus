@@ -6,7 +6,6 @@ from __future__ import annotations
 import argparse
 import json
 from collections import Counter, deque
-from itertools import product
 from math import gcd, lcm, prod
 
 import type_i_bottom_sink_scc_complete_excess_bundle as bottom

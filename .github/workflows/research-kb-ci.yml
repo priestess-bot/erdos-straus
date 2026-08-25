@@ -1,86 +1,62 @@
-name: Research knowledge base
+name: T6 Gate 0 and research knowledge base
 
-'on':
+"on":
   push:
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
 
+concurrency:
+  group: t6-gate0-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  focused-verification:
+  gate-zero:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 360
 
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Check out the exact revision
+        # actions/checkout v7.0.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
-          python-version: '3.12'
+          fetch-depth: 0
+          persist-credentials: false
 
-      - name: Install verification dependencies
-        run: python -m pip install --disable-pip-version-check PyYAML sympy ruff
+      - name: Set up Python
+        # actions/setup-python v7.0.0
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-ci.txt
 
-      - name: Validate the knowledge base
-        run: python scripts/kb.py validate
+      - name: Install pinned verification dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements-ci.txt
 
-      - name: Run focused exact tests
-        run: |
-          python -m unittest \
-            tests.test_kb \
-            tests.test_type_ii_pure_new_canonical_fan_sieve \
-            tests.test_type_ii_pure_new_exception_dynamic_selector \
-            tests.test_type_ii_pure_new_exception_selector_counterexample_h20 \
-            tests.test_type_ii_tail_external_ac2_closure \
-            tests.test_h19_k23_unbridged_pressure_selector_subrays \
-            tests.test_h19_k23_unbridged_pressure_full_low_defect_rays \
-            tests.test_type_i_normal_gap_source_even_bridge \
-            tests.test_type_i_normal_gap_source_even_bridge_audit \
-            tests.test_type_i_mixed_terminal_sparse_tail_600m \
-            tests.test_type_i_tail_reverse_b1_even_source_audit \
-            tests.test_type_i_tail_reverse_small_b_profile \
-            tests.test_type_i_dyadic_b_source_selector \
-            tests.test_type_i_tail_reverse_even_source_min_source_distance \
-            tests.test_type_ii_q_one_c2_19_phase_h4_clean_q_macro_verifier
+      - name: Run the complete Gate 0 matrix
+        run: >-
+          python scripts/t6_ci_run_manifest_v1.py run
+          --root .
+          --output data/t6-wave1/ci-run-manifest-v1.json
+          --require-github
 
-      - name: Lint the maintained verification surface
-        run: |
-          ruff check \
-            scripts/kb.py \
-            reproductions/type_ii_pure_new_canonical_fan_sieve.py \
-            reproductions/type_ii_pure_new_exception_dynamic_selector.py \
-            reproductions/type_ii_pure_new_exception_selector_counterexample_h20.py \
-            reproductions/type_ii_tail_external_ac2_closure.py \
-            reproductions/h19_k23_unbridged_pressure_selector_subrays.py \
-            reproductions/h19_k23_unbridged_pressure_full_low_defect_rays.py \
-            reproductions/type_i_normal_gap_source_even_bridge.py \
-            reproductions/type_i_normal_gap_source_even_bridge_audit.py \
-            reproductions/type_i_mixed_terminal_sparse_tail_600m.py \
-            reproductions/type_i_tail_reverse_b1_even_source_audit.py \
-            reproductions/type_i_tail_reverse_small_b_profile.py \
-            reproductions/type_i_dyadic_b_source_selector.py \
-            reproductions/type_i_tail_reverse_even_source_min_source_distance.py \
-            reproductions/type_ii_q_one_c2_19_phase_h4_clean_q_macro_verifier.py \
-            tests/test_kb.py \
-            tests/test_type_ii_pure_new_canonical_fan_sieve.py \
-            tests/test_type_ii_pure_new_exception_dynamic_selector.py \
-            tests/test_type_ii_pure_new_exception_selector_counterexample_h20.py \
-            tests/test_type_ii_tail_external_ac2_closure.py \
-            tests/test_h19_k23_unbridged_pressure_selector_subrays.py \
-            tests/test_h19_k23_unbridged_pressure_full_low_defect_rays.py \
-            tests/test_type_i_normal_gap_source_even_bridge.py \
-            tests/test_type_i_normal_gap_source_even_bridge_audit.py \
-            tests/test_type_i_mixed_terminal_sparse_tail_600m.py \
-            tests/test_type_i_tail_reverse_b1_even_source_audit.py \
-            tests/test_type_i_tail_reverse_small_b_profile.py \
-            tests/test_type_i_dyadic_b_source_selector.py \
-            tests/test_type_i_tail_reverse_even_source_min_source_distance.py \
-            tests/test_type_ii_q_one_c2_19_phase_h4_clean_q_macro_verifier.py
+      - name: Verify the HEAD-bound run manifest
+        if: always()
+        run: >-
+          python scripts/t6_ci_run_manifest_v1.py verify
+          --root .
+          --manifest data/t6-wave1/ci-run-manifest-v1.json
+          --require-github
 
-      - name: Rebuild generated indexes
-        run: |
-          python scripts/kb.py build
-          git diff --exit-code -- \
-            index/timeline.md \
-            index/citation-graph.mmd \
-            index/theorem-ledger.md
+      - name: Upload the Gate 0 run manifest
+        if: always()
+        # actions/upload-artifact v7.0.1
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: t6-gate0-${{ github.sha }}-${{ github.run_id }}
+          path: data/t6-wave1/ci-run-manifest-v1.json
+          if-no-files-found: error
+          retention-days: 30

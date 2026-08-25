@@ -6,7 +6,6 @@ from __future__ import annotations
 import argparse
 import json
 from collections import deque
-from itertools import product
 from math import gcd, lcm, prod
 
 

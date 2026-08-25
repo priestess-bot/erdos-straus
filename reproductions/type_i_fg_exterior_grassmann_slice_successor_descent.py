@@ -367,7 +367,8 @@ def verify_kernel_filter_not_relay() -> dict[str, object]:
 
     target = tuple((left + right) % 2 for left, right in zip(e1, e3))
     assert target not in full_source
-    quotient = lambda vector: vector[0]
+    def quotient(vector):
+        return vector[0]
     assert {quotient(vector) for vector in filtered_source} == {0}
     assert {quotient(vector) for vector in full_source} == {0, 1}
     assert quotient(target) == 1
@@ -387,9 +388,8 @@ def verify_integer_no_lift() -> dict[str, object]:
     source_factor = 11
     target = 23
     assert (p + 4 * dimension_parameter * source_anchor) % source_factor == 0
-    character = lambda unit: (
-        mod_three_character(unit) * quadratic_two_character(unit)
-    )
+    def character(unit):
+        return mod_three_character(unit) * quadratic_two_character(unit)
     units = (1, 5, 7, 11, 13, 17, 19, 23)
     assert all(
         character((left * right) % 24)

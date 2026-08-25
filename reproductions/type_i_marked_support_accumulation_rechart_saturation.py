@@ -240,7 +240,7 @@ def verify_focused_marked_external_accumulation_edge_v1(
     prime = int(state["prime"])
     absorbed_support = int(state["absorbed_support"])
     Q = slab["Q"]
-    q = slab["q"]
+    _q = slab["q"]
     assert gcd(absorbed_support, Q) == 1
     combined_support = absorbed_support * Q
     chart_R, chart_K = canonical_chart(prime, combined_support)

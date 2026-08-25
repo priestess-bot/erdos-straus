@@ -124,7 +124,7 @@ def run() -> dict[str, object]:
     target_rows = [
         row for row in positive if int(row["target_candidates"]) > 0
     ]
-    natural_rows = [
+    _natural_rows = [
         row for row in positive if int(row["natural_candidates"]) > 0
     ]
     examples = [

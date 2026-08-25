@@ -42,16 +42,16 @@ def source_menu(p: int, k: int, spf: list[int]) -> set[int]:
     }
 
 
-def collision_state(p: int, k: int, l: int, spf: list[int]) -> dict[str, object]:
+def collision_state(p: int, k: int, ell: int, spf: list[int]) -> dict[str, object]:
     """Compute both sides of the exact collision formula."""
     base = (p - 1) // 4
-    if p % 24 != 1 or not (0 < k < l and base % k == base % l == 0):
+    if p % 24 != 1 or not (0 < k < ell and base % k == base % ell == 0):
         raise ValueError("require distinct divisors k < l of (p-1)/4")
 
-    q_k, q_l = 4 * k - 1, 4 * l - 1
-    n_k, n_l = p - base // k, p - base // l
-    M_k, M_l = k * n_k, l * n_l
-    shared = math.gcd(M_k, l - k)
+    q_k, q_l = 4 * k - 1, 4 * ell - 1
+    n_k, n_l = p - base // k, p - base // ell
+    M_k, M_l = k * n_k, ell * n_l
+    shared = math.gcd(M_k, ell - k)
     modulus = math.lcm(q_k, q_l)
 
     if math.gcd(M_k, M_l) != shared:
@@ -60,13 +60,13 @@ def collision_state(p: int, k: int, l: int, spf: list[int]) -> dict[str, object]
         raise AssertionError("larger scale must have larger preserved denominator")
     scale_relation = "noncomparable"
     s: int | None = None
-    if l % k == 0:
-        s = l // k
+    if ell % k == 0:
+        s = ell // k
         if shared != k * math.gcd(n_k, s - 1):
             raise AssertionError("comparable-scale specialization failed")
         scale_relation = "chain"
 
-    left = source_menu(p, k, spf) & source_menu(p, l, spf)
+    left = source_menu(p, k, spf) & source_menu(p, ell, spf)
     right = {
         e
         for e in short_certificate.positive_divisors_square_product_from_spf(
@@ -85,7 +85,7 @@ def collision_state(p: int, k: int, l: int, spf: list[int]) -> dict[str, object]
     return {
         "prime": p,
         "k": k,
-        "l": l,
+        "l": ell,
         "relation": scale_relation,
         "s": s,
         "n_k": n_k,
@@ -114,8 +114,8 @@ def verify() -> dict[str, object]:
     limit = max(p for p, _, _, _ in controls)
     spf = short_certificate.smallest_prime_factors(limit)
     records = []
-    for p, k, l, expected_gate in controls:
-        record = collision_state(p, k, l, spf)
+    for p, k, ell, expected_gate in controls:
+        record = collision_state(p, k, ell, spf)
         if bool(record["range_gate"]) != expected_gate:
             raise AssertionError("control did not exercise its intended gate state")
         if record["left_menu_intersection"] or record["right_collision_candidates"]:

@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from reproductions import type_ii_square_root_completion_family as family
+from reproductions import type_ii_square_root_completion_family as family  # noqa: E402
 
 
 DEFAULT_INPUT = ROOT / "reproductions" / "h19-k23-shared-selector-tail-descent-262144.json"
@@ -76,7 +76,7 @@ def selector_divisor(u: int, support_size: int) -> int | None:
 
 
 def terminal_support(prime: int, gap: int, divisor: int) -> int:
-    normalized = family.verify_normal_form(prime, gap, divisor)
+    _normalized = family.verify_normal_form(prime, gap, divisor)
     if gap not in TERMINAL_BASE_PRIMES:
         raise ValueError("unexpected terminal gap")
     factors = sympy.factorint(divisor)

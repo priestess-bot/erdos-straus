@@ -18,7 +18,7 @@ SCRIPTS = Path(__file__).resolve().parent
 if str(SCRIPTS) not in sys.path:
     sys.path.insert(0, str(SCRIPTS))
 
-import t6_persistent_selector_runtime_v1 as runtime
+import t6_persistent_selector_runtime_v1 as runtime  # noqa: E402
 
 
 ArithmeticSchedulerV1 = Callable[

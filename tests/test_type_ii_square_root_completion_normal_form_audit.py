@@ -6,6 +6,9 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+OPTIONAL_ARTIFACT = (
+    ROOT / "reproductions" / "h19-k23-shared-selector-tail-descent-262144.json"
+)
 SPEC = importlib.util.spec_from_file_location(
     "type_ii_square_root_completion_normal_form_audit",
     ROOT / "reproductions" / "type_ii_square_root_completion_normal_form_audit.py",
@@ -17,10 +20,11 @@ SPEC.loader.exec_module(audit)
 
 
 class TypeIISquareRootCompletionNormalFormAuditTests(unittest.TestCase):
+    @unittest.skipUnless(
+        OPTIONAL_ARTIFACT.is_file(), "optional 262144-layer raw artifact is not tracked"
+    )
     def test_checked_two_hundred_sixty_two_thousand_layer_normalizes(self):
-        with (
-            ROOT / "reproductions" / "h19-k23-shared-selector-tail-descent-262144.json"
-        ).open(encoding="utf-8") as handle:
+        with OPTIONAL_ARTIFACT.open(encoding="utf-8") as handle:
             result = audit.run_audit(json.load(handle))
         self.assertEqual(result["record_count"], 588_526)
         self.assertEqual(result["normal_form_count"], 588_526)

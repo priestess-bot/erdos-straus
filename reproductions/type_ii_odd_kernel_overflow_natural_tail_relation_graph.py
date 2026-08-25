@@ -21,7 +21,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from reproductions.short_certificate import (
+from reproductions.short_certificate import (  # noqa: E402
     GapCertificate,
     certificate_at_gap,
     smallest_prime_factors,

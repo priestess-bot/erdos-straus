@@ -243,7 +243,6 @@ def noncyclic_fourier_profile(
 
 def verify() -> None:
     moduli = (2, 4)
-    zero = (0, 0)
     blocks = (
         ((0, 0), (1, 0)),
         ((0, 0), (0, 1), (0, 3)),

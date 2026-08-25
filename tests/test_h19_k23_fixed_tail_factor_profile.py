@@ -6,6 +6,12 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+OPTIONAL_SHARED = (
+    ROOT / "reproductions" / "h19-k23-shared-selector-audit-262144.json"
+)
+OPTIONAL_CLOSURE = (
+    ROOT / "reproductions" / "h19-k23-shared-selector-tail-descent-262144.json"
+)
 SPEC = importlib.util.spec_from_file_location(
     "h19_k23_fixed_tail_factor_profile",
     ROOT / "reproductions" / "h19_k23_fixed_tail_factor_profile.py",
@@ -17,14 +23,14 @@ SPEC.loader.exec_module(profile)
 
 
 class H19K23FixedTailFactorProfileTests(unittest.TestCase):
+    @unittest.skipUnless(
+        OPTIONAL_SHARED.is_file() and OPTIONAL_CLOSURE.is_file(),
+        "optional 262144-layer raw artifacts are not tracked",
+    )
     def test_common_factor_explains_the_fixed_gap_tail_routes(self):
-        with (
-            ROOT / "reproductions" / "h19-k23-shared-selector-audit-262144.json"
-        ).open(encoding="utf-8") as handle:
+        with OPTIONAL_SHARED.open(encoding="utf-8") as handle:
             shared = json.load(handle)
-        with (
-            ROOT / "reproductions" / "h19-k23-shared-selector-tail-descent-262144.json"
-        ).open(encoding="utf-8") as handle:
+        with OPTIONAL_CLOSURE.open(encoding="utf-8") as handle:
             closure = json.load(handle)
         result = profile.run_profile(shared, closure)
         self.assertEqual(result["common_p_minus_one_factor"], 165_600)

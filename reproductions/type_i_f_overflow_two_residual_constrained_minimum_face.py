@@ -35,8 +35,8 @@ ROOT = Path(__file__).resolve().parents[1]
 REPRODUCTIONS = ROOT / "reproductions"
 sys.path.insert(0, str(REPRODUCTIONS))
 
-import type_i_f_overflow_lower_modulus_min_overflow_shared_gap as shared_gap
-import type_i_global_linear_b1_failure_general_b_profile_500m as source
+import type_i_f_overflow_lower_modulus_min_overflow_shared_gap as shared_gap  # noqa: E402
+import type_i_global_linear_b1_failure_general_b_profile_500m as source  # noqa: E402
 
 
 HARD_CORE_INPUT = (

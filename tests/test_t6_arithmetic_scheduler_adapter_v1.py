@@ -9,7 +9,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 MODULE_PATH = ROOT / "scripts" / "t6_arithmetic_scheduler_adapter_v1.py"
 sys.path.insert(0, str(ROOT / "scripts"))
-SPEC = importlib.util.spec_from_file_location("t6_arithmetic_scheduler_adapter_v1", MODULE_PATH)
+SPEC = importlib.util.spec_from_file_location(
+    "t6_arithmetic_scheduler_adapter_v1_under_test", MODULE_PATH
+)
 assert SPEC and SPEC.loader
 MODULE = importlib.util.module_from_spec(SPEC)
 sys.modules[SPEC.name] = MODULE

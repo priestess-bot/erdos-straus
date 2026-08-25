@@ -237,7 +237,8 @@ def verify_p557_transaction() -> dict[str, object]:
         for owner in new_occurrence_owner.values()
     )
 
-    eta = lambda value: pow(value % 13, 4, 13)
+    def eta(value):
+        return pow(value % 13, 4, 13)
     kernel = {
         value for value in unit_group(modulus) if eta(value) == 1
     }

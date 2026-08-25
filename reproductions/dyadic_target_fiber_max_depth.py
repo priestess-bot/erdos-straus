@@ -247,7 +247,7 @@ def profile(
     cluster_relation_values: list[int] = []
     if len(cluster_members) >= 2:
         cluster_base = cluster_members[0]
-        base_source = image(cluster_base, generators, moduli)
+        _base_source = image(cluster_base, generators, moduli)
         for exponent in cluster_members[1:]:
             delta = tuple(a - b for a, b in zip(exponent, cluster_base))
             if any(abs(coordinate) > bound for coordinate, bound in zip(delta, bounds)):

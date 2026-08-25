@@ -163,7 +163,7 @@ def verify_transient_boundary() -> None:
     transient = states["intermediate"]
     assert anchor == (1839, 552160, 986)
     assert transient == (2873071, 862639568, 986)
-    p, A, M, d, n = 1201, 986, 906134, 249, 751465
+    p, A, _M, _d, _n = 1201, 986, 906134, 249, 751465
     C_A = pow(4 * A, -1, p)
     projected = ((4 * A * C_A - 1) // p, A * C_A, A)
     assert projected == anchor

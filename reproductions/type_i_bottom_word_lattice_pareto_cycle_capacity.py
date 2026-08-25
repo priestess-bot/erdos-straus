@@ -382,7 +382,7 @@ def cycle_receipt(
 
 
 def cycle_capacity_profile() -> dict[str, object]:
-    prime, R = 2_017, 207
+    _prime, _R = 2_017, 207
     K, x_R = 104_380, 556
     U, V = 68, 139
     theta = 139 * 103

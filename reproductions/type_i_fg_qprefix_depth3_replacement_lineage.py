@@ -242,7 +242,8 @@ def verify_witness() -> dict[str, object]:
 
     beta = (-P * pow(4, -1, Q)) % Q
     tail_modulus = Q**DEPTH
-    tail = lambda value: ((value - beta) // Q) % tail_modulus
+    def tail(value):
+        return (value - beta) // Q % tail_modulus
     assert beta == 2
     assert (tail(TARGET), tail(deep), tail(shallow)) == (6, 6, 19)
     assert (tail(shallow) - tail(deep)) % 9 == 4
@@ -253,7 +254,8 @@ def verify_witness() -> dict[str, object]:
     assert block == (1, 3, 9, 27)
     assert all(numerator % entry == 0 for entry in block)
 
-    eta = lambda value: pow(value % 13, 4, 13)
+    def eta(value):
+        return pow(value % 13, 4, 13)
     eta_image = tuple(eta(entry) for entry in block)
     assert eta_image == (1, 3, 9, 1)
     units = tuple(value for value in range(1, modulus) if math.gcd(value, modulus) == 1)

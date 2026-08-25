@@ -125,7 +125,7 @@ def run() -> dict[str, object]:
             a, s, modulus = int(assignment["a"]), int(assignment["s"]), key[1]
             active_a = int(assignment["q_a"])
             active_s = int(assignment["q_s"])
-            factorization = {
+            _factorization = {
                 int(q): int(exponent) for q, exponent in Fourier["factorization"]
             }
             required = {

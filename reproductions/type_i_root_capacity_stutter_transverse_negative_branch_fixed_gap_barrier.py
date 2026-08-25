@@ -48,7 +48,7 @@ def verify_negative_local_control(p: int, q: int, h: int, m: int, s: int) -> Non
     k, remainder = divmod(q + 1, s)
     if remainder or k <= 2 or k % 2:
         raise AssertionError("carrier did not recover an even K with L greater than one")
-    l = k - 1
+    ell = k - 1
 
     local_d = m * p + 1 - h
     d_star = local_d // gcd(local_d, h * h - 1)
@@ -66,12 +66,12 @@ def verify_negative_local_control(p: int, q: int, h: int, m: int, s: int) -> Non
     negative_root = s * (h - 1) + 1
     if delta % q or positive_root % q == 0 or negative_root % q:
         raise AssertionError("control did not select exactly the negative m-polynomial root")
-    if (l * p - 1) % q or (k * p + 1) % q == 0:
+    if (ell * p - 1) % q or (k * p + 1) % q == 0:
         raise AssertionError("control did not select the negative linear branch")
 
     for r in LOW_GAPS:
         same_carrier_gate = (p + r) % q == 0
-        residue_equivalent_gate = (l * r + 1) % q == 0
+        residue_equivalent_gate = (ell * r + 1) % q == 0
         if same_carrier_gate != residue_equivalent_gate:
             raise AssertionError("same-carrier p-plus-r gate lost its L-residue equivalence")
         if same_carrier_gate:
@@ -90,9 +90,9 @@ def verify() -> None:
                 raise AssertionError("fixed low-gap candidate calculation changed")
 
     # A distinct, nonautomatic gap can still hit the same carrier; this is a boundary.
-    s, l, q, r = 3, 5, 17, 27
-    t, remainder = divmod(l * r + 1, q)
-    if remainder or l * (r - t * s) != t * (s - 1) - 1:
+    s, ell, q, r = 3, 5, 17, 27
+    t, remainder = divmod(ell * r + 1, q)
+    if remainder or ell * (r - t * s) != t * (s - 1) - 1:
         raise AssertionError("same-carrier factor equation changed")
 
     print("verified q-local negative-root controls and finite same-carrier gap barrier")

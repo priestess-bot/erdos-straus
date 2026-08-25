@@ -7,7 +7,6 @@ import argparse
 from fractions import Fraction
 import importlib.util
 import json
-import math
 import sys
 from pathlib import Path
 

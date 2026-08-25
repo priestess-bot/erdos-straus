@@ -111,7 +111,7 @@ def run() -> dict[str, object]:
         local: list[dict[str, int]] = []
         max_k = prime // (4 * distance)
         for k in range(1, max_k + 1):
-            q = 4 * k - 1
+            _q = 4 * k - 1
             d = prime - 4 * k * distance
             if d <= 0 or (k * source) % d:
                 continue

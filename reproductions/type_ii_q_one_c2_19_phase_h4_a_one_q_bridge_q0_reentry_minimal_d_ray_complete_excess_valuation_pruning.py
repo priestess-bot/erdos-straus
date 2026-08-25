@@ -48,7 +48,8 @@ EXPECTED_RAY_RECEIPTS = (
 def h3_modular_data(prime: int, selector: int, modulus: int) -> tuple[int, int, int]:
     """Return M3, c3, q3 modulo a modulus of unit H3 denominators."""
     p = prime % modulus
-    inverse = lambda value: pow(value % modulus, -1, modulus)
+    def inverse(value):
+        return pow(value % modulus, -1, modulus)
     inverse_two = inverse(2)
     f = (2 * p * p - 3 * p - 1) % modulus
     m0 = (p - 1) * (2 * p + 1) * f * inverse(8) % modulus

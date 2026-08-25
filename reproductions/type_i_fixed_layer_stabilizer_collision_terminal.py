@@ -163,7 +163,7 @@ def verify_qprimary_terminal_upgrade() -> None:
 
 
 def verify_weak_saturation_boundary() -> None:
-    p, R, K = 97, 67, 1625
+    _p, R, _K = 97, 67, 1625
     fixed_primes, fixed_budgets = (13,), (1,)
     residual_primes, residual_budgets = (5,), (3,)
     H = subgroup(R, fixed_primes + residual_primes)

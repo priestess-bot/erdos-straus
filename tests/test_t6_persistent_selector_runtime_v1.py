@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SPEC = importlib.util.spec_from_file_location(
-    "t6_persistent_selector_runtime_v1",
+    "t6_persistent_selector_runtime_v1_under_test",
     ROOT / "scripts" / "t6_persistent_selector_runtime_v1.py",
 )
 assert SPEC and SPEC.loader

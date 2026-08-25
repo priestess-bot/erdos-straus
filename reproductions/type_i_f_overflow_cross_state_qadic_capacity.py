@@ -3,7 +3,7 @@
 
 from __future__ import annotations
 
-from collections import Counter, defaultdict
+from collections import defaultdict
 import hashlib
 import importlib.util
 import json

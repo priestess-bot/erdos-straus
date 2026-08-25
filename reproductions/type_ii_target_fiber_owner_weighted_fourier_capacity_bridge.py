@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 import argparse
-import cmath
 from math import gcd, isqrt, lcm
 
 

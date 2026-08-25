@@ -4,7 +4,7 @@
 from __future__ import annotations
 
 import argparse
-from math import gcd, isqrt
+from math import gcd
 
 
 def factor(n: int) -> dict[int, int]:

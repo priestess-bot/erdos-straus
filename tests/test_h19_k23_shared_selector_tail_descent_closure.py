@@ -6,6 +6,15 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+OPTIONAL_AUDIT_65536 = (
+    ROOT / "reproductions" / "h19-k23-shared-selector-audit-65536.json"
+)
+OPTIONAL_AUDIT_131072 = (
+    ROOT / "reproductions" / "h19-k23-shared-selector-audit-131072.json"
+)
+OPTIONAL_AUDIT_262144 = (
+    ROOT / "reproductions" / "h19-k23-shared-selector-audit-262144.json"
+)
 SPEC = importlib.util.spec_from_file_location(
     "h19_k23_shared_selector_tail_descent_closure",
     ROOT / "reproductions" / "h19_k23_shared_selector_tail_descent_closure.py",
@@ -74,10 +83,11 @@ class H19K23SharedSelectorTailDescentClosureTests(unittest.TestCase):
         }
         self.assertEqual(alternative_gaps, {27, 43, 51, 55, 87})
 
+    @unittest.skipUnless(
+        OPTIONAL_AUDIT_65536.is_file(), "optional 65536-layer raw artifact is not tracked"
+    )
     def test_sixty_five_thousand_layer_artifact_has_tail_exit(self):
-        with (
-            ROOT / "reproductions" / "h19-k23-shared-selector-audit-65536.json"
-        ).open(encoding="utf-8") as handle:
+        with OPTIONAL_AUDIT_65536.open(encoding="utf-8") as handle:
             result = closure.run_audit(json.load(handle))
         self.assertEqual(result["input_parameter_limit_exclusive"], 65_536)
         self.assertEqual(result["input_prime_count"], 152_893)
@@ -95,10 +105,11 @@ class H19K23SharedSelectorTailDescentClosureTests(unittest.TestCase):
         }
         self.assertEqual(alternative_gaps, {27, 43, 51, 55, 83, 87})
 
+    @unittest.skipUnless(
+        OPTIONAL_AUDIT_131072.is_file(), "optional 131072-layer raw artifact is not tracked"
+    )
     def test_one_hundred_thirty_one_thousand_layer_artifact_has_tail_exit(self):
-        with (
-            ROOT / "reproductions" / "h19-k23-shared-selector-audit-131072.json"
-        ).open(encoding="utf-8") as handle:
+        with OPTIONAL_AUDIT_131072.open(encoding="utf-8") as handle:
             result = closure.run_audit(json.load(handle))
         self.assertEqual(result["input_parameter_limit_exclusive"], 131_072)
         self.assertEqual(result["input_prime_count"], 299_782)
@@ -116,10 +127,11 @@ class H19K23SharedSelectorTailDescentClosureTests(unittest.TestCase):
         }
         self.assertEqual(alternative_gaps, {27, 43, 51, 55, 63, 83, 87})
 
+    @unittest.skipUnless(
+        OPTIONAL_AUDIT_262144.is_file(), "optional 262144-layer raw artifact is not tracked"
+    )
     def test_two_hundred_sixty_two_thousand_layer_artifact_has_tail_exit(self):
-        with (
-            ROOT / "reproductions" / "h19-k23-shared-selector-audit-262144.json"
-        ).open(encoding="utf-8") as handle:
+        with OPTIONAL_AUDIT_262144.open(encoding="utf-8") as handle:
             result = closure.run_audit(json.load(handle))
         self.assertEqual(result["input_parameter_limit_exclusive"], 262_144)
         self.assertEqual(result["input_prime_count"], 588_526)

@@ -65,7 +65,7 @@ def profile(records: list[dict[str, object]], label: str) -> dict[str, object]:
         edge = entry["selected_edge"]
         source = int(edge["reverse_two_tail_lift"]["source_denominator"])
         bridge, K = int(edge["E"]), int(edge["K"])
-        offset, R = prime - source, (bridge - 1) // (prime - source)
+        _offset, R = prime - source, (bridge - 1) // (prime - source)
         target = -pow(4, -1, R) % R
         base_factors = {int(factor): int(exponent) for factor, exponent in sympy.factorint(K).items()}
         if any(divisor % R == target for divisor in divisors(base_factors)):

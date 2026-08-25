@@ -106,7 +106,7 @@ def census(input_path: Path) -> dict[str, object]:
             raise AssertionError("the F row is absent from the complete linear state map")
         a, s = state_cache[prime][R]
         blocks = [("s", s, s * R + 1), ("a", a, a * R + 1)]
-        prime_index = {q: index for index, (q, _e) in enumerate(factors)}
+        _prime_index = {q: index for index, (q, _e) in enumerate(factors)}
 
         row_candidates = 0
         for coordinates in itertools.product((-1, 0, 1), repeat=dimension):
@@ -181,7 +181,7 @@ def census(input_path: Path) -> dict[str, object]:
             representative_by_row.setdefault(int(entry["row_index"]), entry)
         state_rows = [representative_by_row[index] for index in distinct_rows]
         prime, pair, colors, demand = key
-        label = 0 if colors[0] == "s" else None
+        _label = 0 if colors[0] == "s" else None
         # The selected label is recovered from the state records below; both
         # repeated groups in this frozen census have equal colors.
         state_labels = []

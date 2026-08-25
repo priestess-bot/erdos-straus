@@ -39,7 +39,7 @@ def audit_record(record: dict[str, object]) -> dict[str, object]:
             raise AssertionError("invalid smaller-block square source")
         if E % modulus != 1 or E <= 1 or E >= 4 * K:
             raise AssertionError("invalid smaller-block square terminal")
-        if (n := source) * K % E:
+        if source * K % E:
             raise AssertionError("terminal divisor does not divide source product")
         kind = "even_terminal" if E % 2 == 0 else "odd_marked_descent"
         return {

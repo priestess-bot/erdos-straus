@@ -30,14 +30,14 @@ def witnesses(p: int, k: int) -> tuple[int, ...]:
     )
 
 
-def verify_gcd_formula(p: int, k: int, l: int) -> None:
+def verify_gcd_formula(p: int, k: int, ell: int) -> None:
     h = (p - 1) // 4
-    assert h % k == h % l == 0 and l % k == 0 and k < l
+    assert h % k == h % ell == 0 and ell % k == 0 and k < ell
     n_k = source_denominator(p, k)
-    n_l = source_denominator(p, l)
-    scale = l // k
+    n_l = source_denominator(p, ell)
+    scale = ell // k
     assert gcd(n_k, n_l) == gcd(n_k, scale - 1)
-    assert set(witnesses(p, k)).isdisjoint(witnesses(p, l))
+    assert set(witnesses(p, k)).isdisjoint(witnesses(p, ell))
 
 
 def verify() -> None:

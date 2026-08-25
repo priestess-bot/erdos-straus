@@ -32,7 +32,7 @@ def valuation(value: int, prime: int) -> int:
 
 
 def verify() -> None:
-    p, q, s, l = 230017, 17, 3, 5
+    p, q, s, ell = 230017, 17, 3, 5
     u, h, m, r = 157, 471, 4, 26297
     q_square = q * q
     m0 = (p * p + p + 1) // 3
@@ -52,11 +52,11 @@ def verify() -> None:
         raise AssertionError("root-capacity quotient T/u stopped being integral")
 
     k, remainder = divmod(q + 1, s)
-    if remainder or k != l + 1 or k % 2:
+    if remainder or k != ell + 1 or k % 2:
         raise AssertionError("control lost the even low-gap negative-root carrier")
-    if (s * (h - 1) + 1) % q or (l * p - 1) % q:
+    if (s * (h - 1) + 1) % q or (ell * p - 1) % q:
         raise AssertionError("control lost the negative-root congruences")
-    if m % q != (-l * (l + 1)) % q:
+    if m % q != (-ell * (ell + 1)) % q:
         raise AssertionError("negative-root m residue changed")
 
     if (m + h * (h - 1)) % q_square:

@@ -116,7 +116,6 @@ def unit_group_example() -> dict[str, object]:
         (0, 1): 7,
         (1, 1): 11,
     }
-    zero = (0, 0)
     if not (
         is_prime(prime)
         and prime % 24 == 1

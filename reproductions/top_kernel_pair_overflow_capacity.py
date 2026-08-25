@@ -5,7 +5,6 @@ from __future__ import annotations
 
 import argparse
 from itertools import combinations, product
-from math import gcd
 from typing import Mapping, Sequence
 
 Element = tuple[int, ...]

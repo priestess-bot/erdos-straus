@@ -14,7 +14,6 @@ from __future__ import annotations
 from collections import Counter
 import hashlib
 import json
-import math
 from pathlib import Path
 import sys
 
@@ -23,7 +22,7 @@ ROOT = Path(__file__).resolve().parents[1]
 REPRODUCTIONS = ROOT / "reproductions"
 sys.path.insert(0, str(REPRODUCTIONS))
 
-import type_i_f_overflow_lower_modulus_min_overflow_shared_gap as shared_gap
+import type_i_f_overflow_lower_modulus_min_overflow_shared_gap as shared_gap  # noqa: E402
 
 
 PARETO_INPUT = (

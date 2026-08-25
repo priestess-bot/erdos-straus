@@ -5,7 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
-from math import gcd, isqrt, lcm, prod
+from math import gcd, lcm, prod
 
 
 PRIME = 73

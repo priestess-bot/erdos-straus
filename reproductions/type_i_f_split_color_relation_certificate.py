@@ -5,7 +5,6 @@ from __future__ import annotations
 
 import argparse
 from collections import Counter
-from fractions import Fraction
 import hashlib
 import importlib.util
 import itertools

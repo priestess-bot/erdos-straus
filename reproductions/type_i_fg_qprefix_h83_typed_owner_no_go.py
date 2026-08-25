@@ -155,7 +155,8 @@ def verify_typed_owner_no_go() -> dict[str, object]:
 
 
 def verify_neutral_sheets(no_go: dict[str, object]) -> dict[str, object]:
-    eta = lambda value: pow(value % 13, 4, 13)
+    def eta(value):
+        return pow(value % 13, 4, 13)
     active_three_block = tuple(3**exponent for exponent in range(4))
     assert active_three_block == (1, 3, 9, 27)
     assert tuple(eta(value) for value in active_three_block) == (1, 3, 9, 1)

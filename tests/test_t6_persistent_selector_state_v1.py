@@ -10,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 MODULE_PATH = ROOT / "scripts" / "t6_persistent_selector_state_v1.py"
 SPEC = importlib.util.spec_from_file_location(
-    "t6_persistent_selector_state_v1", MODULE_PATH
+    "t6_persistent_selector_state_v1_under_test", MODULE_PATH
 )
 if SPEC is None or SPEC.loader is None:  # pragma: no cover
     raise RuntimeError(f"cannot import {MODULE_PATH}")

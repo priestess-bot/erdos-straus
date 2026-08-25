@@ -45,7 +45,7 @@ def verify_negative_root_bezout(
     k, remainder = divmod(q + 1, s)
     if remainder or k <= 1 or k % 2:
         raise AssertionError("carrier did not define an even negative-root K")
-    l = k - 1
+    ell = k - 1
     local_d = m * p + 1 - h
     d_star = local_d // gcd(local_d, h * h - 1)
     if local_d <= 0 or local_d % q or d_star % q:
@@ -54,29 +54,29 @@ def verify_negative_root_bezout(
         raise AssertionError("q-local stutter curve congruences changed")
     if h % 3 or (s * (h - 1) + 1) % q:
         raise AssertionError("control did not select the low-gap negative root")
-    if (l * p - 1) % q or (k * p + 1) % q == 0:
+    if (ell * p - 1) % q or (k * p + 1) % q == 0:
         raise AssertionError("control did not select the negative linear branch")
-    if m % q != (-l * (l + 1)) % q:
+    if m % q != (-ell * (ell + 1)) % q:
         raise AssertionError("negative-root m residue changed")
 
-    t, remainder = divmod(l * p - 1, q)
+    t, remainder = divmod(ell * p - 1, q)
     if remainder or t <= 0:
         raise AssertionError("negative linear quotient did not define t")
     b, remainder = divmod((s - 1) * p + s, q)
     if remainder or b <= 0:
         raise AssertionError("negative branch did not define the Bezout B")
-    if p != s * t + b or l * b - (s - 1) * t != 1:
+    if p != s * t + b or ell * b - (s - 1) * t != 1:
         raise AssertionError("negative-root Bezout normal form changed")
 
     if (p * h + 1) % local_d == 0:
         raise AssertionError("q-local control accidentally claims to be a full receipt")
-    return l, t, b, local_d, d_star
+    return ell, t, b, local_d, d_star
 
 
 def verify_l_one_overlap() -> None:
     p, q, h, m, s = 241, 5, 39, 18, 3
-    l, t, b, local_d, d_star = verify_negative_root_bezout(p, q, h, m, s)
-    if (l, t, b, local_d, d_star) != (1, 48, 97, 4300, 215):
+    ell, t, b, local_d, d_star = verify_negative_root_bezout(p, q, h, m, s)
+    if (ell, t, b, local_d, d_star) != (1, 48, 97, 4300, 215):
         raise AssertionError("L=1 overlap control changed")
     if (s, q) != (3, 5) or any(value % q for value in (p - 1, h + 1, m + 2)):
         raise AssertionError("L=1 control left the p-minus-one overlap")
@@ -89,8 +89,8 @@ def verify_l_one_overlap() -> None:
 
 def verify_pure_t_branch(p: int, q: int, h: int, m: int, s: int) -> tuple[int, int, int]:
     """Check the L>1 exclusions that put a q-local carrier on the T side."""
-    l, t, b, local_d, d_star = verify_negative_root_bezout(p, q, h, m, s)
-    if l <= 1:
+    ell, t, b, local_d, d_star = verify_negative_root_bezout(p, q, h, m, s)
+    if ell <= 1:
         raise AssertionError("pure-T control did not retain L greater than one")
     if (p * p - 1) % q == 0 or (2 * p + 1) % q == 0:
         raise AssertionError("L greater than one p-side exclusion changed")
@@ -100,15 +100,15 @@ def verify_pure_t_branch(p: int, q: int, h: int, m: int, s: int) -> tuple[int, i
         raise AssertionError("pure-T control unexpectedly entered the H overlap")
     if valuation(local_d, q) != valuation(d_star, q):
         raise AssertionError("pure-T q-primary height did not survive in D-star")
-    return l, t, b
+    return ell, t, b
 
 
 def verify_reflection_terminal() -> None:
     p, q, h, m, s = 769, 23, 39, 13, 3
-    l, t, b = verify_pure_t_branch(p, q, h, m, s)
-    if (l + 1) % (4 * (s - 1)):
+    ell, t, b = verify_pure_t_branch(p, q, h, m, s)
+    if (ell + 1) % (4 * (s - 1)):
         raise AssertionError("reflection divisibility changed")
-    c = (l + 1) // (4 * (s - 1))
+    c = (ell + 1) // (4 * (s - 1))
     if q != 4 * s * c * (s - 1) - 1 or b < s:
         raise AssertionError("reflection raw-ray parameters changed")
     mu, remainder = divmod(s + b, s - 1)
@@ -125,7 +125,7 @@ def verify_reflection_terminal() -> None:
     )
     if value != Fraction(4, p):
         raise AssertionError("reflection raw-ray denominators did not recover 4/p")
-    if (l, t, b, c, mu, x, d) != (7, 234, 67, 1, 35, 201, 9):
+    if (ell, t, b, c, mu, x, d) != (7, 234, 67, 1, 35, 201, 9):
         raise AssertionError("reflection control changed")
 
 

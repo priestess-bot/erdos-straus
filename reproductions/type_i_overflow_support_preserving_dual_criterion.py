@@ -17,7 +17,6 @@ them always gives a recursive edge.
 from __future__ import annotations
 
 import argparse
-from collections import defaultdict
 import hashlib
 import json
 from math import gcd, lcm

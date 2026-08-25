@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from reproductions import type_ii_square_root_completion_family as family
+from reproductions import type_ii_square_root_completion_family as family  # noqa: E402
 
 
 DEFAULT_INPUT = ROOT / "reproductions" / "h19-k23-shared-selector-tail-descent-262144.json"

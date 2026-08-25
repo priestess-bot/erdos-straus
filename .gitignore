@@ -8,6 +8,11 @@ index/catalog.json
 index/kb.sqlite
 public/
 
+# HEAD-bound CI artifacts are generated after checkout and uploaded by Actions.
+# Committing this file would create a self-referential HEAD digest.
+data/t6-wave1/ci-run-manifest-v1.json
+data/t6-wave1/t6-live-audit-snapshot-v2.json
+
 # Source artifacts stay local unless their redistribution status is reviewed.
 sources/files/
 sources/cache/

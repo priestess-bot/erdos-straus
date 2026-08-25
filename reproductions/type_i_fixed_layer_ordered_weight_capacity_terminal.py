@@ -7,7 +7,7 @@ import argparse
 from collections import Counter, defaultdict
 from fractions import Fraction
 from itertools import combinations, product
-from math import gcd, prod
+from math import prod
 
 
 def subgroup(modulus: int, generators: tuple[int, ...]) -> set[int]:
@@ -267,7 +267,7 @@ def verify_zero_weight_collision() -> None:
 
 
 def verify_p97_boundary() -> None:
-    p, R, K = 97, 67, 1625
+    _p, R, _K = 97, 67, 1625
     fixed_layer = centered_layer(R, (13,), (1,))
     group = subgroup(R, (13, 5))
     period = stabilizer(R, group, fixed_layer)

@@ -6236,7 +6236,7 @@ def overflow_outer_rank_reset(payload: dict[str, object]) -> dict[str, object]:
             source_potential = B_prime // support
             successor_potential = B_prime // joined_support
             strict_potential = successor_potential < source_potential
-            descriptor = {
+            _descriptor = {
                 "equation_target": [4, prime],
                 "phase": "RESET",
                 "fixture_name": name,

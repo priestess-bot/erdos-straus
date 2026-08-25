@@ -122,7 +122,7 @@ def factor_block_reserve(value: int, block: int, carrier: int) -> bool:
 
 def verify_c19_factor_block_grammar() -> dict[str, object]:
     """Recheck the declared mixed-side C=19 grammar at the v=5 point."""
-    p, R, K = v5.P, v5.R, v5.K
+    _p, R, K = v5.P, v5.R, v5.K
     a, b = GRAMMAR["a"], GRAMMAR["b"]
     Q1, Q2, Q3 = GRAMMAR["Q1"], GRAMMAR["Q2"], GRAMMAR["Q3"]
     conditions = {

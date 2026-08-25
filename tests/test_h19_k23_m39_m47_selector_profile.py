@@ -6,6 +6,9 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+OPTIONAL_ARTIFACT = (
+    ROOT / "reproductions" / "h19-k23-shared-selector-tail-descent-262144.json"
+)
 SPEC = importlib.util.spec_from_file_location(
     "h19_k23_m39_m47_selector_profile",
     ROOT / "reproductions" / "h19_k23_m39_m47_selector_profile.py",
@@ -17,10 +20,11 @@ SPEC.loader.exec_module(profile)
 
 
 class H19K23M39M47SelectorProfileTests(unittest.TestCase):
+    @unittest.skipUnless(
+        OPTIONAL_ARTIFACT.is_file(), "optional 262144-layer raw artifact is not tracked"
+    )
     def test_two_hundred_sixty_two_thousand_layer_profile(self):
-        with (
-            ROOT / "reproductions" / "h19-k23-shared-selector-tail-descent-262144.json"
-        ).open(encoding="utf-8") as handle:
+        with OPTIONAL_ARTIFACT.open(encoding="utf-8") as handle:
             result = profile.run_profile(json.load(handle))
         self.assertEqual(result["m39_miss_record_count"], 97)
         self.assertTrue(result["all_branches_have_48_dividing_p_minus_one"])

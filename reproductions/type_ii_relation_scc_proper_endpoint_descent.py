@@ -20,13 +20,13 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from reproductions.short_certificate import (
+from reproductions.short_certificate import (  # noqa: E402
     certificate_at_gap,
     smallest_prime_factors,
     type_ii_residue_certificate,
     verify_certificate,
 )
-from reproductions.type_ii_odd_kernel_overflow_natural_tail_relation_graph import (
+from reproductions.type_ii_odd_kernel_overflow_natural_tail_relation_graph import (  # noqa: E402
     bottom_graph,
     factorization,
     positive_divisors,
