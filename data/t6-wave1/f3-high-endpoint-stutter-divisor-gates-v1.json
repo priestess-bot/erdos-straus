@@ -1,0 +1,69 @@
+{
+  "schema_id": "t6_wave1_f3_high_endpoint_stutter_divisor_gates_v1",
+  "version": 1,
+  "artifact_id": "f3_high_endpoint_stutter_divisor_gates_v1",
+  "track_id": "F3-HIGH-ENDPOINT",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "date": "2026-08-24",
+  "status": "ESTABLISHED_NECESSARY_ONLY",
+  "quantifier": "ACTUAL_PERSISTENT and PROPER_FACTOR_ROOT and h>p and terminal_first_miss and canonical cofactor c=p-1",
+  "definitions": {
+    "M": "(p^2+p+1)/3",
+    "u": "gcd(2r+1,M)",
+    "v": "M/u",
+    "omega": "(2r+1)/u",
+    "delta": "h-p-1",
+    "n": "m-1",
+    "D": "n*p-delta"
+  },
+  "gates": {
+    "root_quotient": "D divides delta^3+n*delta^2+n^2*delta+v*n^3",
+    "capacity": "D divides (delta^2-n^2)*(omega*delta^2-3*v*n^2)"
+  },
+  "inputs_required": [
+    "actual D divides p*h+1",
+    "actual D divides K",
+    "gcd(D,h)=1",
+    "h*v=p^2+p+1",
+    "2T=u*(p^2*omega-3*v)"
+  ],
+  "forbidden_inferences": [
+    "gate satisfaction proves canonical maximality",
+    "gate satisfaction proves actual persistence",
+    "gate satisfaction proves terminal-first miss",
+    "low-height D_star/QC1/TR1 applies",
+    "finite shadow rejection proves family empty"
+  ],
+  "saturation_boundary": {
+    "claim_id": "type-I-t6-f3-high-endpoint-root-lift-saturation-boundary",
+    "result": "For fixed static p,h,D satisfying the actual necessary arithmetic gates, D divides K constrains omega only modulo D_K. A CRT class gives infinitely many formal root lifts, so the two divisor gates cannot by themselves bound r or prove a high residual empty.",
+    "required_next_information": [
+      "canonical complete-excess valuation",
+      "terminal-first proof",
+      "actual source/path/admission restriction"
+    ]
+  },
+  "controls": [
+    {
+      "p": 67,
+      "r": 25311,
+      "h": 93,
+      "D": 779,
+      "root_gate": true,
+      "capacity_gate": true,
+      "in_quantifier": false,
+      "reason": "not a core p congruent to 1 modulo 24"
+    },
+    {
+      "p": 283,
+      "h": 1101,
+      "D_shadow": 32,
+      "root_gate": true,
+      "capacity_gate": false,
+      "in_quantifier": false,
+      "reason": "not a core p congruent to 1 modulo 24 and shadow fails D divides K"
+    }
+  ],
+  "f3": "OPEN",
+  "t6": "OPEN"
+}

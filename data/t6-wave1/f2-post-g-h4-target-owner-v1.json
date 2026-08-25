@@ -1,0 +1,51 @@
+{
+  "receipt_id": "f2_post_g_h4_target_owner_v1",
+  "track_id": "F2-POST-G-H4",
+  "date": "2026-08-24",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "status": "TARGET_SHAPE_ESTABLISHED_COMMON_ADMISSION_OPEN",
+  "quantifier": "Every nonterminal atomic final target of the actual H4 clean-q macro after single-side exclusion",
+  "symbolic_bounds": {
+    "support": "M_T>M4>p^4/8>B_p",
+    "capacity": "1<=c_T<=p-2",
+    "chart": "R_T=(4M_T c_T-1)/p>p",
+    "support_divisibility": "A_T=M_T divides K_T=M_T c_T"
+  },
+  "persistent_facts": {
+    "major_phase": "TYPEI",
+    "provenance_kind": "OVERFLOW",
+    "is_overflow": true,
+    "support_relation": "A_T>1 and A_T>B_p",
+    "mark": "ROOT_SOL"
+  },
+  "classification_independence": {
+    "F_or_G": "target-local certificate_context only",
+    "owner_not_selected_by_F_G": true
+  },
+  "owner_partition": [
+    {
+      "predicate": "an actual target sink-SCC receipt is separately present",
+      "owner": "type_i_high_support_sink"
+    },
+    {
+      "predicate": "no narrower high-support predicate matches",
+      "owner": "type_i_a_gt_one_overflow_residual"
+    }
+  ],
+  "new_family_required": false,
+  "external_dependencies": [
+    "common target serializer and admission",
+    "Agent 3 atomic arm for atomic occurrence payload",
+    "Agent 2 totality for high-support/A>1 overflow"
+  ],
+  "capacity_one_boundary": {
+    "scope": "Separate the named H4_A1 actual clean-q atomic arm from broader H4 and future producer domains.",
+    "immediate_q_one_image": "C1 family-empty only before H0/H4",
+    "H4_final_target": "SPLIT: H4_A1 actual clean-q atomic C1 is empty; C1 outside that exact source domain remains POSSIBLE_NOT_CLOSED.",
+    "H4_A1_actual_clean_q_atomic_target": "EMPTY by type-I-h4-atomic-capacity-one-source-gate-exclusion.",
+    "outside_H4_A1": "POSSIBLE_NOT_CLOSED: the congruence c_T=1 iff E_x=-q mod p is not a global exclusion theorem.",
+    "historical_stutter_boundary": "The earlier stutter theorem excludes E_x=+q mod p only; the negative-residue source gate is separately discharged for H4_A1.",
+    "downstream_requirement": "Agent 2 must still supply terminal, lower protocol/phase, or family-empty proof for any admitted C1 target outside H4_A1 actual clean-q atomic scope."
+  },
+  "status_boundary": "Owner shape is proved; active E3 admission and descendant totality are not."
+}

@@ -1,0 +1,39 @@
+{
+  "request_id": "f2_post_g_g_producer_disposition_v1",
+  "track_id": "F2-POST-G-H4",
+  "date": "2026-08-24",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "status": "PROPOSAL_NOT_REGISTERED",
+  "requested_precedence": [
+    "q_one_g_full_carrier_phase_root",
+    "q_one_g_c3_source_lineage_relay"
+  ],
+  "producer_requests": [
+    {
+      "producer_id": "q_one_g_full_carrier_phase_root",
+      "requested_runtime_disposition": "ACTIVE_SELECTED_PRODUCER",
+      "target_set": ["type_i_full_carrier_post_g"]
+    },
+    {
+      "producer_id": "positive_q_g_full_carrier_phase_root",
+      "requested_runtime_disposition": "DEFER_UNTIL_F1_GRAMMAR_FREEZE",
+      "frozen_graph_observation": "NO_CURRENT_SEED",
+      "retain_claim": true,
+      "must_not_prune_before_f1_freeze": true,
+      "required_resolution": "If F1 proves no positive-q seed, mark source-empty; otherwise compile the existing universal relative handoff into common admission."
+    },
+    {
+      "producer_id": "q_one_g_c3_source_lineage_relay",
+      "requested_runtime_disposition": "NONRECURSIVE_SUPERSEDED_ALTERNATE",
+      "retain_claim": true,
+      "do_not_grant_queue_right": true
+    }
+  ],
+  "required_reopen_triggers": [
+    "new Type-II F/G seed producer",
+    "TYPEI to TYPEII nonterminal transition",
+    "G-handoff precedence change",
+    "new initializer target with q>1"
+  ],
+  "status_boundary": "Coordinator decision required. Frozen-graph source emptiness is not semantic constructor exhaustion; positive-q must not be pruned before F1 grammar freeze."
+}

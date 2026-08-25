@@ -1,0 +1,71 @@
+{
+  "schema_id": "t6_wave1_f3_high_endpoint_root_lift_saturation_v1",
+  "version": 1,
+  "artifact_id": "f3_high_endpoint_root_lift_saturation_v1",
+  "track_id": "F3-HIGH-ENDPOINT",
+  "date": "2026-08-25",
+  "claim_id": "type-I-t6-f3-high-endpoint-root-lift-saturation-boundary",
+  "status": "ESTABLISHED_GATE_SATURATION_BOUNDARY",
+  "static_scope": "p=1 mod 24, M=(p^2+p+1)/3=u*v, h=3u>p, gcd(D,M)=1, D divides p*h+1, and D=1-h mod p",
+  "root_lift": {
+    "A0": "u*(p^2-1)/4",
+    "D_K": "D/gcd(D,A0)=D/gcd(D,(p^2-1)/4)",
+    "capacity_equivalence": "D divides K iff omega = 3*v*(p^2)^(-1) mod D_K",
+    "root_parameter": "r=(u*omega-1)/2",
+    "period": "omega_t=omega+2*D_K*v*t, t>=0",
+    "canonical_receipt_subprogression": "If the initial D is canonical and z=R-h has Q>1, set A=K/(p-1), H=p*h+1, L=(A*K*z*H)^2, and omega_j=omega_0+2*D_K*v*L*j.",
+    "invariants": [
+      "gcd(2*r_t+1,M)=u",
+      "D divides K_t",
+      "D divides R_t-h",
+      "root_quotient_divisor_gate",
+      "capacity_divisor_gate",
+      "all normal-form data depending only on p,h,D,m,e,a,k",
+      "canonical maximal-receipt divisor D on the refined subprogression",
+      "root-bottom complete-excess terminal miss Q>1 on the refined subprogression",
+      "every terminal predicate factoring only through Theta=(p,h,u,D)"
+    ]
+  },
+  "vieta_boundary": {
+    "high_pell": "y^2+x*y-x^2=c*(d*x*y-1)",
+    "other_y_root": "(c*d-1)*x-y = x mod 3, hence outside 3 divides y",
+    "other_x_root": "-(c*d-1)*y-x < 0"
+  },
+  "control": {
+    "kind": "core_curve_shadow_not_actual",
+    "d": 11,
+    "x": 101,
+    "y": 1020,
+    "p": 115815206209,
+    "h": 1169617882071,
+    "D": 1207185892628946440,
+    "v": 11467986421,
+    "D_K": 30179647315723661,
+    "omega": 3161408027583,
+    "why_not_actual": [
+      "D is not established as the canonical maximal receipt",
+      "gap-3 terminal factor 8363 preempts persistent routing"
+    ]
+  },
+  "required_next_information": [
+    "a full valuation predicate proved nonrecurrent under the canonical-D subprogression",
+    "a complete terminal-first schedule containing a predicate not determined only by Theta",
+    "actual source/path/admission restriction"
+  ],
+  "canonical_receipt_control": {
+    "kind": "noncore valuation control only",
+    "p": 67,
+    "h": 93,
+    "r": 25311,
+    "canonical_D": 1558,
+    "canonical_Q": 19540216,
+    "H": 6232,
+    "note": "The control verifies the valuation-preserving algebra but is outside the core high-stutter quantifier."
+  },
+  "does_not_claim": [
+    "an actual persistent high stutter state exists",
+    "the k=1 or odd-k residual is family-empty",
+    "a terminal or E1-E5 successor exists",
+    "F3 or T6 is closed"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "schema_id": "t6_wave1_q1_odd_low_final_third_anchor_contraction_v1",
+  "version": 1,
+  "artifact_id": "q1_odd_low_final_third_anchor_contraction_v1",
+  "track_id": "F2-POST-G-H4",
+  "date": "2026-08-25",
+  "claim_id": "type-II-q-one-odd-low-final-third-anchor-contraction",
+  "status": "ESTABLISHED_PRE_ADMISSION_LOW_CHECKPOINT_TO_HIGH_C9_CONTRACTION",
+  "domain": "ordinary q=1 full-carrier odd branch after gap-7 preemption, p=336*k+25",
+  "low_checkpoint": {
+    "R": "80*k+7",
+    "K": "4*(140*k+11)*(12*k+1)",
+    "support_A": "2*(140*k+11)",
+    "anchor": "2*(40*k+3)",
+    "complete_excess_Q": "40*k+3",
+    "beta": 2
+  },
+  "final_high_target": {
+    "support_M": "2*(140*k+11)*(40*k+3)",
+    "R": "1200*k+95",
+    "K": "9*M",
+    "cofactor": 9,
+    "protocol": "TYPEI/CHARGED",
+    "provenance": "OVERFLOW",
+    "ticket": "LOCAL_DROP from full-carrier root"
+  },
+  "inequalities": [
+    "R_M-p=864*k+70>0",
+    "B_p-M=17024*k^2+2312*k+78>0"
+  ],
+  "controls": [
+    {"p": 1033, "k": 3, "low_checkpoint": [247, 63788, 862], "Q": 123, "final_high": [3695, 954234, 106026]},
+    {"p": 2713, "k": 8, "low_checkpoint": [647, 438828, 2262], "Q": 323, "final_high": [9695, 6575634, 730626]}
+  ],
+  "does_not_claim": [
+    "the C=9 high target has a successor",
+    "the checkpoint macro is a shared T2/Gate-3 route",
+    "a global terminal prefix",
+    "F2 or T6 totality"
+  ]
+}

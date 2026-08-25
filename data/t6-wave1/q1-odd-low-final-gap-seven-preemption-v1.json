@@ -1,0 +1,33 @@
+{
+  "schema_id": "t6_wave1_q1_odd_low_final_gap_seven_preemption_v1",
+  "version": 1,
+  "artifact_id": "q1_odd_low_final_gap_seven_preemption_v1",
+  "track_id": "F2-POST-G-H4",
+  "date": "2026-08-25",
+  "claim_id": "type-II-q-one-odd-low-final-gap-seven-preemption",
+  "status": "ESTABLISHED_ODD_LOW_FINAL_CLASSIFICATION_AND_TERMINAL_PREEMPTION",
+  "domain": "ordinary q=1 full-carrier second-anchor contraction with odd t",
+  "low_final_classification": {
+    "criterion": "R_T<p iff p=25 or 265 mod 336",
+    "derivation": "j is the unique 1..13 solution of j*p=3 mod 14; low iff j in {11,13}; odd t gives p=25 mod 48"
+  },
+  "terminal_preemption": {
+    "class": "p=265 mod 336",
+    "gap": 7,
+    "x": "(p+7)/4",
+    "divisor": 2,
+    "reason": "x is even and x=5 mod 7, so 2 divides x^2 and 7 divides x+2",
+    "certificate": ["x", "p*(x+2)/7", "p*(x+x^2/2)/7"]
+  },
+  "remaining_odd_low_residual": "p=25 mod 336",
+  "controls": [
+    {"p": 601, "class": 265, "gap7_denominators": [152, 13222, 1004872]},
+    {"p": 1033, "class": 25, "low_final": [247, 63788, 862]}
+  ],
+  "does_not_claim": [
+    "p=25 mod 336 is terminal or family-empty",
+    "all gap-7 certificates are exhausted by d=2",
+    "a global terminal prefix",
+    "post-G/F2/T6 totality"
+  ]
+}

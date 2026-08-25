@@ -1,0 +1,53 @@
+{
+  "schema_id": "t6_wave1_q1_full_carrier_runtime_slice_v1",
+  "version": 1,
+  "artifact_id": "q1_full_carrier_runtime_slice_v1",
+  "date": "2026-08-25",
+  "claim_id": "type-II-q-one-full-carrier-runtime-slice",
+  "status": "ESTABLISHED_EXECUTABLE_PRODUCER_SLICE_FINAL_REENTRY_OPEN",
+  "runtime_module": "scripts/t6_q_one_full_carrier_runtime_slice_v1.py",
+  "initializer": {
+    "producer_id": "initial_q_one_root_runtime_v1",
+    "terminal_scope": "q_one_gap_three_then_odd_low_gap_seven_v1",
+    "terminal_output": "Type II gap-3 certificate when X=(p+3)/4 has a 2 mod 3 factor; after that miss, Type II gap-7 d=2 certificate for p=265 mod336",
+    "nonterminal_output": "content-addressed ROOT_SOL TYPEII_G_HANDOFF q=1 G state"
+  },
+  "routes": [
+    {
+      "producer_id": "q_one_g_full_carrier_runtime_v1",
+      "source_owner": "type_ii_relation_g_endpoint",
+      "target_owner": "type_i_full_carrier_post_g",
+      "source_terminal_schedule": "q_one_gap_three_source_v1",
+      "target_terminal_schedule": "q_one_full_carrier_target_sink_v1",
+      "ticket": "PHASE_DROP"
+    },
+    {
+      "producer_id": "q_one_root_second_anchor_runtime_v1",
+      "source_owner": "type_i_full_carrier_post_g",
+      "target_owners": ["type_i_a_gt_one_overflow_residual", "type_i_absorb_marked_residual"],
+      "source_terminal_schedule": "q_one_full_carrier_anchor_sink_v1",
+      "checkpoint_terminal_scope": "q1_first_child_anchor_sink",
+      "target_terminal_schedule": "q_one_second_anchor_final_sink_v1",
+      "ticket": "LOCAL_DROP or PHASE_DROP recomputed from final target"
+    }
+  ],
+  "anchor_sink_terminal": {
+    "guard": "R-1 divides K for 4K=pR+1",
+    "certificate": ["K/(R-1)", "K", "p*K"],
+    "miss_boundary": "A MISS is complete only for the named anchor-sink predicate, not a universal terminal claim."
+  },
+  "controls": [
+    {"p": 97, "outcome": "initial_terminal", "denominators": [25, 970, 4850]},
+    {"p": 73, "outcome": "runtime_slice", "final_owner": "type_i_a_gt_one_overflow_residual", "final_ticket": "LOCAL_DROP", "final_reentry": "DEAD_END"},
+    {"p": 601, "outcome": "initial_terminal_gap7", "denominators": [152, 13222, 1004872]},
+    {"p": 1033, "outcome": "runtime_slice", "final_owner": "type_i_a_gt_one_overflow_residual", "final_ticket": "LOCAL_DROP", "final_reentry": "DEAD_END"}
+  ],
+  "t2_disposition": "No AtomicPending state is emitted; this local unregistered checkpoint macro is not a new shared Gate-3/T2 arm.",
+  "does_not_claim": [
+    "the final state has a runtime successor",
+    "the terminal scopes are globally exhaustive",
+    "the local registry is the shared all-producer registry",
+    "F1 reachable-state exhaustion",
+    "F2 or T6 totality"
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "artifact_id": "f2_high_support_determinant_dual_absorb_handoff_v1",
+  "artifact_version": 1,
+  "track_id": "T6-F2-OVERFLOW-HIGH-SUPPORT",
+  "claim_id": "type-I-f2-high-support-determinant-dual-absorb-handoff",
+  "status": "CONDITIONAL_LOW_DUAL_TARGET_E1_E3_REENTRY_OPEN",
+  "scope": {
+    "parent": "actual terminal-first-surviving canonical TYPEI/CHARGED high-support overflow: K=A*C, A>B_p, 1<=C<p, p<R<4A",
+    "source_boundary": "The state-derived determinant gives arithmetic E2 only. A producer-specific source event remains required for E1."
+  },
+  "constructor": {
+    "determinant": {
+      "M": "A",
+      "d": "p-C",
+      "n": "4*A-R",
+      "identity": "p*n=4*A*d+1"
+    },
+    "symmetric_remainder": {
+      "r": "A mod p in {1,...,p-1}",
+      "k": "(A-r)/p",
+      "s": "n-4*k*d",
+      "identity": "p*s=4*r*d+1"
+    },
+    "dual_sides": {
+      "d": {"R": "4*d-s", "K": "d*(p-r)"},
+      "r": {"R": "4*r-s", "K": "r*(p-d)"}
+    },
+    "tie_break": "select d when R_d<=R_r; otherwise select r",
+    "guarantee": "selected R is in [3,p-2] and selected carrier divides selected K"
+  },
+  "admission_boundary": {
+    "E1": "OPEN_PRODUCER_SPECIFIC_SOURCE_EVENT",
+    "E2": "ESTABLISHED_BY_DETERMINANT_DUAL_IDENTITIES",
+    "E3": "OPEN_TARGET_TERMINAL_TYPING_OWNER_SERIALIZER_AND_ABSORB_CURSOR",
+    "E4": "IDENTITY_ON_Sol_4_p_RELATIVE_TO_ADMISSION",
+    "E5": "CHARGED_TO_ABSORB_PHASE_DROP_RELATIVE_TO_ADMISSION",
+    "reentry": "OPEN"
+  },
+  "controls": [
+    {
+      "name": "c1_minimal",
+      "p": 73,
+      "A": 1369,
+      "C": 1,
+      "R": 75,
+      "d_side": [71, 1296],
+      "r_side": [3, 55],
+      "selected_side": "r"
+    },
+    {
+      "name": "c2_high_support",
+      "p": 73,
+      "A": 1305,
+      "C": 2,
+      "R": 143,
+      "d_side": [35, 639],
+      "r_side": [7, 128],
+      "selected_side": "r"
+    },
+    {
+      "name": "c9_empty_improvement_control",
+      "p": 193,
+      "A": 9323,
+      "C": 9,
+      "R": 1739,
+      "d_side": [511, 24656],
+      "r_side": [11, 531],
+      "selected_side": "r"
+    }
+  ],
+  "forbidden_inferences": [
+    "a small determinant dual is an admitted successor",
+    "low R alone defines an ABSORB state",
+    "identity Sol lift establishes E1 or E3",
+    "the target is terminal without target-local terminal-first replay"
+  ]
+}

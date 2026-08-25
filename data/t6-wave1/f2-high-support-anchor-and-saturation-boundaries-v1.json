@@ -1,0 +1,23 @@
+{
+  "artifact_id": "f2_high_support_anchor_and_saturation_boundaries_v1",
+  "track_id": "F2-OVERFLOW-HIGH-SUPPORT",
+  "status": "ESTABLISHED_ROUTE_EXCLUSIONS_NOT_TOTALITY",
+  "c1_r3_anchor": {
+    "source": "TYPEI/ABSORB T3=(p,3,N;N), N=(3*p+1)/4, target-local MISS",
+    "forced_anchor_block": "Q=2",
+    "forced_rechart": "U=(p,3*p+4,N*(p+1);2*N)",
+    "exclusion": "ABSORB-to-CHARGED T5 ascent; parent-to-U charged outer coordinate increases"
+  },
+  "cgt1_spf_saturation": {
+    "guard": "K=A*C, A>Bp, 1<C<p, q prime divides C",
+    "fixed_n_barrier": "A*q does not divide A*(p-C)",
+    "full_excess_barrier": "a q-full-excess block makes lcm(A,Q) not divide K",
+    "conclusion": "q|C alone is not a physical same-chart saturation E1 route"
+  },
+  "does_not_prove": [
+    "C1 terminal totality",
+    "C1 non-anchor re-entry",
+    "C>1 terminal or external raw exit",
+    "F2 or T6 closure"
+  ]
+}

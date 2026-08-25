@@ -1,0 +1,55 @@
+{
+  "artifact_id": "f2_h4_atomic_capacity_one_exclusion_v1",
+  "theorem": "type-I-h4-atomic-capacity-one-source-gate-exclusion",
+  "status": "H4_C1_ACTUAL_SOURCE_FAMILY_EMPTY",
+  "negative_gate": {
+    "capacity_condition": "c_q=1 iff E_x=-q mod p",
+    "source_condition": "D=-delta_d mod p; D divides (2d-1)((2d+1)q-1); 0<D<2dp",
+    "phase_condition": "p=base(u) mod 108528; d divides abs(1536-a(u)); d=gcd((p+1)/2,M4)"
+  },
+  "low_p": {
+    "phase_carrier_pairs": 109,
+    "q_values": 2204,
+    "phase_primes": 524,
+    "D_candidates": 1054140,
+    "divisibility_hits": []
+  },
+  "high_p": {
+    "k1_divisor_parameters": 255,
+    "k1_prime_values": 98,
+    "k1_phase_values": 0,
+    "k_ge_2_ell_parameters": 32853,
+    "k_ge_2_integral_values": 422,
+    "k_ge_2_prime_values": 108,
+    "k_ge_2_phase_values": 1,
+    "phase_survivors": [
+      {
+        "u": 117,
+        "a": 2046,
+        "d": 85,
+        "q": 48842701,
+        "p": 8303259169,
+        "D": 141150521603,
+        "ell": 10,
+        "k": 17,
+        "delta": 4884270
+      }
+    ]
+  },
+  "sole_survivor_actual_carrier": {
+    "p": 8303259169,
+    "u": 117,
+    "a": 2046,
+    "required_d": 85,
+    "actual_d": 1,
+    "beta": 10,
+    "overlap": 1,
+    "lambda": 5,
+    "carrier_matches": false
+  },
+  "conclusion": {
+    "actual_h4_clean_q_capacity_one": "EMPTY",
+    "c8_second_full_excess_capacity_one": "EMPTY_BY_EXISTING_75C_EQ_64_THEOREM",
+    "global_high_support_C1": "NOT_CLOSED_WITHOUT_ALL_PRODUCER_TARGET_SETS"
+  }
+}

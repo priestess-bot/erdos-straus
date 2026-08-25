@@ -1,0 +1,69 @@
+{
+  "schema_id": "t6_wave1_f3_qc1_minimal_residual_v1",
+  "version": 1,
+  "track_id": "F3-QC1",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "claim": "type-I-t6-f3-qc1-quotient-only-occurrence-boundary",
+  "status": "OPEN_MINIMAL_RESIDUAL_PACKAGE",
+  "quantified_residuals": [
+    "R3_M3_NONQ5_QUOTIENT_ONLY",
+    "R5_MGT3_QUOTIENT_ONLY"
+  ],
+  "established": {
+    "q_perp": "min prime q dividing k with q not dividing h exists and lies in [7,p/4)",
+    "ideal_factor": "the unique oriented ideal (q_perp,omega-lambda) divides beta=a-b*omega with multiplicity v_q_perp(k)",
+    "conditional_target": "if one integer occurrence may be charged, L=A*q_perp and c=-q_perp^{-1} mod p give a deterministic overflow shape with c<=p-2",
+    "shape_owner": "a local common-kernel shape control uniquely matches type_i_a_gt_one_overflow_residual"
+  },
+  "not_established": {
+    "integer_occurrence": "no theorem puts q_perp on a specific raw source side/path above current K capacity",
+    "charge_conservation": "no theorem converts the ideal norm factor to one legal absorbed-support multiplication",
+    "source_actualness_replay": "no real runtime producer/admission/mark/scope replay is wired",
+    "terminal_priority": "no target terminal receipt is constructed; the coordinator-owned target terminal dispatch remains open",
+    "common_admission": "no ProducerRuleV1 or persistent state is constructed; shared producer registration and admission remain open",
+    "E1": "OPEN",
+    "E3": "TARGET_SHAPE_ONLY",
+    "E4": "CONDITIONAL",
+    "E5": "CONDITIONAL_ARITHMETIC_DROP_NO_TICKET"
+  },
+  "minimal_residual_codes": [
+    "R3_QPERP_IDEAL_FACTOR_NO_INTEGER_OCCURRENCE_OR_RUNTIME",
+    "R5_QPERP_IDEAL_FACTOR_NO_INTEGER_OCCURRENCE_OR_RUNTIME"
+  ],
+  "required_next_theorem": {
+    "statement": "For every actual R3/R5 input, the canonical q_perp has a path-bound integer occurrence with explicit side, node, exponent and capacity, plus one-use support conservation; the resulting target then passes the real terminal dispatcher and shared admission runtime.",
+    "required_fields": [
+      "actual_parent_state_id",
+      "source_producer_id",
+      "persistent_admission_id",
+      "root_to_endpoint_source_path_digest",
+      "maximal_receipt_digest",
+      "terminal_first_complete_miss_digest",
+      "q_perp",
+      "integer_occurrence_side",
+      "integer_occurrence_node",
+      "integer_occurrence_path_digest",
+      "integer_occurrence_exponent",
+      "current_K_capacity_exponent",
+      "one_use_owner_id",
+      "charge_conservation_receipt",
+      "target_terminal_dispatch_receipt",
+      "shared_admission_receipt"
+    ]
+  },
+  "review_negative_controls": [
+    "oriented ideal divisibility is not an integer raw occurrence",
+    "a nonprime control cannot be relabeled ACTUAL_PERSISTENT",
+    "a self-sealed prime label cannot authenticate an ACTUAL_PERSISTENT runtime source",
+    "a locally created producer rule is not shared registration",
+    "a locally sealed terminal MISS is not the active terminal scheduler",
+    "ROOT_SOL and source scope cannot be reset without real source replay"
+  ],
+  "status_boundaries": {
+    "R3": "OPEN_MINIMAL_RESIDUAL",
+    "R5": "OPEN_MINIMAL_RESIDUAL",
+    "OPEN_QC1_PHYSICAL_SERIALIZER": "OPEN",
+    "F3": "OPEN",
+    "T6": "OPEN"
+  }
+}

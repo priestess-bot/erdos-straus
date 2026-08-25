@@ -1,0 +1,198 @@
+{
+  "artifact_id": "f2_overflow_high_support_scope_freeze_v1",
+  "artifact_version": 1,
+  "track_id": "T6-F2-OVERFLOW-HIGH-SUPPORT",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "plan_reference": "docs/T6_F2_F3_HIGH_CONCURRENCY_EXECUTION_PLAN.md§7,§13-20",
+  "created": "2026-08-24",
+  "status": "SCOPE_FROZEN_F2_OPEN",
+  "quantifier": {
+    "statement": "For every actual persistent Type-I/CHARGED overflow state S=(p,R,K;A,sigma) that survives the declared terminal-first dispatcher, with p a core prime p congruent to 1 modulo 24, A>1, 4K=pR+1, A|K, R>p, and Sol(4,p) as the chart-independent mark, the fixed precedence below must return exactly one of TERMINAL, FAMILY_EMPTY, or a common-admission VERIFIED_SUCCESSOR(E1-E5).",
+    "high_support_subdomain": "A>B_p=((p-1)^2)/4. First split canonical 1<=C=K/A<=p-1 from noncanonical C>=p+1; only a canonical source with an actual sink/SCC receipt may use the sink candidate census.",
+    "cofactor_subdomains": [
+      "C=K/A=1, including the fixed-protocol local minimum boundary",
+      "2<=C=K/A<=p-1, including nonempty and empty canonical rank-improvement sets",
+      "C=K/A>=p+1, a noncanonical total-cofactor normalizer residual"
+    ],
+    "actualness": [
+      "source_state_id is content-addressed and parent-bound",
+      "source occurrence and raw path are replayable",
+      "terminal-first miss and branch precedence are recorded",
+      "fixture rows, arithmetic descriptors, registry names, and recursive_edge_eligible booleans do not establish actualness"
+    ]
+  },
+  "state_domain": {
+    "required_invariants": [
+      "p is a core prime in the theorem's arithmetic domain",
+      "4*K = p*R + 1",
+      "R > p",
+      "A > 1",
+      "A divides K",
+      "state protocol is TYPEI/CHARGED",
+      "mark is the chart-independent Sol(4,p) receipt",
+      "terminal-first has returned MISS before this track is entered"
+    ],
+    "excluded_domains": [
+      "A=1 source states; they belong to the dedicated A=1 dual-reset track",
+      "Type-II relation endpoints and proper-root k>1 states",
+      "formal checkpoints, pending_dispatch normalization, and transient determinant charts",
+      "p=73 as a universal theorem; p=73 is retained only as a negative/positive control",
+      "archive/ and docs/archive/ as active source or proof authority"
+    ],
+    "C_definition": "C=K/A. The canonicality identity C=c+p*t with c=< (4A)^(-1) >_p gives C in [1,p-1] exactly when R<4A; C>=p+1 must be normalized before any C=1/C>1 determinant-dual theorem is used."
+  },
+  "fixed_precedence": [
+    {
+      "rank": 1,
+      "id": "terminal_first",
+      "meaning": "Run all declared direct Type-I/Type-II/marked terminal predicates before any overflow constructor. A HIT returns TERMINAL and is not queued."
+    },
+    {
+      "rank": 2,
+      "id": "same_chart_support_promotion",
+      "meaning": "Use only an actual complete-excess/source receipt on the same canonical (p,R,K) chart with M>A, A|M, and a strict parent-to-target charged rank drop."
+    },
+    {
+      "rank": 3,
+      "id": "joined_support_outer_reset",
+      "meaning": "Try dual d/r carriers only after joining old support A'=lcm(A,t); require A'>A, A'|K_t, and strict T5 charged rank. A support-losing reset cannot bypass this leaf."
+    },
+    {
+      "rank": 4,
+      "id": "fixed_n_bounded_divisor",
+      "meaning": "For pn=4Md+1, try deterministic bounded L|Md (and the dual fixed-s refinement) with A<L<=B_p, 4L>n or 4L>s, canonical target identity, and strict charged rank."
+    },
+    {
+      "rank": 5,
+      "id": "M_complete_excess",
+      "meaning": "Run the full-block complete-excess M adapter only with an actual source receipt; target typing, owner, serializer, and re-entry must be independently admitted."
+    },
+    {
+      "rank": 6,
+      "id": "total_cofactor",
+      "meaning": "Run canonical total-cofactor projection only on a registered persistent source with a bound determinant receipt; suppress t=0 stutter and compare parent-to-target rank."
+    },
+    {
+      "rank": 7,
+      "id": "noncanonical_total_cofactor_normalization",
+      "meaning": "For A>B_p and C>=p+1, recompute the unique canonical support-A chart with cofactor c=< (4A)^(-1) >_p. It has a strict local rank drop but remains nonrecursive until an independent E1 source event, target terminal-first and common E3 admission are supplied."
+    },
+    {
+      "rank": 8,
+      "id": "high_support_routing",
+      "meaning": "For canonical A>B_p states, use the complete sink/SCC candidate map with deterministic path and c_Q tie-break; split C=1 and 2<=C<=p-1 empty-improvement cases before accepting any route."
+    },
+    {
+      "rank": 9,
+      "id": "explicit_residual",
+      "meaning": "Anything surviving all prior guards is an explicit residual. It may not be queued under a generic overflow label; it must be proven EMPTY, TERMINAL, or supplied a new E1-E5 target shape and admission request."
+    }
+  ],
+  "established_local_lemmas": [
+    {
+      "claim_id": "type-I-overflow-unbounded-same-chart-promotion-persistence-boundary",
+      "usable_guard": "actual persistent source plus A|M and M/A>=2",
+      "conclusion": "same-chart charged rank decreases even when M>B_p",
+      "boundary": "does not supply source existence, global candidate nonemptiness, or common E3 serializer"
+    },
+    {
+      "claim_id": "type-I-overflow-outer-rank-reset",
+      "usable_guard": "actual source, dual t, joined support A'=lcm(A,t), A'>A, A'|K_t, strict rank",
+      "conclusion": "joined-support reset is a possible CHARGED LOCAL_DROP or marked absorb",
+      "boundary": "failed conditions remain evidence; no automatic alternate"
+    },
+    {
+      "claim_id": "type-I-overflow-fixed-n-bounded-divisor-saturation",
+      "usable_guard": "actual source and deterministic bounded divisor L satisfying all positivity and rank inequalities",
+      "conclusion": "fixed-n target has canonical chart and identity lift with strict outer rank",
+      "boundary": "existence of L is not universal"
+    },
+    {
+      "claim_id": "type-I-overflow-fixed-s-bounded-divisor-saturation",
+      "usable_guard": "actual dual fixed-s source and L|rd satisfying the analogous conditions",
+      "conclusion": "fixed-s target has canonical chart and identity lift with strict outer rank",
+      "boundary": "existence of L is not universal"
+    },
+    {
+      "claim_id": "type-I-overflow-total-cofactor-typed-projection-dispatch",
+      "usable_guard": "externally registered persistent source, parent receipt, terminal-first miss, and determinant binding",
+      "conclusion": "source/target hit-F-G retyping, E3 adapter checks, identity lift, and conditional LOCAL_DROP",
+      "boundary": "the adapter cannot prove its own source registration or global reachability"
+    },
+    {
+      "claim_id": "type-I-high-support-rank-aware-sink-bundle-selector",
+      "usable_guard": "actual high-support F/G source with a finite sink SCC receipt",
+      "conclusion": "every candidate with c_Q<K/A is a possible strict local edge; p=73 has one strict candidate",
+      "boundary": "empty candidate set is not a global no-go; p=73 is not a universal proof"
+    },
+    {
+      "claim_id": "type-I-high-support-empty-improvement-c1-local-minimum-boundary",
+      "usable_guard": "actual high-support TYPEI/CHARGED source with C=1 and eta=0",
+      "conclusion": "same-protocol complete-excess and total-cofactor routes cannot pay E5",
+      "boundary": "does not close C=1 by terminal/outer-rank/lower-protocol, and does not reduce C>1"
+    },
+    {
+      "claim_id": "type-I-p409-a5-charged-history-parent-replay-boundary",
+      "usable_guard": "the recorded p=409 A=5 raw-anchor candidate",
+      "conclusion": "raw H=(409,251,25665;5) is not a canonical charged parent and has no verified predecessor",
+      "boundary": "candidate remains analysis evidence until a new noncanonical bridge is proved"
+    },
+    {
+      "claim_id": "type-I-f2-overflow-determinant-prepartition",
+      "usable_guard": "actual terminal-first-surviving A>1 overflow with a source-bound determinant receipt pn=4Md+1 and M=Ab",
+      "conclusion": "b>=2 is same-chart strict; b=1,A<=B_p,d>=2 is full-product strict; total-cofactor has no later strict leaf; p409 is domain-excluded or preempted",
+      "boundary": "does not prove every actual overflow producer supplies a determinant occurrence or common E3 admission"
+    },
+    {
+      "claim_id": "type-I-overflow-full-product-d-one-complete-excess-capacity-map",
+      "usable_guard": "b=d=1 saturated overflow with A<=B_p, hence 5<=n<=p-4",
+      "conclusion": "both p gates pass automatically; unique full-excess target remains overflow and pays strict outer rank",
+      "boundary": "requires actual persistent parent/path and common E3 serialization"
+    },
+    {
+      "claim_id": "type-I-h4-atomic-capacity-one-source-gate-exclusion",
+      "usable_guard": "actual H4_A1 clean-q atomic source with full 31-phase and maximal H3-to-H4 carrier provenance",
+      "conclusion": "the capacity-one negative D-residue source menu is empty",
+      "boundary": "does not exclude H4 non-atomic or future producer C1 targets and therefore does not by itself close global C1 trace reachability"
+    }
+  ],
+  "forbidden_inferences": [
+    "p=73 sink-SCC success implies universal high-support success",
+    "recursive_edge_eligible=True implies actual source or queue admission",
+    "persistent_queue=True in a fixture implies an upstream enqueue gate",
+    "a complete-excess or divisor arithmetic identity implies E1 actual occurrence",
+    "a local checkpoint decrease or transient-to-target decrease pays parent-to-final E5",
+    "C=1 no-go can be reused to classify C>1 empty-improvement states",
+    "p=409 numeric equality can reconstruct a missing charged-history parent",
+    "registry count or family label proves source/constructor exhaustiveness",
+    "finite candidate enumeration proves EMPTY for an infinite actual domain",
+    "total-cofactor t=0 canonical stutter is a successor",
+    "archive evidence may populate active source, owner, or serializer fields"
+  ],
+  "ownership": {
+    "coordinator_only_files_untouched": [
+      "data/t6-proof-frontier-v2.json",
+      "data/t6-selector-obligation-ledger-v1.json",
+      "data/t6-constructor-inventory-v1.json",
+      "concepts/t6-persistent-selector-state-v1.md",
+      "scripts/t6_persistent_selector_state_v1.py",
+      "README.md",
+      "index/"
+    ],
+    "track_outputs": [
+      "data/t6-wave1/f2-overflow-high-support-scope-freeze-v1.json",
+      "data/t6-wave1/f2-overflow-high-support-residual-matrix-v1.json",
+      "data/interface-requests/f2-overflow-high-support-target-shapes-v1.json"
+    ]
+  },
+  "closure_status": {
+    "F2_A_GT_ONE_OVERFLOW": "OPEN",
+    "F2_HIGH_SUPPORT": "OPEN",
+    "M_actualness": "OPEN",
+    "ordered_total_cofactor": "EMPTY_AS_LATER_STRICT_BRANCH",
+    "p409_anomaly": "CURRENT_RECORD_OUTSIDE_ACTUAL_DOMAIN_OR_FUTURE_SAME_CHART_PREEMPTED",
+    "C1_empty_improvement": "LOCAL_NO_GO_PLUS_Q1_C8_H4_ATOMIC_PRODUCER_EXCLUSIONS_TRACE_TOTALITY_OPEN",
+    "C_GT_1_empty_improvement": "OPEN",
+    "T6": "OPEN"
+  }
+}

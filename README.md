@@ -4,7 +4,7 @@
 可核查数学主张和计算复现。`研究进展综述.md` 是阅读入口；`papers/`、
 `claims/`、`concepts/` 中的 Markdown/YAML 文件是知识库的事实源。
 
-当前文献快照审计至 2026-07-31；当前证明前沿和本轮旗舰命题核验至 2026-08-20。论文卡、
+当前文献快照审计至 2026-07-31；当前证明前沿和本轮旗舰命题核验至 2026-08-25。论文卡、
 主张卡、概念卡及各状态的实时数量以 `python scripts/kb.py status` 和自动生成的
 `index/theorem-ledger.md` 为准，不在入口文档手工复制。其中被撤回论文和存在关键证明
 缺口的预印本仍会收录，但用独立状态标出。
@@ -123,6 +123,176 @@ v2 不删除其中任何数学 gap，只把 O4 流程义务改造成 admission f
 映射到 F1--F3。该 p-free policy 及其 \(p^2\) canonical gate 的完整推导见
 [`claims/type-I-root-capacity-stutter-m-three-biquadratic-norm-reduction.md`](claims/type-I-root-capacity-stutter-m-three-biquadratic-norm-reduction.md)
 和 [`docs/T6-current-progress-2026-08-17.md`](docs/T6-current-progress-2026-08-17.md)。
+
+### Wave1 高端点边界（2026-08-25）
+
+F3 high-stutter 的两条 actual divisor gate 现已作出更强的负向澄清：固定
+\((p,h,D)\) 后，`D | K` 仅将 root parameter \(\omega\) 限制在一个 CRT
+同余类，且该类给出无穷多个保持两 gate 的形式 root lift。进一步的显式子列连 canonical
+maximal-receipt divisor \(D\) 与 root-bottom terminal miss 也一并保持。因此不能再把
+附加的同类 divisor-gate 算术或“\(D\) 已 canonical”当作 high Pell 或 odd-\(k\)
+残余的 family-empty 证明。真正需要的是已证明对该子列非重复的**完整** valuation predicate、
+完整 terminal-first schedule 或 actual source/path/admission 限制；F3、T6 与猜想的状态均不改变。精确命题与控制见
+[`type-I-t6-f3-high-endpoint-root-lift-saturation-boundary`](claims/type-I-t6-f3-high-endpoint-root-lift-saturation-boundary.md)。
+
+同日，F2 high-support \(C=1\) 的 `R=3 G` hard core 也得到一个更精确的算术分割：
+\(P=p+4\) 与 \(N=(3p+1)/4\) 互素，并满足
+\(\left(\frac{33}{N}\right)=\left(\frac P{11}\right)\)；当 \(P\) 合成时，其最小
+素因子还确定一张完整的 mixed-residue gap screen。控制 \(p=118801\) 表明这两项仍可
+共同 miss，因此它们没有改变 F2/T6 的开放状态。见
+[`type-I-f2-high-support-c1-r-three-hard-core-arithmetic-partition`](claims/type-I-f2-high-support-c1-r-three-hard-core-arithmetic-partition.md)。
+
+q1 full-carrier 的首段也完成了一项协议层澄清：两条 parity child 在其 target-local
+terminal miss 后都应以 `TYPEI/ABSORB` 而非旧的 `CHARGED/LOCAL_DROP` 记入，且都有
+canonical cursor \((1,R-1,1)\) 与 N7 `PHASE_DROP`。这只闭合 pre-admission 的
+E3/type 层；actual runtime producer、terminal schedule 与 ABSORB re-entry 仍开放。见
+[`type-II-q-one-full-carrier-first-child-absorb-entry`](claims/type-II-q-one-full-carrier-first-child-absorb-entry.md)。
+
+进一步地，首 child 不应在进入第二-anchor macro 前持久化，否则会造成同 rank 的
+`ABSORB -> CHARGED` 回升。现有 parity quotient-fold 可改为直接从 full-carrier root
+到 final target 的 checkpoint contraction：high final target 由 root 的 support rank 支付
+`LOCAL_DROP`，low final target 则以 `PHASE_DROP` 进入 ABSORB。该收缩尚缺 terminal
+receipt、T2/admission 处置和 final re-entry，因而没有改变 T6 状态。见
+[`type-II-q-one-full-carrier-root-second-anchor-contraction`](claims/type-II-q-one-full-carrier-root-second-anchor-contraction.md)。
+
+该收缩现已在 shared runtime 的局部 slice 中实际执行：`q=1` initializer 会先返回
+gap-3 terminal 或 content-addressed G state，随后依次经过 full-carrier handoff 与
+checkpoint contraction，并以 common state classifier 入队 final target。odd low-final 的
+\(p\equiv265\pmod {336}\) 子类（包括 \(p=601\)）现由 gap-7 terminal 在入口预占；
+\(p=73\) 覆盖一般 overflow/`LOCAL_DROP`，\(p=1033\) 覆盖第三-anchor 的 C=9
+overflow/`LOCAL_DROP`。两者的 final state 都被显式验证为 `DEAD_END`，所以这只是可重放的 producer slice，
+并不宣称 post-G re-entry 已经解决。见
+[`type-II-q-one-full-carrier-runtime-slice`](claims/type-II-q-one-full-carrier-runtime-slice.md)。
+
+对 \(p\equiv25\pmod {336}\) 的 C=9 high target，进一步的确定性 r-side dual 会落到
+\(R=23,35,11\) 三张固定低图表（依 \(k\bmod3\) 而定），并有 `PHASE_DROP` 到
+ABSORB 的预准入 ticket。这让后续研究可以直接复用固定-R terminal/descent families；其
+全域 re-entry 尚未建立。见
+[`type-II-q-one-c9-high-r-side-dual-small-chart`](claims/type-II-q-one-c9-high-r-side-dual-small-chart.md)。
+
+### Wave1 复核边界（2026-08-25）
+
+本轮独立复核没有新增 F2、F3 或 T6 闭合，但修正了四个会影响后续证明方向的边界。
+
+1. QC1 中的 \(q_\perp\mid N(a-b\omega)\) 和有向 Eisenstein ideal 因子并不定位一个
+   可消费的 raw complete-excess side。现有 nonactual 控制甚至满足 \(q_\perp\mid N\)，
+   但 \(q_\perp\nmid R-h,D,E,K\)。因此下一条 QC1 定理必须建立 path-bound side occurrence
+   与 one-use charge conservation，不能再从 norm/ideal data 直接跳到 E1。
+2. TR1 的 R6 \(k=3\) 子叶不能跳过 root-capacity menu。primitive reduction 强制
+   \(u=h/3>1\)，所以所有 \(1<Q\mid u\) 的 menu 必须先按固定顺序重放；之后才可讨论
+   \(D_*\)。同时，\(D_*\) 的最小算术因子可能已 capacity-saturated，未来 physical rule
+   只能选取已独立验证为 fresh raw occurrence 的最小因子。
+3. m=3,q=5 的 strict endpoint 在 \(L_\omega\equiv-1\pmod p\) 时精确落入
+   high-support \(C=1\) target，并有条件性的 `LOCAL_DROP`；它只是转交 F2 的 R=3-G
+   hard core，不提供 re-entry。
+4. q1 C=9 source 的 \(L=2M\) fixed-\(n\) target 确有严格 `LOCAL_DROP`，但它不是现有
+   generic selector 的 canonical output，且 target 当前无 dispatch。因此只保留为
+   source-specific local candidate，不计入 Gate 3 或任何 residual closure。
+   其精确量词和 non-admission 边界见
+   [`docs/T6_F2_F3_WAVE1_C9_FIXED_N_CANDIDATE.md`](docs/T6_F2_F3_WAVE1_C9_FIXED_N_CANDIDATE.md)。
+
+Freeze B 已包含精确的 `type_i_absorb_marked_residual` **type-space** owner。所有旧的
+“没有 ordinary ABSORB owner”表述均应理解为“没有已注册 producer、shared serializer、common
+admission 或 re-entry”；type-space owner 本身不支付 E3。H4 的 `C=1` source-gate 排除同样
+只覆盖 retained `H4_A1` actual clean-q atomic arm，不覆盖其它 H4/future producer 或全局
+high-support `C=1` trace。机器可读 frontier 见
+[`data/t6-wave1/t6-f2-f3-residual-frontier-v1.json`](data/t6-wave1/t6-f2-f3-residual-frontier-v1.json)，
+TR1 修正见 [`docs/handoffs/F3_TR1_HANDOFF.md`](docs/handoffs/F3_TR1_HANDOFF.md)。
+
+### Wave2 严格缩减（2026-08-25）
+
+第二轮没有使 F2/F3 通过 Gate 3，但删除了若干此前仍可能被误当作出口的完整候选分支。
+
+- q1 C=9 的 R=23 行在 \(p\equiv1033\pmod{11088}\) 上有直接固定尾 Type I
+  terminal：
+  \[
+  4/p=1/(K/22)+1/K+1/(pK),\qquad K=(23p+1)/4.
+  \]
+  这只覆盖该终端子射线，剩余 R=23/35/11 行仍开放。见
+  [q1 C9 R23 fixed-tail terminal ray](claims/type-II-q-one-c9-r23-fixed-tail-terminal-ray.md)。
+- c=8 的 actual \(q_\star=103\) source 在 complete terminal-first miss 的前提下
+  被压到两条 \(34608\) 模射线；但现有 \(p=157393\) local control 自身有未被 local
+  slice 检查的 p-level terminal，因而不能当作 actual MISS。完整 parent trace 与 shared
+  admission 仍缺失。
+- high-support C=1 的 canonical R=3 anchor continuation 必由 ABSORB 升回 CHARGED，
+  且相对原 high parent 增大 charged outer coordinate，故不是 T5 可接纳的 re-entry。
+  C>1 的 \(A\mapsto A\,\operatorname{spf}(C)\) 同样既不是 fixed-\(n\) 除子边，
+  也不是同图表 full-excess 边。见
+  [C1 R3 anchor no-reentry](claims/type-I-f2-high-support-c1-r-three-anchor-no-reentry.md)
+  和
+  [C>1 SPF saturation provenance barrier](claims/type-I-f2-high-support-cgt1-spf-saturation-provenance-barrier.md)。
+- QC1 现在在 \(q_\perp\mid E\) 子域有 canonical endpoint-excess raw deflation 与严格
+  arithmetic rank target；仍需 verified persistent source path、common admission 和
+  re-entry。真正 two-sided \(p^2\) canonical target 则只是根参数增大的 rechart，不能
+  作为 paid macro。见
+  [QC1 endpoint-excess deflation](claims/type-I-t6-f3-qc1-endpoint-excess-deflation.md)
+  和
+  [m3 q5 p2 canonical rechart boundary](claims/type-I-t6-f3-m3-q5-p2-canonical-rechart-boundary.md)。
+- F3 high-stutter 的 refined lift 还保持每个只依赖
+  \(\Theta=(p,h,u,D)\) 的 terminal predicate，包括 \(Q\mid u\) external menu 与
+  fixed-\(D_*\) fan。因而这种谓词不能打破 root-lift 周期；真正的 high terminal
+  机制必须使用变化的 \(R,K,z,Q,\beta,E\) 数据，或建立新的 high-source bridge。
+
+因此下一步的真实瓶颈仍是：把仍存的 terminal MISS 绑定到 actual source path，经过同一
+Gate-3 producer/admission surface，并为每个 admitted target 提供非上升 re-entry。任何
+只增加局部同余、因子或 checkpoint 的结果都不会改变 F1/F2/F3/T6 的开放状态。
+
+### 第三轮证明复核（2026-08-25）
+
+本轮没有新增 active producer，也没有改变 `F1=OPEN`、`F2=OPEN`、`F3=OPEN` 或
+`T6=OPEN`。其价值是把若干潜在误桥精确排除，并修复 shared type space 的一个语义错误：
+`is_overflow` 现在严格表示 \(R>p\) 的 chart 几何，而 `C8_PARENT`、`PROPER_ROOT` 保留为
+来源谱系；proper-root header 还必须从 \((p,r)\) 重算完整 \((A,K,R)\) 图表。该修复不产生
+C8 relay、fresh scope、E1 或 re-entry。
+
+- F2 high-support \(C=1\) 的 R=3 hard core 中，universal raw source 的非 \(p\) 首 label
+  完全由 \(2p-3\) 的因子给出。hard-core control \(p=2521\) 有 \(2p-3=5039\) 为素数，
+  所以不存在“必有 non-anchor 首边”的全称证明；当前 full-excess formal route 仍只会回到
+  已拒绝的 anchor loop。
+- F2 \(C>1\) 的当前 full-excess external rechart 一律仍是 CHARGED overflow；在
+  empty-improvement 叶它既不能转为 ABSORB，也不能支付 `LOCAL_DROP`。
+- F3 high default tree 的第三个 canonical full-product fold 不能抵达 canonical high root；
+  single-side/atomic complete-excess 仍开放，且需要实际 source path。
+- F3 QC1 的 first atomic rank-stutter 有 deterministic 第二 raw deflation；TR1 的
+  \(D_*\) 因子则精确分为 fresh \((D_*,E)>1\) 与 capacity-saturated 两类。两项均仍缺
+  source-bound transcript、child terminal priority、E3 与 re-entry。
+
+下一份必须完成的材料不是新的裸同余筛，而是
+[`f3_proper_root_endpoint_path_receipt_v1`](data/interface-requests/f3-proper-root-endpoint-path-receipt-v1.json)：
+它要把 admitted parent、immutable source scope、完整 root chart、ordered raw word 与每个
+prefix 的 terminal-first receipt 绑定到同一 target。详见
+[`docs/T6_F2_F3_THIRD_WAVE_PROOF_REVIEW_2026-08-25.md`](docs/T6_F2_F3_THIRD_WAVE_PROOF_REVIEW_2026-08-25.md)。
+
+### 第四轮数学收缩（2026-08-25）
+
+后续推导进一步缩小了三条剩余路线，但仍没有新增 selector edge。
+
+- F2 R=3 hard core 中，\(D=2p-3\) 不能整体充当新的 Type II AC defining factor：唯一
+  两个整数可能分别被 gap-7 terminal 和 \(p+4\) hard-core 条件排除。剩余 Type II 机制
+  必须是 \(q\mid D\) 的 mixed cofactor completion，同时满足两条显式同余；固定 Type I
+  模板也满足 \(m\mid D\iff m\mid2A+3B\)。
+- canonical q=1 root 的 direct single-side/atomic landing 已有完整 lcm/maximality 与 E5
+  门。大 root prime-power sector 为空，但 \(p=73\) 的静态 atomic countercontrol 表明
+  不能用 carrier bound 把整个 smooth sector 删除。
+- TR1 dyadic-fresh \(2\mid(D_*,E)\) 强制精确 2-adic 正规形；R6 的 full-capacity
+  \(W_y\)-word 已排除 atomic-companion bad residue，child 算术输出缩为 terminal 或
+  one-sided macro，仍缺 source-bound transcript、canonical rank 与 admission。
+
+这三条结论及下一步的 proof order 见
+[`docs/T6_F2_F3_FOURTH_WAVE_BOUNDARIES_2026-08-25.md`](docs/T6_F2_F3_FOURTH_WAVE_BOUNDARIES_2026-08-25.md)。
+
+### Gate 审计更新（2026-08-25）
+
+当前共享 runtime 的唯一 queue mutation 已被 source audit 精确识别，但它只覆盖两条 q=1
+局部 route，terminal schedule 也不是完整 p-level oracle；因此 F1 仍有 4 个真正 unknown
+（另有 9 个信号已明确归类为 nonruntime controls），
+不能把该 runtime MISS 当 C8/H4/F3 的 complete terminal-first receipt。F2 high-support
+同时补入 canonical/noncanonical 分流：仅 \(1\le K/A<p\) 可调用现有 C=1/C>1
+determinant-dual 定理，\(K/A\ge p+1\) 是独立的 E1/E3-open normalizer residual。QC1
+endpoint-excess deflation 也获得独立 target-shape request，不能复用 norm-ideal target。
+F2 R=3 hard-core 的 \(D\)-contact 现已精确分为 prime-\(D\) 空子叶与 composite-D
+参数化残余；R6 dyadic companion 的 full-capacity bad-residue gate 也已排除，但最终
+canonical rank 与 admission 仍开放。详见 [T6 F2/F3 Gate Audit](docs/T6_F2_F3_GATE_AUDIT_2026-08-25.md)。
 
 ## 快速使用
 

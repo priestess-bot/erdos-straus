@@ -1,0 +1,94 @@
+{
+  "artifact_id": "f3_tr1_h_supported_carrier_v1",
+  "artifact_version": 1,
+  "track_id": "F3-TR1-H-SUPPORTED",
+  "date": "2026-08-24",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "theorem_status": "ESTABLISHED_MENU_FACTOR_PARTITION",
+  "physicalization_status": "OPEN_MINIMAL_RESIDUALS",
+  "domain": {
+    "source_class": "ACTUAL_PERSISTENT",
+    "height": "2<=h<p",
+    "k": "k>1",
+    "k_perp": 1,
+    "routes": [
+      "R4_M3_NONQ5_H_SUPPORTED",
+      "R6_MGT3_H_SUPPORTED"
+    ],
+    "excluded": "m=3 and 5 divides D_star"
+  },
+  "canonical_menu_factors": {
+    "R4": {
+      "definition": "least prime q dividing kappa=k/3 with q congruent to 7 modulo 12",
+      "existence": "kappa congruent to 7 modulo 24 and kappa at least 31",
+      "provenance": "k_perp=1 implies q divides h; q is not 3, hence q divides u and is eligible for the complete composite root-capacity menu; this is not raw E1"
+    },
+    "R6_m_mod_3_equals_1": {
+      "definition": "least prime q dividing k",
+      "existence": "k>1 and 3 does not divide k",
+      "provenance": "k_perp=1 implies q divides u and menu eligibility, not raw E1"
+    },
+    "R6_m_mod_3_equals_0_k_gt_3": {
+      "definition": "least prime q dividing k/3",
+      "existence": "v_3(k)=1 and k/3>1",
+      "provenance": "k_perp=1 implies q divides u and menu eligibility, not raw E1"
+    },
+    "R6_k_equals_3": {
+      "definition": "whole root-height modulus u=h/3; enumerate every 1<Q dividing u",
+      "existence": "the k=3 primitive system gives u=A^2-A*B+B^2>1 and 3 does not divide u",
+      "disposition": "ROOT_MENU_REQUIRED_BEFORE_DSTAR",
+      "forbidden_relabel": "3 does not divide u, but the absence of a nonthree factor from k does not make the Q|u menu empty"
+    },
+    "transverse": {
+      "definition": "all factors of verified D_star; a physical rule may select only the least independently verified fresh raw occurrence",
+      "existence": "D_star>1",
+      "provenance": "D_star divides actual maximal-receipt D, yielding source-bound arithmetic factors but not consumable integer raw occurrences; a least arithmetic factor can be capacity-saturated",
+      "separation": "gcd(D_star,h)=1"
+    }
+  },
+  "ordered_outcomes": [
+    "TERMINAL_FIRST",
+    "ROOT_SUPPORTED_MENU_TERMINAL",
+    "DSTAR_MENU_TERMINAL",
+    "TR1_PHYSICAL_SUCCESSOR",
+    "EXPLICIT_MINIMAL_RESIDUAL"
+  ],
+  "minimal_residuals": [
+    {
+      "code": "R4_H_MENU_AND_DSTAR_TERMINALS_MISS_NO_TR1_TARGET",
+      "route": "R4_M3_NONQ5_H_SUPPORTED",
+      "missing": [
+        "deterministic admitted target",
+        "universal E4 lift",
+        "authoritative T5 ticket",
+        "common F1 re-entry"
+      ]
+    },
+    {
+      "code": "R6_H_MENU_AND_DSTAR_TERMINALS_MISS_NO_TR1_TARGET",
+      "route": "R6_MGT3_H_SUPPORTED",
+      "includes_k_equals_3_subleaf": true,
+      "k_equals_3_residual_code": "R6_K3_U_MENU_MISS_DSTAR_NO_TR1_TARGET",
+      "k_equals_3_boundary": "the full 1<Q|u root menu has been replayed and missed; it is not skipped before D_star",
+      "missing": [
+        "deterministic admitted target",
+        "universal E4 lift",
+        "authoritative T5 ticket",
+        "common F1 re-entry"
+      ]
+    }
+  ],
+  "proved_empty": [
+    "NO_DSTAR_ARITHMETIC_FACTOR"
+  ],
+  "does_not_claim": [
+    "root-supported menu totality",
+    "D_star terminal-menu totality",
+    "TR1 integer raw occurrence/E1",
+    "TR1PhysicalTransitionV1",
+    "R4 closure",
+    "R6 closure",
+    "F3 closure",
+    "T6 closure"
+  ]
+}

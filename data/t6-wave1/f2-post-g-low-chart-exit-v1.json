@@ -1,0 +1,45 @@
+{
+  "receipt_id": "f2_post_g_low_chart_exit_v1",
+  "track_id": "F2-POST-G-H4",
+  "date": "2026-08-24",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "status": "MATHEMATICAL_E1_E2_E4_E5_ESTABLISHED_COMMON_E3_OPEN",
+  "quantifier": "Every actual terminal-first-surviving ordinary post-G Type-I state (p,R,K;A) with 3<=R<=p-2, A|K and mark Sol(p)",
+  "deterministic_rule": [
+    "replay universal p-source to (1,R-1,1)",
+    "if R-1 divides K, emit direct Type-I terminal",
+    "otherwise compute the unique maximal complete-excess block Q_K(R-1)",
+    "set M=lcm(A,Q) and construct the unique canonical M-chart",
+    "run target-local terminal-first and typed reclassification",
+    "continue only when the target remains a nonterminal low chart"
+  ],
+  "symbolic_invariants": {
+    "low_chart_bound": "A<=K<=(p-1)^2/4=B_p",
+    "support_growth": "M/A>=2",
+    "target_partition": "R_target<=p-2 or R_target>p; equality R_target=p is impossible modulo 4",
+    "T5_ticket": "TYPEI_CHARGED_LOCAL_DROP on floor(B_p/A), activated only after common E3 admission",
+    "lift": "identity on Sol(p)",
+    "step_bound": "floor(log2(B_p/A_initial))+1"
+  },
+  "leaf_dispositions": [
+    {
+      "leaf": "R-1 divides K or target-local hit",
+      "disposition": "TERMINAL"
+    },
+    {
+      "leaf": "canonical target remains low",
+      "disposition": "VERIFIED_SUCCESSOR_RELATIVE_TO_COMMON_ADMISSION",
+      "next_owner": "post-G low chart"
+    },
+    {
+      "leaf": "canonical target has R>p",
+      "disposition": "VERIFIED_SUCCESSOR_RELATIVE_TO_COMMON_ADMISSION",
+      "next_owner": "type_i_a_gt_one_overflow_residual"
+    }
+  ],
+  "external_dependencies": [
+    "coordinator common serializer/admission and owner digest",
+    "Agent 2 totality for type_i_a_gt_one_overflow_residual"
+  ],
+  "status_boundary": "This theorem closes the low-chart continuation only. It does not close overflow continuation, F2, or T6."
+}

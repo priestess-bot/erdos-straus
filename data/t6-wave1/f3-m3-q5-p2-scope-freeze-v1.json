@@ -1,0 +1,114 @@
+{
+  "schema_id": "t6_wave1_f3_m3_q5_p2_scope_freeze_v1",
+  "schema_version": 1,
+  "track_id": "F3-M3-Q5-P2",
+  "agent": "7",
+  "branch": "sol/f3-m3-q5-p2",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "created": "2026-08-24",
+  "ownership": {
+    "exclusive_residuals": [
+      "R1_M3_Q5_PATH_UNBOUND",
+      "R2_M3_Q5_PATH_BOUND_NO_SERIALIZER"
+    ],
+    "forbidden_files": [
+      "README.md",
+      "index/**",
+      "data/t6-proof-frontier-v2.json",
+      "data/t6-selector-obligation-ledger-v1.json",
+      "data/t5-full-transition-taxonomy-v2.json",
+      "scripts/t6_persistent_selector_state_v1.py",
+      "shared/**",
+      "runtime/**",
+      "grammar/**"
+    ],
+    "cross_audit_partner": "Agent 4 high-endpoint"
+  },
+  "quantifier": {
+    "domain_name": "R1_R2_actual_persistent_m3_q5_low_proper_root",
+    "formula": "For every actual persistent terminal-first-surviving proper-root receipt S with 2<=h<p, m=3, 5|D_star, D_star>1, and no already-active physical serializer, route S through R1 or R2 and close every emitted leaf as FAMILY_EMPTY, TERMINAL, or VERIFIED_SUCCESSOR(E1-E5).",
+    "source_requirements": [
+      "actual persistent state_id",
+      "producer/admission receipt",
+      "terminal-first miss digest",
+      "actual root-capacity/maximality receipt",
+      "m=3 and 5|D_star arithmetic receipt",
+      "source scope and provenance"
+    ],
+    "height_guard": "2<=h<p",
+    "slice_guard": "m=3 and 5|D_star",
+    "terminal_priority": "terminal-first before raw policy, carrier routing, or enqueue"
+  },
+  "owned_residuals": [
+    {
+      "id": "R1_M3_Q5_PATH_UNBOUND",
+      "predicate": "owned quantifier holds and required raw suffix/path digest is absent or not bound to the persistent parent",
+      "status": "OPEN",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "closure_meaning": "Bind a canonical replayable source path and priority misses; the path-binding artifact is an E1 prerequisite and is not itself a recursive edge."
+    },
+    {
+      "id": "R2_M3_Q5_PATH_BOUND_NO_SERIALIZER",
+      "predicate": "owned quantifier holds, raw path and priority misses are bound, and no active serializer accepts the first-child/policy endpoint",
+      "status": "OPEN",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "closure_meaning": "Produce a deterministic target or terminal certificate with common admission, universal lift, owner, and strict parent-to-final T5 ticket."
+    }
+  ],
+  "established_inputs": [
+    {
+      "id": "M3_Q5_BIQUADRATIC_REDUCTION",
+      "reference": "claims/type-I-root-capacity-stutter-m-three-biquadratic-norm-reduction.md",
+      "strength": "ESTABLISHED_ARITHMETIC_ONLY",
+      "boundary": "m=3,q=5 raw policy, first-child L1, and p^2 reduction; no L1=L_omega inference"
+    },
+    {
+      "id": "POLICY_ENDPOINT_P2_NORMAL_FORM",
+      "reference": "claims/type-I-t6-f3-policy-endpoint-p2-divisor-source-normal-form.md",
+      "strength": "ESTABLISHED_NORMAL_FORM",
+      "boundary": "L_omega=E_u E_v at the recanonicalized endpoint; EMPTY/TERMINAL/PAID closure remains open"
+    },
+    {
+      "id": "PROPER_ROOT_DOMAIN_PARTITION",
+      "reference": "data/t6-f3-proper-root-routing-v1.json",
+      "strength": "ESTABLISHED_DOMAIN_PARTITION",
+      "boundary": "m=3,5|D_star is a low-height residual slice, not all F3"
+    },
+    {
+      "id": "ATOMIC_CONDITIONAL_SCHEMA",
+      "reference": "claims/type-I-path-anchored-atomic-split-complete-excess-admission.md",
+      "strength": "CONDITIONAL_E1_E4_SCHEMA",
+      "boundary": "Requires an accepted common state/target serializer and does not close p^2 stutter"
+    },
+    {
+      "id": "M3_Q5_SOURCE_BOUND_MACRO_INTERFACE",
+      "reference": "claims/type-I-t6-f3-m3-q5-source-bound-macro-interface.md",
+      "strength": "ESTABLISHED_PATH_E2_E4_STRICT_E5_RELATIVE_TO_COMMON_ADMISSION",
+      "boundary": "Path payload, ABSORB owner and track producer remain coordinator integration requirements; nonminimal and p-stutter leaves remain open"
+    }
+  ],
+  "forbidden_inferences": [
+    "L1=L_omega",
+    "higher p-adic congruence alone closes a residual",
+    "q|D_star or q|k is an actual source occurrence",
+    "raw path or arithmetic checkpoint is a persistent successor",
+    "formal cofactor drop is a T5 ticket without parent-to-final comparison",
+    "fixture or finite scan proves family emptiness",
+    "family label proves E3 owner or recursive re-entry",
+    "pure-dyadic selected-side drop proves companion closure",
+    "R1 path binding is silently assumed for R2",
+    "low-height results apply to h>p or m!=3 slices"
+  ],
+  "required_outcomes": [
+    "R1 source path coverage",
+    "R2 serializer and first-child target",
+    "deterministic omega_pf and recanonicalization",
+    "pure-dyadic branch",
+    "nonminimal q=5 root-residue branch with v_5(T)>=2",
+    "full-capacity one-sided branch",
+    "genuine two-sided EuEv=1+p^2 chi branch",
+    "ordinary theta=-1, theta=1, and theta=other continuation channels",
+    "second-child parent-to-final E5",
+    "E3 owner/family admission and recursive re-entry"
+  ]
+}

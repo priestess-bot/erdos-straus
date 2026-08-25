@@ -1,0 +1,103 @@
+{
+  "schema_id": "t6_wave1_interface_request_f3_high_endpoint_target_shapes_v1",
+  "version": 1,
+  "artifact_id": "f3_high_endpoint_target_shapes_v1",
+  "track_id": "F3-HIGH-ENDPOINT",
+  "branch": "sol/f3-high-endpoint",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "date": "2026-08-24",
+  "request_status": "PROPOSAL_ONLY_NO_GRAMMAR_CHANGE",
+  "scope": "ACTUAL_PERSISTENT and PROPER_FACTOR_ROOT and h>p and terminal_first_miss",
+  "coordinator_action_requested": "Freeze these as unregistered candidate shapes for Gate 2 comparison. Do not assign an owner, add a family predicate, add an atomic arm, or modify shared grammar until E1-E5 and common admission are independently proved.",
+  "target_shapes": [
+    {
+      "shape_id": "HIGH_STRICT_SUPPORT_REBASE_CANDIDATE",
+      "source_leaf": "HIGH_STRICT_CARRY",
+      "lifecycle": "CANDIDATE_ONLY",
+      "existing_family_match": [
+        "type_i_a_gt_one_overflow_residual"
+      ],
+      "narrower_owner_only_if_receipt_present": "type_i_high_support_sink",
+      "family_match_status": "ESTABLISHED_OVERFLOW_SHAPE_CONDITIONAL_ON_COMMON_E3",
+      "new_family_required": false,
+      "atomic_arm_required": false,
+      "mark_behavior": "ordinary unmarked Sol(4,p) semantics; no new mark may be inferred",
+      "canonical_payload": {
+        "Q": "maximal complete-excess block of z relative to K",
+        "beta": "z/Q",
+        "M_ex": "lcm(A,Q)",
+        "c": "<-E^(-1)>_p = <D*(h-1)^(-1)>_p",
+        "K_ex": "M_ex*c",
+        "R_ex": "(4*M_ex*c-1)/p",
+        "source_path_digest": "copied only from verified parent receipt, never synthesized"
+      },
+      "t5_ticket_candidate": "LOCAL_DROP from (0,p-1) to (0,c) conditional on a target admitted with recomputed parent and target N^7 potentials",
+      "owner_precedence_request": "none until E3; coordinator must reject caller-supplied family/owner",
+      "open_requirements": [
+        "actual source occurrence and path replay",
+        "deterministic target serializer",
+        "target normal form and owner",
+        "universal lift",
+        "recursive re-entry"
+      ]
+    },
+    {
+      "shape_id": "HIGH_STUTTER_TERMINAL_OR_DESCENT_CANDIDATE",
+      "source_leaf": "HIGH_STUTTER_GATE",
+      "lifecycle": "CANDIDATE_ONLY",
+      "existing_family_match": [],
+      "family_match_status": "UNRESOLVED",
+      "new_family_required": "UNRESOLVED",
+      "atomic_arm_required": "UNRESOLVED",
+      "mark_behavior": "no mark change is permitted without a separately admitted target schema",
+      "canonical_payload": {
+        "D": "actual maximal receipt divisor",
+        "m": "(D+h-1)/p only if integrality is re-proved in the high domain",
+        "e": "(p*h+1)/D only if the high receipt proves integrality",
+        "stutter_gate": "D congruent to 1-h modulo p"
+      },
+      "t5_ticket_candidate": "NONE_UNTIL_A_DETERMINISTIC_TARGET_EXISTS",
+      "owner_precedence_request": "none; reserve no family and no serializer",
+      "open_requirements": [
+        "high-domain normal-form theorem",
+        "family-empty or terminal proof, or deterministic target constructor",
+        "E1 source/path, E2 target, E3 admission, E4 universal lift, E5 fixed N^7 ticket"
+      ]
+    },
+    {
+      "shape_id": "HIGH_DIRECT_TERMINAL_CERTIFICATE",
+      "source_leaf": "HIGH_STRICT_CARRY or HIGH_STUTTER_GATE",
+      "lifecycle": "CANDIDATE_ONLY",
+      "existing_family_match": [
+        "direct_terminal_leaf"
+      ],
+      "family_match_status": "ONLY_IF_TERMINAL_VERIFIER_REPLAYS_A_COMPLETE_CERTIFICATE",
+      "new_family_required": false,
+      "atomic_arm_required": false,
+      "mark_behavior": "terminal output only; no persistent successor",
+      "canonical_payload": {
+        "certificate_kind": "Type I or Type II root terminal",
+        "source_path_digest": "actual parent path",
+        "terminal_first_digest": "ordered replay digest",
+        "root_equation": "4/p"
+      },
+      "t5_ticket_candidate": "NONE_TERMINAL",
+      "owner_precedence_request": "terminal-first remains before any candidate enqueue",
+      "open_requirements": [
+        "construct a certificate valid for the whole selected high leaf or prove the leaf empty"
+      ]
+    }
+  ],
+  "grammar_change_request": {
+    "requested": false,
+    "new_family_ids": [],
+    "new_atomic_arms": [],
+    "new_marks": [],
+    "reason": "No high-domain target has yet passed E1-E5; preserving the existing grammar is the only justified proposal at this freeze point."
+  },
+  "boundary": {
+    "high_endpoint_total_exit": "OPEN",
+    "f3": "OPEN",
+    "t6": "OPEN"
+  }
+}

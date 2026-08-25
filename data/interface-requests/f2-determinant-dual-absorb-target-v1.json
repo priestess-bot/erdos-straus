@@ -1,0 +1,51 @@
+{
+  "request_id": "f2_determinant_dual_absorb_target_v1",
+  "request_version": 1,
+  "track_id": "T6-F2-OVERFLOW-HIGH-SUPPORT",
+  "status": "TYPE_SPACE_ACCEPTED_PRODUCER_UNAUTHORIZED",
+  "purpose": "Freeze a deterministic low-chart target shape for a future high-support determinant-dual lower-protocol producer. Freeze B accepts the exact marked-ABSORB type-space owner, but this request does not register a producer or common admission.",
+  "source_guard": {
+    "parent": "actual terminal-first-surviving TYPEI/CHARGED high-support canonical overflow K=A*C with A>B_p and 1<=C<p",
+    "derived_target": "compute d=p-C, n=4A-R, r=A mod p, s=n-4 floor(A/p) d, then choose the smaller of the d/r dual charts",
+    "required_receipts": [
+      "admitted parent_state_id",
+      "replayable parent source receipt",
+      "parent terminal-first MISS",
+      "producer-specific determinant-dual replay",
+      "target terminal-first result"
+    ]
+  },
+  "target_shape": {
+    "producer_id_proposal": "high_support_determinant_dual_absorb_v1",
+    "branch_id_proposal": "minimum_low_dual",
+    "normal_form": "type_i_high_support_determinant_dual_absorb_v1",
+    "equation": "p*R_star+1=4*K_star; R_star in [3,p-2]",
+    "facts_required": {
+      "major_phase": "TYPEI",
+      "endpoint_fiber": "target-local F/G/HIT recomputation",
+      "provenance_kind": "MARKED_ABSORB",
+      "is_overflow": false,
+      "chart_R": "R_star",
+      "chart_K": "K_star",
+      "dual_carrier": "t in {d,A mod p}",
+      "mark": "ROOT_SOL",
+      "protocol": "ABSORB only with an independently derived cursor (m,r_epsilon)"
+    },
+    "mark_behavior": "identity on Sol(4,p), conditional on admission",
+    "terminal_precedence": "target-local terminal HIT returns terminal before persistent admission",
+    "t5_ticket": "PHASE_DROP from TYPEI/CHARGED to TYPEI/ABSORB after E1-E4",
+    "owner_request": "use type_i_absorb_marked_residual only after common classification verifies MARKED_ABSORB, cursor, target MISS, and all protocol fields"
+  },
+  "required_coordinator_decisions": [
+    "Whether the derived determinant dual is an authorized source event for an actual parent.",
+    "Exact low-chart target classifier and target terminal-first route.",
+    "Serializer and canonical cursor construction. The exact type-space owner is already frozen.",
+    "Allowed source owners and precedence against atomic/proper-root families.",
+    "A total non-upward ABSORB continuation and common admission tests."
+  ],
+  "nonclaims": [
+    "No active producer or target family is registered.",
+    "No E1, E3, or re-entry proof is supplied.",
+    "No selected low chart is claimed terminal."
+  ]
+}

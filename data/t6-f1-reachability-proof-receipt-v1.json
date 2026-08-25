@@ -1,0 +1,389 @@
+{
+  "receipt_id": "t6_f1_reachability_proof_receipt_v1",
+  "receipt_version": 1,
+  "date": "2026-08-23",
+  "baseline_commit": "c851bd213936b3bc8b3103b469292c139d229e97",
+  "status": "OPEN_MINIMAL_GAPS",
+  "scope": {
+    "goal_items": [
+      "A2_CONSTRUCTOR_GUARD_PARTITION",
+      "A3_FAMILY_TOTALITY_UNIQUENESS_REENTRY_INDUCTION"
+    ],
+    "does_not_claim": [
+      "F2 closure",
+      "F3 closure",
+      "F4 closure",
+      "F5 closure",
+      "T6 global selector totality",
+      "Erdos-Straus conjecture"
+    ]
+  },
+  "authoritative_inputs": [
+    "concepts/t6-persistent-selector-state-v1.md",
+    "scripts/t6_persistent_selector_state_v1.py",
+    "data/t6-constructor-inventory-v1.json",
+    "docs/audits/T6_CONSTRUCTOR_INVENTORY_V1.md",
+    "data/t5-full-transition-taxonomy-v2.json",
+    "data/t6-proof-frontier-v2.json"
+  ],
+  "established_lemmas": [
+    {
+      "id": "A3-L1-NONCIRCULAR-HEADER",
+      "status": "ESTABLISHED",
+      "statement": "Header extraction validates schema, receipts and direct facts without consuming owner, family, normal_form or normalizer output."
+    },
+    {
+      "id": "A3-L2-CONDITIONAL-OWNER-UNIQUENESS",
+      "status": "ESTABLISHED",
+      "hypotheses": [
+        "the family match set is nonempty",
+        "every matched pair is in the explicit overlap allowlist",
+        "the precedence order is fixed"
+      ],
+      "statement": "The least matched precedence index is a unique owner."
+    },
+    {
+      "id": "A3-L3-GATE-LOCAL-FAIL-CLOSURE",
+      "status": "ESTABLISHED_CONTRACT_LEVEL",
+      "statement": "Inputs actually passed to reject_before_persistent_queue_v1 are rejected before queue on zero match, illegal overlap, unknown producer or undeclared target owner."
+    },
+    {
+      "id": "A3-L4-CONDITIONAL-TRACE-INDUCTION",
+      "status": "ESTABLISHED_CONDITIONAL",
+      "hypotheses": [
+        "B: the initializer nonterminal output is admitted",
+        "S: every actual successor is emitted by a registered producer and is readmitted",
+        "X: every persistent queue mutation uses the sole admission gate"
+      ],
+      "statement": "Every state on every finite actual persistent trace has a unique owner."
+    },
+    {
+      "id": "A2-L0-INITIALIZER-ARITHMETIC-PARTITION",
+      "status": "ESTABLISHED_WITH_SERIALIZER_BRIDGE_OPEN",
+      "statement": "For X=(p+3)/4, the least prime factor 2 mod 3 gives the terminal branch; absence of such a factor gives the q=1 G branch and the p-only full-carrier target."
+    }
+  ],
+  "a2_constructor_assessment": [
+    {
+      "inventory_id": "initializer.initial_q_one_root_dispatch_v1",
+      "guard_partition": "SYMBOLIC_TERMINAL_OR_G_EXHAUSTIVE",
+      "target_family": "type_i_full_carrier_post_g",
+      "target_membership": "SYMBOLICALLY_PROVED_IF_PROJECTED",
+      "v1_serializer": "MISSING",
+      "enqueue_gate": "UNASSIGNED",
+      "verdict": "PARTIAL"
+    },
+    {
+      "inventory_id": "edge.type_ii_proper_endpoint_descent",
+      "guard_partition": "CONDITIONAL_ON_SUPPLIED_PROPER_PREIMAGE",
+      "target_family": "type_ii_relation_f_endpoint_or_type_ii_relation_g_endpoint",
+      "target_membership": "ARITHMETIC_PROFILE_ONLY",
+      "v1_serializer": "MISSING",
+      "enqueue_gate": "UNASSIGNED",
+      "verdict": "OPEN"
+    },
+    {
+      "inventory_id": "edge.type_ii_gcd_shadow_endpoint_descent",
+      "guard_partition": "LOCAL_RECEIPT_BUILDER_ONLY",
+      "target_family": "type_ii_relation_f_endpoint_or_type_ii_relation_g_endpoint",
+      "target_membership": "ARITHMETIC_PROFILE_ONLY",
+      "v1_serializer": "MISSING",
+      "enqueue_gate": "UNASSIGNED",
+      "verdict": "OPEN"
+    },
+    {
+      "inventory_id": "edge.q_one_g_full_carrier_phase_root",
+      "guard_partition": "TOTAL_ON_WRITTEN_Q_ONE_G_GUARD",
+      "target_family": "type_i_full_carrier_post_g",
+      "target_membership": "SYMBOLICALLY_PROVED_IF_PROJECTED",
+      "v1_serializer": "MISSING",
+      "enqueue_gate": "UNASSIGNED",
+      "verdict": "PARTIAL"
+    },
+    {
+      "inventory_id": "edge.positive_q_g_full_carrier_phase_root",
+      "guard_partition": "CONTROL_LACKS_ACTUAL_SOURCE_AND_TERMINAL_FIRST_RECEIPTS",
+      "target_family": "type_i_full_carrier_post_g",
+      "target_membership": "CONDITIONAL_FORMULA_ONLY",
+      "v1_serializer": "MISSING",
+      "enqueue_gate": "UNASSIGNED",
+      "verdict": "OPEN"
+    },
+    {
+      "inventory_id": "edge.q_one_g_c3_source_lineage_relay",
+      "guard_partition": "CONDITIONAL_ON_SOURCE_LINEAGE",
+      "target_family": "type_i_full_carrier_post_g_or_overflow_specialization",
+      "target_membership": "LOCAL_TYPED_RECEIPT_ONLY",
+      "v1_serializer": "MISSING",
+      "enqueue_gate": "UNASSIGNED",
+      "verdict": "OPEN"
+    },
+    {
+      "inventory_id": "edge.q_one_full_carrier_second_anchor_fixed_n_macro",
+      "guard_partition": "FAMILY_FORMULA_ONLY",
+      "target_family": "type_i_full_carrier_post_g_or_overflow_specialization",
+      "target_membership": "LOCAL_STATE_ID_ONLY",
+      "v1_serializer": "MISSING",
+      "enqueue_gate": "UNASSIGNED",
+      "verdict": "OPEN"
+    },
+    {
+      "inventory_id": "edge.same_chart_support_promotion",
+      "guard_partition": "FIXTURE_ATLAS_ONLY_NO_TERMINAL_BRANCH",
+      "target_family": "type_i_low_support_persistent_overflow_or_type_i_a_gt_one_overflow_residual",
+      "target_membership": "MINIMAL_DESCRIPTOR_ONLY",
+      "v1_serializer": "MISSING",
+      "enqueue_gate": "UNASSIGNED",
+      "verdict": "OPEN"
+    },
+    {
+      "inventory_id": "edge.joined_support_outer_reset",
+      "guard_partition": "FIXTURE_ATLAS_ONLY_NO_TERMINAL_BRANCH",
+      "target_family": "type_i_a_gt_one_overflow_residual_or_nonoverflow_target",
+      "target_membership": "MINIMAL_DESCRIPTOR_ONLY",
+      "v1_serializer": "MISSING",
+      "enqueue_gate": "UNASSIGNED",
+      "verdict": "OPEN"
+    },
+    {
+      "inventory_id": "edge.a_one_dual_outer_reset",
+      "guard_partition": "FIXTURE_ATLAS_ONLY_NO_TERMINAL_BRANCH",
+      "target_family": "nonoverflow_Type_I_target_requires_provenance_projection",
+      "target_membership": "MINIMAL_DESCRIPTOR_ONLY",
+      "v1_serializer": "MISSING",
+      "enqueue_gate": "UNASSIGNED",
+      "verdict": "OPEN"
+    },
+    {
+      "inventory_id": "edge.high_carrier_fixed_n_descent",
+      "guard_partition": "CONDITIONAL_DIVISOR_ATLAS_ONLY",
+      "target_family": "overflow_or_nonoverflow_Type_I_target",
+      "target_membership": "MINIMAL_DESCRIPTOR_ONLY",
+      "v1_serializer": "MISSING",
+      "enqueue_gate": "UNASSIGNED",
+      "verdict": "OPEN"
+    },
+    {
+      "inventory_id": "edge.high_support_rank_aware_sink_bundle",
+      "guard_partition": "IMPROVEMENT_NONEMPTY_LOCAL_THEOREM",
+      "target_family": "type_i_high_support_sink_or_type_i_a_gt_one_overflow_residual",
+      "target_membership": "FOCUSED_P73_CONTROL_ONLY_IN_ACTIVE_CODE",
+      "v1_serializer": "MISSING",
+      "enqueue_gate": "UNASSIGNED",
+      "verdict": "OPEN"
+    },
+    {
+      "inventory_id": "edge.q_one_d_one_p_free_relay",
+      "guard_partition": "FIXED_FIXTURE_RECEIPT_BUILDER",
+      "target_family": "type_i_full_carrier_post_g_or_macro_specialization",
+      "target_membership": "FIXTURE_LOCAL_STATE_ID_ONLY",
+      "v1_serializer": "MISSING",
+      "enqueue_gate": "UNASSIGNED",
+      "verdict": "OPEN"
+    },
+    {
+      "inventory_id": "edge.high_c_two_three_anchor_macro",
+      "guard_partition": "TERMINAL_PRIORITY_ASSUMED_NOT_IMPLEMENTED",
+      "target_family": "type_i_c2_19_macro_target",
+      "target_membership": "ARITHMETIC_H3_ONLY",
+      "v1_serializer": "MISSING_TARGET_SERIALIZER",
+      "enqueue_gate": "UNASSIGNED",
+      "verdict": "OPEN_MINIMAL_REENTRY_GAP"
+    },
+    {
+      "inventory_id": "edge.h4_a_one_atomic_macro",
+      "guard_partition": "CONDITIONAL_SUFFIX_CONTROLS_TERMINAL_PREEMPTED",
+      "target_family": "t2_v1_atomic_pending_target",
+      "target_membership": "WOULD_BE_TARGET_NOT_SERIALIZED",
+      "v1_serializer": "MISSING_PENDING_TARGET_SERIALIZER",
+      "enqueue_gate": "UNASSIGNED",
+      "verdict": "OPEN"
+    },
+    {
+      "inventory_id": "edge.c8_double_low_atomic_macro",
+      "guard_partition": "CONDITIONAL_INTERFACE_CONTROL_MISSES_DOUBLE_LOW",
+      "target_family": "t2_v1_atomic_pending_target",
+      "target_membership": "TARGET_NOT_IMPLEMENTED",
+      "v1_serializer": "MISSING_ATOMIC_TARGET_SERIALIZER",
+      "enqueue_gate": "UNASSIGNED",
+      "verdict": "OPEN"
+    }
+  ],
+  "source_surface_obstructions": [
+    {
+      "id": "U-A0-01",
+      "kind": "RUNTIME",
+      "status": "OPEN",
+      "statement": "No active selector runtime or canonical constructor protocol defines the semantic producer universe."
+    },
+    {
+      "id": "U-A0-02",
+      "kind": "ENQUEUE",
+      "status": "OPEN",
+      "statement": "No active persistent queue implementation or global enqueue gate was found."
+    },
+    {
+      "id": "U-A0-03",
+      "kind": "REENTRY",
+      "status": "OPEN",
+      "statement": "No historical target serializer feeds every target into the new common extractor."
+    },
+    {
+      "id": "U-A0-04",
+      "kind": "SOURCE_DRIFT",
+      "status": "OPEN",
+      "statement": "Six non-false eligible producer signals are not uniquely represented by the frozen registry."
+    },
+    {
+      "id": "U-A0-05",
+      "kind": "SELF_ASSERTED_QUEUE_RIGHT",
+      "status": "OPEN",
+      "statement": "The total-cofactor adapter consumes persistent_queue=true manufactured by fixtures but has no registered upstream producer."
+    },
+    {
+      "id": "U-A0-06",
+      "kind": "C2_H3_SERIALIZER",
+      "status": "OPEN",
+      "statement": "H3 ends at a nonrecursive pending-dispatch boundary and has no persistent-state serializer."
+    },
+    {
+      "id": "U-A0-07",
+      "kind": "ATOMIC_SERIALIZER",
+      "status": "OPEN",
+      "statement": "H4 and c8 controls do not serialize a nonterminal pending target."
+    },
+    {
+      "id": "U-A0-08",
+      "kind": "E3_SCHEMA",
+      "status": "OPEN",
+      "statement": "Most overflow builders emit local descriptors rather than one shared legal persistent-state schema."
+    },
+    {
+      "id": "U-A0-09",
+      "kind": "P409_E3_PROVENANCE",
+      "status": "OPEN",
+      "statement": "The p=409 target (R,K,A)=(11,1125,125) self-reports recursive eligibility without parent, terminal-first or enqueue provenance and retains an overflow label incompatible with R<p."
+    }
+  ],
+  "minimal_failure_receipts": [
+    {
+      "id": "MF-1-POSITIVE-Q-REGISTRY-CONTROL-MISMATCH",
+      "type": "PRODUCER_UNIVERSE_NOT_WELL_DEFINED",
+      "evidence": [
+        "data/t6-constructor-inventory-v1.json:edge.positive_q_g_full_carrier_phase_root",
+        "reproductions/type_ii_positive_q_g_full_carrier_phase_root_entry.py:phase_root_entry"
+      ],
+      "facts": {
+        "registry_disposition": "registered_edge",
+        "control_actual_source_receipt": false,
+        "control_terminal_first_receipt": false,
+        "control_recursive_edge_eligible": false
+      }
+    },
+    {
+      "id": "MF-2-P409-UNREGISTERED-ELIGIBLE-TARGET",
+      "type": "E3_AND_PROVENANCE_GAP",
+      "evidence": [
+        "reproductions/type_i_representation_dual_capacity_selector.py:verified_fixed_n_edge",
+        "reproductions/type-i-representation-dual-capacity-selector-results.json:verified_edges[0]"
+      ],
+      "target": {
+        "root_context": 409,
+        "R": 11,
+        "K": 1125,
+        "support_A": 125,
+        "recursive_edge_eligible": true,
+        "E1_through_E5_reported_true": true,
+        "parent_registration": "MISSING",
+        "sealed_terminal_first_receipt": "MISSING",
+        "producer_id": "UNASSIGNED",
+        "enqueue_gate": "UNASSIGNED",
+        "literal_overflow_label_compatible_with_R_gt_p": false
+      }
+    },
+    {
+      "id": "MF-3-C2-H3-PENDING-DISPATCH",
+      "type": "SYMBOLIC_REENTRY_GAP",
+      "evidence": [
+        "claims/type-II-q-one-c-two-19-phase-three-anchor-persistent-macro.md",
+        "reproductions/type_ii_q_one_c2_19_phase_three_anchor_persistent_macro.py:macro_data",
+        "data/t5-full-transition-taxonomy-v2.json:nonrecursive_surfaces"
+      ],
+      "facts": {
+        "strict_endpoint_drop": "proved in the written guard",
+        "active_output_fields": [
+          "prime",
+          "receiver_capacity",
+          "capacity_1",
+          "capacity_2",
+          "capacity_3",
+          "R_3"
+        ],
+        "target_state": "MISSING",
+        "target_serializer": "MISSING",
+        "last_disposition": "pending_dispatch",
+        "pending_dispatch_recursive": false
+      }
+    }
+  ],
+  "a3_verdicts": [
+    {
+      "obligation": "independent legal-state definition",
+      "status": "ESTABLISHED"
+    },
+    {
+      "obligation": "owner uniqueness under fixed precedence",
+      "status": "ESTABLISHED_CONDITIONAL_ON_NONEMPTY_LEGAL_MATCH_SET"
+    },
+    {
+      "obligation": "fail closure inside the new queue gate",
+      "status": "ESTABLISHED_CONTRACT_LEVEL"
+    },
+    {
+      "obligation": "family totality for every actual constructor target",
+      "status": "OPEN"
+    },
+    {
+      "obligation": "every actual enqueue route uses the new gate",
+      "status": "OPEN"
+    },
+    {
+      "obligation": "every nonterminal target reenters the common domain",
+      "status": "OPEN"
+    },
+    {
+      "obligation": "initializer base step B",
+      "status": "OPEN_INTEGRATION"
+    },
+    {
+      "obligation": "successor step S",
+      "status": "OPEN"
+    },
+    {
+      "obligation": "exclusive-gate hypothesis X",
+      "status": "OPEN"
+    },
+    {
+      "obligation": "trace induction from B, S and X",
+      "status": "ESTABLISHED_CONDITIONAL"
+    }
+  ],
+  "closure_decision": {
+    "A2_CONSTRUCTOR_GUARD_PARTITION": "OPEN_MINIMAL_GAPS",
+    "A3_FAMILY_DECISION_LEMMA": "ESTABLISHED_CONDITIONAL",
+    "A3_ACTUAL_FAMILY_TOTALITY": "OPEN",
+    "A3_ACTUAL_REENTRY_INDUCTION": "OPEN",
+    "T6_F1_REACHABLE_STATE_EXHAUSTION": "OPEN",
+    "reason": "The current source producer universe is not closed, historical targets do not share one admitted serializer, and B/S/X are not established."
+  },
+  "next_minimal_theorem": {
+    "id": "PRODUCER_PROJECTION_AND_EXCLUSIVE_ADMISSION_V1",
+    "requirements": [
+      "resolve every non-false source signal as a registered producer or explicitly nonrecursive control",
+      "prove a symbolic terminal/reject/nonterminal partition for every registered producer branch",
+      "serialize every nonterminal target into PersistentSelectorStateV1 with sealed receipts",
+      "prove extractor and classifier success with a producer-declared target owner",
+      "route initializer and successor queue mutations exclusively through reject_before_persistent_queue_v1"
+    ]
+  }
+}

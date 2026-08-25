@@ -1,0 +1,42 @@
+{
+  "request_id": "f2_post_g_c2_fused_macro_v1",
+  "track_id": "F2-POST-G-H4",
+  "date": "2026-08-24",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "status": "PROPOSAL_NOT_REGISTERED",
+  "producer_request": {
+    "producer_id": "q_one_d_one_c2_19_h4_fused_exit_v1",
+    "source_owner": "type_i_full_carrier_post_g",
+    "branch_id": "capacity_two_19_phase_fused_h4",
+    "target_owners": [
+      "type_i_a_gt_one_overflow_residual",
+      "type_i_high_support_sink",
+      "type_i_full_carrier_post_g"
+    ],
+    "T5_ticket": "LOCAL_DROP",
+    "mark_behavior": "ROOT_SOL identity"
+  },
+  "checkpoint_policy_request": {
+    "H0": "NONPERSISTENT_INTERNAL",
+    "H1": "NONPERSISTENT_INTERNAL",
+    "H2": "NONPERSISTENT_INTERNAL",
+    "H3": "NONPERSISTENT_INTERNAL",
+    "H4": "NONPERSISTENT_INTERNAL",
+    "only_final_target_may_enter_queue": true
+  },
+  "queue_external_dispositions": ["direct_terminal_leaf"],
+  "synchronous_nonpersistent_artifacts": ["AtomicPendingTargetV1(H4_A1)"],
+  "family_request_update": {
+    "family_id": "type_i_c2_non19_residual",
+    "previous_disposition": "conditional request if residual nonempty",
+    "new_disposition": "DO_NOT_CREATE_FAMILY_EMPTY_IN_Q_ONE_IMAGE"
+  },
+  "cross_track_source_constraint": {
+    "consumer": "Agent 2 overflow/high-support track",
+    "statement": "q=1 immediate d=1 post-G targets never have capacity C=1",
+    "evidence": "type-II-q-one-full-carrier-d-one-capacity-one-exclusion",
+    "minimum_nonterminal_capacity": 2
+  },
+  "atomic_dependency": "Use Agent 3 AtomicPendingTargetV1 for an atomic final target; do not invent a track-local atomic serializer.",
+  "status_boundary": "Coordinator approval and common admission implementation required."
+}

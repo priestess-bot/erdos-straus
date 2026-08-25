@@ -1,0 +1,26 @@
+{
+  "artifact_id": "f3_m3_q5_p2_canonical_rechart_boundary_v1",
+  "track_id": "F3-M3-Q5-P2",
+  "claim_id": "type-I-t6-f3-m3-q5-p2-canonical-rechart-boundary",
+  "status": "ESTABLISHED_UNPAID_CANONICAL_RECHART_BOUNDARY",
+  "quantifier": "Actual source-bound minimal m=3, 5|D_star, genuine two-sided endpoint with E_u,E_v>1 and L_omega=1+p^2*chi.",
+  "root_chart": {
+    "T": "p^2*varrho-(p+1)/2",
+    "A": "((p+1)/2)*T",
+    "K": "A*(p-1)"
+  },
+  "canonical_rechart": {
+    "varrho_prime": "varrho+chi*T",
+    "T_prime": "L_omega*T",
+    "A_prime": "A*L_omega",
+    "K_prime": "K*L_omega",
+    "cofactor": "p-1"
+  },
+  "conclusion": "The direct canonical p2 rechart is an increasing root-chart reparameterization and has no standalone E1/E3/E5 ticket.",
+  "does_not_prove": [
+    "a terminal",
+    "a source-forward post-p2 escape",
+    "persistent state re-entry",
+    "F3 or T6 closure"
+  ]
+}

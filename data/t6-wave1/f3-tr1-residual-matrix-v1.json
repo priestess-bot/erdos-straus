@@ -1,0 +1,142 @@
+{
+  "artifact_id": "f3_tr1_residual_matrix_v1",
+  "artifact_version": 1,
+  "track_id": "F3-TR1-H-SUPPORTED",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "date": "2026-08-24",
+  "status": "INITIAL_PARTITION_WITH_OPEN_RESIDUAL",
+  "precedence": [
+    "L0_TERMINAL_PRIORITY_HIT",
+    "L1_H_SUPPORTED_MENU_TERMINAL",
+    "L2_H_SUPPORTED_PAID_SUCCESSOR",
+    "L3_DSTAR_TRANSVERSE_TERMINAL",
+    "L4_DSTAR_TR1_PAID_SUCCESSOR",
+    "L5_FAMILY_EMPTY",
+    "L6_EXPLICIT_RESIDUAL"
+  ],
+  "partition_semantics": "Each predicate includes the negations of all earlier leaves. This makes the leaves disjoint by construction; symbolic coverage and elimination of L6 remain proof obligations.",
+  "dyadic_refinement": {
+    "R4_M3_NONQ5_H_SUPPORTED": "EMPTY for the dyadic-fresh subleaf: m=3 with p,h odd gives D=3p+1-h odd, hence D_star is odd.",
+    "R6_MGT3_H_SUPPORTED": "The first dyadic q=2 child is conditionally p-free after a source-bound endpoint path. In the atomic rank-stutter congruence, the R6-specific full-capacity W_y word has W_y != (h+1)/2 mod p, so the final endpoint is p-free and terminal-or-single-side arithmetic; canonical lcm/rank and physical admission remain open. No m=3 q=5 short-word policy is imported."
+  },
+  "leaves": [
+    {
+      "leaf_id": "L0_TERMINAL_PRIORITY_HIT",
+      "predicate": "the ordered active terminal-first replay returns a verified root terminal",
+      "mutually_exclusive_with": [
+        "L1_H_SUPPORTED_MENU_TERMINAL",
+        "L2_H_SUPPORTED_PAID_SUCCESSOR",
+        "L3_DSTAR_TRANSVERSE_TERMINAL",
+        "L4_DSTAR_TR1_PAID_SUCCESSOR",
+        "L5_FAMILY_EMPTY",
+        "L6_EXPLICIT_RESIDUAL"
+      ],
+      "coverage_proof": "terminal-first outcome is HIT or MISS",
+      "planned_closure": "TERMINAL",
+      "target_shape": "existing direct_terminal_leaf",
+      "current_blocker": null
+    },
+    {
+      "leaf_id": "L1_H_SUPPORTED_MENU_TERMINAL",
+      "predicate": "terminal-first MISS and the first nonempty composite root-capacity menu in the deterministic increasing list of all 1<Q|u",
+      "mutually_exclusive_with": [
+        "L0_TERMINAL_PRIORITY_HIT",
+        "L2_H_SUPPORTED_PAID_SUCCESSOR",
+        "L3_DSTAR_TRANSVERSE_TERMINAL",
+        "L4_DSTAR_TR1_PAID_SUCCESSOR",
+        "L5_FAMILY_EMPTY",
+        "L6_EXPLICIT_RESIDUAL"
+      ],
+      "coverage_proof": "the actual root-height modulus u is replayed first; terminal coverage enumerates every composite divisor Q of u and then every exact finite menu in canonical order. q_h is only one proof that u>1, while the k=3 primitive system supplies u>1 directly.",
+      "planned_closure": "TERMINAL",
+      "target_shape": "existing direct_terminal_leaf with explicit Type I certificate",
+      "current_blocker": "none for exact menu evaluation; menu eligibility is not a raw occurrence or successor proof"
+    },
+    {
+      "leaf_id": "L2_H_SUPPORTED_PAID_SUCCESSOR",
+      "predicate": "L0 and L1 miss, and a deterministic h-supported carrier has a common-admission target with universal E4 and a strict T5 ticket",
+      "mutually_exclusive_with": [
+        "L0_TERMINAL_PRIORITY_HIT",
+        "L1_H_SUPPORTED_MENU_TERMINAL",
+        "L3_DSTAR_TRANSVERSE_TERMINAL",
+        "L4_DSTAR_TR1_PAID_SUCCESSOR",
+        "L5_FAMILY_EMPTY",
+        "L6_EXPLICIT_RESIDUAL"
+      ],
+      "coverage_proof": "serializer success or failure is decidable after the fixed h-carrier tie-break",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "existing admitted Type-I owner or strictly smaller marked equation, selected by common admission",
+      "current_blocker": "no universal h-supported paid serializer has yet been proved"
+    },
+    {
+      "leaf_id": "L3_DSTAR_TRANSVERSE_TERMINAL",
+      "predicate": "L0-L2 miss, and the first deterministic D_star whole-divisor or prime terminal predicate returns an explicit Type II terminal",
+      "mutually_exclusive_with": [
+        "L0_TERMINAL_PRIORITY_HIT",
+        "L1_H_SUPPORTED_MENU_TERMINAL",
+        "L2_H_SUPPORTED_PAID_SUCCESSOR",
+        "L4_DSTAR_TR1_PAID_SUCCESSOR",
+        "L5_FAMILY_EMPTY",
+        "L6_EXPLICIT_RESIDUAL"
+      ],
+      "coverage_proof": "finite written terminal menu with canonical ordering; D_star is replayed from the actual maximal receipt",
+      "planned_closure": "TERMINAL",
+      "target_shape": "existing direct_terminal_leaf with explicit Type II certificate",
+      "current_blocker": "prove the terminal menu is complete for its declared leaf and does not consume an unbound arithmetic divisor"
+    },
+    {
+      "leaf_id": "L4_DSTAR_TR1_PAID_SUCCESSOR",
+      "predicate": "L0-L3 miss, D_star > 1, an independent theorem binds at least one D_star factor to a fresh consumable integer raw occurrence, the least such verified factor is selected, and TR1PhysicalTransitionV1 passes E1-E5 and common admission",
+      "mutually_exclusive_with": [
+        "L0_TERMINAL_PRIORITY_HIT",
+        "L1_H_SUPPORTED_MENU_TERMINAL",
+        "L2_H_SUPPORTED_PAID_SUCCESSOR",
+        "L3_DSTAR_TRANSVERSE_TERMINAL",
+        "L5_FAMILY_EMPTY",
+        "L6_EXPLICIT_RESIDUAL"
+      ],
+      "coverage_proof": "D_star > 1 supplies source-bound arithmetic factors only. A least arithmetic factor can be capacity-saturated, so integer occurrence is proved before the physical tie-break is applied.",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "TR1PhysicalTransitionV1 terminal-or-paid envelope",
+      "current_blocker": "derive an integer raw occurrence/E1 bridge, deterministic target, universal lift, authoritative parent-to-final T5 ticket and F1 re-entry"
+    },
+    {
+      "leaf_id": "L5_FAMILY_EMPTY",
+      "predicate": "L0-L4 miss and the verified owned-domain identities imply an arithmetic contradiction",
+      "mutually_exclusive_with": [
+        "L0_TERMINAL_PRIORITY_HIT",
+        "L1_H_SUPPORTED_MENU_TERMINAL",
+        "L2_H_SUPPORTED_PAID_SUCCESSOR",
+        "L3_DSTAR_TRANSVERSE_TERMINAL",
+        "L4_DSTAR_TR1_PAID_SUCCESSOR",
+        "L6_EXPLICIT_RESIDUAL"
+      ],
+      "coverage_proof": "must be a symbolic implication from the exact R4/R6 hypotheses, never a finite search",
+      "planned_closure": "EMPTY",
+      "target_shape": null,
+      "current_blocker": "no whole no-transverse emptiness theorem is currently established"
+    },
+    {
+      "leaf_id": "L6_EXPLICIT_RESIDUAL",
+      "predicate": "all earlier terminal, admissible h-carrier, physical TR1 and family-empty leaves fail",
+      "mutually_exclusive_with": [
+        "L0_TERMINAL_PRIORITY_HIT",
+        "L1_H_SUPPORTED_MENU_TERMINAL",
+        "L2_H_SUPPORTED_PAID_SUCCESSOR",
+        "L3_DSTAR_TRANSVERSE_TERMINAL",
+        "L4_DSTAR_TR1_PAID_SUCCESSOR",
+        "L5_FAMILY_EMPTY"
+      ],
+      "coverage_proof": "complement of the preceding ordered leaves",
+      "planned_closure": "MUST_DISAPPEAR",
+      "target_shape": null,
+      "current_blocker": "the full root-height Q|u menu must first be replayed, and no D_star factor has been converted into a fresh integer E1 occurrence, terminal or paid successor"
+    }
+  ],
+  "acceptance": {
+    "final_explicit_residual_count": 0,
+    "quotient_only_relabel_count": 0,
+    "unbound_factor_occurrence_count": 0,
+    "unadmitted_target_count": 0
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "artifact_id": "f2_overflow_high_support_residual_matrix_v1",
+  "artifact_version": 1,
+  "track_id": "T6-F2-OVERFLOW-HIGH-SUPPORT",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "scope_reference": "data/t6-wave1/f2-overflow-high-support-scope-freeze-v1.json",
+  "status": "RESIDUALS_EXPLICIT_F2_OPEN",
+  "partition_semantics": "Rows are evaluated after terminal-first and all earlier precedence rows fail. Therefore effective guards are mutually exclusive by construction; raw arithmetic conditions are retained only to make the partition auditable.",
+  "required_final_leaf_kinds": ["EMPTY", "TERMINAL", "VERIFIED_SUCCESSOR"],
+  "rows": [
+    {
+      "leaf_id": "F2-00-terminal-first",
+      "precedence": 1,
+      "raw_guard": "terminal_first(S)=HIT",
+      "effective_guard": "terminal_first(S)=HIT",
+      "mutually_exclusive_with": ["F2-01-same-chart", "F2-02-joined-reset", "F2-03-fixed-n", "F2-04-M", "F2-05-total-cofactor", "F2-06-high-support", "F2-07-C1-empty", "F2-08-Cgt1-empty", "F2-09-p409", "F2-10-explicit-residual"],
+      "coverage_proof": "terminal-first is a mandatory first dispatch and terminal output is nonrecursive under T5",
+      "current_status": "ESTABLISHED_LOCAL",
+      "planned_closure": "TERMINAL",
+      "target_shape": null,
+      "current_blocker": null,
+      "evidence": ["data/t5-full-transition-taxonomy-v2.json", "concepts/t5-global-well-foundedness-contract-v2.md"]
+    },
+    {
+      "leaf_id": "F2-01-same-chart",
+      "precedence": 2,
+      "raw_guard": "terminal_first=MISS and actual complete-excess source occurrence yields canonical same-chart M>A with A|M, M/A>=2",
+      "effective_guard": "F2-00 failed and same-chart receipt passes every source, target, and strict parent-to-target rank check",
+      "mutually_exclusive_with": ["F2-02-joined-reset", "F2-03-fixed-n", "F2-04-M", "F2-05-total-cofactor", "F2-06-high-support", "F2-07-C1-empty", "F2-08-Cgt1-empty", "F2-09-p409", "F2-10-explicit-residual"],
+      "coverage_proof": "The same-chart theorem proves the local rank formula under its actual-source guard; the determinant prepartition proves every bound receipt with b=M/A>=2 enters this leaf.",
+      "current_status": "RELATIVE_THEOREM_COMMON_E3_OPEN",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "existing type_i_low_support_persistent_overflow or type_i_high_support_sink after common E3 retyping",
+      "current_blocker": "No shared producer serializer/admission path proves actual source occurrence for every candidate; A>B_p parent-to-target comparison must be retained.",
+      "evidence": ["claims/type-I-overflow-unbounded-same-chart-promotion-persistence-boundary.md", "claims/type-I-f2-overflow-determinant-prepartition.md", "reproductions/type_i_f2_overflow_determinant_prepartition.py"]
+    },
+    {
+      "leaf_id": "F2-02-joined-reset",
+      "precedence": 3,
+      "raw_guard": "terminal_first=MISS, prior same-chart guard failed, dual carrier t in {d,M mod p}, A'=lcm(A,t)>A, A'|K_t, and Lambda(A')<Lambda(A)",
+      "effective_guard": "F2-00/F2-01 failed and one deterministic joined-support dual receipt satisfies all E1-E5 prerequisites",
+      "mutually_exclusive_with": ["F2-03-fixed-n", "F2-04-M", "F2-05-total-cofactor", "F2-06-high-support", "F2-07-C1-empty", "F2-08-Cgt1-empty", "F2-09-p409", "F2-10-explicit-residual"],
+      "coverage_proof": "joined-support rule preserves old charged support and pays reset through the same charged local rank",
+      "current_status": "CONDITIONAL_ADAPTER",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "R_t>p: existing TYPEI/CHARGED overflow with joined support A'; R_t<p non-hit: semantic TYPEI/ABSORB target requiring common classification into the existing marked-ABSORB type-space owner and PHASE_DROP",
+      "current_blocker": "The finite dual-channel verifier does not establish universal candidate existence or a common target serializer.",
+      "evidence": ["claims/type-I-overflow-outer-rank-reset.md", "claims/type-I-overflow-fixed-s-dual-outer-rank-descent.md"]
+    },
+    {
+      "leaf_id": "F2-03-fixed-n",
+      "precedence": 4,
+      "raw_guard": "terminal_first=MISS, prior guards failed, and either (i) b=1,A<=B_p,d>=2 with deterministic unbounded full-product L=Md=Ad, or (ii) another bounded L|Md/fixed-s L|rd satisfies positivity, canonical chart identity, and strict Lambda drop",
+      "effective_guard": "F2-00..F2-02 failed and the full-product or bounded fixed-n/fixed-s receipt is complete",
+      "mutually_exclusive_with": ["F2-04-M", "F2-05-total-cofactor", "F2-06-high-support", "F2-07-C1-empty", "F2-08-Cgt1-empty", "F2-09-p409", "F2-10-explicit-residual"],
+      "coverage_proof": "The determinant prepartition proves the full-product branch universally on bound receipts with b=1,A<=B_p,d>=2 and proves its target remains overflow; other bounded-divisor refinements retain their written guards.",
+      "current_status": "RELATIVE_FULL_PRODUCT_THEOREM_COMMON_E3_OPEN",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "full-product target is existing TYPEI/CHARGED overflow; other bounded branches with R_L<p non-hit require common classification into the existing marked-ABSORB type-space owner and PHASE_DROP",
+      "current_blocker": "Not every generic actual overflow header supplies a bound determinant occurrence; every target still requires common E3 admission. Other bounded branches retain conditional divisor existence.",
+      "evidence": ["claims/type-I-f2-overflow-determinant-prepartition.md", "claims/type-I-overflow-unbounded-full-product-quotient-fold.md", "claims/type-I-overflow-fixed-n-bounded-divisor-saturation.md", "claims/type-I-overflow-fixed-s-bounded-divisor-saturation.md"]
+    },
+    {
+      "leaf_id": "F2-04-M",
+      "precedence": 5,
+      "raw_guard": "terminal_first=MISS, all previous routes fail, and either (i) b=d=1,A<=B_p with the unique d=1 full-excess multiplier, or (ii) another full-block complete-excess Q exists on an actual source with M=lcm(A,Q)>A",
+      "effective_guard": "F2-00..F2-03 failed and the d=1 full-excess or other M source/target has independent E3 typing, owner, serializer, and re-entry",
+      "mutually_exclusive_with": ["F2-05-total-cofactor", "F2-06-high-support", "F2-07-C1-empty", "F2-08-Cgt1-empty", "F2-09-p409", "F2-10-explicit-residual"],
+      "coverage_proof": "For b=d=1,A<=B_p, the exact multiplier E has both p-gates automatically, M=AE>p^2>B_p, target R_M>p, and a strict parent-to-target first rank coordinate. Other M adapters retain their written guards.",
+      "current_status": "RELATIVE_D_ONE_THEOREM_COMMON_E3_OPEN",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "low d=1 target is existing TYPEI/CHARGED overflow; high-support M target is necessarily existing TYPEI/CHARGED overflow; a low non-hit M rechart must pass common classification into the existing marked-ABSORB type-space owner",
+      "current_blocker": "The low d=1 theorem still needs common E3 producer registration/serializer. The marked-G M adapter remains conditional on E3/surface admission outside this d=1 source family.",
+      "evidence": ["claims/type-I-overflow-full-product-d-one-complete-excess-capacity-map.md", "claims/type-I-overflow-full-product-d-one-p-adic-regeneration-countdown.md", "claims/type-I-marked-g-universal-anchor-complete-excess-exit.md"]
+    },
+    {
+      "leaf_id": "F2-05-total-cofactor",
+      "precedence": 6,
+      "raw_guard": "terminal_first=MISS, all previous routes fail, source has a registered persistent determinant receipt and proposes total-cofactor",
+      "effective_guard": "F2-00..F2-04 failed; b>=2 is already preempted by same-chart, while b=1 forces t=0 canonical stutter",
+      "mutually_exclusive_with": ["F2-05a-noncanonical-high-support", "F2-06-high-support", "F2-07-C1-empty", "F2-08-Cgt1-empty", "F2-09-p409", "F2-10-explicit-residual"],
+      "coverage_proof": "The determinant prepartition proves an ordered dichotomy: b>=2 has an earlier strict same-chart route; b=1 means C_A=p-d and total-cofactor is exactly t=0.",
+      "current_status": "EMPTY_AS_ORDERED_STRICT_BRANCH",
+      "planned_closure": "EMPTY",
+      "target_shape": null,
+      "current_blocker": null,
+      "evidence": ["claims/type-I-f2-overflow-determinant-prepartition.md", "claims/type-I-overflow-total-cofactor-typed-projection-dispatch.md", "claims/type-I-overflow-total-cofactor-canonical-projection-persistence-rank.md"]
+    },
+    {
+      "leaf_id": "F2-05a-noncanonical-high-support",
+      "precedence": 7,
+      "raw_guard": "A>B_p, terminal_first=MISS, prior routes failed, C=K/A>=p+1 (equivalently R>4A)",
+      "effective_guard": "F2-00..F2-05 failed and the source chart is noncanonical at its declared support A",
+      "mutually_exclusive_with": ["F2-06-high-support", "F2-07-C1-empty", "F2-08-Cgt1-empty", "F2-09-p409", "F2-10-explicit-residual"],
+      "coverage_proof": "C=c+p*t with c=< (4A)^(-1) >_p gives a unique t>=1 and canonical support-A target (R-4At,Ac). This is an arithmetic normalizer, not an E1 occurrence.",
+      "current_status": "CONDITIONAL_E2_E4_E5_E1_E3_OPEN",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "existing TYPEI/CHARGED A>1 overflow with the same support and canonical cofactor c; target terminal-first must preempt a nonterminal proposal",
+      "current_blocker": "No source-bound normalizer producer, terminal schedule, common projector/validator, or re-entry is registered. The post-hoc M=K,d=p-1 determinant identity is explicitly forbidden as E1 provenance.",
+      "evidence": ["claims/type-I-f2-high-support-canonicality-total-cofactor-boundary.md", "reproductions/type_i_f2_high_support_canonicality_normalizer.py", "data/interface-requests/f2-high-support-noncanonical-normalizer-v1.json"]
+    },
+    {
+      "leaf_id": "F2-06-high-support-nonempty",
+      "precedence": 8,
+      "raw_guard": "A>B_p, 1<=C=K/A<=p-1, terminal_first=MISS, prior routes including noncanonical normalization failed, high-support F/G source has finite sink-SCC receipt and candidate set {c_Q<C} nonempty",
+      "effective_guard": "F2-00..F2-05a failed and rank-aware path/candidate tie-break yields a complete E1-E5 target",
+      "mutually_exclusive_with": ["F2-07-C1-empty", "F2-08-Cgt1-empty", "F2-09-p409", "F2-10-explicit-residual"],
+      "coverage_proof": "rank-aware sink-bundle theorem proves each candidate with c_Q<K/A has local descent, but not universal nonemptiness",
+      "current_status": "LOCAL_EDGE_ONLY",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "existing high-support sink or low-support overflow target with deterministic shortest-path/minimum-c_Q receipt",
+      "current_blocker": "Only focused p=73 route is instantiated; no full-domain proof that every actual sink has a candidate or that all source paths are serialized.",
+      "evidence": ["claims/type-I-high-support-rank-aware-sink-bundle-selector.md", "reproductions/type_i_high_support_rank_aware_sink_bundle_selector.py"]
+    },
+    {
+      "leaf_id": "F2-07-C1-empty",
+      "precedence": 9,
+      "raw_guard": "A>B_p, C=1, terminal_first=MISS, all prior routes fail, a replayable canonical sink-candidate census exists, and its high-support improvement set is empty",
+      "effective_guard": "F2-00..F2-06 failed, C=1, and no nonempty high-support candidate exists",
+      "mutually_exclusive_with": ["F2-08-Cgt1-empty", "F2-09-p409", "F2-10-explicit-residual"],
+      "coverage_proof": "C=1 is a fixed TYPEI/CHARGED local minimum. The direct-cofactor subfamily is now exhausted: the three-phase identity plus the positive-phase source barrier forces h=0, then c=t=1 and an exact same-chart return. Its deterministic R=3 dual has an exact terminal-or-G split: a 2 modulo 3 factor of N=(3p+1)/4 gives a direct Type I terminal; only all-1-modulo-3 N remains R3_G. The q=1 immediate image, c8 universal fallback, and actual H4_A1 clean-q atomic target also have independent capacity-one exclusion theorems.",
+      "current_status": "R3_TERMINAL_SUBBRANCH_PLUS_R3_G_RESIDUAL",
+      "planned_closure": "TERMINAL",
+      "target_shape": "conditional canonical lower-protocol handoff: (R,K;A)=(3,(3p+1)/4;(3p+1)/4) after target terminal-first, then semantic TYPEI/ABSORB with PHASE_DROP; terminal/owner/E3/re-entry remain open",
+      "current_blocker": "The direct-cofactor no-go supplies no paid exit. The canonical R=3 anchor continuation is itself T5-inadmissible because it ascends from ABSORB to CHARGED and cannot form a parent macro. Freeze B supplies the exact marked-ABSORB type-space owner, but a non-anchor source event, target terminal-first serialization, common admission, and non-upward re-entry are still absent. The remaining non-direct exclusions also do not prove trace-unreachability because all current/future producer target sets, including H4 non-atomic branches, are not frozen as C1-free.",
+      "resolved_subfamilies": {
+        "direct_cofactor_r_chart": {
+          "status": "EMPTY_AS_PAID_E5_EDGE",
+          "reason": "h>0 contradicts A>B_p, while h=0 forces c=t=1 and exact same-chart return",
+          "claim": "type-I-f2-high-support-c1-direct-cofactor-return-v1"
+        },
+        "canonical_r_three_dual_handoff": {
+          "status": "CONDITIONAL_E2_E4_E5_HANDOFF_E3_REENTRY_OPEN",
+          "reason": "C=1 deterministically yields the R=3 dual target; only an admitted TYPEI/ABSORB protocol drop could pay E5",
+          "claim": "type-I-f2-high-support-c1-canonical-dual-absorb-handoff"
+        },
+        "r_three_terminal_or_g_split": {
+          "status": "TERMINAL_ON_2_MOD_3_FACTOR; R3_G_RESIDUAL_OTHERWISE",
+          "reason": "a 2 modulo 3 factor of N=(3p+1)/4 gives a direct Type I terminal; all factors 1 modulo 3 is exactly the R=3 G branch",
+          "claim": "type-I-f2-high-support-c1-r-three-terminal-g-split"
+        }
+      },
+      "evidence": ["claims/type-I-f2-high-support-c1-direct-cofactor-return-v1.md", "data/t6-wave1/f2-high-support-c1-direct-cofactor-return-v1.json", "claims/type-I-f2-high-support-c1-canonical-dual-absorb-handoff.md", "data/t6-wave1/f2-high-support-c1-canonical-dual-absorb-handoff-v1.json", "claims/type-I-f2-high-support-c1-r-three-terminal-g-split.md", "data/t6-wave1/f2-high-support-c1-r-three-terminal-split-v1.json", "data/interface-requests/f2-c1-canonical-dual-absorb-target-v1.json", "claims/type-I-high-support-empty-improvement-c1-local-minimum-boundary.md", "claims/type-II-q-one-full-carrier-d-one-capacity-one-exclusion.md", "claims/type-I-h4-atomic-capacity-one-source-gate-exclusion.md", "data/t6-wave1/f2-h4-atomic-capacity-one-exclusion-v1.json"]
+    },
+    {
+      "leaf_id": "F2-08-Cgt1-empty",
+      "precedence": 10,
+      "raw_guard": "A>B_p, 2<=C<=p-1, terminal_first=MISS, all prior routes fail, a replayable canonical sink-candidate census exists, and its high-support improvement set is empty",
+      "effective_guard": "F2-00..F2-07 failed, 2<=C<=p-1, and no deterministic high-support candidate survives rank comparison",
+      "mutually_exclusive_with": ["F2-09-p409", "F2-10-explicit-residual"],
+      "coverage_proof": "No current theorem reduces an empty C>1 candidate set to C=1 or supplies a lower protocol; finite controls are insufficient",
+      "current_status": "OPEN_MINIMAL_RESIDUAL",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "conditional deterministic low determinant-dual chart selected from d=p-C and r=A mod p; after target terminal-first, a semantic TYPEI/ABSORB phase drop is proposed, while source event, E3 cursor, and re-entry remain open",
+      "current_blocker": "No universal admitted construction is known for C>1 empty-improvement states. For q|C, A->Aq is neither a fixed-n divisor route nor a same-chart full-excess route, so it cannot supply E1. The canonical determinant dual now gives an E2 target and conditional E4/E5 handoff, but it lacks a producer-specific E1 event, target terminal/F/G typing, cursor and shared serialization/admission into the existing marked-ABSORB type-space owner, and re-entry.",
+      "resolved_subfamilies": {
+        "canonical_determinant_dual_target": {
+          "status": "CONDITIONAL_E2_E4_E5_HANDOFF_E1_E3_REENTRY_OPEN",
+          "reason": "the smaller d/r dual is always a deterministic positive low chart; admission is not proved",
+          "claim": "type-I-f2-high-support-determinant-dual-absorb-handoff"
+        }
+      },
+      "evidence": ["claims/type-I-f2-high-support-determinant-dual-absorb-handoff.md", "data/t6-wave1/f2-high-support-determinant-dual-absorb-handoff-v1.json", "data/interface-requests/f2-determinant-dual-absorb-target-v1.json", "claims/type-I-high-support-rank-aware-sink-bundle-selector.md", "docs/M-H-final-two-problem-audit-2026-08-20.md"]
+    },
+    {
+      "leaf_id": "F2-09-p409",
+      "precedence": 10,
+      "raw_guard": "the explicit p=409,A=5 raw-anchor/cofactor anomaly survives terminal-first and all prior guards",
+      "effective_guard": "F2-00..F2-08 fail and numeric state is the recorded noncanonical H=(409,251,25665;5) or its unsupported S/T history",
+      "mutually_exclusive_with": ["F2-10-explicit-residual"],
+      "coverage_proof": "canonical_chart(409,5)=(11,1125), while H is a raw anchor; no verified predecessor to H or S exists",
+      "current_status": "DISPOSED_BY_DOMAIN_OR_EARLIER_PRECEDENCE",
+      "planned_closure": "EMPTY",
+      "target_shape": "none for the current record; if an exact actual S determinant is later supplied, use existing same-chart promotion A=5->250",
+      "current_blocker": null,
+      "evidence": ["claims/type-I-p409-a5-charged-history-parent-replay-boundary.md", "claims/type-I-f2-overflow-determinant-prepartition.md", "data/t6-wave1/f2-overflow-determinant-prepartition-v1.json"]
+    },
+    {
+      "leaf_id": "F2-10-explicit-residual",
+      "precedence": 11,
+      "raw_guard": "A>1 actual overflow survives terminal-first and every named route, including all determinant-bound low-support branches, noncanonical support-A normalization, canonical high-support C partition and p=409 special case",
+      "effective_guard": "all previous effective guards fail",
+      "mutually_exclusive_with": [],
+      "coverage_proof": "definition of the complement of the ordered guards; this row is the only allowed catch-all and cannot be enqueued by a generic overflow label",
+      "current_status": "OPEN",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "explicit new family/producer request or a proof of EMPTY/TERMINAL; no implicit target schema is authorized",
+      "current_blocker": "A complete symbolic proof that the complement is empty is not available; this row prevents hidden fourth-class transitions.",
+      "evidence": ["data/t6-wave1/f2-overflow-high-support-scope-freeze-v1.json", "concepts/t6-persistent-selector-state-v1.md"]
+    }
+  ],
+  "residual_summary": {
+    "closed_as_terminal": 0,
+    "disposed_before_final_residual": 2,
+    "local_no_go_but_not_closed": 1,
+    "conditional_successor_leaves": 5,
+    "explicit_open_residuals": 4,
+    "final_residual_leaf_ids": ["F2-05a-noncanonical-high-support", "F2-07-C1-empty", "F2-08-Cgt1-empty", "F2-10-explicit-residual"],
+    "closure_rule": "The track cannot be marked closed while any final residual row lacks EMPTY, TERMINAL, or a common-admission E1-E5 successor receipt. In particular, C=1 no-go is not itself closure and C>1 cannot inherit it."
+  },
+  "forbidden_shortcuts": [
+    "p=73 fixture -> universal high-support theorem",
+    "C=1 no-go -> C>1 empty-improvement closure",
+    "M arithmetic target -> admitted target",
+    "p=409 numeric source -> parent receipt",
+    "transient checkpoint -> E5 parent comparison",
+    "finite empty candidate table -> family EMPTY"
+  ]
+}

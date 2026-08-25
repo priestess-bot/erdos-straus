@@ -1,0 +1,55 @@
+{
+  "receipt_id": "f2_post_g_c2_fused_macro_v1",
+  "track_id": "F2-POST-G-H4",
+  "date": "2026-08-24",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "status": "ESTABLISHED_RELATIVE_FINAL_E3_OPEN",
+  "source_quantifier": "Every actual terminal-first-surviving q=1 immediate d=1 receiver whose nonregeneration complete-excess target has residual capacity c=2",
+  "phase_exhaustion": {
+    "immediate_capacity_one": "FAMILY_EMPTY_BY_type-II-q-one-full-carrier-d-one-capacity-one-exclusion",
+    "immediate_nonterminal_capacity_lower_bound": 2,
+    "odd_branch_c2": "FAMILY_EMPTY",
+    "even_branch": {
+      "g": 1,
+      "j": 8,
+      "q_star": 19,
+      "prime_progression": "p=912u+769"
+    },
+    "c2_non19_residual": "FAMILY_EMPTY"
+  },
+  "fused_constructor": {
+    "proposed_id": "q_one_d_one_c2_19_h4_fused_exit_v1",
+    "persistent_source": "original d=1 receiver P",
+    "internal_nonpersistent_checkpoints": ["H0", "H1", "H2", "H3", "H4"],
+    "terminal_first_at_every_checkpoint": true,
+    "final_outputs": ["direct_terminal_leaf", "ordinary final Type-I target", "H4 AtomicPendingTargetV1"],
+    "parent_rank": "(0,p-1)",
+    "final_rank": "(0,c_T), 1<=c_T<=p-2",
+    "T5_ticket": "LOCAL_DROP"
+  },
+  "contract": {
+    "E1": "ESTABLISHED_RELATIVE by composed actual path receipts",
+    "E2": "ESTABLISHED by deterministic phase/anchor/H4 branch formulas",
+    "E3": "OPEN_SHARED_FINAL_TARGET_SERIALIZER_AND_ADMISSION",
+    "E4": "ESTABLISHED identity on Sol(p)",
+    "E5": "ESTABLISHED parent-to-final-target LOCAL_DROP",
+    "reentry": "OPEN_SHARED_INTERFACE"
+  },
+  "eliminated_obligations": [
+    "standalone H0 C2 target queue admission",
+    "standalone H3 arithmetic-summary serializer",
+    "type_i_c2_non19_residual family request"
+  ],
+  "remaining_dependencies": [
+    "Agent 3 common atomic serializer for atomic final targets",
+    "coordinator common serializer/admission for non-atomic final targets",
+    "total continuation of admitted H4 F/G descendants"
+  ],
+  "agent2_source_universe_note": "The q=1 immediate d=1 image never supplies a C=1 target; its nonterminal capacity is at least 2.",
+  "closure_boundary": {
+    "C2": "not active-closed until E3 and reentry pass",
+    "H4": "target descendant totality open",
+    "F2": "OPEN",
+    "T6": "OPEN"
+  }
+}

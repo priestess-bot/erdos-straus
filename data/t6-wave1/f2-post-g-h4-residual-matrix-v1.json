@@ -1,0 +1,282 @@
+{
+  "track_id": "F2-POST-G-H4",
+  "artifact_id": "f2_post_g_h4_residual_matrix_v1",
+  "artifact_version": 1,
+  "date": "2026-08-24",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "status": "OPEN_PARTITION_DESIGN",
+  "superseded_by": "data/t6-wave1/f2-post-g-h4-minimal-residual-v1.json",
+  "partition_root": "actual_persistent AND terminal_first_miss AND owned_post_G_C2_H4_domain",
+  "coverage_strategy": "First partition by source lineage (ordinary q=1 G, ordinary positive-q G, c=3 lineage G, post-G Type-I, C2 19-phase, H4). Within H4 use the ordered Boolean DAG terminal hit; overlap properness; capacity topness; a_alt equality; q cleanliness; target direct-hit/F/G/atomic/other. Each child includes the negations of all earlier siblings, so leaves are pairwise disjoint by construction. Exhaustiveness requires a symbolic theorem that every actual source supplies each queried typed guard and that every final target classifier has no residual outside hit/F/G/atomic/registered-other.",
+  "leaves": [
+    {
+      "leaf_id": "G-Q1-TERMINAL",
+      "predicate": "ordinary actual q=1 G-source scheduler finds a registered terminal before handoff",
+      "mutually_exclusive_with": ["G-Q1-HANDOFF"],
+      "coverage_proof": "terminal-first outcome is HIT versus MISS",
+      "planned_closure": "TERMINAL",
+      "target_shape": "direct_terminal_leaf",
+      "current_blocker": "bind the full scheduler receipt rather than only the endpoint-local gap-3 prefix"
+    },
+    {
+      "leaf_id": "G-Q1-HANDOFF",
+      "predicate": "ordinary actual q=1 G source and complete terminal-first miss",
+      "mutually_exclusive_with": ["G-Q1-TERMINAL"],
+      "coverage_proof": "complement of G-Q1-TERMINAL on the q=1 source domain",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "type_i_full_carrier_post_g root",
+      "current_blocker": "the source proves only a gap-3-local terminal scope; a common runtime producer must bind its admitted state_id and a target-local full-carrier scheduler rather than synthesize either receipt"
+    },
+    {
+      "leaf_id": "G-QPOS-TERMINAL",
+      "predicate": "ordinary actual q>1 G source has a terminal-first hit",
+      "mutually_exclusive_with": ["G-QPOS-HANDOFF", "G-QPOS-UNREACHABLE"],
+      "coverage_proof": "first leaf of the positive-q actual-source partition",
+      "planned_closure": "TERMINAL",
+      "target_shape": "direct_terminal_leaf",
+      "current_blocker": "no executable actual positive-q scheduler/source serializer"
+    },
+    {
+      "leaf_id": "G-QPOS-HANDOFF",
+      "predicate": "ordinary actual q>1 G source survives terminal-first and satisfies the positive-q receipt guard",
+      "mutually_exclusive_with": ["G-QPOS-TERMINAL", "G-QPOS-UNREACHABLE"],
+      "coverage_proof": "actual reachable positive-q source after terminal miss",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "type_i_full_carrier_post_g root",
+      "current_blocker": "active verifier explicitly lacks actual source and terminal-first receipts and remains nonrecursive"
+    },
+    {
+      "leaf_id": "G-QPOS-UNREACHABLE",
+      "predicate": "no actual persistent positive-q G source can arise from the admitted predecessor grammar",
+      "mutually_exclusive_with": ["G-QPOS-TERMINAL", "G-QPOS-HANDOFF"],
+      "coverage_proof": "alternative closure only if a source-lineage impossibility theorem is proved",
+      "planned_closure": "FAMILY_EMPTY",
+      "target_shape": "none",
+      "current_blocker": "no symbolic reachability exclusion theorem"
+    },
+    {
+      "leaf_id": "G-C3-TERMINAL",
+      "predicate": "actual c=3 source-lineage G state has a terminal-first hit",
+      "mutually_exclusive_with": ["G-C3-RELAY", "G-C3-UNREACHABLE"],
+      "coverage_proof": "first leaf of the actual c=3 source-lineage partition",
+      "planned_closure": "TERMINAL",
+      "target_shape": "direct_terminal_leaf",
+      "current_blocker": "source-lineage actualness and full terminal scheduler are not bound"
+    },
+    {
+      "leaf_id": "G-C3-RELAY",
+      "predicate": "actual c=3 source-lineage G state survives terminal-first",
+      "mutually_exclusive_with": ["G-C3-TERMINAL", "G-C3-UNREACHABLE"],
+      "coverage_proof": "complement of G-C3-TERMINAL when an actual lineage exists",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "c3 source-lineage Type-I seed then paid local target",
+      "current_blocker": "conditional lineage receipt has no active actual producer/admission bridge"
+    },
+    {
+      "leaf_id": "G-C3-UNREACHABLE",
+      "predicate": "no actual persistent c=3 source-lineage G state arises",
+      "mutually_exclusive_with": ["G-C3-TERMINAL", "G-C3-RELAY"],
+      "coverage_proof": "alternative closure only under a source-lineage impossibility theorem",
+      "planned_closure": "FAMILY_EMPTY",
+      "target_shape": "none",
+      "current_blocker": "no symbolic reachability exclusion theorem"
+    },
+    {
+      "leaf_id": "POSTG-FIRST-CHILD",
+      "predicate": "admitted full-carrier post-G root survives target-local terminal-first",
+      "mutually_exclusive_with": ["POSTG-ROOT-TERMINAL"],
+      "coverage_proof": "the root dispatch parity split is exhaustive after the terminal leaf",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "post-G first Type-I child",
+      "current_blocker": "a local q1 runtime slice now binds the initializer, full-carrier root and checkpoint contraction with named terminal scopes; its odd low-final p=265 mod336 subbranch is gap-7 preempted and p=25 mod336 contracts to high C=9. The R=23 subray p=1033 mod11088 has an outer fixed-tail terminal, while the remaining R=23/35/11 rows remain outside the shared Gate-3 registry with no complete terminal schedule or final re-entry."
+    },
+    {
+      "leaf_id": "POSTG-ROOT-TERMINAL",
+      "predicate": "admitted full-carrier post-G root has a registered target-local terminal",
+      "mutually_exclusive_with": ["POSTG-FIRST-CHILD"],
+      "coverage_proof": "terminal HIT versus MISS on the full-carrier root",
+      "planned_closure": "TERMINAL",
+      "target_shape": "direct_terminal_leaf",
+      "current_blocker": "unified scheduler precedence receipt is not yet serialized"
+    },
+    {
+      "leaf_id": "POSTG-SECOND-ANCHOR-TERMINAL",
+      "predicate": "actual first child is terminal-preempted before the second-anchor macro",
+      "mutually_exclusive_with": ["POSTG-SECOND-ANCHOR-SUCCESSOR"],
+      "coverage_proof": "terminal HIT versus MISS on the actual first child",
+      "planned_closure": "TERMINAL",
+      "target_shape": "direct_terminal_leaf",
+      "current_blocker": "family formulas do not consume a common terminal-first receipt"
+    },
+    {
+      "leaf_id": "POSTG-SECOND-ANCHOR-SUCCESSOR",
+      "predicate": "actual first child survives terminal-first and enters the parity-determined second-anchor macro",
+      "mutually_exclusive_with": ["POSTG-SECOND-ANCHOR-TERMINAL"],
+      "coverage_proof": "odd/even t partition is symbolic and exhaustive",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "second-anchor or postmacro receiver",
+      "current_blocker": "common source envelope, final target projection and active re-entry are absent"
+    },
+    {
+      "leaf_id": "D1-RELAY-TERMINAL",
+      "predicate": "actual d=1 postmacro receiver has a registered terminal-first hit",
+      "mutually_exclusive_with": ["D1-RELAY-STRICT", "D1-RELAY-RESIDUAL"],
+      "coverage_proof": "first leaf in the d=1 relay scheduler",
+      "planned_closure": "TERMINAL",
+      "target_shape": "direct_terminal_leaf",
+      "current_blocker": "active implementation is fixed-fixture and does not define the full scheduler"
+    },
+    {
+      "leaf_id": "D1-RELAY-STRICT",
+      "predicate": "actual d=1 receiver survives terminal-first and the p-free complete-excess relay guard holds",
+      "mutually_exclusive_with": ["D1-RELAY-TERMINAL", "D1-RELAY-RESIDUAL"],
+      "coverage_proof": "guard-positive leaf after terminal miss",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "C2, high-support, or continued post-G receiver",
+      "current_blocker": "lift fixture-level formulas to every actual d=1 source and serialize the selected target"
+    },
+    {
+      "leaf_id": "D1-RELAY-RESIDUAL",
+      "predicate": "actual d=1 receiver survives terminal-first but the existing p-free relay guard fails",
+      "mutually_exclusive_with": ["D1-RELAY-TERMINAL", "D1-RELAY-STRICT"],
+      "coverage_proof": "negation of the existing relay guard after terminal miss",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "unknown registered post-G residual target",
+      "current_blocker": "no symbolic empty theorem or alternative paid constructor"
+    },
+    {
+      "leaf_id": "C2-TERMINAL",
+      "predicate": "actual high-C2 19-phase parent or internal macro prefix has a registered terminal-first hit",
+      "mutually_exclusive_with": ["C2-H3-SUCCESSOR", "C2-NON19-RESIDUAL"],
+      "coverage_proof": "terminal-first is evaluated before the phase split",
+      "planned_closure": "TERMINAL",
+      "target_shape": "direct_terminal_leaf",
+      "current_blocker": "active macro code assumes the miss and does not serialize the terminal prefix"
+    },
+    {
+      "leaf_id": "C2-H3-SUCCESSOR",
+      "predicate": "actual C2 source is in the 19-phase, all registered priority checks miss, and the fixed three-anchor word is legal",
+      "mutually_exclusive_with": ["C2-TERMINAL", "C2-NON19-RESIDUAL"],
+      "coverage_proof": "19-phase congruence versus its complement after terminal miss",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "type_i_c2_19_macro_target H3",
+      "current_blocker": "macro_data exposes arithmetic fields only; H3 has no admitted target serializer"
+    },
+    {
+      "leaf_id": "C2-NON19-RESIDUAL",
+      "predicate": "actual C2 descendant survives terminal-first but is outside the currently named 19-phase fixed word",
+      "mutually_exclusive_with": ["C2-TERMINAL", "C2-H3-SUCCESSOR"],
+      "coverage_proof": "complement of the 19-phase congruence in the full C2 domain",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "new or existing C2 residual family",
+      "current_blocker": "no theorem proves this complement empty and no registered constructor covers it"
+    },
+    {
+      "leaf_id": "H4-TERMINAL",
+      "predicate": "actual H4 parent or constructed target hits any terminal in the fixed complete priority prefix",
+      "mutually_exclusive_with": ["H4-PROPER-TOP-A1-CLEAN", "H4-PROPER-TOP-A1-NONCLEAN", "H4-PROPER-TOP-AGT1", "H4-PROPER-NONTOP", "H4-NONPROPER"],
+      "coverage_proof": "first node of the H4 guard DAG; all later leaves include terminal_first_miss",
+      "planned_closure": "TERMINAL",
+      "target_shape": "direct_terminal_leaf",
+      "current_blocker": "the complete H4 terminal registry and precedence digest are not unified"
+    },
+    {
+      "leaf_id": "H4-PROPER-TOP-A1-CLEAN",
+      "predicate": "terminal miss AND proper overlap AND top capacity AND a_alt=1 AND clean-q",
+      "mutually_exclusive_with": ["H4-TERMINAL", "H4-PROPER-TOP-A1-NONCLEAN", "H4-PROPER-TOP-AGT1", "H4-PROPER-NONTOP", "H4-NONPROPER"],
+      "coverage_proof": "positive leaf of the ordered proper/top/a_alt/clean guard DAG",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "H4 atomic target classified terminal, F, or G",
+      "current_blocker": "relative v1 macro exists, but active controls do not serialize a nonterminal target and shared atomic admission belongs to Agent 3"
+    },
+    {
+      "leaf_id": "H4-PROPER-TOP-A1-NONCLEAN",
+      "predicate": "terminal miss AND proper overlap AND top capacity AND a_alt=1 AND NOT clean-q",
+      "mutually_exclusive_with": ["H4-TERMINAL", "H4-PROPER-TOP-A1-CLEAN", "H4-PROPER-TOP-AGT1", "H4-PROPER-NONTOP", "H4-NONPROPER"],
+      "coverage_proof": "clean-q Boolean complement inside the a_alt=1 top leaf",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "H4 non-clean-q descendant",
+      "current_blocker": "no full E1-E5 constructor or family-empty theorem"
+    },
+    {
+      "leaf_id": "H4-PROPER-TOP-AGT1",
+      "predicate": "terminal miss AND proper overlap AND top capacity AND a_alt>1",
+      "mutually_exclusive_with": ["H4-TERMINAL", "H4-PROPER-TOP-A1-CLEAN", "H4-PROPER-TOP-A1-NONCLEAN", "H4-PROPER-NONTOP", "H4-NONPROPER"],
+      "coverage_proof": "positive-integer dichotomy a_alt=1 or a_alt>1",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "H4 a_alt>1 residual descendant",
+      "current_blocker": "no symbolic terminal/empty/paid-successor theorem"
+    },
+    {
+      "leaf_id": "H4-PROPER-NONTOP",
+      "predicate": "terminal miss AND proper overlap AND NOT top capacity",
+      "mutually_exclusive_with": ["H4-TERMINAL", "H4-PROPER-TOP-A1-CLEAN", "H4-PROPER-TOP-A1-NONCLEAN", "H4-PROPER-TOP-AGT1", "H4-NONPROPER"],
+      "coverage_proof": "top-capacity Boolean complement inside proper overlap",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "H4 nontop-capacity residual descendant",
+      "current_blocker": "no deterministic paid target or emptiness theorem"
+    },
+    {
+      "leaf_id": "H4-NONPROPER",
+      "predicate": "terminal miss AND NOT proper overlap",
+      "mutually_exclusive_with": ["H4-TERMINAL", "H4-PROPER-TOP-A1-CLEAN", "H4-PROPER-TOP-A1-NONCLEAN", "H4-PROPER-TOP-AGT1", "H4-PROPER-NONTOP"],
+      "coverage_proof": "proper-overlap Boolean complement",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "H4 nonproper-overlap residual descendant",
+      "current_blocker": "no deterministic paid target or family-empty theorem"
+    },
+    {
+      "leaf_id": "H4-TARGET-DIRECT-HIT",
+      "predicate": "an H4 constructor target passes the direct or centered-hit classifier",
+      "mutually_exclusive_with": ["H4-TARGET-F", "H4-TARGET-G", "H4-TARGET-ATOMIC", "H4-TARGET-OTHER"],
+      "coverage_proof": "first-match target classifier leaf after an H4 arithmetic target exists",
+      "planned_closure": "TERMINAL",
+      "target_shape": "direct_terminal_leaf",
+      "current_blocker": "classifier precedence must be bound to the actual parent receipt"
+    },
+    {
+      "leaf_id": "H4-TARGET-F",
+      "predicate": "H4 target is nonterminal and reclassifies F",
+      "mutually_exclusive_with": ["H4-TARGET-DIRECT-HIT", "H4-TARGET-G", "H4-TARGET-ATOMIC", "H4-TARGET-OTHER"],
+      "coverage_proof": "typed F/G/hit/atomic/other target partition",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "H4 F descendant",
+      "current_blocker": "no active family projection, common admission or downstream total exit"
+    },
+    {
+      "leaf_id": "H4-TARGET-G",
+      "predicate": "H4 target is nonterminal and reclassifies G",
+      "mutually_exclusive_with": ["H4-TARGET-DIRECT-HIT", "H4-TARGET-F", "H4-TARGET-ATOMIC", "H4-TARGET-OTHER"],
+      "coverage_proof": "typed F/G/hit/atomic/other target partition",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "H4 G descendant",
+      "current_blocker": "ordinary G handoff requires an actual H4-origin serializer and downstream continuous re-entry"
+    },
+    {
+      "leaf_id": "H4-TARGET-ATOMIC",
+      "predicate": "H4 target requires the registered H4 atomic arm",
+      "mutually_exclusive_with": ["H4-TARGET-DIRECT-HIT", "H4-TARGET-F", "H4-TARGET-G", "H4-TARGET-OTHER"],
+      "coverage_proof": "typed F/G/hit/atomic/other target partition",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "AtomicPendingTargetV1 using H4_A1 or requested new H4 arm",
+      "current_blocker": "shared atomic serializer and target grammar are owned by Agent 3/coordinator"
+    },
+    {
+      "leaf_id": "H4-TARGET-OTHER",
+      "predicate": "H4 arithmetic target is not direct-hit, F, G, or an admitted atomic shape",
+      "mutually_exclusive_with": ["H4-TARGET-DIRECT-HIT", "H4-TARGET-F", "H4-TARGET-G", "H4-TARGET-ATOMIC"],
+      "coverage_proof": "residual complement retained explicitly; closure requires proving this leaf empty or proposing a typed family",
+      "planned_closure": "FAMILY_EMPTY",
+      "target_shape": "none unless a new family request is justified",
+      "current_blocker": "no total target-classification theorem excludes an unknown residual"
+    }
+  ],
+  "closure_counters": {
+    "leaf_count": 30,
+    "closed_leaf_count": 0,
+    "open_leaf_count": 30,
+    "unadmitted_target_shape_count": 8,
+    "pending_dispatch_count": 3
+  },
+  "status_boundary": "This matrix freezes the full quantifier and proof obligations. Planned closure labels are not theorem statuses; every leaf remains open until its symbolic coverage and stated disposition satisfy D1-D10."
+}

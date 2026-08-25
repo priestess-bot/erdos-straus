@@ -1,0 +1,137 @@
+{
+  "request_id": "f3_tr1_target_shapes_v1",
+  "request_version": 1,
+  "track_id": "F3-TR1-H-SUPPORTED",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "date": "2026-08-24",
+  "status": "PROPOSAL_ONLY_NOT_ACTIVE",
+  "source_owner": "proper_root_stutter_k_gt_one",
+  "producer_request": {
+    "producer_id": "tr1_h_supported_transverse_v1",
+    "constructor_status": "NOT_REGISTERED",
+    "queue_right": false,
+    "terminal_first_required": true,
+    "owned_routes": [
+      "R4_M3_NONQ5_H_SUPPORTED",
+      "R6_MGT3_H_SUPPORTED"
+    ]
+  },
+  "envelope_request": {
+    "name": "TR1PhysicalTransitionV1",
+    "purpose": "one common E1-E5 envelope for R4 and R6, with route-specific arithmetic payloads if necessary",
+    "required_source_fields": [
+      "actual_parent_state_id",
+      "active_producer_id",
+      "persistent_admission_id",
+      "root_to_endpoint_source_path_digest",
+      "maximal_complete_excess_receipt_digest",
+      "terminal_first_digest",
+      "terminal_first_miss",
+      "root_height_u",
+      "root_q_menu_replay",
+      "root_q_menu_complete_miss_digest",
+      "D_star_value",
+      "D_star_factorization_receipt",
+      "fresh_raw_occurrence_factor_set",
+      "selected_fresh_factor_or_divisor",
+      "selected_fresh_factor_arithmetic_id",
+      "integer_raw_occurrence_receipt",
+      "factor_selection_rule",
+      "priority_prefix_digest"
+    ],
+    "deterministic_factor_rule": "replay every 1<Q|u root-capacity menu and all written terminal predicates in fixed order; after all miss, select the least D_star factor with an independently verified fresh integer raw occurrence. A least arithmetic D_star factor may be capacity-saturated and is not selectable by itself.",
+    "required_edge_fields": [
+      "E1_integer_raw_occurrence_and_path",
+      "E2_deterministic_target",
+      "E3_target_schema_owner_and_digest",
+      "E4_universal_solution_lift",
+      "E5_authoritative_T5_ticket",
+      "target_admission_decision",
+      "target_reentry_receipt"
+    ],
+    "forbidden_inputs": [
+      "cached family owner as an E3 proof",
+      "bare divisibility q divides D_star without an occurrence receipt",
+      "persistent_queue boolean as actualness proof",
+      "recursive_edge_eligible boolean as admission proof",
+      "singleton lift as universal E4",
+      "local checkpoint rank as parent-to-final E5"
+    ]
+  },
+  "target_shapes": [
+    {
+      "shape_id": "TR1_DIRECT_TERMINAL_V1",
+      "disposition": "TERMINAL",
+      "existing_family_match": "direct_terminal_leaf",
+      "new_family_required": false,
+      "atomic_arm_required": false,
+      "mark_behavior": "root equation terminal; no recursive mark",
+      "T5_ticket_type": null,
+      "owner_precedence_request": null,
+      "admission_requirement": "terminal verifier replays the explicit Type I or Type II certificate"
+    },
+    {
+      "shape_id": "TR1_TYPEI_CHARGED_TARGET_V1",
+      "disposition": "PERSISTENT_CANDIDATE_UNTIL_PROVED",
+      "existing_family_match": "type_i_a_gt_one_overflow_residual by default; any refinement requires its own raw receipt",
+      "allowed_existing_owners": [
+        "type_i_a_gt_one_overflow_residual"
+      ],
+      "conditional_owner_refinements": {
+        "type_i_low_support_persistent_overflow": "only with an independently replayed same-chart promotion receipt",
+        "type_i_a_one_overflow": "only when raw target support_A equals 1 and its overflow receipt is verified",
+        "type_i_high_support_sink": "only with an independently replayed sink_scc_receipt",
+        "type_i_full_carrier_post_g": "forbidden unless provenance_kind=FULL_CARRIER_POST_G and full_carrier_scope are both established by an actual G handoff; a transverse proper-root label is insufficient"
+      },
+      "new_family_required": false,
+      "atomic_arm_required": false,
+      "mark_behavior": "preserve ROOT_SOL only if a universal identity lift is proved",
+      "T5_ticket_type": "for R_T>p overflow, LOCAL_DROP only after an actual parent-to-final CHARGED rank comparison; otherwise reject or use a separately typed protocol theorem",
+      "owner_precedence_request": "none; common classifier determines the owner from exact raw provenance and dedicated receipts, never from this proposal list",
+      "admission_requirement": "target passes the frozen common extractor, owner classifier, producer target declaration and queue gate"
+    },
+    {
+      "shape_id": "TR1_TYPEI_ABSORB_COMMIT_V1",
+      "disposition": "PERSISTENT_CANDIDATE_UNTIL_PROVED",
+      "existing_family_match": "type_i_absorb_marked_residual only if R_T<p and the full MARKED_ABSORB / ABSORB normal form is independently verified",
+      "new_family_required": "coordinator decision required only if frozen grammar cannot represent the exact ABSORB protocol",
+      "atomic_arm_required": false,
+      "mark_behavior": "preserve ROOT_SOL only if a universal identity lift is proved",
+      "T5_ticket_type": "TYPEI protocol drop CHARGED to ABSORB only after R_T<p marked-absorb semantics, irreversible protocol commit, and all ABSORB fields/rank are verified; M<=B_p alone is insufficient",
+      "owner_precedence_request": "the frozen type-space owner exists; common classification, producer authorization and admission remain required",
+      "admission_requirement": "target has R_T<p, a verified marked-absorb normal form, complete ABSORB protocol coordinates, an irreversible commit, and a common-admitted owner"
+    },
+    {
+      "shape_id": "TR1_SMALLER_MARKED_TARGET_V1",
+      "disposition": "PERSISTENT_CANDIDATE_UNTIL_PROVED",
+      "existing_family_match": "generic_nontrivial_marked_state",
+      "new_family_required": false,
+      "atomic_arm_required": false,
+      "mark_behavior": "NONTRIVIAL_MARK bound to a strictly smaller equation rank and a universal Sol(n) to Sol(p) lift",
+      "T5_ticket_type": "OUTER_RANK_DROP",
+      "owner_precedence_request": "use existing generic-marked precedence only after mark receipt verification",
+      "admission_requirement": "strictly smaller positive equation rank, content-addressed mark receipt, universal lift and common queue admission"
+    }
+  ],
+  "new_family_request": {
+    "status": "CONDITIONAL_PENDING_TARGET_THEOREM",
+    "condition": "a proved TR1 target has R_T<p and full marked-absorb/ABSORB protocol semantics but no exact frozen owner predicate",
+    "default_disposition": "reject before queue until coordinator freezes the owner and overlap policy"
+  },
+  "new_atomic_arm_request": null,
+  "grammar_change_requested": "CONDITIONAL_ONLY_IF_THE_EXACT_TYPED_TARGET_IS_NOT_REPRESENTABLE",
+  "activation_gates": [
+    "symbolic exhaustive partition with no explicit residual",
+    "integer raw occurrence/E1 and priority proof",
+    "deterministic target theorem",
+    "full E1-E5 proof",
+    "common F1 admission and re-entry",
+    "Agent 5 cross-audit",
+    "coordinator approval at target-shape and grammar gates"
+  ],
+  "status_boundaries": {
+    "OPEN_TR1_PHYSICAL_SERIALIZER": "OPEN",
+    "F3": "OPEN",
+    "T6": "OPEN"
+  }
+}

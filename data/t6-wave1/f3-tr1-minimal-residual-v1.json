@@ -1,0 +1,75 @@
+{
+  "artifact_id": "f3_tr1_minimal_residual_v1",
+  "artifact_version": 1,
+  "track_id": "F3-TR1-H-SUPPORTED",
+  "date": "2026-08-24",
+  "status": "OPEN_MINIMAL_RESIDUAL_PACKAGE",
+  "reason": "a source-bound D_star arithmetic factor is universal, but no theorem turns it into a consumable integer raw occurrence/E1 or maps every terminal-menu miss to an admitted E1-E5 target",
+  "residual_codes": [
+    "R4_H_MENU_AND_DSTAR_TERMINALS_MISS_NO_TR1_TARGET",
+    "R6_H_MENU_AND_DSTAR_TERMINALS_MISS_NO_TR1_TARGET",
+    "R6_K3_U_MENU_MISS_DSTAR_NO_TR1_TARGET"
+  ],
+  "required_receipt_fields": [
+    "actual_parent_state_id",
+    "persistent_admission_id",
+    "root_to_endpoint_source_path_digest",
+    "terminal_first_complete_miss_digest",
+    "maximal_complete_excess_receipt_digest",
+    "m",
+    "k",
+    "k_perp",
+    "D_star",
+    "k_factorization_receipt",
+    "D_star_factorization_receipt",
+    "root_supported_menu_miss_digest",
+    "D_star_terminal_menu_miss_digest",
+    "selected_transverse_arithmetic_factor_id",
+    "fresh_raw_occurrence_factor_set",
+    "fresh_raw_occurrence_selection_rule",
+    "integer_raw_occurrence_status",
+    "selected_transverse_factor",
+    "TR1_rejection_code"
+  ],
+  "deterministic_selection": {
+    "root_supported": "run every 1<Q|u root-capacity composite menu in fixed increasing order; q_h only proves nonempty eligibility in selected subcases, while R6 k=3 has u>1 directly",
+    "transverse": "retain all D_star arithmetic factors after terminal menus miss; select only the least factor with an independently verified fresh integer raw occurrence",
+    "dyadic_rule": "a dyadic arithmetic factor is not an odd-prime TR1 menu; it requires its own fresh-occurrence proof"
+  },
+  "known_counter_boundaries": [
+    {
+      "id": "ROOT_MENU_CAN_BE_EMPTY",
+      "evidence": "p=457,q=7 root-capacity external menu is empty",
+      "meaning": "q divides u is genuine provenance but not terminal totality"
+    },
+    {
+      "id": "FINITE_FIXED_GAP_SAME_CARRIER_NOT_TOTAL",
+      "evidence": "transverse negative-root fixed-gap same-carrier barrier",
+      "meaning": "adding finitely many fixed p+r tests cannot close general negative roots from q-local data"
+    },
+    {
+      "id": "FACTOR_QUOTIENT_NOT_ORDINARY_REENTRY",
+      "evidence": "unit-normal-form obstruction for the Eisenstein factor quotient",
+      "meaning": "strict algebraic quotient coordinates do not supply E3 or E4"
+    }
+  ],
+  "target_rank_boundary": {
+    "M_at_most_B_p": "does not determine protocol; ABSORB requires R_T<p marked-absorb semantics plus complete protocol fields and rank",
+    "M_greater_than_B_p": "does not alone determine protocol; an R_T>p overflow may remain CHARGED only with an actual parent-to-final local-rank drop",
+    "source": "Agent 7 cross-track p2 endpoint review; the distinction is independent of its m=3 q=5 lineage"
+  },
+  "nontransferable_p2_results": [
+    "the deterministic omega_pf policy is confined to the source-bound m=3 minimal-q=5 path",
+    "the one-sided factor-pair specialization is confined to that path",
+    "the first-child L1 congruence must not be transferred to a later L_omega",
+    "only the algebraic identity L_omega=E_uE_v may be reused after an independent actual path and endpoint proof"
+  ],
+  "next_minimal_theorem": "For every receipt in either residual code, TR1PhysicalTransitionV1 returns a direct terminal or a common-admitted target with an all-solution lift and a strict parent-to-final T5 ticket.",
+  "status_boundaries": {
+    "R4": "OPEN_MINIMAL_RESIDUAL",
+    "R6": "OPEN_MINIMAL_RESIDUAL",
+    "OPEN_TR1_PHYSICAL_SERIALIZER": "OPEN",
+    "F3": "OPEN",
+    "T6": "OPEN"
+  }
+}

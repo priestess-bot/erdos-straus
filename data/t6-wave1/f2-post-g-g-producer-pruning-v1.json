@@ -1,0 +1,49 @@
+{
+  "receipt_id": "f2_post_g_g_producer_pruning_v1",
+  "track_id": "F2-POST-G-H4",
+  "date": "2026-08-24",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "status": "ESTABLISHED_FOR_FROZEN_SELECTED_GRAPH",
+  "graph_hypotheses": [
+    "initial_q_one_root_dispatch_v1 is the unique initializer",
+    "registered relation F/G targets are emitted only by F-source proper/gcd-shadow descent",
+    "each relation successor has strictly smaller q",
+    "TYPEI cannot return nonterminally to TYPEII_REL or TYPEII_G_HANDOFF",
+    "q_one_full_carrier_phase_root_entry_v1 precedes the optional c3 lineage relay"
+  ],
+  "induction": {
+    "base": "initializer has no Type-II F output and its only G output has q=1",
+    "successor": "every registered producer with an F or G relation target requires a prior F source; no other phase can seed F",
+    "conclusion": "no Type-II F state and no positive-q Type-II G state occurs in the frozen selected graph"
+  },
+  "producer_dispositions": [
+    {
+      "producer_id": "q_one_g_full_carrier_phase_root",
+      "disposition": "ACTIVE_SELECTED_PRODUCER",
+      "source": "the unique reachable q=1 ordinary G seed",
+      "target": "type_i_full_carrier_post_g",
+      "ticket": "PHASE_DROP"
+    },
+    {
+      "producer_id": "positive_q_g_full_carrier_phase_root",
+      "disposition": "DEFER_UNTIL_F1_GRAMMAR_FREEZE_RETAIN_RELATIVE_PRODUCER",
+      "source_family_status": "FAMILY_EMPTY_IN_FROZEN_SELECTED_GRAPH",
+      "required_resolution": "source-empty only after F1 proves no new seed; otherwise activate through common admission",
+      "reopen_condition": "a new admitted producer or initializer creates a positive-q Type-II F/G seed"
+    },
+    {
+      "producer_id": "q_one_g_c3_source_lineage_relay",
+      "disposition": "NONRECURSIVE_SUPERSEDED_ALTERNATE",
+      "dominant_producer": "q_one_g_full_carrier_phase_root",
+      "domain_relation": "D_c3 is a subset of D_full_carrier",
+      "reopen_condition": "precedence changes or full-carrier is removed from the q=1 G source domain"
+    }
+  ],
+  "does_not_claim": [
+    "abstract positive-q G arithmetic family is empty",
+    "positive-q relative phase-root theorem is false",
+    "F1 semantic constructor inventory is closed under future producers",
+    "post-G Type-I continuation is total",
+    "F2 or T6 is closed"
+  ]
+}

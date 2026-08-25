@@ -1,0 +1,30 @@
+{
+  "request_id": "f2_post_g_low_chart_overflow_handoff_v1",
+  "track_id": "F2-POST-G-H4",
+  "date": "2026-08-24",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "status": "PROPOSAL_NOT_REGISTERED",
+  "producer_id_request": "post_g_low_chart_complete_excess_exit_v1",
+  "source_owner_request": ["type_i_full_carrier_post_g"],
+  "target_owner_request": [
+    "type_i_full_carrier_post_g",
+    "type_i_a_gt_one_overflow_residual",
+    "direct_terminal_leaf"
+  ],
+  "target_shape": {
+    "equation_target": "4/p",
+    "mark_behavior": "ROOT_SOL identity",
+    "scope_behavior": "preserve source scope",
+    "support": "M=lcm(A,Q_K(R-1))>A",
+    "chart": "canonical M-chart",
+    "T5_ticket": "LOCAL_DROP",
+    "atomic_arm": "NONE"
+  },
+  "precedence_request": [
+    "target-local terminal before queue",
+    "specialized overflow owner before post-G fallback",
+    "type_i_a_gt_one_overflow_residual when no narrower overflow predicate matches"
+  ],
+  "new_family_required": false,
+  "status_boundary": "The coordinator must implement and freeze the producer rule; this request grants no queue authority."
+}

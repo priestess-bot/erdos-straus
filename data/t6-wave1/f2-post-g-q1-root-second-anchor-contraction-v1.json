@@ -1,0 +1,59 @@
+{
+  "schema_id": "t6_wave1_f2_post_g_q1_root_second_anchor_contraction_v1",
+  "version": 1,
+  "artifact_id": "f2_post_g_q1_root_second_anchor_contraction_v1",
+  "track_id": "F2-POST-G-H4",
+  "date": "2026-08-25",
+  "claim_id": "type-II-q-one-full-carrier-root-second-anchor-contraction",
+  "status": "ESTABLISHED_PRE_ADMISSION_ROOT_TO_FINAL_T5_CONTRACTION",
+  "quantifier": "actual terminal-first-surviving q=1 full-carrier root, required checkpoint/final terminal MISS receipts, and existing parity quotient-fold construction",
+  "checkpoint_policy": {
+    "first_child": "NONPERSISTENT_MACRO_CHECKPOINT",
+    "second_anchor_high_determinant": "NONPERSISTENT_MACRO_CHECKPOINT",
+    "reason": "Persisting the low child as TYPEI/ABSORB before the old macro would require forbidden same-rank ABSORB-to-CHARGED re-entry when the final target is overflow."
+  },
+  "final_carrier": {
+    "t_odd": "L=2*(10*t+1)",
+    "t_even": "t=2*s, L=9*s*q_star where q_star is the least forced excess prime dividing 6*s-1",
+    "common": "L>1 and L divides K_T"
+  },
+  "final_projection": {
+    "R_T_gt_p": {
+      "protocol": "TYPEI/CHARGED",
+      "provenance": "OVERFLOW",
+      "ticket": "LOCAL_DROP",
+      "proof": "floor(B_p/L)<floor(B_p/1)=B_p"
+    },
+    "R_T_lt_p": {
+      "protocol": "TYPEI/ABSORB",
+      "provenance": "MARKED_ABSORB",
+      "cursor": ["1", "R_T-1", "1"],
+      "epsilon": "min",
+      "absorb_m": 1,
+      "absorb_r_epsilon": 1,
+      "ticket": "PHASE_DROP"
+    }
+  },
+  "obligations": {
+    "E1": "RELATIVE_TO_ACTUAL_ROOT_PATH_CHECKPOINTS_AND_TERMINAL_MISSES",
+    "E2": "ESTABLISHED_BY_EXISTING_PARITY_MACRO_AND_TIE_BREAK",
+    "E3": "ESTABLISHED_PRE_ADMISSION_FINAL_OWNER_SHAPE",
+    "E4": "IDENTITY_ON_Sol_p",
+    "E5": "ROOT_TO_FINAL_LOCAL_OR_PHASE_DROP",
+    "T2_admission_disposition": "OPEN",
+    "runtime_binding": "OPEN",
+    "reentry": "OPEN"
+  },
+  "controls": [
+    {"p": 73, "t": 3, "final_R": 231, "final_K": 4216, "support": 62, "projection": "OVERFLOW", "ticket": "LOCAL_DROP"},
+    {"p": 601, "t": 25, "final_R": 431, "final_K": 64758, "support": 502, "projection": "MARKED_ABSORB", "ticket": "PHASE_DROP"},
+    {"p": 241, "t": 10, "final_R": 3119, "final_K": 187920, "support": 1305, "projection": "OVERFLOW", "ticket": "LOCAL_DROP"}
+  ],
+  "does_not_claim": [
+    "the checkpoint macro is a registered T2 atomic arm",
+    "any terminal schedule is implemented or total",
+    "an actual runtime producer is registered",
+    "the final target has a recursive exit",
+    "post-G, F2 or T6 totality"
+  ]
+}

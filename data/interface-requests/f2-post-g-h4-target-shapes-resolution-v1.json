@@ -1,0 +1,95 @@
+{
+  "request_id": "f2_post_g_h4_target_shapes_resolution_v1",
+  "track_id": "F2-POST-G-H4",
+  "date": "2026-08-24",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "status": "PROPOSAL_NOT_REGISTERED",
+  "supersedes_track_proposals": [
+    "C2_NON19_RESIDUAL_TARGET_V1 new-family request",
+    "separate H4_F_DESCENDANT persistent family",
+    "separate H4_G_DESCENDANT persistent family",
+    "unconditional disposition of positive-q G before F1 grammar freeze",
+    "c3 source-lineage relay as an active selected producer",
+    "standalone H3 persistent target"
+  ],
+  "resolved_shapes": [
+    {
+      "old_shape": "C2_NON19_RESIDUAL_TARGET_V1",
+      "resolution": "FAMILY_EMPTY_IN_Q_ONE_IMAGE",
+      "evidence": "type-II-q-one-full-carrier-d-one-capacity-two-rigidity"
+    },
+    {
+      "old_shapes": ["H4_F_DESCENDANT_V1", "H4_G_DESCENDANT_V1"],
+      "resolution": "NORMALIZE_TO_EXISTING_HIGH_SUPPORT_OVERFLOW_OWNER",
+      "owners": ["type_i_high_support_sink", "type_i_a_gt_one_overflow_residual"],
+      "evidence": "f2-post-g-h4-target-high-support-owner-v1"
+    },
+    {
+      "old_shape": "positive-q G active handoff",
+      "resolution": "DEFER_DISPOSITION_UNTIL_F1_FREEZE; retain relative producer",
+      "evidence": "f2-post-g-ordinary-g-producer-pruning-v1"
+    },
+    {
+      "old_shape": "c3 active source-lineage handoff",
+      "resolution": "NONRECURSIVE_SUPERSEDED_ALTERNATE",
+      "evidence": "f2-post-g-ordinary-g-producer-pruning-v1"
+    },
+    {
+      "old_shape": "standalone type_i_c2_19_macro_target H3",
+      "resolution": "NONPERSISTENT_INTERNAL_CHECKPOINT_IN_FUSED_MACRO",
+      "evidence": "f2-post-g-c2-fused-h4-macro-reduction-v1"
+    }
+  ],
+  "final_track_target_shapes": [
+    {
+      "shape_id": "POST_G_LOW_CHART_V1",
+      "owner": "type_i_full_carrier_post_g",
+      "ticket": "LOCAL_DROP",
+      "mark": "ROOT_SOL"
+    },
+    {
+      "shape_id": "POST_G_OR_H4_A_GT_ONE_OVERFLOW_V1",
+      "owner": "type_i_a_gt_one_overflow_residual",
+      "narrower_owner_if_receipt_present": "type_i_high_support_sink",
+      "ticket": "LOCAL_DROP",
+      "mark": "ROOT_SOL"
+    },
+    {
+      "shape_id": "H4_ATOMIC_PENDING_TARGET_V1",
+      "persistence_before_normalization": "NONPERSISTENT_SYNCHRONOUS_INTERNAL_SERIALIZER",
+      "owner_before_normalization": "NONE_QUEUE_FORBIDDEN",
+      "owner_after_normalization": "type_i_a_gt_one_overflow_residual or type_i_high_support_sink",
+      "atomic_arm": "H4_A1",
+      "ticket": "LOCAL_DROP",
+      "mark": "ROOT_SOL"
+    },
+    {
+      "shape_id": "DIRECT_TERMINAL_LEAF",
+      "owner": "queue external",
+      "ticket": "none",
+      "mark": "root certificate"
+    }
+  ],
+  "producer_requests": [
+    "q_one_g_full_carrier_phase_root as the sole selected frozen-graph G producer; positive-q disposition deferred until F1 freeze",
+    "post_g_low_chart_complete_excess_exit_v1",
+    "q_one_d_one_c2_19_h4_fused_exit_v1"
+  ],
+  "cross_track_source_constraints": [
+    {
+      "consumer": "Agent 2",
+      "source": "q=1 immediate d=1 post-G image",
+      "constraint": "capacity C=1 is family-empty; every nonterminal handoff has C>=2",
+      "evidence": "type-II-q-one-full-carrier-d-one-capacity-one-exclusion"
+    }
+  ],
+  "cross_track_capacity_boundary": {
+    "immediate_q_one_d1": "C1 family-empty and nonterminal C>=2",
+    "H4_final": "C1 POSSIBLE_NOT_CLOSED because c_T=1 iff E_x=-q mod p; do not propagate the immediate exclusion"
+  },
+  "new_family_required": false,
+  "new_nontrivial_mark_required": false,
+  "new_atomic_arm_required": false,
+  "atomic_normalization_discipline": "AtomicPendingTargetV1 is never a persistent owner/checkpoint; normalization is synchronous parent-to-final and only the final overflow target may enter the common gate.",
+  "status_boundary": "Coordinator and Agent 3 must implement/freeze the shared interfaces; this resolution grants no queue authority."
+}

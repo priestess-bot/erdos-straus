@@ -1,0 +1,119 @@
+{
+  "schema_id": "t6_runtime_protocol_freeze_a_v1",
+  "schema_version": 1,
+  "date": "2026-08-24",
+  "integration_audited_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "status": "FROZEN_PROTOCOL_CANDIDATE",
+  "runtime_id": "t6_persistent_selector_runtime_v1",
+  "state_contract_id": "t6_persistent_selector_state_v1",
+  "authoritative_execution_path": [
+    "verify_source_state_v1",
+    "source_terminal_first_schedule",
+    "owner_specific_fixed_dispatch_precedence",
+    "registered_producer_executor_and_guard_miss_receipts",
+    "one_use_runtime_issued_candidate",
+    "authority_free_candidate_transition",
+    "coordinator_owned_target_projector",
+    "independent_transition_validator_E1_E4",
+    "target_terminal_first_schedule",
+    "semantic_T5_N7_recomputation",
+    "reject_before_persistent_queue_v1",
+    "enqueue_admitted_target_v1"
+  ],
+  "schemas": {
+    "state_envelope": "PersistentSelectorStateV1",
+    "producer_rule": "ProducerRegistrationV1/BranchRegistrationV1",
+    "source_execution": "SourceExecutionContextV1",
+    "terminal_result": "TerminalDraftV1 -> VerifiedTerminalV1",
+    "candidate_transition": "CandidateTransitionV1",
+    "issued_candidate": "ProducedCandidateV1",
+    "target_projection": "TargetProjectionV1",
+    "transition_validation": "TransitionValidationV1",
+    "admission_result": "RuntimeDecisionV1/VerifiedSuccessorV1",
+    "queue_item": "RuntimeQueueItemV1",
+    "t5_descriptor": "T5StateDescriptorV1",
+    "t5_potential_receipt": "t5_n7_potential_receipt_v1",
+    "t5_ticket_receipt": "t5_n7_ticket_receipt_v1"
+  },
+  "producer_output_union": [
+    "GuardMissV1",
+    "TerminalDraftV1",
+    "CandidateTransitionV1"
+  ],
+  "forbidden_candidate_authority_fields": [
+    "owner",
+    "owner_digest",
+    "family",
+    "family_id",
+    "selector_family_id",
+    "normal_form",
+    "normalized_state",
+    "normalizer_result",
+    "recursive_edge_eligible",
+    "persistent_queue",
+    "selector_status"
+  ],
+  "terminal_contract": {
+    "source_schedule_precedes_producer": true,
+    "target_schedule_precedes_admission": true,
+    "independent_verifier_required": true,
+    "verifier_receives_source_and_lift_evidence": true,
+    "terminal_never_enqueued": true
+  },
+  "transition_contract": {
+    "producer_cannot_supply_owner_or_family": true,
+    "caller_cannot_choose_producer_or_branch": true,
+    "all_registered_branches_must_appear_once_in_dispatch_precedence": true,
+    "prior_guard_misses_are_bound_to_dispatch_receipt": true,
+    "candidate_must_be_issued_once_by_runtime_executor": true,
+    "projector_cannot_supply_owner_or_family": true,
+    "validator_must_bind_source_branch_and_projection_digest": true,
+    "validator_must_replay_E1_E2_E3_pre_admission_E4": true,
+    "validator_evidence_must_cover_registered_proof_refs": true,
+    "common_admission_recomputes_final_E3_owner": true,
+    "runtime_recomputes_E5_from_semantic_N7_fields": true
+  },
+  "t5": {
+    "order": "lexicographic_N7",
+    "coordinates": [
+      "induction_rank",
+      "major_phase",
+      "type_i_protocol",
+      "r1",
+      "r2",
+      "r3",
+      "r4"
+    ],
+    "tickets": [
+      "OUTER_RANK_DROP",
+      "PHASE_DROP",
+      "LOCAL_DROP"
+    ],
+    "caller_supplied_boolean_E5_is_authoritative": false,
+    "checkpoint_local_drop_is_sufficient": false
+  },
+  "queue": {
+    "sole_mutation_method": "PersistentSelectorRuntimeV1._enqueue_admitted_target_v1",
+    "unknown_or_duplicate_state_fails_closed": true,
+    "public_boolean_enqueue_switch": false
+  },
+  "not_yet_frozen": [
+    "final family predicates and precedence",
+    "allowed overlaps",
+    "all seven track producer registrations",
+    "all target projectors and independent validators",
+    "grammar hash",
+    "producer registry hash"
+  ],
+  "theorem_status_boundary": {
+    "F1": "OPEN_MINIMAL_GAPS",
+    "F2": "OPEN",
+    "F3": "OPEN_MINIMAL_GAPS",
+    "T6": "OPEN"
+  },
+  "artifacts": {
+    "implementation": "scripts/t6_persistent_selector_runtime_v1.py",
+    "concept": "concepts/t6-persistent-selector-runtime-v1.md",
+    "tests": "tests/test_t6_persistent_selector_runtime_v1.py"
+  }
+}

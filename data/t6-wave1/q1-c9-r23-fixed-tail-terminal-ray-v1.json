@@ -1,0 +1,32 @@
+{
+  "artifact_id": "q1_c9_r23_fixed_tail_terminal_ray_v1",
+  "track_id": "F2-POST-G-H4",
+  "claim_id": "type-II-q-one-c9-r23-fixed-tail-terminal-ray",
+  "status": "ESTABLISHED_OUTER_TERMINAL_SUBRAY",
+  "quantifier": "Every core prime p congruent to 1033 modulo 11088.",
+  "c9_row": {
+    "k": "3*j",
+    "p": "1008*j+25",
+    "R": 23,
+    "K": "(23*p+1)/4 = 5796*j+144"
+  },
+  "terminal_subray": {
+    "j": "1 mod 11",
+    "p": "1033 mod 11088",
+    "selected_divisor": "e=K/22",
+    "divisor_condition": "e divides K^2 and e = -K mod 23",
+    "denominators": ["K/22", "K", "p*K"]
+  },
+  "control": {
+    "p": 1033,
+    "K": 5940,
+    "e": 270,
+    "denominators": [270, 5940, 6136020]
+  },
+  "does_not_claim": [
+    "all C=9 R=23 inputs are terminal",
+    "the complementary C=9 rows are terminal",
+    "a q1 C=9 persistent successor",
+    "F2 or T6 closure"
+  ]
+}

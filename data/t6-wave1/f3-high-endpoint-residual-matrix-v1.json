@@ -1,0 +1,83 @@
+{
+  "schema_id": "t6_wave1_f3_high_endpoint_residual_matrix_v1",
+  "version": 1,
+  "artifact_id": "f3_high_endpoint_residual_matrix_v1",
+  "track_id": "F3-HIGH-ENDPOINT",
+  "base_sha": "9215f8c92c53c0eb1081849b0a03e5cb922facad",
+  "date": "2026-08-24",
+  "quantifier": "ACTUAL_PERSISTENT and PROPER_FACTOR_ROOT and h>p and terminal_first_miss",
+  "partition_order": [
+    "HIGH_STRICT_CARRY",
+    "HIGH_STUTTER_K1_PELL",
+    "HIGH_STUTTER_ODD_K_GE3"
+  ],
+  "canonical_cofactor_definition": "c=<D*(h-1)^(-1)>_p in {1,...,p-1}, computed only after the actual maximal receipt and terminal-first miss are verified",
+  "leaves": [
+    {
+      "leaf_id": "HIGH_STRICT_CARRY",
+      "predicate": "The frozen high hypotheses hold, terminal-first is MISS, and c<=p-2 (equivalently D is not congruent to 1-h modulo p).",
+      "mutually_exclusive_with": [
+        "HIGH_STUTTER_K1_PELL",
+        "HIGH_STUTTER_ODD_K_GE3"
+      ],
+      "coverage_proof": "For a verified proper-factor receipt u<M, the canonical cofactor is nonzero modulo p; c is either p-1 or at most p-2.",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "alternative_closure": "TERMINAL",
+      "target_shape": "HIGH_STRICT_SUPPORT_REBASE_CANDIDATE",
+      "current_blocker": "The quantified source already supplies actual E1 provenance, but current q1/positive-q G entries are low full-carrier charts and do not directly instantiate this high source. The canonical target is proved overflow with deterministic E2, identity E4 and conditional LOCAL_DROP E5, but common E3 target normalization/owner/admission and recursive re-entry are not active.",
+      "required_e1_e5": [
+        "replay the quantified actual root occurrence and terminal-first miss",
+        "deterministically compute Q, beta, M_ex, c, K_ex, and R_ex",
+        "project and classify the overflow target through the common active grammar",
+        "bind the identity whole-solution-set lift in the admitted receipt",
+        "recompute and admit the fixed T5 N^7 ticket parent-to-final-target"
+      ]
+    },
+    {
+      "leaf_id": "HIGH_STUTTER_K1_PELL",
+      "predicate": "The frozen high hypotheses hold, terminal-first is MISS, c=p-1, and the high-domain rederived N=h*k has k=1; equivalently the Pell residual parameterization applies.",
+      "mutually_exclusive_with": [
+        "HIGH_STRICT_CARRY",
+        "HIGH_STUTTER_ODD_K_GE3"
+      ],
+      "coverage_proof": "The canonical cofactor dichotomy gives the stutter branch; the high-domain proof gives k odd, so k=1 is disjoint from k>=3.",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "alternative_closure": "TERMINAL",
+      "target_shape": "HIGH_STUTTER_TERMINAL_OR_DESCENT_CANDIDATE",
+      "current_blocker": "The exact Pell residual still needs a complete terminal-first schedule and persistent-source coverage. The two divisor gates, canonical D, the root-bottom terminal miss, and every Theta-only terminal menu are root-lift saturated on an explicit infinite formal omega subprogression, so they cannot alone prove FAMILY_EMPTY.",
+      "required_e1_e5": [
+        "replay the actual receipt against the high k=1 Pell normal form",
+        "construct a deterministic terminal or target without an oracle",
+        "bind any target to the actual source path",
+        "prove E3 normal form/owner, universal E4 lift, and fixed T5 E5"
+      ]
+    },
+    {
+      "leaf_id": "HIGH_STUTTER_ODD_K_GE3",
+      "predicate": "The frozen high hypotheses hold, terminal-first is MISS, c=p-1, and the high-domain rederived N=h*k has odd k>=3.",
+      "mutually_exclusive_with": [
+        "HIGH_STRICT_CARRY",
+        "HIGH_STUTTER_K1_PELL"
+      ],
+      "coverage_proof": "The high-domain norm is odd, so the stutter branch is exactly k=1 or odd k>=3.",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "alternative_closure": "TERMINAL",
+      "target_shape": "HIGH_STUTTER_TERMINAL_OR_DESCENT_CANDIDATE",
+      "current_blocker": "No high-domain bounded normal form or physical carrier theorem is established for odd k>=3. The two divisor gates, canonical D, the root-bottom terminal miss, and every Theta-only terminal menu are root-lift saturated and cannot alone bound the root parameter; low quotient routing remains forbidden.",
+      "required_e1_e5": [
+        "derive a high-valid normal form or family-empty theorem",
+        "construct a deterministic terminal or target without an oracle",
+        "bind any target to the actual source path",
+        "prove E3 normal form/owner, universal E4 lift, and fixed T5 E5"
+      ]
+    }
+  ],
+  "coverage_statement": "After the exact high quantifier and terminal-first miss are fixed, the receipt-level cofactor dichotomy gives strict carry or stutter; in the stutter branch the high-domain proof gives odd k and splits it into k=1 Pell or odd k>=3. This is a residual partition, not a closure theorem.",
+  "current_status": "OPEN_MINIMAL_GAPS",
+  "does_not_claim": [
+    "HIGH_STRICT_CARRY is already a verified edge",
+    "either high stutter residual is empty",
+    "an arithmetic control is an actual persistent state",
+    "low-height lemmas apply in the high domain"
+  ]
+}
