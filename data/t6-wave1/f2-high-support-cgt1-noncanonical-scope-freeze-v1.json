@@ -1,0 +1,94 @@
+{
+  "schema_id": "t6_f2_high_support_cgt1_noncanonical_scope_freeze_v1",
+  "schema_version": 1,
+  "date": "2026-08-25",
+  "track_id": "F2-HIGH-SUPPORT-CGT1-NONCANONICAL",
+  "base_sha": "332c0f7ed48d453ca76d35639a618659d9b559ca",
+  "status": "SCOPE_FROZEN_CONDITIONAL_SOURCE_ROUTE_OPEN",
+  "quantifier": {
+    "source": "ACTUAL_PERSISTENT TYPEI/CHARGED overflow S=(p,R,K;A,sigma)",
+    "invariants": [
+      "p is prime and p congruent to 1 modulo 24",
+      "A > B_p=((p-1)^2)/4",
+      "4*K = p*R + 1",
+      "A divides K",
+      "R > p",
+      "C=K/A >= p+1",
+      "ROOT_SOL chart-independent mark",
+      "terminal-first outcome is MISS",
+      "all earlier F2 precedence guards have failed"
+    ],
+    "split": {
+      "small_divisor": "D(C)={c: 2<=c<p and c divides C} is nonempty",
+      "p_rough": "D(C) is empty; no accepted proper determinant image exists"
+    }
+  },
+  "included": [
+    "source-bound determinant receipt M=A*b, K=M*(p-d), 1<=d<p",
+    "same-chart canonicalizing image with target support M",
+    "formal p-rough chart controls used only to test arithmetic emptiness",
+    "E1/E3/re-entry obligations for a future producer"
+  ],
+  "excluded": [
+    "A<=B_p canonical or low-support states",
+    "A=1 overflow and Type-II relation endpoints",
+    "transient determinant/checkpoint charts",
+    "post-hoc M=K,d=p-1 identity as E1 provenance",
+    "fixture rows or recursive_edge_eligible booleans as actualness",
+    "global terminal or FAMILY_EMPTY claims for the p-rough stratum",
+    "changes to shared frontier, README, theorem ledger or index"
+  ],
+  "established_inputs": [
+    "type-I-f2-high-support-noncanonical-registered-surface-boundary",
+    "type-I-f2-overflow-determinant-prepartition",
+    "type-I-overflow-unbounded-same-chart-promotion-persistence-boundary",
+    "type-I-f2-high-support-canonicality-total-cofactor-boundary"
+  ],
+  "acceptance_contract": {
+    "small_divisor_route": [
+      "actual parent/source state_id and owner digest",
+      "source-bound determinant occurrence and raw path",
+      "terminal-first MISS and branch precedence receipt",
+      "deterministic target and target terminal priority",
+      "independent PersistentSelectorStateV1 projection and owner recomputation",
+      "parent-to-final-target T5 ticket",
+      "shared-runtime recursive re-entry"
+    ],
+    "p_rough_route": [
+      "TERMINAL with a complete terminal receipt, or",
+      "FAMILY_EMPTY proof over the actual source domain, or",
+      "a different E1-E5 producer; arithmetic absence of a determinant image is insufficient"
+    ]
+  },
+  "forbidden_inferences": [
+    "c divides C implies an actual raw occurrence",
+    "formal p-rough chart family implies an actual persistent source",
+    "no proper determinant image implies TERMINAL or FAMILY_EMPTY",
+    "local rank drop implies common admission",
+    "family label or sink_scc_receipt grants E3",
+    "M=K,d=p-1, n=4K-R is an E1 receipt"
+  ],
+  "ownership": {
+    "coordinator_only_files_untouched": [
+      "README.md",
+      "index/",
+      "data/t6-proof-frontier-v2.json",
+      "data/t6-selector-obligation-ledger-v1.json",
+      "data/t6-constructor-inventory-v1.json",
+      "scripts/t6_persistent_selector_state_v1.py"
+    ],
+    "track_outputs": [
+      "data/t6-wave1/f2-high-support-cgt1-noncanonical-scope-freeze-v1.json",
+      "data/t6-wave1/f2-high-support-cgt1-noncanonical-residual-matrix-v1.json",
+      "data/interface-requests/f2-high-support-cgt1-noncanonical-target-shapes-v1.json",
+      "claims/type-I-f2-high-support-cgt1-small-divisor-p-rough-boundary.md",
+      "docs/T6_F2_HIGH_SUPPORT_CGT1_NONCANONICAL_HANDOFF_2026-08-25.md"
+    ]
+  },
+  "status_boundary": {
+    "small_divisor": "ARITHMETIC_IMAGE_ONLY_E1_E3_REENTRY_OPEN",
+    "p_rough": "PROPER_DETERMINANT_IMAGE_EMPTY_TERMINAL_FAMILY_EMPTY_OPEN",
+    "F2_HIGH_SUPPORT": "OPEN",
+    "T6": "OPEN"
+  }
+}

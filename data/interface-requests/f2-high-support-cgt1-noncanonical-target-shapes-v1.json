@@ -1,0 +1,65 @@
+{
+  "request_id": "f2_high_support_cgt1_noncanonical_target_shapes_v1",
+  "request_version": 1,
+  "date": "2026-08-25",
+  "track_id": "F2-HIGH-SUPPORT-CGT1-NONCANONICAL",
+  "base_sha": "332c0f7ed48d453ca76d35639a618659d9b559ca",
+  "status": "REQUESTED_NOT_ADMITTED",
+  "coordinator_action_required": [
+    "do not register a producer from this request alone",
+    "freeze source owners and terminal schedules only after an actual receipt replay",
+    "keep p-rough terminal/FAMILY_EMPTY status open until a theorem covers the actual domain"
+  ],
+  "shared_constraints": {
+    "source": "ACTUAL_PERSISTENT TYPEI/CHARGED overflow with A>B_p, C=K/A>=p+1, terminal-first MISS",
+    "target": "content-addressed PersistentSelectorStateV1; owner/family recomputed from facts",
+    "lift": "identity on Sol(4,p) only after source and target scope continuity are verified",
+    "t5": "parent-to-final target strict descent in the frozen T5 N^7 potential",
+    "terminal_priority": "target hit returns TERMINAL and is never enqueued"
+  },
+  "target_shapes": [
+    {
+      "shape_id": "same_chart_small_divisor_bound_receipt_v1",
+      "producer_id": "f2_high_support_same_chart_small_divisor_v1",
+      "source_guard": "actual source-bound determinant receipt with M=A*b<K, C=b*c, c in [2,p-1], and c|C",
+      "target_schema": {
+        "family_match": ["type_i_low_support_persistent_overflow", "type_i_high_support_sink", "type_i_a_gt_one_overflow_residual"],
+        "normal_form": "overflow_same_chart_small_divisor_v1",
+        "state_class": "TYPEI/CHARGED overflow after target retyping",
+        "fields": ["parent_state_id", "source_receipt", "terminal_first_digest", "p", "R", "K", "support_M=A*(C/c)", "cofactor_c", "scope", "owner_digest"]
+      },
+      "deterministic_rule": "consume the source-provided receipt; never choose c or M from C alone; if multiple receipts are supplied, select lexicographically by sealed receipt digest",
+      "mark_behavior": "preserve Sol(4,p) identity only after independent target retyping",
+      "t5_ticket": "LOCAL_DROP on (0,C)->(0,c) when A>B_p and M>A",
+      "e1_requirements": ["admitted parent state_id", "raw determinant occurrence", "path digest", "terminal-first MISS", "branch precedence receipt"],
+      "e3_requirements": ["independent projector", "owner recomputation", "target terminal schedule", "common admission gate", "content-addressed target"],
+      "e4_requirements": ["universal identity lift over the source scope"],
+      "reentry": "shared runtime dispatch for recomputed target owner",
+      "admission_status": "BLOCKED_UNTIL_E1_E3_REENTRY",
+      "known_evidence": ["claims/type-I-f2-high-support-noncanonical-registered-surface-boundary.md", "claims/type-I-overflow-unbounded-same-chart-promotion-persistence-boundary.md"]
+    },
+    {
+      "shape_id": "p_rough_no_small_divisor_terminal_or_normalizer_v1",
+      "producer_id": "f2_high_support_p_rough_exit_v1",
+      "source_guard": "actual source with D(C)=empty after terminal-first MISS",
+      "target_schema": {
+        "family_match": ["direct_terminal_leaf", "type_i_a_gt_one_overflow_residual", "type_i_high_support_sink"],
+        "normal_form": "p_rough_noncanonical_exit_v1",
+        "state_class": "TERMINAL or recomputed TYPEI target",
+        "fields": ["parent_state_id", "p_rough_certificate", "terminal_or_target", "scope", "owner_digest"]
+      },
+      "deterministic_rule": "terminal-first proof has priority; absent a terminal, a separate source-bound normalizer or other E1-E5 constructor is required",
+      "mark_behavior": "identity only for same-equation target; smaller lift must be explicit otherwise",
+      "t5_ticket": "TERMINAL, OUTER_RANK_DROP, PHASE_DROP or LOCAL_DROP only after full E1-E5",
+      "admission_status": "NO_ARITHMETIC_AUTHORITY_YET",
+      "known_evidence": ["claims/type-I-f2-high-support-cgt1-small-divisor-p-rough-boundary.md"]
+    }
+  ],
+  "nonrequests": [
+    "do not use c|C as a source occurrence",
+    "do not register post-hoc M=K,d=p-1",
+    "do not classify D(C)=empty as terminal or FAMILY_EMPTY",
+    "do not add a generic overflow family",
+    "do not modify shared grammar or frontier from this request"
+  ]
+}

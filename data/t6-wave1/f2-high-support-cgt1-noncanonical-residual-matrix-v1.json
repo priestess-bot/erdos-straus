@@ -1,0 +1,96 @@
+{
+  "artifact_id": "f2_high_support_cgt1_noncanonical_residual_matrix_v1",
+  "artifact_version": 1,
+  "track_id": "F2-HIGH-SUPPORT-CGT1-NONCANONICAL",
+  "base_sha": "332c0f7ed48d453ca76d35639a618659d9b559ca",
+  "scope_reference": "data/t6-wave1/f2-high-support-cgt1-noncanonical-scope-freeze-v1.json",
+  "status": "RESIDUALS_EXPLICIT_F2_OPEN",
+  "partition_semantics": "Rows are evaluated after terminal-first and fixed F2 precedence; the split D(C) nonempty versus empty is arithmetic and does not assert source actualness.",
+  "required_final_leaf_kinds": ["EMPTY", "TERMINAL", "VERIFIED_SUCCESSOR"],
+  "rows": [
+    {
+      "leaf_id": "CGT1-00-terminal-first",
+      "precedence": 1,
+      "effective_guard": "terminal_first(S)=HIT",
+      "planned_closure": "TERMINAL",
+      "current_status": "ESTABLISHED_LOCAL",
+      "target_shape": null,
+      "current_blocker": null,
+      "evidence": ["data/t5-full-transition-taxonomy-v2.json", "concepts/t5-global-well-foundedness-contract-v2.md"]
+    },
+    {
+      "leaf_id": "CGT1-01-small-divisor-source-bound",
+      "precedence": 2,
+      "effective_guard": "terminal-first MISS, D(C) nonempty, and an independently replayed source-bound receipt M=A*b<K with C=b*c, 2<=c<p",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "current_status": "ARITHMETIC_IMAGE_ONLY_E1_E3_REENTRY_OPEN",
+      "target_shape": "same_chart_small_divisor_bound_receipt_v1",
+      "current_blocker": "No active producer binds the determinant occurrence, terminal schedule, common projector, owner admission or recursive re-entry for a high-support noncanonical source.",
+      "coverage_proof": "The target has support M=A*(C/c), cofactor c and sharp local rank (0,C)->(0,c), but this is not an E1 receipt.",
+      "evidence": ["claims/type-I-f2-high-support-noncanonical-registered-surface-boundary.md", "claims/type-I-overflow-unbounded-same-chart-promotion-persistence-boundary.md"]
+    },
+    {
+      "leaf_id": "CGT1-02-small-divisor-no-receipt",
+      "precedence": 3,
+      "effective_guard": "terminal-first MISS, D(C) nonempty, but no independently bound proper determinant occurrence is available",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "current_status": "OPEN_SOURCE_OCCURRENCE",
+      "target_shape": "same_chart_small_divisor_bound_receipt_v1 or another E1-E5 route",
+      "current_blocker": "A divisibility fact c|C reconstructs an arithmetic decomposition but cannot supply a raw path, parent receipt or terminal-first precedence.",
+      "coverage_proof": "D(C) is only a necessary arithmetic image condition; source actualness is not implied.",
+      "evidence": ["data/interface-requests/f2-high-support-cgt1-noncanonical-target-shapes-v1.json", "data/t6-constructor-inventory-v1.json"]
+    },
+    {
+      "leaf_id": "CGT1-03-p-rough-no-small-divisor",
+      "precedence": 4,
+      "effective_guard": "terminal-first MISS and D(C) is empty",
+      "planned_closure": "TERMINAL",
+      "alternative_closure": "FAMILY_EMPTY or VERIFIED_SUCCESSOR",
+      "current_status": "OPEN_NO_DETERMINANT_IMAGE",
+      "target_shape": "terminal_or_source_bound_support_A_normalizer_v1",
+      "current_blocker": "No theorem proves terminality or actual-family emptiness. A formal infinite chart family with C prime>p shows the arithmetic state domain itself is nonempty.",
+      "coverage_proof": "The exact divisor-image equivalence proves only absence of proper determinant images, not absence of terminal certificates or actual source paths.",
+      "evidence": ["claims/type-I-f2-high-support-cgt1-small-divisor-p-rough-boundary.md"]
+    },
+    {
+      "leaf_id": "CGT1-04-posthoc-only-negative-control",
+      "precedence": 5,
+      "effective_guard": "D(C) empty or no accepted proper divisor and only c=1,M=K,d=p-1 remains",
+      "planned_closure": "EMPTY",
+      "current_status": "REJECTED_NONPRODUCER",
+      "target_shape": null,
+      "current_blocker": "This is an E1-negative candidate disposition, not a proof that the source state is terminal or absent.",
+      "coverage_proof": "The ordered protocol forbids target-derived M=K determinant provenance.",
+      "evidence": ["data/interface-requests/f2-high-support-noncanonical-normalizer-v1.json", "claims/type-I-f2-high-support-noncanonical-registered-surface-boundary.md"]
+    },
+    {
+      "leaf_id": "CGT1-05-explicit-catchall",
+      "precedence": 6,
+      "effective_guard": "all named rows fail or a future producer uses a target shape outside this freeze",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "alternative_closure": "TERMINAL or FAMILY_EMPTY",
+      "current_status": "OPEN",
+      "target_shape": "new producer request with complete E1-E5",
+      "current_blocker": "F1 source/producer coverage and future residual target sets are not complete.",
+      "coverage_proof": "Definition of the complement; no generic overflow label may enqueue it.",
+      "evidence": ["data/t6-wave1/f2-overflow-high-support-residual-matrix-v1.json", "concepts/t6-persistent-selector-state-v1.md"]
+    }
+  ],
+  "residual_summary": {
+    "arithmetic_image_closed": true,
+    "actual_small_divisor_routes": 0,
+    "p_rough_terminal_or_empty_closed": false,
+    "E1_open": true,
+    "E3_open": true,
+    "reentry_open": true,
+    "final_open_leaf_ids": ["CGT1-01-small-divisor-source-bound", "CGT1-02-small-divisor-no-receipt", "CGT1-03-p-rough-no-small-divisor", "CGT1-05-explicit-catchall"]
+  },
+  "forbidden_shortcuts": [
+    "c|C -> actual occurrence",
+    "D(C)=empty -> TERMINAL",
+    "D(C)=empty -> FAMILY_EMPTY",
+    "formal p-rough chart -> actual persistent source",
+    "local rank drop -> E3 admission",
+    "post-hoc M=K -> E1"
+  ]
+}
