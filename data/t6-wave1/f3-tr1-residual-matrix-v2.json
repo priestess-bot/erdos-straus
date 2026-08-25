@@ -21,6 +21,22 @@
     "selection_rule": "reject saturated factors; select the least factor with an independently verified fresh integer occurrence",
     "coverage": "fresh and saturated predicates are complementary for each verified q factor"
   },
+  "terminal_preemption_filters": [
+    {
+      "filter_id": "DSTAR_M_TERMINAL_Q3MOD4",
+      "predicate": "q|D_star and q|m with q congruent to 3 modulo 4",
+      "disposition": "TERMINAL",
+      "priority": "before freshness selection",
+      "evidence": "claims/type-I-t6-f3-tr1-dstar-freshness-capacity-gate.md"
+    },
+    {
+      "filter_id": "DSTAR_MPLUS2_2PPLUS1_TERMINAL_Q5MOD8",
+      "predicate": "q|D_star, q|m+2, q|2p+1 and q congruent to 5 modulo 8",
+      "disposition": "TERMINAL",
+      "priority": "before freshness selection",
+      "evidence": "claims/type-I-t6-f3-tr1-dstar-freshness-capacity-gate.md"
+    }
+  ],
   "branch_tables": {
     "p_plus_one_overlap": {
       "guard": "q|m, q|p+1, q|h-1",
