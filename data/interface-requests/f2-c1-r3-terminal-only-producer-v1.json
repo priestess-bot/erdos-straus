@@ -1,0 +1,63 @@
+{
+  "request_id": "f2_c1_r3_terminal_only_producer_v1",
+  "request_version": 1,
+  "date": "2026-08-26",
+  "track_id": "F2-HIGH-SUPPORT-C1",
+  "status": "REQUESTED_NOT_REGISTERED",
+  "producer_id": "f2_c1_r3_terminal_only_v1",
+  "branch_id": "r3_c1_terminal_dispatch",
+  "scope": {
+    "source_class": "ACTUAL_PERSISTENT",
+    "owner": "type_i_a_gt_one_overflow_residual",
+    "guards": [
+      "TYPEI/CHARGED",
+      "is_overflow=true",
+      "support_A>B_p",
+      "chart_K=support_A (C=1)",
+      "chart_R>p",
+      "chart_R=3",
+      "ROOT_SOL mark",
+      "source terminal-first MISS and owner digest replay"
+    ],
+    "excluded": [
+      "type_i_high_support_sink refined owner",
+      "type_i_low_support_persistent_overflow refined owner",
+      "C>1",
+      "A<=B_p",
+      "non-overflow or marked ABSORB",
+      "bare arithmetic chart without admitted parent"
+    ]
+  },
+  "registration": {
+    "schema": "TerminalOnlyProducerRegistrationV1",
+    "source_owners": ["type_i_a_gt_one_overflow_residual"],
+    "target_owners": [],
+    "queue_mutation": false,
+    "allowed_outputs": ["TerminalDraftV1", "GuardMissV1"],
+    "candidate_output": "must fail with TERMINAL_ONLY_CANDIDATE"
+  },
+  "terminal_schedule": [
+    "replay the already registered source terminal schedule and its complete MISS receipt",
+    "p+4 prime factor q congruent to 3 modulo 4 Type-II certificate",
+    "N=(3p+1)/4 prime factor q congruent to 2 modulo 3 Type-I certificate",
+    "fixed-p H_p^D mixed-D table in lexicographic (A,C,h) order"
+  ],
+  "verifier_requirements": [
+    "bind source_state_id, owner_digest and schedule scope digest",
+    "recompute p, chart facts, p+4, N and D=2p-3",
+    "recompute least eligible q or least mixed-D table row",
+    "verify all gap, divisor, positivity and Fraction identities",
+    "verify identity lift only after the certificate is independently reconstructed"
+  ],
+  "activation_blockers": [
+    "no admitted C=1 actual source producer currently emits this branch",
+    "no dedicated owner dispatch route for the C=1 source scope",
+    "complete global terminal-first schedule is not available",
+    "F2 R3-G nonterminal remainder and re-entry remain open"
+  ],
+  "evidence": [
+    "claims/type-I-f2-high-support-c1-r-three-terminal-g-split.md",
+    "claims/type-I-f2-r-three-d-fixed-prime-arithmetic-scheduler.md",
+    "scripts/t6_persistent_selector_runtime_v1.py:TerminalOnlyProducerRegistrationV1"
+  ]
+}
