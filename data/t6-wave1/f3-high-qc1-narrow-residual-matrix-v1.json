@@ -1,0 +1,61 @@
+{
+  "schema_id": "t6_wave1_f3_high_qc1_narrow_residual_matrix_v1",
+  "version": 1,
+  "artifact_id": "f3_high_qc1_narrow_residual_matrix_v1",
+  "track_id": "F3-HIGH-QC1-INDEPENDENT-REVIEW",
+  "date": "2026-08-25",
+  "high_endpoint": [
+    {
+      "leaf_id": "HIGH_STRICT_CARRY",
+      "predicate": "high actual receipt, terminal-first miss, canonical c<=p-2",
+      "arithmetic_result": "M_ex=lcm(A,Q), c=<D*(h-1)^(-1)>_p, R_ex>p, conditional local rank drop",
+      "closure": "OPEN_E1_E3_E4_E5_REENTRY",
+      "reason": "The target is only an overflow shape until common source replay, owner, admission and final T5 ticket exist."
+    },
+    {
+      "leaf_id": "HIGH_STUTTER_K1_PELL",
+      "predicate": "high actual receipt, terminal-first miss, c=p-1, rederived k=1",
+      "arithmetic_result": "e=d*x^2, a=d*x*y-1, gcd(x,y)=1, y>x, y^2+x*y-x^2=c*(d*x*y-1)",
+      "closure": "OPEN_FAMILY_EMPTY_OR_TERMINAL_OR_E1_E5",
+      "reason": "The low-height Vieta descent has the wrong inequality and the other high-domain root leaves the mod-3 domain."
+    },
+    {
+      "leaf_id": "HIGH_STUTTER_ODD_K_GE3",
+      "predicate": "high actual receipt, terminal-first miss, c=p-1, rederived odd k>=3",
+      "arithmetic_result": "root and capacity divisor gates only",
+      "closure": "OPEN_NORMAL_FORM",
+      "reason": "No high-valid family-empty, terminal, or paid successor theorem is available."
+    }
+  ],
+  "qc1": [
+    {
+      "leaf_id": "QC1_TERMINAL_PREEMPTED",
+      "predicate": "R3 or R5 input whose ordered terminal-first replay hits",
+      "closure": "TERMINAL"
+    },
+    {
+      "leaf_id": "QC1_OCCURRENCE_UNBOUND",
+      "predicate": "terminal-first miss and q_perp ideal factor exists, but no path-bound integer occurrence/conservation receipt",
+      "closure": "OPEN_INTEGER_OCCURRENCE"
+    },
+    {
+      "leaf_id": "QC1_ENDPOINT_EXCESS_STRICT",
+      "predicate": "q_perp divides canonical E and source-forward path is independently verified; single-side or atomic strict child",
+      "closure": "OPEN_E3_E4_E5_REENTRY",
+      "arithmetic_result": "M_child=A*E/q^mu, c_child=<-q^mu>_p<p-1"
+    },
+    {
+      "leaf_id": "QC1_ENDPOINT_EXCESS_ATOMIC_STUTTER",
+      "predicate": "q_perp divides E and first atomic child has F_y=q^mu mod p",
+      "closure": "OPEN_SECOND_SUFFIX_AND_ADMISSION",
+      "arithmetic_result": "least prime s|F_y with s not 1 mod p gives a conditional second strict raw suffix"
+    },
+    {
+      "leaf_id": "QC1_NOT_ENDPOINT_EXCESS",
+      "predicate": "q_perp does not divide canonical E",
+      "closure": "OPEN_INTEGER_OCCURRENCE_OR_ALTERNATE_TERMINAL",
+      "reason": "The quotient-only ideal factor supplies no endpoint deflation."
+    }
+  ],
+  "global_status": "F3_OPEN_T6_OPEN"
+}

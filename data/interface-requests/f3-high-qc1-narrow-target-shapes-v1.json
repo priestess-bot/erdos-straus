@@ -1,0 +1,42 @@
+{
+  "schema_id": "t6_interface_request_f3_high_qc1_narrow_target_shapes_v1",
+  "version": 1,
+  "request_id": "F3-HIGH-QC1-NARROW-REVIEW",
+  "track_id": "F3-HIGH-QC1-INDEPENDENT-REVIEW",
+  "status": "PROPOSAL_ONLY_NOT_REGISTERED",
+  "target_shapes": [
+    {
+      "shape_id": "HIGH_STRICT_SUPPORT_REBASE",
+      "source_guard": "verified actual high endpoint with c<=p-2 and terminal-first miss",
+      "formula": "M_ex=lcm(A,Q), K_ex=M_ex*c, R_ex=(4*K_ex-1)/p",
+      "owner": "type_i_a_gt_one_overflow_residual after common normalization",
+      "required_evidence": ["source/path receipt", "terminal priority receipt", "whole-solution lift", "parent-to-final T5 ticket", "recursive re-entry"],
+      "recursive": false
+    },
+    {
+      "shape_id": "HIGH_STUTTER_PELL_PROJECTOR",
+      "source_guard": "verified actual high stutter c=p-1",
+      "formula": "Pell residual y^2+x*y-x^2=c*(d*x*y-1), with all root, maximality and terminal gates",
+      "owner": "UNASSIGNED",
+      "required_evidence": ["family-empty proof", "terminal proof", "or source-bound E1-E5 successor"],
+      "recursive": false
+    },
+    {
+      "shape_id": "QC1_ENDPOINT_EXCESS_DEFLATION",
+      "source_guard": "q_perp|E and independently replayed integer source-forward z->z/q_perp",
+      "formula": "M_child=A*E/q_perp^mu, c_child=<-q_perp^mu>_p",
+      "owner": "type_i_a_gt_one_overflow_residual after endpoint-deflation normalization",
+      "required_evidence": ["integer occurrence side/node/exponent", "one-use charge conservation", "target terminal replay", "E3/E4", "final E5"],
+      "recursive": false
+    },
+    {
+      "shape_id": "QC1_IDEAL_FACTOR_ONLY",
+      "source_guard": "q_perp|k and q_perp does not divide h",
+      "formula": "oriented ideal (q_perp,omega-lambda)|(a-b*omega)",
+      "owner": "REJECT_UNTIL_INTEGER_OCCURRENCE_THEOREM",
+      "required_evidence": ["none accepted as an edge"],
+      "recursive": false
+    }
+  ],
+  "admission_rule": "No shape in this file grants producer, queue, owner, E1-E5, or recursive authority."
+}
