@@ -325,7 +325,9 @@ F3 high/QC1 的高 \(k=1\) Pell 叶新增精确整除门但仍缺 actual source�
 \(m=3,q=5\) genuine two-sided \(p^2\) canonical image 只有 \(c=p-1\) 的增大
 root rechart，不能支付 E5。F1 admission 目前为 18/18 source anchors、
 9 个 nonrecursive controls、4 个真正 unknown；任何 arithmetic scheduler 仍须
-经过共同 source/projector/validator/admission/re-entry 链。详见
+经过共同 source/projector/validator/admission/re-entry 链。TR1 还明确排除了两类
+优先级更高的 \(D_*\) 直接 Type-I/Type-II terminal 子域，必须在 freshness 选择前执行。
+详见
 docs/handoffs/F3_HIGH_QC1_INDEPENDENT_REVIEW_2026-08-25.md、
 docs/handoffs/AGENT7_F3_M3_Q5_P2_WAVE2_TWO_SIDED.md 和 C8 handoff 三件套。
 
