@@ -147,6 +147,13 @@ canonical cursor \((1,R-1,1)\) 与 N7 `PHASE_DROP`。这只闭合 pre-admission 
 E3/type 层；actual runtime producer、terminal schedule 与 ABSORB re-entry 仍开放。见
 [`type-II-q-one-full-carrier-first-child-absorb-entry`](claims/type-II-q-one-full-carrier-first-child-absorb-entry.md)。
 
+进一步地，首 child 不应在进入第二-anchor macro 前持久化，否则会造成同 rank 的
+`ABSORB -> CHARGED` 回升。现有 parity quotient-fold 可改为直接从 full-carrier root
+到 final target 的 checkpoint contraction：high final target 由 root 的 support rank 支付
+`LOCAL_DROP`，low final target 则以 `PHASE_DROP` 进入 ABSORB。该收缩尚缺 terminal
+receipt、T2/admission 处置和 final re-entry，因而没有改变 T6 状态。见
+[`type-II-q-one-full-carrier-root-second-anchor-contraction`](claims/type-II-q-one-full-carrier-root-second-anchor-contraction.md)。
+
 ## 快速使用
 
 ```bash
