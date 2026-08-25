@@ -1,0 +1,61 @@
+{
+  "schema_id": "t6_wave1_interface_request_f3_m3_q5_p2_two_sided_target_shapes_v1",
+  "schema_version": 1,
+  "track_id": "F3-M3-Q5-P2-TWO-SIDED",
+  "base_sha": "da550fe949fee70a853b094295f69959e3f7c4e5",
+  "request_status": "REQUESTED_NOT_REGISTERED",
+  "coordinator_action": "Freeze these shapes as nonpersistent/checkpoint or final-candidate contracts; do not add a grammar family without a complete E1-E5 proof.",
+  "target_shapes": [
+    {
+      "shape_id": "type_i_m3_q5_p2_two_sided_checkpoint_v1",
+      "kind": "nonpersistent_atomic_checkpoint",
+      "source": "R2 source-bound endpoint with E_u,E_v>1 and E_u*E_v=1+p^2*chi",
+      "existing_family_match": "none",
+      "new_family_required": false,
+      "atomic_arm_required": true,
+      "mark_behavior": "inherit source mark; no reset",
+      "t5_ticket": "none standalone",
+      "owner_precedence_request": "retain in edge/macro receipt only; never enqueue this checkpoint"
+    },
+    {
+      "shape_id": "type_i_m3_q5_p2_final_atomic_overflow_v1",
+      "kind": "recursive_state_candidate",
+      "source": "A source-forward suffix or terminal miss from the two-sided p2 checkpoint",
+      "target_schema": "persistent_selector_state_v1 TYPEI/CHARGED overflow with complete final lcm, source path, two colored occurrences, owner digest, parent-to-final ticket, and re-entry receipt",
+      "existing_family_match": "type_i_a_gt_one_overflow_residual",
+      "new_family_required": false,
+      "atomic_arm_required": false,
+      "mark_behavior": "ordinary ROOT_SOL/Sol(p) identity lift after target validation",
+      "t5_ticket": "LOCAL_DROP or OUTER_RANK_DROP comparing original parent to final target",
+      "owner_precedence_request": "synchronous final-fact owner; no caller-supplied atomic family"
+    },
+    {
+      "shape_id": "type_i_m3_q5_p2_family_empty_receipt_v1",
+      "kind": "family_empty_certificate",
+      "source": "Full actual divisor/source parameterization of the two-sided p2 leaf",
+      "existing_family_match": "none",
+      "new_family_required": false,
+      "atomic_arm_required": false,
+      "mark_behavior": "no target",
+      "t5_ticket": "none",
+      "owner_precedence_request": "must include an all-quantifier arithmetic proof, not a finite control"
+    },
+    {
+      "shape_id": "direct_terminal_leaf",
+      "kind": "terminal_certificate",
+      "source": "Any terminal-first hit at the checkpoint or its source-forward continuation",
+      "existing_family_match": "direct_terminal_leaf",
+      "new_family_required": false,
+      "atomic_arm_required": false,
+      "mark_behavior": "terminal",
+      "t5_ticket": "none",
+      "owner_precedence_request": "terminal-first remains higher precedence than atomic continuation"
+    }
+  ],
+  "forbidden_shapes": [
+    "standalone p2 checkpoint with T5 ticket",
+    "L1-derived target admitted as L_omega target",
+    "target-derived rechart treated as E1 source occurrence",
+    "H4/C8 atomic arm reused without semantic proof"
+  ]
+}

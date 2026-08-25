@@ -1,0 +1,75 @@
+{
+  "schema_id": "t6_wave1_f3_m3_q5_p2_two_sided_residual_matrix_v1",
+  "schema_version": 1,
+  "track_id": "F3-M3-Q5-P2-TWO-SIDED",
+  "status": "OPEN",
+  "parent_matrix": "data/t6-wave1/f3-m3-q5-p2-residual-matrix-v1.json",
+  "partition_order": [
+    "SOURCE_PATH_UNBOUND",
+    "TERMINAL_FIRST_HIT",
+    "STRICT_FINAL_OVERFLOW",
+    "TWO_SIDED_P2_CANONICAL_RECHART",
+    "MALFORMED_OR_NONACTUAL_CONTROL"
+  ],
+  "leaves": [
+    {
+      "leaf_id": "SOURCE_PATH_UNBOUND",
+      "predicate": "The R1/R2 parent lacks a replayable source/path and priority-prefix receipt.",
+      "mutually_exclusive_with": ["all other leaves"],
+      "coverage_proof": "The source-bound two-sided theorem has this receipt as an explicit precondition.",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "path_bound_source_receipt_v1",
+      "current_blocker": "Coordinator-owned producer and active source receipt integration."
+    },
+    {
+      "leaf_id": "TERMINAL_FIRST_HIT",
+      "predicate": "An ordered terminal check hits before the two-sided p2 endpoint is exposed.",
+      "mutually_exclusive_with": ["all nonterminal leaves"],
+      "coverage_proof": "Terminal-first has precedence over every raw, p2, and admission branch.",
+      "planned_closure": "TERMINAL",
+      "target_shape": "direct_terminal_leaf",
+      "current_blocker": "Only active common scheduler registration remains."
+    },
+    {
+      "leaf_id": "STRICT_FINAL_OVERFLOW",
+      "predicate": "Endpoint is p-free and nonterminal with L_omega not congruent to 1 modulo p.",
+      "mutually_exclusive_with": ["TWO_SIDED_P2_CANONICAL_RECHART"],
+      "coverage_proof": "Canonical cofactor is at most p-2 and the parent-to-final local ticket is strict.",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "type_i_policy_endpoint_charged_overflow_v1",
+      "current_blocker": "Common E3 serializer, owner and re-entry are coordinator-owned."
+    },
+    {
+      "leaf_id": "TWO_SIDED_P2_CANONICAL_RECHART",
+      "predicate": "E_u>1, E_v>1 and E_u*E_v=1+p^2*chi after original-K recanonicalization.",
+      "mutually_exclusive_with": ["STRICT_FINAL_OVERFLOW", "TERMINAL_FIRST_HIT"],
+      "coverage_proof": "The endpoint normal form partitions the p2 class into one-sided and genuine two-sided cases; this leaf is the latter.",
+      "planned_closure": "VERIFIED_SUCCESSOR",
+      "target_shape": "type_i_m3_q5_p2_final_atomic_overflow_v1",
+      "current_blocker": "Direct canonical image is an increasing root rechart with c=p-1 and no strict T5 ticket; no source-forward final suffix, terminal theorem, or EMPTY proof exists.",
+      "missing_obligations": ["E1_FINAL", "E3", "E4_TARGET_VALIDATION", "E5", "REENTRY"]
+    },
+    {
+      "leaf_id": "MALFORMED_OR_NONACTUAL_CONTROL",
+      "predicate": "Fixture lacks primitive p-free endpoint or is not bound to an actual persistent parent.",
+      "mutually_exclusive_with": ["all actual leaves"],
+      "coverage_proof": "The verifier rejects nonprimitive/non-p-free inputs and labels arithmetic controls as nonactual.",
+      "planned_closure": "FAMILY_EMPTY",
+      "target_shape": "rejected_input_receipt_v1",
+      "current_blocker": "None; this is a negative control, not a mathematical family claim."
+    }
+  ],
+  "minimal_open_parameterization": {
+    "variables": ["p", "A", "K", "R", "E_u", "E_v", "D_u", "D_v", "chi"],
+    "constraints": [
+      "p=1 mod 24 and p prime",
+      "K=A*(p-1), 4*K=p*R+1",
+      "D_u,D_v divide K and gcd(D_u,D_v)=1",
+      "D_u divides p*E_v*D_v+1",
+      "D_v divides p*E_u*D_u+1",
+      "E_u,E_v>1",
+      "E_u*E_v=1+p^2*chi, chi>=1",
+      "actual source/path/priority receipts"
+    ]
+  }
+}
