@@ -1,0 +1,109 @@
+{
+  "artifact_id": "f3_tr1_residual_matrix_v2",
+  "artifact_version": 2,
+  "track_id": "F3-TR1-H-SUPPORTED",
+  "base_sha": "332c0f7ed48d453ca76d35639a618659d9b559ca",
+  "date": "2026-08-25",
+  "status": "CAPACITY_SPLIT_WITH_OPEN_PHYSICAL_RESIDUAL",
+  "precedence": [
+    "L0_TERMINAL_PRIORITY_HIT",
+    "L1_H_SUPPORTED_MENU_TERMINAL",
+    "L2_DSTAR_TERMINAL",
+    "L3_DSTAR_CAPACITY_PARTITION",
+    "L4_TR1_FRESH_OCCURRENCE",
+    "L5_FAMILY_EMPTY",
+    "L6_EXPLICIT_RESIDUAL"
+  ],
+  "capacity_partition": {
+    "input": "actual maximal D_star factorization after all earlier terminal menus miss",
+    "fresh_predicate": "v_q(z)>v_q(K), equivalently q|E, equivalently p*sigma=-1 mod q",
+    "saturated_predicate": "v_q(z)=v_q(D)<=v_q(K), equivalently q not divide E",
+    "selection_rule": "reject saturated factors; select the least factor with an independently verified fresh integer occurrence",
+    "coverage": "fresh and saturated predicates are complementary for each verified q factor"
+  },
+  "branch_tables": {
+    "p_plus_one_overlap": {
+      "guard": "q|m, q|p+1, q|h-1",
+      "fresh": "tau=t and zeta>b+t",
+      "saturated": "tau>=t and zeta=b+t"
+    },
+    "p_minus_one_overlap": {
+      "guard": "q|m+2, q|p-1, q|h+1",
+      "fresh": "tau=b+t and zeta>2b+t",
+      "saturated": "tau>=t and zeta=b+t"
+    },
+    "pure_T": {
+      "guard": "q does not divide p^2-1",
+      "fresh": "zeta>tau",
+      "saturated": "zeta<=tau"
+    }
+  },
+  "leaves": [
+    {
+      "leaf_id": "L0_TERMINAL_PRIORITY_HIT",
+      "predicate": "ordered terminal-first replay returns a verified terminal",
+      "planned_closure": "TERMINAL",
+      "current_status": "ESTABLISHED"
+    },
+    {
+      "leaf_id": "L1_H_SUPPORTED_MENU_TERMINAL",
+      "predicate": "all earlier misses and the first hit in the complete 1<Q|u h-menu",
+      "planned_closure": "TERMINAL",
+      "current_status": "MENU_ELIGIBILITY_ESTABLISHED_TOTALITY_OPEN"
+    },
+    {
+      "leaf_id": "L2_DSTAR_TERMINAL",
+      "predicate": "all earlier misses and a written D_star terminal predicate hits",
+      "planned_closure": "TERMINAL",
+      "current_status": "TERMINAL_MENU_TOTALITY_OPEN"
+    },
+    {
+      "leaf_id": "L3_DSTAR_CAPACITY_PARTITION",
+      "predicate": "all earlier terminal menus miss and every verified D_star factor is classified fresh or capacity-saturated",
+      "planned_closure": "ARITHMETIC_PARTITION",
+      "current_status": "ESTABLISHED",
+      "does_not_claim": [
+        "integer raw occurrence",
+        "E1",
+        "target",
+        "E5"
+      ]
+    },
+    {
+      "leaf_id": "L4_TR1_FRESH_OCCURRENCE",
+      "predicate": "least D_star factor with a separately verified fresh integer occurrence is selected",
+      "planned_closure": "VERIFIED_SUCCESSOR_OR_TERMINAL",
+      "current_status": "OPEN",
+      "blocker": "source-bound occurrence, deterministic target, E3/E4/E5 and common re-entry"
+    },
+    {
+      "leaf_id": "L5_FAMILY_EMPTY",
+      "predicate": "all earlier leaves miss and exact R4/R6 identities imply contradiction",
+      "planned_closure": "EMPTY",
+      "current_status": "OPEN"
+    },
+    {
+      "leaf_id": "L6_EXPLICIT_RESIDUAL",
+      "predicate": "all terminal, capacity, fresh-occurrence and family-empty leaves fail",
+      "planned_closure": "MUST_DISAPPEAR",
+      "current_status": "OPEN",
+      "residual_codes": [
+        "R4_H_MENU_AND_DSTAR_TERMINALS_MISS_NO_TR1_TARGET",
+        "R6_H_MENU_AND_DSTAR_TERMINALS_MISS_NO_TR1_TARGET",
+        "R6_K3_U_MENU_MISS_DSTAR_NO_TR1_TARGET"
+      ]
+    }
+  ],
+  "acceptance": {
+    "final_explicit_residual_count": 0,
+    "capacity_saturated_factors_misclassified_as_fresh": 0,
+    "unbound_factor_occurrence_count": 0,
+    "unadmitted_target_count": 0
+  },
+  "status_boundaries": {
+    "R4": "OPEN_MINIMAL_RESIDUAL",
+    "R6": "OPEN_MINIMAL_RESIDUAL",
+    "F3": "OPEN",
+    "T6": "OPEN"
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "track_id": "F1-ADMISSION",
+  "artifact_id": "f1_admission_scope_freeze_v1",
+  "artifact_version": 1,
+  "date": "2026-08-25",
+  "base_sha": "332c0f7ed48d453ca76d35639a618659d9b559ca",
+  "branch": "integration/t6-f2-f3-wave1",
+  "status": "SCOPE_FROZEN_OPEN",
+  "quantifier": "For every active Python source signal discovered under reproductions/ and scripts/ that emits a non-false recursive_edge_eligible value or accepts/passes a non-false persistent_queue value, and for every arithmetic scheduler output proposed for persistent admission: assign exactly one source disposition (REGISTERED_PRODUCER, REGISTERED_ALIAS, NONRECURSIVE_CONTROL, or UNRESOLVED_SOURCE_DRIFT). For a REGISTERED_PRODUCER, prove a complete terminal/reject/nonterminal path through the common PersistentSelectorRuntimeV1 and common queue gate; a local arithmetic receipt is not itself a persistent state.",
+  "source_census_rule": "The AST census is conservative syntax evidence only. It detects source drift and does not claim semantic completeness of all possible mathematical constructors.",
+  "included_domains": [
+    "18 currently discovered source signals",
+    "the q=1 local runtime overlap and its source/target receipt boundary",
+    "legacy representation-dual arithmetic receipts proposed as F1 inputs",
+    "owner/family caller-authority and queue-mutation checks",
+    "the minimum adapter contract needed to turn a validated arithmetic scheduler into a runtime producer"
+  ],
+  "excluded_domains": [
+    "semantic exhaustion of all mathematical constructors not visible to the AST census",
+    "F2 post-G, high-support, C8 or H4 arithmetic totality",
+    "F3 high endpoint, QC1, TR1 or m=3,q=5 arithmetic closure",
+    "global family-predicate totality beyond targets actually projected to the shared state contract",
+    "F4 selector assembly, F5 audit and global T6 closure",
+    "Erdos-Straus conjecture itself"
+  ],
+  "existing_established_lemmas": [
+    "scripts/audit_t6_constructor_inventory_v1.py: conservative source and queue census",
+    "scripts/t6_persistent_selector_state_v1.py: independent header extraction, owner classification and fail-closed queue admission",
+    "scripts/t6_persistent_selector_runtime_v1.py: runtime-issued candidate, terminal-first, projection, E1-E4 validation, T5 ticket and sole queue mutation path",
+    "scripts/t6_q_one_full_carrier_runtime_slice_v1.py: two-route local q=1 runtime instantiation with explicit final DEAD_END",
+    "data/t6-constructor-inventory-v1.json: current 18-signal inventory and four remaining open A0 unknowns",
+    "docs/audits/T6_CONSTRUCTOR_INVENTORY_V1.md: source-completeness and E3 boundaries"
+  ],
+  "current_obligations": [
+    "U-A0-01: no all-constructor runtime or source-completeness theorem",
+    "U-A0-02: no theorem that every queue mutation uses the local gate and no bypass exists",
+    "U-A0-03: no common target re-entry proof for every emitted schema",
+    "U-A0-04: six representation-dual signals lack a unique registered disposition",
+    "U-A0-05: total-cofactor adapter accepts a fixture-manufactured persistent_queue flag",
+    "U-A0-06: C2/H3 arithmetic checkpoint has no persistent target serializer",
+    "U-A0-07: H4 and c8 controls do not serialize an active nonterminal target",
+    "U-A0-08: registered overflow builders lack a shared legal E3 state serializer",
+    "U-A0-09: p=409 fixed-n control lacks parent, terminal-first and enqueue provenance"
+  ],
+  "source_dispositions_at_base": {
+    "nonrecursive_control_candidates": [
+      "the six unregistered representation-dual functions",
+      "the total-cofactor adapter parameter and fixture call",
+      "the H4 clean-q verify_controls signal"
+    ],
+    "registered_or_alias_candidates": [
+      "the two high-R same-chart aliases",
+      "the four registered representation-dual producers",
+      "the q=1 initializer",
+      "the proper-endpoint and gcd-shadow Type-II producers"
+    ],
+    "must_remain_open": [
+      "shared E3 serialization for registered overflow builders",
+      "all-constructor runtime coverage, queue bypass exclusion and target re-entry"
+    ],
+    "status_note": "At this base, the coordinator-owned inventory records U-A0-04, U-A0-05, U-A0-06, U-A0-07 and U-A0-09 as RESOLVED_NONRUNTIME_CONTROL variants. This artifact supplies the independent runtime-boundary evidence; U-A0-01, U-A0-02, U-A0-03 and U-A0-08 remain open."
+  },
+  "forbidden_inferences": [
+    "recursive_edge_eligible=true grants no queue right",
+    "persistent_queue=true supplied by a fixture is not source provenance",
+    "a selector_status label or family/owner label is not E3",
+    "a local q=1 runtime slice is not global constructor coverage",
+    "absence of an observed queue call is not a theorem that a mathematical constructor cannot recur",
+    "a bare prime, fixture or target chart may not reconstruct a parent state",
+    "local checkpoint descent is not parent-to-final-target T5 descent",
+    "finite controls do not prove a quantified family empty"
+  ],
+  "closure_contract": {
+    "source_disposition_partition": [
+      "REGISTERED_PRODUCER",
+      "REGISTERED_ALIAS",
+      "NONRECURSIVE_CONTROL",
+      "UNRESOLVED_SOURCE_DRIFT"
+    ],
+    "verified_successor_requirements": [
+      "runtime-admitted source state and source owner",
+      "complete source terminal-first receipt with precedence",
+      "runtime-issued candidate with authority-free witness payload",
+      "deterministic target projector and independent E1-E4 validator",
+      "target terminal-first schedule and target-local retyping",
+      "common extractor, owner digest and target-owner declaration",
+      "strict parent-to-final-target T5 N7 ticket",
+      "sole common queue mutation and recursive re-entry"
+    ],
+    "control_status_rule": "NONRECURSIVE_CONTROL is an admission-surface disposition only; it is not a mathematical FAMILY_EMPTY theorem and cannot be used to close F2 or F3."
+  },
+  "owned_files_policy": {
+    "may_add": [
+      "data/t6-wave1/f1-admission-*",
+      "data/interface-requests/f1-admission-*",
+      "docs/f1-admission-*",
+      "reproductions/f1_admission-*",
+      "tests/test_f1_admission-*"
+    ],
+    "must_not_edit": [
+      "README.md",
+      "index/",
+      "data/t6-proof-frontier-v2.json",
+      "data/t6-selector-obligation-ledger-v1.json",
+      "data/t5-full-transition-taxonomy-v2.json",
+      "data/t6-constructor-inventory-v1.json",
+      "concepts/t6-persistent-selector-state-v1.md",
+      "scripts/t6_persistent_selector_state_v1.py",
+      "scripts/t6_persistent_selector_runtime_v1.py",
+      "shared producer registry",
+      "shared family grammar"
+    ]
+  }
+}

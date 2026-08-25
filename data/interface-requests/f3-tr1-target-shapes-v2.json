@@ -1,0 +1,125 @@
+{
+  "request_id": "f3_tr1_target_shapes_v2",
+  "request_version": 2,
+  "track_id": "F3-TR1-H-SUPPORTED",
+  "base_sha": "332c0f7ed48d453ca76d35639a618659d9b559ca",
+  "date": "2026-08-25",
+  "status": "PROPOSAL_ONLY_NOT_ACTIVE",
+  "source_owner": "proper_root_stutter_k_gt_one",
+  "producer_request": {
+    "producer_id": "tr1_h_supported_transverse_v2",
+    "constructor_status": "NOT_REGISTERED",
+    "queue_right": false,
+    "terminal_first_required": true,
+    "owned_routes": [
+      "R4_M3_NONQ5_H_SUPPORTED",
+      "R6_MGT3_H_SUPPORTED"
+    ]
+  },
+  "freshness_gate_request": {
+    "required_fields": [
+      "D_star_value",
+      "D_star_factorization_receipt",
+      "q_capacity_table",
+      "q_z_height",
+      "q_D_height",
+      "q_A_height",
+      "q_p_minus_one_height",
+      "sigma_mod_q_receipt",
+      "fresh_or_saturated_disposition",
+      "terminal_prefix_digest"
+    ],
+    "freshness_predicate": "q|E iff v_q(z)>v_q(K) iff p*sigma=-1 mod q",
+    "saturated_disposition": "reject q as a raw occurrence and retain it only in the arithmetic residual receipt",
+    "deterministic_rule": "after all terminal menus miss, sort verified factors and choose the least factor with a replayable fresh integer occurrence"
+  },
+  "envelope_request": {
+    "name": "TR1PhysicalTransitionV2",
+    "purpose": "common E1-E5 envelope for R4/R6 after exact D_star freshness classification",
+    "required_source_fields": [
+      "actual_parent_state_id",
+      "active_producer_id",
+      "persistent_admission_id",
+      "root_to_endpoint_source_path_digest",
+      "maximal_complete_excess_receipt_digest",
+      "terminal_first_digest",
+      "root_menu_replay_digest",
+      "D_star_factorization_receipt",
+      "freshness_capacity_receipt",
+      "selected_fresh_factor_arithmetic_id",
+      "integer_raw_occurrence_receipt",
+      "priority_prefix_digest"
+    ],
+    "required_edge_fields": [
+      "E1_integer_raw_occurrence_and_path",
+      "E2_deterministic_target",
+      "E3_target_schema_owner_and_digest",
+      "E4_universal_solution_lift",
+      "E5_authoritative_T5_ticket",
+      "target_admission_decision",
+      "target_reentry_receipt"
+    ],
+    "forbidden_inputs": [
+      "bare q divides D_star",
+      "capacity-saturated q",
+      "cached family owner",
+      "caller-supplied queue flag",
+      "singleton lift",
+      "local checkpoint rank"
+    ]
+  },
+  "target_shapes": [
+    {
+      "shape_id": "TR1_DIRECT_TERMINAL_V2",
+      "disposition": "TERMINAL",
+      "existing_family_match": "direct_terminal_leaf",
+      "new_family_required": false,
+      "admission_requirement": "terminal verifier replays the explicit certificate"
+    },
+    {
+      "shape_id": "TR1_SINGLE_SIDE_PFREE_V2",
+      "disposition": "PERSISTENT_CANDIDATE_UNTIL_PROVED",
+      "existing_family_match": "path_anchored_complete_excess_bundle",
+      "new_family_required": false,
+      "admission_requirement": "fresh factor occurrence, deterministic single-side target, common E3/E4/E5 and re-entry"
+    },
+    {
+      "shape_id": "TR1_TYPEI_CHARGED_TARGET_V2",
+      "disposition": "PERSISTENT_CANDIDATE_UNTIL_PROVED",
+      "existing_family_match": "type_i_a_gt_one_overflow_residual",
+      "new_family_required": false,
+      "T5_ticket_type": "parent-to-final charged rank drop only after canonical target recomputation",
+      "admission_requirement": "frozen extractor, owner classifier, target declaration, universal lift and queue gate"
+    },
+    {
+      "shape_id": "TR1_TYPEI_ABSORB_COMMIT_V2",
+      "disposition": "PERSISTENT_CANDIDATE_UNTIL_PROVED",
+      "existing_family_match": "type_i_absorb_marked_residual",
+      "new_family_required": false,
+      "T5_ticket_type": "irreversible CHARGED-to-ABSORB protocol drop with R_T<p and complete fields",
+      "admission_requirement": "marked-absorb semantics, universal lift and common admission"
+    },
+    {
+      "shape_id": "TR1_CAPACITY_SATURATED_REJECTION_V2",
+      "disposition": "ARITHMETIC_REJECTION",
+      "existing_family_match": null,
+      "new_family_required": false,
+      "queue_right": false,
+      "meaning": "q divides D_star but q does not divide E; no raw occurrence is licensed by this factor"
+    }
+  ],
+  "activation_gates": [
+    "symbolic R4/R6 partition with the freshness-capacity split",
+    "source-bound integer occurrence/E1",
+    "deterministic target theorem",
+    "full E1-E5 proof",
+    "common F1 admission and re-entry",
+    "independent cross-audit",
+    "coordinator grammar approval"
+  ],
+  "status_boundaries": {
+    "OPEN_TR1_PHYSICAL_SERIALIZER": "OPEN",
+    "F3": "OPEN",
+    "T6": "OPEN"
+  }
+}

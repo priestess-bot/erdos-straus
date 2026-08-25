@@ -1,0 +1,195 @@
+{
+  "request_id": "f1_admission_target_shape_proposal_v1",
+  "request_version": 1,
+  "track_id": "F1-ADMISSION",
+  "base_sha": "332c0f7ed48d453ca76d35639a618659d9b559ca",
+  "created": "2026-08-25",
+  "status": "REQUESTED_NOT_ADMITTED",
+  "coordinator_action_required": [
+    "accept or reject the explicit NONRECURSIVE_CONTROL disposition in the F1 inventory",
+    "bind each registered producer to a BranchRegistrationV1 with source/target owners, schedules, projector, validator and allowed T5 tickets",
+    "add no family or grammar row from this proposal alone",
+    "wire arithmetic schedulers only through runtime-issued CandidateTransitionV1 and independent validation"
+  ],
+  "runtime_boundary": {
+    "sole_queue_mutation": "scripts/t6_persistent_selector_runtime_v1.py:PersistentSelectorRuntimeV1._enqueue_admitted_target_v1",
+    "source_entry": "RuntimeQueueItemV1 admitted by reject_before_persistent_queue_v1 and rechecked by verify_source_state_v1",
+    "candidate_entry": "ProducedCandidateV1 issued exactly once by the runtime executor and checked against _issued_candidates",
+    "target_entry": "TargetProjectionV1 from a registered projector, then target terminal schedule, E1-E4 validator, T5 ticket and common extractor/classifier",
+    "caller_authority_forbidden": [
+      "owner",
+      "owner_digest",
+      "family",
+      "family_id",
+      "normal_form",
+      "normalized_state",
+      "recursive_edge_eligible",
+      "persistent_queue",
+      "selector_status"
+    ]
+  },
+  "common_envelope": {
+    "source_state": {
+      "required": ["schema_id", "schema_version", "state_id", "artifact_class", "consumer", "queue_gate", "producer_id", "branch_id", "parent_state_id", "root_context", "equation_rank", "mark", "terminal_first", "source_receipt", "facts"],
+      "identity_rule": "state_id is rebuilt from canonical raw fields; derived owner/family labels are excluded from identity",
+      "source_receipt_rule": "source receipt binds producer, branch, parent, target facts digest and terminal-first digest"
+    },
+    "candidate_transition": {
+      "fields": ["producer_id", "branch_id", "witness_payload", "ticket_type"],
+      "witness_rule": "witness_payload contains arithmetic occurrence/path data only and must not contain authority fields",
+      "ticket_rule": "ticket_type is checked against the registered branch and then recomputed against source/target N7 potentials"
+    },
+    "target_projection": {
+      "fields": ["root_context", "equation_rank", "facts", "t5_descriptor", "mark_behavior"],
+      "facts_rule": "facts are canonical integers and source-bound occurrence data; owner/family are recomputed by the shared extractor",
+      "mark_rule": "identity mark preserves root/equation rank; lower-equation mark requires a strict positive rank drop"
+    },
+    "admission_result": {
+      "success": "VerifiedSuccessorV1 with source/target IDs, recomputed target owner/digest, transition receipt and T5 ticket receipt",
+      "terminal": "VerifiedTerminalV1 returned before queue mutation",
+      "failure": "stable RuntimeRejectCode; no queue mutation"
+    }
+  },
+  "target_shapes": [
+    {
+      "shape_id": "initializer.q_one_g_root_v1",
+      "existing_family_match": ["type_ii_relation_g_endpoint"],
+      "new_family_required": false,
+      "atomic_arm_required": false,
+      "mark_behavior": "IDENTITY_MARK",
+      "t5_ticket_type": "PHASE_DROP",
+      "producer_request": "initial_q_one_root_dispatch_v1",
+      "source_guard": "root initializer after its complete registered terminal-first scheduler misses",
+      "target_fields": ["p", "R", "K", "support_A=1", "endpoint_fiber=G", "source_scope", "terminal_first_receipt"],
+      "owner_precedence_request": "initializer target owner must be recomputed; caller cannot set type_ii_relation_g_endpoint",
+      "admission_status": "BLOCKED_UNTIL_GLOBAL_BOOTSTRAP_AND_TARGET_REENTRY"
+    },
+    {
+      "shape_id": "existing.type_ii_endpoint_successor_v1",
+      "existing_family_match": ["type_ii_relation_f_endpoint", "type_ii_relation_g_endpoint"],
+      "new_family_required": false,
+      "atomic_arm_required": false,
+      "mark_behavior": "IDENTITY_MARK",
+      "t5_ticket_type": "OUTER_RANK_DROP",
+      "producer_request": "type_ii_proper_endpoint_descent or type_ii_gcd_shadow_endpoint_descent",
+      "source_guard": "actual endpoint source, complete relation reach and deterministic least smaller cofactor or terminal",
+      "target_fields": ["p", "endpoint_q", "endpoint_x", "endpoint_factors", "endpoint_classification", "parent_state_id", "source_path"],
+      "owner_precedence_request": "F/G owner is recomputed from the endpoint chart; endpoint profile labels are not trusted",
+      "admission_status": "BLOCKED_UNTIL_ENDPOINT_STATE_SERIALIZER"
+    },
+    {
+      "shape_id": "existing.overflow_same_chart_promotion_v1",
+      "existing_family_match": ["type_i_low_support_persistent_overflow", "type_i_a_gt_one_overflow_residual", "type_i_high_support_sink"],
+      "new_family_required": false,
+      "atomic_arm_required": false,
+      "mark_behavior": "IDENTITY_MARK",
+      "t5_ticket_type": "LOCAL_DROP",
+      "producer_request": "same_chart_support_promotion",
+      "source_guard": "actual complete-excess occurrence, A|M, M>A, canonical same-chart target and strict parent-to-target charged rank",
+      "target_fields": ["p", "R", "K", "support_A=M", "source_occurrence", "source_scope", "canonical_facts"],
+      "owner_precedence_request": "existing family predicates only; no generic overflow fallback",
+      "admission_status": "BLOCKED_UNTIL_COMMON_E3"
+    },
+    {
+      "shape_id": "existing.overflow_fixed_divisor_or_reset_v1",
+      "existing_family_match": ["type_i_a_gt_one_overflow_residual", "type_i_absorb_marked_residual", "type_i_high_support_sink"],
+      "new_family_required": false,
+      "atomic_arm_required": false,
+      "mark_behavior": "IDENTITY_MARK_OR_EXPLICIT_ABSORB_MARK_AFTER_RETYPE",
+      "t5_ticket_type": "LOCAL_DROP_OR_PHASE_DROP",
+      "producer_request": "high_carrier_fixed_n_descent, joined_support_outer_reset, a_one_dual_outer_reset",
+      "source_guard": "actual determinant/dual occurrence, deterministic divisor/reset target, target-local terminal miss and strict parent-to-final rank",
+      "target_fields": ["p", "R_T", "K_T", "support_A_T", "determinant_receipt", "dual_side", "source_scope", "target_retype"],
+      "owner_precedence_request": "R_T>p stays overflow/CHARGED; R_T<p must be independently retyped before ABSORB admission",
+      "admission_status": "BLOCKED_UNTIL_SOURCE_RECEIPT_AND_PHASE_RETYPE"
+    },
+    {
+      "shape_id": "nonrecursive_control_result_v1",
+      "existing_family_match": [],
+      "new_family_required": false,
+      "atomic_arm_required": false,
+      "mark_behavior": "NONE",
+      "t5_ticket_type": "NONE",
+      "producer_request": "all current control-only signals",
+      "source_guard": "arithmetic result lacks an admitted source or shared target serializer",
+      "target_fields": ["control_id", "arithmetic_receipt", "scope", "reason_not_persistent"],
+      "owner_precedence_request": "no owner or family field is allowed",
+      "admission_status": "NEVER_QUEUE; analysis evidence only"
+    },
+    {
+      "shape_id": "pending_dispatch_control_v1",
+      "existing_family_match": [],
+      "new_family_required": false,
+      "atomic_arm_required": "only as a synchronous macro-internal artifact",
+      "mark_behavior": "NONE_UNTIL_RETYPE",
+      "t5_ticket_type": "NONE",
+      "producer_request": "C2/H3, H4 and c8 pending controls",
+      "source_guard": "target integers are locally checked but terminal-first, E3 and re-entry are not complete",
+      "target_fields": ["canonical_integer_target", "dispatch_status=pending_dispatch", "selector_consumable=false", "mandatory_next_step=normalize_target_state"],
+      "owner_precedence_request": "no family/owner may be inherited from the parent",
+      "admission_status": "NEVER_QUEUE; normalize only inside a later admitted macro"
+    }
+  ],
+  "legacy_scheduler_blockers": [
+    {
+      "id": "BLOCK-01-SOURCE-CONTEXT",
+      "fact": "representation-dual source/successor descriptors have no admitted source_state_id or SourceExecutionContextV1",
+      "runtime_consequence": "runtime cannot verify source membership, owner digest or parent identity"
+    },
+    {
+      "id": "BLOCK-02-TERMINAL-PRECEDENCE",
+      "fact": "legacy receipts expose local e1_e5 booleans but no registered source/target terminal schedules",
+      "runtime_consequence": "a candidate could bypass terminal-first priority"
+    },
+    {
+      "id": "BLOCK-03-CALLER-AUTHORITY",
+      "fact": "recursive_edge_eligible, selector_status and persistent_queue are caller-controlled legacy fields",
+      "runtime_consequence": "accepting the receipt directly would violate the runtime authority firewall"
+    },
+    {
+      "id": "BLOCK-04-TARGET-SCHEMA",
+      "fact": "legacy source_state/successor_state objects omit the v1 top-level schema, facts envelope, mark and receipts",
+      "runtime_consequence": "extract_verified_selector_header_v1 rejects before family classification"
+    },
+    {
+      "id": "BLOCK-05-INDEPENDENT-E1-E4",
+      "fact": "legacy e1_e5 dictionaries are self-reported by the arithmetic builder",
+      "runtime_consequence": "no TransitionValidationV1 can bind source, projection digest and evidence refs"
+    },
+    {
+      "id": "BLOCK-06-T5-DESCRIPTOR",
+      "fact": "legacy potential records are local tuples or support formulas, not T5StateDescriptorV1 facts",
+      "runtime_consequence": "runtime cannot recompute the fixed N7 ticket parent-to-final"
+    },
+    {
+      "id": "BLOCK-07-QUEUE-ISSUANCE",
+      "fact": "legacy functions are called by build_results() and never issue ProducedCandidateV1",
+      "runtime_consequence": "admit_candidate_transition_v1 must reject them as not runtime-issued"
+    },
+    {
+      "id": "BLOCK-08-REENTRY",
+      "fact": "target family labels are not recomputed by a common projector/extractor path",
+      "runtime_consequence": "even a local verified edge cannot be promoted to recursive re-entry"
+    }
+  ],
+  "minimal_adapter_patch": {
+    "name": "ArithmeticSchedulerAdapterV1",
+    "status": "PROPOSAL_ONLY",
+    "steps": [
+      "Receive SourceExecutionContextV1 from the runtime; never accept a bare prime or legacy parent descriptor.",
+      "Run a registered branch-specific arithmetic scheduler against source.raw_state and return only TerminalDraftV1, GuardMissV1 or an authority-free CandidateTransitionV1 witness.",
+      "Register a BranchRegistrationV1 with source/target owners, evidence refs, source/target terminal schedules, projector and independent validator.",
+      "Project canonical integer output to TargetProjectionV1; recompute facts, mark and T5 descriptor without importing legacy owner/family labels.",
+      "Let the existing runtime perform target terminal priority, E1-E4 validation, owner classification, T5 ticket verification and the sole queue append.",
+      "Add one negative control proving that the original legacy receipt and a forged authority field are rejected before queue mutation."
+    ],
+    "not_allowed": [
+      "adding a second queue append",
+      "converting e1_e5 booleans directly into TransitionValidationV1",
+      "copying recursive_edge_eligible or persistent_queue into a candidate",
+      "using a legacy family/owner label as target classification",
+      "reconstructing the source from a fixture or prime"
+    ]
+  },
+  "decision": "Current PersistentSelectorRuntimeV1 cannot safely ingest any existing F2/F3 arithmetic scheduler directly. The adapter proposal is the smallest safe bridge; until its source receipt, terminal schedule, projector, independent validator and target re-entry are supplied, all such outputs remain analysis evidence or unadmitted conditional candidates."
+}

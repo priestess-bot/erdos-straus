@@ -1,0 +1,81 @@
+{
+  "artifact_id": "f3_tr1_scope_freeze_v2",
+  "artifact_version": 2,
+  "track_id": "F3-TR1-H-SUPPORTED",
+  "agent": "Agent 6",
+  "branch": "sol/f3-h-supported-tr1",
+  "base_sha": "332c0f7ed48d453ca76d35639a618659d9b559ca",
+  "date": "2026-08-25",
+  "status": "SCOPE_FROZEN_WITH_FRESHNESS_CAPACITY_GATE",
+  "owned_route_codes": [
+    "R4_M3_NONQ5_H_SUPPORTED",
+    "R6_MGT3_H_SUPPORTED"
+  ],
+  "quantifier": {
+    "source_class": "ACTUAL_PERSISTENT",
+    "root_domain": "p is a core prime with p congruent to 1 modulo 24",
+    "height_domain": "2 <= h=3u < p",
+    "proper_root_payload": "verified low proper-height maximal complete-excess stutter receipt",
+    "survivor_conditions": [
+      "complete terminal-first prefix is replayable and misses",
+      "k > 1",
+      "k_perp = 1",
+      "D_star > 1"
+    ],
+    "route_split": [
+      "m = 3 and 5 does not divide D_star",
+      "m > 3"
+    ]
+  },
+  "excluded_domains": [
+    "high endpoint h > p",
+    "m=3 and 5 divides D_star",
+    "quotient-only R3/R5",
+    "k=1",
+    "analysis-only tuple without actual persistent admission"
+  ],
+  "fixed_receipt_definitions": {
+    "A": "(p+1)T/2",
+    "K": "A(p-1)",
+    "z": "R-h=E*D",
+    "D_star": "D/gcd(D,h^2-1)",
+    "sigma": "E=1+p*sigma and sigma*D=2T-(m+2r)",
+    "freshness": "q|E, equivalently v_q(z)>v_q(K), equivalently p*sigma=-1 mod q",
+    "capacity_saturated": "q|D_star, q not divide E, and v_q(z)=v_q(D)<=v_q(K)"
+  },
+  "new_established_reduction": {
+    "claim_id": "type-I-t6-f3-tr1-dstar-freshness-capacity-gate",
+    "content": [
+      "D_star divides T, hence every D_star prime divides A",
+      "canonical maximality gives an exact fresh-versus-saturated split",
+      "p+1, p-1 and pure-T branch valuation tables are disjoint",
+      "k_perp=1 does not imply freshness",
+      "synthetic pure-T controls realize both local valuation patterns",
+      "no actual R4/R6 saturation receipt is claimed"
+    ]
+  },
+  "required_partition": [
+    "terminal-first and every 1<Q|u root-capacity menu",
+    "D_star terminal menus",
+    "capacity-saturated D_star factors rejected as raw labels",
+    "least independently verified fresh D_star occurrence",
+    "family-empty proof or explicit residual"
+  ],
+  "forbidden_inferences": [
+    "q|D_star implies q|E",
+    "k_perp=1 implies q|E",
+    "D_star arithmetic divisibility is an integer raw occurrence",
+    "synthetic q-primary control is an actual receipt",
+    "local sigma congruence is E1 source provenance",
+    "local checkpoint decrease is E5",
+    "family label or queue flag proves admission"
+  ],
+  "status_boundaries": {
+    "R4": "OPEN_MINIMAL_RESIDUAL",
+    "R6": "OPEN_MINIMAL_RESIDUAL",
+    "TR1_INTEGER_RAW_OCCURRENCE": "OPEN",
+    "OPEN_TR1_PHYSICAL_SERIALIZER": "OPEN",
+    "F3": "OPEN",
+    "T6": "OPEN"
+  }
+}
