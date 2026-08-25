@@ -1,0 +1,245 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/priestess-bot/erdos-straus/schemas/t6-complete-terminal-miss-receipt-v1.schema.json",
+  "title": "T6 non-authorizing terminal miss receipt types v1",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/localTerminalMissReceiptV1"
+    },
+    {
+      "$ref": "#/$defs/completeTerminalMissReceiptV1"
+    }
+  ],
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "gitSha": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "subjectKind": {
+      "enum": [
+        "SOURCE_STATE",
+        "TARGET_PROJECTION"
+      ]
+    },
+    "localTerminalMissReceiptV1": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "receipt_type",
+        "schema_version",
+        "subject_kind",
+        "subject_id",
+        "subject_digest",
+        "scheduler_input_digest",
+        "schedule_id",
+        "schedule_registry_digest",
+        "family_id",
+        "attempt_index",
+        "evaluator_id",
+        "evaluator_digest",
+        "input_digest",
+        "output_digest",
+        "outcome",
+        "digest"
+      ],
+      "properties": {
+        "receipt_type": {
+          "const": "LocalTerminalMissReceiptV1"
+        },
+        "schema_version": {
+          "type": "integer",
+          "const": 1
+        },
+        "subject_kind": {
+          "$ref": "#/$defs/subjectKind"
+        },
+        "subject_id": {
+          "$ref": "#/$defs/text"
+        },
+        "subject_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "scheduler_input_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "schedule_id": {
+          "$ref": "#/$defs/text"
+        },
+        "schedule_registry_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "family_id": {
+          "$ref": "#/$defs/text"
+        },
+        "attempt_index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "evaluator_id": {
+          "$ref": "#/$defs/text"
+        },
+        "evaluator_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "input_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "output_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "outcome": {
+          "const": "MISS_LOCAL"
+        },
+        "digest": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "completeTerminalMissReceiptV1": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "receipt_type",
+        "schema_version",
+        "head_sha",
+        "authority_class",
+        "registry_id",
+        "registry_class",
+        "registry_digest",
+        "schedule_id",
+        "schedule_digest",
+        "schedule_registry_digest",
+        "subject_kind",
+        "subject_id",
+        "subject_digest",
+        "scheduler_input_digest",
+        "owner_domain_id",
+        "owner_domain_digest",
+        "domain_membership_replay_id",
+        "domain_membership_replay_artifact_digest",
+        "domain_membership_replay_digest",
+        "ordered_family_ids",
+        "ordered_local_miss_digests",
+        "coverage_theorem_id",
+        "coverage_theorem_digest",
+        "coverage_reproduction_id",
+        "coverage_reproduction_digest",
+        "coverage_verifier_id",
+        "coverage_verifier_digest",
+        "coverage_replay_digest",
+        "outcome",
+        "digest"
+      ],
+      "properties": {
+        "receipt_type": {
+          "const": "CompleteTerminalMissReceiptV1"
+        },
+        "schema_version": {
+          "type": "integer",
+          "const": 1
+        },
+        "head_sha": {
+          "$ref": "#/$defs/gitSha"
+        },
+        "authority_class": {
+          "const": "PRODUCTION"
+        },
+        "registry_id": {
+          "$ref": "#/$defs/text"
+        },
+        "registry_class": {
+          "const": "PRODUCTION"
+        },
+        "registry_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "schedule_id": {
+          "$ref": "#/$defs/text"
+        },
+        "schedule_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "schedule_registry_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "subject_kind": {
+          "$ref": "#/$defs/subjectKind"
+        },
+        "subject_id": {
+          "$ref": "#/$defs/text"
+        },
+        "subject_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "scheduler_input_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "owner_domain_id": {
+          "$ref": "#/$defs/text"
+        },
+        "owner_domain_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "domain_membership_replay_id": {
+          "$ref": "#/$defs/text"
+        },
+        "domain_membership_replay_artifact_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "domain_membership_replay_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "ordered_family_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/text"
+          }
+        },
+        "ordered_local_miss_digests": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/sha256"
+          }
+        },
+        "coverage_theorem_id": {
+          "$ref": "#/$defs/text"
+        },
+        "coverage_theorem_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "coverage_reproduction_id": {
+          "$ref": "#/$defs/text"
+        },
+        "coverage_reproduction_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "coverage_verifier_id": {
+          "$ref": "#/$defs/text"
+        },
+        "coverage_verifier_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "coverage_replay_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "outcome": {
+          "const": "MISS_COMPLETE"
+        },
+        "digest": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    }
+  }
+}

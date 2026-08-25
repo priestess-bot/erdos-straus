@@ -1,0 +1,266 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/priestess-bot/erdos-straus/schemas/t6-coordinator-role-registry-v1.schema.json",
+  "title": "T6 HEAD-bound evidence-only role inventory v1 source",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_id",
+    "schema_version",
+    "registry_id",
+    "status",
+    "authority_policy",
+    "artifacts",
+    "role_grants",
+    "branch_bindings",
+    "complete_terminal_schedules",
+    "blocked_candidates",
+    "proof_boundary"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "t6_coordinator_role_registry_v1"
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "registry_id": {
+      "const": "t6_coordinator_role_registry_v1"
+    },
+    "status": {
+      "const": "HEAD_BOUND_EVIDENCE_ONLY_NO_ROLE_AUTHORITY"
+    },
+    "authority_policy": {
+      "$ref": "#/$defs/authorityPolicy"
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/artifact"
+      },
+      "minItems": 1
+    },
+    "role_grants": {
+      "type": "array",
+      "maxItems": 0
+    },
+    "branch_bindings": {
+      "type": "array",
+      "maxItems": 0
+    },
+    "complete_terminal_schedules": {
+      "type": "array",
+      "maxItems": 0
+    },
+    "blocked_candidates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/blockedCandidate"
+      },
+      "minItems": 1
+    },
+    "proof_boundary": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "path": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9._/-]+$",
+      "minLength": 1
+    },
+    "symbol": {
+      "type": "string",
+      "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+    },
+    "authorityPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scope",
+        "source",
+        "worktree_authority",
+        "caller_override_authority",
+        "role_authority",
+        "allowed_executable_roots",
+        "forbidden_executable_roots"
+      ],
+      "properties": {
+        "scope": {
+          "const": "EVIDENCE_INVENTORY_ONLY"
+        },
+        "source": {
+          "const": "TRACKED_GIT_OBJECTS_AT_EXACT_REQUESTED_HEAD"
+        },
+        "worktree_authority": {
+          "const": false
+        },
+        "caller_override_authority": {
+          "const": false
+        },
+        "role_authority": {
+          "const": false
+        },
+        "allowed_executable_roots": {
+          "const": [
+            "scripts"
+          ]
+        },
+        "forbidden_executable_roots": {
+          "const": [
+            ".github",
+            "claims",
+            "concepts",
+            "data",
+            "docs",
+            "index",
+            "reproductions",
+            "schemas",
+            "tests"
+          ]
+        }
+      }
+    },
+    "pythonArtifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_id",
+        "kind",
+        "path",
+        "symbol",
+        "authority",
+        "semantic_digest_method"
+      ],
+      "properties": {
+        "artifact_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "kind": {
+          "const": "PYTHON_SYMBOL"
+        },
+        "path": {
+          "$ref": "#/$defs/path"
+        },
+        "symbol": {
+          "$ref": "#/$defs/symbol"
+        },
+        "authority": {
+          "const": "EVIDENCE_ONLY_NOT_AUTHORIZED"
+        },
+        "semantic_digest_method": {
+          "const": "PYTHON_AST_SYMBOL_AND_GIT_BLOB_SHA256_V1"
+        }
+      }
+    },
+    "jsonArtifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_id",
+        "kind",
+        "path",
+        "json_pointer",
+        "authority",
+        "semantic_digest_method"
+      ],
+      "properties": {
+        "artifact_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "kind": {
+          "const": "JSON_POINTER"
+        },
+        "path": {
+          "$ref": "#/$defs/path"
+        },
+        "json_pointer": {
+          "type": "string"
+        },
+        "authority": {
+          "const": "EVIDENCE_ONLY_NOT_AUTHORIZED"
+        },
+        "semantic_digest_method": {
+          "const": "CANONICAL_JSON_POINTER_AND_GIT_BLOB_SHA256_V1"
+        }
+      }
+    },
+    "artifact": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/pythonArtifact"
+        },
+        {
+          "$ref": "#/$defs/jsonArtifact"
+        }
+      ]
+    },
+    "symbolList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/symbol"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "blockedCandidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_id",
+        "status",
+        "path",
+        "producer_symbols",
+        "projector_symbols",
+        "validator_symbols",
+        "terminal_schedule_symbols",
+        "terminal_verifier_symbols",
+        "reason_codes"
+      ],
+      "properties": {
+        "candidate_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "status": {
+          "const": "BLOCKED_NOT_AUTHORIZED"
+        },
+        "path": {
+          "$ref": "#/$defs/path"
+        },
+        "producer_symbols": {
+          "$ref": "#/$defs/symbolList"
+        },
+        "projector_symbols": {
+          "$ref": "#/$defs/symbolList"
+        },
+        "validator_symbols": {
+          "$ref": "#/$defs/symbolList"
+        },
+        "terminal_schedule_symbols": {
+          "$ref": "#/$defs/symbolList"
+        },
+        "terminal_verifier_symbols": {
+          "$ref": "#/$defs/symbolList"
+        },
+        "reason_codes": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "LEGACY_BOOL",
+              "LOCAL_TERMINAL_SCOPE",
+              "SAME_MODULE_ROLE_COLLISION"
+            ]
+          },
+          "minItems": 3,
+          "maxItems": 3,
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}

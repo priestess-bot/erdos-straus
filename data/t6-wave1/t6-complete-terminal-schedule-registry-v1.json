@@ -1,0 +1,87 @@
+{
+  "schema_id": "t6_complete_terminal_schedule_registry_v1",
+  "schema_version": 1,
+  "registry_id": "t6_complete_terminal_schedule_registry_v1",
+  "registry_class": "PRODUCTION",
+  "status": "NO_COMPLETE_SCHEDULE_AUTHORITY",
+  "head_authority_status": "HEAD_ROLE_REGISTRY_REQUIRED",
+  "digest_algorithm": "sha256-canonical-json-v1",
+  "local_schedules": [
+    {
+      "schedule_id": "q_one_gap_three_then_odd_low_gap_seven_v1",
+      "classification": "LOCAL_ONLY",
+      "subject_kind": "SOURCE_STATE",
+      "ordered_family_ids": [
+        "q_one_gap_three",
+        "q_one_odd_low_gap_seven"
+      ],
+      "evidence_refs": [
+        "scripts/t6_q_one_full_carrier_runtime_slice_v1.py:Q1_SOURCE_SCHEDULE",
+        "claims/type-II-initial-q-one-root-terminal-or-full-carrier-dispatch.md"
+      ]
+    },
+    {
+      "schedule_id": "q_one_gap_three_source_v1",
+      "classification": "LOCAL_ONLY",
+      "subject_kind": "SOURCE_STATE",
+      "ordered_family_ids": [
+        "q_one_gap_three"
+      ],
+      "evidence_refs": [
+        "data/t6-wave1/q1-full-carrier-runtime-slice-v1.json:routes[0].source_terminal_schedule"
+      ]
+    },
+    {
+      "schedule_id": "q_one_full_carrier_anchor_sink_v1",
+      "classification": "LOCAL_ONLY",
+      "subject_kind": "SOURCE_STATE",
+      "ordered_family_ids": [
+        "type_i_anchor_sink"
+      ],
+      "evidence_refs": [
+        "scripts/t6_q_one_full_carrier_runtime_slice_v1.py:ROOT_SINK_SCHEDULE"
+      ]
+    },
+    {
+      "schedule_id": "q_one_full_carrier_target_sink_v1",
+      "classification": "LOCAL_ONLY",
+      "subject_kind": "TARGET_PROJECTION",
+      "ordered_family_ids": [
+        "type_i_anchor_sink"
+      ],
+      "evidence_refs": [
+        "scripts/t6_q_one_full_carrier_runtime_slice_v1.py:ROOT_TARGET_SCHEDULE"
+      ]
+    },
+    {
+      "schedule_id": "q1_first_child_anchor_sink",
+      "classification": "LOCAL_ONLY",
+      "subject_kind": "TARGET_PROJECTION",
+      "ordered_family_ids": [
+        "type_i_anchor_sink"
+      ],
+      "evidence_refs": [
+        "data/t6-wave1/q1-full-carrier-runtime-slice-v1.json:routes[1].checkpoint_terminal_scope"
+      ]
+    },
+    {
+      "schedule_id": "q_one_second_anchor_final_sink_v1",
+      "classification": "LOCAL_ONLY",
+      "subject_kind": "TARGET_PROJECTION",
+      "ordered_family_ids": [
+        "type_i_anchor_sink"
+      ],
+      "evidence_refs": [
+        "scripts/t6_q_one_full_carrier_runtime_slice_v1.py:FINAL_TARGET_SCHEDULE"
+      ]
+    }
+  ],
+  "complete_schedules": [],
+  "invariants": {
+    "complete_schedule_count": 0,
+    "complete_miss_issuance_enabled": false,
+    "local_miss_implies_complete_miss": false,
+    "terminal_receipt_grants_queue_authority": false
+  },
+  "registry_digest": "878e56a6ae2530b713b5e572762f20172bced4850f591595625b2007ed7db2cc"
+}
