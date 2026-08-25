@@ -1,0 +1,43 @@
+{
+  "schema_id": "t6_wave1_f3_m3_q5_p2_two_sided_scope_freeze_v1",
+  "schema_version": 1,
+  "track_id": "F3-M3-Q5-P2-TWO-SIDED",
+  "agent": "7",
+  "branch": "sol/f3-m3-q5-p2",
+  "base_sha": "da550fe949fee70a853b094295f69959e3f7c4e5",
+  "parent_scope": "R1_M3_Q5_PATH_UNBOUND/R2_M3_Q5_PATH_BOUND_NO_SERIALIZER",
+  "quantifier": {
+    "domain": "actual persistent, terminal-first-surviving, low proper-root m=3, 5|D_star source-bound endpoints",
+    "endpoint_guard": "u+v=R, gcd(u,v)=1, p does not divide u*v, endpoint path and all priority misses replayable",
+    "two_sided_p2_guard": "E_u>1, E_v>1, L_omega=E_u*E_v=1+p^2*chi with chi>=1",
+    "normalization": "all Q_u,Q_v,E_u,E_v,D_u,D_v recomputed relative to original K=A*(p-1)"
+  },
+  "owned_question": "Does the source-bound macro close the genuine two-sided p2 endpoint as EMPTY, TERMINAL, or a paid successor?",
+  "established_inputs": [
+    "type-I-t6-f3-m3-q5-source-bound-macro-interface",
+    "type-I-t6-f3-policy-endpoint-p2-divisor-source-normal-form",
+    "type-I-t6-f3-m3-q5-p2-canonical-rechart-boundary"
+  ],
+  "excluded_domains": [
+    "R1 path-unbound states before a replayable source receipt exists",
+    "nonminimal v5(T)>=2 root-residue branch",
+    "one-sided p2 endpoint",
+    "strict L_omega not congruent to 1 modulo p endpoints",
+    "theta=-1/1/OTHER ordinary p-stutter channels",
+    "pure-dyadic or R6 endpoints",
+    "any claim that the arithmetic control is an actual persistent witness"
+  ],
+  "forbidden_inferences": [
+    "L1=L_omega",
+    "canonical increasing rechart is a T5 descent",
+    "p2 congruence alone supplies E1 or E3",
+    "identity Sol(p) lift alone supplies admission",
+    "finite arithmetic control proves FAMILY_EMPTY",
+    "checkpoint label is a recursive family"
+  ],
+  "required_closure": [
+    "FAMILY_EMPTY",
+    "TERMINAL",
+    "source-forward final atomic macro with E1-E5 and active re-entry"
+  ]
+}
