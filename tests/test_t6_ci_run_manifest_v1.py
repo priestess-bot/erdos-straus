@@ -83,6 +83,31 @@ class CIRunManifestTests(unittest.TestCase):
             json.dumps(document, ensure_ascii=True, indent=2, sort_keys=True) + "\n",
         )
 
+    @staticmethod
+    def discovery_output(
+        skips: list[dict[str, str]] | None = None,
+        *,
+        tests_run: int = 100,
+        outcome: str = "OK",
+    ) -> bytes:
+        observed = (
+            MANIFEST.expected_unittest_skips_payload() if skips is None else skips
+        )
+        lines = [
+            f"{item['test_id'].rsplit('.', 1)[-1]} ({item['test_id']}) "
+            f"... skipped {item['reason']!r}"
+            for item in observed
+        ]
+        lines.extend(
+            [
+                "----------------------------------------------------------------------",
+                f"Ran {tests_run} tests in 1.000s",
+                "",
+                outcome + (f" (skipped={len(observed)})" if observed else ""),
+            ]
+        )
+        return ("\n".join(lines) + "\n").encode("utf-8")
+
     def initialize_manifest_repository(self, root: Path) -> None:
         self.initialize_repository(root)
         self.write(root, "claims/example.md", "# Claim\n")
@@ -95,6 +120,14 @@ class CIRunManifestTests(unittest.TestCase):
         self, root: Path, registry: dict[str, object]
     ) -> dict[str, object]:
         revision = MANIFEST.current_revision(root)
+        results = self.pass_results()
+        full_result = next(
+            result for result in results if result["id"] == "full_unittest_discovery"
+        )
+        unittest_discovery = MANIFEST.build_unittest_discovery_receipt(
+            self.discovery_output(), full_result
+        )
+        self.assertEqual(unittest_discovery["status"], "PASS")
         with (
             mock.patch.object(
                 MANIFEST, "producer_registry_payload", return_value=registry
@@ -109,7 +142,8 @@ class CIRunManifestTests(unittest.TestCase):
                 dirty_after=(),
                 allow_dirty=False,
                 require_github=False,
-                results=self.pass_results(),
+                results=results,
+                unittest_discovery=unittest_discovery,
                 infrastructure_errors=(),
             )
 
@@ -392,6 +426,221 @@ class CIRunManifestTests(unittest.TestCase):
                 MANIFEST.ManifestError, "stored grammar hash does not replay"
             ):
                 MANIFEST.grammar_receipt(root, entries)
+
+    def test_unittest_discovery_receipt_requires_exact_skip_allowlist(self) -> None:
+        result = next(
+            item
+            for item in self.pass_results()
+            if item["id"] == "full_unittest_discovery"
+        )
+        expected = MANIFEST.expected_unittest_skips_payload()
+        receipt = MANIFEST.build_unittest_discovery_receipt(
+            self.discovery_output(expected, tests_run=1_234), result
+        )
+        self.assertEqual(receipt["status"], "PASS")
+        self.assertEqual(receipt["tests_run"], 1_234)
+        self.assertEqual(receipt["skip_count"], 13)
+        self.assertEqual(receipt["summary_skip_count"], 13)
+        self.assertEqual(receipt["skips"], sorted(expected, key=lambda item: item["test_id"]))
+
+        missing = MANIFEST.build_unittest_discovery_receipt(
+            self.discovery_output(expected[:-1]), result
+        )
+        self.assertEqual(missing["status"], "FAIL")
+        self.assertTrue(
+            any(
+                error.startswith("missing expected unittest skips:")
+                for error in missing["policy_errors"]
+            )
+        )
+
+        unexpected_skips = [
+            *expected,
+            {
+                "test_id": "test_unexpected.ExampleTests.test_unexpected_skip",
+                "reason": "unexpected",
+            },
+        ]
+        unexpected = MANIFEST.build_unittest_discovery_receipt(
+            self.discovery_output(unexpected_skips), result
+        )
+        self.assertEqual(unexpected["status"], "FAIL")
+        self.assertTrue(
+            any(
+                error.startswith("unexpected unittest skips:")
+                for error in unexpected["policy_errors"]
+            )
+        )
+
+        changed_skips = copy.deepcopy(expected)
+        changed_skips[0]["reason"] = "changed reason"
+        changed = MANIFEST.build_unittest_discovery_receipt(
+            self.discovery_output(changed_skips), result
+        )
+        self.assertEqual(changed["status"], "FAIL")
+        self.assertTrue(
+            any(
+                error.startswith("changed unittest skip reasons:")
+                for error in changed["policy_errors"]
+            )
+        )
+
+        bad_summary = self.discovery_output(expected).replace(
+            b"OK (skipped=13)", b"OK (skipped=12)"
+        )
+        mismatched = MANIFEST.build_unittest_discovery_receipt(bad_summary, result)
+        self.assertEqual(mismatched["status"], "FAIL")
+        self.assertIn(
+            "unittest summary skip count does not match parsed skip records",
+            mismatched["policy_errors"],
+        )
+
+    def test_unittest_discovery_receipt_is_bound_to_the_command_result(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.initialize_manifest_repository(root)
+            registry = {"schema_id": "test_registry", "producers": []}
+            payload = self.build_valid_manifest(root, registry)
+            full_result = next(
+                result
+                for result in payload["results"]
+                if result["id"] == "full_unittest_discovery"
+            )
+            full_result["duration_ms"] += 1
+            payload = MANIFEST.seal_manifest(payload)
+            errors = self.verify_with_registry(root, payload, registry)
+        self.assertIn(
+            "unittest discovery command result digest does not replay", errors
+        )
+
+    def test_unittest_discovery_policy_failure_is_not_self_repairable(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.initialize_manifest_repository(root)
+            registry = {"schema_id": "test_registry", "producers": []}
+            payload = self.build_valid_manifest(root, registry)
+            receipt = payload["unittest_discovery"]
+            receipt["skips"] = receipt["skips"][:-1]
+            receipt["skip_count"] -= 1
+            receipt["summary_skip_count"] -= 1
+            receipt["summary_line"] = "OK (skipped=12)"
+            receipt["policy_errors"] = []
+            receipt["status"] = "PASS"
+            payload = MANIFEST.seal_manifest(payload)
+            errors = self.verify_with_registry(
+                root, payload, registry, require_pass=True
+            )
+        self.assertIn("unittest_discovery.policy_errors do not replay", errors)
+        self.assertIn("unittest_discovery.status does not replay", errors)
+        self.assertIn("unittest discovery receipt policy did not pass", errors)
+
+    def test_manifest_status_fails_when_an_expected_skip_is_missing(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.initialize_manifest_repository(root)
+            registry = {"schema_id": "test_registry", "producers": []}
+            revision = MANIFEST.current_revision(root)
+            results = self.pass_results()
+            full_result = next(
+                result
+                for result in results
+                if result["id"] == "full_unittest_discovery"
+            )
+            skips = MANIFEST.expected_unittest_skips_payload()[:-1]
+            receipt = MANIFEST.build_unittest_discovery_receipt(
+                self.discovery_output(skips), full_result
+            )
+            with (
+                mock.patch.object(
+                    MANIFEST, "producer_registry_payload", return_value=registry
+                ),
+                mock.patch.dict(os.environ, {"GITHUB_ACTIONS": "false"}, clear=True),
+            ):
+                payload = MANIFEST.build_manifest(
+                    root,
+                    revision=revision,
+                    head_sha_after=revision["head_sha"],
+                    dirty_before=(),
+                    dirty_after=(),
+                    allow_dirty=False,
+                    require_github=False,
+                    results=results,
+                    unittest_discovery=receipt,
+                    infrastructure_errors=(),
+                )
+        self.assertEqual(payload["status"], "FAIL")
+        self.assertTrue(
+            any(
+                "missing expected unittest skips:" in error
+                for error in payload["infrastructure_errors"]
+            )
+        )
+
+    def test_schema_and_python_identity_use_strict_replay(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.initialize_manifest_repository(root)
+            registry = {"schema_id": "test_registry", "producers": []}
+            baseline = self.build_valid_manifest(root, registry)
+
+            wrong_schema = copy.deepcopy(baseline)
+            wrong_schema["schema_version"] = True
+            wrong_schema = MANIFEST.seal_manifest(wrong_schema)
+            schema_errors = self.verify_with_registry(root, wrong_schema, registry)
+
+            wrong_discovery_schema = copy.deepcopy(baseline)
+            wrong_discovery_schema["unittest_discovery"]["schema_version"] = True
+            wrong_discovery_schema = MANIFEST.seal_manifest(wrong_discovery_schema)
+            discovery_schema_errors = self.verify_with_registry(
+                root, wrong_discovery_schema, registry
+            )
+
+            wrong_version = copy.deepcopy(baseline)
+            wrong_version["python_version"] = "forged-python"
+            wrong_version = MANIFEST.seal_manifest(wrong_version)
+            version_errors = self.verify_with_registry(root, wrong_version, registry)
+
+            wrong_implementation = copy.deepcopy(baseline)
+            wrong_implementation["python_implementation"] = "forged-runtime"
+            wrong_implementation = MANIFEST.seal_manifest(wrong_implementation)
+            implementation_errors = self.verify_with_registry(
+                root, wrong_implementation, registry
+            )
+
+        self.assertIn("schema_version is not integer 1", schema_errors)
+        self.assertIn(
+            "unittest_discovery.schema_version is not integer 1",
+            discovery_schema_errors,
+        )
+        self.assertIn(
+            "python_version does not match the verifying interpreter", version_errors
+        )
+        self.assertIn(
+            "python_implementation does not match the verifying interpreter",
+            implementation_errors,
+        )
+
+    def test_captured_command_output_is_streamed_and_returned(self) -> None:
+        spec = MANIFEST.CommandSpec(
+            "capture_control",
+            (
+                "python",
+                "-c",
+                "import sys; print('stdout-control'); print('stderr-control', file=sys.stderr)",
+            ),
+            timeout_seconds=10,
+        )
+        streamed: list[bytes] = []
+        with mock.patch.object(MANIFEST, "_stream_bytes_to_ci", streamed.append):
+            result, captured = MANIFEST.run_command(
+                ROOT, spec, capture_output=True
+            )
+        self.assertEqual(result["status"], "PASS")
+        self.assertEqual(result["exit_code"], 0)
+        self.assertIsNotNone(captured)
+        self.assertIn(b"stdout-control", captured)
+        self.assertIn(b"stderr-control", captured)
+        self.assertEqual(b"".join(streamed), captured)
 
     def test_manifest_payload_tamper_and_head_advance_are_rejected(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

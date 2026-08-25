@@ -50,6 +50,7 @@ jobs:
           --root .
           --manifest data/t6-wave1/ci-run-manifest-v1.json
           --require-github
+          --require-pass
 
       - name: Upload the Gate 0 run manifest
         if: always()

@@ -26,9 +26,11 @@ import os
 from pathlib import Path, PurePosixPath
 import platform
 import re
+import signal
 import subprocess
 import sys
 import tempfile
+import threading
 import time
 from typing import Any
 
@@ -39,10 +41,126 @@ ARTIFACT_ID = "ci_run_manifest_v1"
 FILE_SET_SCHEMA_ID = "t6_ci_file_set_v1"
 PRODUCER_REGISTRY_SCHEMA_ID = "t6_local_producer_registry_snapshot_v1"
 PRODUCER_REGISTRY_STATUS = "LOCAL_RUNTIME_ONLY_NO_SHARED_ALL_PRODUCER_REGISTRY"
+UNITTEST_DISCOVERY_SCHEMA_ID = "t6_unittest_discovery_receipt_v1"
 DEFAULT_OUTPUT = Path("data/t6-wave1/ci-run-manifest-v1.json")
 GRAMMAR_PATH = "data/t6-wave1/family-grammar-freeze-v1.json"
 LOCAL_PYTHON_NAMESPACE_ROOTS = ("scripts", "reproductions")
 HEX_DIGEST_RE = re.compile(r"[0-9a-f]{64}\Z")
+UNITTEST_RAN_RE = re.compile(r"^Ran (?P<count>[0-9]+) tests? in .+$")
+UNITTEST_SKIP_RE = re.compile(
+    r"^.* \((?P<test_id>[A-Za-z_][A-Za-z0-9_.]*)\) \.\.\. skipped "
+    r"(?P<reason>.+)$"
+)
+UNITTEST_SUMMARY_RE = re.compile(r"^(?P<outcome>OK|FAILED)(?: \(.*\))?$")
+UNITTEST_SUMMARY_SKIP_RE = re.compile(r"(?:^|[, (])skipped=(?P<count>[0-9]+)(?:[, )]|$)")
+
+
+EXPECTED_UNITTEST_SKIPS = (
+    {
+        "test_id": (
+            "test_h19_k23_fixed_tail_factor_profile."
+            "H19K23FixedTailFactorProfileTests."
+            "test_common_factor_explains_the_fixed_gap_tail_routes"
+        ),
+        "reason": "optional 262144-layer raw artifacts are not tracked",
+    },
+    {
+        "test_id": (
+            "test_h19_k23_m27_m31_selector_profile."
+            "H19K23M27M31SelectorProfileTests."
+            "test_two_hundred_sixty_two_thousand_layer_profile"
+        ),
+        "reason": "optional 262144-layer raw artifact is not tracked",
+    },
+    {
+        "test_id": (
+            "test_h19_k23_m31_m35_selector_profile."
+            "H19K23M31M35SelectorProfileTests."
+            "test_two_hundred_sixty_two_thousand_layer_profile"
+        ),
+        "reason": "optional 262144-layer raw artifact is not tracked",
+    },
+    {
+        "test_id": (
+            "test_h19_k23_m35_m39_selector_profile."
+            "H19K23M35M39SelectorProfileTests."
+            "test_two_hundred_sixty_two_thousand_layer_profile"
+        ),
+        "reason": "optional 262144-layer raw artifact is not tracked",
+    },
+    {
+        "test_id": (
+            "test_h19_k23_m39_m47_selector_profile."
+            "H19K23M39M47SelectorProfileTests."
+            "test_two_hundred_sixty_two_thousand_layer_profile"
+        ),
+        "reason": "optional 262144-layer raw artifact is not tracked",
+    },
+    {
+        "test_id": (
+            "test_h19_k23_m47_m59_selector_profile."
+            "H19K23M47M59SelectorProfileTests."
+            "test_two_hundred_sixty_two_thousand_layer_profile"
+        ),
+        "reason": "optional 262144-layer raw artifact is not tracked",
+    },
+    {
+        "test_id": (
+            "test_h19_k23_shared_selector_audit."
+            "H19K23SharedSelectorAuditTests."
+            "test_extended_sixty_five_thousand_five_hundred_thirty_six_layer_audit"
+        ),
+        "reason": "optional 65536-layer raw artifact is not tracked",
+    },
+    {
+        "test_id": (
+            "test_h19_k23_shared_selector_audit."
+            "H19K23SharedSelectorAuditTests."
+            "test_extended_one_hundred_thirty_one_thousand_layer_audit"
+        ),
+        "reason": "optional 131072-layer raw artifact is not tracked",
+    },
+    {
+        "test_id": (
+            "test_h19_k23_shared_selector_audit."
+            "H19K23SharedSelectorAuditTests."
+            "test_extended_two_hundred_sixty_two_thousand_layer_audit"
+        ),
+        "reason": "optional 262144-layer raw artifact is not tracked",
+    },
+    {
+        "test_id": (
+            "test_h19_k23_shared_selector_tail_descent_closure."
+            "H19K23SharedSelectorTailDescentClosureTests."
+            "test_sixty_five_thousand_layer_artifact_has_tail_exit"
+        ),
+        "reason": "optional 65536-layer raw artifact is not tracked",
+    },
+    {
+        "test_id": (
+            "test_h19_k23_shared_selector_tail_descent_closure."
+            "H19K23SharedSelectorTailDescentClosureTests."
+            "test_one_hundred_thirty_one_thousand_layer_artifact_has_tail_exit"
+        ),
+        "reason": "optional 131072-layer raw artifact is not tracked",
+    },
+    {
+        "test_id": (
+            "test_h19_k23_shared_selector_tail_descent_closure."
+            "H19K23SharedSelectorTailDescentClosureTests."
+            "test_two_hundred_sixty_two_thousand_layer_artifact_has_tail_exit"
+        ),
+        "reason": "optional 262144-layer raw artifact is not tracked",
+    },
+    {
+        "test_id": (
+            "test_type_ii_square_root_completion_normal_form_audit."
+            "TypeIISquareRootCompletionNormalFormAuditTests."
+            "test_checked_two_hundred_sixty_two_thousand_layer_normalizes"
+        ),
+        "reason": "optional 262144-layer raw artifact is not tracked",
+    },
+)
 
 
 class ManifestError(RuntimeError):
@@ -159,6 +277,7 @@ TOP_LEVEL_FIELDS = frozenset(
         "status",
         "test_manifest_digest",
         "tested_head_sha",
+        "unittest_discovery",
         "runtime_source_digest",
         "workflow_event",
         "workflow_job",
@@ -750,11 +869,290 @@ def _execution_argv(spec: CommandSpec) -> tuple[str, ...]:
     return spec.argv
 
 
+def expected_unittest_skips_payload() -> list[dict[str, str]]:
+    return [dict(item) for item in EXPECTED_UNITTEST_SKIPS]
+
+
+def _strict_nonnegative_int(value: Any) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool) and value >= 0
+
+
+def _parse_unittest_output(output: bytes) -> dict[str, Any]:
+    parse_errors: list[str] = []
+    try:
+        text = output.decode("utf-8", errors="strict")
+    except UnicodeDecodeError as exc:
+        text = output.decode("utf-8", errors="replace")
+        parse_errors.append(f"unittest output is not UTF-8: {exc}")
+    lines = text.splitlines()
+
+    ran_matches = [
+        match
+        for line in lines
+        if (match := UNITTEST_RAN_RE.fullmatch(line.strip())) is not None
+    ]
+    tests_run: int | None = None
+    if len(ran_matches) != 1:
+        parse_errors.append(
+            "unittest output must contain exactly one final Ran <N> tests line"
+        )
+    else:
+        tests_run = int(ran_matches[0].group("count"))
+
+    summary_matches = [
+        (line.strip(), match)
+        for line in lines
+        if (match := UNITTEST_SUMMARY_RE.fullmatch(line.strip())) is not None
+    ]
+    summary_line: str | None = None
+    summary_outcome: str | None = None
+    summary_skip_count: int | None = None
+    if not summary_matches:
+        parse_errors.append("unittest output has no final OK or FAILED summary")
+    else:
+        summary_line, summary_match = summary_matches[-1]
+        summary_outcome = summary_match.group("outcome")
+        skip_match = UNITTEST_SUMMARY_SKIP_RE.search(summary_line)
+        summary_skip_count = int(skip_match.group("count")) if skip_match else 0
+
+    skips: list[dict[str, str]] = []
+    for line in lines:
+        if " ... skipped " not in line:
+            continue
+        match = UNITTEST_SKIP_RE.fullmatch(line.strip())
+        if match is None:
+            parse_errors.append(f"could not parse unittest skip line: {line!r}")
+            continue
+        reason_literal = match.group("reason")
+        try:
+            reason = ast.literal_eval(reason_literal)
+        except (SyntaxError, ValueError):
+            parse_errors.append(
+                f"could not parse unittest skip reason: {reason_literal!r}"
+            )
+            continue
+        if not isinstance(reason, str):
+            parse_errors.append("unittest skip reason did not decode to a string")
+            continue
+        skips.append({"test_id": match.group("test_id"), "reason": reason})
+    skips.sort(key=lambda item: (item["test_id"], item["reason"]))
+    return {
+        "line_count": len(lines),
+        "parse_errors": parse_errors,
+        "skip_count": len(skips),
+        "skips": skips,
+        "summary_line": summary_line,
+        "summary_outcome": summary_outcome,
+        "summary_skip_count": summary_skip_count,
+        "tests_run": tests_run,
+    }
+
+
+def _unittest_discovery_policy_errors(
+    *,
+    command_result: Mapping[str, Any],
+    tests_run: int | None,
+    skips: Sequence[Mapping[str, Any]],
+    summary_outcome: str | None,
+    summary_skip_count: int | None,
+    parse_errors: Sequence[str],
+) -> list[str]:
+    errors = list(parse_errors)
+    if command_result.get("status") != "PASS" or command_result.get("exit_code") != 0:
+        errors.append("full unittest discovery command did not pass")
+    if not _strict_nonnegative_int(tests_run) or tests_run == 0:
+        errors.append("unittest tests_run must be a positive integer")
+    if summary_outcome != "OK":
+        errors.append("unittest summary outcome is not OK")
+    if summary_skip_count != len(skips):
+        errors.append("unittest summary skip count does not match parsed skip records")
+
+    actual_by_id: dict[str, str] = {}
+    duplicate_ids: set[str] = set()
+    for skip in skips:
+        test_id = skip.get("test_id")
+        reason = skip.get("reason")
+        if not isinstance(test_id, str) or not isinstance(reason, str):
+            errors.append("unittest skip records must contain string test_id and reason")
+            continue
+        if test_id in actual_by_id:
+            duplicate_ids.add(test_id)
+        actual_by_id[test_id] = reason
+    if duplicate_ids:
+        errors.append(f"duplicate unittest skip IDs: {sorted(duplicate_ids)}")
+
+    expected_by_id = {
+        item["test_id"]: item["reason"] for item in EXPECTED_UNITTEST_SKIPS
+    }
+    missing = sorted(set(expected_by_id) - set(actual_by_id))
+    unexpected = sorted(set(actual_by_id) - set(expected_by_id))
+    changed = sorted(
+        test_id
+        for test_id in set(expected_by_id) & set(actual_by_id)
+        if expected_by_id[test_id] != actual_by_id[test_id]
+    )
+    if missing:
+        errors.append(f"missing expected unittest skips: {missing}")
+    if unexpected:
+        errors.append(f"unexpected unittest skips: {unexpected}")
+    if changed:
+        errors.append(f"changed unittest skip reasons: {changed}")
+    return list(dict.fromkeys(errors))
+
+
+def build_unittest_discovery_receipt(
+    output: bytes, command_result: Mapping[str, Any]
+) -> dict[str, Any]:
+    parsed = _parse_unittest_output(output)
+    policy_errors = _unittest_discovery_policy_errors(
+        command_result=command_result,
+        tests_run=parsed["tests_run"],
+        skips=parsed["skips"],
+        summary_outcome=parsed["summary_outcome"],
+        summary_skip_count=parsed["summary_skip_count"],
+        parse_errors=parsed["parse_errors"],
+    )
+    return {
+        "schema_id": UNITTEST_DISCOVERY_SCHEMA_ID,
+        "schema_version": 1,
+        "command_id": "full_unittest_discovery",
+        "capture": {
+            "encoding": "utf-8",
+            "stream": "combined_stdout_stderr",
+            "sha256": sha256_bytes(output),
+            "size_bytes": len(output),
+            "line_count": parsed["line_count"],
+        },
+        "tests_run": parsed["tests_run"],
+        "skip_count": parsed["skip_count"],
+        "summary_skip_count": parsed["summary_skip_count"],
+        "summary_outcome": parsed["summary_outcome"],
+        "summary_line": parsed["summary_line"],
+        "skips": parsed["skips"],
+        "expected_skips": expected_unittest_skips_payload(),
+        "command_result_sha256": canonical_sha256(command_result),
+        "parse_errors": parsed["parse_errors"],
+        "policy_errors": policy_errors,
+        "status": "PASS" if not policy_errors else "FAIL",
+    }
+
+
+def _stream_bytes_to_ci(chunk: bytes) -> None:
+    binary = getattr(sys.stdout, "buffer", None)
+    if binary is not None:
+        binary.write(chunk)
+        binary.flush()
+        return
+    sys.stdout.write(chunk.decode("utf-8", errors="replace"))
+    sys.stdout.flush()
+
+
+def _kill_process(process: subprocess.Popen[bytes]) -> None:
+    if os.name == "posix":
+        try:
+            os.killpg(process.pid, signal.SIGKILL)
+            return
+        except ProcessLookupError:
+            return
+    process.kill()
+
+
+def _run_command_with_tee(
+    root: Path, spec: CommandSpec
+) -> tuple[dict[str, Any], bytes]:
+    started = time.monotonic()
+    try:
+        process = subprocess.Popen(
+            list(_execution_argv(spec)),
+            cwd=root,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            start_new_session=os.name == "posix",
+        )
+    except OSError as exc:
+        return (
+            {
+                "id": spec.command_id,
+                "status": "ERROR",
+                "exit_code": None,
+                "duration_ms": round((time.monotonic() - started) * 1000),
+                "detail": str(exc),
+            },
+            b"",
+        )
+
+    captured = bytearray()
+    pump_errors: list[str] = []
+
+    def pump() -> None:
+        assert process.stdout is not None
+        try:
+            while chunk := process.stdout.read(64 * 1024):
+                captured.extend(chunk)
+                _stream_bytes_to_ci(chunk)
+        except (OSError, ValueError) as exc:
+            pump_errors.append(str(exc))
+
+    pump_thread = threading.Thread(target=pump, name="gate0-output-tee", daemon=True)
+    pump_thread.start()
+    timed_out = False
+    try:
+        exit_code = process.wait(timeout=spec.timeout_seconds)
+    except subprocess.TimeoutExpired:
+        timed_out = True
+        _kill_process(process)
+        process.wait()
+        exit_code = None
+    pump_thread.join(timeout=10)
+    if process.stdout is not None:
+        process.stdout.close()
+    if pump_thread.is_alive():
+        pump_errors.append("output tee did not terminate after the command")
+    duration_ms = round((time.monotonic() - started) * 1000)
+    if timed_out:
+        return (
+            {
+                "id": spec.command_id,
+                "status": "TIMED_OUT",
+                "exit_code": None,
+                "duration_ms": duration_ms,
+                "detail": f"exceeded {spec.timeout_seconds} seconds",
+            },
+            bytes(captured),
+        )
+    if pump_errors:
+        return (
+            {
+                "id": spec.command_id,
+                "status": "ERROR",
+                "exit_code": None,
+                "duration_ms": duration_ms,
+                "detail": "; ".join(pump_errors),
+            },
+            bytes(captured),
+        )
+    return (
+        {
+            "id": spec.command_id,
+            "status": "PASS" if exit_code == 0 else "FAIL",
+            "exit_code": exit_code,
+            "duration_ms": duration_ms,
+            "detail": None,
+        },
+        bytes(captured),
+    )
+
+
 def run_command(
     root: Path,
     spec: CommandSpec,
-) -> dict[str, Any]:
+    *,
+    capture_output: bool = False,
+) -> tuple[dict[str, Any], bytes | None]:
     """Run one fixed command while streaming its output to the CI log."""
+
+    if capture_output:
+        return _run_command_with_tee(root, spec)
 
     started = time.monotonic()
     try:
@@ -765,28 +1163,37 @@ def run_command(
             timeout=spec.timeout_seconds,
         )
     except subprocess.TimeoutExpired:
-        return {
-            "id": spec.command_id,
-            "status": "TIMED_OUT",
-            "exit_code": None,
-            "duration_ms": round((time.monotonic() - started) * 1000),
-            "detail": f"exceeded {spec.timeout_seconds} seconds",
-        }
+        return (
+            {
+                "id": spec.command_id,
+                "status": "TIMED_OUT",
+                "exit_code": None,
+                "duration_ms": round((time.monotonic() - started) * 1000),
+                "detail": f"exceeded {spec.timeout_seconds} seconds",
+            },
+            None,
+        )
     except OSError as exc:
-        return {
+        return (
+            {
+                "id": spec.command_id,
+                "status": "ERROR",
+                "exit_code": None,
+                "duration_ms": round((time.monotonic() - started) * 1000),
+                "detail": str(exc),
+            },
+            None,
+        )
+    return (
+        {
             "id": spec.command_id,
-            "status": "ERROR",
-            "exit_code": None,
+            "status": "PASS" if completed.returncode == 0 else "FAIL",
+            "exit_code": completed.returncode,
             "duration_ms": round((time.monotonic() - started) * 1000),
-            "detail": str(exc),
-        }
-    return {
-        "id": spec.command_id,
-        "status": "PASS" if completed.returncode == 0 else "FAIL",
-        "exit_code": completed.returncode,
-        "duration_ms": round((time.monotonic() - started) * 1000),
-        "detail": None,
-    }
+            "detail": None,
+        },
+        None,
+    )
 
 
 def skipped_results(detail: str) -> list[dict[str, Any]]:
@@ -871,6 +1278,7 @@ def build_manifest(
     allow_dirty: bool,
     require_github: bool,
     results: Sequence[Mapping[str, Any]],
+    unittest_discovery: Mapping[str, Any],
     infrastructure_errors: Sequence[str],
 ) -> dict[str, Any]:
     entries = git_tree_entries(root, revision["head_sha"])
@@ -888,6 +1296,11 @@ def build_manifest(
         require_github=require_github, head_sha=revision["head_sha"]
     )
     errors = list(infrastructure_errors)
+    discovery_errors: list[str] = []
+    _validate_unittest_discovery_receipt(
+        unittest_discovery, results, discovery_errors
+    )
+    errors.extend(f"unittest discovery receipt: {error}" for error in discovery_errors)
     if head_sha_after != revision["head_sha"]:
         errors.append("checkout HEAD changed during the Gate 0 run")
     if checkout_state == "DIRTY_REJECTED":
@@ -923,6 +1336,7 @@ def build_manifest(
         **grammar,
         "commands": [spec.payload() for spec in gate0_command_specs()],
         "results": [dict(result) for result in results],
+        "unittest_discovery": dict(unittest_discovery),
         "infrastructure_errors": list(dict.fromkeys(errors)),
     }
     payload["status"] = derive_status(
@@ -1055,6 +1469,172 @@ def _validate_result_records(
     return normalized
 
 
+def _validate_unittest_discovery_receipt(
+    receipt: Any,
+    results: Sequence[Mapping[str, Any]],
+    errors: list[str],
+) -> None:
+    if not isinstance(receipt, dict):
+        errors.append("unittest_discovery must be an object")
+        return
+    expected_fields = {
+        "schema_id",
+        "schema_version",
+        "command_id",
+        "capture",
+        "tests_run",
+        "skip_count",
+        "summary_skip_count",
+        "summary_outcome",
+        "summary_line",
+        "skips",
+        "expected_skips",
+        "command_result_sha256",
+        "parse_errors",
+        "policy_errors",
+        "status",
+    }
+    if set(receipt) != expected_fields:
+        errors.append("unittest_discovery has an invalid field set")
+    if receipt.get("schema_id") != UNITTEST_DISCOVERY_SCHEMA_ID:
+        errors.append("unittest_discovery.schema_id is invalid")
+    if type(receipt.get("schema_version")) is not int or receipt.get(
+        "schema_version"
+    ) != 1:
+        errors.append("unittest_discovery.schema_version is not integer 1")
+    if receipt.get("command_id") != "full_unittest_discovery":
+        errors.append("unittest_discovery.command_id is invalid")
+
+    capture = receipt.get("capture")
+    if not isinstance(capture, dict) or set(capture) != {
+        "encoding",
+        "stream",
+        "sha256",
+        "size_bytes",
+        "line_count",
+    }:
+        errors.append("unittest_discovery.capture is invalid")
+    else:
+        if capture.get("encoding") != "utf-8":
+            errors.append("unittest discovery capture encoding is invalid")
+        if capture.get("stream") != "combined_stdout_stderr":
+            errors.append("unittest discovery capture stream is invalid")
+        if not _is_sha256(capture.get("sha256")):
+            errors.append("unittest discovery output digest is invalid")
+        for field in ("size_bytes", "line_count"):
+            if not _strict_nonnegative_int(capture.get(field)):
+                errors.append(f"unittest discovery capture {field} is invalid")
+
+    tests_run = receipt.get("tests_run")
+    if not _strict_nonnegative_int(tests_run) or tests_run == 0:
+        errors.append("unittest_discovery.tests_run must be a positive integer")
+        normalized_tests_run: int | None = None
+    else:
+        normalized_tests_run = tests_run
+    skip_count = receipt.get("skip_count")
+    if not _strict_nonnegative_int(skip_count):
+        errors.append("unittest_discovery.skip_count is invalid")
+    summary_skip_count = receipt.get("summary_skip_count")
+    if not _strict_nonnegative_int(summary_skip_count):
+        errors.append("unittest_discovery.summary_skip_count is invalid")
+        normalized_summary_skip_count: int | None = None
+    else:
+        normalized_summary_skip_count = summary_skip_count
+    summary_outcome = receipt.get("summary_outcome")
+    if summary_outcome not in {"OK", "FAILED"}:
+        errors.append("unittest_discovery.summary_outcome is invalid")
+        normalized_summary_outcome: str | None = None
+    else:
+        normalized_summary_outcome = summary_outcome
+    summary_line = receipt.get("summary_line")
+    if not isinstance(summary_line, str):
+        errors.append("unittest_discovery.summary_line must be a string")
+    else:
+        match = UNITTEST_SUMMARY_RE.fullmatch(summary_line)
+        if match is None or match.group("outcome") != summary_outcome:
+            errors.append("unittest_discovery.summary_line does not replay")
+        else:
+            skip_match = UNITTEST_SUMMARY_SKIP_RE.search(summary_line)
+            parsed_summary_skips = (
+                int(skip_match.group("count")) if skip_match is not None else 0
+            )
+            if parsed_summary_skips != summary_skip_count:
+                errors.append(
+                    "unittest_discovery.summary_skip_count does not replay"
+                )
+
+    skips_value = receipt.get("skips")
+    normalized_skips: list[Mapping[str, Any]] = []
+    if not isinstance(skips_value, list):
+        errors.append("unittest_discovery.skips must be an array")
+    else:
+        for index, skip in enumerate(skips_value):
+            if not isinstance(skip, dict) or set(skip) != {"test_id", "reason"}:
+                errors.append(f"unittest_discovery.skips[{index}] is invalid")
+                continue
+            if not isinstance(skip.get("test_id"), str) or not isinstance(
+                skip.get("reason"), str
+            ):
+                errors.append(
+                    f"unittest_discovery.skips[{index}] values must be strings"
+                )
+                continue
+            normalized_skips.append(skip)
+        expected_order = sorted(
+            normalized_skips, key=lambda item: (item["test_id"], item["reason"])
+        )
+        if normalized_skips != expected_order:
+            errors.append("unittest_discovery.skips are not canonically ordered")
+    if _strict_nonnegative_int(skip_count) and skip_count != len(normalized_skips):
+        errors.append("unittest_discovery.skip_count does not match skip records")
+    if (
+        normalized_tests_run is not None
+        and _strict_nonnegative_int(skip_count)
+        and skip_count > normalized_tests_run
+    ):
+        errors.append("unittest_discovery.skip_count exceeds tests_run")
+    if receipt.get("expected_skips") != expected_unittest_skips_payload():
+        errors.append("unittest_discovery.expected_skips is not the fixed allowlist")
+
+    full_results = [
+        result for result in results if result.get("id") == "full_unittest_discovery"
+    ]
+    if len(full_results) != 1:
+        errors.append("unittest discovery command result is not unique")
+        command_result: Mapping[str, Any] = {}
+    else:
+        command_result = full_results[0]
+        if receipt.get("command_result_sha256") != canonical_sha256(command_result):
+            errors.append("unittest discovery command result digest does not replay")
+
+    parse_errors = receipt.get("parse_errors")
+    if not isinstance(parse_errors, list) or any(
+        not isinstance(item, str) for item in parse_errors
+    ):
+        errors.append("unittest_discovery.parse_errors must be strings")
+        normalized_parse_errors = ["invalid parse_errors"]
+    else:
+        normalized_parse_errors = parse_errors
+    expected_policy_errors = _unittest_discovery_policy_errors(
+        command_result=command_result,
+        tests_run=normalized_tests_run,
+        skips=normalized_skips,
+        summary_outcome=normalized_summary_outcome,
+        summary_skip_count=normalized_summary_skip_count,
+        parse_errors=normalized_parse_errors,
+    )
+    if receipt.get("policy_errors") != expected_policy_errors:
+        errors.append("unittest_discovery.policy_errors do not replay")
+    expected_status = "PASS" if not expected_policy_errors else "FAIL"
+    if receipt.get("status") != expected_status:
+        errors.append("unittest_discovery.status does not replay")
+    errors.extend(
+        f"unittest discovery policy: {error}" for error in expected_policy_errors
+    )
+    if expected_status != "PASS":
+        errors.append("unittest discovery receipt policy did not pass")
+
+
 def verify_manifest(
     root: Path,
     manifest: Mapping[str, Any],
@@ -1072,8 +1652,10 @@ def verify_manifest(
         errors.append(f"top-level field mismatch: missing={missing}, extra={extra}")
     if manifest.get("schema_id") != SCHEMA_ID:
         errors.append("schema_id is not t6_ci_run_manifest_v1")
-    if manifest.get("schema_version") != SCHEMA_VERSION:
-        errors.append("schema_version is not 1")
+    if type(manifest.get("schema_version")) is not int or manifest.get(
+        "schema_version"
+    ) != SCHEMA_VERSION:
+        errors.append("schema_version is not integer 1")
     if manifest.get("artifact_id") != ARTIFACT_ID:
         errors.append("artifact_id is not ci_run_manifest_v1")
     generated_at = manifest.get("generated_at")
@@ -1136,9 +1718,13 @@ def verify_manifest(
     ):
         if manifest.get(field) is not None and not isinstance(manifest[field], str):
             errors.append(f"{field} must be a string or null")
-    for field in ("python_implementation", "python_version"):
-        if not isinstance(manifest.get(field), str) or not manifest[field]:
-            errors.append(f"{field} must be a nonempty string")
+    expected_python_identity = {
+        "python_implementation": platform.python_implementation(),
+        "python_version": platform.python_version(),
+    }
+    for field, value in expected_python_identity.items():
+        if manifest.get(field) != value:
+            errors.append(f"{field} does not match the verifying interpreter")
 
     in_github = os.environ.get("GITHUB_ACTIONS") == "true"
     if allow_dirty and (require_github or in_github):
@@ -1177,6 +1763,9 @@ def verify_manifest(
     if manifest.get("commands") != expected_commands:
         errors.append("commands do not match the fixed Gate 0 matrix")
     results = _validate_result_records(manifest.get("results"), errors)
+    _validate_unittest_discovery_receipt(
+        manifest.get("unittest_discovery"), results, errors
+    )
     infrastructure_errors = manifest.get("infrastructure_errors")
     if not isinstance(infrastructure_errors, list) or any(
         not isinstance(item, str) for item in infrastructure_errors
@@ -1243,6 +1832,7 @@ def run_gate0(
     dirty_before: tuple[str, ...] = ()
     dirty_after: tuple[str, ...] = ()
     head_sha_after = ""
+    unittest_output: bytes | None = None
     in_github = os.environ.get("GITHUB_ACTIONS") == "true"
 
     try:
@@ -1258,7 +1848,18 @@ def run_gate0(
             results = skipped_results("dirty checkout rejected")
         else:
             for spec in gate0_command_specs():
-                results.append(run_command(root, spec))
+                result, captured = run_command(
+                    root,
+                    spec,
+                    capture_output=spec.command_id == "full_unittest_discovery",
+                )
+                results.append(result)
+                if spec.command_id == "full_unittest_discovery":
+                    if captured is None:
+                        raise ManifestError(
+                            "full unittest discovery did not return captured output"
+                        )
+                    unittest_output = captured
         head_sha_after = git_text(root, "rev-parse", "--verify", "HEAD^{commit}")
         dirty_after = checkout_status(root)
         if dirty_after and not allow_dirty:
@@ -1288,6 +1889,17 @@ def run_gate0(
             head_sha_after = git_text(root, "rev-parse", "--verify", "HEAD^{commit}")
         if not dirty_after:
             dirty_after = checkout_status(root)
+        full_results = [
+            result
+            for result in results
+            if result.get("id") == "full_unittest_discovery"
+        ]
+        if len(full_results) != 1:
+            raise ManifestError("full unittest discovery result is not unique")
+        unittest_discovery = build_unittest_discovery_receipt(
+            b"" if unittest_output is None else unittest_output,
+            full_results[0],
+        )
         manifest = build_manifest(
             root,
             revision=revision,
@@ -1297,6 +1909,7 @@ def run_gate0(
             allow_dirty=allow_dirty,
             require_github=require_github,
             results=results,
+            unittest_discovery=unittest_discovery,
             infrastructure_errors=infrastructure_errors,
         )
     except Exception as exc:
