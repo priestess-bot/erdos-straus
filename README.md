@@ -327,6 +327,8 @@ root rechart，不能支付 E5。F1 admission 目前为 18/18 source anchors、
 9 个 nonrecursive controls、4 个真正 unknown；任何 arithmetic scheduler 仍须
 经过共同 source/projector/validator/admission/re-entry 链。TR1 还明确排除了两类
 优先级更高的 \(D_*\) 直接 Type-I/Type-II terminal 子域，必须在 freshness 选择前执行。
+已有的 \(24c-1\) 对齐族和 gap-71 射线也为部分 \(R=3\)-G 素数提供显式
+Type-II terminal/严格递降，但它们只是参数子族，不能替代全局 selector。
 详见
 docs/handoffs/F3_HIGH_QC1_INDEPENDENT_REVIEW_2026-08-25.md、
 docs/handoffs/AGENT7_F3_M3_Q5_P2_WAVE2_TWO_SIDED.md 和 C8 handoff 三件套。
