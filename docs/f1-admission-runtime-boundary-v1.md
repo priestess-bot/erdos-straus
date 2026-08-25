@@ -6,6 +6,13 @@ Track: `F1-ADMISSION`
 
 ## Result
 
+The fail-closed authority adapter is implemented in
+[t6_arithmetic_scheduler_adapter_v1.py](../scripts/t6_arithmetic_scheduler_adapter_v1.py)
+and covered by a focused negative-control test. It does not register a
+producer and does not mutate the queue; the existing proposal remains
+unadmitted until source, projector, independent validator and re-entry
+receipts exist.
+
 The current `PersistentSelectorRuntimeV1` cannot ingest an existing F2/F3
 arithmetic scheduler output directly. The safe result is a small adapter
 boundary, not a second queue path and not a relaxation of E1--E5.

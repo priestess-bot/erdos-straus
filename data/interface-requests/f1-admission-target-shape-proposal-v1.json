@@ -4,7 +4,20 @@
   "track_id": "F1-ADMISSION",
   "base_sha": "332c0f7ed48d453ca76d35639a618659d9b559ca",
   "created": "2026-08-25",
-  "status": "REQUESTED_NOT_ADMITTED",
+  "status": "ADAPTER_IMPLEMENTED_FAIL_CLOSED_NOT_REGISTERED",
+  "implemented_boundary": {
+    "module": "scripts/t6_arithmetic_scheduler_adapter_v1.py",
+    "test": "tests/test_t6_arithmetic_scheduler_adapter_v1.py",
+    "scope": "authority and result-shape firewall only; no producer registration or queue mutation",
+    "remaining": [
+      "actual source receipt",
+      "branch registration",
+      "projector",
+      "independent E1-E4 validator",
+      "target terminal schedule",
+      "T5 ticket and recursive re-entry"
+    ]
+  },
   "coordinator_action_required": [
     "accept or reject the explicit NONRECURSIVE_CONTROL disposition in the F1 inventory",
     "bind each registered producer to a BranchRegistrationV1 with source/target owners, schedules, projector, validator and allowed T5 tickets",
