@@ -5,9 +5,11 @@ title: q=1 initial G 到第二-anchor final target 的 runtime slice
 statement: >-
   A deterministic runtime slice now executes the actual q=1 initializer
   branch for every core prime: a gap-3 Type II terminal is returned when
-  X=(p+3)/4 has a 2 modulo 3 factor, otherwise a content-addressed q=1 G
-  endpoint is bootstrapped and the common runtime issues the full-carrier
-  PHASE_DROP followed by the root-to-second-anchor final macro. Each
+  X=(p+3)/4 has a 2 modulo 3 factor, and a proved gap-7 terminal preempts
+  the p=265 modulo 336 odd-low class after that miss. Otherwise a
+  content-addressed q=1 G endpoint is bootstrapped and the common runtime
+  issues the full-carrier PHASE_DROP followed by the root-to-second-anchor
+  final macro. Each
   persistent transition replays source identity, a versioned terminal scope,
   independent projection/validation, common owner classification and N7
   ticket. The final target is intentionally left without a dispatch route;
@@ -20,6 +22,7 @@ depends_on:
   - type-II-initial-q-one-root-terminal-or-full-carrier-dispatch
   - type-II-q-one-full-carrier-phase-root-entry
   - type-II-q-one-full-carrier-root-second-anchor-contraction
+  - type-II-q-one-odd-low-final-gap-seven-preemption
   - t6-persistent-selector-runtime-v1
   - t6-persistent-selector-state-v1
 topics:
@@ -67,6 +70,10 @@ returns the directly verified Type II terminal
 \tag{2}
 \]
 
+After its gap-3 miss, it also runs the proved odd-low preemption: when
+\(p\equiv265\pmod {336}\), the gap-7 divisor \(d=2\) gives a direct Type
+II terminal. Only after both named checks miss does it emit the q=1 G state.
+
 Otherwise it emits the content-addressed ordinary \(q=1\) G state with
 `ROOT_SOL`, `TYPEII_G_HANDOFF`, and the declared gap-3 MISS receipt. This
 is a genuine initializer queue item, not a synthetic test fixture.
@@ -94,7 +101,7 @@ become persistent queue states.
 
 The runtime independently performs these ordered terminal checks:
 
-1. gap-3 at the q=1 initial endpoint;
+1. gap-3, then the \(265\pmod {336}\) gap-7 preemption, at the initial endpoint;
 2. direct anchor-sink terminal on the full-carrier root;
 3. direct anchor-sink terminal on the macro-internal first child;
 4. direct anchor-sink terminal on the final target.
@@ -135,14 +142,15 @@ For \(p=73\), the final target is the overflow
 \tag{5}
 \]
 
-with `LOCAL_DROP`. For \(p=601\), it is the low chart
+with `LOCAL_DROP`. The \(p=601\) odd-low control is now preempted at gap 7.
+For \(p=1033\), the local slice instead reaches the low chart
 
 \[
-(R,K;A)=(431,64758;502)
+(R,K;A)=(247,63788;862)
 \tag{6}
 \]
 
-with `TYPEI/ABSORB`, cursor \((1,430,1)\), and `PHASE_DROP`. These are
+with `TYPEI/ABSORB`, cursor \((1,246,1)\), and `PHASE_DROP`. These are
 not numerical-only controls: both paths are executed through the shared
 queue and state classifier.
 

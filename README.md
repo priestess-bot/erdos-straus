@@ -156,10 +156,11 @@ receipt、T2/admission 处置和 final re-entry，因而没有改变 T6 状态�
 
 该收缩现已在 shared runtime 的局部 slice 中实际执行：`q=1` initializer 会先返回
 gap-3 terminal 或 content-addressed G state，随后依次经过 full-carrier handoff 与
-checkpoint contraction，并以 common state classifier 入队 final target。\(p=73\) 覆盖
-overflow/`LOCAL_DROP`，\(p=601\) 覆盖 ABSORB/`PHASE_DROP`；两者的 final state 都被
-显式验证为 `DEAD_END`，所以这只是可重放的 producer slice，并不宣称 post-G re-entry
-已经解决。见
+checkpoint contraction，并以 common state classifier 入队 final target。odd low-final 的
+\(p\equiv265\pmod {336}\) 子类（包括 \(p=601\)）现由 gap-7 terminal 在入口预占；
+\(p=73\) 覆盖 overflow/`LOCAL_DROP`，\(p=1033\) 覆盖剩余 ABSORB/`PHASE_DROP`。
+后两者的 final state 都被显式验证为 `DEAD_END`，所以这只是可重放的 producer slice，
+并不宣称 post-G re-entry 已经解决。见
 [`type-II-q-one-full-carrier-runtime-slice`](claims/type-II-q-one-full-carrier-runtime-slice.md)。
 
 ## 快速使用

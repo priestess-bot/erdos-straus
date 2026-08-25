@@ -36,7 +36,7 @@ PHASE_ROOT_BRANCH = "q_one_g_to_full_carrier"
 CONTRACTION_PRODUCER = "q_one_root_second_anchor_runtime_v1"
 CONTRACTION_BRANCH = "q_one_root_to_second_anchor_final"
 
-Q1_SOURCE_SCHEDULE = "q_one_gap_three_source_v1"
+Q1_SOURCE_SCHEDULE = "q_one_gap_three_then_odd_low_gap_seven_v1"
 ROOT_SINK_SCHEDULE = "q_one_full_carrier_anchor_sink_v1"
 ROOT_TARGET_SCHEDULE = "q_one_full_carrier_target_sink_v1"
 FINAL_TARGET_SCHEDULE = "q_one_second_anchor_final_sink_v1"
@@ -148,6 +148,31 @@ def initial_dispatch(prime: int) -> dict[str, Any]:
     factors = rail.factorization(x)
     terminal_factors = sorted(q for q in factors if q % 3 == 2)
     if not terminal_factors:
+        if prime % 336 == 265:
+            gap = 7
+            divisor = 2
+            gap_x = (prime + gap) // 4
+            y = prime * (gap_x + divisor) // gap
+            z = prime * (gap_x + gap_x * gap_x // divisor) // gap
+            if not (
+                4 * gap_x == prime + gap
+                and gap_x % 2 == 0
+                and gap_x % gap == 5
+                and (gap_x + divisor) % gap == 0
+                and (gap_x + gap_x * gap_x // divisor) % gap == 0
+                and sum((Fraction(1, value) for value in (gap_x, y, z)), Fraction())
+                == Fraction(4, prime)
+            ):
+                raise AssertionError("odd-low gap-7 preemption changed")
+            return {
+                "kind": "terminal",
+                "certificate": {
+                    "type": "TYPEII_GAP_SEVEN_ODD_LOW_PREEMPTION",
+                    "prime": prime,
+                    "factor": divisor,
+                    "denominators": (gap_x, y, z),
+                },
+            }
         return {"kind": "q_one_g", "raw_state": _q_one_g_raw_state(prime)}
     divisor = terminal_factors[0]
     y = prime * (x + divisor) // 3
@@ -251,6 +276,7 @@ def _q_one_source_schedule(source: runtime.SourceExecutionContextV1) -> runtime.
         and facts["endpoint_fiber"] == "G"
         and raw_terminal["scope"] == Q1_SOURCE_SCHEDULE
         and raw_terminal["outcome"] == "MISS"
+        and prime % 336 != 265
         and endpoint["endpoint"]["first_denominator"] == (prime + 3) // 4
     ):
         raise runtime.RuntimeContractError(
@@ -685,9 +711,15 @@ def verify() -> None:
         and terminal["certificate"]["denominators"] == (25, 970, 4850)
     ):
         raise AssertionError("initial q=1 terminal branch changed")
+    preempted = run_q_one_runtime_slice(601)
+    if not (
+        preempted["kind"] == "terminal"
+        and preempted["certificate"]["denominators"] == (152, 13_222, 1_004_872)
+    ):
+        raise AssertionError("p=601 odd-low gap-7 preemption changed")
     for prime, expected_owner, expected_ticket in (
         (73, "type_i_a_gt_one_overflow_residual", "LOCAL_DROP"),
-        (601, "type_i_absorb_marked_residual", "PHASE_DROP"),
+        (1033, "type_i_absorb_marked_residual", "PHASE_DROP"),
     ):
         result = run_q_one_runtime_slice(prime)
         final = result["final"]

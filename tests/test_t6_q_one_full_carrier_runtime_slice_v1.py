@@ -38,7 +38,7 @@ class QOneFullCarrierRuntimeSliceTests(unittest.TestCase):
         self.assertEqual(result["queue_size"], 3)
 
     def test_runtime_transition_receipts_bind_real_parent_ids(self) -> None:
-        result = SLICE.run_q_one_runtime_slice(601)
+        result = SLICE.run_q_one_runtime_slice(1033)
         root = result["root_decision"].successor
         final = result["final_decision"].successor
         assert root is not None and final is not None

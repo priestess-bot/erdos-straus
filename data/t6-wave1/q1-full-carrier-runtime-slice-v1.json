@@ -8,8 +8,8 @@
   "runtime_module": "scripts/t6_q_one_full_carrier_runtime_slice_v1.py",
   "initializer": {
     "producer_id": "initial_q_one_root_runtime_v1",
-    "terminal_scope": "q_one_gap_three_source_v1",
-    "terminal_output": "Type II gap-3 certificate when X=(p+3)/4 has a 2 mod 3 factor",
+    "terminal_scope": "q_one_gap_three_then_odd_low_gap_seven_v1",
+    "terminal_output": "Type II gap-3 certificate when X=(p+3)/4 has a 2 mod 3 factor; after that miss, Type II gap-7 d=2 certificate for p=265 mod336",
     "nonterminal_output": "content-addressed ROOT_SOL TYPEII_G_HANDOFF q=1 G state"
   },
   "routes": [
@@ -39,7 +39,8 @@
   "controls": [
     {"p": 97, "outcome": "initial_terminal", "denominators": [25, 970, 4850]},
     {"p": 73, "outcome": "runtime_slice", "final_owner": "type_i_a_gt_one_overflow_residual", "final_ticket": "LOCAL_DROP", "final_reentry": "DEAD_END"},
-    {"p": 601, "outcome": "runtime_slice", "final_owner": "type_i_absorb_marked_residual", "final_ticket": "PHASE_DROP", "final_reentry": "DEAD_END"}
+    {"p": 601, "outcome": "initial_terminal_gap7", "denominators": [152, 13222, 1004872]},
+    {"p": 1033, "outcome": "runtime_slice", "final_owner": "type_i_absorb_marked_residual", "final_ticket": "PHASE_DROP", "final_reentry": "DEAD_END"}
   ],
   "t2_disposition": "No AtomicPending state is emitted; this local unregistered checkpoint macro is not a new shared Gate-3/T2 arm.",
   "does_not_claim": [
