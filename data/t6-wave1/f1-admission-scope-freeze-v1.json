@@ -31,16 +31,18 @@
     "data/t6-constructor-inventory-v1.json: current 18-signal inventory and four remaining open A0 unknowns",
     "docs/audits/T6_CONSTRUCTOR_INVENTORY_V1.md: source-completeness and E3 boundaries"
   ],
-  "current_obligations": [
+  "resolved_at_base": [
+    "U-A0-04: six representation-dual signals are recorded as nonruntime controls",
+    "U-A0-05: total-cofactor adapter is recorded as a nonruntime relative adapter",
+    "U-A0-06: C2/H3 checkpoint is recorded as nonruntime arithmetic evidence",
+    "U-A0-07: supplied H4/c8 controls are recorded as nonruntime or terminal-preempted",
+    "U-A0-09: p=409 fixed-n control is recorded as a nonruntime fixed control"
+  ],
+  "remaining_open_obligations": [
     "U-A0-01: no all-constructor runtime or source-completeness theorem",
     "U-A0-02: no theorem that every queue mutation uses the local gate and no bypass exists",
     "U-A0-03: no common target re-entry proof for every emitted schema",
-    "U-A0-04: six representation-dual signals lack a unique registered disposition",
-    "U-A0-05: total-cofactor adapter accepts a fixture-manufactured persistent_queue flag",
-    "U-A0-06: C2/H3 arithmetic checkpoint has no persistent target serializer",
-    "U-A0-07: H4 and c8 controls do not serialize an active nonterminal target",
-    "U-A0-08: registered overflow builders lack a shared legal E3 state serializer",
-    "U-A0-09: p=409 fixed-n control lacks parent, terminal-first and enqueue provenance"
+    "U-A0-08: registered overflow builders lack a shared legal E3 state serializer"
   ],
   "source_dispositions_at_base": {
     "nonrecursive_control_candidates": [
