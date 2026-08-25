@@ -71,7 +71,8 @@ def clone_with_committed_r2(destination: Path) -> Path:
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(ROOT / relative, target)
     run_git(repository, "add", *PHASE1_TRACKED_PATHS)
-    run_git(repository, "commit", "-qm", "track Phase 1 test fixture")
+    if run_git(repository, "status", "--porcelain"):
+        run_git(repository, "commit", "-qm", "track Phase 1 test fixture")
     return repository
 
 
