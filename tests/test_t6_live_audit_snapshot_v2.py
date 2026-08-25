@@ -267,6 +267,18 @@ class T6LiveAuditSnapshotV2Tests(unittest.TestCase):
     def tearDownClass(cls) -> None:
         cls._temporary.cleanup()
 
+    def setUp(self) -> None:
+        clean_environment = {
+            key: value
+            for key, value in os.environ.items()
+            if not key.startswith("GITHUB_")
+        }
+        environment_patch = mock.patch.dict(
+            os.environ, clean_environment, clear=True
+        )
+        environment_patch.start()
+        self.addCleanup(environment_patch.stop)
+
     def test_default_snapshot_is_honest_and_all_upgrade_gates_are_closed(self) -> None:
         result = AUDIT.audit_snapshot(
             self.repository,
