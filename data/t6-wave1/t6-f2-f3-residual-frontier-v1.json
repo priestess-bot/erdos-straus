@@ -20,9 +20,9 @@
     {
       "id": "F1-PRODUCER-PROJECTION",
       "quantifier": "Every active recursive source signal and every actual nonterminal target it emits.",
-      "current_fact": "18 source signals are inventoried; 9 unknown items remain; no legacy queue mutation path is proven to use the wave1 runtime.",
+      "current_fact": "18 source signals are inventoried; 9 unknown items remain. The q1 initializer -> full-carrier -> second-anchor-final local slice now uses the wave1 runtime, but no all-legacy queue-mutation theorem exists.",
       "missing": ["D1", "D2", "D3", "D5", "D8"],
-      "next_minimal_theorem": "Producer Projection and Exclusive Admission Theorem v1 for one real chain, starting with q1 initializer -> full-carrier only after a target-local schedule and first-child protocol are proven."
+      "next_minimal_theorem": "Promote the q1 runtime slice from its local registry into a shared Gate-3 producer decision, then prove every remaining constructor/queue mutation has the same exclusive admission path."
     },
     {
       "id": "F1-ACTIVE-PRODUCER-FREEZE",
@@ -43,9 +43,9 @@
         "H4 guard DAG reduces live output to atomic/overflow shapes",
         "H4 clean-q atomic C1 family empty"
       ],
-      "exact_blocker": "No continuous actual producer projection, full terminal schedule, T2 disposition or runtime re-entry. The q1 source proves only a gap-3-local terminal scope; the full-carrier target has no target-local schedule. The first child has a correct pre-admission ABSORB cursor, and the root-to-second-anchor checkpoint contraction avoids its upward protocol return, but neither result binds the actual parent or final re-entry.",
+      "exact_blocker": "A q1 local runtime slice now binds initializer -> full-carrier -> second-anchor final target with named gap-3/anchor-sink terminal scopes, but its final target deliberately has no dispatch route. The scopes are not global terminal exhaustion, the checkpoint macro is not in the shared Gate-3 registry, and full post-G re-entry remains open.",
       "missing": ["E1", "E3", "D1", "D2", "D5", "D8"],
-      "next_minimal_theorem": "Bind the existing q1 root-to-second-anchor final contraction to actual ordered terminal receipts, a runtime-issued parent/source path, its T2/admission disposition, and a non-upward final re-entry; only then register the q1 phase-root chain."
+      "next_minimal_theorem": "Prove a recursive route for each q1 contraction final owner under a compatible terminal priority, then promote the local slice through the shared Gate-3/T2 admission decision without adding a new unclassified checkpoint state."
     },
     {
       "id": "F2-C8-ATOMIC-ACTUALIZATION",
