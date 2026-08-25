@@ -141,6 +141,12 @@ canonical complete-excess valuation、terminal-first 或 actual source/path 对�
 共同 miss，因此它们没有改变 F2/T6 的开放状态。见
 [`type-I-f2-high-support-c1-r-three-hard-core-arithmetic-partition`](claims/type-I-f2-high-support-c1-r-three-hard-core-arithmetic-partition.md)。
 
+q1 full-carrier 的首段也完成了一项协议层澄清：两条 parity child 在其 target-local
+terminal miss 后都应以 `TYPEI/ABSORB` 而非旧的 `CHARGED/LOCAL_DROP` 记入，且都有
+canonical cursor \((1,R-1,1)\) 与 N7 `PHASE_DROP`。这只闭合 pre-admission 的
+E3/type 层；actual runtime producer、terminal schedule 与 ABSORB re-entry 仍开放。见
+[`type-II-q-one-full-carrier-first-child-absorb-entry`](claims/type-II-q-one-full-carrier-first-child-absorb-entry.md)。
+
 ## 快速使用
 
 ```bash

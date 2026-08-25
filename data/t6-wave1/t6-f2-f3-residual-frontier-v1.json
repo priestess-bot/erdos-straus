@@ -43,9 +43,9 @@
         "H4 guard DAG reduces live output to atomic/overflow shapes",
         "H4 clean-q atomic C1 family empty"
       ],
-      "exact_blocker": "No continuous actual producer projection, full terminal schedule, or runtime re-entry. The q1 source proves only a gap-3-local terminal scope; the full-carrier target has no target-local schedule, and its old first-child CHARGED/LOCAL_DROP normalization conflicts with Freeze-B ordinary R<p ABSORB cursor requirements.",
+      "exact_blocker": "No continuous actual producer projection, full terminal schedule, or runtime re-entry. The q1 source proves only a gap-3-local terminal scope; the full-carrier target has no target-local schedule. The first child now has a correct pre-admission ABSORB cursor and N7 phase ticket, but this does not bind the actual parent or give ABSORB re-entry.",
       "missing": ["E1", "E3", "D1", "D2", "D5", "D8"],
-      "next_minimal_theorem": "Prove a source-preserving q1 full-carrier first-child CHARGED-to-ABSORB entry with terminal schedule and cursor, or prove a valid retained-CHARGED classification; only then bind the q1 phase-root chain to runtime."
+      "next_minimal_theorem": "Bind the existing q1 root and first-child ABSORB projection to an actual target-local terminal schedule, runtime-issued source receipt, and non-upward re-entry; only then register the q1 phase-root chain."
     },
     {
       "id": "F2-C8-ATOMIC-ACTUALIZATION",

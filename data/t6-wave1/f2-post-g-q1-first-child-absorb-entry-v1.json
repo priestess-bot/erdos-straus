@@ -1,0 +1,61 @@
+{
+  "schema_id": "t6_wave1_f2_post_g_q1_first_child_absorb_entry_v1",
+  "version": 1,
+  "artifact_id": "f2_post_g_q1_first_child_absorb_entry_v1",
+  "track_id": "F2-POST-G-H4",
+  "date": "2026-08-25",
+  "claim_id": "type-II-q-one-full-carrier-first-child-absorb-entry",
+  "status": "ESTABLISHED_E2_E3_E4_E5_RELATIVE_E1_AND_TERMINAL_MISS",
+  "quantifier": "actual admitted ordinary q=1 G full-carrier root with consumed forced bundle and target-local terminal-first MISS",
+  "parent": {
+    "p": "24*t+1",
+    "root_chart": "(R_X,K_X)=(16*t+3,(6*t+1)*(16*t+1))",
+    "protocol": "TYPEI/CHARGED",
+    "bundle": "M=16*t+2=R_X-1, gcd(M,K_X)=1"
+  },
+  "parity_targets": {
+    "t_odd": {
+      "chart": "(R_T,K_T)=(20*t+3,(8*t+1)*(15*t+1))",
+      "support_A": "16*t+2"
+    },
+    "t_even": {
+      "transient": "(R_M,K_M,n,d)=(52*t+7,(16*t+2)*(39*t+2)/2,12*t+1,9*t/2)",
+      "final_chart": "(R_T,K_T)=(6*t-1,(9*t/2)*(8*t-1))",
+      "support_A": "9*t/2"
+    }
+  },
+  "target_projection": {
+    "major_phase": "TYPEI",
+    "type_i_protocol": "ABSORB",
+    "provenance_kind": "MARKED_ABSORB",
+    "is_overflow": false,
+    "target_requirements": [
+      "4*K_T=p*R_T+1",
+      "A_T divides K_T",
+      "3<=R_T<p",
+      "target terminal-first MISS"
+    ],
+    "universal_cursor": {
+      "formal_pair": ["1", "R_T-1", "1"],
+      "epsilon": "min",
+      "absorb_m": 1,
+      "absorb_r_epsilon": 1
+    },
+    "owner": "type_i_absorb_marked_residual"
+  },
+  "obligations": {
+    "E1": "RELATIVE_TO_ADMITTED_PARENT_BUNDLE_AND_TARGET_TERMINAL_MISS",
+    "E2": "ESTABLISHED_PARITY_FORMULAS",
+    "E3": "ESTABLISHED_PRE_ADMISSION_ABSORB_GRAMMAR_AND_CURSOR",
+    "E4": "IDENTITY_ON_Sol_p",
+    "E5": "TYPEI_CHARGED_TO_ABSORB_PHASE_DROP",
+    "reentry": "OPEN"
+  },
+  "does_not_claim": [
+    "a full target terminal scheduler is implemented",
+    "a runtime producer is registered",
+    "the m=1 ABSORB cursor has a total successor",
+    "post-G Type-I totality",
+    "F2 or T6 closure"
+  ]
+}
