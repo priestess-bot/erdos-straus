@@ -9,6 +9,16 @@
 `index/theorem-ledger.md` 为准，不在入口文档手工复制。其中被撤回论文和存在关键证明
 缺口的预印本仍会收录，但用独立状态标出。
 
+### T6 实时审计权威（2026-08-26）
+
+T6 工程与证明状态的机器可读入口固定为
+`data/t6-wave1/t6-live-audit-snapshot-v2.json`。该文件不进入 Git：GitHub Actions 在精确
+HEAD 的 Gate 0 完成后生成、验证并以不可变 artifact 保存，避免“提交中记录自身提交 SHA”
+的循环。snapshot 分开记录历史 workpack 起点、集成审计点、当前观察 HEAD 和最近一个经
+GitHub 服务端来源核验的绿色 HEAD；任一摘要变化都会使旧证据变成
+`ADVANCED_UNVERIFIED`。即使 HEAD 已验证，没有当前摘要向量的独立复核，状态升级仍被
+阻断。当前 F1、F2、F3、T6 及猜想状态均不因这项工程收口而改变。
+
 ## 当前旗舰命题（合同内核核验至 2026-08-20）
 
 对核心素数 \(p\equiv1\pmod{24}\)，最终目标是下列双出口命题：

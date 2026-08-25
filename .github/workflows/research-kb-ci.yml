@@ -6,6 +6,7 @@ name: T6 Gate 0 and research knowledge base
   workflow_dispatch:
 
 permissions:
+  actions: read
   contents: read
 
 concurrency:
@@ -16,6 +17,8 @@ jobs:
   gate-zero:
     runs-on: ubuntu-latest
     timeout-minutes: 360
+    outputs:
+      manifest_artifact_id: ${{ steps.upload_gate0_manifest.outputs.artifact-id }}
 
     steps:
       - name: Check out the exact revision
@@ -29,7 +32,7 @@ jobs:
         # actions/setup-python v7.0.0
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
         with:
-          python-version: "3.12"
+          python-version: "3.12.14"
           cache: pip
           cache-dependency-path: requirements-ci.txt
 
@@ -53,11 +56,107 @@ jobs:
           --require-pass
 
       - name: Upload the Gate 0 run manifest
+        id: upload_gate0_manifest
         if: always()
         # actions/upload-artifact v7.0.1
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
-          name: t6-gate0-${{ github.sha }}-${{ github.run_id }}
           path: data/t6-wave1/ci-run-manifest-v1.json
+          archive: false
           if-no-files-found: error
-          retention-days: 30
+          retention-days: 90
+
+  live-audit-snapshot:
+    needs: gate-zero
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out the exact revision
+        # actions/checkout v7.0.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up Python
+        # actions/setup-python v7.0.0
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.12.14"
+          cache: pip
+          cache-dependency-path: requirements-ci.txt
+
+      - name: Install pinned verification dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements-ci.txt
+
+      - name: Download the immutable Gate 0 manifest
+        # actions/download-artifact v8.0.1
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
+        with:
+          artifact-ids: ${{ needs.gate-zero.outputs.manifest_artifact_id }}
+          path: data/t6-wave1
+
+      - name: Build the Gate 0 provenance locator
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MANIFEST_ARTIFACT_ID: ${{ needs.gate-zero.outputs.manifest_artifact_id }}
+        run: |
+          set -euo pipefail
+          if [[ ! "$MANIFEST_ARTIFACT_ID" =~ ^[1-9][0-9]*$ ]]; then
+            echo "Gate 0 artifact ID is not a positive integer" >&2
+            exit 1
+          fi
+          job_id="$(
+            gh api \
+              "repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/attempts/${GITHUB_RUN_ATTEMPT}/jobs?per_page=100" \
+              --jq '[.jobs[] | select(.name == "gate-zero" and .status == "completed" and .conclusion == "success")] | if length == 1 then .[0].id else error("expected one successful gate-zero job") end'
+          )"
+          jq -n \
+            --arg repository "$GITHUB_REPOSITORY" \
+            --arg workflow_path ".github/workflows/research-kb-ci.yml" \
+            --arg artifact_name "ci-run-manifest-v1.json" \
+            --argjson workflow_id 321454335 \
+            --argjson run_id "$GITHUB_RUN_ID" \
+            --argjson run_attempt "$GITHUB_RUN_ATTEMPT" \
+            --argjson job_id "$job_id" \
+            --argjson artifact_id "$MANIFEST_ARTIFACT_ID" \
+            '{schema_id:"t6_gate0_run_locator_v1",schema_version:1,repository:$repository,workflow_id:$workflow_id,workflow_path:$workflow_path,run_id:$run_id,run_attempt:$run_attempt,job_id:$job_id,artifact_id:$artifact_id,artifact_name:$artifact_name}' \
+            > "$RUNNER_TEMP/t6-gate0-run-locator-v1.json"
+
+      - name: Generate the live audit snapshot
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: >-
+          python scripts/t6_live_audit_snapshot_v2.py --root . generate
+          --output data/t6-wave1/t6-live-audit-snapshot-v2.json
+          --run-manifest data/t6-wave1/ci-run-manifest-v1.json
+          --provenance-locator "$RUNNER_TEMP/t6-gate0-run-locator-v1.json"
+
+      - name: Verify the live audit snapshot
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: >-
+          python scripts/t6_live_audit_snapshot_v2.py --root . verify
+          --snapshot data/t6-wave1/t6-live-audit-snapshot-v2.json
+          --run-manifest data/t6-wave1/ci-run-manifest-v1.json
+          --provenance-locator "$RUNNER_TEMP/t6-gate0-run-locator-v1.json"
+
+      - name: Upload the live audit snapshot
+        # actions/upload-artifact v7.0.1
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          path: data/t6-wave1/t6-live-audit-snapshot-v2.json
+          archive: false
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Upload the provenance locator
+        # actions/upload-artifact v7.0.1
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          path: ${{ runner.temp }}/t6-gate0-run-locator-v1.json
+          archive: false
+          if-no-files-found: error
+          retention-days: 90

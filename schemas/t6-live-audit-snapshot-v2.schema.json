@@ -1,0 +1,560 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/priestess-bot/erdos-straus/schemas/t6-live-audit-snapshot-v2.schema.json",
+  "title": "T6 live audit snapshot v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_policy",
+    "observed_at",
+    "repository",
+    "integration_branch",
+    "workpack_origin_sha",
+    "integration_audited_sha",
+    "integration_head_relation",
+    "current_observed_head_sha",
+    "last_verified_head_sha",
+    "last_verified_basis",
+    "head_relation",
+    "verification_state",
+    "status_upgrade_allowed",
+    "execution_binding",
+    "current_digest_audit",
+    "consumer_policy",
+    "digest_algorithm",
+    "claim_set_digest",
+    "runtime_source_digest",
+    "producer_registry_digest",
+    "terminal_schedule_digest",
+    "grammar_hash",
+    "t5_taxonomy_digest",
+    "test_manifest_digest",
+    "independent_review_digest",
+    "digest_inputs",
+    "manifest_digests",
+    "manifest_statuses",
+    "status",
+    "proof_boundary"
+  ],
+  "properties": {
+    "schema_id": {"const": "t6_live_audit_snapshot_v2"},
+    "schema_version": {"const": 2},
+    "artifact_policy": {"const": "EPHEMERAL_HEAD_BOUND_NOT_TRACKED"},
+    "observed_at": {"type": "string", "format": "date-time"},
+    "repository": {"type": "string", "minLength": 1},
+    "integration_branch": {"type": "string", "minLength": 1},
+    "workpack_origin_sha": {"$ref": "#/$defs/gitSha"},
+    "integration_audited_sha": {"$ref": "#/$defs/gitSha"},
+    "integration_head_relation": {
+      "enum": ["EQUAL", "ADVANCED", "DIVERGED"]
+    },
+    "current_observed_head_sha": {"$ref": "#/$defs/gitSha"},
+    "last_verified_head_sha": {
+      "oneOf": [{"$ref": "#/$defs/gitSha"}, {"type": "null"}]
+    },
+    "last_verified_basis": {
+      "oneOf": [{"$ref": "#/$defs/gate0Attestation"}, {"type": "null"}]
+    },
+    "head_relation": {
+      "enum": ["NO_VERIFIED_HEAD", "EQUAL", "ADVANCED_UNVERIFIED", "DIVERGED"]
+    },
+    "verification_state": {
+      "enum": [
+        "NO_VERIFIED_HEAD",
+        "VERIFIED_HEAD",
+        "UNVERIFIED_HEAD_ADVANCE",
+        "DIVERGED_FROM_VERIFIED_HEAD"
+      ]
+    },
+    "status_upgrade_allowed": {"type": "boolean"},
+    "execution_binding": {"$ref": "#/$defs/executionBinding"},
+    "current_digest_audit": {"$ref": "#/$defs/currentDigestAudit"},
+    "consumer_policy": {"$ref": "#/$defs/consumerPolicy"},
+    "digest_algorithm": {"type": "string", "minLength": 1},
+    "claim_set_digest": {"$ref": "#/$defs/sha256"},
+    "runtime_source_digest": {"$ref": "#/$defs/sha256"},
+    "producer_registry_digest": {"$ref": "#/$defs/sha256"},
+    "terminal_schedule_digest": {"$ref": "#/$defs/sha256"},
+    "grammar_hash": {"$ref": "#/$defs/sha256"},
+    "t5_taxonomy_digest": {"$ref": "#/$defs/sha256"},
+    "test_manifest_digest": {"$ref": "#/$defs/sha256"},
+    "independent_review_digest": {"$ref": "#/$defs/sha256"},
+    "digest_inputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_set",
+        "runtime_source",
+        "producer_registry",
+        "terminal_schedule",
+        "t5_taxonomy",
+        "test_manifest",
+        "independent_review"
+      ],
+      "properties": {
+        "claim_set": {"$ref": "#/$defs/digestInput"},
+        "runtime_source": {"$ref": "#/$defs/digestInput"},
+        "producer_registry": {"$ref": "#/$defs/digestInput"},
+        "terminal_schedule": {"$ref": "#/$defs/digestInput"},
+        "t5_taxonomy": {"$ref": "#/$defs/digestInput"},
+        "test_manifest": {"$ref": "#/$defs/digestInput"},
+        "independent_review": {"$ref": "#/$defs/digestInput"}
+      }
+    },
+    "manifest_digests": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "workpack",
+        "proof_frontier",
+        "constructor_inventory",
+        "runtime_protocol_freeze",
+        "family_grammar_freeze",
+        "residual_frontier",
+        "t5_phase_registry",
+        "t5_transition_taxonomy",
+        "selector_obligation_ledger",
+        "f1_reachability_receipt",
+        "readme"
+      ],
+      "properties": {
+        "workpack": {"$ref": "#/$defs/sha256"},
+        "proof_frontier": {"$ref": "#/$defs/sha256"},
+        "constructor_inventory": {"$ref": "#/$defs/sha256"},
+        "runtime_protocol_freeze": {"$ref": "#/$defs/sha256"},
+        "family_grammar_freeze": {"$ref": "#/$defs/sha256"},
+        "residual_frontier": {"$ref": "#/$defs/sha256"},
+        "t5_phase_registry": {"$ref": "#/$defs/sha256"},
+        "t5_transition_taxonomy": {"$ref": "#/$defs/sha256"},
+        "selector_obligation_ledger": {"$ref": "#/$defs/sha256"},
+        "f1_reachability_receipt": {"$ref": "#/$defs/sha256"},
+        "readme": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "manifest_statuses": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "proof_frontier",
+        "constructor_inventory",
+        "runtime_protocol_freeze",
+        "family_grammar_freeze",
+        "residual_frontier"
+      ],
+      "properties": {
+        "proof_frontier": {"type": "string", "minLength": 1},
+        "constructor_inventory": {"type": "string", "minLength": 1},
+        "runtime_protocol_freeze": {"type": "string", "minLength": 1},
+        "family_grammar_freeze": {"type": "string", "minLength": 1},
+        "residual_frontier": {"$ref": "#/$defs/status"}
+      }
+    },
+    "status": {"$ref": "#/$defs/status"},
+    "proof_boundary": {"type": "string", "minLength": 1}
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"last_verified_head_sha": {"type": "null"}}
+      },
+      "then": {
+        "properties": {
+          "last_verified_basis": {"type": "null"},
+          "head_relation": {"const": "NO_VERIFIED_HEAD"},
+          "verification_state": {"const": "NO_VERIFIED_HEAD"},
+          "status_upgrade_allowed": {"const": false}
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {"head_relation": {"const": "NO_VERIFIED_HEAD"}}
+      },
+      "then": {
+        "properties": {
+          "last_verified_head_sha": {"type": "null"},
+          "last_verified_basis": {"type": "null"},
+          "verification_state": {"const": "NO_VERIFIED_HEAD"},
+          "status_upgrade_allowed": {"const": false}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"head_relation": {"const": "EQUAL"}}},
+      "then": {
+        "properties": {
+          "last_verified_head_sha": {"$ref": "#/$defs/gitSha"},
+          "last_verified_basis": {"$ref": "#/$defs/gate0Attestation"},
+          "verification_state": {"const": "VERIFIED_HEAD"}
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {"head_relation": {"const": "ADVANCED_UNVERIFIED"}}
+      },
+      "then": {
+        "properties": {
+          "last_verified_head_sha": {"$ref": "#/$defs/gitSha"},
+          "last_verified_basis": {"$ref": "#/$defs/gate0Attestation"},
+          "verification_state": {"const": "UNVERIFIED_HEAD_ADVANCE"},
+          "status_upgrade_allowed": {"const": false}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"head_relation": {"const": "DIVERGED"}}},
+      "then": {
+        "properties": {
+          "last_verified_head_sha": {"$ref": "#/$defs/gitSha"},
+          "last_verified_basis": {"$ref": "#/$defs/gate0Attestation"},
+          "verification_state": {"const": "DIVERGED_FROM_VERIFIED_HEAD"},
+          "status_upgrade_allowed": {"const": false}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"status_upgrade_allowed": {"const": true}}},
+      "then": {
+        "properties": {
+          "head_relation": {"const": "EQUAL"},
+          "integration_head_relation": {"enum": ["EQUAL", "ADVANCED"]},
+          "current_digest_audit": {
+            "properties": {"status": {"const": "PASS"}}
+          },
+          "consumer_policy": {
+            "properties": {
+              "status": {"const": "PASS"},
+              "all_consumers_bound": {"const": true}
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {"integration_head_relation": {"const": "DIVERGED"}}
+      },
+      "then": {"properties": {"status_upgrade_allowed": {"const": false}}}
+    },
+    {
+      "if": {
+        "properties": {
+          "current_digest_audit": {
+            "properties": {"status": {"const": "MISSING"}}
+          }
+        }
+      },
+      "then": {"properties": {"status_upgrade_allowed": {"const": false}}}
+    },
+    {
+      "if": {
+        "properties": {
+          "consumer_policy": {
+            "properties": {"status": {"const": "MISSING_OR_STALE"}}
+          }
+        }
+      },
+      "then": {"properties": {"status_upgrade_allowed": {"const": false}}}
+    }
+  ],
+  "$defs": {
+    "gitSha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "digestInput": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["file_count", "paths", "scope"],
+      "properties": {
+        "file_count": {"type": "integer", "minimum": 1},
+        "paths": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "scope": {"type": "string", "minLength": 1}
+      }
+    },
+    "status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["F1", "F2", "F3", "T6"],
+      "properties": {
+        "F1": {"type": "string", "minLength": 1},
+        "F2": {"type": "string", "minLength": 1},
+        "F3": {"type": "string", "minLength": 1},
+        "T6": {"type": "string", "minLength": 1}
+      }
+    },
+    "fileRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "mode", "size", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "mode": {"enum": ["100644", "100755"]},
+        "size": {"type": "integer", "minimum": 1},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "executionBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema_id", "head_sha", "files", "status"],
+      "properties": {
+        "schema_id": {"const": "t6_live_snapshot_toolchain_binding_v1"},
+        "head_sha": {"$ref": "#/$defs/gitSha"},
+        "files": {
+          "type": "array",
+          "minItems": 4,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/fileRecord"}
+        },
+        "status": {"const": "BOUND_TO_CLEAN_HEAD"}
+      }
+    },
+    "digestVector": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_set_digest",
+        "runtime_source_digest",
+        "producer_registry_digest",
+        "terminal_schedule_digest",
+        "grammar_hash",
+        "t5_taxonomy_digest",
+        "test_manifest_digest",
+        "independent_review_digest"
+      ],
+      "properties": {
+        "claim_set_digest": {"$ref": "#/$defs/sha256"},
+        "runtime_source_digest": {"$ref": "#/$defs/sha256"},
+        "producer_registry_digest": {"$ref": "#/$defs/sha256"},
+        "terminal_schedule_digest": {"$ref": "#/$defs/sha256"},
+        "grammar_hash": {"$ref": "#/$defs/sha256"},
+        "t5_taxonomy_digest": {"$ref": "#/$defs/sha256"},
+        "test_manifest_digest": {"$ref": "#/$defs/sha256"},
+        "independent_review_digest": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "currentDigestAuditBasis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_id",
+        "schema_version",
+        "decision",
+        "audited_head_sha",
+        "digest_vector",
+        "digest_vector_sha256",
+        "independent_reviewer_id",
+        "evidence_locator",
+        "review_method"
+      ],
+      "properties": {
+        "schema_id": {"const": "t6_current_digest_audit_basis_v1"},
+        "schema_version": {"const": 1},
+        "decision": {"const": "PASS"},
+        "audited_head_sha": {"$ref": "#/$defs/gitSha"},
+        "digest_vector": {"$ref": "#/$defs/digestVector"},
+        "digest_vector_sha256": {"$ref": "#/$defs/sha256"},
+        "independent_reviewer_id": {"type": "string", "minLength": 1},
+        "evidence_locator": {"type": "string", "minLength": 1},
+        "review_method": {"type": "string", "minLength": 1}
+      }
+    },
+    "currentDigestAudit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema_id", "status", "digest_vector_sha256", "basis"],
+      "properties": {
+        "schema_id": {"const": "t6_current_digest_audit_gate_v1"},
+        "status": {"enum": ["MISSING", "PASS"]},
+        "digest_vector_sha256": {"$ref": "#/$defs/sha256"},
+        "basis": {
+          "oneOf": [
+            {"$ref": "#/$defs/currentDigestAuditBasis"},
+            {"type": "null"}
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"status": {"const": "MISSING"}}},
+          "then": {"properties": {"basis": {"type": "null"}}}
+        },
+        {
+          "if": {"properties": {"status": {"const": "PASS"}}},
+          "then": {
+            "properties": {
+              "basis": {"$ref": "#/$defs/currentDigestAuditBasis"}
+            }
+          }
+        }
+      ]
+    },
+    "consumerRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "binding", "observed", "status"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "binding": {"enum": ["EXACT_STRING_ONCE", "TOP_LEVEL_EXACT_FIELD"]},
+        "observed": {"type": ["string", "integer", "null"]},
+        "status": {"enum": ["BOUND", "MISSING_OR_STALE"]}
+      }
+    },
+    "consumerPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_id",
+        "required_locator",
+        "consumers",
+        "all_consumers_bound",
+        "status"
+      ],
+      "properties": {
+        "schema_id": {"const": "t6_live_snapshot_consumer_policy_v1"},
+        "required_locator": {
+          "const": "data/t6-wave1/t6-live-audit-snapshot-v2.json"
+        },
+        "consumers": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "readme",
+            "selector_ledger",
+            "proof_frontier",
+            "residual_frontier"
+          ],
+          "properties": {
+            "readme": {"$ref": "#/$defs/consumerRecord"},
+            "selector_ledger": {"$ref": "#/$defs/consumerRecord"},
+            "proof_frontier": {"$ref": "#/$defs/consumerRecord"},
+            "residual_frontier": {"$ref": "#/$defs/consumerRecord"}
+          }
+        },
+        "all_consumers_bound": {"type": "boolean"},
+        "status": {"enum": ["PASS", "MISSING_OR_STALE"]}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"status": {"const": "PASS"}}},
+          "then": {
+            "properties": {
+              "all_consumers_bound": {"const": true},
+              "consumers": {
+                "properties": {
+                  "readme": {
+                    "properties": {
+                      "path": {"const": "README.md"},
+                      "binding": {"const": "EXACT_STRING_ONCE"},
+                      "observed": {"const": 1},
+                      "status": {"const": "BOUND"}
+                    }
+                  },
+                  "selector_ledger": {
+                    "properties": {
+                      "path": {"const": "data/t6-selector-obligation-ledger-v1.json"},
+                      "binding": {"const": "TOP_LEVEL_EXACT_FIELD"},
+                      "observed": {"const": "data/t6-wave1/t6-live-audit-snapshot-v2.json"},
+                      "status": {"const": "BOUND"}
+                    }
+                  },
+                  "proof_frontier": {
+                    "properties": {
+                      "path": {"const": "data/t6-proof-frontier-v2.json"},
+                      "binding": {"const": "TOP_LEVEL_EXACT_FIELD"},
+                      "observed": {"const": "data/t6-wave1/t6-live-audit-snapshot-v2.json"},
+                      "status": {"const": "BOUND"}
+                    }
+                  },
+                  "residual_frontier": {
+                    "properties": {
+                      "path": {"const": "data/t6-wave1/t6-f2-f3-residual-frontier-v1.json"},
+                      "binding": {"const": "TOP_LEVEL_EXACT_FIELD"},
+                      "observed": {"const": "data/t6-wave1/t6-live-audit-snapshot-v2.json"},
+                      "status": {"const": "BOUND"}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {"properties": {"status": {"const": "MISSING_OR_STALE"}}},
+          "then": {"properties": {"all_consumers_bound": {"const": false}}}
+        }
+      ]
+    },
+    "contentReplay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_id",
+        "run_manifest_schema_id",
+        "manifest_payload_sha256",
+        "manifest_bytes_sha256",
+        "head_sha",
+        "head_tree_sha",
+        "status",
+        "content_replay",
+        "producer_registry_status",
+        "digest_domain",
+        "digests"
+      ],
+      "properties": {
+        "schema_id": {"const": "t6_gate0_manifest_content_replay_v1"},
+        "run_manifest_schema_id": {"const": "t6_ci_run_manifest_v1"},
+        "manifest_payload_sha256": {"$ref": "#/$defs/sha256"},
+        "manifest_bytes_sha256": {"$ref": "#/$defs/sha256"},
+        "head_sha": {"$ref": "#/$defs/gitSha"},
+        "head_tree_sha": {
+          "type": "string",
+          "pattern": "^(?:[0-9a-f]{40}|[0-9a-f]{64})$"
+        },
+        "status": {"const": "PASS"},
+        "content_replay": {"const": "PASS_EXACT_HEAD_COMMANDS_AND_DIGESTS"},
+        "producer_registry_status": {
+          "const": "LOCAL_RUNTIME_ONLY_NO_SHARED_ALL_PRODUCER_REGISTRY"
+        },
+        "digest_domain": {"type": "string", "minLength": 1},
+        "digests": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kb_claim_set_digest",
+            "runtime_source_digest",
+            "producer_registry_digest",
+            "grammar_hash",
+            "test_manifest_digest"
+          ],
+          "properties": {
+            "kb_claim_set_digest": {"$ref": "#/$defs/sha256"},
+            "runtime_source_digest": {"$ref": "#/$defs/sha256"},
+            "producer_registry_digest": {"$ref": "#/$defs/sha256"},
+            "grammar_hash": {"$ref": "#/$defs/sha256"},
+            "test_manifest_digest": {"$ref": "#/$defs/sha256"}
+          }
+        }
+      }
+    },
+    "gate0Attestation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema_id", "content_replay", "github_provenance"],
+      "properties": {
+        "schema_id": {"const": "t6_gate0_verified_basis_v2"},
+        "content_replay": {"$ref": "#/$defs/contentReplay"},
+        "github_provenance": {
+          "$ref": "https://github.com/priestess-bot/erdos-straus/schemas/t6-gate0-run-provenance-v1.schema.json#/$defs/provenance"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/priestess-bot/erdos-straus/schemas/t6-gate0-run-provenance-v1.schema.json",
+  "title": "T6 Gate-0 run locator or verified GitHub provenance v1",
+  "oneOf": [
+    {"$ref": "#/$defs/locator"},
+    {"$ref": "#/$defs/provenance"}
+  ],
+  "$defs": {
+    "gitSha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "sha256Prefixed": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "positiveInteger": {"type": "integer", "minimum": 1},
+    "locator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_id",
+        "schema_version",
+        "repository",
+        "workflow_id",
+        "workflow_path",
+        "run_id",
+        "run_attempt",
+        "job_id",
+        "artifact_id",
+        "artifact_name"
+      ],
+      "properties": {
+        "schema_id": {"const": "t6_gate0_run_locator_v1"},
+        "schema_version": {"const": 1},
+        "repository": {"const": "priestess-bot/erdos-straus"},
+        "workflow_id": {"const": 321454335},
+        "workflow_path": {
+          "const": ".github/workflows/research-kb-ci.yml"
+        },
+        "run_id": {"$ref": "#/$defs/positiveInteger"},
+        "run_attempt": {"$ref": "#/$defs/positiveInteger"},
+        "job_id": {"$ref": "#/$defs/positiveInteger"},
+        "artifact_id": {"$ref": "#/$defs/positiveInteger"},
+        "artifact_name": {"const": "ci-run-manifest-v1.json"}
+      }
+    },
+    "environmentCrossCheck": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "checked_fields"],
+      "properties": {
+        "status": {
+          "enum": ["NOT_PRESENT", "PARTIAL_MATCH", "FULL_MATCH"]
+        },
+        "checked_fields": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "GITHUB_REPOSITORY",
+              "GITHUB_RUN_ID",
+              "GITHUB_RUN_ATTEMPT",
+              "GITHUB_SHA",
+              "GITHUB_EVENT_NAME",
+              "GITHUB_REF"
+            ]
+          }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_id",
+        "schema_version",
+        "source",
+        "repository",
+        "repository_id",
+        "workflow_id",
+        "workflow_name",
+        "workflow_path",
+        "workflow_state",
+        "run_id",
+        "run_attempt",
+        "run_head_sha",
+        "run_event",
+        "run_head_branch",
+        "head_repository_id",
+        "run_status",
+        "run_conclusion",
+        "success_basis",
+        "job_id",
+        "job_name",
+        "job_status",
+        "job_conclusion",
+        "artifact_id",
+        "artifact_name",
+        "artifact_expired",
+        "artifact_expires_at",
+        "artifact_size_in_bytes",
+        "artifact_digest",
+        "artifact_workflow_run_id",
+        "artifact_workflow_run_head_sha",
+        "environment_cross_check"
+      ],
+      "properties": {
+        "schema_id": {"const": "t6_gate0_run_provenance_v1"},
+        "schema_version": {"const": 1},
+        "source": {"const": "GITHUB_REST_API"},
+        "repository": {"const": "priestess-bot/erdos-straus"},
+        "repository_id": {"const": 1313520032},
+        "workflow_id": {"const": 321454335},
+        "workflow_name": {"const": "T6 Gate 0 and research knowledge base"},
+        "workflow_path": {
+          "const": ".github/workflows/research-kb-ci.yml"
+        },
+        "workflow_state": {"const": "active"},
+        "run_id": {"$ref": "#/$defs/positiveInteger"},
+        "run_attempt": {"$ref": "#/$defs/positiveInteger"},
+        "run_head_sha": {"$ref": "#/$defs/gitSha"},
+        "run_event": {"const": "push"},
+        "run_head_branch": {"const": "main"},
+        "head_repository_id": {"const": 1313520032},
+        "run_status": {"enum": ["in_progress", "completed"]},
+        "run_conclusion": {"oneOf": [{"const": "success"}, {"type": "null"}]},
+        "success_basis": {"enum": ["JOB_SUCCESS", "BOTH"]},
+        "job_id": {"$ref": "#/$defs/positiveInteger"},
+        "job_name": {"const": "gate-zero"},
+        "job_status": {"const": "completed"},
+        "job_conclusion": {"const": "success"},
+        "artifact_id": {"$ref": "#/$defs/positiveInteger"},
+        "artifact_name": {"const": "ci-run-manifest-v1.json"},
+        "artifact_expired": {"const": false},
+        "artifact_expires_at": {"type": "string", "format": "date-time"},
+        "artifact_size_in_bytes": {"$ref": "#/$defs/positiveInteger"},
+        "artifact_digest": {"$ref": "#/$defs/sha256Prefixed"},
+        "artifact_workflow_run_id": {"$ref": "#/$defs/positiveInteger"},
+        "artifact_workflow_run_head_sha": {"$ref": "#/$defs/gitSha"},
+        "environment_cross_check": {"$ref": "#/$defs/environmentCrossCheck"}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"run_status": {"const": "in_progress"}}},
+          "then": {
+            "properties": {
+              "run_conclusion": {"type": "null"},
+              "success_basis": {"const": "JOB_SUCCESS"},
+              "job_conclusion": {"const": "success"}
+            }
+          }
+        },
+        {
+          "if": {"properties": {"run_status": {"const": "completed"}}},
+          "then": {
+            "properties": {
+              "run_conclusion": {"const": "success"}
+            }
+          }
+        }
+      ]
+    }
+  }
+}
