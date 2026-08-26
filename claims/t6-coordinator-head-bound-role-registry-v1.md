@@ -9,8 +9,9 @@ statement: >-
   that commit, and every resolver Git invocation disables replacement objects.
   The exact-HEAD Draft 2020-12 schema and additional fail-closed checks require
   every role-grant, branch-binding and complete-terminal-schedule list to be
-  empty. Shared structured-receipt, persistent-state and T5 modules are pinned
-  only as evidence. The q=1 reason codes are declared blockers, not semantic
+  empty. Shared structured-receipt, persistent-state and T5 modules, the
+  zero-authority V2 runtime entry and an independent q=1 arithmetic replay are
+  pinned only as evidence. The q=1 reason codes are declared blockers, not semantic
   proofs. This inventory grants no producer, validator, projector, terminal
   scheduler or T5-ticket authority and does not close Gate 2 or any mathematical
   frontier.
@@ -60,6 +61,13 @@ The artifact inventory has schema ID
 `role_authority=false`, and is deliberately not schema-compatible with
 `ArtifactDigestManifestV1`. Turning selected evidence pins into a trusted role
 manifest requires a separate extraction and Gate-0-attested authorization step.
+
+The inventory also pins `open_runtime_v2` and
+`replay_q_one_phase_root_math_v1`. The former is a fail-closed entry with no
+initializer or successor route; the latter independently replays the q=1 G
+phase-root arithmetic while fixing every authority and issuance field to
+blocked. Their presence in this inventory does not turn either symbol into an
+authorized runtime role.
 
 Every Git subprocess is run with `GIT_NO_REPLACE_OBJECTS=1`. Commit and blob
 replace refs therefore cannot change the objects being attested. The resolver
@@ -112,9 +120,15 @@ codes. Independent runtime and proof review supplied those conservative
 blockers; a future revision must replace them with positive, separately reviewed
 authority evidence before activation.
 
+The separately pinned q=1 mathematical replay removes the narrower engineering
+gap “no independent arithmetic implementation exists.” It still supplies no
+complete terminal miss, common-classifier owner digest, runtime replay context
+or validator role grant. The active q=1 runtime therefore remains blocked by
+all three declared reason codes.
+
 ## Non-claim
 
-This Slice 1 does not grant or test producer/validator separation, integrate
+This Slice 1 does not grant producer/validator separation, integrate
 structured receipts into the runtime, establish a complete terminal schedule,
 activate the q=1 pilot, close Gate 2, close F1/F2/F3, close T6, or prove the
 Erdos--Straus conjecture.

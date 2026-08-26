@@ -25,6 +25,13 @@ producer、validator、projector、terminal scheduler 或 T5 ticket，也没有�
 validator authority 仍缺失。因此下文 Gate 2 的验收项一项也不能勾选，F1/F2/F3/T6
 状态保持开放。本附记记录 8 月 26 日执行结果，不改写下文 8 月 25 日历史审计判断。
 
+随后增加的 V2 zero-authority runtime 已把 production-facing migration 入口收紧为
+0 initializer、0 successor route 和不可变空 queue；旧 V1/raw/bool/terminal-miss 输入在该
+入口均不能获得权限。独立 q=1 phase-root 数学 replay 也已从原始整数重推 G 判据、唯一
+full-carrier chart、fresh source、Sol(p) 恒等 lift 和 T5 phase drop。两项仍是
+evidence-only：前者没有正向 route，后者没有 complete terminal、common E3 owner 或
+validator role grant，所以 Gate 2 验收状态不变。
+
 ---
 
 ## 0. 执行摘要

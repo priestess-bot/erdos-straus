@@ -27,6 +27,14 @@ digest 仍无 provenance，该模块也没有 issuance、admission、dispatch �
 活动 runtime 仍接受 legacy boolean validation，因此 Gate 2 尚未验收。权威状态保持
 F1=`OPEN_MINIMAL_GAPS`、F2=`OPEN`、F3=`OPEN_MINIMAL_GAPS`、T6=`OPEN`。
 
+在该边界上又完成了两项窄收口。production-facing V2 入口从精确 HEAD 解析当前 registry，
+并在 0 role、0 initializer、0 route、0 COMPLETE schedule 时拒绝所有 bootstrap 和
+successor；即使 acyclic V2 末端 bundle 结构自洽也不能入队。另一个完全独立于旧 q=1
+runtime/reproduction 的整数重放器，重新证明了 ordinary q=1 G 的 full-carrier root、fresh
+source、恒等 lift 与 T5 phase drop。它只消除了“独立数学实现缺失”，输出仍固定为
+`EVIDENCE_ONLY_MATH_REPLAY`，terminal/role authority 均为 `BLOCKED`，不构成 E1--E5
+签发或 selector 进展。
+
 ## 当前旗舰命题（合同内核核验至 2026-08-20）
 
 对核心素数 \(p\equiv1\pmod{24}\)，最终目标是下列双出口命题：

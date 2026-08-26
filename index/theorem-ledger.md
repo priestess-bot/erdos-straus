@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 33 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 942 |
+| 数学状态 | `established` | 944 |
 | 数学状态 | `open` | 13 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 42 |
-| 证明来源 | `repository_derivation` | 773 |
+| 证明来源 | `repository_derivation` | 775 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 20 |
-| 审阅状态 | `internal_review` | 923 |
+| 审阅状态 | `internal_review` | 925 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -213,6 +213,8 @@
 | [T6-F1 可达持久状态闭世界的条件引理与当前最小断点](../claims/t6-f1-reachable-state-closed-world-v1.md) (`t6-f1-reachable-state-closed-world-v1`) | `open` | `repository_derivation` | `internal_review` | - | 2026-08-23 |
 | [T6 Gate 0 HEAD-bound CI manifest integrity contract](../claims/t6-gate-zero-head-bound-ci-manifest-contract.md) (`t6-gate-zero-head-bound-ci-manifest-contract`) | `established` | `repository_derivation` | `internal_review` | `.github/workflows/research-kb-ci.yml`, `data/t6-wave1/t6-coordinator-role-registry-v1.json`, `data/t6-wave1/t6-complete-terminal-schedule-registry-v1.json` | 2026-08-26 |
 | [T6 live audit snapshot v2 provenance and state contract](../claims/t6-live-audit-snapshot-v2-contract.md) (`t6-live-audit-snapshot-v2-contract`) | `established` | `repository_derivation` | `internal_review` | `schemas/t6-live-audit-snapshot-v2.schema.json`, `schemas/t6-gate0-run-provenance-v1.schema.json`, `.github/workflows/research-kb-ci.yml` | 2026-08-26 |
+| [T6 persistent selector runtime V2 零授权拒绝截面](../claims/t6-persistent-selector-runtime-v2-zero-authority-cut.md) (`t6-persistent-selector-runtime-v2-zero-authority-cut`) | `established` | `repository_derivation` | `internal_review` | `scripts/t6_acyclic_transition_bundle_v2.py` | 2026-08-26 |
+| [q=1 G 到 full-carrier phase-root 的独立非授权数学重放](../claims/t6-q-one-phase-root-independent-math-replay-v1.md) (`t6-q-one-phase-root-independent-math-replay-v1`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-26 |
 | [3 的倍数标准源解不能保留两项提升到核心素数](../claims/three-divisible-standard-source-lift-obstruction.md) (`three-divisible-standard-source-lift-obstruction`) | `established` | `unspecified` | `unspecified` | `elsholtz_tao2013` | 2026-07-23 |
 | [三倍数标准源保留大尾并重组两项的完整递降族](../claims/three-divisible-standard-two-tail-descent.md) (`three-divisible-standard-two-tail-descent`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-24 |
 | [三倍数标准大尾提升的有效窗口定位](../claims/three-divisible-tail-window-localization.md) (`three-divisible-tail-window-localization`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-24 |

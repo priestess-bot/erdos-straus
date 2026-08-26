@@ -34,6 +34,14 @@
       "semantic_digest_method": "CANONICAL_JSON_POINTER_AND_GIT_BLOB_SHA256_V1"
     },
     {
+      "artifact_id": "persistent_selector_zero_authority_runtime_v2",
+      "kind": "PYTHON_SYMBOL",
+      "path": "scripts/t6_persistent_selector_runtime_v2.py",
+      "symbol": "open_runtime_v2",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "PYTHON_AST_SYMBOL_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
       "artifact_id": "persistent_state_family_precedence_v1",
       "kind": "PYTHON_SYMBOL",
       "path": "scripts/t6_persistent_selector_state_v1.py",
@@ -62,6 +70,14 @@
       "kind": "PYTHON_SYMBOL",
       "path": "scripts/t6_persistent_selector_state_v1.py",
       "symbol": "reject_before_persistent_queue_v1",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "PYTHON_AST_SYMBOL_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
+      "artifact_id": "q_one_phase_root_independent_math_replay_v1",
+      "kind": "PYTHON_SYMBOL",
+      "path": "scripts/t6_q_one_phase_root_independent_math_replay_v1.py",
+      "symbol": "replay_q_one_phase_root_math_v1",
       "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
       "semantic_digest_method": "PYTHON_AST_SYMBOL_AND_GIT_BLOB_SHA256_V1"
     },
@@ -149,5 +165,5 @@
       ]
     }
   ],
-  "proof_boundary": "HEAD_BOUND_EVIDENCE_ONLY_NO_ROLE_AUTHORITY. Slice 1 pins shared evidence but grants no producer, validator, projector, terminal-schedule, or T5-ticket role. The q=1 reason codes are declared blockers, not semantic proofs. This registry does not close Gate 2, F1, F2, F3, T6, or the Erdos-Straus conjecture."
+  "proof_boundary": "HEAD_BOUND_EVIDENCE_ONLY_NO_ROLE_AUTHORITY. Slice 1 pins shared evidence, the zero-authority V2 runtime entry, and the independent q=1 arithmetic replay, but grants no producer, validator, projector, terminal-schedule, initializer, or T5-ticket role. The q=1 reason codes are declared blockers, not semantic proofs. This registry does not close Gate 2, F1, F2, F3, T6, or the Erdos-Straus conjecture."
 }
