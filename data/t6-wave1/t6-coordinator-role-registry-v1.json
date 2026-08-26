@@ -306,6 +306,22 @@
       "semantic_digest_method": "PYTHON_AST_SYMBOL_AND_GIT_BLOB_SHA256_V1"
     },
     {
+      "artifact_id": "q_one_root_source_scoped_e1_rebind_receipt_schema_v1",
+      "kind": "JSON_POINTER",
+      "path": "schemas/t6-q-one-root-source-scoped-e1-rebind-v1.schema.json",
+      "json_pointer": "",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "CANONICAL_JSON_POINTER_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
+      "artifact_id": "q_one_root_source_scoped_e1_rebind_v1",
+      "kind": "PYTHON_SYMBOL",
+      "path": "scripts/t6_q_one_root_source_scoped_e1_rebind_v1.py",
+      "symbol": "rebind_q_one_root_source_scoped_e1_v1",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "PYTHON_AST_SYMBOL_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
       "artifact_id": "q_one_scope_aware_e1_validator_v2",
       "kind": "PYTHON_SYMBOL",
       "path": "scripts/t6_q_one_scope_aware_e1_validator_v2.py",
@@ -421,5 +437,5 @@
       ]
     }
   ],
-  "proof_boundary": "HEAD_BOUND_EVIDENCE_ONLY_NO_ROLE_AUTHORITY. Slice 1 pins shared evidence, the zero-authority V2 runtime entry, the independent q=1 arithmetic replay, the gaps-3/7/11 prefix scheduler and independent coverage verifier, the terminal-miss scope taxonomy, the evidence-only root envelope and terminal-decision assembler, the separate v2 prefix-role registry, the v3 q=1 root initializer/terminal-issuer authority layer, the v4 common-root-owner, scope-validation and root-source-scoped E1 layer, and the v5 V1 root-base registry plus its materializer, verifier, terminal adapter, controlled orchestrator and independent replayer. This v1 inventory itself grants no producer, validator, projector, terminal-schedule, initializer, issuer, V1 base-admission, E1, queue or T5-ticket role; its evidence pins do not import any v2, v3, v4 or v5 grant into v1. V3 production HIT receipts close only their parentless q=1 root occurrence. V3 production MISS receipts cover only registered gaps 3,7,11; V4 may combine an independently replayed MISS with exact root actualness and owner evidence to issue only ROOT_SOURCE_SCOPED_E1. V5 may, under its separately reviewed selected-commit trust condition, materialize and admit only a V1 ROOT_INITIALIZER_OUTPUT base state for a registered-prefix MISS; its V2-to-V1 owner and potential evidence are reanchored rather than copied, and it grants no queue, successor, producer, E1-E5, T5 or global authority. Generic or successor E1, target-side E2-E5, producer, re-entry and queue authority remain absent in this inventory. This registry does not close Gate 2, complete Gate 4, Gate 5, F1, F2, F3, T6, or the Erdos-Straus conjecture."
+  "proof_boundary": "HEAD_BOUND_EVIDENCE_ONLY_NO_ROLE_AUTHORITY. Slice 1 pins shared evidence, the zero-authority V2 runtime entry, the independent q=1 arithmetic replay, the gaps-3/7/11 prefix scheduler and independent coverage verifier, the terminal-miss scope taxonomy, the evidence-only root envelope and terminal-decision assembler, the separate v2 prefix-role registry, the v3 q=1 root initializer/terminal-issuer authority layer, the v4 common-root-owner, scope-validation and root-source-scoped E1 layer, the v5 V1 root-base registry plus its materializer, verifier, terminal adapter, controlled orchestrator and independent replayer, and only the V6 pure rebind module/schema as evidence. This v1 inventory itself grants no producer, validator, projector, terminal-schedule, initializer, issuer, V1 base-admission, rebind, E1, queue or T5-ticket role; its evidence pins do not import any v2, v3, v4, v5 or v6 grant into v1. V3 production HIT receipts close only their parentless q=1 root occurrence. V3 production MISS receipts cover only registered gaps 3,7,11; V4 may combine an independently replayed MISS with exact root actualness and owner evidence to issue only ROOT_SOURCE_SCOPED_E1. V5 may, under its separately reviewed selected-commit trust condition, materialize and admit only a V1 ROOT_INITIALIZER_OUTPUT base state for a registered-prefix MISS; its V2-to-V1 owner and potential evidence are reanchored rather than copied. V6 may conditionally rebind that V4 V2 occurrence to the V5 V1 source as DERIVED_WITNESS_NOT_V1_STATE_PATH, but it has no exact-HEAD registry/orchestrator/replayer and does not make generic or successor E1 true. V5/V6 grant no queue, successor, producer, E1-E5, T5 or global authority. Generic or successor E1, target-side E2-E5, producer, re-entry and queue authority remain absent in this inventory. This registry does not close Gate 2, complete Gate 4, Gate 5, F1, F2, F3, T6, or the Erdos-Straus conjecture."
 }

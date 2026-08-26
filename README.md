@@ -102,12 +102,28 @@ re-entry 均保持 false。
 
 V5 的 claim 仍是 `conditional` / `internal_review`：当前 resolver 绑定的是经审阅、仓库选定的
 exact commit，但该 commit 本身仍需要外部不可变或签名信任锚，任意同时改写 pins 与实现的提交
-不能继承权限。下一步是在满足此信任条件的 exact HEAD 上，把 V4
-`ROOT_SOURCE_SCOPED_E1` 重新绑定到该 admitted V1 source ID，然后才建立 target terminal、
-E2、target owner/E3、E4、E5 和 shared target admission。它仍不产生 successor、producer、
-queue mutation 或全局 selector 结论；Gate 2、完整 Gate 4、Gate 5、F1/F2/F3、T6 和猜想状态
-全部保持开放。详见
+不能继承权限。
+
+在这个条件之下，V6 已给出一个纯的、条件性 `internal_review` rebind：对同一已审阅 exact
+HEAD 的 V4 registered-prefix MISS occurrence 和 V5 admitted V1 base source，`p=1201,2521`
+可把 V2 `RawRootSourceStateV2` ID/digest 映射到 V5 的新 V1 source ID/wire digest，并重新计算
+V1 source owner、owner digest 与 source potential；这些值不复制 V2/V4 的 digest。`p=73,193,241441`
+的 terminal HIT 仍在任何 rebind 前抢占。输出是 namespaced sidecar
+`Q1_ROOT_SOURCE_SCOPED_E1_REBIND_V1`，固定
+`path_semantics=DERIVED_WITNESS_NOT_V1_STATE_PATH` 和 `not_transition=true`；只有
+`v4_root_source_scoped_e1`、`root_source_scoped_e1_rebound`、`source_rebind_authority` 三个
+namespaced rebind bit 为真。旧 structured-E1 parser 要求 `MISS_COMPLETE`，会拒绝此 receipt；
+generic/successor E1、producer、admission、queue/enqueue、E2--E5、T5、re-entry、global
+均为 false。
+
+V6 目前没有 exact-HEAD registry、orchestrator 或 independent replayer，且 V5 的 selected-commit
+trust condition 原样保留；它不能被称为 generic E1 或 production successor authority。下一步应
+先建立 V6 的 exact authority，或转向独立的 target terminal/E2 研究，但不能把该 rebind 直接当作
+通用 E1。它仍不产生 successor、producer、queue mutation 或全局 selector 结论；Gate 2、完整
+Gate 4、Gate 5、F1/F2/F3、T6 和猜想状态全部保持开放。详见
 [`docs/audits/T6_Q1_ROOT_V1_BASE_ADMISSION_CONDITIONAL_REVIEW_2026-08-27.md`](docs/audits/T6_Q1_ROOT_V1_BASE_ADMISSION_CONDITIONAL_REVIEW_2026-08-27.md)。
+V6 的条件性复核记录见
+[`docs/audits/T6_Q1_ROOT_SOURCE_SCOPED_E1_REBIND_CONDITIONAL_REVIEW_2026-08-27.md`](docs/audits/T6_Q1_ROOT_SOURCE_SCOPED_E1_REBIND_CONDITIONAL_REVIEW_2026-08-27.md)。
 
 ## 当前旗舰命题（合同内核核验至 2026-08-20）
 

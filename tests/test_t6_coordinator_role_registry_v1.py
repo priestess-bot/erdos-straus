@@ -215,6 +215,8 @@ class CoordinatorEvidenceInventoryTests(unittest.TestCase):
                 "q_one_root_prefix_scoped_e1_orchestrator_v2",
                 "q_one_root_prefix_scoped_e1_receipt_schema_v2",
                 "q_one_root_prefix_scoped_e1_receipt_verifier_v2",
+                "q_one_root_source_scoped_e1_rebind_receipt_schema_v1",
+                "q_one_root_source_scoped_e1_rebind_v1",
                 "q_one_scope_aware_e1_validator_v2",
                 "q_one_terminal_decision_assembler_v2",
                 "terminal_miss_scope_taxonomy_schema_v2",

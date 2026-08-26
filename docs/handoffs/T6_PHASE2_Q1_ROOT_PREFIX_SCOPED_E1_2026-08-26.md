@@ -1,4 +1,4 @@
-# T6 Phase 2 q=1 root prefix-scoped E1 handoff, with V5 base-admission update
+# T6 Phase 2 q=1 root prefix-scoped E1 handoff, with V5 base admission and V6 conditional rebind update
 
 Date: 2026-08-26
 
@@ -60,10 +60,57 @@ caller-selected commit an external trust root. The selected commit must have an
 external immutable or signed trust anchor before this narrow admission is used
 as a published authority.
 
-## Inputs downstream work may rely on
+## 2026-08-27 V6 pure rebind extension
 
-For the same exact HEAD, downstream work may consume only a V4 receipt whose
-entire chain independently replays:
+V6 supplies only a conditional, loader-free pure rebind between the existing
+objects. Given a V4 `ROOT_SOURCE_SCOPED_E1` receipt and a V5 admitted V1 base
+receipt at the same reviewed exact HEAD, it independently replays the common
+V2 root chain and emits a separate
+`Q1_ROOT_SOURCE_SCOPED_E1_REBIND_RECEIPT_V1`:
+
+```text
+V2 RawRootSourceStateV2 ID/digest
+  -> V5 V1 ROOT_INITIALIZER_OUTPUT ID/wire digest
+```
+
+For `p=1201` and `p=2521`, the V3 registered-prefix MISS controls pass this
+pure map. `p=73`, `p=193` and `p=241441` remain terminal-first HIT controls and
+preempt before a V4/V5/rebind pair exists. The V1 source owner, owner digest
+and source potential are recomputed against the V1 state; no V2 or V4 owner,
+candidate or potential digest is copied.
+
+The output is a namespaced derived witness, not a V1 state path or transition:
+
+```text
+representation_namespace = Q1_ROOT_SOURCE_SCOPED_E1_REBIND_V1
+path_semantics           = DERIVED_WITNESS_NOT_V1_STATE_PATH
+not_transition           = true
+```
+
+Only these authority markers are true:
+
+```text
+v4_root_source_scoped_e1       = true
+root_source_scoped_e1_rebound  = true
+source_rebind_authority         = true
+```
+
+Every generic/successor E1, producer, admission, queue/enqueue, E2--E5, T5,
+re-entry and global authority bit is false. The legacy structured-E1 parser
+rejects this receipt because it requires `MISS_COMPLETE`; V6 has only the
+registered-priority prefix MISS with `next_unchecked_gap=15` and
+`global_exhaustion=false`.
+
+V6 has no exact-HEAD registry, controlled orchestrator or independent replayer.
+It is therefore `conditional` / `internal_review`, and the V5
+selected-commit/external-trust condition persists. It is not a generic E1,
+production successor or queue authority.
+
+## Inputs downstream work may inspect
+
+For the same exact HEAD, later proof design may inspect the following V4/V5
+facts. V6 may combine them only into its namespaced source-correspondence
+sidecar; they do not by themselves authorize a generic E1 or successor.
 
 - actual ordinary parentless q=1 G source and root initializer preimages;
 - exact V1 owner `type_ii_relation_g_endpoint`, with identical V1 owner digest;
@@ -127,7 +174,7 @@ The conservative migration path is therefore architecture A:
 V4 actual q=1 G occurrence
   -> canonical V1 ROOT_INITIALIZER_OUTPUT materialization
   -> independent common base admission (queue still false)
-  -> V4 E1 rebound to the new V1 source ID
+  -> V6 pure V4-to-V1 source rebind (still no successor authority)
   -> ordinary phase-root successor pipeline
 ```
 
@@ -141,12 +188,14 @@ orchestration and post-issuance replay remain non-roles. The new V1 state and
 owner digests are recomputed; V4 digests are bound to a different V2 state ID
 and cannot be copied.
 
-## Next phase: rebind V4 E1, then one phase-root E2--E5 pilot
+## Next phase: establish V6 exact authority or pivot to target-terminal/E2 research
 
-After the V5 base gate is usable under its selected-commit trust condition, the
-accepted V4 occurrence must be rebound to the exact admitted V1 source ID
-before it can become one fully replayable q=1 G to Type-I phase-root edge.
-Keep the remaining work in the following dependency order.
+The object rebind itself now exists only as a pure conditional sidecar. It must
+not be promoted to generic E1. The next authority-bearing step is either to
+build a V6 exact-HEAD registry, controlled orchestrator and independent
+replayer for this fixed rebind policy, or to independently develop the
+target-terminal/E2 layer while leaving V6 non-authoritative. A full q=1 G to
+Type-I phase-root edge still requires the following dependency order.
 
 ### 0. Completed conditionally: V1 root source materialization and base admission
 
@@ -160,15 +209,25 @@ evidence and does not invoke a T5 evaluator or issue a T5 ticket.
 The V1 state preimage is derived from the V2 root source and V3 MISS only; V4
 owner/scope receipts are independently replayed after the new state ID exists
 and may enter the final admission sidecar, but are not encoded into the state
-before classification. V4 E1/candidate data is excluded entirely. The next new
-proof object must bind the already-issued V4 scoped E1 to this precise V1 source
-ID rather than reuse its V2 ID.
+before classification. V4 E1/candidate data is excluded entirely. V6 now binds
+the already-issued V4 scoped occurrence to this precise V1 source ID as a pure
+sidecar, rather than reusing its V2 ID; it still carries no generic E1 or
+successor authority.
 
 The sidecar must preserve gaps `[3,7,11]`, `next_unchecked_gap=15` and
 `global_exhaustion=false`, and must keep successor, E1--E5 and queue authority
 false.
 
-### 1. E2 deterministic target projection
+### 1. Completed conditionally: V6 source rebind without successor authority
+
+V6 proves the object correspondence required to name the exact V1 source in
+later work. It explicitly maps the V4 V2 source occurrence to the V5 V1 base
+state and preserves the finite prefix scope. It does not issue a structured E1
+receipt, admit a branch, construct a target, or run a T5 comparison. Before a
+producer consumes this map, an independently reviewed exact-HEAD authority
+layer must freeze its policy, loader/orchestration path and replay boundary.
+
+### 2. E2 deterministic target projection
 
 Freeze one canonical target schema and projector whose only inputs are the
 accepted V4 receipt and exact source preimages.  It must serialize every legal
@@ -192,7 +251,7 @@ equation-level registered gaps `[3,7,11]` and the target-local anchor-sink
 predicate in a fixed order.  The result remains scope-bound with
 `global_exhaustion=false`; p=1201 gap 23 stays outside scope.
 
-### 2. Common target owner and E3 normal form
+### 3. Common target owner and E3 normal form
 
 Pass the serialized target through the actual frozen persistent-state facts
 validator and all fifteen V1 family predicates.  Prove that the unique owner is
@@ -204,7 +263,7 @@ This target classifier must be a distinct target-side authority.  The current
 V4 root owner is scoped to `ROOT_SOURCE_DISPATCH_ONLY` and cannot be reused as
 target admission merely because both use the V1 grammar.
 
-### 3. E4 universal identity lift
+### 4. E4 universal identity lift
 
 Issue a separate E4 receipt for the explicit map
 
@@ -218,7 +277,7 @@ bind the exact source and target state IDs, and show that the formula reads no
 unknown solution.  A boolean copied from the existing math replay is not E4
 authority.
 
-### 4. E5/T5 phase-drop ticket
+### 5. E5/T5 phase-drop ticket
 
 Recompute both full seven-component T5 potentials from the accepted persistent
 source and final target.  The expected ticket is a `PHASE_DROP` from
@@ -226,7 +285,7 @@ source and final target.  The expected ticket is a `PHASE_DROP` from
 contract, not by the E2 projector or edge assembler.  Bind the no-return rule
 that forbids a Type-I target from re-entering the Type-II G handoff phase.
 
-### 5. Common edge admission and re-entry
+### 6. Common edge admission and re-entry
 
 Only after E2, E3, E4 and E5 independently replay should a new coordinator
 extension grant a phase-root producer/branch and combine the five receipts into
@@ -240,9 +299,10 @@ remain absent from all failed or partial paths.
 The phase-root pilot is ready for independent review only when it demonstrates:
 
 - p1201 and p2521: V3 prefix MISS, V5 base admission under the selected-commit
-  trust condition, V4 scoped E1 rebound to its admitted V1 source ID,
-  deterministic E2 target, unique target owner/E3, universal E4, strict E5 and
-  common target admission/re-entry;
+  trust condition, V6's V4-to-V5 pure rebind, and then either a separately
+  reviewed V6 exact authority layer or an independently authorized target path;
+  only after that deterministic E2 target, unique target owner/E3, universal
+  E4, strict E5 and common target admission/re-entry may be evaluated;
 - p73, p193 and p241441: production HIT still preempts the producer before E1;
 - gap-23 evidence cannot alter the registered-prefix scope or become global
   exhaustion;
