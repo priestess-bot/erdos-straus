@@ -102,4 +102,6 @@ not show that other gaps or other terminal families miss, does not prove a
 complete terminal schedule, and does not connect a certificate or miss to an
 actual T6 source occurrence. In particular, the q=1 G condition constrains
 \(6s-5\), not the full signed divisor-ratio box of \(s\); no cross-linear-form
-coverage theorem was supplied.
+coverage theorem was supplied. The compact control
+\(p=53089,\ s=2213\equiv5\pmod {23}\) confirms that the strengthened
+gap-23 residual, q=1 G, and the complete \(3,7,11\) prefix miss can coexist.

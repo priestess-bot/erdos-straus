@@ -141,7 +141,8 @@ MISS 压缩为两个四元残余盒，同时给出 q=1 G 控制
 \(p=21169\)：完整自然前缀 gaps 3/7/11/15/19/23 均 MISS。故该有限前缀仍不能
 称为 complete terminal universe。两盒还等价于一个精确因子型：残余 \(s\) 仅能有
 一个一次出现、残数为 \(s\bmod23\) 的素因子，其余素因子全为 \(1\bmod23\)；
-它把下一步压缩为 q=1 G 与该因子型之间的跨线性问题。详见
+控制 \(p=53089\) 表明该因子型可与 q=1 G 及完整 3/7/11 prefix miss 共存，
+因此不能以矛盾清空；下一步必须寻找更强的跨线性出口。详见
 [gap 23 两盒分类](claims/type-I-type-II-gap-23-two-box-classification.md)。
 
 同一轮复核还发现了 E2 对象层的精确阻断：当前 V1 successor 的 state ID 已哈希

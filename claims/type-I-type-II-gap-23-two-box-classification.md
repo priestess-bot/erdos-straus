@@ -468,7 +468,36 @@ factorization of \(s\). Since
 no existing q=1 G or registered-prefix theorem forces either residual box to
 be empty. In its exact factor form, the remaining cross-linear question is
 whether q=1 G and the registered prefix can coexist with the factorization
-(32). A new cross-linear-form theorem would be needed for that.
+(32). They do coexist: the core prime
+
+\[
+p=53089,\qquad s=2213\equiv5\pmod {23},
+\qquad 6s-5=13273=13\cdot1021
+\tag{35}
+\]
+
+has the residual factorization \(s=q\) with \(q=2213\) prime, and is q=1 G
+because \(13,1021\equiv1\pmod3\). Its complete Bradford divisor-residue
+screens at gaps \(3,7,11\) are respectively
+
+\[
+\begin{array}{c|c|c|c}
+m&x_m\text{ factorization}&e_{\rm I}&d_{\rm II}\\ \hline
+3&13\cdot1021&2&2\\
+7&2\cdot6637&5&5\\
+11&3^2\cdot5^2\cdot59&8&2
+\end{array}
+\tag{36}
+\]
+
+with divisor-residue sets
+\(\{1\}\), \(\{1,2,4\}\), and \(\{1,3,4,5,9\}\), so all three gaps miss.
+Thus the q=1 G condition and the current prefix miss cannot eliminate the
+gap-23 residual by contradiction. This is still only a finite terminal-scope
+control: it does not determine other terminal families or a Type-I successor.
+All primality and factorization assertions in (35)--(36) are checkable by
+trial division through their square-root bounds. A new cross-linear-form
+theorem would need genuinely stronger input.
 
 This card does not create a target terminal receipt, prove a complete terminal
 schedule, issue E1--E5, authorize a producer or queue, close a T6 residual,
