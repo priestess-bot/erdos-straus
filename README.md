@@ -55,6 +55,13 @@ blob、稳定 symbol AST、local-import closure 和 semantic digest 四级 pin �
 schedule 结果；该 envelope 同样只有 evidence authority。两项合起来仍不能签发 production
 terminal receipt 或激活 q=1 pilot。
 
+最新的 exact-HEAD decision assembler 已把上述两层真正串成一次非授权执行：先从 HEAD
+blob fresh compile/exec registry、root envelope、scheduler 和 coverage verifier，再构造 root
+state、派生 domain、执行并独立重放。`p=73,193` 分别给出 Type II/Type I hit evidence，
+`p=1201,2521` 给出 prefix-miss evidence；decision ID 是 state 的后置 sidecar，不回写 state
+ID。该模块仍固定 `source_actualness=false`，initializer/issuer/terminal/E1/queue authority
+和 producer continuation 全为 false，因此它验证了完整调用 DAG，但尚未签发 terminal。
+
 ## 当前旗舰命题（合同内核核验至 2026-08-20）
 
 对核心素数 \(p\equiv1\pmod{24}\)，最终目标是下列双出口命题：

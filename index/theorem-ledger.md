@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 33 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 948 |
+| 数学状态 | `established` | 949 |
 | 数学状态 | `open` | 13 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 42 |
-| 证明来源 | `repository_derivation` | 780 |
+| 证明来源 | `repository_derivation` | 781 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 20 |
-| 审阅状态 | `internal_review` | 930 |
+| 审阅状态 | `internal_review` | 931 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -215,6 +215,7 @@
 | [T6 Gate 0 HEAD-bound CI manifest integrity contract](../claims/t6-gate-zero-head-bound-ci-manifest-contract.md) (`t6-gate-zero-head-bound-ci-manifest-contract`) | `established` | `repository_derivation` | `internal_review` | `.github/workflows/research-kb-ci.yml`, `data/t6-wave1/t6-coordinator-role-registry-v1.json`, `data/t6-wave1/t6-complete-terminal-schedule-registry-v1.json` | 2026-08-26 |
 | [T6 live audit snapshot v2 provenance and state contract](../claims/t6-live-audit-snapshot-v2-contract.md) (`t6-live-audit-snapshot-v2-contract`) | `established` | `repository_derivation` | `internal_review` | `schemas/t6-live-audit-snapshot-v2.schema.json`, `schemas/t6-gate0-run-provenance-v1.schema.json`, `.github/workflows/research-kb-ci.yml` | 2026-08-26 |
 | [T6 persistent selector runtime V2 零授权拒绝截面](../claims/t6-persistent-selector-runtime-v2-zero-authority-cut.md) (`t6-persistent-selector-runtime-v2-zero-authority-cut`) | `established` | `repository_derivation` | `internal_review` | `scripts/t6_acyclic_transition_bundle_v2.py` | 2026-08-26 |
+| [q=1 exact-HEAD non-authorizing terminal decision assembler V2](../claims/t6-q-one-exact-head-terminal-decision-assembler-v2.md) (`t6-q-one-exact-head-terminal-decision-assembler-v2`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-26 |
 | [q=1 G 到 full-carrier phase-root 的独立非授权数学重放](../claims/t6-q-one-phase-root-independent-math-replay-v1.md) (`t6-q-one-phase-root-independent-math-replay-v1`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-26 |
 | [q=1 注册优先前缀 gaps 3/7/11 的独立数学证据层](../claims/t6-q-one-registered-priority-prefix-independent-math-evidence-v1.md) (`t6-q-one-registered-priority-prefix-independent-math-evidence-v1`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-26 |
 | [q=1 G evidence-only V2 root initializer 的无环 source envelope](../claims/t6-q-one-root-initializer-envelope-v2-contract.md) (`t6-q-one-root-initializer-envelope-v2-contract`) | `established` | `repository_derivation` | `internal_review` | `schemas/t6-q-one-root-initializer-envelope-v2.schema.json` | 2026-08-26 |

@@ -36,6 +36,8 @@ sources:
     role: later shape-only distinction between registered-prefix and universe miss semantics
   - claim: t6-coordinator-head-bound-terminal-prefix-role-registry-v2
     role: later exact-HEAD scheduler/verifier capabilities with issuer explicitly absent
+  - claim: t6-q-one-exact-head-terminal-decision-assembler-v2
+    role: later source-bound execution evidence with every issuance authority still false
 visibility: public
 last_checked: '2026-08-26'
 ---
@@ -124,3 +126,6 @@ receipt、自封装 TEST_ONLY/production mapping，以及直接构造的 typed c
 同样没有 issuer 或 E1 权限。后续 coordinator registry v2 虽已固定并授权 gaps 3/7/11
 scheduler 与 independent coverage verifier 的代码 capability，但其
 `issuer_count=0`；因此仍不改变本卡“当前不可签发”的结论。
+后续 exact-HEAD assembler 已把 evidence-only root state 与实际 scheduler/coverage replay
+绑定为后置 decision，但同样固定 issuer/terminal/E1/queue authority 为 false，仍不是本卡
+所缺的 production receipt。

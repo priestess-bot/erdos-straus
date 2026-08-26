@@ -13,7 +13,8 @@ statement: >-
   zero-authority V2 runtime entry, an independent q=1 arithmetic replay, the
   gaps-3/7/11 prefix scheduler and independent coverage verifier, and the
   terminal-miss scope taxonomy, evidence-only root envelope and separate v2
-  prefix-role registry are pinned only as evidence. The q=1 reason
+  prefix-role registry, plus the non-authorizing exact-HEAD decision assembler,
+  are pinned only as evidence. The q=1 reason
   codes are declared blockers, not semantic
   proofs. This inventory grants no producer, validator, projector, terminal
   scheduler or T5-ticket authority and does not close Gate 2 or any mathematical
@@ -81,6 +82,11 @@ The v2 registry source/resolver/schema are also pinned here, but their two
 schedule/verifier grants remain a separate authority domain and are not imported
 into this v1 inventory. Presence in this inventory does not turn any symbol into
 an authorized v1 runtime role.
+
+The decision assembler fresh-executes the four dependency blobs at an exact HEAD
+and binds the root state to scheduler and coverage results. It still fixes source
+actualness, initializer, issuer, terminal, E1 and queue authority to false. Its
+evidence pin here is not an issuer grant.
 
 Every Git subprocess is run with `GIT_NO_REPLACE_OBJECTS=1`. Commit and blob
 replace refs therefore cannot change the objects being attested. The resolver

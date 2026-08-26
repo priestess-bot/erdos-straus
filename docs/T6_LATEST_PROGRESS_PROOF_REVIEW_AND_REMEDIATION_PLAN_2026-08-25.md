@@ -47,6 +47,12 @@ taxonomy 和 q=1 gaps 3/7/11 完整 divisor-prefix evidence。这里必须区分
 decision 只能作为后置 sidecar，不能进入 state identity。两者尚未由 issuer 串接，因此仍是
 Gate 4 的前置闭合，不是 production terminal receipt。
 
+在此之上，exact-HEAD non-authorizing decision assembler 已完成 root state -> derived domain ->
+scheduler -> independent coverage -> HIT/MISS sidecar 的实际纵向执行。为排除 stale import，它
+不调用预加载依赖，而从 requested HEAD blobs fresh compile/exec 四个 dependency；命中与 miss
+controls 均通过。输出仍将 source actualness、initializer/issuer/terminal/E1/queue 权限固定为
+false，所以这一步关闭的是装配与哈希依赖，不是 issuer 或 Gate 4。
+
 ---
 
 ## 0. 执行摘要

@@ -193,6 +193,7 @@ class CoordinatorEvidenceInventoryTests(unittest.TestCase):
                 "q_one_priority_prefix_coverage_verifier_v1",
                 "q_one_priority_prefix_scheduler_v1",
                 "q_one_root_initializer_envelope_v2",
+                "q_one_terminal_decision_assembler_v2",
                 "terminal_miss_scope_taxonomy_schema_v2",
                 "terminal_miss_scope_taxonomy_v2",
             }
