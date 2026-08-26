@@ -1,0 +1,411 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/priestess-bot/erdos_straus/schemas/t6-acyclic-transition-bundle-v2.schema.json",
+  "title": "T6 non-authorizing acyclic transition shapes V2",
+  "oneOf": [
+    { "$ref": "#/$defs/CanonicalTargetProjectionV2" },
+    { "$ref": "#/$defs/PreclassificationDigestV2" },
+    { "$ref": "#/$defs/TerminalDigestSetV2" },
+    { "$ref": "#/$defs/T5CoordinateDraftV2" },
+    { "$ref": "#/$defs/EdgeAnchorV2" },
+    { "$ref": "#/$defs/RawTargetStateV2" },
+    { "$ref": "#/$defs/FinalTransitionReceiptBundleV2" },
+    { "$ref": "#/$defs/StateAdmissionSidecarV2" }
+  ],
+  "$defs": {
+    "digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "identifier": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^\\S(?:.*\\S)?$"
+    },
+    "positiveInteger": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "pureValue": {
+      "oneOf": [
+        { "type": "null" },
+        { "type": "string" },
+        { "type": "integer" },
+        {
+          "type": "array",
+          "items": { "$ref": "#/$defs/pureValue" }
+        },
+        { "$ref": "#/$defs/pureObject" }
+      ]
+    },
+    "pureObject": {
+      "type": "object",
+      "propertyNames": {
+        "allOf": [
+          { "minLength": 1 },
+          {
+            "not": {
+              "pattern": "^(?:[eE][1-5](?:_|$)|terminal(?:_|$)|(?:edge_)?anchor(?:_|$)|(?:source_|target_|parent_)?state(?:_|$)|owner(?:_|$)|potential(?:_|$)|(?:parent_)?transition(?:_|$)|(?:verified_)?bundle(?:_|$)|(?:final_)?receipt(?:_|$)|admission(?:_|$)|enqueue(?:_|$)|queue(?:_|$))"
+            }
+          }
+        ]
+      },
+      "additionalProperties": { "$ref": "#/$defs/pureValue" }
+    },
+    "coordinates": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "minItems": 7,
+      "maxItems": 7
+    },
+    "SuccessorOriginAnchorRefV2": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "edge_anchor_id",
+        "edge_anchor_digest"
+      ],
+      "properties": {
+        "edge_anchor_id": {
+          "type": "string",
+          "pattern": "^edge-anchor:[0-9a-f]{64}$"
+        },
+        "edge_anchor_digest": { "$ref": "#/$defs/digest" }
+      }
+    },
+    "CanonicalTargetProjectionV2": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_type",
+        "schema_version",
+        "target_schema_id",
+        "target_schema_version",
+        "root_context",
+        "equation_rank",
+        "facts",
+        "mark_behavior",
+        "projector_id",
+        "projector_digest",
+        "tie_break_rule_id",
+        "tie_break_rule_digest",
+        "projection_id",
+        "digest"
+      ],
+      "properties": {
+        "artifact_type": { "const": "CanonicalTargetProjectionV2" },
+        "schema_version": { "const": 2 },
+        "target_schema_id": { "$ref": "#/$defs/identifier" },
+        "target_schema_version": { "$ref": "#/$defs/positiveInteger" },
+        "root_context": { "$ref": "#/$defs/identifier" },
+        "equation_rank": { "$ref": "#/$defs/positiveInteger" },
+        "facts": { "$ref": "#/$defs/pureObject" },
+        "mark_behavior": { "$ref": "#/$defs/identifier" },
+        "projector_id": { "$ref": "#/$defs/identifier" },
+        "projector_digest": { "$ref": "#/$defs/digest" },
+        "tie_break_rule_id": { "$ref": "#/$defs/identifier" },
+        "tie_break_rule_digest": { "$ref": "#/$defs/digest" },
+        "projection_id": {
+          "type": "string",
+          "pattern": "^projection:[0-9a-f]{64}$"
+        },
+        "digest": { "$ref": "#/$defs/digest" }
+      }
+    },
+    "PreclassificationDigestV2": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_type",
+        "schema_version",
+        "projection_id",
+        "projection_digest",
+        "normal_form_verifier_id",
+        "normal_form_verifier_digest",
+        "predicate_results_digest",
+        "precedence_table_id",
+        "precedence_table_digest",
+        "preclassification_id",
+        "digest"
+      ],
+      "properties": {
+        "artifact_type": { "const": "PreclassificationDigestV2" },
+        "schema_version": { "const": 2 },
+        "projection_id": {
+          "type": "string",
+          "pattern": "^projection:[0-9a-f]{64}$"
+        },
+        "projection_digest": { "$ref": "#/$defs/digest" },
+        "normal_form_verifier_id": { "$ref": "#/$defs/identifier" },
+        "normal_form_verifier_digest": { "$ref": "#/$defs/digest" },
+        "predicate_results_digest": { "$ref": "#/$defs/digest" },
+        "precedence_table_id": { "$ref": "#/$defs/identifier" },
+        "precedence_table_digest": { "$ref": "#/$defs/digest" },
+        "preclassification_id": {
+          "type": "string",
+          "pattern": "^preclassification:[0-9a-f]{64}$"
+        },
+        "digest": { "$ref": "#/$defs/digest" }
+      }
+    },
+    "TerminalDigestSetV2": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_type",
+        "schema_version",
+        "projection_id",
+        "projection_digest",
+        "source_state_id",
+        "source_state_digest",
+        "schedule_id",
+        "schedule_digest",
+        "result_digest",
+        "coverage_scope_digest",
+        "terminal_digest_set_id",
+        "digest"
+      ],
+      "properties": {
+        "artifact_type": { "const": "TerminalDigestSetV2" },
+        "schema_version": { "const": 2 },
+        "projection_id": {
+          "type": "string",
+          "pattern": "^projection:[0-9a-f]{64}$"
+        },
+        "projection_digest": { "$ref": "#/$defs/digest" },
+        "source_state_id": { "$ref": "#/$defs/identifier" },
+        "source_state_digest": { "$ref": "#/$defs/digest" },
+        "schedule_id": { "$ref": "#/$defs/identifier" },
+        "schedule_digest": { "$ref": "#/$defs/digest" },
+        "result_digest": { "$ref": "#/$defs/digest" },
+        "coverage_scope_digest": { "$ref": "#/$defs/digest" },
+        "terminal_digest_set_id": {
+          "type": "string",
+          "pattern": "^terminal-digests:[0-9a-f]{64}$"
+        },
+        "digest": { "$ref": "#/$defs/digest" }
+      }
+    },
+    "T5CoordinateDraftV2": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_type",
+        "schema_version",
+        "projection_id",
+        "projection_digest",
+        "taxonomy_id",
+        "taxonomy_digest",
+        "coordinates",
+        "t5_coordinate_draft_id",
+        "digest"
+      ],
+      "properties": {
+        "artifact_type": { "const": "T5CoordinateDraftV2" },
+        "schema_version": { "const": 2 },
+        "projection_id": {
+          "type": "string",
+          "pattern": "^projection:[0-9a-f]{64}$"
+        },
+        "projection_digest": { "$ref": "#/$defs/digest" },
+        "taxonomy_id": { "$ref": "#/$defs/identifier" },
+        "taxonomy_digest": { "$ref": "#/$defs/digest" },
+        "coordinates": { "$ref": "#/$defs/coordinates" },
+        "t5_coordinate_draft_id": {
+          "type": "string",
+          "pattern": "^t5-coordinate-draft:[0-9a-f]{64}$"
+        },
+        "digest": { "$ref": "#/$defs/digest" }
+      }
+    },
+    "EdgeAnchorV2": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_type",
+        "schema_version",
+        "source_state_id",
+        "source_state_digest",
+        "producer_id",
+        "producer_digest",
+        "branch_id",
+        "candidate_witness_digest",
+        "projection_id",
+        "projection_digest",
+        "preclassification_id",
+        "preclassification_digest",
+        "terminal_digest_set_id",
+        "terminal_digest_set_digest",
+        "t5_coordinate_draft_id",
+        "t5_coordinate_draft_digest",
+        "edge_anchor_id",
+        "digest"
+      ],
+      "properties": {
+        "artifact_type": { "const": "EdgeAnchorV2" },
+        "schema_version": { "const": 2 },
+        "source_state_id": { "$ref": "#/$defs/identifier" },
+        "source_state_digest": { "$ref": "#/$defs/digest" },
+        "producer_id": { "$ref": "#/$defs/identifier" },
+        "producer_digest": { "$ref": "#/$defs/digest" },
+        "branch_id": { "$ref": "#/$defs/identifier" },
+        "candidate_witness_digest": { "$ref": "#/$defs/digest" },
+        "projection_id": {
+          "type": "string",
+          "pattern": "^projection:[0-9a-f]{64}$"
+        },
+        "projection_digest": { "$ref": "#/$defs/digest" },
+        "preclassification_id": {
+          "type": "string",
+          "pattern": "^preclassification:[0-9a-f]{64}$"
+        },
+        "preclassification_digest": { "$ref": "#/$defs/digest" },
+        "terminal_digest_set_id": {
+          "type": "string",
+          "pattern": "^terminal-digests:[0-9a-f]{64}$"
+        },
+        "terminal_digest_set_digest": { "$ref": "#/$defs/digest" },
+        "t5_coordinate_draft_id": {
+          "type": "string",
+          "pattern": "^t5-coordinate-draft:[0-9a-f]{64}$"
+        },
+        "t5_coordinate_draft_digest": { "$ref": "#/$defs/digest" },
+        "edge_anchor_id": {
+          "type": "string",
+          "pattern": "^edge-anchor:[0-9a-f]{64}$"
+        },
+        "digest": { "$ref": "#/$defs/digest" }
+      }
+    },
+    "RawTargetStateV2": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_type",
+        "schema_version",
+        "target_schema_id",
+        "target_schema_version",
+        "root_context",
+        "equation_rank",
+        "facts",
+        "mark_behavior",
+        "successor_origin",
+        "state_id",
+        "digest"
+      ],
+      "properties": {
+        "artifact_type": { "const": "RawTargetStateV2" },
+        "schema_version": { "const": 2 },
+        "target_schema_id": { "$ref": "#/$defs/identifier" },
+        "target_schema_version": { "$ref": "#/$defs/positiveInteger" },
+        "root_context": { "$ref": "#/$defs/identifier" },
+        "equation_rank": { "$ref": "#/$defs/positiveInteger" },
+        "facts": { "$ref": "#/$defs/pureObject" },
+        "mark_behavior": { "$ref": "#/$defs/identifier" },
+        "successor_origin": {
+          "$ref": "#/$defs/SuccessorOriginAnchorRefV2"
+        },
+        "state_id": {
+          "type": "string",
+          "pattern": "^state:[0-9a-f]{64}$"
+        },
+        "digest": { "$ref": "#/$defs/digest" }
+      }
+    },
+    "FinalTransitionReceiptBundleV2": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_type",
+        "schema_version",
+        "source_state_id",
+        "source_state_digest",
+        "target_state_id",
+        "target_state_digest",
+        "edge_anchor_id",
+        "edge_anchor_digest",
+        "e1_occurrence_receipt_digest",
+        "e2_projection_receipt_digest",
+        "e3_typing_receipt_digest",
+        "e4_lift_receipt_digest",
+        "e5_ticket_receipt_digest",
+        "transition_id",
+        "digest"
+      ],
+      "properties": {
+        "artifact_type": { "const": "FinalTransitionReceiptBundleV2" },
+        "schema_version": { "const": 2 },
+        "source_state_id": { "$ref": "#/$defs/identifier" },
+        "source_state_digest": { "$ref": "#/$defs/digest" },
+        "target_state_id": {
+          "type": "string",
+          "pattern": "^state:[0-9a-f]{64}$"
+        },
+        "target_state_digest": { "$ref": "#/$defs/digest" },
+        "edge_anchor_id": {
+          "type": "string",
+          "pattern": "^edge-anchor:[0-9a-f]{64}$"
+        },
+        "edge_anchor_digest": { "$ref": "#/$defs/digest" },
+        "e1_occurrence_receipt_digest": { "$ref": "#/$defs/digest" },
+        "e2_projection_receipt_digest": { "$ref": "#/$defs/digest" },
+        "e3_typing_receipt_digest": { "$ref": "#/$defs/digest" },
+        "e4_lift_receipt_digest": { "$ref": "#/$defs/digest" },
+        "e5_ticket_receipt_digest": { "$ref": "#/$defs/digest" },
+        "transition_id": {
+          "type": "string",
+          "pattern": "^transition:[0-9a-f]{64}$"
+        },
+        "digest": { "$ref": "#/$defs/digest" }
+      }
+    },
+    "StateAdmissionSidecarV2": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_type",
+        "schema_version",
+        "state_id",
+        "state_digest",
+        "transition_id",
+        "transition_bundle_digest",
+        "owner_id",
+        "owner_digest",
+        "grammar_digest",
+        "admission_gate_digest",
+        "target_potential_receipt_digest",
+        "state_admission_receipt_digest",
+        "sidecar_id",
+        "digest"
+      ],
+      "properties": {
+        "artifact_type": { "const": "StateAdmissionSidecarV2" },
+        "schema_version": { "const": 2 },
+        "state_id": {
+          "type": "string",
+          "pattern": "^state:[0-9a-f]{64}$"
+        },
+        "state_digest": { "$ref": "#/$defs/digest" },
+        "transition_id": {
+          "type": "string",
+          "pattern": "^transition:[0-9a-f]{64}$"
+        },
+        "transition_bundle_digest": { "$ref": "#/$defs/digest" },
+        "owner_id": { "$ref": "#/$defs/identifier" },
+        "owner_digest": { "$ref": "#/$defs/digest" },
+        "grammar_digest": { "$ref": "#/$defs/digest" },
+        "admission_gate_digest": { "$ref": "#/$defs/digest" },
+        "target_potential_receipt_digest": { "$ref": "#/$defs/digest" },
+        "state_admission_receipt_digest": { "$ref": "#/$defs/digest" },
+        "sidecar_id": {
+          "type": "string",
+          "pattern": "^state-admission-sidecar:[0-9a-f]{64}$"
+        },
+        "digest": { "$ref": "#/$defs/digest" }
+      }
+    }
+  }
+}
