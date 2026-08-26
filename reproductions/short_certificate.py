@@ -350,7 +350,7 @@ def verify_certificate(certificate: GapCertificate) -> bool:
     if 4 * x - p != m or x * 4 != p + m or x * 2 > p or d <= 0 or x * x % d:
         return False
     if certificate.certificate_type == "I":
-        if (p * x + d) % m or p % y == 0:
+        if (p * x + d) % m or y % p == 0:
             return False
     elif certificate.certificate_type == "II":
         if d > x or (x + d) % m or y % p:
