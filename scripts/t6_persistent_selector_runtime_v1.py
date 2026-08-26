@@ -85,6 +85,7 @@ class RuntimeRejectCode(str, Enum):
     T5_DESCRIPTOR_INVALID = "T5_DESCRIPTOR_INVALID"
     T5_TICKET_INVALID = "T5_TICKET_INVALID"
     TARGET_ADMISSION_REJECTED = "TARGET_ADMISSION_REJECTED"
+    BOOTSTRAP_NOT_INITIALIZER = "BOOTSTRAP_NOT_INITIALIZER"
     DUPLICATE_STATE = "DUPLICATE_STATE"
     DEAD_END = "DEAD_END"
 
@@ -835,6 +836,14 @@ class PersistentSelectorRuntimeV1:
                 f"initializer target rejected: {decision.reason_code.value}",
             )
         header = state_contract.extract_verified_selector_header_v1(raw_state, rules)
+        if (
+            header.queue_gate != state_contract.ROOT_INITIALIZER_OUTPUT
+            or header.parent_state_id is not None
+        ):
+            raise RuntimeContractError(
+                RuntimeRejectCode.BOOTSTRAP_NOT_INITIALIZER,
+                "bootstrap accepts only a parentless registered initializer output",
+            )
         potential = compute_t5_potential_v1(
             descriptor=t5_descriptor,
             facts=header.facts,

@@ -221,6 +221,24 @@ class RuntimeBoundaryTests(unittest.TestCase):
         self.assertEqual(self.root.owner, "type_i_full_carrier_post_g")
         self.assertEqual(len(self.runtime.queue_snapshot_v1()), 1)
 
+    def test_bootstrap_rejects_a_self_sealed_successor_without_parent_replay(self):
+        decision = self.runtime.run_state_once_v1(self.root)
+        self.assertTrue(decision.accepted)
+        assert decision.successor is not None
+        successor_item = self.runtime.queue_snapshot_v1()[-1]
+
+        empty_runtime = runtime_setup()
+        with self.assertRaises(runtime.RuntimeContractError) as caught:
+            empty_runtime.bootstrap_nonterminal_v1(
+                successor_item.raw_state,
+                successor_item.t5_descriptor,
+            )
+
+        self.assertEqual(
+            caught.exception.code, runtime.RuntimeRejectCode.BOOTSTRAP_NOT_INITIALIZER
+        )
+        self.assertEqual(empty_runtime.queue_snapshot_v1(), ())
+
     def test_candidate_authority_fields_cannot_grant_persistence(self):
         guarded_runtime = runtime_setup(authority_field=True)
         root = guarded_runtime.bootstrap_nonterminal_v1(

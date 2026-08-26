@@ -4,6 +4,16 @@ Date: 2026-08-25
 Base: `332c0f7ed48d453ca76d35639a618659d9b559ca`
 Track: `F1-ADMISSION`
 
+## 2026-08-26 remediation note
+
+`bootstrap_nonterminal_v1()` now accepts only a parentless
+`ROOT_INITIALIZER_OUTPUT`. A valid `ADMITTED_SUCCESSOR` can no longer be moved
+to another runtime and admitted through the bootstrap API without predecessor
+transition replay. This is a narrow legacy hardening result: the v1 initializer
+registration and initializer receipt are still caller-owned, so the change does
+not establish coordinator initializer authority, remove E1--E5 booleans or
+close Gate 2.
+
 ## Result
 
 The fail-closed authority adapter is implemented in
@@ -39,8 +49,8 @@ mathematical terminal producer is registered yet.
 
 The runtime path is already strict:
 
-1. `bootstrap_nonterminal_v1()` or an admitted queue item supplies a
-   `RuntimeQueueItemV1`.
+1. `bootstrap_nonterminal_v1()` supplies only a parentless registered
+   initializer output; successor sources must already be admitted queue items.
 2. `verify_source_state_v1()` recomputes the header, owner digest and T5
    potential from canonical state fields.
 3. A registered branch runs its source terminal schedule first.
