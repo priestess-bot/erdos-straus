@@ -35,6 +35,15 @@ source、恒等 lift 与 T5 phase drop。它只消除了“独立数学实现缺
 `EVIDENCE_ONLY_MATH_REPLAY`，terminal/role authority 均为 `BLOCKED`，不构成 E1--E5
 签发或 selector 进展。
 
+Terminal miss 语义现进一步拆成“注册优先前缀 miss”和“全终端宇宙 miss”两类，避免
+把有限 schedule 的成功重放误写成所有根证书穷尽。首个 q=1 数学前缀固定完整 gaps
+3/7/11 divisor screens：scheduler 枚举每个 (x_m^2) 的全部除子，独立 verifier 以另一套
+实现重建完整 wire。`p=73` 在 gap 7 命中；`p=241441` 在 gap 11 的自然首选为 Type II
+`d=27`，历史 `d=1083` 也在匹配集中；`p=1201,2521` 为真实 prefix miss。`p=1201`
+同时有未注册 gap 23、Type I `d=34` 根证书，故该结果严格保持
+`global_exhaustion=false`。当前它仍是 evidence-only，没有 registry-v2 grant、production
+issuer 或 E1 权限，Gate 4 尚未关闭。
+
 ## 当前旗舰命题（合同内核核验至 2026-08-20）
 
 对核心素数 \(p\equiv1\pmod{24}\)，最终目标是下列双出口命题：

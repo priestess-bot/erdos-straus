@@ -32,6 +32,8 @@ sources:
     role: fixed production registry with zero complete schedules
   - source: schemas/t6-complete-terminal-miss-receipt-v1.schema.json
     role: exact local and future-complete receipt schemas
+  - claim: t6-terminal-miss-scope-taxonomy-v2
+    role: later shape-only distinction between registered-prefix and universe miss semantics
 visibility: public
 last_checked: '2026-08-26'
 ---
@@ -110,3 +112,11 @@ receipt、自封装 TEST_ONLY/production mapping，以及直接构造的 typed c
 - 对这些证据的 coordinator-owned runtime 集成。
 
 所以本合同不关闭 F1、F2、F3、T6，也不证明 Erdos-Straus 猜想。
+
+## 5. v2 scope clarification
+
+后续 scope taxonomy 已把本卡中尚未签发的 `MISS_COMPLETE` 分成两个不同语义：有限注册
+优先前缀的 `MISS_REGISTERED_PRIORITY_COMPLETE`，以及只可作为 shape 声明的全自然缺口
+`TERMINAL_UNIVERSE_MISS_EVIDENCE_ONLY`。前者必须记录下一未检查 gap，不能声称全局穷尽；
+后者若未来经完整语义重放，将报告根反例而不是允许 producer continuation。该 v2 类型层
+同样没有 issuer 或 E1 权限，因此不改变本卡“当前不可签发”的结论。

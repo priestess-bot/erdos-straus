@@ -32,6 +32,14 @@ full-carrier chart、fresh source、Sol(p) 恒等 lift 和 T5 phase drop。两�
 evidence-only：前者没有正向 route，后者没有 complete terminal、common E3 owner 或
 validator role grant，所以 Gate 2 验收状态不变。
 
+远程 `main` 的阶段提交 `61399a35c4473b7dcf1c3ea93a33939dc07a8faa` 已由 GitHub
+Actions run `32918731224` 在精确 HEAD 上验证：1480 项测试通过，仍只有 13 项冻结的
+可选大文件 skip；Gate 0 与 live snapshot job 均成功。其后本地继续建立 terminal scope
+taxonomy 和 q=1 gaps 3/7/11 完整 divisor-prefix evidence。这里必须区分：prefix miss 只
+覆盖 coordinator 将来可能注册的有限优先前缀；全自然缺口 miss 在语义验证后会报告根反例，
+永远不能成为 producer continuation。当前两类都无 issuer/E1/queue authority，Gate 4
+仍未验收。
+
 ---
 
 ## 0. 执行摘要
@@ -1074,7 +1082,11 @@ lift verifier
 schedule digest
 ```
 
-`MISS_COMPLETE` 只有在 coverage theorem 已重放时才可产生。
+`MISS_COMPLETE` 只有在 coverage theorem 已重放时才可产生。2026-08-26 的实现复查进一步
+要求把该旧名字拆开：有限 schedule 只能产生 scope-bound 的
+`MISS_REGISTERED_PRIORITY_COMPLETE`，并明确 `global_exhaustion=false`；若完整自然缺口
+宇宙在语义重放后确实全 miss，结论是根反例而不是 producer continuation。单纯携带 opaque
+digest 的 universe mapping 只能标为 evidence-only shape，不能写成 certified counterexample。
 
 ### 4.2 必须加入的 adversarial controls
 
@@ -1088,7 +1100,7 @@ schedule digest
 
 ### 验收标准
 
-- local schedule 不能产生 `MISS_COMPLETE`；
+- local schedule 不能产生 `MISS_COMPLETE`；prefix-complete schedule 也必须绑定其有限 scope；
 - 每个 active producer 的 source schedule 有全域 coverage theorem；
 - terminal certificate 可提升回 root；
 - schedule digest 被 E1 和 transition bundle 同时绑定。

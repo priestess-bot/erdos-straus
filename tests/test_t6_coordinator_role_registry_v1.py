@@ -185,6 +185,15 @@ class CoordinatorEvidenceInventoryTests(unittest.TestCase):
         )
         self.assertEqual(evidence["status"], "EVIDENCE_ONLY_NOT_AUTHORIZED")
         self.assertIs(evidence["role_authority"], False)
+        self.assertTrue(
+            {
+                "q_one_priority_prefix_coverage_verifier_v1",
+                "q_one_priority_prefix_scheduler_v1",
+                "terminal_miss_scope_taxonomy_schema_v2",
+                "terminal_miss_scope_taxonomy_v2",
+            }
+            <= set(evidence["digests"])
+        )
         unsigned_evidence = dict(evidence)
         evidence_digest = unsigned_evidence.pop("digest")
         self.assertEqual(

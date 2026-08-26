@@ -82,6 +82,22 @@
       "semantic_digest_method": "PYTHON_AST_SYMBOL_AND_GIT_BLOB_SHA256_V1"
     },
     {
+      "artifact_id": "q_one_priority_prefix_coverage_verifier_v1",
+      "kind": "PYTHON_SYMBOL",
+      "path": "scripts/t6_q_one_priority_prefix_coverage_verifier_v1.py",
+      "symbol": "verify_q_one_priority_prefix_coverage_v1",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "PYTHON_AST_SYMBOL_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
+      "artifact_id": "q_one_priority_prefix_scheduler_v1",
+      "kind": "PYTHON_SYMBOL",
+      "path": "scripts/t6_q_one_priority_prefix_scheduler_v1.py",
+      "symbol": "replay_q_one_priority_prefix_v1",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "PYTHON_AST_SYMBOL_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
       "artifact_id": "structured_transition_receipt_schema_v1",
       "kind": "JSON_POINTER",
       "path": "schemas/t6-structured-transition-receipts-v1.schema.json",
@@ -128,6 +144,22 @@
       "json_pointer": "",
       "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
       "semantic_digest_method": "CANONICAL_JSON_POINTER_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
+      "artifact_id": "terminal_miss_scope_taxonomy_schema_v2",
+      "kind": "JSON_POINTER",
+      "path": "schemas/t6-terminal-miss-scope-taxonomy-v2.schema.json",
+      "json_pointer": "",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "CANONICAL_JSON_POINTER_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
+      "artifact_id": "terminal_miss_scope_taxonomy_v2",
+      "kind": "PYTHON_SYMBOL",
+      "path": "scripts/t6_terminal_miss_scope_taxonomy_v2.py",
+      "symbol": "parse_terminal_miss_scope_receipt_v2",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "PYTHON_AST_SYMBOL_AND_GIT_BLOB_SHA256_V1"
     }
   ],
   "role_grants": [],
@@ -165,5 +197,5 @@
       ]
     }
   ],
-  "proof_boundary": "HEAD_BOUND_EVIDENCE_ONLY_NO_ROLE_AUTHORITY. Slice 1 pins shared evidence, the zero-authority V2 runtime entry, and the independent q=1 arithmetic replay, but grants no producer, validator, projector, terminal-schedule, initializer, or T5-ticket role. The q=1 reason codes are declared blockers, not semantic proofs. This registry does not close Gate 2, F1, F2, F3, T6, or the Erdos-Straus conjecture."
+  "proof_boundary": "HEAD_BOUND_EVIDENCE_ONLY_NO_ROLE_AUTHORITY. Slice 1 pins shared evidence, the zero-authority V2 runtime entry, the independent q=1 arithmetic replay, the gaps-3/7/11 prefix scheduler and independent coverage verifier, and the terminal-miss scope taxonomy. It grants no producer, validator, projector, terminal-schedule, initializer, issuer, or T5-ticket role. The q=1 reason codes are declared blockers, not semantic proofs. Prefix evidence is not a COMPLETE production schedule. This registry does not close Gate 2, Gate 4, F1, F2, F3, T6, or the Erdos-Straus conjecture."
 }

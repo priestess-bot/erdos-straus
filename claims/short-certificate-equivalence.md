@@ -4,6 +4,8 @@ claim_id: short-certificate-equivalence
 title: 首分母缺口除子证书与素数实例等价
 statement: 对任意素数 p=1 mod 4，4/p 的有序三项单位分数分解存在，当且仅当存在 m=3 mod 4、3<=m<=p-2 与 d|((p+m)/4)^2，使得 Type I 的 m|p(p+m)/4+d 或 Type II 的 d<=(p+m)/4 且 m|(p+m)/4+d 成立；两种情形均可显式恢复分母。
 claim_status: established
+proof_provenance: repository_derivation
+review_status: internal_review
 topics:
 - divisor-parametrization
 - certificate
@@ -20,7 +22,7 @@ sources:
   locator: "Proposition 2 and Theorem 5"
   role: fab-completeness
 visibility: public
-last_checked: '2026-07-24'
+last_checked: '2026-08-26'
 ---
 
 # 首分母缺口除子证书与素数实例等价
@@ -61,10 +63,160 @@ z=\frac{p(x+x^2/d)}m.
 \]
 
 所得 \((x,y,z)\) 分别是 Type I、Type II 解。反向地，对任一有序素数解，
-Elsholtz--Tao 的整除型分类先将其归入 I 或 II；将相应的两分母因子分解代入，
-便得到上述 \(d\mid x^2\) 与同余条件，令 \(m=4x-p\) 即得到证书。
-Bradford 的 Propositions 3--4 陈述同一必要条件；其出版文本只展开证明了
-Proposition 3，故这里不把 Proposition 4 当作未经复核的证明来源。
+下面给出仓库内的完整代数推导，而不把 Bradford 未展开的 Proposition 4 当作证明。
+
+## 反向完备性的独立证明
+
+设
+
+\[
+\frac4p=\frac1x+\frac1y+\frac1z,
+\quad x\le y\le z,
+\quad m=4x-p.
+\]
+
+由正性和 \(4/p\le3/x\) 得 \(p/4<x\le3p/4<p\)，所以 \(m>0\)、
+\(p\nmid x\)。又
+
+\[
+\gcd(p,m)=\gcd(p,4x-p)=\gcd(p,4x)=1.
+\]
+
+把剩余两项通分可得
+
+\[
+myz=px(y+z),
+\]
+
+进而有关键因子恒等式
+
+\[
+(my-px)(mz-px)=p^2x^2. \tag{1}
+\]
+
+两个因子都为正，因为
+\(m/(px)=1/y+1/z>1/y,1/z\)。将
+\(myz=px(y+z)\) 模 \(p\) 化简，并使用 \(p\nmid m\)，得到
+\(p\mid yz\)。必要时交换 \(y,z\)，可固定 \(p\mid z\)。
+若只有这一项被 \(p\) 整除，交换后虽然未必仍有 \(y\le z\)，但仍保留
+\(y,z\ge x\)，这正是下面 Type I 上界所需的全部顺序信息。若两项都被
+\(p\) 整除，则不必交换，并保留 \(y\le z\)。
+
+### Type I
+
+若 \(p\nmid y\)，令
+
+\[
+d=my-px.
+\]
+
+由上面已经证明的 \(p\nmid m\)，有
+
+\[
+d\equiv my\not\equiv0\pmod p,
+\]
+
+即 \(\gcd(d,p)=1\)。式 (1) 给出 \(d\mid p^2x^2\)，故可消去
+\(p^2\) 而得到 \(d\mid x^2\)。又
+\(\gcd(x,m)=\gcd(x,p)=1\)，所以 \(\gcd(d,m)=1\)。
+定义 \(e=x^2/d\)，则
+
+\[
+y=\frac{px+d}{m},
+\quad
+z=\frac{p(x+px^2/d)}m.
+\]
+
+同时 \(d\equiv-px\pmod m\)。利用 \(p\equiv4x\pmod m\) 和
+\(\gcd(d,m)=1\)，从 \(d\equiv-4x^2=-4de\pmod m\) 还得到
+
+\[
+4e\equiv-1\pmod m. \tag{2}
+\]
+
+下面证明该情形不会越过自然首分母上界。若
+\(h=2x-p>0\)，由 \(y\ge x\) 得
+
+\[
+d\ge x(m-p)=2xh,
+\quad
+e\le\frac{x}{2h}.
+\]
+
+又由 (2) 的正整数整除关系，
+
+\[
+m=p+2h\le4e+1\le\frac{2x}{h}+1=\frac ph+2.
+\]
+
+乘以 \(h\) 后化为
+
+\[
+(h-1)(p+2h)\le0.
+\]
+
+所以正整数 \(h\) 只能等于 \(1\)，即唯一待排除边界是
+\(x=(p+1)/2\)、\(m=p+2=2x+1\)。此时 Type I 同余给出
+\(d\equiv-1\pmod m\)，故 \(d\ge2x\)。因为 \(x\) 为奇数且
+\(d\mid x^2\)，实际上 \(d>2x\)，从而
+
+\[
+0<4e+1<m,
+\]
+
+这与 (2) 矛盾。因此 Type I 必有 \(x\le(p-1)/2\)。
+
+### Type II
+
+若 \(p\mid y,z\)，写 \(y=pY,z=pZ\)。原方程化为
+
+\[
+mYZ=x(Y+Z),
+\]
+
+并给出
+
+\[
+(mY-x)(mZ-x)=x^2. \tag{3}
+\]
+
+令 \(d=mY-x\)。两个因子为正，且 \(Y\le Z\)，所以由 (3)
+得到
+
+\[
+d\mid x^2,
+\quad
+d\le x,
+\quad
+m\mid x+d.
+\]
+
+相应恢复式正是
+
+\[
+y=\frac{p(x+d)}m,
+\quad
+z=\frac{p(x+x^2/d)}m.
+\]
+
+又因 \(m\) 整除正整数 \(x+d\)，
+
+\[
+m\le x+d\le2x.
+\]
+
+代入 \(m=4x-p\) 得 \(x\le p/2\)，而 \(p\) 为奇数，所以
+\(x\le(p-1)/2\)。
+
+两种情形均得到
+
+\[
+3\le m=4x-p\le p-2,
+\quad
+m\equiv3\pmod4.
+\]
+
+这证明自然范围内的 Type I/II 除子枚举对所有有序素数解反向完备。
 
 ## 可验证性
 

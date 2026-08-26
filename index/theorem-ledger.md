@@ -14,16 +14,16 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 33 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 944 |
+| 数学状态 | `established` | 946 |
 | 数学状态 | `open` | 13 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 42 |
-| 证明来源 | `repository_derivation` | 775 |
-| 证明来源 | `unspecified` | 428 |
+| 证明来源 | `repository_derivation` | 778 |
+| 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 20 |
-| 审阅状态 | `internal_review` | 925 |
-| 审阅状态 | `unspecified` | 428 |
+| 审阅状态 | `internal_review` | 928 |
+| 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
 
@@ -203,7 +203,7 @@
 | [平移平方外源的缩放平方尾正规形](../claims/shifted-quadratic-tail-normalization.md) (`shifted-quadratic-tail-normalization`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [缩放平方尾的反向普通除子对判据](../claims/shifted-quadratic-tail-opposite-divisor-pair.md) (`shifted-quadratic-tail-opposite-divisor-pair`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [短证书或可闭合递降在自然范围内等价于原猜想](../claims/short-certificate-descent-completeness-boundary.md) (`short-certificate-descent-completeness-boundary`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-24 |
-| [首分母缺口除子证书与素数实例等价](../claims/short-certificate-equivalence.md) (`short-certificate-equivalence`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013`, `bello2026` | 2026-07-24 |
+| [首分母缺口除子证书与素数实例等价](../claims/short-certificate-equivalence.md) (`short-certificate-equivalence`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013`, `bello2026` | 2026-08-26 |
 | [六条显式因子证书分支的共同残余有 4 维筛界](../claims/six-branch-sieve-residual.md) (`six-branch-sieve-residual`) | `established` | `unspecified` | `unspecified` | `elsholtz_tao2013`, `ventas2026` | 2026-07-23 |
 | [两条无条件标准大尾递降的有限覆盖审计](../claims/standard-tail-descent-finite-audit.md) (`standard-tail-descent-finite-audit`) | `computationally_reproduced` | `unspecified` | `unspecified` | `elsholtz_tao2013` | 2026-07-24 |
 | [标准大尾提升恰为 Type I 证书的第二分母窗口](../claims/standard-tail-type-I-coordinate-equivalence.md) (`standard-tail-type-I-coordinate-equivalence`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-24 |
@@ -215,6 +215,8 @@
 | [T6 live audit snapshot v2 provenance and state contract](../claims/t6-live-audit-snapshot-v2-contract.md) (`t6-live-audit-snapshot-v2-contract`) | `established` | `repository_derivation` | `internal_review` | `schemas/t6-live-audit-snapshot-v2.schema.json`, `schemas/t6-gate0-run-provenance-v1.schema.json`, `.github/workflows/research-kb-ci.yml` | 2026-08-26 |
 | [T6 persistent selector runtime V2 零授权拒绝截面](../claims/t6-persistent-selector-runtime-v2-zero-authority-cut.md) (`t6-persistent-selector-runtime-v2-zero-authority-cut`) | `established` | `repository_derivation` | `internal_review` | `scripts/t6_acyclic_transition_bundle_v2.py` | 2026-08-26 |
 | [q=1 G 到 full-carrier phase-root 的独立非授权数学重放](../claims/t6-q-one-phase-root-independent-math-replay-v1.md) (`t6-q-one-phase-root-independent-math-replay-v1`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-26 |
+| [q=1 注册优先前缀 gaps 3/7/11 的独立数学证据层](../claims/t6-q-one-registered-priority-prefix-independent-math-evidence-v1.md) (`t6-q-one-registered-priority-prefix-independent-math-evidence-v1`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-26 |
+| [T6 注册优先前缀 miss 与全终端宇宙 miss 的不可混淆类型边界 v2](../claims/t6-terminal-miss-scope-taxonomy-v2.md) (`t6-terminal-miss-scope-taxonomy-v2`) | `established` | `repository_derivation` | `internal_review` | `schemas/t6-terminal-miss-scope-taxonomy-v2.schema.json` | 2026-08-26 |
 | [3 的倍数标准源解不能保留两项提升到核心素数](../claims/three-divisible-standard-source-lift-obstruction.md) (`three-divisible-standard-source-lift-obstruction`) | `established` | `unspecified` | `unspecified` | `elsholtz_tao2013` | 2026-07-23 |
 | [三倍数标准源保留大尾并重组两项的完整递降族](../claims/three-divisible-standard-two-tail-descent.md) (`three-divisible-standard-two-tail-descent`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-24 |
 | [三倍数标准大尾提升的有效窗口定位](../claims/three-divisible-tail-window-localization.md) (`three-divisible-tail-window-localization`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-24 |
