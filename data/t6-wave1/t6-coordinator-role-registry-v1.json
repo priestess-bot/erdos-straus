@@ -50,6 +50,30 @@
       "semantic_digest_method": "CANONICAL_JSON_POINTER_AND_GIT_BLOB_SHA256_V1"
     },
     {
+      "artifact_id": "coordinator_q1_root_prefix_scoped_e1_authority_registry_resolver_v4",
+      "kind": "PYTHON_SYMBOL",
+      "path": "scripts/t6_coordinator_role_registry_v4.py",
+      "symbol": "resolve_registry_v4",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "PYTHON_AST_SYMBOL_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
+      "artifact_id": "coordinator_q1_root_prefix_scoped_e1_authority_registry_schema_v4",
+      "kind": "JSON_POINTER",
+      "path": "schemas/t6-coordinator-role-registry-v4.schema.json",
+      "json_pointer": "",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "CANONICAL_JSON_POINTER_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
+      "artifact_id": "coordinator_q1_root_prefix_scoped_e1_authority_registry_source_v4",
+      "kind": "JSON_POINTER",
+      "path": "data/t6-wave1/t6-coordinator-role-registry-v4.json",
+      "json_pointer": "",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "CANONICAL_JSON_POINTER_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
       "artifact_id": "coordinator_q1_root_terminal_authority_registry_resolver_v3",
       "kind": "PYTHON_SYMBOL",
       "path": "scripts/t6_coordinator_role_registry_v3.py",
@@ -170,10 +194,58 @@
       "semantic_digest_method": "PYTHON_AST_SYMBOL_AND_GIT_BLOB_SHA256_V1"
     },
     {
+      "artifact_id": "q_one_registered_prefix_e1_consumer_v2",
+      "kind": "PYTHON_SYMBOL",
+      "path": "scripts/t6_q_one_registered_prefix_e1_consumer_v2.py",
+      "symbol": "consume_q_one_registered_prefix_miss_for_e1_v2",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "PYTHON_AST_SYMBOL_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
       "artifact_id": "q_one_root_initializer_envelope_v2",
       "kind": "PYTHON_SYMBOL",
       "path": "scripts/t6_q_one_root_initializer_envelope_v2.py",
       "symbol": "make_raw_root_source_state_v2",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "PYTHON_AST_SYMBOL_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
+      "artifact_id": "q_one_root_owner_classifier_v2",
+      "kind": "PYTHON_SYMBOL",
+      "path": "scripts/t6_q_one_root_owner_classifier_v2.py",
+      "symbol": "classify_q_one_root_owner_v2",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "PYTHON_AST_SYMBOL_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
+      "artifact_id": "q_one_root_prefix_scoped_e1_orchestrator_v2",
+      "kind": "PYTHON_SYMBOL",
+      "path": "scripts/t6_q_one_root_prefix_scoped_e1_orchestrator_v2.py",
+      "symbol": "assemble_q_one_root_prefix_scoped_e1_v2",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "PYTHON_AST_SYMBOL_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
+      "artifact_id": "q_one_root_prefix_scoped_e1_receipt_schema_v2",
+      "kind": "JSON_POINTER",
+      "path": "schemas/t6-q-one-root-prefix-scoped-e1-v2.schema.json",
+      "json_pointer": "",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "CANONICAL_JSON_POINTER_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
+      "artifact_id": "q_one_root_prefix_scoped_e1_receipt_verifier_v2",
+      "kind": "PYTHON_SYMBOL",
+      "path": "scripts/t6_q_one_root_prefix_scoped_e1_receipt_verifier_v2.py",
+      "symbol": "verify_q_one_root_prefix_scoped_e1_receipt_v2",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "PYTHON_AST_SYMBOL_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
+      "artifact_id": "q_one_scope_aware_e1_validator_v2",
+      "kind": "PYTHON_SYMBOL",
+      "path": "scripts/t6_q_one_scope_aware_e1_validator_v2.py",
+      "symbol": "validate_q_one_registered_prefix_e1_scope_v2",
       "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
       "semantic_digest_method": "PYTHON_AST_SYMBOL_AND_GIT_BLOB_SHA256_V1"
     },
@@ -285,5 +357,5 @@
       ]
     }
   ],
-  "proof_boundary": "HEAD_BOUND_EVIDENCE_ONLY_NO_ROLE_AUTHORITY. Slice 1 pins shared evidence, the zero-authority V2 runtime entry, the independent q=1 arithmetic replay, the gaps-3/7/11 prefix scheduler and independent coverage verifier, the terminal-miss scope taxonomy, the evidence-only root envelope and terminal-decision assembler, the separate v2 prefix-role registry, and the v3 q=1 root initializer/terminal-issuer authority source, production receipt schema, issuer and independent post-issuance replayer. This v1 inventory itself grants no producer, validator, projector, terminal-schedule, initializer, issuer, E1, queue or T5-ticket role; its evidence pins do not import the v2 or v3 grants into v1. V3 production HIT receipts close only their parentless q=1 root occurrence, while production MISS receipts cover only registered gaps 3,7,11 and authorize no continuation. This registry does not close Gate 2, complete Gate 4, Gate 5, F1, F2, F3, T6, or the Erdos-Straus conjecture."
+  "proof_boundary": "HEAD_BOUND_EVIDENCE_ONLY_NO_ROLE_AUTHORITY. Slice 1 pins shared evidence, the zero-authority V2 runtime entry, the independent q=1 arithmetic replay, the gaps-3/7/11 prefix scheduler and independent coverage verifier, the terminal-miss scope taxonomy, the evidence-only root envelope and terminal-decision assembler, the separate v2 prefix-role registry, the v3 q=1 root initializer/terminal-issuer authority layer, and the v4 common-root-owner, scope-validation and root-source-scoped E1 layer. This v1 inventory itself grants no producer, validator, projector, terminal-schedule, initializer, issuer, E1, queue or T5-ticket role; its evidence pins do not import any v2, v3 or v4 grant into v1. V3 production HIT receipts close only their parentless q=1 root occurrence. V3 production MISS receipts cover only registered gaps 3,7,11; V4 may combine an independently replayed MISS with exact root actualness and owner evidence to issue only ROOT_SOURCE_SCOPED_E1. Generic or successor E1, E2-E5, producer, admission, re-entry and queue authority remain absent. This registry does not close Gate 2, complete Gate 4, Gate 5, F1, F2, F3, T6, or the Erdos-Straus conjecture."
 }

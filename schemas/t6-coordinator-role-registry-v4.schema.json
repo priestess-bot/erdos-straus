@@ -1,0 +1,437 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://priestess-bot.github.io/erdos-straus/schemas/t6-coordinator-role-registry-v4.schema.json",
+  "title": "T6 coordinator q1 root prefix-scoped E1 authority registry v4",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_id",
+    "schema_version",
+    "registry_id",
+    "status",
+    "activation_status",
+    "authority_policy",
+    "artifacts",
+    "role_grants",
+    "authorized_consumer_scopes",
+    "receipt_authority_matrix",
+    "orchestration_policy",
+    "post_issuance_replay_policy",
+    "v3_cross_registry_binding",
+    "pinned_documents",
+    "authorized_branches",
+    "authority_denials",
+    "proof_boundary"
+  ],
+  "properties": {
+    "schema_id": {"const": "t6_coordinator_role_registry_v4"},
+    "schema_version": {"const": 4},
+    "registry_id": {"const": "t6_coordinator_role_registry_v4"},
+    "status": {
+      "const": "HEAD_BOUND_Q1_ROOT_PREFIX_SCOPED_E1_AUTHORITY_NO_SUCCESSOR_OR_RECURSION"
+    },
+    "activation_status": {
+      "enum": ["PENDING_ARTIFACT_PINS", "ACTIVE_EXACT_HEAD_AUTHORITY"]
+    },
+    "authority_policy": {"$ref": "#/$defs/authorityPolicy"},
+    "artifacts": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "items": {"$ref": "#/$defs/artifact"}
+    },
+    "role_grants": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"$ref": "#/$defs/grant"}
+    },
+    "authorized_consumer_scopes": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "prefixItems": [{"$ref": "#/$defs/consumerScope"}],
+      "items": false
+    },
+    "receipt_authority_matrix": {"$ref": "#/$defs/receiptAuthorityMatrix"},
+    "orchestration_policy": {"$ref": "#/$defs/orchestrationPolicy"},
+    "post_issuance_replay_policy": {"$ref": "#/$defs/postReplayPolicy"},
+    "v3_cross_registry_binding": {"$ref": "#/$defs/v3CrossBinding"},
+    "pinned_documents": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "prefixItems": [{"$ref": "#/$defs/pinnedDocument"}],
+      "items": false
+    },
+    "authorized_branches": {"type": "array", "maxItems": 0},
+    "authority_denials": {"$ref": "#/$defs/authorityDenials"},
+    "proof_boundary": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "HEAD_BOUND_Q1_ROOT_PREFIX_SCOPED_E1_AUTHORITY_NO_SUCCESSOR_OR_RECURSION"
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "identifier": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"},
+    "path": {"type": "string", "pattern": "^[A-Za-z0-9._/-]+$"},
+    "stringArray": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "authorityPolicy": {
+      "const": {
+        "source": "TRACKED_GIT_OBJECTS_AT_EXACT_REQUESTED_HEAD",
+        "caller_override_authority": false,
+        "worktree_authority": false,
+        "fixed_owner_domain": "ordinary_parentless_q1_g_root_v1",
+        "inherited_registry_id": "t6_coordinator_role_registry_v3",
+        "new_roles": [
+          "COMMON_ROOT_OWNER_CLASSIFIER",
+          "INDEPENDENT_SCOPE_AWARE_E1_VALIDATOR",
+          "REGISTERED_PREFIX_E1_CONSUMER"
+        ],
+        "role_modules_must_be_loader_free": true
+      }
+    },
+    "dependencyManifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "execution_artifact_ids",
+        "binding_artifact_ids",
+        "binding_document_ids",
+        "artifact_semantic_pins"
+      ],
+      "properties": {
+        "execution_artifact_ids": {"$ref": "#/$defs/stringArray"},
+        "binding_artifact_ids": {"$ref": "#/$defs/stringArray"},
+        "binding_document_ids": {"$ref": "#/$defs/stringArray"},
+        "artifact_semantic_pins": {
+          "type": "object",
+          "propertyNames": {"$ref": "#/$defs/identifier"},
+          "additionalProperties": {"$ref": "#/$defs/sha256"}
+        }
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "artifact_id": {
+                "enum": [
+                  "v3_production_receipt_verifier_dependency",
+                  "v3_root_initializer_dependency"
+                ]
+              }
+            },
+            "required": ["artifact_id"]
+          },
+          "then": {"required": ["expected_v3_semantic_sha256"]},
+          "else": {
+            "not": {"required": ["expected_v3_semantic_sha256"]}
+          }
+        }
+      ],
+      "required": [
+        "artifact_id",
+        "artifact_class",
+        "kind",
+        "path",
+        "symbols",
+        "pin_status",
+        "semantic_digest_method",
+        "dependency_manifest",
+        "expected_blob_sha256",
+        "expected_symbol_ast_sha256",
+        "expected_symbol_set_digest",
+        "expected_local_import_closure_digest",
+        "expected_dependency_manifest_digest",
+        "expected_semantic_sha256"
+      ],
+      "properties": {
+        "artifact_id": {"$ref": "#/$defs/identifier"},
+        "artifact_class": {
+          "enum": [
+            "ROLE_ARTIFACT",
+            "REFERENCE_ONLY",
+            "CONTROLLED_LOADER_ORCHESTRATOR_ONLY",
+            "POST_ISSUANCE_REPLAY_DEPENDENCY_ONLY",
+            "V3_CROSS_REGISTRY_DEPENDENCY_ONLY"
+          ]
+        },
+        "kind": {"enum": ["PYTHON_SYMBOL_SET", "PYTHON_REFERENCE_SYMBOL_SET"]},
+        "path": {"$ref": "#/$defs/path"},
+        "symbols": {"$ref": "#/$defs/stringArray"},
+        "pin_status": {"enum": ["PINNED", "PLACEHOLDER_UNRESOLVED"]},
+        "semantic_digest_method": {
+          "const": "PYTHON_STABLE_AST_SYMBOL_SET_BLOB_CLOSURE_DEPENDENCY_SHA256_V4"
+        },
+        "dependency_manifest": {"$ref": "#/$defs/dependencyManifest"},
+        "expected_blob_sha256": {"$ref": "#/$defs/sha256"},
+        "expected_symbol_ast_sha256": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {"$ref": "#/$defs/sha256"}
+        },
+        "expected_symbol_set_digest": {"$ref": "#/$defs/sha256"},
+        "expected_local_import_closure_digest": {"$ref": "#/$defs/sha256"},
+        "expected_dependency_manifest_digest": {"$ref": "#/$defs/sha256"},
+        "expected_semantic_sha256": {"$ref": "#/$defs/sha256"},
+        "expected_v3_semantic_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "grant": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "grant_id",
+        "role",
+        "artifact_id",
+        "capabilities",
+        "authority_class",
+        "expected_artifact_semantic_sha256",
+        "expected_dependency_manifest_digest"
+      ],
+      "properties": {
+        "grant_id": {"$ref": "#/$defs/identifier"},
+        "role": {
+          "enum": [
+            "COMMON_ROOT_OWNER_CLASSIFIER",
+            "INDEPENDENT_SCOPE_AWARE_E1_VALIDATOR",
+            "REGISTERED_PREFIX_E1_CONSUMER"
+          ]
+        },
+        "artifact_id": {"$ref": "#/$defs/identifier"},
+        "capabilities": {"$ref": "#/$defs/stringArray"},
+        "authority_class": {"const": "HEAD_BOUND_EXECUTABLE_CAPABILITY_V4"},
+        "expected_artifact_semantic_sha256": {"$ref": "#/$defs/sha256"},
+        "expected_dependency_manifest_digest": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "consumerScope": {
+      "const": {
+        "scope_id": "q1_root_after_gap_3_7_11_registered_prefix_v1",
+        "owner_domain_id": "ordinary_parentless_q1_g_root_v1",
+        "owner": "type_ii_relation_g_endpoint",
+        "owner_scope": "ROOT_SOURCE_DISPATCH_ONLY",
+        "source_terminal_outcome": "MISS_REGISTERED_PRIORITY_COMPLETE",
+        "coverage_semantics": "REGISTERED_PRIORITY_ONLY",
+        "ordered_gaps": [3, 7, 11],
+        "next_unchecked_gap": 15,
+        "global_exhaustion": false,
+        "remaining_domain_unchecked": true,
+        "same_head_consumption_required": true
+      }
+    },
+    "receiptAuthorityMatrix": {
+      "const": {
+        "COMMON_Q1_ROOT_OWNER_RECEIPT_V2": {
+          "source_actualness": true,
+          "common_owner_authority": true,
+          "registered_prefix_miss_authority": false,
+          "scope_validation_authority": false,
+          "root_source_scoped_e1": false,
+          "scope_aware_consumer_authority": false,
+          "root_source_occurrence_authority": false,
+          "terminal_receipt_direct_continuation_authority": false,
+          "e1_authority": false,
+          "generic_e1": false,
+          "successor_e1": false,
+          "producer_authority": false,
+          "producer_continuation_allowed": false,
+          "persistent_admission": false,
+          "queue_authority": false,
+          "e2_authority": false,
+          "e3_authority": false,
+          "e4_authority": false,
+          "e5_authority": false,
+          "global_exhaustion": false,
+          "terminal_leaf_authority": false,
+          "root_proof_close_authority": false
+        },
+        "Q1_REGISTERED_PREFIX_SCOPE_VALIDATION_RECEIPT_V2": {
+          "source_actualness": true,
+          "common_owner_authority": false,
+          "registered_prefix_miss_authority": true,
+          "scope_validation_authority": true,
+          "root_source_scoped_e1": false,
+          "scope_aware_consumer_authority": false,
+          "root_source_occurrence_authority": false,
+          "terminal_receipt_direct_continuation_authority": false,
+          "e1_authority": false,
+          "generic_e1": false,
+          "successor_e1": false,
+          "producer_authority": false,
+          "producer_continuation_allowed": false,
+          "persistent_admission": false,
+          "queue_authority": false,
+          "e2_authority": false,
+          "e3_authority": false,
+          "e4_authority": false,
+          "e5_authority": false,
+          "global_exhaustion": false,
+          "terminal_leaf_authority": false,
+          "root_proof_close_authority": false
+        },
+        "Q1_REGISTERED_PREFIX_ROOT_SOURCE_E1_RECEIPT_V2": {
+          "source_actualness": true,
+          "common_owner_authority": true,
+          "registered_prefix_miss_authority": true,
+          "scope_validation_authority": true,
+          "root_source_scoped_e1": true,
+          "scope_aware_consumer_authority": true,
+          "root_source_occurrence_authority": true,
+          "terminal_receipt_direct_continuation_authority": false,
+          "e1_authority": false,
+          "generic_e1": false,
+          "successor_e1": false,
+          "producer_authority": false,
+          "producer_continuation_allowed": false,
+          "persistent_admission": false,
+          "queue_authority": false,
+          "e2_authority": false,
+          "e3_authority": false,
+          "e4_authority": false,
+          "e5_authority": false,
+          "global_exhaustion": false,
+          "terminal_leaf_authority": false,
+          "root_proof_close_authority": false
+        }
+      }
+    },
+    "orchestrationPolicy": {
+      "const": {
+        "artifact_id": "q1_root_prefix_scoped_e1_orchestrator_v2",
+        "artifact_class": "CONTROLLED_LOADER_ORCHESTRATOR_ONLY",
+        "public_symbol": "assemble_q_one_root_prefix_scoped_e1_v2",
+        "allowed_execution_artifact_ids": [
+          "q1_registered_prefix_e1_consumer_v2",
+          "q1_root_owner_classifier_v2",
+          "q1_scope_aware_e1_validator_v2",
+          "v3_production_receipt_verifier_dependency",
+          "v3_registry_resolver_dependency",
+          "v3_root_initializer_dependency"
+        ],
+        "execution_toolchain_paths": ["scripts/t6_coordinator_role_registry_v4.py"],
+        "forbidden_execution_roots": ["reproductions", "tests"],
+        "caller_inputs": [
+          "production_miss_receipt",
+          "raw_q_one_g",
+          "repository_locator",
+          "requested_head"
+        ],
+        "caller_supplied_owner_or_validation_allowed": false
+      }
+    },
+    "postReplayPolicy": {
+      "const": {
+        "artifact_id": "q1_root_prefix_scoped_e1_receipt_verifier_v2",
+        "artifact_class": "POST_ISSUANCE_REPLAY_DEPENDENCY_ONLY",
+        "public_symbol": "verify_q_one_root_prefix_scoped_e1_receipt_v2",
+        "consumer_import_allowed": false,
+        "orchestrator_import_allowed": false,
+        "independent_wire_reconstruction": true
+      }
+    },
+    "v3CrossBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "registry_id",
+        "registry_path",
+        "schema_path",
+        "resolver_path",
+        "resolver_symbol",
+        "required_status",
+        "expected_v3_registry_source_sha256",
+        "expected_v3_schema_sha256",
+        "expected_v3_resolver_blob_sha256",
+        "expected_v3_terminal_issuer_semantic_sha256",
+        "expected_v3_production_verifier_semantic_sha256",
+        "expected_v3_initializer_semantic_sha256",
+        "required_v3_roles",
+        "same_head_required",
+        "cross_head_receipts_allowed"
+      ],
+      "properties": {
+        "registry_id": {"const": "t6_coordinator_role_registry_v3"},
+        "registry_path": {"const": "data/t6-wave1/t6-coordinator-role-registry-v3.json"},
+        "schema_path": {"const": "schemas/t6-coordinator-role-registry-v3.schema.json"},
+        "resolver_path": {"const": "scripts/t6_coordinator_role_registry_v3.py"},
+        "resolver_symbol": {"const": "resolve_registry_v3"},
+        "required_status": {"const": "HEAD_BOUND_Q1_ROOT_TERMINAL_DECISION_AUTHORITY_NO_RECURSION"},
+        "expected_v3_registry_source_sha256": {"$ref": "#/$defs/sha256"},
+        "expected_v3_schema_sha256": {"$ref": "#/$defs/sha256"},
+        "expected_v3_resolver_blob_sha256": {"$ref": "#/$defs/sha256"},
+        "expected_v3_terminal_issuer_semantic_sha256": {"$ref": "#/$defs/sha256"},
+        "expected_v3_production_verifier_semantic_sha256": {"$ref": "#/$defs/sha256"},
+        "expected_v3_initializer_semantic_sha256": {"$ref": "#/$defs/sha256"},
+        "required_v3_roles": {
+          "const": [
+            "INDEPENDENT_COVERAGE_VERIFIER",
+            "ROOT_INITIALIZER",
+            "TERMINAL_ISSUER",
+            "TERMINAL_SCHEDULER"
+          ]
+        },
+        "same_head_required": {"const": true},
+        "cross_head_receipts_allowed": {"const": false}
+      }
+    },
+    "pinnedDocument": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "document_id",
+        "path",
+        "schema_id",
+        "schema_version",
+        "expected_json_schema_id",
+        "pin_status",
+        "expected_blob_sha256",
+        "expected_canonical_sha256"
+      ],
+      "properties": {
+        "document_id": {"const": "q1_root_prefix_scoped_e1_schema_v2"},
+        "path": {"const": "schemas/t6-q-one-root-prefix-scoped-e1-v2.schema.json"},
+        "schema_id": {"const": "t6-q-one-root-prefix-scoped-e1-v2"},
+        "schema_version": {"const": 2},
+        "expected_json_schema_id": {
+          "const": "https://priestess-bot.github.io/erdos-straus/schemas/t6-q-one-root-prefix-scoped-e1-v2.schema.json"
+        },
+        "pin_status": {"enum": ["PINNED", "PLACEHOLDER_UNRESOLVED"]},
+        "expected_blob_sha256": {"$ref": "#/$defs/sha256"},
+        "expected_canonical_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "authorityDenials": {
+      "const": {
+        "global_miss_authority": false,
+        "global_exhaustion_authority": false,
+        "terminal_leaf_authority": false,
+        "root_proof_close_authority": false,
+        "generic_e1_authority": false,
+        "successor_e1_authority": false,
+        "legacy_e1_boolean_authority": false,
+        "producer_authority": false,
+        "branch_authority": false,
+        "candidate_authority": false,
+        "e2_authority": false,
+        "e3_authority": false,
+        "e4_authority": false,
+        "e5_authority": false,
+        "t5_authority": false,
+        "persistent_admission_authority": false,
+        "reentry_authority": false,
+        "queue_authority": false,
+        "enqueue_authority": false
+      }
+    }
+  }
+}

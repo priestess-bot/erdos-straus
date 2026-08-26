@@ -77,6 +77,20 @@ Gate 5、F1/F2/F3 与 T6 均保持 `OPEN`。controlled-loader 结论只适用于
 和 executable bytes；同时修改 loader contract、resolver 与 pins 属于新的 authority policy，
 必须重新证明和独立复核。
 
+冻结 V3 之上的 coordinator registry v4 又关闭了一个更窄的子门：对同一 exact-HEAD、
+parentless ordinary `q=1 G` 根，当 production receipt 已独立重放为 gaps 3/7/11 的注册前缀
+MISS 时，三个相互分离的角色会重建 V1 的唯一 common root owner、独立复核有限 scope，
+并签发确定性 full-carrier phase-root 的 `ROOT_SOURCE_SCOPED_E1` occurrence。`p=73,193,241441`
+的 HIT 均在 E1 前拒绝；`p=1201,2521` 的 prefix MISS 可进入该局部分支。`p=1201` 在未注册
+gap 23 的 Type I `d=34` 证书仍作为反 global-exhaustion 控制保留。registry、纯角色与
+exact-HEAD 集成共 32 项聚焦测试通过，最终独立复核结论为 `ACCEPT`。
+
+这个结果只建立 **根源 occurrence 的作用域 E1**；receipt 中的 generic/successor
+`e1_authority` 仍为 false。当前没有 common target owner、E2--E5、producer/branch、T5 admission、
+re-entry 或 queue mutation，因此 Gate 2、完整 Gate 4、Gate 5、F1/F2/F3、T6 和猜想状态均不
+升级。下一步是把这一唯一 phase-root candidate 变成带 target owner、E2--E5 和 admission
+sidecar 的完整非终止边，而不是继续扩张根前缀 MISS 的含义。
+
 ## 当前旗舰命题（合同内核核验至 2026-08-20）
 
 对核心素数 \(p\equiv1\pmod{24}\)，最终目标是下列双出口命题：

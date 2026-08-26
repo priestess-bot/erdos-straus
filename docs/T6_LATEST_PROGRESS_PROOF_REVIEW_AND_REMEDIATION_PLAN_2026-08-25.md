@@ -69,6 +69,20 @@ continuation 为 false，MISS 还固定 global exhaustion 为 false。因此本�
 也没有满足 Gate 2/3/5 或全局 goal checklist；下一步是为 production prefix MISS 建立 common
 owner 与 scope-aware E1 consumer，而不是把它误写成 `MISS_COMPLETE`。
 
+上述“下一步”现已由 active coordinator registry v4 在严格局部范围内完成。V4 只增加
+`COMMON_ROOT_OWNER_CLASSIFIER`、`INDEPENDENT_SCOPE_AWARE_E1_VALIDATOR` 和
+`REGISTERED_PREFIX_E1_CONSUMER` 三个 exact-HEAD 角色；orchestrator 与 post-issuance replayer
+保持 non-role。对 `p=1201,2521`，同一 source 的 V3 prefix MISS 可生成确定性 full-carrier
+phase-root `ROOT_SOURCE_SCOPED_E1`；对 `p=73,193,241441`，terminal HIT 必须在 E1 前退出。
+common owner 的 normalized facts、15-family precedence 与 owner digest 已和冻结 V1 实现逐项
+等价。三套聚焦测试共 32/32 通过，独立复核结论为 `ACCEPT`。
+
+这没有完成下文 Gate 2：V4 receipt 明确令 generic/successor `e1_authority=false`，也没有
+target owner、E2--E5、producer、admission、re-entry 或 queue 权限。新的最小推进目标因此改为：
+只针对该唯一 q=1 phase-root candidate，构造由 source occurrence 绑定的 E2 projection、common
+target owner/E3 normal form、identity E4 与 T5 phase-drop E5，最后经共享 admission path 形成
+首条可独立重放的完整非终止边。全局 checklist 继续保持未勾选。
+
 ---
 
 ## 0. 执行摘要

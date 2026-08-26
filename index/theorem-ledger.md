@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 33 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 951 |
+| 数学状态 | `established` | 953 |
 | 数学状态 | `open` | 13 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 42 |
-| 证明来源 | `repository_derivation` | 783 |
+| 证明来源 | `repository_derivation` | 785 |
 | 证明来源 | `unspecified` | 427 |
-| 审阅状态 | `independent_review` | 22 |
+| 审阅状态 | `independent_review` | 24 |
 | 审阅状态 | `internal_review` | 931 |
 | 审阅状态 | `unspecified` | 427 |
 
@@ -211,6 +211,7 @@
 | [T6 非授权终端 miss 回执类型边界 v1](../claims/t6-complete-terminal-miss-receipt-contract-v1.md) (`t6-complete-terminal-miss-receipt-contract-v1`) | `established` | `repository_derivation` | `internal_review` | `schemas/t6-complete-terminal-miss-receipt-v1.schema.json` | 2026-08-26 |
 | [T6 HEAD-bound evidence-only role inventory Slice 1](../claims/t6-coordinator-head-bound-role-registry-v1.md) (`t6-coordinator-head-bound-role-registry-v1`) | `established` | `repository_derivation` | `internal_review` | `data/t6-wave1/t6-coordinator-role-registry-v1.json`, `schemas/t6-coordinator-role-registry-v1.schema.json` | 2026-08-26 |
 | [T6 q=1 注册终端前缀的 HEAD-bound 双角色授权 v2](../claims/t6-coordinator-head-bound-terminal-prefix-role-registry-v2.md) (`t6-coordinator-head-bound-terminal-prefix-role-registry-v2`) | `established` | `repository_derivation` | `internal_review` | `schemas/t6-coordinator-role-registry-v2.schema.json`, `scripts/t6_q_one_priority_prefix_scheduler_v1.py`, `scripts/t6_q_one_priority_prefix_coverage_verifier_v1.py` | 2026-08-26 |
+| [q=1 root registered-prefix MISS 的 scope-aware common-owner 与 source-scoped E1 authority v4](../claims/t6-coordinator-q1-root-prefix-scoped-e1-authority-v4.md) (`t6-coordinator-q1-root-prefix-scoped-e1-authority-v4`) | `established` | `repository_derivation` | `independent_review` | `schemas/t6-coordinator-role-registry-v4.schema.json`, `scripts/t6_q_one_root_owner_classifier_v2.py`, `scripts/t6_q_one_scope_aware_e1_validator_v2.py`, `scripts/t6_q_one_registered_prefix_e1_consumer_v2.py`, `schemas/t6-q-one-root-prefix-scoped-e1-v2.schema.json` | 2026-08-26 |
 | [q=1 根终端 decision 的四角色 HEAD-bound authority registry v3](../claims/t6-coordinator-q1-root-terminal-authority-v3.md) (`t6-coordinator-q1-root-terminal-authority-v3`) | `established` | `repository_derivation` | `independent_review` | `schemas/t6-coordinator-role-registry-v3.schema.json`, `scripts/t6_q_one_terminal_issuer_v1.py`, `scripts/t6_q_one_terminal_receipt_verifier_v1.py`, `docs/audits/T6_Q1_PRODUCTION_TERMINAL_FINAL_INDEPENDENT_REVIEW_2026-08-26.md` | 2026-08-26 |
 | [T6-F1 可达持久状态闭世界的条件引理与当前最小断点](../claims/t6-f1-reachable-state-closed-world-v1.md) (`t6-f1-reachable-state-closed-world-v1`) | `open` | `repository_derivation` | `internal_review` | - | 2026-08-23 |
 | [T6 Gate 0 HEAD-bound CI manifest integrity contract](../claims/t6-gate-zero-head-bound-ci-manifest-contract.md) (`t6-gate-zero-head-bound-ci-manifest-contract`) | `established` | `repository_derivation` | `internal_review` | `.github/workflows/research-kb-ci.yml`, `data/t6-wave1/t6-coordinator-role-registry-v1.json`, `data/t6-wave1/t6-complete-terminal-schedule-registry-v1.json` | 2026-08-26 |
@@ -221,6 +222,7 @@
 | [q=1 root terminal 与注册前缀 MISS 的 production issuer/replay V1](../claims/t6-q-one-production-terminal-issuer-v1.md) (`t6-q-one-production-terminal-issuer-v1`) | `established` | `repository_derivation` | `independent_review` | `schemas/t6-q-one-production-terminal-receipts-v1.schema.json`, `docs/audits/T6_Q1_PRODUCTION_TERMINAL_FINAL_INDEPENDENT_REVIEW_2026-08-26.md` | 2026-08-26 |
 | [q=1 注册优先前缀 gaps 3/7/11 的独立数学证据层](../claims/t6-q-one-registered-priority-prefix-independent-math-evidence-v1.md) (`t6-q-one-registered-priority-prefix-independent-math-evidence-v1`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-26 |
 | [q=1 G evidence-only V2 root initializer 的无环 source envelope](../claims/t6-q-one-root-initializer-envelope-v2-contract.md) (`t6-q-one-root-initializer-envelope-v2-contract`) | `established` | `repository_derivation` | `internal_review` | `schemas/t6-q-one-root-initializer-envelope-v2.schema.json` | 2026-08-26 |
+| [q=1 root registered-prefix 的 common-owner 与 source-scoped E1 roles v2](../claims/t6-q-one-root-prefix-scoped-e1-roles-v2.md) (`t6-q-one-root-prefix-scoped-e1-roles-v2`) | `established` | `repository_derivation` | `independent_review` | `scripts/t6_q_one_root_owner_classifier_v2.py`, `scripts/t6_q_one_scope_aware_e1_validator_v2.py`, `scripts/t6_q_one_registered_prefix_e1_consumer_v2.py`, `schemas/t6-q-one-root-prefix-scoped-e1-v2.schema.json` | 2026-08-26 |
 | [T6 注册优先前缀 miss 与全终端宇宙 miss 的不可混淆类型边界 v2](../claims/t6-terminal-miss-scope-taxonomy-v2.md) (`t6-terminal-miss-scope-taxonomy-v2`) | `established` | `repository_derivation` | `internal_review` | `schemas/t6-terminal-miss-scope-taxonomy-v2.schema.json` | 2026-08-26 |
 | [3 的倍数标准源解不能保留两项提升到核心素数](../claims/three-divisible-standard-source-lift-obstruction.md) (`three-divisible-standard-source-lift-obstruction`) | `established` | `unspecified` | `unspecified` | `elsholtz_tao2013` | 2026-07-23 |
 | [三倍数标准源保留大尾并重组两项的完整递降族](../claims/three-divisible-standard-two-tail-descent.md) (`three-divisible-standard-two-tail-descent`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-24 |
