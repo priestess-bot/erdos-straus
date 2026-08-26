@@ -53,6 +53,22 @@ scheduler -> independent coverage -> HIT/MISS sidecar 的实际纵向执行。�
 controls 均通过。输出仍将 source actualness、initializer/issuer/terminal/E1/queue 权限固定为
 false，所以这一步关闭的是装配与哈希依赖，不是 issuer 或 Gate 4。
 
+随后完成的 registry v3 与 production issuer/replayer 又闭合了一层更窄的 authority 子门。
+V3 对 parentless ordinary q=1 G root 分离授予 initializer、issuer、scheduler、coverage verifier
+四个角色，并把 assembler 与 post-issuance replayer 保持为 non-role dependencies。所有 artifact
+除 blob/symbol/closure/semantic pin 外，还逐 dependency 传递 semantic pins；三个 exact-HEAD
+loader 的 helper、caller、path constants 和调用表也由固定 AST contract 约束。该结论只针对
+当前冻结 bytes/policy；显式改写 resolver/loader contract/pins 是新的 authority policy，不能自动
+继承本轮证明。
+
+production issuer 现可将 `p=73,193,241441` 的已验证前缀 HIT 签发为 root-terminal receipt，
+并将 `p=1201,2521` 签发为 scope-bound registered-prefix MISS。独立 replayer 从同一 HEAD 与 raw
+q=1 G input 重建 actualness、assembler decision 和最终 wire；它明确拒绝 local serializer 可接受
+的 coherent body/anchor/state 换链重封。两种 receipt 都固定 common owner、E1、queue、producer
+continuation 为 false，MISS 还固定 global exhaustion 为 false。因此本轮没有完成完整 Gate 4，
+也没有满足 Gate 2/3/5 或全局 goal checklist；下一步是为 production prefix MISS 建立 common
+owner 与 scope-aware E1 consumer，而不是把它误写成 `MISS_COMPLETE`。
+
 ---
 
 ## 0. 执行摘要

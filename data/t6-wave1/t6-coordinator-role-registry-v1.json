@@ -50,6 +50,30 @@
       "semantic_digest_method": "CANONICAL_JSON_POINTER_AND_GIT_BLOB_SHA256_V1"
     },
     {
+      "artifact_id": "coordinator_q1_root_terminal_authority_registry_resolver_v3",
+      "kind": "PYTHON_SYMBOL",
+      "path": "scripts/t6_coordinator_role_registry_v3.py",
+      "symbol": "resolve_registry_v3",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "PYTHON_AST_SYMBOL_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
+      "artifact_id": "coordinator_q1_root_terminal_authority_registry_schema_v3",
+      "kind": "JSON_POINTER",
+      "path": "schemas/t6-coordinator-role-registry-v3.schema.json",
+      "json_pointer": "",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "CANONICAL_JSON_POINTER_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
+      "artifact_id": "coordinator_q1_root_terminal_authority_registry_source_v3",
+      "kind": "JSON_POINTER",
+      "path": "data/t6-wave1/t6-coordinator-role-registry-v3.json",
+      "json_pointer": "",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "CANONICAL_JSON_POINTER_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
       "artifact_id": "family_grammar_freeze_v1",
       "kind": "JSON_POINTER",
       "path": "data/t6-wave1/family-grammar-freeze-v1.json",
@@ -118,6 +142,30 @@
       "kind": "PYTHON_SYMBOL",
       "path": "scripts/t6_q_one_priority_prefix_scheduler_v1.py",
       "symbol": "replay_q_one_priority_prefix_v1",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "PYTHON_AST_SYMBOL_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
+      "artifact_id": "q_one_production_terminal_issuer_v1",
+      "kind": "PYTHON_SYMBOL",
+      "path": "scripts/t6_q_one_terminal_issuer_v1.py",
+      "symbol": "issue_q_one_terminal_decision_v1",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "PYTHON_AST_SYMBOL_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
+      "artifact_id": "q_one_production_terminal_receipt_schema_v1",
+      "kind": "JSON_POINTER",
+      "path": "schemas/t6-q-one-production-terminal-receipts-v1.schema.json",
+      "json_pointer": "",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "CANONICAL_JSON_POINTER_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
+      "artifact_id": "q_one_production_terminal_receipt_verifier_v1",
+      "kind": "PYTHON_SYMBOL",
+      "path": "scripts/t6_q_one_terminal_receipt_verifier_v1.py",
+      "symbol": "verify_q_one_production_terminal_receipt_v1",
       "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
       "semantic_digest_method": "PYTHON_AST_SYMBOL_AND_GIT_BLOB_SHA256_V1"
     },
@@ -237,5 +285,5 @@
       ]
     }
   ],
-  "proof_boundary": "HEAD_BOUND_EVIDENCE_ONLY_NO_ROLE_AUTHORITY. Slice 1 pins shared evidence, the zero-authority V2 runtime entry, the independent q=1 arithmetic replay, the gaps-3/7/11 prefix scheduler and independent coverage verifier, the terminal-miss scope taxonomy, the evidence-only root envelope and terminal-decision assembler, and the separate v2 prefix-role registry source/resolver/schema. This v1 inventory itself grants no producer, validator, projector, terminal-schedule, initializer, issuer, or T5-ticket role; its evidence pins do not import the v2 grants into v1. The q=1 reason codes are declared blockers, not semantic proofs. Assembled prefix decisions are not production receipts. This registry does not close Gate 2, Gate 4, F1, F2, F3, T6, or the Erdos-Straus conjecture."
+  "proof_boundary": "HEAD_BOUND_EVIDENCE_ONLY_NO_ROLE_AUTHORITY. Slice 1 pins shared evidence, the zero-authority V2 runtime entry, the independent q=1 arithmetic replay, the gaps-3/7/11 prefix scheduler and independent coverage verifier, the terminal-miss scope taxonomy, the evidence-only root envelope and terminal-decision assembler, the separate v2 prefix-role registry, and the v3 q=1 root initializer/terminal-issuer authority source, production receipt schema, issuer and independent post-issuance replayer. This v1 inventory itself grants no producer, validator, projector, terminal-schedule, initializer, issuer, E1, queue or T5-ticket role; its evidence pins do not import the v2 or v3 grants into v1. V3 production HIT receipts close only their parentless q=1 root occurrence, while production MISS receipts cover only registered gaps 3,7,11 and authorize no continuation. This registry does not close Gate 2, complete Gate 4, Gate 5, F1, F2, F3, T6, or the Erdos-Straus conjecture."
 }

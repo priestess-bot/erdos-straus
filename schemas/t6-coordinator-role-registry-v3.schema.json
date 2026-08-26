@@ -1,0 +1,479 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://priestess-bot.github.io/erdos-straus/schemas/t6-coordinator-role-registry-v3.schema.json",
+  "title": "T6 coordinator q1 root terminal authority registry v3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_id",
+    "schema_version",
+    "registry_id",
+    "status",
+    "authority_policy",
+    "artifacts",
+    "role_grants",
+    "root_initializer_authority",
+    "terminal_prefix_authority",
+    "terminal_issuance_policy",
+    "issuer_dependency_policy",
+    "post_issuance_replay_policy",
+    "v2_cross_registry_binding",
+    "pinned_documents",
+    "branch_bindings",
+    "authority_denials",
+    "proof_boundary"
+  ],
+  "properties": {
+    "schema_id": {"const": "t6_coordinator_role_registry_v3"},
+    "schema_version": {"const": 3},
+    "registry_id": {"const": "t6_coordinator_role_registry_v3"},
+    "status": {"const": "HEAD_BOUND_Q1_ROOT_TERMINAL_DECISION_AUTHORITY_NO_RECURSION"},
+    "authority_policy": {"$ref": "#/$defs/authorityPolicy"},
+    "artifacts": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": {"$ref": "#/$defs/artifact"}
+    },
+    "role_grants": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {"$ref": "#/$defs/grant"}
+    },
+    "root_initializer_authority": {"$ref": "#/$defs/rootInitializerAuthority"},
+    "terminal_prefix_authority": {"$ref": "#/$defs/terminalPrefixAuthority"},
+    "terminal_issuance_policy": {"$ref": "#/$defs/terminalIssuancePolicy"},
+    "issuer_dependency_policy": {"$ref": "#/$defs/issuerDependencyPolicy"},
+    "post_issuance_replay_policy": {"$ref": "#/$defs/postIssuanceReplayPolicy"},
+    "v2_cross_registry_binding": {"$ref": "#/$defs/v2CrossRegistryBinding"},
+    "pinned_documents": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "items": {"$ref": "#/$defs/pinnedDocument"}
+    },
+    "branch_bindings": {"type": "array", "maxItems": 0},
+    "authority_denials": {"$ref": "#/$defs/authorityDenials"},
+    "proof_boundary": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "HEAD_BOUND_Q1_ROOT_TERMINAL_DECISION_AUTHORITY_NO_RECURSION"
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "identifier": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"},
+    "path": {"type": "string", "pattern": "^[A-Za-z0-9._/-]+$"},
+    "stringArray": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "authorityPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "caller_override_authority",
+        "worktree_authority",
+        "fixed_owner_domain",
+        "allowed_roles"
+      ],
+      "properties": {
+        "source": {"const": "TRACKED_GIT_OBJECTS_AT_EXACT_REQUESTED_HEAD"},
+        "caller_override_authority": {"const": false},
+        "worktree_authority": {"const": false},
+        "fixed_owner_domain": {"const": "ordinary_parentless_q1_g_root_v1"},
+        "allowed_roles": {
+          "const": [
+            "INDEPENDENT_COVERAGE_VERIFIER",
+            "ROOT_INITIALIZER",
+            "TERMINAL_ISSUER",
+            "TERMINAL_SCHEDULER"
+          ]
+        }
+      }
+    },
+    "dependencyManifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "execution_artifact_ids",
+        "binding_artifact_ids",
+        "binding_document_ids",
+        "artifact_semantic_pins"
+      ],
+      "properties": {
+        "execution_artifact_ids": {"$ref": "#/$defs/stringArray"},
+        "binding_artifact_ids": {"$ref": "#/$defs/stringArray"},
+        "binding_document_ids": {"$ref": "#/$defs/stringArray"},
+        "artifact_semantic_pins": {
+          "type": "object",
+          "propertyNames": {"$ref": "#/$defs/identifier"},
+          "additionalProperties": {"$ref": "#/$defs/sha256"}
+        }
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "artifact_id": {
+                "enum": [
+                  "q1_priority_prefix_coverage_verifier_v1",
+                  "q1_priority_prefix_scheduler_v1"
+                ]
+              }
+            },
+            "required": ["artifact_id"]
+          },
+          "then": {
+            "required": [
+              "expected_v2_semantic_sha256",
+              "expected_v3_semantic_sha256"
+            ]
+          },
+          "else": {
+            "not": {
+              "anyOf": [
+                {"required": ["expected_v2_semantic_sha256"]},
+                {"required": ["expected_v3_semantic_sha256"]}
+              ]
+            }
+          }
+        }
+      ],
+      "required": [
+        "artifact_id",
+        "artifact_class",
+        "kind",
+        "path",
+        "symbols",
+        "semantic_digest_method",
+        "dependency_manifest",
+        "expected_blob_sha256",
+        "expected_symbol_ast_sha256",
+        "expected_symbol_set_digest",
+        "expected_local_import_closure_digest",
+        "expected_dependency_manifest_digest",
+        "expected_semantic_sha256"
+      ],
+      "properties": {
+        "artifact_id": {"$ref": "#/$defs/identifier"},
+        "artifact_class": {
+          "enum": [
+            "ROLE_ARTIFACT",
+            "ISSUER_DEPENDENCY_ONLY",
+            "POST_ISSUANCE_REPLAY_DEPENDENCY_ONLY",
+            "CROSS_REGISTRY_DEPENDENCY_ONLY"
+          ]
+        },
+        "kind": {"const": "PYTHON_SYMBOL_SET"},
+        "path": {"$ref": "#/$defs/path"},
+        "symbols": {"$ref": "#/$defs/stringArray"},
+        "semantic_digest_method": {
+          "const": "PYTHON_STABLE_AST_SYMBOL_SET_BLOB_CLOSURE_DEPENDENCY_SHA256_V3"
+        },
+        "dependency_manifest": {"$ref": "#/$defs/dependencyManifest"},
+        "expected_blob_sha256": {"$ref": "#/$defs/sha256"},
+        "expected_symbol_ast_sha256": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {"$ref": "#/$defs/sha256"}
+        },
+        "expected_symbol_set_digest": {"$ref": "#/$defs/sha256"},
+        "expected_local_import_closure_digest": {"$ref": "#/$defs/sha256"},
+        "expected_dependency_manifest_digest": {"$ref": "#/$defs/sha256"},
+        "expected_semantic_sha256": {"$ref": "#/$defs/sha256"},
+        "expected_v2_semantic_sha256": {"$ref": "#/$defs/sha256"},
+        "expected_v3_semantic_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "grant": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "grant_id",
+        "role",
+        "artifact_id",
+        "capabilities",
+        "authority_class",
+        "expected_artifact_semantic_sha256",
+        "expected_dependency_manifest_digest"
+      ],
+      "properties": {
+        "grant_id": {"$ref": "#/$defs/identifier"},
+        "role": {
+          "enum": [
+            "INDEPENDENT_COVERAGE_VERIFIER",
+            "ROOT_INITIALIZER",
+            "TERMINAL_ISSUER",
+            "TERMINAL_SCHEDULER"
+          ]
+        },
+        "artifact_id": {"$ref": "#/$defs/identifier"},
+        "capabilities": {"$ref": "#/$defs/stringArray"},
+        "authority_class": {"const": "HEAD_BOUND_EXECUTABLE_CAPABILITY_V3"},
+        "expected_artifact_semantic_sha256": {"$ref": "#/$defs/sha256"},
+        "expected_dependency_manifest_digest": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "rootInitializerAuthority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "grant_id",
+        "initializer_id",
+        "owner_domain_id",
+        "factory_sequence",
+        "occurrence_kind",
+        "parent_kind",
+        "actualness_receipt_type",
+        "actualness_scope",
+        "caller_supplied_state_allowed",
+        "initializer_output_self_authorizing",
+        "actualness_attestor_role"
+      ],
+      "properties": {
+        "grant_id": {"const": "q1_root_initializer_grant_v3"},
+        "initializer_id": {"const": "q_one_root_initializer_envelope_v2"},
+        "owner_domain_id": {"const": "ordinary_parentless_q1_g_root_v1"},
+        "factory_sequence": {
+          "const": [
+            "make_canonical_q_one_g_source_body_v2",
+            "make_root_initializer_anchor_v2",
+            "make_raw_root_source_state_v2"
+          ]
+        },
+        "occurrence_kind": {"const": "ROOT_INITIALIZER_OUTPUT"},
+        "parent_kind": {"const": "PARENTLESS_ROOT"},
+        "actualness_receipt_type": {"const": "QOneRootSourceActualnessReceiptV1"},
+        "actualness_scope": {"const": "ROOT_OCCURRENCE_ONLY"},
+        "caller_supplied_state_allowed": {"const": false},
+        "initializer_output_self_authorizing": {"const": false},
+        "actualness_attestor_role": {"const": "TERMINAL_ISSUER"}
+      }
+    },
+    "terminalPrefixAuthority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schedule_id",
+        "scheduler_grant_id",
+        "coverage_verifier_grant_id",
+        "ordered_gaps",
+        "next_unchecked_gap",
+        "coverage_semantics",
+        "global_exhaustion",
+        "outcomes"
+      ],
+      "properties": {
+        "schedule_id": {"const": "q1_root_gap_3_7_11_registered_priority_prefix_v1"},
+        "scheduler_grant_id": {"const": "q1_prefix_terminal_scheduler_grant_v3"},
+        "coverage_verifier_grant_id": {
+          "const": "q1_prefix_independent_coverage_verifier_grant_v3"
+        },
+        "ordered_gaps": {"const": [3, 7, 11]},
+        "next_unchecked_gap": {"const": 15},
+        "coverage_semantics": {"const": "REGISTERED_PRIORITY_ONLY"},
+        "global_exhaustion": {"const": false},
+        "outcomes": {
+          "const": ["MISS_REGISTERED_PRIORITY_COMPLETE", "ROOT_TERMINAL_HIT"]
+        }
+      }
+    },
+    "terminalIssuancePolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "issuer_grant_id",
+        "receipt_schema_id",
+        "receipt_schema_version",
+        "root_actualness_type",
+        "hit_receipt_type",
+        "miss_receipt_type",
+        "hit_outcome",
+        "miss_outcome",
+        "unqualified_miss_complete_forbidden",
+        "producer_continuation_allowed",
+        "authority_matrix"
+      ],
+      "properties": {
+        "issuer_grant_id": {"const": "q1_terminal_issuer_grant_v3"},
+        "receipt_schema_id": {"const": "t6_q_one_production_terminal_receipts_v1"},
+        "receipt_schema_version": {"const": 1},
+        "root_actualness_type": {"const": "QOneRootSourceActualnessReceiptV1"},
+        "hit_receipt_type": {"const": "ProductionQOneRootTerminalReceiptV1"},
+        "miss_receipt_type": {
+          "const": "ProductionQOneRegisteredPrefixMissReceiptV1"
+        },
+        "hit_outcome": {"const": "ROOT_TERMINAL_HIT"},
+        "miss_outcome": {"const": "MISS_REGISTERED_PRIORITY_COMPLETE"},
+        "unqualified_miss_complete_forbidden": {"const": true},
+        "producer_continuation_allowed": {"const": false},
+        "authority_matrix": {
+          "const": {
+            "common": {
+              "source_actualness": true,
+              "root_initializer_authority": true,
+              "issuer_authority": true,
+              "issued_under_terminal_issuer": true,
+              "common_owner_authority": false,
+              "global_exhaustion": false,
+              "persistent_admission": false,
+              "e1_authority": false,
+              "queue_authority": false,
+              "producer_continuation_allowed": false
+            },
+            "ROOT_TERMINAL_HIT": {
+              "terminal_leaf_authority": true,
+              "registered_prefix_miss_authority": false,
+              "root_proof_close_authority": true
+            },
+            "MISS_REGISTERED_PRIORITY_COMPLETE": {
+              "terminal_leaf_authority": false,
+              "registered_prefix_miss_authority": true,
+              "root_proof_close_authority": false
+            }
+          }
+        }
+      }
+    },
+    "issuerDependencyPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "issuer_artifact_id",
+        "assembler_artifact_id",
+        "assembler_class",
+        "allowed_execution_artifact_ids",
+        "forbidden_direct_artifact_ids",
+        "caller_inputs",
+        "caller_supplied_state_or_decision_allowed"
+      ],
+      "properties": {
+        "issuer_artifact_id": {"const": "q1_terminal_issuer_v1"},
+        "assembler_artifact_id": {"const": "q1_terminal_decision_assembler_v2"},
+        "assembler_class": {"const": "ISSUER_DEPENDENCY_ONLY"},
+        "allowed_execution_artifact_ids": {
+          "const": [
+            "q1_root_initializer_envelope_v2",
+            "q1_terminal_decision_assembler_v2",
+            "v2_registry_resolver_dependency"
+          ]
+        },
+        "forbidden_direct_artifact_ids": {
+          "const": [
+            "q1_priority_prefix_coverage_verifier_v1",
+            "q1_priority_prefix_scheduler_v1",
+            "q1_production_terminal_receipt_verifier_v1"
+          ]
+        },
+        "caller_inputs": {"const": ["raw_q_one_g", "repository_locator", "requested_head"]},
+        "caller_supplied_state_or_decision_allowed": {"const": false}
+      }
+    },
+    "postIssuanceReplayPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_id",
+        "artifact_class",
+        "verifier_symbol",
+        "issuer_import_allowed",
+        "verifier_imports_issuer",
+        "independent_wire_reconstruction"
+      ],
+      "properties": {
+        "artifact_id": {"const": "q1_production_terminal_receipt_verifier_v1"},
+        "artifact_class": {"const": "POST_ISSUANCE_REPLAY_DEPENDENCY_ONLY"},
+        "verifier_symbol": {"const": "verify_q_one_production_terminal_receipt_v1"},
+        "issuer_import_allowed": {"const": false},
+        "verifier_imports_issuer": {"const": false},
+        "independent_wire_reconstruction": {"const": true}
+      }
+    },
+    "v2CrossRegistryBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "registry_id",
+        "registry_path",
+        "schema_path",
+        "resolver_path",
+        "resolver_symbol",
+        "expected_v2_registry_source_sha256",
+        "expected_v2_schema_sha256",
+        "expected_v2_resolver_blob_sha256",
+        "expected_v2_scheduler_semantic_sha256",
+        "expected_v2_coverage_verifier_semantic_sha256",
+        "required_v2_role_subdigest_keys"
+      ],
+      "properties": {
+        "registry_id": {"const": "t6_coordinator_role_registry_v2"},
+        "registry_path": {"const": "data/t6-wave1/t6-coordinator-role-registry-v2.json"},
+        "schema_path": {"const": "schemas/t6-coordinator-role-registry-v2.schema.json"},
+        "resolver_path": {"const": "scripts/t6_coordinator_role_registry_v2.py"},
+        "resolver_symbol": {"const": "resolve_registry_v2"},
+        "expected_v2_registry_source_sha256": {"$ref": "#/$defs/sha256"},
+        "expected_v2_schema_sha256": {"$ref": "#/$defs/sha256"},
+        "expected_v2_resolver_blob_sha256": {"$ref": "#/$defs/sha256"},
+        "expected_v2_scheduler_semantic_sha256": {"$ref": "#/$defs/sha256"},
+        "expected_v2_coverage_verifier_semantic_sha256": {"$ref": "#/$defs/sha256"},
+        "required_v2_role_subdigest_keys": {
+          "const": [
+            "independent_coverage_verifier_registry",
+            "terminal_prefix_registry",
+            "terminal_scheduler_registry"
+          ]
+        }
+      }
+    },
+    "pinnedDocument": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "document_id",
+        "path",
+        "schema_id",
+        "schema_version",
+        "expected_json_schema_id",
+        "expected_blob_sha256",
+        "expected_canonical_sha256"
+      ],
+      "properties": {
+        "document_id": {"const": "q1_production_terminal_receipt_schema_v1"},
+        "path": {"const": "schemas/t6-q-one-production-terminal-receipts-v1.schema.json"},
+        "schema_id": {"const": "t6_q_one_production_terminal_receipts_v1"},
+        "schema_version": {"const": 1},
+        "expected_json_schema_id": {
+          "const": "https://priestess-bot.github.io/erdos-straus/schemas/t6-q-one-production-terminal-receipts-v1.schema.json"
+        },
+        "expected_blob_sha256": {"$ref": "#/$defs/sha256"},
+        "expected_canonical_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "authorityDenials": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "e1_authority",
+        "queue_authority",
+        "producer_authority",
+        "t5_authority",
+        "branch_authority"
+      ],
+      "properties": {
+        "e1_authority": {"const": false},
+        "queue_authority": {"const": false},
+        "producer_authority": {"const": false},
+        "t5_authority": {"const": false},
+        "branch_authority": {"const": false}
+      }
+    }
+  }
+}

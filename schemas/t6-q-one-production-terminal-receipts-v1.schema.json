@@ -1,0 +1,365 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://priestess-bot.github.io/erdos-straus/schemas/t6-q-one-production-terminal-receipts-v1.schema.json",
+  "title": "Production q=1 root terminal and registered-prefix miss receipts V1",
+  "oneOf": [
+    { "$ref": "#/$defs/rootTerminalReceipt" },
+    { "$ref": "#/$defs/prefixMissReceipt" }
+  ],
+  "$defs": {
+    "digest": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "gitOid": { "type": "string", "pattern": "^(?:[0-9a-f]{40}|[0-9a-f]{64})$" },
+    "contentId": { "type": "string", "pattern": "^[A-Za-z0-9_.:-]+:[0-9a-f]{64}$" },
+    "rootProblemId": { "type": "string", "pattern": "^q1-root-problem:[0-9a-f]{64}$" },
+    "bodyId": { "type": "string", "pattern": "^q1-source-body:[0-9a-f]{64}$" },
+    "anchorId": { "type": "string", "pattern": "^root-init-anchor:[0-9a-f]{64}$" },
+    "stateId": { "type": "string", "pattern": "^state:[0-9a-f]{64}$" },
+    "actualnessId": { "type": "string", "pattern": "^q1-root-source-actualness:[0-9a-f]{64}$" },
+    "hitDecisionId": { "type": "string", "pattern": "^root-terminal-hit-evidence:[0-9a-f]{64}$" },
+    "missDecisionId": { "type": "string", "pattern": "^prefix-miss-evidence:[0-9a-f]{64}$" },
+    "hitReceiptId": { "type": "string", "pattern": "^production-q1-root-terminal:[0-9a-f]{64}$" },
+    "missReceiptId": { "type": "string", "pattern": "^production-q1-prefix-miss:[0-9a-f]{64}$" },
+    "factorization": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "array",
+        "prefixItems": [
+          { "type": "integer", "minimum": 2 },
+          { "type": "integer", "minimum": 1 }
+        ],
+        "items": false,
+        "minItems": 2,
+        "maxItems": 2
+      }
+    },
+    "rawQOneG": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_id", "schema_version", "root_context", "equation_rank",
+        "equation_numerator", "equation_denominator", "q", "gap_three_x",
+        "endpoint_fiber_code", "major_phase_code", "provenance_code",
+        "mark_kind_code", "mark_root_context", "mark_equation_rank",
+        "gap_three_factorization"
+      ],
+      "properties": {
+        "schema_id": { "const": "q1_root_initializer_raw_v2" },
+        "schema_version": { "const": 2 },
+        "root_context": { "type": "integer", "minimum": 2 },
+        "equation_rank": { "type": "integer", "minimum": 2 },
+        "equation_numerator": { "const": 4 },
+        "equation_denominator": { "type": "integer", "minimum": 2 },
+        "q": { "const": 1 },
+        "gap_three_x": { "type": "integer", "minimum": 1 },
+        "endpoint_fiber_code": { "const": 2 },
+        "major_phase_code": { "const": 3 },
+        "provenance_code": { "const": 1 },
+        "mark_kind_code": { "const": 1 },
+        "mark_root_context": { "type": "integer", "minimum": 2 },
+        "mark_equation_rank": { "type": "integer", "minimum": 2 },
+        "gap_three_factorization": { "$ref": "#/$defs/factorization" }
+      }
+    },
+    "rootProblem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_id", "root_context", "equation_rank", "equation_numerator",
+        "equation_denominator", "mark_kind_code", "mark_root_context",
+        "mark_equation_rank"
+      ],
+      "properties": {
+        "schema_id": { "const": "q1_canonical_root_problem_v1" },
+        "root_context": { "type": "integer", "minimum": 2 },
+        "equation_rank": { "type": "integer", "minimum": 2 },
+        "equation_numerator": { "const": 4 },
+        "equation_denominator": { "type": "integer", "minimum": 2 },
+        "mark_kind_code": { "const": 1 },
+        "mark_root_context": { "type": "integer", "minimum": 2 },
+        "mark_equation_rank": { "type": "integer", "minimum": 2 }
+      }
+    },
+    "branchReplay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_id", "root_problem_id", "root_problem_digest", "raw_q_one_g_digest",
+        "q", "endpoint_fiber_code", "major_phase_code", "provenance_code",
+        "mark_kind_code", "gap_three_x", "gap_three_factorization", "body_id",
+        "body_digest", "anchor_id", "anchor_digest", "state_id", "state_digest",
+        "state_authority"
+      ],
+      "properties": {
+        "schema_id": { "const": "q1_deterministic_initial_g_branch_replay_v1" },
+        "root_problem_id": { "$ref": "#/$defs/rootProblemId" },
+        "root_problem_digest": { "$ref": "#/$defs/digest" },
+        "raw_q_one_g_digest": { "$ref": "#/$defs/digest" },
+        "q": { "const": 1 },
+        "endpoint_fiber_code": { "const": 2 },
+        "major_phase_code": { "const": 3 },
+        "provenance_code": { "const": 1 },
+        "mark_kind_code": { "const": 1 },
+        "gap_three_x": { "type": "integer", "minimum": 1 },
+        "gap_three_factorization": { "$ref": "#/$defs/factorization" },
+        "body_id": { "$ref": "#/$defs/bodyId" },
+        "body_digest": { "$ref": "#/$defs/digest" },
+        "anchor_id": { "$ref": "#/$defs/anchorId" },
+        "anchor_digest": { "$ref": "#/$defs/digest" },
+        "state_id": { "$ref": "#/$defs/stateId" },
+        "state_digest": { "$ref": "#/$defs/digest" },
+        "state_authority": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["initializer_authority", "persistent_admission", "queue_authority"],
+          "properties": {
+            "initializer_authority": { "const": false },
+            "persistent_admission": { "const": false },
+            "queue_authority": { "const": false }
+          }
+        }
+      }
+    },
+    "certificate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["certificate_type", "gap", "x", "divisor", "y", "z", "candidate_index"],
+      "properties": {
+        "certificate_type": { "enum": ["TYPE_I", "TYPE_II"] },
+        "gap": { "enum": [3, 7, 11] },
+        "x": { "type": "integer", "minimum": 1 },
+        "divisor": { "type": "integer", "minimum": 1 },
+        "y": { "type": "integer", "minimum": 1 },
+        "z": { "type": "integer", "minimum": 1 },
+        "candidate_index": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "rootEquation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["root_context", "equation_numerator", "equation_denominator", "x", "y", "z"],
+      "properties": {
+        "root_context": { "type": "integer", "minimum": 2 },
+        "equation_numerator": { "const": 4 },
+        "equation_denominator": { "type": "integer", "minimum": 2 },
+        "x": { "type": "integer", "minimum": 1 },
+        "y": { "type": "integer", "minimum": 1 },
+        "z": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "rootActualness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "receipt_type", "schema_version", "head_sha", "head_tree_sha", "v3_registry_id",
+        "v3_registry_digest", "v3_role_manifest_digest", "initializer_grant_id",
+        "initializer_grant_digest", "initializer_artifact_id", "initializer_artifact_semantic_sha256",
+        "issuer_grant_id", "issuer_grant_digest", "issuer_artifact_id",
+        "issuer_artifact_semantic_sha256", "fresh_module_binding_digest", "root_problem",
+        "root_problem_id", "root_problem_digest", "raw_q_one_g", "raw_q_one_g_digest",
+        "deterministic_initial_branch_replay", "deterministic_initial_branch_replay_digest",
+        "body_id", "body_digest", "anchor_id", "anchor_digest", "state_id", "state_digest",
+        "initializer_id", "initializer_contract_digest", "domain_replay_id", "domain_replay_digest",
+        "owner_domain_id", "occurrence_kind", "parent_kind", "actualness_scope",
+        "initializer_output_self_authorizing", "actualness_attestor_role", "source_actualness",
+        "root_initializer_authority", "terminal_issuer_attestation_authority", "persistent_admission",
+        "common_owner_authority", "e1_authority", "queue_authority", "actualness_id", "digest"
+      ],
+      "properties": {
+        "receipt_type": { "const": "QOneRootSourceActualnessReceiptV1" },
+        "schema_version": { "const": 1 },
+        "head_sha": { "$ref": "#/$defs/gitOid" },
+        "head_tree_sha": { "$ref": "#/$defs/gitOid" },
+        "v3_registry_id": { "const": "t6_coordinator_role_registry_v3" },
+        "v3_registry_digest": { "$ref": "#/$defs/digest" },
+        "v3_role_manifest_digest": { "$ref": "#/$defs/digest" },
+        "initializer_grant_id": { "const": "q1_root_initializer_grant_v3" },
+        "initializer_grant_digest": { "$ref": "#/$defs/digest" },
+        "initializer_artifact_id": { "const": "q1_root_initializer_envelope_v2" },
+        "initializer_artifact_semantic_sha256": { "$ref": "#/$defs/digest" },
+        "issuer_grant_id": { "const": "q1_terminal_issuer_grant_v3" },
+        "issuer_grant_digest": { "$ref": "#/$defs/digest" },
+        "issuer_artifact_id": { "const": "q1_terminal_issuer_v1" },
+        "issuer_artifact_semantic_sha256": { "$ref": "#/$defs/digest" },
+        "fresh_module_binding_digest": { "$ref": "#/$defs/digest" },
+        "root_problem": { "$ref": "#/$defs/rootProblem" },
+        "root_problem_id": { "$ref": "#/$defs/rootProblemId" },
+        "root_problem_digest": { "$ref": "#/$defs/digest" },
+        "raw_q_one_g": { "$ref": "#/$defs/rawQOneG" },
+        "raw_q_one_g_digest": { "$ref": "#/$defs/digest" },
+        "deterministic_initial_branch_replay": { "$ref": "#/$defs/branchReplay" },
+        "deterministic_initial_branch_replay_digest": { "$ref": "#/$defs/digest" },
+        "body_id": { "$ref": "#/$defs/bodyId" },
+        "body_digest": { "$ref": "#/$defs/digest" },
+        "anchor_id": { "$ref": "#/$defs/anchorId" },
+        "anchor_digest": { "$ref": "#/$defs/digest" },
+        "state_id": { "$ref": "#/$defs/stateId" },
+        "state_digest": { "$ref": "#/$defs/digest" },
+        "initializer_id": { "const": "q_one_root_initializer_envelope_v2" },
+        "initializer_contract_digest": { "$ref": "#/$defs/digest" },
+        "domain_replay_id": { "const": "q_one_g_raw_integer_replay_v2" },
+        "domain_replay_digest": { "$ref": "#/$defs/digest" },
+        "owner_domain_id": { "const": "ordinary_parentless_q1_g_root_v1" },
+        "occurrence_kind": { "const": "ROOT_INITIALIZER_OUTPUT" },
+        "parent_kind": { "const": "PARENTLESS_ROOT" },
+        "actualness_scope": { "const": "ROOT_OCCURRENCE_ONLY" },
+        "initializer_output_self_authorizing": { "const": false },
+        "actualness_attestor_role": { "const": "TERMINAL_ISSUER" },
+        "source_actualness": { "const": true },
+        "root_initializer_authority": { "const": true },
+        "terminal_issuer_attestation_authority": { "const": true },
+        "persistent_admission": { "const": false },
+        "common_owner_authority": { "const": false },
+        "e1_authority": { "const": false },
+        "queue_authority": { "const": false },
+        "actualness_id": { "$ref": "#/$defs/actualnessId" },
+        "digest": { "$ref": "#/$defs/digest" }
+      }
+    },
+    "commonReceipt": {
+      "type": "object",
+      "required": [
+        "receipt_type", "schema_version", "head_sha", "head_tree_sha", "v2_registry_id",
+        "v2_registry_digest", "v2_role_manifest_digest", "v3_registry_id", "v3_registry_digest",
+        "v3_role_manifest_digest", "cross_registry_equivalence_digest", "initializer_grant_id",
+        "initializer_grant_digest", "initializer_artifact_semantic_sha256", "issuer_grant_id",
+        "issuer_grant_digest", "issuer_artifact_semantic_sha256", "scheduler_grant_id",
+        "scheduler_grant_digest", "scheduler_artifact_semantic_sha256", "coverage_verifier_grant_id",
+        "coverage_verifier_grant_digest", "coverage_verifier_artifact_semantic_sha256",
+        "fresh_module_binding_digest", "root_actualness", "root_actualness_digest", "root_problem_id",
+        "root_problem_digest", "raw_q_one_g_digest", "deterministic_initial_branch_replay_digest",
+        "body_id", "body_digest", "anchor_id", "anchor_digest", "state_id", "state_digest",
+        "subject_kind", "root_context", "assembler_artifact_id", "assembler_artifact_semantic_sha256",
+        "assembler_module_binding_digest", "assembler_decision_id", "assembler_decision_digest",
+        "assembler_evidence_digest", "assembler_coverage_replay_digest", "schedule_id", "schedule_digest",
+        "source_actualness", "root_initializer_authority", "issuer_authority",
+        "issued_under_terminal_issuer", "persistent_admission", "common_owner_authority", "e1_authority",
+        "queue_authority", "producer_continuation_allowed", "receipt_id", "digest"
+      ],
+      "properties": {
+        "schema_version": { "const": 1 },
+        "head_sha": { "$ref": "#/$defs/gitOid" },
+        "head_tree_sha": { "$ref": "#/$defs/gitOid" },
+        "v2_registry_id": { "const": "t6_coordinator_role_registry_v2" },
+        "v2_registry_digest": { "$ref": "#/$defs/digest" },
+        "v2_role_manifest_digest": { "$ref": "#/$defs/digest" },
+        "v3_registry_id": { "const": "t6_coordinator_role_registry_v3" },
+        "v3_registry_digest": { "$ref": "#/$defs/digest" },
+        "v3_role_manifest_digest": { "$ref": "#/$defs/digest" },
+        "cross_registry_equivalence_digest": { "$ref": "#/$defs/digest" },
+        "initializer_grant_id": { "const": "q1_root_initializer_grant_v3" },
+        "initializer_grant_digest": { "$ref": "#/$defs/digest" },
+        "initializer_artifact_semantic_sha256": { "$ref": "#/$defs/digest" },
+        "issuer_grant_id": { "const": "q1_terminal_issuer_grant_v3" },
+        "issuer_grant_digest": { "$ref": "#/$defs/digest" },
+        "issuer_artifact_semantic_sha256": { "$ref": "#/$defs/digest" },
+        "scheduler_grant_id": { "const": "q1_prefix_terminal_scheduler_grant_v3" },
+        "scheduler_grant_digest": { "$ref": "#/$defs/digest" },
+        "scheduler_artifact_semantic_sha256": { "$ref": "#/$defs/digest" },
+        "coverage_verifier_grant_id": { "const": "q1_prefix_independent_coverage_verifier_grant_v3" },
+        "coverage_verifier_grant_digest": { "$ref": "#/$defs/digest" },
+        "coverage_verifier_artifact_semantic_sha256": { "$ref": "#/$defs/digest" },
+        "fresh_module_binding_digest": { "$ref": "#/$defs/digest" },
+        "root_actualness": { "$ref": "#/$defs/rootActualness" },
+        "root_actualness_digest": { "$ref": "#/$defs/digest" },
+        "root_problem_id": { "$ref": "#/$defs/rootProblemId" },
+        "root_problem_digest": { "$ref": "#/$defs/digest" },
+        "raw_q_one_g_digest": { "$ref": "#/$defs/digest" },
+        "deterministic_initial_branch_replay_digest": { "$ref": "#/$defs/digest" },
+        "body_id": { "$ref": "#/$defs/bodyId" },
+        "body_digest": { "$ref": "#/$defs/digest" },
+        "anchor_id": { "$ref": "#/$defs/anchorId" },
+        "anchor_digest": { "$ref": "#/$defs/digest" },
+        "state_id": { "$ref": "#/$defs/stateId" },
+        "state_digest": { "$ref": "#/$defs/digest" },
+        "subject_kind": { "const": "SOURCE_STATE" },
+        "root_context": { "type": "integer", "minimum": 2 },
+        "assembler_artifact_id": { "const": "q1_terminal_decision_assembler_v2" },
+        "assembler_artifact_semantic_sha256": { "$ref": "#/$defs/digest" },
+        "assembler_module_binding_digest": { "$ref": "#/$defs/digest" },
+        "assembler_decision_id": { "oneOf": [{ "$ref": "#/$defs/hitDecisionId" }, { "$ref": "#/$defs/missDecisionId" }] },
+        "assembler_decision_digest": { "$ref": "#/$defs/digest" },
+        "assembler_evidence_digest": { "$ref": "#/$defs/digest" },
+        "assembler_coverage_replay_digest": { "$ref": "#/$defs/digest" },
+        "schedule_id": { "const": "q1_root_gap_3_7_11_registered_priority_prefix_v1" },
+        "schedule_digest": { "$ref": "#/$defs/digest" },
+        "source_actualness": { "const": true },
+        "root_initializer_authority": { "const": true },
+        "issuer_authority": { "const": true },
+        "issued_under_terminal_issuer": { "const": true },
+        "persistent_admission": { "const": false },
+        "common_owner_authority": { "const": false },
+        "e1_authority": { "const": false },
+        "queue_authority": { "const": false },
+        "producer_continuation_allowed": { "const": false },
+        "receipt_id": { "oneOf": [{ "$ref": "#/$defs/hitReceiptId" }, { "$ref": "#/$defs/missReceiptId" }] },
+        "digest": { "$ref": "#/$defs/digest" }
+      }
+    },
+    "rootTerminalReceipt": {
+      "allOf": [
+        { "$ref": "#/$defs/commonReceipt" },
+        {
+          "type": "object",
+          "required": [
+            "outcome", "root_outcome_kind", "selected_certificate", "selected_certificate_digest",
+            "root_equation", "root_equation_digest", "global_exhaustion", "terminal_leaf_authority",
+            "registered_prefix_miss_authority", "root_proof_close_authority"
+          ],
+          "properties": {
+            "receipt_type": { "const": "ProductionQOneRootTerminalReceiptV1" },
+            "assembler_decision_id": { "$ref": "#/$defs/hitDecisionId" },
+            "receipt_id": { "$ref": "#/$defs/hitReceiptId" },
+            "outcome": { "const": "ROOT_TERMINAL_HIT" },
+            "root_outcome_kind": { "const": "ROOT_CERTIFICATE_LEFT_INJECTION" },
+            "selected_certificate": { "$ref": "#/$defs/certificate" },
+            "selected_certificate_digest": { "$ref": "#/$defs/digest" },
+            "root_equation": { "$ref": "#/$defs/rootEquation" },
+            "root_equation_digest": { "$ref": "#/$defs/digest" },
+            "global_exhaustion": { "const": false },
+            "terminal_leaf_authority": { "const": true },
+            "registered_prefix_miss_authority": { "const": false },
+            "root_proof_close_authority": { "const": true }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "prefixMissReceipt": {
+      "allOf": [
+        { "$ref": "#/$defs/commonReceipt" },
+        {
+          "type": "object",
+          "required": [
+            "outcome", "coverage_semantics", "ordered_gaps", "next_unchecked_gap",
+            "global_exhaustion", "selected_certificate", "selected_certificate_digest",
+            "terminal_leaf_authority", "registered_prefix_miss_authority",
+            "root_proof_close_authority"
+          ],
+          "properties": {
+            "receipt_type": { "const": "ProductionQOneRegisteredPrefixMissReceiptV1" },
+            "assembler_decision_id": { "$ref": "#/$defs/missDecisionId" },
+            "receipt_id": { "$ref": "#/$defs/missReceiptId" },
+            "outcome": { "const": "MISS_REGISTERED_PRIORITY_COMPLETE" },
+            "coverage_semantics": { "const": "REGISTERED_PRIORITY_ONLY" },
+            "ordered_gaps": {
+              "type": "array",
+              "prefixItems": [{ "const": 3 }, { "const": 7 }, { "const": 11 }],
+              "items": false,
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "next_unchecked_gap": { "const": 15 },
+            "global_exhaustion": { "const": false },
+            "selected_certificate": { "type": "null" },
+            "selected_certificate_digest": { "type": "null" },
+            "terminal_leaf_authority": { "const": false },
+            "registered_prefix_miss_authority": { "const": true },
+            "root_proof_close_authority": { "const": false }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    }
+  }
+}

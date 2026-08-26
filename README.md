@@ -4,7 +4,7 @@
 可核查数学主张和计算复现。`研究进展综述.md` 是阅读入口；`papers/`、
 `claims/`、`concepts/` 中的 Markdown/YAML 文件是知识库的事实源。
 
-当前文献快照审计至 2026-07-31；当前证明前沿和本轮旗舰命题核验至 2026-08-25。论文卡、
+当前文献快照审计至 2026-07-31；当前证明前沿和本轮旗舰命题核验至 2026-08-26。论文卡、
 主张卡、概念卡及各状态的实时数量以 `python scripts/kb.py status` 和自动生成的
 `index/theorem-ledger.md` 为准，不在入口文档手工复制。其中被撤回论文和存在关键证明
 缺口的预印本仍会收录，但用独立状态标出。
@@ -61,6 +61,21 @@ state、派生 domain、执行并独立重放。`p=73,193` 分别给出 Type II/
 `p=1201,2521` 给出 prefix-miss evidence；decision ID 是 state 的后置 sidecar，不回写 state
 ID。该模块仍固定 `source_actualness=false`，initializer/issuer/terminal/E1/queue authority
 和 producer continuation 全为 false，因此它验证了完整调用 DAG，但尚未签发 terminal。
+
+在此 evidence DAG 之上，coordinator registry v3 现已为同一个 parentless ordinary `q=1 G`
+根域分离授权 `ROOT_INITIALIZER`、`TERMINAL_ISSUER`、`TERMINAL_SCHEDULER` 与
+`INDEPENDENT_COVERAGE_VERIFIER` 四个 exact-HEAD role。production issuer 只接收 repository、
+full HEAD 和 raw q=1 G integers；它后置签发 root actualness，并将 assembler decision 转成两种
+严格分离的 receipt。`p=73,193,241441` 得到可关闭各自根目标的 production HIT；
+`p=1201,2521` 只得到 gaps 3/7/11 的 `MISS_REGISTERED_PRIORITY_COMPLETE`，仍固定
+`global_exhaustion=false`、`next_unchecked_gap=15`。另一个不导入 issuer 的 exact-HEAD replayer
+从 raw input 重建完整 expected wire；它会拒绝 local serializer 可接受的内部一致换链重封。
+
+这只闭合了 **q=1 根注册前缀的 production issuance/replay 子门**。V3 仍明确拒绝 common
+owner、E1、queue、producer、branch 和 T5 authority；prefix MISS 不能直接递归，完整 Gate 4、
+Gate 5、F1/F2/F3 与 T6 均保持 `OPEN`。controlled-loader 结论只适用于当前固定 resolver policy
+和 executable bytes；同时修改 loader contract、resolver 与 pins 属于新的 authority policy，
+必须重新证明和独立复核。
 
 ## 当前旗舰命题（合同内核核验至 2026-08-20）
 
