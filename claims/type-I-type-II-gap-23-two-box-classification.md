@@ -10,8 +10,10 @@ statement: >-
   certificate exists exactly when R(s) meets T. Hence, on the two even-h
   exceptional residue classes s=5,14 mod 23, a complete gap-23 Type I/II
   miss is exactly R(s) contained respectively in {1,5,12,14} or
-  {1,2,5,14}. This is a complete classification for the single gap-23
-  Bradford screen, not a complete terminal schedule or a T6 transition.
+  {1,2,5,14}; equivalently, s has exactly one simple prime factor congruent
+  to s modulo 23 and every other prime factor is 1 modulo 23. This is a
+  complete classification for the single gap-23 Bradford screen, not a
+  complete terminal schedule or a T6 transition.
 claim_status: established
 proof_provenance: repository_derivation
 review_status: independent_review
@@ -301,12 +303,82 @@ two even-\(h\) divisor-ratio boxes within its fixed gap-23 screen. A prime
 factor of \(s\) outside the corresponding four-element box is already a
 constructive terminal witness through (12) or (18).
 
+### Exact factorization inside the boxes
+
+The displayed four-element boxes have a stronger, exact factorization form.
+The signed ratio box is inverse closed. Let
+
+\[
+H=\{1,5,14\}.
+\tag{27}
+\]
+
+For both residue classes,
+
+\[
+\{1,5,12,14\}\cap\{1,5,12,14\}^{-1}
+=\{1,2,5,14\}\cap\{1,2,5,14\}^{-1}
+=H.
+\tag{28}
+\]
+
+Hence either residual condition in (25)--(26) first forces
+\(\mathcal R(s)\subseteq H\). Every prime divisor \(\ell\mid s\) and its
+inverse then lie in \(H\), so
+
+\[
+\ell\equiv1,\ 5,\ \text{or }14\pmod {23}.
+\tag{29}
+\]
+
+Any \(5\)- or \(14\)-residue prime can occur only to exponent one, since
+
+\[
+5^2\equiv2,
+\qquad14^2\equiv12\pmod {23},
+\tag{30}
+\]
+
+and neither residue lies in \(H\). There cannot be two nontrivial factors:
+two 5-residue factors give 2, two 14-residue factors give 12, and a
+5-residue factor divided by a 14-residue factor gives
+
+\[
+5/14\equiv2\pmod {23}.
+\tag{31}
+\]
+
+All three values would belong to \(\mathcal R(s)\), contradicting
+\(\mathcal R(s)\subseteq H\).
+
+Since \(s\equiv5\) or \(14\pmod {23}\), exactly one such prime factor must
+remain. Therefore the two residual boxes are equivalently
+
+\[
+\boxed{
+\operatorname{MISS}_{23}
+\Longleftrightarrow
+s=q\,u,\quad
+q\parallel s,\quad
+q\equiv s\pmod {23},\quad
+\ell\mid u\Longrightarrow\ell\equiv1\pmod {23}.
+}
+\tag{32}
+\]
+
+Here \(q\) is prime and \(q\parallel s\) means that it occurs with exponent
+one. Conversely, (32) gives
+\(\mathcal R(s)=\{1,5,14\}\), so it is contained in the relevant box. This
+factorization equivalence itself does not use the parity of \(h\); even
+\(h\) is the subdomain in which the earlier fixed small-divisor fan leaves
+these two classes.
+
 There is also a strict obstruction to treating gap 23 as a universal exit.
 If \(s\) itself is prime and \(s\equiv5\) or \(14\pmod {23}\), then
 
 \[
 \mathcal R(s)=\{1,5,14\},
-\tag{27}
+\tag{33}
 \]
 
 which lies in the appropriate box in (25) or (26). Thus the complete
@@ -390,11 +462,13 @@ factorization of \(s\). Since
 
 \[
 \gcd(s,6s-5)=\gcd(s,5),
-\tag{31}
+\tag{34}
 \]
 
 no existing q=1 G or registered-prefix theorem forces either residual box to
-be empty. A new cross-linear-form theorem would be needed for that.
+be empty. In its exact factor form, the remaining cross-linear question is
+whether q=1 G and the registered prefix can coexist with the factorization
+(32). A new cross-linear-form theorem would be needed for that.
 
 This card does not create a target terminal receipt, prove a complete terminal
 schedule, issue E1--E5, authorize a producer or queue, close a T6 residual,

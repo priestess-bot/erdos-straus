@@ -74,6 +74,18 @@ rederived the following facts.
    \iff\mathcal R(s)\subseteq\{1,2,5,14\}.
    \]
 
+   Because the signed-ratio box is inverse closed, either box immediately
+   reduces to \(\{1,5,14\}\). This is equivalent to the exact factorization
+
+   \[
+   s=q\,u,\qquad q\parallel s,\qquad q\equiv s\pmod {23},
+   \qquad \ell\mid u\Longrightarrow\ell\equiv1\pmod {23}.
+   \]
+
+   The review checked the high-power, repeated-residue, and mixed
+   5/14 cases: their squares or signed ratios would force 2 or 12 into the
+   ratio box, so no extra nontrivial factor is possible.
+
 5. The finite q=1 G control \(p=21169\) was independently recomputed. Its
    six complete divisor-residue screens at gaps
    \(3,7,11,15,19,23\) all miss their Type-I and Type-II targets. Its
