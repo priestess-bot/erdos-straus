@@ -125,6 +125,14 @@ Gate 4、Gate 5、F1/F2/F3、T6 和猜想状态全部保持开放。详见
 V6 的条件性复核记录见
 [`docs/audits/T6_Q1_ROOT_SOURCE_SCOPED_E1_REBIND_CONDITIONAL_REVIEW_2026-08-27.md`](docs/audits/T6_Q1_ROOT_SOURCE_SCOPED_E1_REBIND_CONDITIONAL_REVIEW_2026-08-27.md)。
 
+作为 E2 前的纯数学基础，现已证明 phase-root 的 target terminal predicate transport：对同一
+`4/p`、ROOT_SOL interface，冻结 Bradford gaps `[3,7,11]` 的完整候选集只依赖 `(p,m,d)`，故
+source prefix MISS 可在 target projection 上独立重放；同时 full-carrier chart 恒有
+`gcd(R-1,K)=1`，target-local anchor-sink family 恒 MISS。这只是有限 target scope 的数学定理，
+不是 target receipt，更不意味着 global exhaustion。gap23 也不能替代 E2：1201 和 2521 在 gap23
+terminal。无环的 E2 preprojection、target terminal、final owner与 E1--E5 顺序见
+[`docs/handoffs/T6_Q1_PHASE_ROOT_E2_PREPROJECTION_2026-08-27.md`](docs/handoffs/T6_Q1_PHASE_ROOT_E2_PREPROJECTION_2026-08-27.md)。
+
 ## 当前旗舰命题（合同内核核验至 2026-08-20）
 
 对核心素数 \(p\equiv1\pmod{24}\)，最终目标是下列双出口命题：

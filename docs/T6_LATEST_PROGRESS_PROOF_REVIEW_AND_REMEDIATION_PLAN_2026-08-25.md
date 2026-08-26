@@ -125,6 +125,14 @@ generic E1 或 production successor。target-bound terminal scope、E2、target 
 边界仍见 `docs/audits/T6_Q1_PHASE_ROOT_OBJECT_LAYER_AND_E2_E5_REVIEW_2026-08-26.md`；V6 条件性
 复核见 `docs/audits/T6_Q1_ROOT_SOURCE_SCOPED_E1_REBIND_CONDITIONAL_REVIEW_2026-08-27.md`。
 
+target-terminal/E2 的数学起点现已收紧：对于 canonical full-carrier phase root，冻结
+Bradford `[3,7,11]` candidate predicate 只依赖 `(p,m,d)`，可从 source MISS 在 target projection
+上独立重放；而 `gcd(R-1,K)=1` 使 target anchor-sink family 恒 MISS。这只是有限 target scope，
+不生成 target receipt 或 `MISS_COMPLETE`。E2 必须先形成不带 source/terminal/owner/state/edge ID 的
+pure preprojection；target terminal、preclassification 与 T5 draft 是其并行 siblings，final owner
+digest 只能在 target state ID 产生后计算。完整对象顺序见
+`docs/handoffs/T6_Q1_PHASE_ROOT_E2_PREPROJECTION_2026-08-27.md`。
+
 ---
 
 ## 0. 执行摘要
