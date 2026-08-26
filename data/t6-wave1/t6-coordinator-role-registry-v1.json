@@ -98,6 +98,30 @@
       "semantic_digest_method": "CANONICAL_JSON_POINTER_AND_GIT_BLOB_SHA256_V1"
     },
     {
+      "artifact_id": "coordinator_q1_root_v1_base_admission_authority_registry_resolver_v5",
+      "kind": "PYTHON_SYMBOL",
+      "path": "scripts/t6_coordinator_role_registry_v5.py",
+      "symbol": "resolve_registry_v5",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "PYTHON_AST_SYMBOL_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
+      "artifact_id": "coordinator_q1_root_v1_base_admission_authority_registry_schema_v5",
+      "kind": "JSON_POINTER",
+      "path": "schemas/t6-coordinator-role-registry-v5.schema.json",
+      "json_pointer": "",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "CANONICAL_JSON_POINTER_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
+      "artifact_id": "coordinator_q1_root_v1_base_admission_authority_registry_source_v5",
+      "kind": "JSON_POINTER",
+      "path": "data/t6-wave1/t6-coordinator-role-registry-v5.json",
+      "json_pointer": "",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "CANONICAL_JSON_POINTER_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
       "artifact_id": "family_grammar_freeze_v1",
       "kind": "JSON_POINTER",
       "path": "data/t6-wave1/family-grammar-freeze-v1.json",
@@ -142,6 +166,46 @@
       "kind": "PYTHON_SYMBOL",
       "path": "scripts/t6_persistent_selector_state_v1.py",
       "symbol": "reject_before_persistent_queue_v1",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "PYTHON_AST_SYMBOL_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
+      "artifact_id": "q1_root_v1_base_admission_orchestrator_v1",
+      "kind": "PYTHON_SYMBOL",
+      "path": "scripts/t6_q_one_root_v1_base_admission_orchestrator_v1.py",
+      "symbol": "assemble_q_one_root_v1_base_admission_v1",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "PYTHON_AST_SYMBOL_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
+      "artifact_id": "q1_root_v1_base_admission_receipt_verifier_v1",
+      "kind": "PYTHON_SYMBOL",
+      "path": "scripts/t6_q_one_root_v1_base_admission_receipt_verifier_v1.py",
+      "symbol": "verify_q_one_root_v1_base_admission_receipt_v1",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "PYTHON_AST_SYMBOL_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
+      "artifact_id": "q1_root_v1_base_admission_verifier_v1",
+      "kind": "PYTHON_SYMBOL",
+      "path": "scripts/t6_q_one_root_v1_base_admission_verifier_v1.py",
+      "symbol": "verify_and_admit_q_one_root_v1_base_v1",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "PYTHON_AST_SYMBOL_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
+      "artifact_id": "q1_root_v1_base_materializer_v1",
+      "kind": "PYTHON_SYMBOL",
+      "path": "scripts/t6_q_one_root_v1_base_materializer_v1.py",
+      "symbol": "materialize_q_one_root_v1_base_state_v1",
+      "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
+      "semantic_digest_method": "PYTHON_AST_SYMBOL_AND_GIT_BLOB_SHA256_V1"
+    },
+    {
+      "artifact_id": "q1_root_v1_terminal_adapter_v1",
+      "kind": "PYTHON_SYMBOL",
+      "path": "scripts/t6_q_one_root_v1_terminal_adapter_v1.py",
+      "symbol": "project_q_one_v3_miss_to_v1_terminal_first_v1",
       "authority": "EVIDENCE_ONLY_NOT_AUTHORIZED",
       "semantic_digest_method": "PYTHON_AST_SYMBOL_AND_GIT_BLOB_SHA256_V1"
     },
@@ -357,5 +421,5 @@
       ]
     }
   ],
-  "proof_boundary": "HEAD_BOUND_EVIDENCE_ONLY_NO_ROLE_AUTHORITY. Slice 1 pins shared evidence, the zero-authority V2 runtime entry, the independent q=1 arithmetic replay, the gaps-3/7/11 prefix scheduler and independent coverage verifier, the terminal-miss scope taxonomy, the evidence-only root envelope and terminal-decision assembler, the separate v2 prefix-role registry, the v3 q=1 root initializer/terminal-issuer authority layer, and the v4 common-root-owner, scope-validation and root-source-scoped E1 layer. This v1 inventory itself grants no producer, validator, projector, terminal-schedule, initializer, issuer, E1, queue or T5-ticket role; its evidence pins do not import any v2, v3 or v4 grant into v1. V3 production HIT receipts close only their parentless q=1 root occurrence. V3 production MISS receipts cover only registered gaps 3,7,11; V4 may combine an independently replayed MISS with exact root actualness and owner evidence to issue only ROOT_SOURCE_SCOPED_E1. Generic or successor E1, E2-E5, producer, admission, re-entry and queue authority remain absent. This registry does not close Gate 2, complete Gate 4, Gate 5, F1, F2, F3, T6, or the Erdos-Straus conjecture."
+  "proof_boundary": "HEAD_BOUND_EVIDENCE_ONLY_NO_ROLE_AUTHORITY. Slice 1 pins shared evidence, the zero-authority V2 runtime entry, the independent q=1 arithmetic replay, the gaps-3/7/11 prefix scheduler and independent coverage verifier, the terminal-miss scope taxonomy, the evidence-only root envelope and terminal-decision assembler, the separate v2 prefix-role registry, the v3 q=1 root initializer/terminal-issuer authority layer, the v4 common-root-owner, scope-validation and root-source-scoped E1 layer, and the v5 V1 root-base registry plus its materializer, verifier, terminal adapter, controlled orchestrator and independent replayer. This v1 inventory itself grants no producer, validator, projector, terminal-schedule, initializer, issuer, V1 base-admission, E1, queue or T5-ticket role; its evidence pins do not import any v2, v3, v4 or v5 grant into v1. V3 production HIT receipts close only their parentless q=1 root occurrence. V3 production MISS receipts cover only registered gaps 3,7,11; V4 may combine an independently replayed MISS with exact root actualness and owner evidence to issue only ROOT_SOURCE_SCOPED_E1. V5 may, under its separately reviewed selected-commit trust condition, materialize and admit only a V1 ROOT_INITIALIZER_OUTPUT base state for a registered-prefix MISS; its V2-to-V1 owner and potential evidence are reanchored rather than copied, and it grants no queue, successor, producer, E1-E5, T5 or global authority. Generic or successor E1, target-side E2-E5, producer, re-entry and queue authority remain absent in this inventory. This registry does not close Gate 2, complete Gate 4, Gate 5, F1, F2, F3, T6, or the Erdos-Straus conjecture."
 }

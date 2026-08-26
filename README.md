@@ -4,12 +4,12 @@
 可核查数学主张和计算复现。`研究进展综述.md` 是阅读入口；`papers/`、
 `claims/`、`concepts/` 中的 Markdown/YAML 文件是知识库的事实源。
 
-当前文献快照审计至 2026-07-31；当前证明前沿和本轮旗舰命题核验至 2026-08-26。论文卡、
+当前文献快照审计至 2026-07-31；当前证明前沿和本轮旗舰命题核验至 2026-08-27。论文卡、
 主张卡、概念卡及各状态的实时数量以 `python scripts/kb.py status` 和自动生成的
 `index/theorem-ledger.md` 为准，不在入口文档手工复制。其中被撤回论文和存在关键证明
 缺口的预印本仍会收录，但用独立状态标出。
 
-### T6 实时审计权威（2026-08-26）
+### T6 实时审计权威（2026-08-27）
 
 T6 工程与证明状态的机器可读入口固定为
 `data/t6-wave1/t6-live-audit-snapshot-v2.json`。该文件不进入 Git：GitHub Actions 在精确
@@ -90,13 +90,24 @@ exact-HEAD 集成共 32 项聚焦测试通过，最终独立复核结论为 `ACC
 `type_i_full_carrier_post_g` owner、E4 的 `Sol(4,p)` 恒等 lift，以及 E5 的七元势
 `(p,3,0,0,0,0,0) -> (p,2,4,B_p,K,0,0)` 在数学上均成立；但这些仍没有 authority receipt。
 
-更早的对象门不能跳过：V4 source 是 `persistent_admission=false` 的 V2 root occurrence，
-不是公共 runtime 已接纳的 V1 parent。下一步必须先把它独立物化并核验为 V1
-`ROOT_INITIALIZER_OUTPUT`，重算新的 V1 state/owner/potential；之后才能把 V4 E1 绑定到该
-source ID 并进入 target terminal、E2--E5 和 common admission。当前仍没有 successor、
-producer、re-entry 或 queue mutation，Gate 2、完整 Gate 4、Gate 5、F1/F2/F3、T6 和猜想
-状态均不升级。详见
-[`docs/audits/T6_Q1_PHASE_ROOT_OBJECT_LAYER_AND_E2_E5_REVIEW_2026-08-26.md`](docs/audits/T6_Q1_PHASE_ROOT_OBJECT_LAYER_AND_E2_E5_REVIEW_2026-08-26.md)。
+对象门现由 active V5 在更窄边界内接入：其 12 个 pinned artifact 只授予
+`Q1_ROOT_V1_BASE_MATERIALIZER` 与
+`INDEPENDENT_Q1_ROOT_V1_BASE_ADMISSION_VERIFIER` 两个 exact-HEAD role。对于
+`p=1201,2521`，V3 的 registered-prefix MISS 与独立重放的 V4 owner/scope evidence 可物化并
+接纳一个新的 V1 `ROOT_INITIALIZER_OUTPUT`；`p=73,193,241441` 的 terminal HIT 则在该步骤前
+终止。这里是 V2 root occurrence 到 V1 state/owner 的重新锚定，不复制 V2/V4 digest；
+canonical root potential 也仅是 evidence，绝非 T5 ticket。V5 receipt 可令
+`persistent_admission=true`，但 queue/enqueue、successor、producer、E1--E5、T5、global 与
+re-entry 均保持 false。
+
+V5 的 claim 仍是 `conditional` / `internal_review`：当前 resolver 绑定的是经审阅、仓库选定的
+exact commit，但该 commit 本身仍需要外部不可变或签名信任锚，任意同时改写 pins 与实现的提交
+不能继承权限。下一步是在满足此信任条件的 exact HEAD 上，把 V4
+`ROOT_SOURCE_SCOPED_E1` 重新绑定到该 admitted V1 source ID，然后才建立 target terminal、
+E2、target owner/E3、E4、E5 和 shared target admission。它仍不产生 successor、producer、
+queue mutation 或全局 selector 结论；Gate 2、完整 Gate 4、Gate 5、F1/F2/F3、T6 和猜想状态
+全部保持开放。详见
+[`docs/audits/T6_Q1_ROOT_V1_BASE_ADMISSION_CONDITIONAL_REVIEW_2026-08-27.md`](docs/audits/T6_Q1_ROOT_V1_BASE_ADMISSION_CONDITIONAL_REVIEW_2026-08-27.md)。
 
 ## 当前旗舰命题（合同内核核验至 2026-08-20）
 

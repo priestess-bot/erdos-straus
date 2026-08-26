@@ -1,0 +1,571 @@
+{
+  "schema_id": "t6_coordinator_role_registry_v5",
+  "schema_version": 5,
+  "registry_id": "t6_coordinator_role_registry_v5",
+  "status": "HEAD_BOUND_Q1_ROOT_V1_BASE_ADMISSION_AUTHORITY_NO_QUEUE_OR_SUCCESSOR",
+  "activation_status": "ACTIVE_EXACT_HEAD_AUTHORITY",
+  "authority_policy": {
+    "source": "TRACKED_GIT_OBJECTS_AT_EXACT_REQUESTED_HEAD",
+    "caller_override_authority": false,
+    "worktree_authority": false,
+    "fixed_owner_domain": "ordinary_parentless_q1_g_root_v1",
+    "inherited_v3_registry_id": "t6_coordinator_role_registry_v3",
+    "inherited_v4_registry_id": "t6_coordinator_role_registry_v4",
+    "new_roles": [
+      "INDEPENDENT_Q1_ROOT_V1_BASE_ADMISSION_VERIFIER",
+      "Q1_ROOT_V1_BASE_MATERIALIZER"
+    ],
+    "base_semantic_excludes_v4_e1_and_candidate": true
+  },
+  "artifacts": [
+    {
+      "artifact_id": "q1_root_v1_base_admission_orchestrator_v1",
+      "artifact_class": "CONTROLLED_LOADER_ORCHESTRATOR_ONLY",
+      "kind": "PYTHON_SYMBOL_SET",
+      "path": "scripts/t6_q_one_root_v1_base_admission_orchestrator_v1.py",
+      "symbols": [
+        "assemble_q_one_root_v1_base_admission_v1"
+      ],
+      "pin_status": "PINNED",
+      "semantic_digest_method": "PYTHON_STABLE_AST_SYMBOL_SET_BLOB_CLOSURE_DEPENDENCY_SHA256_V5",
+      "dependency_manifest": {
+        "execution_artifact_ids": [
+          "q1_root_v1_base_admission_verifier_v1",
+          "q1_root_v1_base_materializer_v1",
+          "q1_root_v1_terminal_adapter_v1",
+          "v1_persistent_state_contract_dependency",
+          "v3_production_receipt_verifier_dependency",
+          "v3_root_initializer_dependency",
+          "v4_owner_classifier_dependency",
+          "v4_registry_resolver_dependency",
+          "v4_scope_validator_dependency"
+        ],
+        "binding_artifact_ids": [],
+        "binding_document_ids": [
+          "data/t6-wave1/t6-coordinator-role-registry-v5.json",
+          "schemas/t6-coordinator-role-registry-v5.schema.json",
+          "schemas/t6-q-one-root-v1-base-admission-v1.schema.json",
+          "scripts/t6_coordinator_role_registry_v5.py"
+        ],
+        "artifact_semantic_pins": {
+          "q1_root_v1_base_admission_verifier_v1": "4fda677482ad484324281e49b1954de1ecfe1b04171aa582b5be767efd19e386",
+          "q1_root_v1_base_materializer_v1": "6ea92f3962e4a25a58ed22cb32c54eadffbc7051f58fec69d361a71b072f92d9",
+          "q1_root_v1_terminal_adapter_v1": "de912a0b385733faca21e8386be74b6db8b8006db526110625e512523d909321",
+          "v1_persistent_state_contract_dependency": "f191dda2210195599ebbebd9aaa417513b695871b5884e8805f0c408a67a494f",
+          "v3_production_receipt_verifier_dependency": "3b1d393fca94b81e7fe9acc8282b1543b591e1936f05efc6682fc7b9744323bc",
+          "v3_root_initializer_dependency": "3d9870c8bcd22eb234c74850ed17b47723f9ef19d281cf90fb191a2a1f37371f",
+          "v4_owner_classifier_dependency": "bfa1e7b07af56db15f3205db97964315dda123f3e76854ecc8e8d3ed9decc735",
+          "v4_registry_resolver_dependency": "fcd2ba17b75761bd7c30c08ecf6204e7f97ec4735defd51fa7f7ca38e8fe78d3",
+          "v4_scope_validator_dependency": "6bafd43416b27ae6f03486427a9705bc0d9fba2ef525a435abee819dc5de534d"
+        }
+      },
+      "expected_blob_sha256": "9e6404d32aaf3857cc7a680db2fd411d008bd80fc7eb7417c5d6e537ccb64e5e",
+      "expected_symbol_ast_sha256": {
+        "assemble_q_one_root_v1_base_admission_v1": "cc1334e83ad3f010bcc7749ea264023cdef7397da480d019439c29731db7b326"
+      },
+      "expected_symbol_set_digest": "ee6b77853cc1c9ca8dcbddb46485edb1aaa9a51edaa854f2fab3070557830bc7",
+      "expected_local_import_closure_digest": "632a6b7da17155cbe32e6450329bf555d7042ea74bee00a7ca4462971304dd0e",
+      "expected_dependency_manifest_digest": "381650843f7722a69bfaa2fb5e0ba3c33db57eb0609426331e87ac4e1c89c540",
+      "expected_semantic_sha256": "169941d9369600db00cecffef380098f8e36d68fc1ee90e7cf23177ddea59937"
+    },
+    {
+      "artifact_id": "q1_root_v1_base_admission_receipt_verifier_v1",
+      "artifact_class": "POST_ISSUANCE_REPLAY_DEPENDENCY_ONLY",
+      "kind": "PYTHON_SYMBOL_SET",
+      "path": "scripts/t6_q_one_root_v1_base_admission_receipt_verifier_v1.py",
+      "symbols": [
+        "verify_q_one_root_v1_base_admission_receipt_v1"
+      ],
+      "pin_status": "PINNED",
+      "semantic_digest_method": "PYTHON_STABLE_AST_SYMBOL_SET_BLOB_CLOSURE_DEPENDENCY_SHA256_V5",
+      "dependency_manifest": {
+        "execution_artifact_ids": [
+          "q1_root_v1_base_admission_verifier_v1",
+          "q1_root_v1_base_materializer_v1",
+          "q1_root_v1_terminal_adapter_v1",
+          "v1_persistent_state_contract_dependency",
+          "v3_production_receipt_verifier_dependency",
+          "v3_root_initializer_dependency",
+          "v4_owner_classifier_dependency",
+          "v4_registry_resolver_dependency",
+          "v4_scope_validator_dependency"
+        ],
+        "binding_artifact_ids": [
+          "q1_root_v1_base_admission_orchestrator_v1"
+        ],
+        "binding_document_ids": [
+          "schemas/t6-q-one-root-v1-base-admission-v1.schema.json",
+          "scripts/t6_coordinator_role_registry_v5.py"
+        ],
+        "artifact_semantic_pins": {
+          "q1_root_v1_base_admission_verifier_v1": "4fda677482ad484324281e49b1954de1ecfe1b04171aa582b5be767efd19e386",
+          "q1_root_v1_base_materializer_v1": "6ea92f3962e4a25a58ed22cb32c54eadffbc7051f58fec69d361a71b072f92d9",
+          "q1_root_v1_terminal_adapter_v1": "de912a0b385733faca21e8386be74b6db8b8006db526110625e512523d909321",
+          "v1_persistent_state_contract_dependency": "f191dda2210195599ebbebd9aaa417513b695871b5884e8805f0c408a67a494f",
+          "v3_production_receipt_verifier_dependency": "3b1d393fca94b81e7fe9acc8282b1543b591e1936f05efc6682fc7b9744323bc",
+          "v3_root_initializer_dependency": "3d9870c8bcd22eb234c74850ed17b47723f9ef19d281cf90fb191a2a1f37371f",
+          "v4_owner_classifier_dependency": "bfa1e7b07af56db15f3205db97964315dda123f3e76854ecc8e8d3ed9decc735",
+          "v4_registry_resolver_dependency": "fcd2ba17b75761bd7c30c08ecf6204e7f97ec4735defd51fa7f7ca38e8fe78d3",
+          "v4_scope_validator_dependency": "6bafd43416b27ae6f03486427a9705bc0d9fba2ef525a435abee819dc5de534d",
+          "q1_root_v1_base_admission_orchestrator_v1": "169941d9369600db00cecffef380098f8e36d68fc1ee90e7cf23177ddea59937"
+        }
+      },
+      "expected_blob_sha256": "b19a5dff8633592dc01a529fa74b39a08b5cedb94509848a34139e6e23eb2918",
+      "expected_symbol_ast_sha256": {
+        "verify_q_one_root_v1_base_admission_receipt_v1": "c210e05a173ef8829e676f3d167de444f7ae00c2b6ab284e335b64ee034139fa"
+      },
+      "expected_symbol_set_digest": "9367432ee12b4eb1ee40356bf751f4355e2f96af1342aaa35316767016300b37",
+      "expected_local_import_closure_digest": "65b6e16ad5b98d217ac0f40ac7a12183da033b4a857fc7738358b1f910674f9c",
+      "expected_dependency_manifest_digest": "d7ba7fbebfc743dbd9ccd7449932f94b1e28f72c8dcf5d4623e4f8d6eb36f514",
+      "expected_semantic_sha256": "6d675621cb6e4a8f85cb5ab7965453db7756dc3ea76fcfed0601b8484a595d93"
+    },
+    {
+      "artifact_id": "q1_root_v1_base_admission_verifier_v1",
+      "artifact_class": "ROLE_ARTIFACT",
+      "kind": "PYTHON_SYMBOL_SET",
+      "path": "scripts/t6_q_one_root_v1_base_admission_verifier_v1.py",
+      "symbols": [
+        "verify_and_admit_q_one_root_v1_base_v1",
+        "base_admission_receipt_to_mapping_v1"
+      ],
+      "pin_status": "PINNED",
+      "semantic_digest_method": "PYTHON_STABLE_AST_SYMBOL_SET_BLOB_CLOSURE_DEPENDENCY_SHA256_V5",
+      "dependency_manifest": {
+        "execution_artifact_ids": [
+          "v1_persistent_state_contract_dependency",
+          "v3_root_initializer_dependency"
+        ],
+        "binding_artifact_ids": [
+          "q1_root_v1_base_materializer_v1",
+          "q1_root_v1_terminal_adapter_v1",
+          "v3_production_receipt_verifier_dependency",
+          "v4_owner_classifier_dependency",
+          "v4_scope_validator_dependency"
+        ],
+        "binding_document_ids": [
+          "schemas/t6-q-one-root-v1-base-admission-v1.schema.json"
+        ],
+        "artifact_semantic_pins": {
+          "v1_persistent_state_contract_dependency": "f191dda2210195599ebbebd9aaa417513b695871b5884e8805f0c408a67a494f",
+          "v3_root_initializer_dependency": "3d9870c8bcd22eb234c74850ed17b47723f9ef19d281cf90fb191a2a1f37371f",
+          "q1_root_v1_base_materializer_v1": "6ea92f3962e4a25a58ed22cb32c54eadffbc7051f58fec69d361a71b072f92d9",
+          "q1_root_v1_terminal_adapter_v1": "de912a0b385733faca21e8386be74b6db8b8006db526110625e512523d909321",
+          "v3_production_receipt_verifier_dependency": "3b1d393fca94b81e7fe9acc8282b1543b591e1936f05efc6682fc7b9744323bc",
+          "v4_owner_classifier_dependency": "bfa1e7b07af56db15f3205db97964315dda123f3e76854ecc8e8d3ed9decc735",
+          "v4_scope_validator_dependency": "6bafd43416b27ae6f03486427a9705bc0d9fba2ef525a435abee819dc5de534d"
+        }
+      },
+      "expected_blob_sha256": "b77c7594f032ad9a388cda98e1558f2778a175e06a351e3ef3fb5e793190dc59",
+      "expected_symbol_ast_sha256": {
+        "verify_and_admit_q_one_root_v1_base_v1": "c7102c039593fee8e19c603b7e9dab1350b208a8f00c81a49bf9129c3e4bd7c0",
+        "base_admission_receipt_to_mapping_v1": "d02844008a2de1f06691f3cb6bd053221095c2611a2012251cb73129a7c5103a"
+      },
+      "expected_symbol_set_digest": "a3e081aff503f0fee815d17cb20ab736ce0facbe702763e6e5bd001312bcc40b",
+      "expected_local_import_closure_digest": "2a1402f7fe824f1cc7f95eabede36866fe3cbcf9cd2d83161dd6b8000c331aae",
+      "expected_dependency_manifest_digest": "40495614c0efc91bbc54c71e3610109e7fb280847dd0b656cdeb37372b8506b5",
+      "expected_semantic_sha256": "4fda677482ad484324281e49b1954de1ecfe1b04171aa582b5be767efd19e386"
+    },
+    {
+      "artifact_id": "q1_root_v1_base_materializer_v1",
+      "artifact_class": "ROLE_ARTIFACT",
+      "kind": "PYTHON_SYMBOL_SET",
+      "path": "scripts/t6_q_one_root_v1_base_materializer_v1.py",
+      "symbols": [
+        "materialize_q_one_root_v1_base_state_v1",
+        "base_materialization_receipt_to_mapping_v1"
+      ],
+      "pin_status": "PINNED",
+      "semantic_digest_method": "PYTHON_STABLE_AST_SYMBOL_SET_BLOB_CLOSURE_DEPENDENCY_SHA256_V5",
+      "dependency_manifest": {
+        "execution_artifact_ids": [
+          "q1_root_v1_terminal_adapter_v1",
+          "v1_persistent_state_contract_dependency",
+          "v3_root_initializer_dependency"
+        ],
+        "binding_artifact_ids": [
+          "v3_production_receipt_verifier_dependency"
+        ],
+        "binding_document_ids": [
+          "schemas/t6-q-one-root-v1-base-admission-v1.schema.json"
+        ],
+        "artifact_semantic_pins": {
+          "q1_root_v1_terminal_adapter_v1": "de912a0b385733faca21e8386be74b6db8b8006db526110625e512523d909321",
+          "v1_persistent_state_contract_dependency": "f191dda2210195599ebbebd9aaa417513b695871b5884e8805f0c408a67a494f",
+          "v3_root_initializer_dependency": "3d9870c8bcd22eb234c74850ed17b47723f9ef19d281cf90fb191a2a1f37371f",
+          "v3_production_receipt_verifier_dependency": "3b1d393fca94b81e7fe9acc8282b1543b591e1936f05efc6682fc7b9744323bc"
+        }
+      },
+      "expected_blob_sha256": "42f644357a2fafad23b7b5420b6727d4d31534588c324d6e7a63e2c32132a750",
+      "expected_symbol_ast_sha256": {
+        "materialize_q_one_root_v1_base_state_v1": "91117ecc645a4edb60ae4fa4471f1e7b5bc327bfbdc54edb911ba1faeecf54ff",
+        "base_materialization_receipt_to_mapping_v1": "0ad0e93e6489976c5280bbdc6442259f159636df7299808efbd1f4cf486e0478"
+      },
+      "expected_symbol_set_digest": "e61281685c45ef7ef407075f0de93d251436bc5b74f48c0f8a2807383cddc40e",
+      "expected_local_import_closure_digest": "5c0b84649e33e1698ee25de68581258f93f5e72910bfe4d9745d304fce0f2d9f",
+      "expected_dependency_manifest_digest": "e7ca11b1ec19aa15927f2cbc614f4ea1b89448c18c93dc00a9ca8909cb96e80c",
+      "expected_semantic_sha256": "6ea92f3962e4a25a58ed22cb32c54eadffbc7051f58fec69d361a71b072f92d9"
+    },
+    {
+      "artifact_id": "q1_root_v1_terminal_adapter_v1",
+      "artifact_class": "CANONICAL_PROJECTION_ONLY",
+      "kind": "PYTHON_SYMBOL_SET",
+      "path": "scripts/t6_q_one_root_v1_terminal_adapter_v1.py",
+      "symbols": [
+        "project_q_one_v3_miss_to_v1_terminal_first_v1",
+        "terminal_projection_to_mapping_v1"
+      ],
+      "pin_status": "PINNED",
+      "semantic_digest_method": "PYTHON_STABLE_AST_SYMBOL_SET_BLOB_CLOSURE_DEPENDENCY_SHA256_V5",
+      "dependency_manifest": {
+        "execution_artifact_ids": [],
+        "binding_artifact_ids": [],
+        "binding_document_ids": [],
+        "artifact_semantic_pins": {}
+      },
+      "expected_blob_sha256": "3f28bf002002fb9c4c5b0619e5b80b01f63d43af3eb23a8195bce9e97a42a26a",
+      "expected_symbol_ast_sha256": {
+        "project_q_one_v3_miss_to_v1_terminal_first_v1": "b200d48931fc0f3f4d3c98f9449323f88c2b1261e60d9003cda923a7bbedf4eb",
+        "terminal_projection_to_mapping_v1": "7e1e0cddea91797d88835fc0f581cf3b1d5124833976a14b3fa3aa7980fd3e2d"
+      },
+      "expected_symbol_set_digest": "7594c513f5fb70693df4eef4d94add88e7d215eefdd4568ecd867a15020f3b64",
+      "expected_local_import_closure_digest": "156a5f1d375d1fe9ab8681bef2ab566426ae331f0157fe9a905cefea0d5b9503",
+      "expected_dependency_manifest_digest": "b1e7ac38f25585ba128041eeaf4ca93ff6215a05a3e87e3418d6b6f6f1bee395",
+      "expected_semantic_sha256": "de912a0b385733faca21e8386be74b6db8b8006db526110625e512523d909321"
+    },
+    {
+      "artifact_id": "v1_persistent_state_contract_dependency",
+      "artifact_class": "V1_CONTRACT_DEPENDENCY_ONLY",
+      "kind": "PYTHON_SYMBOL_SET",
+      "path": "scripts/t6_persistent_selector_state_v1.py",
+      "symbols": [
+        "classify_selector_owner_v1",
+        "extract_verified_selector_header_v1",
+        "reject_before_persistent_queue_v1"
+      ],
+      "pin_status": "PINNED",
+      "semantic_digest_method": "PYTHON_STABLE_AST_SYMBOL_SET_BLOB_CLOSURE_DEPENDENCY_SHA256_V5",
+      "dependency_manifest": {
+        "execution_artifact_ids": [],
+        "binding_artifact_ids": [],
+        "binding_document_ids": [],
+        "artifact_semantic_pins": {}
+      },
+      "expected_blob_sha256": "7bb5d0287f0dfed85dafc098e3c0483955f48e613fe9bef4c7caa9507a4e3c8c",
+      "expected_symbol_ast_sha256": {
+        "classify_selector_owner_v1": "f0126eb7feaa16206e1fe7a6183cafc8fc702e8a4b73f787aec5099b4add317b",
+        "extract_verified_selector_header_v1": "26818164afaca74d05ada18cadfc390c1ed654a03f1864fab3ffe883a958e453",
+        "reject_before_persistent_queue_v1": "7867e305250c34ae11d40045f7c0efa3a19b0e874eafe474b9d3c3305e65d3dc"
+      },
+      "expected_symbol_set_digest": "02625fc80a9173a5a9ed2e71320e230d619b0542ec8d7951e5afabc357c24a1b",
+      "expected_local_import_closure_digest": "1adb8e94afa4f6b47aeb546627e198a59ddeaf8faf2518d5ba85eca87939bf79",
+      "expected_dependency_manifest_digest": "b1e7ac38f25585ba128041eeaf4ca93ff6215a05a3e87e3418d6b6f6f1bee395",
+      "expected_semantic_sha256": "f191dda2210195599ebbebd9aaa417513b695871b5884e8805f0c408a67a494f"
+    },
+    {
+      "artifact_id": "v2_registry_resolver_dependency",
+      "artifact_class": "CROSS_REGISTRY_DEPENDENCY_ONLY",
+      "kind": "PYTHON_SYMBOL_SET",
+      "path": "scripts/t6_coordinator_role_registry_v2.py",
+      "symbols": [
+        "resolve_registry_v2"
+      ],
+      "pin_status": "PINNED",
+      "semantic_digest_method": "PYTHON_STABLE_AST_SYMBOL_SET_BLOB_CLOSURE_DEPENDENCY_SHA256_V5",
+      "dependency_manifest": {
+        "execution_artifact_ids": [],
+        "binding_artifact_ids": [],
+        "binding_document_ids": [
+          "data/t6-wave1/t6-coordinator-role-registry-v2.json",
+          "schemas/t6-coordinator-role-registry-v2.schema.json"
+        ],
+        "artifact_semantic_pins": {}
+      },
+      "expected_blob_sha256": "b828d50e4df1f37ab1b03cbb92827b1f57366449e2be765d9aae89fd24897d65",
+      "expected_symbol_ast_sha256": {
+        "resolve_registry_v2": "5a3d2490dfd07a963f67467cd93bf9cfa13e7d8afe26d74ca48fc67c5b8e90ef"
+      },
+      "expected_symbol_set_digest": "4a3a5cd13094d1bb2f6b5c5a4a7af57c291cce6cf701db914cb64b1ffc6322ef",
+      "expected_local_import_closure_digest": "24261362ce94eebd1d03b48145342192ab96f32bf8b8b3c452303d0a11ff7139",
+      "expected_dependency_manifest_digest": "369b5d20e05b303a56e65bff431c5614bcba846df8a7ea8cde54266bcfce23ef",
+      "expected_semantic_sha256": "881a29df4bf92bbe3d9e8de3c16939932dda033d5739ded55c39519c1515e7cc"
+    },
+    {
+      "artifact_id": "v3_production_receipt_verifier_dependency",
+      "artifact_class": "CROSS_REGISTRY_DEPENDENCY_ONLY",
+      "kind": "PYTHON_SYMBOL_SET",
+      "path": "scripts/t6_q_one_terminal_receipt_verifier_v1.py",
+      "symbols": [
+        "verify_q_one_production_terminal_receipt_v1"
+      ],
+      "pin_status": "PINNED",
+      "semantic_digest_method": "PYTHON_STABLE_AST_SYMBOL_SET_BLOB_CLOSURE_DEPENDENCY_SHA256_V5",
+      "dependency_manifest": {
+        "execution_artifact_ids": [],
+        "binding_artifact_ids": [],
+        "binding_document_ids": [
+          "data/t6-wave1/t6-coordinator-role-registry-v3.json",
+          "schemas/t6-coordinator-role-registry-v3.schema.json",
+          "scripts/t6_coordinator_role_registry_v3.py"
+        ],
+        "artifact_semantic_pins": {}
+      },
+      "expected_blob_sha256": "384dabb8cdc5aad35d49c9b6720d3458f70778892ef3dcb7c64a7aa8a879c4c4",
+      "expected_symbol_ast_sha256": {
+        "verify_q_one_production_terminal_receipt_v1": "aa10878db3ab64fabd3dea6b3bd6de09098d017cd18e77a12c2ffcd6335b6152"
+      },
+      "expected_symbol_set_digest": "56bf0007fcdfd54ae965937575e09260af29a0d2a9de67f678f18bd7fcda6018",
+      "expected_local_import_closure_digest": "895ccc6e7ca2b63ee08db3854e23d62777d7ff54744b396fc7a525b6af845fc4",
+      "expected_dependency_manifest_digest": "03c2069cba5fcab8554ce18094a9ae0e922191f56b620e40287458a928aee01e",
+      "expected_semantic_sha256": "3b1d393fca94b81e7fe9acc8282b1543b591e1936f05efc6682fc7b9744323bc"
+    },
+    {
+      "artifact_id": "v3_root_initializer_dependency",
+      "artifact_class": "CROSS_REGISTRY_DEPENDENCY_ONLY",
+      "kind": "PYTHON_SYMBOL_SET",
+      "path": "scripts/t6_q_one_root_initializer_envelope_v2.py",
+      "symbols": [
+        "artifact_to_mapping_v2",
+        "make_canonical_q_one_g_source_body_v2",
+        "make_raw_root_source_state_v2",
+        "make_root_initializer_anchor_v2"
+      ],
+      "pin_status": "PINNED",
+      "semantic_digest_method": "PYTHON_STABLE_AST_SYMBOL_SET_BLOB_CLOSURE_DEPENDENCY_SHA256_V5",
+      "dependency_manifest": {
+        "execution_artifact_ids": [],
+        "binding_artifact_ids": [],
+        "binding_document_ids": [
+          "data/t6-wave1/t6-coordinator-role-registry-v3.json",
+          "schemas/t6-coordinator-role-registry-v3.schema.json"
+        ],
+        "artifact_semantic_pins": {}
+      },
+      "expected_blob_sha256": "0cfa66a419c27d72c29b9f4418a8b1c16c4ec6a8024aec52f2bb9e9e27439f8c",
+      "expected_symbol_ast_sha256": {
+        "artifact_to_mapping_v2": "8a8a6e38b0a104f2cc09acac0b4e0dc5b1347297c67d34eeff3ffb509f1c673e",
+        "make_canonical_q_one_g_source_body_v2": "86a798effd0181fab8eb6aa166cfc8665eac3c3c85d41dfb53bab781a2be50ce",
+        "make_raw_root_source_state_v2": "df19eb877db33f3347d54e00ff79813d4523e0ff78442e942e13c5d0bd3a6c63",
+        "make_root_initializer_anchor_v2": "7304b22dd1e7099fddab6cd500b2b72d7c04aa8324cb52c238635d7b5c8858b9"
+      },
+      "expected_symbol_set_digest": "9a45ccbe1c353e294cba3861b25b2d84b82d9d712fcc1de07e87f02f66a2af00",
+      "expected_local_import_closure_digest": "cb47ab07aebfeebd157cb377e20ea7daa78af33fb9cef26564f182a5b54dab23",
+      "expected_dependency_manifest_digest": "407ef25808719f6467611152a6c0978abea184d8e1300e3ec5bbdc4642a4f645",
+      "expected_semantic_sha256": "3d9870c8bcd22eb234c74850ed17b47723f9ef19d281cf90fb191a2a1f37371f"
+    },
+    {
+      "artifact_id": "v4_owner_classifier_dependency",
+      "artifact_class": "CROSS_REGISTRY_DEPENDENCY_ONLY",
+      "kind": "PYTHON_SYMBOL_SET",
+      "path": "scripts/t6_q_one_root_owner_classifier_v2.py",
+      "symbols": [
+        "classify_q_one_root_owner_v2",
+        "root_owner_receipt_to_mapping_v2"
+      ],
+      "pin_status": "PINNED",
+      "semantic_digest_method": "PYTHON_STABLE_AST_SYMBOL_SET_BLOB_CLOSURE_DEPENDENCY_SHA256_V5",
+      "dependency_manifest": {
+        "execution_artifact_ids": [],
+        "binding_artifact_ids": [],
+        "binding_document_ids": [
+          "data/t6-wave1/t6-coordinator-role-registry-v4.json",
+          "schemas/t6-coordinator-role-registry-v4.schema.json"
+        ],
+        "artifact_semantic_pins": {}
+      },
+      "expected_blob_sha256": "500e44221ab8591c3725c56579306a5aa5a79d3570c8cd5c194ae8380e71197b",
+      "expected_symbol_ast_sha256": {
+        "classify_q_one_root_owner_v2": "53423661bc90fc40493116e81612390e4f3670d9c7f64a5c04a02044400e3132",
+        "root_owner_receipt_to_mapping_v2": "6af39e5b2967a0c3a2b703247c21c0d44e2aaaed62c31fef168e0b282ac59653"
+      },
+      "expected_symbol_set_digest": "ad8497faa0b3a2916e334e852d9a8ca8e314822b923daa6fc97fd2a8cbd8a067",
+      "expected_local_import_closure_digest": "a21078108205d2bed8345347ef09db1ff65eec78bf0b8e477917a2da99a78fd8",
+      "expected_dependency_manifest_digest": "92532d2967fde3f7aebd2bb48ef8b5a3edd0bbfd9e5dde59606a2ced999be54b",
+      "expected_semantic_sha256": "bfa1e7b07af56db15f3205db97964315dda123f3e76854ecc8e8d3ed9decc735"
+    },
+    {
+      "artifact_id": "v4_registry_resolver_dependency",
+      "artifact_class": "CROSS_REGISTRY_DEPENDENCY_ONLY",
+      "kind": "PYTHON_SYMBOL_SET",
+      "path": "scripts/t6_coordinator_role_registry_v4.py",
+      "symbols": [
+        "resolve_registry_v4"
+      ],
+      "pin_status": "PINNED",
+      "semantic_digest_method": "PYTHON_STABLE_AST_SYMBOL_SET_BLOB_CLOSURE_DEPENDENCY_SHA256_V5",
+      "dependency_manifest": {
+        "execution_artifact_ids": [
+          "v2_registry_resolver_dependency"
+        ],
+        "binding_artifact_ids": [],
+        "binding_document_ids": [
+          "data/t6-wave1/t6-coordinator-role-registry-v4.json",
+          "schemas/t6-coordinator-role-registry-v4.schema.json"
+        ],
+        "artifact_semantic_pins": {
+          "v2_registry_resolver_dependency": "881a29df4bf92bbe3d9e8de3c16939932dda033d5739ded55c39519c1515e7cc"
+        }
+      },
+      "expected_blob_sha256": "3cc0a11b646b2a62ae9efd4f4522667661e52c9daf1f667444a7b4a1640c1d51",
+      "expected_symbol_ast_sha256": {
+        "resolve_registry_v4": "6e56d5511aa8233f654515e05cda67732aac97812c76aae6641c941165a033a8"
+      },
+      "expected_symbol_set_digest": "938f2f1a2f0d9de88c1c1033ecc47ab5cab29c147a4340f960d405b0d204564d",
+      "expected_local_import_closure_digest": "3615c76c067ac6921b45f9fef03fe8b0870f8c3064fe1d2e1585e12e8649c3a8",
+      "expected_dependency_manifest_digest": "c5012704b8df22b8d222dd8b9a149e56deefbf94811412682e18c697a1e79cb5",
+      "expected_semantic_sha256": "fcd2ba17b75761bd7c30c08ecf6204e7f97ec4735defd51fa7f7ca38e8fe78d3"
+    },
+    {
+      "artifact_id": "v4_scope_validator_dependency",
+      "artifact_class": "CROSS_REGISTRY_DEPENDENCY_ONLY",
+      "kind": "PYTHON_SYMBOL_SET",
+      "path": "scripts/t6_q_one_scope_aware_e1_validator_v2.py",
+      "symbols": [
+        "scope_validation_receipt_to_mapping_v2",
+        "validate_q_one_registered_prefix_e1_scope_v2"
+      ],
+      "pin_status": "PINNED",
+      "semantic_digest_method": "PYTHON_STABLE_AST_SYMBOL_SET_BLOB_CLOSURE_DEPENDENCY_SHA256_V5",
+      "dependency_manifest": {
+        "execution_artifact_ids": [],
+        "binding_artifact_ids": [],
+        "binding_document_ids": [
+          "data/t6-wave1/t6-coordinator-role-registry-v4.json",
+          "schemas/t6-coordinator-role-registry-v4.schema.json"
+        ],
+        "artifact_semantic_pins": {}
+      },
+      "expected_blob_sha256": "a8565979e368f3c78691f887e4447f5d653cbfd15a6d14fb0dd38f3ac2d660b1",
+      "expected_symbol_ast_sha256": {
+        "scope_validation_receipt_to_mapping_v2": "6ab0b578f6ed7a9c0c80dbe1f13c89409cdf50163c39211e91c888518e983b6e",
+        "validate_q_one_registered_prefix_e1_scope_v2": "4f2dff64aa45756cb41f09751382a9e887561cdd60e721c1685579e490903d7b"
+      },
+      "expected_symbol_set_digest": "935449eb7e5a5ddaa003ee9ccd95f58819de111259273f19ccde52892316d5bb",
+      "expected_local_import_closure_digest": "0716a576fc1811f8d8f213688f8eb33980321e6ea59cf26f3ceb562f388422bc",
+      "expected_dependency_manifest_digest": "92532d2967fde3f7aebd2bb48ef8b5a3edd0bbfd9e5dde59606a2ced999be54b",
+      "expected_semantic_sha256": "6bafd43416b27ae6f03486427a9705bc0d9fba2ef525a435abee819dc5de534d"
+    }
+  ],
+  "role_grants": [
+    {
+      "grant_id": "q1_root_v1_base_admission_verifier_grant_v1",
+      "role": "INDEPENDENT_Q1_ROOT_V1_BASE_ADMISSION_VERIFIER",
+      "artifact_id": "q1_root_v1_base_admission_verifier_v1",
+      "capabilities": [
+        "ISSUE_Q1_G_V1_BASE_ADMISSION_NO_QUEUE"
+      ],
+      "authority_class": "HEAD_BOUND_EXECUTABLE_CAPABILITY_V5",
+      "expected_artifact_semantic_sha256": "4fda677482ad484324281e49b1954de1ecfe1b04171aa582b5be767efd19e386",
+      "expected_dependency_manifest_digest": "40495614c0efc91bbc54c71e3610109e7fb280847dd0b656cdeb37372b8506b5"
+    },
+    {
+      "grant_id": "q1_root_v1_base_materializer_grant_v1",
+      "role": "Q1_ROOT_V1_BASE_MATERIALIZER",
+      "artifact_id": "q1_root_v1_base_materializer_v1",
+      "capabilities": [
+        "MATERIALIZE_Q1_G_V1_ROOT_INITIALIZER_OUTPUT"
+      ],
+      "authority_class": "HEAD_BOUND_EXECUTABLE_CAPABILITY_V5",
+      "expected_artifact_semantic_sha256": "6ea92f3962e4a25a58ed22cb32c54eadffbc7051f58fec69d361a71b072f92d9",
+      "expected_dependency_manifest_digest": "e7ca11b1ec19aa15927f2cbc614f4ea1b89448c18c93dc00a9ca8909cb96e80c"
+    }
+  ],
+  "base_admission_policy": {
+    "source_owner": "type_ii_relation_g_endpoint",
+    "v1_queue_gate": "ROOT_INITIALIZER_OUTPUT",
+    "v3_terminal_type": "ProductionQOneRegisteredPrefixMissReceiptV1",
+    "v3_terminal_outcome": "MISS_REGISTERED_PRIORITY_COMPLETE",
+    "coverage_semantics": "REGISTERED_PRIORITY_ONLY",
+    "ordered_gaps": [
+      3,
+      7,
+      11
+    ],
+    "next_unchecked_gap": 15,
+    "global_exhaustion": false,
+    "requires_v4_owner_receipt": true,
+    "requires_v4_scope_validation_receipt": true,
+    "v1_state_semantic_forbidden_fields": [
+      "v4_e1_receipt",
+      "v4_e1_candidate",
+      "v4_e1_candidate_digest",
+      "v4_root_source_scoped_e1",
+      "v4_consumer_receipt"
+    ]
+  },
+  "orchestration_policy": {
+    "artifact_id": "q1_root_v1_base_admission_orchestrator_v1",
+    "artifact_class": "CONTROLLED_LOADER_ORCHESTRATOR_ONLY",
+    "public_symbol": "assemble_q_one_root_v1_base_admission_v1",
+    "caller_inputs": [
+      "production_miss_receipt",
+      "raw_q_one_g",
+      "repository_locator",
+      "requested_head"
+    ],
+    "caller_supplied_grant_allowed": false,
+    "caller_supplied_v4_receipt_allowed": false,
+    "execution_toolchain_paths": [
+      "scripts/t6_coordinator_role_registry_v5.py"
+    ]
+  },
+  "post_issuance_replay_policy": {
+    "artifact_id": "q1_root_v1_base_admission_receipt_verifier_v1",
+    "artifact_class": "POST_ISSUANCE_REPLAY_DEPENDENCY_ONLY",
+    "public_symbol": "verify_q_one_root_v1_base_admission_receipt_v1",
+    "orchestrator_import_allowed": false,
+    "independent_wire_reconstruction": true
+  },
+  "v3_cross_registry_binding": {
+    "registry_path": "data/t6-wave1/t6-coordinator-role-registry-v3.json",
+    "schema_path": "schemas/t6-coordinator-role-registry-v3.schema.json",
+    "resolver_path": "scripts/t6_coordinator_role_registry_v3.py",
+    "required_status": "HEAD_BOUND_Q1_ROOT_TERMINAL_DECISION_AUTHORITY_NO_RECURSION",
+    "same_head_required": true
+  },
+  "v4_cross_registry_binding": {
+    "registry_path": "data/t6-wave1/t6-coordinator-role-registry-v4.json",
+    "schema_path": "schemas/t6-coordinator-role-registry-v4.schema.json",
+    "resolver_path": "scripts/t6_coordinator_role_registry_v4.py",
+    "required_status": "HEAD_BOUND_Q1_ROOT_PREFIX_SCOPED_E1_AUTHORITY_NO_SUCCESSOR_OR_RECURSION",
+    "same_head_required": true,
+    "v4_e1_consumer_receipt_accepted_as_base_input": false,
+    "expected_v4_artifact_semantic_sha256": {
+      "q1_root_owner_classifier_v2": "4d99732d962c35a7d0ef7ad994d2be27b33e9e7a80ee655805979c0392942c28",
+      "q1_scope_aware_e1_validator_v2": "b692e6e5f3d12089f5abeedd024cba02d497a438ec31dba1e91865a6754dcc0f",
+      "v3_production_receipt_verifier_dependency": "36af56a8f6699a1e670f435625255f021c5aecc339193207fd9b3376e65725e2",
+      "v3_root_initializer_dependency": "68c55e5bb8065d1139ab601e10dba4412fcae4a35ee01a6c8cec3ec3748a4a16"
+    }
+  },
+  "pinned_documents": [
+    {
+      "document_id": "q1_root_v1_base_admission_receipt_schema_v1",
+      "path": "schemas/t6-q-one-root-v1-base-admission-v1.schema.json",
+      "schema_id": "q1_root_v1_base_admission_v1",
+      "schema_version": 1,
+      "expected_json_schema_id": "https://priestess-bot.github.io/erdos-straus/schemas/t6-q-one-root-v1-base-admission-v1.schema.json",
+      "pin_status": "PINNED",
+      "expected_blob_sha256": "ef7dd4daa47b9a5ca3d6016e23f44c9eed87434f33afbb7df9011a876d604bc2",
+      "expected_canonical_sha256": "dc932a161d5397197526c7d78367c18615109da38e7391e23263ae5c10cf1cae"
+    }
+  ],
+  "authorized_branches": [],
+  "authority_denials": {
+    "queue_authority": false,
+    "enqueue_authority": false,
+    "successor_authority": false,
+    "producer_authority": false,
+    "producer_continuation_authority": false,
+    "e1_authority": false,
+    "e2_authority": false,
+    "e3_authority": false,
+    "e4_authority": false,
+    "e5_authority": false,
+    "t5_ticket_authority": false,
+    "t5_potential_authority": false,
+    "global_exhaustion_authority": false,
+    "terminal_leaf_authority": false,
+    "generic_owner_authority": false,
+    "branch_authority": false
+  },
+  "proof_boundary": "HEAD_BOUND_Q1_ROOT_V1_BASE_ADMISSION_AUTHORITY_NO_QUEUE_OR_SUCCESSOR. V5 creates only one actual V1 ROOT_INITIALIZER_OUTPUT base admission for an exact-head q=1 G source after an exact V3 registered-prefix MISS and independently verified V4 owner/scope receipts. The V1 state and its semantic-origin preimage exclude every V4 E1/candidate field. Queue, enqueue, successor, producer, E1-E5, T5 and global authority remain false. Pending placeholders grant no authority."
+}

@@ -1,4 +1,4 @@
-# T6 Phase 2 q=1 root prefix-scoped E1 handoff
+# T6 Phase 2 q=1 root prefix-scoped E1 handoff, with V5 base-admission update
 
 Date: 2026-08-26
 
@@ -22,6 +22,43 @@ The V4 roles are loader-free.  Exact-HEAD loading/orchestration and independent
 post-issuance replay are pinned non-role dependencies.  The current focused
 verification result is `32/32 PASS` (`16` registry, `9` role and `7`
 exact-HEAD integration tests).
+
+## 2026-08-27 V5 base-admission extension
+
+V5 resolves the object mismatch only at the base-admission layer. Its active
+exact-HEAD registry has 12 pinned artifacts and exactly two new roles:
+
+| Role | Narrow capability | Explicit exclusion |
+|---|---|---|
+| `Q1_ROOT_V1_BASE_MATERIALIZER` | materialize a canonical V1 `ROOT_INITIALIZER_OUTPUT` q=1 G state | no admission, queue, successor or E1--E5 authority |
+| `INDEPENDENT_Q1_ROOT_V1_BASE_ADMISSION_VERIFIER` | issue the matching V1 base admission | no enqueue, successor, producer, E1--E5, T5 or global authority |
+
+For `p=1201` and `p=2521`, a V3 registered-prefix MISS plus independently
+replayed V4 owner/scope evidence produces an admitted V1 base state. The V5
+pipeline deliberately does **not** consume a V4 E1 consumer receipt: V4 E1
+and candidate fields are excluded from the V1 state and semantic-origin
+preimage. `p=73`, `p=193` and `p=241441` remain terminal-first HIT controls
+and reject before base admission.
+
+The V2 root occurrence is therefore reanchored to a newly derived V1 state ID
+and a newly recomputed V1 owner digest; neither V2 nor V4 owner digest is
+copied. The canonical root potential `(p,3,0,0,0,0,0)` is recorded only as
+evidence, with `t5_potential_authority` and `t5_ticket_authority` both false.
+The final receipt may set `persistent_admission=true`, but all of the following
+remain false:
+
+```text
+queue / enqueue / successor / producer = false
+E1 / E2 / E3 / E4 / E5 / T5            = false
+global exhaustion / terminal leaf        = false
+```
+
+The V5 claim remains `conditional` / `internal_review`. Its exact-HEAD
+controls protect the reviewed repository-selected commit from worktree drift,
+Git replacement and routing/pin drift, but do not make an arbitrary
+caller-selected commit an external trust root. The selected commit must have an
+external immutable or signed trust anchor before this narrow admission is used
+as a published authority.
 
 ## Inputs downstream work may rely on
 
@@ -98,30 +135,34 @@ Making the Type-I target itself the initializer output would remove the G state
 from the persistent reachable domain and change the existing trace/T5/F1
 quantifiers.  That alternative is not adopted.
 
-The base gate needs two roles: a non-admitting V1 source materializer and an
-independent base-admission verifier.  Terminal schema translation,
-orchestration and post-issuance replay remain non-roles.  The new V1 state and
-owner digests must be recomputed; V4 digests are bound to a different V2 state
-ID and cannot be copied.
+V5 now supplies the two base-gate roles: a non-admitting V1 source materializer
+and an independent base-admission verifier. Terminal schema translation,
+orchestration and post-issuance replay remain non-roles. The new V1 state and
+owner digests are recomputed; V4 digests are bound to a different V2 state ID
+and cannot be copied.
 
-## Next phase: source admission, then one phase-root E2--E5 pilot
+## Next phase: rebind V4 E1, then one phase-root E2--E5 pilot
 
-Only after the base gate is closed should the accepted V4 occurrence be
-converted into one fully replayable q=1 G to Type-I phase-root edge.  Keep the
-work in the following dependency order.
+After the V5 base gate is usable under its selected-commit trust condition, the
+accepted V4 occurrence must be rebound to the exact admitted V1 source ID
+before it can become one fully replayable q=1 G to Type-I phase-root edge.
+Keep the remaining work in the following dependency order.
 
-### 0. V1 root source materialization and base admission
+### 0. Completed conditionally: V1 root source materialization and base admission
 
-Translate the independently replayed V3 production registered-prefix MISS into
-a scope-preserving V1 terminal receipt, construct a parentless
-`ROOT_INITIALIZER_OUTPUT` q=1 G state, and run the actual frozen V1 facts,
-owner and T5 evaluators.  Only the independent verifier may issue base
-admission; materializer, adapter and serializer outputs have no authority.
+V5 translates the independently replayed V3 production registered-prefix MISS
+into a scope-preserving V1 terminal receipt, constructs a parentless
+`ROOT_INITIALIZER_OUTPUT` q=1 G state, and runs the frozen V1 facts and owner
+evaluation. Only the independent verifier issues base admission; materializer,
+adapter and serializer outputs have no authority. Its potential value remains
+evidence and does not invoke a T5 evaluator or issue a T5 ticket.
 
-The V1 state preimage must be derived from the V2 root source and V3 MISS only;
-V4 owner/scope digests are compared after the new state ID exists and may enter
-the final admission sidecar, but may not be encoded into the state before
-classification.
+The V1 state preimage is derived from the V2 root source and V3 MISS only; V4
+owner/scope receipts are independently replayed after the new state ID exists
+and may enter the final admission sidecar, but are not encoded into the state
+before classification. V4 E1/candidate data is excluded entirely. The next new
+proof object must bind the already-issued V4 scoped E1 to this precise V1 source
+ID rather than reuse its V2 ID.
 
 The sidecar must preserve gaps `[3,7,11]`, `next_unchecked_gap=15` and
 `global_exhaustion=false`, and must keep successor, E1--E5 and queue authority
@@ -198,9 +239,10 @@ remain absent from all failed or partial paths.
 
 The phase-root pilot is ready for independent review only when it demonstrates:
 
-- p1201 and p2521: V3 prefix MISS, V4 scoped E1, deterministic E2 target,
-  V1 root base admission, unique target owner/E3, universal E4, strict E5 and
-  common re-entry;
+- p1201 and p2521: V3 prefix MISS, V5 base admission under the selected-commit
+  trust condition, V4 scoped E1 rebound to its admitted V1 source ID,
+  deterministic E2 target, unique target owner/E3, universal E4, strict E5 and
+  common target admission/re-entry;
 - p73, p193 and p241441: production HIT still preempts the producer before E1;
 - gap-23 evidence cannot alter the registered-prefix scope or become global
   exhaustion;

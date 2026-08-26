@@ -89,12 +89,24 @@ set 的 V1 state 作为普通 successor source。E2/E3 的 target formulas/唯�
 和 E5 七元 phase drop 的全称数学核都可证明，但若直接从 V4 state 发 successor，运行时应以
 `SOURCE_NOT_ADMITTED` 拒绝。
 
-因此保守且不改 trace 语义的执行顺序改为：先用两个分离角色把 V4 actual root 物化为新的
-V1 `ROOT_INITIALIZER_OUTPUT` 并独立签发 base admission（queue 仍为 false）；再把 V4 E1
-适配到这个新的 V1 source ID，随后执行 E2、target-bound terminal schedule、E3、E4、E5 和
-common target admission。V4 owner digest 绑定 V2 state ID，未来 V1 owner digest 必须重算，
-二者只要求 facts/owner/precedence 语义等价，绝不能复制 digest。精确证明与边界见
-`docs/audits/T6_Q1_PHASE_ROOT_OBJECT_LAYER_AND_E2_E5_REVIEW_2026-08-26.md`。
+该 base gate 现由 V5 在严格条件下完成。active V5 registry 固定 12 个 artifact，只授予
+`Q1_ROOT_V1_BASE_MATERIALIZER` 与
+`INDEPENDENT_Q1_ROOT_V1_BASE_ADMISSION_VERIFIER` 两个 role：`p=1201,2521` 在 V3
+registered-prefix MISS 和独立 V4 owner/scope replay 后可得到 V1
+`ROOT_INITIALIZER_OUTPUT` 的 base admission；`p=73,193,241441` 的 terminal HIT 在此之前
+preempt。V1 state 的 semantic origin 排除所有 V4 E1/candidate 字段，V2-to-V1 owner digest 重新
+锚定，canonical root potential 只作 evidence，绝不构成 T5 authority。receipt 的
+`persistent_admission=true` 仍不是 enqueue 或 successor：queue/enqueue、producer、E1--E5、T5、
+global、re-entry 均为 false。
+
+这条 V5 claim 准确保持 `conditional` / `internal_review`。exact-HEAD pin、worktree drift、Git
+replace 和 routing 控制已经复核，但仓库选定的 commit 本身尚需外部不可变或签名信任锚；同时
+更换 registry/pin/role bytes 是新的 authority policy，不能自动继承该结论。因此下一步不再是
+“物化 V1 source”，而是在满足 selected-commit trust condition 的 exact HEAD 上，把 V4
+`ROOT_SOURCE_SCOPED_E1` 重新绑定到该 admitted V1 source ID；再按次序建立 target-bound
+terminal scope、E2、target owner/E3、E4、E5 和 shared target admission。精确复核记录见
+`docs/audits/T6_Q1_ROOT_V1_BASE_ADMISSION_CONDITIONAL_REVIEW_2026-08-27.md`；历史对象层数学
+边界仍见 `docs/audits/T6_Q1_PHASE_ROOT_OBJECT_LAYER_AND_E2_E5_REVIEW_2026-08-26.md`。
 
 ---
 

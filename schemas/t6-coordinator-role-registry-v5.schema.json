@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://priestess-bot.github.io/erdos-straus/schemas/t6-coordinator-role-registry-v5.schema.json",
+  "title": "T6 q1 root V1 base-admission authority registry v5",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_id", "schema_version", "registry_id", "status", "activation_status",
+    "authority_policy", "artifacts", "role_grants", "base_admission_policy",
+    "orchestration_policy", "post_issuance_replay_policy", "v3_cross_registry_binding",
+    "v4_cross_registry_binding", "pinned_documents", "authorized_branches",
+    "authority_denials", "proof_boundary"
+  ],
+  "properties": {
+    "schema_id": {"const": "t6_coordinator_role_registry_v5"},
+    "schema_version": {"const": 5},
+    "registry_id": {"const": "t6_coordinator_role_registry_v5"},
+    "status": {"const": "HEAD_BOUND_Q1_ROOT_V1_BASE_ADMISSION_AUTHORITY_NO_QUEUE_OR_SUCCESSOR"},
+    "activation_status": {"enum": ["PENDING_ARTIFACT_PINS", "ACTIVE_EXACT_HEAD_AUTHORITY"]},
+    "authority_policy": {"$ref": "#/$defs/object"},
+    "artifacts": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"$ref": "#/$defs/artifact"}},
+    "role_grants": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/grant"}},
+    "base_admission_policy": {"$ref": "#/$defs/object"},
+    "orchestration_policy": {"$ref": "#/$defs/object"},
+    "post_issuance_replay_policy": {"$ref": "#/$defs/object"},
+    "v3_cross_registry_binding": {"$ref": "#/$defs/object"},
+    "v4_cross_registry_binding": {"$ref": "#/$defs/object"},
+    "pinned_documents": {"type": "array", "minItems": 1, "maxItems": 1, "items": {"$ref": "#/$defs/pinnedDocument"}},
+    "authorized_branches": {"type": "array", "maxItems": 0},
+    "authority_denials": {"$ref": "#/$defs/object"},
+    "proof_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "identifier": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"},
+    "path": {"type": "string", "pattern": "^[A-Za-z0-9._/-]+$"},
+    "object": {"type": "object"},
+    "stringArray": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "dependencyManifest": {
+      "type": "object", "additionalProperties": false,
+      "required": ["execution_artifact_ids", "binding_artifact_ids", "binding_document_ids", "artifact_semantic_pins"],
+      "properties": {
+        "execution_artifact_ids": {"$ref": "#/$defs/stringArray"},
+        "binding_artifact_ids": {"$ref": "#/$defs/stringArray"},
+        "binding_document_ids": {"$ref": "#/$defs/stringArray"},
+        "artifact_semantic_pins": {"type": "object", "additionalProperties": {"$ref": "#/$defs/sha256"}}
+      }
+    },
+    "artifact": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact_id", "artifact_class", "kind", "path", "symbols", "pin_status", "semantic_digest_method", "dependency_manifest", "expected_blob_sha256", "expected_symbol_ast_sha256", "expected_symbol_set_digest", "expected_local_import_closure_digest", "expected_dependency_manifest_digest", "expected_semantic_sha256"],
+      "properties": {
+        "artifact_id": {"$ref": "#/$defs/identifier"},
+        "artifact_class": {"enum": ["ROLE_ARTIFACT", "CANONICAL_PROJECTION_ONLY", "CONTROLLED_LOADER_ORCHESTRATOR_ONLY", "POST_ISSUANCE_REPLAY_DEPENDENCY_ONLY", "CROSS_REGISTRY_DEPENDENCY_ONLY", "V1_CONTRACT_DEPENDENCY_ONLY"]},
+        "kind": {"const": "PYTHON_SYMBOL_SET"},
+        "path": {"$ref": "#/$defs/path"},
+        "symbols": {"$ref": "#/$defs/stringArray"},
+        "pin_status": {"enum": ["PINNED", "PLACEHOLDER_UNRESOLVED"]},
+        "semantic_digest_method": {"const": "PYTHON_STABLE_AST_SYMBOL_SET_BLOB_CLOSURE_DEPENDENCY_SHA256_V5"},
+        "dependency_manifest": {"$ref": "#/$defs/dependencyManifest"},
+        "expected_blob_sha256": {"$ref": "#/$defs/sha256"},
+        "expected_symbol_ast_sha256": {"type": "object", "minProperties": 1, "additionalProperties": {"$ref": "#/$defs/sha256"}},
+        "expected_symbol_set_digest": {"$ref": "#/$defs/sha256"},
+        "expected_local_import_closure_digest": {"$ref": "#/$defs/sha256"},
+        "expected_dependency_manifest_digest": {"$ref": "#/$defs/sha256"},
+        "expected_semantic_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "grant": {
+      "type": "object", "additionalProperties": false,
+      "required": ["grant_id", "role", "artifact_id", "capabilities", "authority_class", "expected_artifact_semantic_sha256", "expected_dependency_manifest_digest"],
+      "properties": {
+        "grant_id": {"$ref": "#/$defs/identifier"},
+        "role": {"enum": ["INDEPENDENT_Q1_ROOT_V1_BASE_ADMISSION_VERIFIER", "Q1_ROOT_V1_BASE_MATERIALIZER"]},
+        "artifact_id": {"$ref": "#/$defs/identifier"},
+        "capabilities": {"$ref": "#/$defs/stringArray"},
+        "authority_class": {"const": "HEAD_BOUND_EXECUTABLE_CAPABILITY_V5"},
+        "expected_artifact_semantic_sha256": {"$ref": "#/$defs/sha256"},
+        "expected_dependency_manifest_digest": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "pinnedDocument": {
+      "type": "object", "additionalProperties": false,
+      "required": ["document_id", "path", "schema_id", "schema_version", "expected_json_schema_id", "pin_status", "expected_blob_sha256", "expected_canonical_sha256"],
+      "properties": {
+        "document_id": {"const": "q1_root_v1_base_admission_receipt_schema_v1"},
+        "path": {"const": "schemas/t6-q-one-root-v1-base-admission-v1.schema.json"},
+        "schema_id": {"const": "q1_root_v1_base_admission_v1"},
+        "schema_version": {"const": 1},
+        "expected_json_schema_id": {"const": "https://priestess-bot.github.io/erdos-straus/schemas/t6-q-one-root-v1-base-admission-v1.schema.json"},
+        "pin_status": {"enum": ["PINNED", "PLACEHOLDER_UNRESOLVED"]},
+        "expected_blob_sha256": {"$ref": "#/$defs/sha256"},
+        "expected_canonical_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  }
+}
