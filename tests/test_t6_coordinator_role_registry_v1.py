@@ -187,8 +187,12 @@ class CoordinatorEvidenceInventoryTests(unittest.TestCase):
         self.assertIs(evidence["role_authority"], False)
         self.assertTrue(
             {
+                "coordinator_prefix_schedule_role_registry_resolver_v2",
+                "coordinator_prefix_schedule_role_registry_schema_v2",
+                "coordinator_prefix_schedule_role_registry_source_v2",
                 "q_one_priority_prefix_coverage_verifier_v1",
                 "q_one_priority_prefix_scheduler_v1",
+                "q_one_root_initializer_envelope_v2",
                 "terminal_miss_scope_taxonomy_schema_v2",
                 "terminal_miss_scope_taxonomy_v2",
             }

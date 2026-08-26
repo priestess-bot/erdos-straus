@@ -19,7 +19,7 @@ GitHub 服务端来源核验的绿色 HEAD；任一摘要变化都会使旧证�
 `ADVANCED_UNVERIFIED`。即使 HEAD 已验证，没有当前摘要向量的独立复核，状态升级仍被
 阻断。当前 F1、F2、F3、T6 及猜想状态均不因这项工程收口而改变。
 
-Phase 2 当前只完成了零权限基础：精确 HEAD 的 coordinator inventory 中五类 role grant
+Phase 2 的 v1 基础保持零权限：精确 HEAD 的 v1 coordinator inventory 中五类 role grant
 均为 0，production terminal registry 中 COMPLETE schedule 为 0，且
 `MISS_COMPLETE` 签发被禁用。新的 acyclic V2 bundle 仅证明其保留类型字段按 projection、
 draft、edge anchor、raw target、final bundle、admission sidecar 构成可重放 DAG；opaque
@@ -41,8 +41,19 @@ Terminal miss 语义现进一步拆成“注册优先前缀 miss”和“全终�
 实现重建完整 wire。`p=73` 在 gap 7 命中；`p=241441` 在 gap 11 的自然首选为 Type II
 `d=27`，历史 `d=1083` 也在匹配集中；`p=1201,2521` 为真实 prefix miss。`p=1201`
 同时有未注册 gap 23、Type I `d=34` 根证书，故该结果严格保持
-`global_exhaustion=false`。当前它仍是 evidence-only，没有 registry-v2 grant、production
-issuer 或 E1 权限，Gate 4 尚未关闭。
+`global_exhaustion=false`。当前它仍是 evidence-only，本身不携带 production receipt、
+issuer 或 E1 权限；下一段的 v2 grant 只授权代码 capability，不改变这一结果，
+Gate 4 尚未关闭。
+
+在该数学前缀之上，独立的 coordinator registry v2 现只授予两个 HEAD-bound executable
+capability：terminal-prefix scheduler 与不同模块的 coverage verifier。两份授权代码均由 tracked
+blob、稳定 symbol AST、local-import closure 和 semantic digest 四级 pin 固定；代码变化不会
+自动继承权限，动态加载、模块级重绑定和共享本地 helper 均被拒绝。其状态仍是
+`HEAD_BOUND_PREFIX_SCHEDULE_AUTHORITY_NO_ISSUER`：issuer、initializer、E1、queue、producer
+和 T5 权限全部为 0。另已建立无环 root source envelope
+`CanonicalBody -> RootInitializerAnchor -> RawRootSourceState`，state ID 不含任何 terminal 或
+schedule 结果；该 envelope 同样只有 evidence authority。两项合起来仍不能签发 production
+terminal receipt 或激活 q=1 pilot。
 
 ## 当前旗舰命题（合同内核核验至 2026-08-20）
 

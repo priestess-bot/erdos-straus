@@ -1,0 +1,199 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://priestess-bot.github.io/erdos-straus/schemas/t6-q-one-root-initializer-envelope-v2.schema.json",
+  "title": "T6 q=1 G evidence-only root initializer envelope V2",
+  "oneOf": [
+    { "$ref": "#/$defs/sourceBody" },
+    { "$ref": "#/$defs/rootAnchor" },
+    { "$ref": "#/$defs/rootState" }
+  ],
+  "$defs": {
+    "digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "bodyId": {
+      "type": "string",
+      "pattern": "^q1-source-body:[0-9a-f]{64}$"
+    },
+    "anchorId": {
+      "type": "string",
+      "pattern": "^root-init-anchor:[0-9a-f]{64}$"
+    },
+    "stateId": {
+      "type": "string",
+      "pattern": "^state:[0-9a-f]{64}$"
+    },
+    "factorization": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "array",
+        "prefixItems": [
+          { "type": "integer", "minimum": 2 },
+          { "type": "integer", "minimum": 1 }
+        ],
+        "items": false,
+        "minItems": 2,
+        "maxItems": 2
+      }
+    },
+    "rootOrigin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["root_initializer_anchor_id", "digest"],
+      "properties": {
+        "root_initializer_anchor_id": { "$ref": "#/$defs/anchorId" },
+        "digest": { "$ref": "#/$defs/digest" }
+      }
+    },
+    "sourceBody": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_type",
+        "schema_version",
+        "root_context",
+        "equation_rank",
+        "equation_numerator",
+        "equation_denominator",
+        "q",
+        "gap_three_x",
+        "endpoint_fiber_code",
+        "major_phase_code",
+        "provenance_code",
+        "mark_kind_code",
+        "mark_root_context",
+        "mark_equation_rank",
+        "gap_three_factorization",
+        "source_tree_scope",
+        "evidence_class",
+        "initializer_authority",
+        "admission_authority",
+        "queue_authority",
+        "body_id",
+        "digest"
+      ],
+      "properties": {
+        "artifact_type": { "const": "CanonicalQOneGSourceBodyV2" },
+        "schema_version": { "const": 2 },
+        "root_context": { "type": "integer", "minimum": 2 },
+        "equation_rank": { "type": "integer", "minimum": 2 },
+        "equation_numerator": { "const": 4 },
+        "equation_denominator": { "type": "integer", "minimum": 2 },
+        "q": { "const": 1 },
+        "gap_three_x": { "type": "integer", "minimum": 1 },
+        "endpoint_fiber_code": { "const": 2 },
+        "major_phase_code": { "const": 3 },
+        "provenance_code": { "const": 1 },
+        "mark_kind_code": { "const": 1 },
+        "mark_root_context": { "type": "integer", "minimum": 2 },
+        "mark_equation_rank": { "type": "integer", "minimum": 2 },
+        "gap_three_factorization": { "$ref": "#/$defs/factorization" },
+        "source_tree_scope": { "const": "type_ii_endpoint_only" },
+        "evidence_class": { "const": "EVIDENCE_ONLY_ROOT_SOURCE" },
+        "initializer_authority": { "const": false },
+        "admission_authority": { "const": false },
+        "queue_authority": { "const": false },
+        "body_id": { "$ref": "#/$defs/bodyId" },
+        "digest": { "$ref": "#/$defs/digest" }
+      }
+    },
+    "rootAnchor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_type",
+        "schema_version",
+        "body_id",
+        "body_digest",
+        "initializer_id",
+        "contract_digest",
+        "root_origin_kind",
+        "domain_replay_id",
+        "domain_replay_digest",
+        "evidence_class",
+        "initializer_authority",
+        "admission_authority",
+        "queue_authority",
+        "anchor_id",
+        "digest"
+      ],
+      "properties": {
+        "artifact_type": { "const": "RootInitializerAnchorV2" },
+        "schema_version": { "const": 2 },
+        "body_id": { "$ref": "#/$defs/bodyId" },
+        "body_digest": { "$ref": "#/$defs/digest" },
+        "initializer_id": { "const": "q_one_root_initializer_envelope_v2" },
+        "contract_digest": { "$ref": "#/$defs/digest" },
+        "root_origin_kind": { "const": "PARENTLESS_ROOT" },
+        "domain_replay_id": { "const": "q_one_g_raw_integer_replay_v2" },
+        "domain_replay_digest": { "$ref": "#/$defs/digest" },
+        "evidence_class": { "const": "EVIDENCE_ONLY_ROOT_SOURCE" },
+        "initializer_authority": { "const": false },
+        "admission_authority": { "const": false },
+        "queue_authority": { "const": false },
+        "anchor_id": { "$ref": "#/$defs/anchorId" },
+        "digest": { "$ref": "#/$defs/digest" }
+      }
+    },
+    "rootState": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_type",
+        "schema_version",
+        "body_id",
+        "body_digest",
+        "root_context",
+        "equation_rank",
+        "equation_numerator",
+        "equation_denominator",
+        "q",
+        "gap_three_x",
+        "endpoint_fiber_code",
+        "major_phase_code",
+        "provenance_code",
+        "mark_kind_code",
+        "mark_root_context",
+        "mark_equation_rank",
+        "gap_three_factorization",
+        "source_tree_scope",
+        "root_origin",
+        "evidence_class",
+        "initializer_authority",
+        "admission_authority",
+        "queue_authority",
+        "state_id",
+        "digest"
+      ],
+      "properties": {
+        "artifact_type": { "const": "RawRootSourceStateV2" },
+        "schema_version": { "const": 2 },
+        "body_id": { "$ref": "#/$defs/bodyId" },
+        "body_digest": { "$ref": "#/$defs/digest" },
+        "root_context": { "type": "integer", "minimum": 2 },
+        "equation_rank": { "type": "integer", "minimum": 2 },
+        "equation_numerator": { "const": 4 },
+        "equation_denominator": { "type": "integer", "minimum": 2 },
+        "q": { "const": 1 },
+        "gap_three_x": { "type": "integer", "minimum": 1 },
+        "endpoint_fiber_code": { "const": 2 },
+        "major_phase_code": { "const": 3 },
+        "provenance_code": { "const": 1 },
+        "mark_kind_code": { "const": 1 },
+        "mark_root_context": { "type": "integer", "minimum": 2 },
+        "mark_equation_rank": { "type": "integer", "minimum": 2 },
+        "gap_three_factorization": { "$ref": "#/$defs/factorization" },
+        "source_tree_scope": { "const": "type_ii_endpoint_only" },
+        "root_origin": { "$ref": "#/$defs/rootOrigin" },
+        "evidence_class": { "const": "EVIDENCE_ONLY_ROOT_SOURCE" },
+        "initializer_authority": { "const": false },
+        "admission_authority": { "const": false },
+        "queue_authority": { "const": false },
+        "state_id": { "$ref": "#/$defs/stateId" },
+        "digest": { "$ref": "#/$defs/digest" }
+      }
+    }
+  }
+}

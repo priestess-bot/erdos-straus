@@ -34,6 +34,8 @@ sources:
     role: exact local and future-complete receipt schemas
   - claim: t6-terminal-miss-scope-taxonomy-v2
     role: later shape-only distinction between registered-prefix and universe miss semantics
+  - claim: t6-coordinator-head-bound-terminal-prefix-role-registry-v2
+    role: later exact-HEAD scheduler/verifier capabilities with issuer explicitly absent
 visibility: public
 last_checked: '2026-08-26'
 ---
@@ -119,4 +121,6 @@ receipt、自封装 TEST_ONLY/production mapping，以及直接构造的 typed c
 优先前缀的 `MISS_REGISTERED_PRIORITY_COMPLETE`，以及只可作为 shape 声明的全自然缺口
 `TERMINAL_UNIVERSE_MISS_EVIDENCE_ONLY`。前者必须记录下一未检查 gap，不能声称全局穷尽；
 后者若未来经完整语义重放，将报告根反例而不是允许 producer continuation。该 v2 类型层
-同样没有 issuer 或 E1 权限，因此不改变本卡“当前不可签发”的结论。
+同样没有 issuer 或 E1 权限。后续 coordinator registry v2 虽已固定并授权 gaps 3/7/11
+scheduler 与 independent coverage verifier 的代码 capability，但其
+`issuer_count=0`；因此仍不改变本卡“当前不可签发”的结论。

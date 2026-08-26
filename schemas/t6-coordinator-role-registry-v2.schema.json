@@ -1,0 +1,292 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://priestess-bot.github.io/erdos-straus/schemas/t6-coordinator-role-registry-v2.schema.json",
+  "title": "T6 coordinator role registry v2 source",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_id",
+    "schema_version",
+    "registry_id",
+    "status",
+    "authority_policy",
+    "artifacts",
+    "role_grants",
+    "terminal_prefix_authority",
+    "branch_bindings",
+    "authority_denials",
+    "proof_boundary"
+  ],
+  "properties": {
+    "schema_id": {"const": "t6_coordinator_role_registry_v2"},
+    "schema_version": {"const": 2},
+    "registry_id": {"const": "t6_coordinator_role_registry_v2"},
+    "status": {"const": "HEAD_BOUND_PREFIX_SCHEDULE_AUTHORITY_NO_ISSUER"},
+    "authority_policy": {"$ref": "#/$defs/authorityPolicy"},
+    "artifacts": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {"$ref": "#/$defs/coverageVerifierArtifact"},
+        {"$ref": "#/$defs/schedulerArtifact"}
+      ],
+      "items": false
+    },
+    "role_grants": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {"$ref": "#/$defs/coverageVerifierGrant"},
+        {"$ref": "#/$defs/schedulerGrant"}
+      ],
+      "items": false
+    },
+    "terminal_prefix_authority": {"$ref": "#/$defs/terminalPrefixAuthority"},
+    "branch_bindings": {
+      "type": "array",
+      "maxItems": 0
+    },
+    "authority_denials": {"$ref": "#/$defs/authorityDenials"},
+    "proof_boundary": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "HEAD_BOUND_PREFIX_SCHEDULE_AUTHORITY_NO_ISSUER"
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "authorityPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "worktree_authority",
+        "caller_override_authority",
+        "allowed_executable_roots",
+        "forbidden_executable_roots",
+        "fixed_schedule_id",
+        "allowed_roles"
+      ],
+      "properties": {
+        "source": {"const": "TRACKED_GIT_OBJECTS_AT_EXACT_REQUESTED_HEAD"},
+        "worktree_authority": {"const": false},
+        "caller_override_authority": {"const": false},
+        "allowed_executable_roots": {"const": ["scripts"]},
+        "forbidden_executable_roots": {
+          "const": [
+            ".github",
+            "claims",
+            "concepts",
+            "data",
+            "docs",
+            "index",
+            "reproductions",
+            "schemas",
+            "tests"
+          ]
+        },
+        "fixed_schedule_id": {
+          "const": "q1_root_gap_3_7_11_registered_priority_prefix_v1"
+        },
+        "allowed_roles": {
+          "const": ["INDEPENDENT_COVERAGE_VERIFIER", "TERMINAL_SCHEDULER"]
+        }
+      }
+    },
+    "pythonArtifactBase": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_id",
+        "kind",
+        "path",
+        "symbol",
+        "semantic_digest_method",
+        "expected_blob_sha256",
+        "expected_symbol_ast_sha256",
+        "expected_local_import_closure_digest",
+        "expected_semantic_sha256"
+      ],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "kind": {"const": "PYTHON_SYMBOL"},
+        "path": {"type": "string", "minLength": 1},
+        "symbol": {"type": "string", "minLength": 1},
+        "semantic_digest_method": {
+          "const": "PYTHON_AST_SYMBOL_BLOB_AND_LOCAL_IMPORT_CLOSURE_SHA256_V2"
+        },
+        "expected_blob_sha256": {"$ref": "#/$defs/sha256"},
+        "expected_symbol_ast_sha256": {"$ref": "#/$defs/sha256"},
+        "expected_local_import_closure_digest": {"$ref": "#/$defs/sha256"},
+        "expected_semantic_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "coverageVerifierArtifact": {
+      "allOf": [
+        {"$ref": "#/$defs/pythonArtifactBase"},
+        {
+          "properties": {
+            "artifact_id": {"const": "q1_priority_prefix_coverage_verifier_v1"},
+            "path": {
+              "const": "scripts/t6_q_one_priority_prefix_coverage_verifier_v1.py"
+            },
+            "symbol": {"const": "verify_q_one_priority_prefix_coverage_v1"}
+          }
+        }
+      ]
+    },
+    "schedulerArtifact": {
+      "allOf": [
+        {"$ref": "#/$defs/pythonArtifactBase"},
+        {
+          "properties": {
+            "artifact_id": {"const": "q1_priority_prefix_scheduler_v1"},
+            "path": {"const": "scripts/t6_q_one_priority_prefix_scheduler_v1.py"},
+            "symbol": {"const": "replay_q_one_priority_prefix_v1"}
+          }
+        }
+      ]
+    },
+    "grantBase": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "grant_id",
+        "role",
+        "artifact_id",
+        "schedule_id",
+        "capabilities",
+        "authority_class",
+        "expected_artifact_semantic_sha256"
+      ],
+      "properties": {
+        "grant_id": {"type": "string", "minLength": 1},
+        "role": {"type": "string", "minLength": 1},
+        "artifact_id": {"type": "string", "minLength": 1},
+        "schedule_id": {
+          "const": "q1_root_gap_3_7_11_registered_priority_prefix_v1"
+        },
+        "capabilities": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "authority_class": {
+          "const": "HEAD_BOUND_EXECUTABLE_CAPABILITY_NO_ISSUER"
+        },
+        "expected_artifact_semantic_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "coverageVerifierGrant": {
+      "allOf": [
+        {"$ref": "#/$defs/grantBase"},
+        {
+          "properties": {
+            "grant_id": {
+              "const": "q1_prefix_independent_coverage_verifier_grant_v2"
+            },
+            "role": {"const": "INDEPENDENT_COVERAGE_VERIFIER"},
+            "artifact_id": {"const": "q1_priority_prefix_coverage_verifier_v1"},
+            "capabilities": {
+              "const": [
+                "CERTIFICATE_VERIFIER",
+                "DOMAIN_VERIFIER",
+                "ROOT_TERMINAL_VERIFIER"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "schedulerGrant": {
+      "allOf": [
+        {"$ref": "#/$defs/grantBase"},
+        {
+          "properties": {
+            "grant_id": {"const": "q1_prefix_terminal_scheduler_grant_v2"},
+            "role": {"const": "TERMINAL_SCHEDULER"},
+            "artifact_id": {"const": "q1_priority_prefix_scheduler_v1"},
+            "capabilities": {"const": ["REGISTERED_PRIORITY_PREFIX_REPLAY"]}
+          }
+        }
+      ]
+    },
+    "terminalPrefixAuthority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schedule_id",
+        "scheduler_grant_id",
+        "coverage_verifier_grant_id",
+        "domain_schema_id",
+        "evidence_schema_id",
+        "ordered_gaps",
+        "next_unchecked_gap",
+        "candidate_order",
+        "coverage_scope",
+        "coverage_semantics",
+        "global_exhaustion",
+        "outcomes",
+        "terminal_hit_semantics",
+        "prefix_miss_semantics",
+        "issuer_authorized"
+      ],
+      "properties": {
+        "schedule_id": {
+          "const": "q1_root_gap_3_7_11_registered_priority_prefix_v1"
+        },
+        "scheduler_grant_id": {
+          "const": "q1_prefix_terminal_scheduler_grant_v2"
+        },
+        "coverage_verifier_grant_id": {
+          "const": "q1_prefix_independent_coverage_verifier_grant_v2"
+        },
+        "domain_schema_id": {"const": "q1_priority_prefix_domain_v1"},
+        "evidence_schema_id": {"const": "t6_q_one_priority_prefix_evidence_v1"},
+        "ordered_gaps": {"const": [3, 7, 11]},
+        "next_unchecked_gap": {"const": 15},
+        "candidate_order": {
+          "const": "gap_ascending_divisor_ascending_type_I_before_II"
+        },
+        "coverage_scope": {"const": "REGISTERED_PRIORITY_PREFIX_GAPS_3_7_11"},
+        "coverage_semantics": {"const": "REGISTERED_PRIORITY_ONLY"},
+        "global_exhaustion": {"const": false},
+        "outcomes": {"const": ["PREFIX_MISS_EVIDENCE_ONLY", "ROOT_TERMINAL_HIT"]},
+        "terminal_hit_semantics": {
+          "const": "ROOT_TERMINAL_EVIDENCE_ONLY_NO_ISSUER"
+        },
+        "prefix_miss_semantics": {
+          "const": "REGISTERED_PREFIX_MISS_EVIDENCE_ONLY_NO_E1"
+        },
+        "issuer_authorized": {"const": false}
+      }
+    },
+    "authorityDenials": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "issuer_count",
+        "issuer_authority",
+        "e1_authority",
+        "queue_authority",
+        "producer_authority",
+        "initializer_authority",
+        "t5_authority"
+      ],
+      "properties": {
+        "issuer_count": {"const": 0},
+        "issuer_authority": {"const": false},
+        "e1_authority": {"const": false},
+        "queue_authority": {"const": false},
+        "producer_authority": {"const": false},
+        "initializer_authority": {"const": false},
+        "t5_authority": {"const": false}
+      }
+    }
+  }
+}

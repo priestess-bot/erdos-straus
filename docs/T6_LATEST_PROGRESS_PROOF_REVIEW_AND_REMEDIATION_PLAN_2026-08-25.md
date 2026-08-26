@@ -40,6 +40,13 @@ taxonomy 和 q=1 gaps 3/7/11 完整 divisor-prefix evidence。这里必须区分
 永远不能成为 producer continuation。当前两类都无 issuer/E1/queue authority，Gate 4
 仍未验收。
 
+下一层已把两个必要接口分开建立：coordinator registry v2 只授权固定 prefix scheduler 和
+独立 coverage verifier 的 exact-HEAD 代码身份，并以 tracked blob/AST/closure/semantic pins
+阻止代码静默继承权限；其 issuer、initializer、E1、queue、producer、T5 权限仍全为 0。
+同时，q=1 root source 已改用无环 envelope：initializer anchor 先于 state ID 生成，terminal
+decision 只能作为后置 sidecar，不能进入 state identity。两者尚未由 issuer 串接，因此仍是
+Gate 4 的前置闭合，不是 production terminal receipt。
+
 ---
 
 ## 0. 执行摘要

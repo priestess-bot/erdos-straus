@@ -1,0 +1,115 @@
+{
+  "schema_id": "t6_coordinator_role_registry_v2",
+  "schema_version": 2,
+  "registry_id": "t6_coordinator_role_registry_v2",
+  "status": "HEAD_BOUND_PREFIX_SCHEDULE_AUTHORITY_NO_ISSUER",
+  "authority_policy": {
+    "source": "TRACKED_GIT_OBJECTS_AT_EXACT_REQUESTED_HEAD",
+    "worktree_authority": false,
+    "caller_override_authority": false,
+    "allowed_executable_roots": [
+      "scripts"
+    ],
+    "forbidden_executable_roots": [
+      ".github",
+      "claims",
+      "concepts",
+      "data",
+      "docs",
+      "index",
+      "reproductions",
+      "schemas",
+      "tests"
+    ],
+    "fixed_schedule_id": "q1_root_gap_3_7_11_registered_priority_prefix_v1",
+    "allowed_roles": [
+      "INDEPENDENT_COVERAGE_VERIFIER",
+      "TERMINAL_SCHEDULER"
+    ]
+  },
+  "artifacts": [
+    {
+      "artifact_id": "q1_priority_prefix_coverage_verifier_v1",
+      "kind": "PYTHON_SYMBOL",
+      "path": "scripts/t6_q_one_priority_prefix_coverage_verifier_v1.py",
+      "symbol": "verify_q_one_priority_prefix_coverage_v1",
+      "semantic_digest_method": "PYTHON_AST_SYMBOL_BLOB_AND_LOCAL_IMPORT_CLOSURE_SHA256_V2",
+      "expected_blob_sha256": "85e3bc5bda2de6db5f4a3006ef8e5e67860d7333bb1cbc528c609b1a87e77050",
+      "expected_symbol_ast_sha256": "ad73c98ffc87364c7191369e1acb68e22c29e1132b3c3593fe87cafd256d0d6d",
+      "expected_local_import_closure_digest": "14c01a7ada13bea48e76f04e654904b9d377f203383d6ac85e5bfcb9da17320e",
+      "expected_semantic_sha256": "608a7284dffbecd0660f78fec9f9e845b025d58491336c278d88d72a90ae94c5"
+    },
+    {
+      "artifact_id": "q1_priority_prefix_scheduler_v1",
+      "kind": "PYTHON_SYMBOL",
+      "path": "scripts/t6_q_one_priority_prefix_scheduler_v1.py",
+      "symbol": "replay_q_one_priority_prefix_v1",
+      "semantic_digest_method": "PYTHON_AST_SYMBOL_BLOB_AND_LOCAL_IMPORT_CLOSURE_SHA256_V2",
+      "expected_blob_sha256": "b5dd9bf2ef265c750c48c53c1580f0431654f31e4a01c2d2c316fd896ed64fb1",
+      "expected_symbol_ast_sha256": "393d9216a82c9fc1194e242247bdde1e56503dd06edefed24cb3fd65079f932a",
+      "expected_local_import_closure_digest": "7b84cd0b0d411c025af005aa9b2046a3b484952e3f4c85a444f5bcb890535258",
+      "expected_semantic_sha256": "25747ca36880812bf0d5d37dcc7b25851cc97c808605a70eb10d4e0f5af8d102"
+    }
+  ],
+  "role_grants": [
+    {
+      "grant_id": "q1_prefix_independent_coverage_verifier_grant_v2",
+      "role": "INDEPENDENT_COVERAGE_VERIFIER",
+      "artifact_id": "q1_priority_prefix_coverage_verifier_v1",
+      "schedule_id": "q1_root_gap_3_7_11_registered_priority_prefix_v1",
+      "capabilities": [
+        "CERTIFICATE_VERIFIER",
+        "DOMAIN_VERIFIER",
+        "ROOT_TERMINAL_VERIFIER"
+      ],
+      "authority_class": "HEAD_BOUND_EXECUTABLE_CAPABILITY_NO_ISSUER",
+      "expected_artifact_semantic_sha256": "608a7284dffbecd0660f78fec9f9e845b025d58491336c278d88d72a90ae94c5"
+    },
+    {
+      "grant_id": "q1_prefix_terminal_scheduler_grant_v2",
+      "role": "TERMINAL_SCHEDULER",
+      "artifact_id": "q1_priority_prefix_scheduler_v1",
+      "schedule_id": "q1_root_gap_3_7_11_registered_priority_prefix_v1",
+      "capabilities": [
+        "REGISTERED_PRIORITY_PREFIX_REPLAY"
+      ],
+      "authority_class": "HEAD_BOUND_EXECUTABLE_CAPABILITY_NO_ISSUER",
+      "expected_artifact_semantic_sha256": "25747ca36880812bf0d5d37dcc7b25851cc97c808605a70eb10d4e0f5af8d102"
+    }
+  ],
+  "terminal_prefix_authority": {
+    "schedule_id": "q1_root_gap_3_7_11_registered_priority_prefix_v1",
+    "scheduler_grant_id": "q1_prefix_terminal_scheduler_grant_v2",
+    "coverage_verifier_grant_id": "q1_prefix_independent_coverage_verifier_grant_v2",
+    "domain_schema_id": "q1_priority_prefix_domain_v1",
+    "evidence_schema_id": "t6_q_one_priority_prefix_evidence_v1",
+    "ordered_gaps": [
+      3,
+      7,
+      11
+    ],
+    "next_unchecked_gap": 15,
+    "candidate_order": "gap_ascending_divisor_ascending_type_I_before_II",
+    "coverage_scope": "REGISTERED_PRIORITY_PREFIX_GAPS_3_7_11",
+    "coverage_semantics": "REGISTERED_PRIORITY_ONLY",
+    "global_exhaustion": false,
+    "outcomes": [
+      "PREFIX_MISS_EVIDENCE_ONLY",
+      "ROOT_TERMINAL_HIT"
+    ],
+    "terminal_hit_semantics": "ROOT_TERMINAL_EVIDENCE_ONLY_NO_ISSUER",
+    "prefix_miss_semantics": "REGISTERED_PREFIX_MISS_EVIDENCE_ONLY_NO_E1",
+    "issuer_authorized": false
+  },
+  "branch_bindings": [],
+  "authority_denials": {
+    "issuer_count": 0,
+    "issuer_authority": false,
+    "e1_authority": false,
+    "queue_authority": false,
+    "producer_authority": false,
+    "initializer_authority": false,
+    "t5_authority": false
+  },
+  "proof_boundary": "HEAD_BOUND_PREFIX_SCHEDULE_AUTHORITY_NO_ISSUER. This source registry grants only the exact q1 gaps-3/7/11 terminal scheduler and its independent coverage verifier at a requested Git HEAD. The verifier may replay domain, certificate, and root-terminal arithmetic as declared capabilities. No issuer, E1, queue, producer, initializer, T5, branch, or runtime admission authority is granted. A ROOT_TERMINAL_HIT or PREFIX_MISS_EVIDENCE_ONLY remains evidence until a separate future issuer and consumer contract is established. The prefix is not global terminal exhaustion and does not close Gate 2, Gate 4, F1, F2, F3, T6, or the Erdos-Straus conjecture."
+}
