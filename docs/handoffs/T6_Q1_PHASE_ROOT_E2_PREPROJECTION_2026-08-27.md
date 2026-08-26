@@ -13,11 +13,12 @@ p=24t+1,
 \qquad K=X(16t+1),
 \]
 
-the target chart is uniquely determined by
+the target chart is uniquely determined among low full-carrier charts by
 
 \[
 4K=pR+1,
 \qquad A=1,
+\qquad X\mid K,
 \qquad 3\le R\le p-2.
 \]
 
@@ -34,8 +35,8 @@ chart = (R,K)
 
 The frozen V1 predicate vector has the unique match
 `type_i_full_carrier_post_g` at precedence index 14. This fixes a target owner
-label, but not the final V1 owner digest, because that digest depends on the
-eventual target state ID.
+label, but not an owner digest for a future V2 persistent state, because that
+digest must depend on the eventual target state ID.
 
 The target-local anchor-sink predicate is always false:
 
@@ -50,7 +51,7 @@ convert a source-state terminal receipt into a target receipt.
 
 ## Required Object Order
 
-Do not construct a V1 successor state before its target terminal scope is
+Do not construct a persistent successor state before its target terminal scope is
 frozen. The required acyclic order is:
 
 ```text
@@ -59,8 +60,8 @@ P: pure canonical target preprojection
       L: target-bound finite terminal result,
       D: target T5 coordinate draft}
   -> A: edge anchor
-  -> Q: raw V1 successor candidate and state ID
-  -> O: final V1 owner digest
+  -> Q: non-authorizing V2 target prestate and state ID
+  -> O: final owner classification and future V2 owner digest
   -> B: E1--E5 bundle
   -> admission sidecar
 ```
@@ -68,7 +69,7 @@ P: pure canonical target preprojection
 `P` is p-only and contains no source state, terminal, owner, potential, target
 state, edge, transition or admission ID. `C`, `L` and `D` are independent
 siblings of one pure projection. `L` binds `SOURCE_STATE` and
-`TARGET_PROJECTION`, but not `target_state_id`. Apart from its own V1 raw
+`TARGET_PROJECTION`, but not `target_state_id`. Apart from its own V2 prestate
 fields, the only allowed upstream edge/transition reference in `Q` is `A`; it
 must not contain a final owner, final E1--E5 receipt, transition ID or admission
 result. `O` is necessarily post-state-ID and must not be written back into `Q`.
@@ -108,9 +109,23 @@ p=2521: Type II, m=23, d=8
 MISS, but has a gap-19 Type II terminal. It is suitable only for the explicit
 non-contiguous selected-gap policy, not for the continuous prefix through 23.
 
-No currently established control proves that the natural continuous target
-prefix through 23 has a nonterminal output. A new target-control search must
-use the exact selected target schedule before it is used for E2 issuance.
+p=21169 is a stronger q=1 G control for the natural six-gap prefix. It has
+\(X=5293=67\cdot79\), misses the complete Bradford Type-I/II screens at
+gaps 3,7,11,15,19,23, and also has the anchor-sink MISS. This only says that
+the named finite schedule has no hit at that input; it does not rule out an
+unregistered terminal family. The exact gap-23 classification and this
+control are recorded in
+[type-I-type-II-gap-23-two-box-classification](../../claims/type-I-type-II-gap-23-two-box-classification.md).
+Thus no finite prefix through 23 can be called a complete terminal universe.
+
+Before any E2 implementation, the planned Q object must be a non-authorizing
+V2 prestate rather than a PersistentSelectorStateV1 successor. In the V1
+schema, the successor source receipt containing E1--E5=true is part of the
+state-ID preimage, whereas the independently replayable E1--E5 bundle must be
+constructed only after the target state ID and owner digest. A boolean
+placeholder would either assert an unproved edge or create a content-ID cycle.
+The exact dependency proof and proposed V2 boundary are in
+[T6_Q1_PHASE_ROOT_PRESTATE_V2_BOUNDARY_2026-08-27.md](T6_Q1_PHASE_ROOT_PRESTATE_V2_BOUNDARY_2026-08-27.md).
 
 ## Non-Claims
 

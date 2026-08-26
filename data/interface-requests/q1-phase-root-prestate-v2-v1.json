@@ -1,0 +1,90 @@
+{
+  "request_id": "q1_phase_root_prestate_v2_v1",
+  "request_version": 1,
+  "created": "2026-08-27",
+  "track_id": "T6-Q1-PHASE-ROOT-E2",
+  "base_sha": "a86adb193d55f4b88a5ffe337a1524d268b16472",
+  "status": "PRESTATE_REQUIRED_NO_SUCCESSOR_AUTHORITY",
+  "scope_freeze": {
+    "exact_quantifier": "For an externally supplied q=1 phase-root source preimage satisfying the existing narrow V3/V4/V5/V6 conditions, construct only a target prestate and finite target-scope evidence.",
+    "included_leaves": [
+      "ordinary q=1 G source preimage",
+      "canonical full-carrier target",
+      "p-only target Bradford scope [3,7,11]",
+      "target anchor-sink miss",
+      "predicted V1 owner label type_i_full_carrier_post_g"
+    ],
+    "excluded_leaves": [
+      "generic or successor E1",
+      "complete target terminal schedule",
+      "E2/E3/E4/E5 receipt issuance",
+      "persistent admission or queue mutation",
+      "positive-q G inputs",
+      "F1/F2/F3/T6 status promotion"
+    ],
+    "allowed_established_claims": [
+      "type-II-q-one-full-carrier-phase-root-entry",
+      "t6-q-one-phase-root-target-terminal-transport-anchor-miss-v1",
+      "short-certificate-equivalence"
+    ],
+    "forbidden_inferences": [
+      "source prefix MISS is a target receipt",
+      "finite target MISS is MISS_COMPLETE",
+      "predicted owner label is final owner digest",
+      "V6 derived witness is generic E1",
+      "prestate is a queueable V1 successor"
+    ]
+  },
+  "residual_matrix": [
+    {
+      "leaf_id": "Q1_PHASE_ROOT_V1_SUCCESSOR_PREIMAGE_CYCLE",
+      "predicate": "A V1 ADMITTED_SUCCESSOR state must seal source_receipt E1..E5=true before state_id and owner_digest exist.",
+      "coverage_proof": "scripts/t6_persistent_selector_state_v1.py validates source_receipt before build_state_id_v1 and computes owner_digest_v1 from state_id.",
+      "current_fact": "A raw V1 successor cannot be the pre-bundle Q object without an unproved boolean assertion or a content-ID cycle.",
+      "planned_closure": "DETERMINISTIC_PRESTATE_ONLY",
+      "missing_E": [
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5",
+        "common admission",
+        "re-entry"
+      ],
+      "target_shape": "PhaseRootTargetPrestateV2"
+    }
+  ],
+  "target_shape_proposal": {
+    "shape_id": "phase_root_target_prestate_v2",
+    "persistent_family": "none; pre-admission artifact only",
+    "normal_form": "canonical q=1 full-carrier chart with a successor-origin edge-anchor reference",
+    "owner_precedence": "predict type_i_full_carrier_post_g at V1 index 14; final owner digest is post-state-ID",
+    "mark_behavior": "ROOT_SOL identity mark",
+    "terminal_schedule_requirement": "target-bound finite [3,7,11] Bradford replay plus anchor-sink miss, with global_exhaustion=false",
+    "projector_requirement": "p-only canonical projection P followed by edge anchor A",
+    "t5_ticket_type": "none at prestate stage; target N7 coordinate draft only",
+    "reentry_family": "undetermined until a V2 admission gate independently verifies Q+O+B"
+  },
+  "required_object_order": [
+    "P",
+    "C|L|D",
+    "A",
+    "Q",
+    "O",
+    "B",
+    "admission_sidecar"
+  ],
+  "known_controls": {
+    "p1201": "gap 23 Type I terminal preempts any schedule that includes 23",
+    "p2521": "gap 23 Type II terminal preempts any schedule that includes 23",
+    "p21169": "ordinary q=1 G all-miss control for the complete Bradford prefix [3,7,11,15,19,23]"
+  },
+  "nonclaims": [
+    "No active producer is registered.",
+    "No V1 or V2 queue mutation is authorized.",
+    "No complete terminal schedule is claimed.",
+    "No E1--E5 bundle, owner digest, or T5 ticket is issued.",
+    "No F1/F2/F3/T6 status changes are authorized."
+  ],
+  "handoff": "docs/handoffs/T6_Q1_PHASE_ROOT_PRESTATE_V2_BOUNDARY_2026-08-27.md"
+}

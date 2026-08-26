@@ -133,6 +133,23 @@ source prefix MISS 可在 target projection 上独立重放；同时 full-carrie
 terminal。无环的 E2 preprojection、target terminal、final owner与 E1--E5 顺序见
 [`docs/handoffs/T6_Q1_PHASE_ROOT_E2_PREPROJECTION_2026-08-27.md`](docs/handoffs/T6_Q1_PHASE_ROOT_E2_PREPROJECTION_2026-08-27.md)。
 
+进一步的 gap 23 代数复核把完整 Bradford Type I/II screen 化为两个精确因子残数盒：
+对 \(s=(p+23)/24\)，Type I 当且仅当 \(s^2\) 的除子残数盒命中
+\(\{7,10,11,15,17,19,20,21,22\}\)，Type II 当且仅当 signed divisor-ratio
+盒命中同一集合。它把偶 \(h\)、\(p\equiv5,14\pmod {23}\) 的完整 gap-23
+MISS 压缩为两个四元残余盒，同时给出 q=1 G 控制
+\(p=21169\)：完整自然前缀 gaps 3/7/11/15/19/23 均 MISS。故该有限前缀仍不能
+称为 complete terminal universe。详见
+[gap 23 两盒分类](claims/type-I-type-II-gap-23-two-box-classification.md)。
+
+同一轮复核还发现了 E2 对象层的精确阻断：当前 V1 successor 的 state ID 已哈希
+声称 E1--E5 为真的 source receipt，而独立 bundle 又必须在 target state ID 与最终
+owner digest 之后才生成。因此预状态不能伪装成 V1 successor；下一接口应是无权限的
+PhaseRootTargetPrestateV2，随后才是 owner、bundle 与 admission。该修复只消除一个
+对象依赖环，未签发 E2--E5 或 queue 权限，F1/F2/F3/T6 仍保持开放。见
+[Prestate V2 边界](docs/handoffs/T6_Q1_PHASE_ROOT_PRESTATE_V2_BOUNDARY_2026-08-27.md)和
+[接口请求](data/interface-requests/q1-phase-root-prestate-v2-v1.json)。
+
 ## 当前旗舰命题（合同内核核验至 2026-08-20）
 
 对核心素数 \(p\equiv1\pmod{24}\)，最终目标是下列双出口命题：

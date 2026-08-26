@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 35 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 954 |
+| 数学状态 | `established` | 955 |
 | 数学状态 | `open` | 13 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 42 |
-| 证明来源 | `repository_derivation` | 788 |
+| 证明来源 | `repository_derivation` | 789 |
 | 证明来源 | `unspecified` | 427 |
-| 审阅状态 | `independent_review` | 24 |
+| 审阅状态 | `independent_review` | 25 |
 | 审阅状态 | `internal_review` | 934 |
 | 审阅状态 | `unspecified` | 427 |
 
@@ -980,6 +980,7 @@
 | [来自三p加一四分之一的B等于一上半区终端桥](../claims/type-I-three-p-plus-one-b1-upper-bridge.md) (`type-I-three-p-plus-one-b1-upper-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [Type I 偶终端桥的二层普通除子对选择器](../claims/type-I-two-layer-ordinary-divisor-pair-selector.md) (`type-I-two-layer-ordinary-divisor-pair-selector`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [模三双 G 的完整零平移外部源失败与 gap-11 终端优先截断](../claims/type-I-type-II-double-g-external-source-preemption.md) (`type-I-type-II-double-g-external-source-preemption`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
+| [gap 23 的完整 Type I/II 两盒判据与偶 h 异常残余](../claims/type-I-type-II-gap-23-two-box-classification.md) (`type-I-type-II-gap-23-two-box-classification`) | `established` | `repository_derivation` | `independent_review` | - | 2026-08-27 |
 | [模三双 G 出口的精确等价与小缺口严格反例](../claims/type-I-type-II-mod-three-double-g-exit-obstruction.md) (`type-I-type-II-mod-three-double-g-exit-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
 | [Type I 终端优先的近邻—广义二进—对偶统一选择器合同](../claims/type-I-unified-terminal-first-selector-contract.md) (`type-I-unified-terminal-first-selector-contract`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-11 |
 | [通用一层周期的偶补数分段与两翻转正规形](../claims/type-I-universal-cycle-complement-flip-segment-normal-form.md) (`type-I-universal-cycle-complement-flip-segment-normal-form`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |

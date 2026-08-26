@@ -103,6 +103,45 @@ The reciprocal identity is checked for every guard-satisfying candidate. This
 definition reads only \(p,m,d\), not a source state, target state, chart or
 unknown solution.
 
+### Odd-gap residue normalization
+
+The displayed guards have a useful exact normalization. Suppose more
+generally that \(p\) is prime, \(3\le m\le p-2\),
+\(m\equiv3\pmod4\), \(x=(p+m)/4\), and \(de=x^2\). Then
+
+\[
+(p,m)=(x,m)=1,
+\qquad p\equiv4x\pmod m.
+\tag{2N}
+\]
+
+Indeed, any common divisor of \(x\) and \(m\) divides
+\(4x-m=p\), and it is smaller than \(p\). Thus all four quantities
+\(p,x,d,e\) are units modulo \(m\). Consequently the two Type-I
+integrality conditions are each equivalent to
+
+\[
+e\equiv-4^{-1}\pmod m,
+\tag{2I-res}
+\]
+
+and the Type-II conditions apart from \(d\le x\) are equivalent to
+
+\[
+d\equiv-x\pmod m.
+\tag{2II-res}
+\]
+
+For Type I, \(m\mid px+d\) is equivalent to
+\(d(4e+1)\equiv0\pmod m\), while
+\(m\mid x+pe\) is equivalent to \(x(1+4e)\equiv0\pmod m\).
+For Type II, \(d\equiv-x\pmod m\) gives
+\(de=x^2\equiv-xe\pmod m\), hence also \(e\equiv-x\pmod m\).
+This proves that the frozen predicate is exactly a divisor-residue predicate,
+including when \(m\) is composite. It is the elementary normal-form
+corollary of short-certificate-equivalence; it neither enlarges the
+registered schedule nor supplies global terminal coverage.
+
 ## Prefix Transport
 
 Let
