@@ -23,6 +23,8 @@
     "execution_binding",
     "current_digest_audit",
     "consumer_policy",
+    "coordinator_evidence_registry",
+    "complete_terminal_registry",
     "digest_algorithm",
     "claim_set_digest",
     "runtime_source_digest",
@@ -32,6 +34,14 @@
     "t5_taxonomy_digest",
     "test_manifest_digest",
     "independent_review_digest",
+    "coordinator_evidence_registry_digest",
+    "evidence_inventory_digest",
+    "evidence_producer_role_subdigest",
+    "evidence_validator_role_subdigest",
+    "evidence_projector_role_subdigest",
+    "evidence_terminal_schedule_role_subdigest",
+    "evidence_t5_ticket_role_subdigest",
+    "complete_terminal_registry_digest",
     "digest_inputs",
     "manifest_digests",
     "manifest_statuses",
@@ -72,6 +82,8 @@
     "execution_binding": {"$ref": "#/$defs/executionBinding"},
     "current_digest_audit": {"$ref": "#/$defs/currentDigestAudit"},
     "consumer_policy": {"$ref": "#/$defs/consumerPolicy"},
+    "coordinator_evidence_registry": {"$ref": "#/$defs/coordinatorEvidenceRegistry"},
+    "complete_terminal_registry": {"$ref": "#/$defs/completeTerminalRegistry"},
     "digest_algorithm": {"type": "string", "minLength": 1},
     "claim_set_digest": {"$ref": "#/$defs/sha256"},
     "runtime_source_digest": {"$ref": "#/$defs/sha256"},
@@ -81,6 +93,14 @@
     "t5_taxonomy_digest": {"$ref": "#/$defs/sha256"},
     "test_manifest_digest": {"$ref": "#/$defs/sha256"},
     "independent_review_digest": {"$ref": "#/$defs/sha256"},
+    "coordinator_evidence_registry_digest": {"$ref": "#/$defs/sha256"},
+    "evidence_inventory_digest": {"$ref": "#/$defs/sha256"},
+    "evidence_producer_role_subdigest": {"$ref": "#/$defs/sha256"},
+    "evidence_validator_role_subdigest": {"$ref": "#/$defs/sha256"},
+    "evidence_projector_role_subdigest": {"$ref": "#/$defs/sha256"},
+    "evidence_terminal_schedule_role_subdigest": {"$ref": "#/$defs/sha256"},
+    "evidence_t5_ticket_role_subdigest": {"$ref": "#/$defs/sha256"},
+    "complete_terminal_registry_digest": {"$ref": "#/$defs/sha256"},
     "digest_inputs": {
       "type": "object",
       "additionalProperties": false,
@@ -117,7 +137,9 @@
         "t5_transition_taxonomy",
         "selector_obligation_ledger",
         "f1_reachability_receipt",
-        "readme"
+        "readme",
+        "coordinator_role_registry",
+        "complete_terminal_schedule_registry"
       ],
       "properties": {
         "workpack": {"$ref": "#/$defs/sha256"},
@@ -130,7 +152,9 @@
         "t5_transition_taxonomy": {"$ref": "#/$defs/sha256"},
         "selector_obligation_ledger": {"$ref": "#/$defs/sha256"},
         "f1_reachability_receipt": {"$ref": "#/$defs/sha256"},
-        "readme": {"$ref": "#/$defs/sha256"}
+        "readme": {"$ref": "#/$defs/sha256"},
+        "coordinator_role_registry": {"$ref": "#/$defs/sha256"},
+        "complete_terminal_schedule_registry": {"$ref": "#/$defs/sha256"}
       }
     },
     "manifest_statuses": {
@@ -263,6 +287,104 @@
   "$defs": {
     "gitSha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
     "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "roleSubdigests": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "producer_registry",
+        "validator_registry",
+        "projector_registry",
+        "terminal_schedule_registry",
+        "t5_ticket_registry"
+      ],
+      "properties": {
+        "producer_registry": {"$ref": "#/$defs/sha256"},
+        "validator_registry": {"$ref": "#/$defs/sha256"},
+        "projector_registry": {"$ref": "#/$defs/sha256"},
+        "terminal_schedule_registry": {"$ref": "#/$defs/sha256"},
+        "t5_ticket_registry": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "zeroRoleGrantCounts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "producer_registry",
+        "validator_registry",
+        "projector_registry",
+        "terminal_schedule_registry",
+        "t5_ticket_registry"
+      ],
+      "properties": {
+        "producer_registry": {"const": 0},
+        "validator_registry": {"const": 0},
+        "projector_registry": {"const": 0},
+        "terminal_schedule_registry": {"const": 0},
+        "t5_ticket_registry": {"const": 0}
+      }
+    },
+    "coordinatorEvidenceRegistry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_id",
+        "head_sha",
+        "registry_path",
+        "status",
+        "role_authority",
+        "registry_digest",
+        "evidence_inventory_digest",
+        "role_subdigests",
+        "role_grant_counts",
+        "active_role_grant_count",
+        "active_producer_count",
+        "complete_terminal_schedule_count"
+      ],
+      "properties": {
+        "schema_id": {"const": "t6_gate0_coordinator_evidence_registry_diagnostic_v1"},
+        "head_sha": {"$ref": "#/$defs/gitSha"},
+        "registry_path": {"const": "data/t6-wave1/t6-coordinator-role-registry-v1.json"},
+        "status": {"const": "HEAD_BOUND_EVIDENCE_ONLY_NO_ROLE_AUTHORITY"},
+        "role_authority": {"const": false},
+        "registry_digest": {"$ref": "#/$defs/sha256"},
+        "evidence_inventory_digest": {"$ref": "#/$defs/sha256"},
+        "role_subdigests": {"$ref": "#/$defs/roleSubdigests"},
+        "role_grant_counts": {"$ref": "#/$defs/zeroRoleGrantCounts"},
+        "active_role_grant_count": {"const": 0},
+        "active_producer_count": {"const": 0},
+        "complete_terminal_schedule_count": {"const": 0}
+      }
+    },
+    "completeTerminalRegistry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_id",
+        "head_sha",
+        "registry_path",
+        "status",
+        "registry_digest",
+        "registry_source_sha256",
+        "local_schedule_count",
+        "complete_schedule_count",
+        "complete_miss_issuance_enabled",
+        "local_miss_implies_complete_miss",
+        "terminal_receipt_grants_queue_authority"
+      ],
+      "properties": {
+        "schema_id": {"const": "t6_gate0_complete_terminal_registry_diagnostic_v1"},
+        "head_sha": {"$ref": "#/$defs/gitSha"},
+        "registry_path": {"const": "data/t6-wave1/t6-complete-terminal-schedule-registry-v1.json"},
+        "status": {"const": "NO_COMPLETE_SCHEDULE_AUTHORITY"},
+        "registry_digest": {"$ref": "#/$defs/sha256"},
+        "registry_source_sha256": {"$ref": "#/$defs/sha256"},
+        "local_schedule_count": {"type": "integer", "minimum": 0},
+        "complete_schedule_count": {"const": 0},
+        "complete_miss_issuance_enabled": {"const": false},
+        "local_miss_implies_complete_miss": {"const": false},
+        "terminal_receipt_grants_queue_authority": {"const": false}
+      }
+    },
     "digestInput": {
       "type": "object",
       "additionalProperties": false,
@@ -327,7 +449,15 @@
         "grammar_hash",
         "t5_taxonomy_digest",
         "test_manifest_digest",
-        "independent_review_digest"
+        "independent_review_digest",
+        "coordinator_evidence_registry_digest",
+        "evidence_inventory_digest",
+        "evidence_producer_role_subdigest",
+        "evidence_validator_role_subdigest",
+        "evidence_projector_role_subdigest",
+        "evidence_terminal_schedule_role_subdigest",
+        "evidence_t5_ticket_role_subdigest",
+        "complete_terminal_registry_digest"
       ],
       "properties": {
         "claim_set_digest": {"$ref": "#/$defs/sha256"},
@@ -337,7 +467,15 @@
         "grammar_hash": {"$ref": "#/$defs/sha256"},
         "t5_taxonomy_digest": {"$ref": "#/$defs/sha256"},
         "test_manifest_digest": {"$ref": "#/$defs/sha256"},
-        "independent_review_digest": {"$ref": "#/$defs/sha256"}
+        "independent_review_digest": {"$ref": "#/$defs/sha256"},
+        "coordinator_evidence_registry_digest": {"$ref": "#/$defs/sha256"},
+        "evidence_inventory_digest": {"$ref": "#/$defs/sha256"},
+        "evidence_producer_role_subdigest": {"$ref": "#/$defs/sha256"},
+        "evidence_validator_role_subdigest": {"$ref": "#/$defs/sha256"},
+        "evidence_projector_role_subdigest": {"$ref": "#/$defs/sha256"},
+        "evidence_terminal_schedule_role_subdigest": {"$ref": "#/$defs/sha256"},
+        "evidence_t5_ticket_role_subdigest": {"$ref": "#/$defs/sha256"},
+        "complete_terminal_registry_digest": {"$ref": "#/$defs/sha256"}
       }
     },
     "currentDigestAuditBasis": {
@@ -498,6 +636,7 @@
       "required": [
         "schema_id",
         "run_manifest_schema_id",
+        "diagnostics_contract",
         "manifest_payload_sha256",
         "manifest_bytes_sha256",
         "head_sha",
@@ -505,12 +644,19 @@
         "status",
         "content_replay",
         "producer_registry_status",
+        "coordinator_evidence_registry",
+        "complete_terminal_registry",
         "digest_domain",
         "digests"
       ],
       "properties": {
-        "schema_id": {"const": "t6_gate0_manifest_content_replay_v1"},
-        "run_manifest_schema_id": {"const": "t6_ci_run_manifest_v1"},
+        "schema_id": {"const": "t6_gate0_manifest_content_replay_v2"},
+        "run_manifest_schema_id": {
+          "enum": ["t6_ci_run_manifest_v1", "t6_ci_run_manifest_v2"]
+        },
+        "diagnostics_contract": {
+          "enum": ["PRESENT_V2", "ABSENT_LEGACY_V1"]
+        },
         "manifest_payload_sha256": {"$ref": "#/$defs/sha256"},
         "manifest_bytes_sha256": {"$ref": "#/$defs/sha256"},
         "head_sha": {"$ref": "#/$defs/gitSha"},
@@ -523,6 +669,18 @@
         "producer_registry_status": {
           "const": "LOCAL_RUNTIME_ONLY_NO_SHARED_ALL_PRODUCER_REGISTRY"
         },
+        "coordinator_evidence_registry": {
+          "oneOf": [
+            {"$ref": "#/$defs/coordinatorEvidenceRegistry"},
+            {"type": "null"}
+          ]
+        },
+        "complete_terminal_registry": {
+          "oneOf": [
+            {"$ref": "#/$defs/completeTerminalRegistry"},
+            {"type": "null"}
+          ]
+        },
         "digest_domain": {"type": "string", "minLength": 1},
         "digests": {
           "type": "object",
@@ -532,17 +690,99 @@
             "runtime_source_digest",
             "producer_registry_digest",
             "grammar_hash",
-            "test_manifest_digest"
+            "test_manifest_digest",
+            "coordinator_evidence_registry_digest",
+            "evidence_inventory_digest",
+            "evidence_producer_role_subdigest",
+            "evidence_validator_role_subdigest",
+            "evidence_projector_role_subdigest",
+            "evidence_terminal_schedule_role_subdigest",
+            "evidence_t5_ticket_role_subdigest",
+            "complete_terminal_registry_digest"
           ],
           "properties": {
             "kb_claim_set_digest": {"$ref": "#/$defs/sha256"},
             "runtime_source_digest": {"$ref": "#/$defs/sha256"},
             "producer_registry_digest": {"$ref": "#/$defs/sha256"},
             "grammar_hash": {"$ref": "#/$defs/sha256"},
-            "test_manifest_digest": {"$ref": "#/$defs/sha256"}
+            "test_manifest_digest": {"$ref": "#/$defs/sha256"},
+            "coordinator_evidence_registry_digest": {
+              "oneOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]
+            },
+            "evidence_inventory_digest": {
+              "oneOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]
+            },
+            "evidence_producer_role_subdigest": {
+              "oneOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]
+            },
+            "evidence_validator_role_subdigest": {
+              "oneOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]
+            },
+            "evidence_projector_role_subdigest": {
+              "oneOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]
+            },
+            "evidence_terminal_schedule_role_subdigest": {
+              "oneOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]
+            },
+            "evidence_t5_ticket_role_subdigest": {
+              "oneOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]
+            },
+            "complete_terminal_registry_digest": {
+              "oneOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]
+            }
           }
         }
-      }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {"diagnostics_contract": {"const": "PRESENT_V2"}}
+          },
+          "then": {
+            "properties": {
+              "run_manifest_schema_id": {"const": "t6_ci_run_manifest_v2"},
+              "coordinator_evidence_registry": {"$ref": "#/$defs/coordinatorEvidenceRegistry"},
+              "complete_terminal_registry": {"$ref": "#/$defs/completeTerminalRegistry"},
+              "digests": {
+                "properties": {
+                  "coordinator_evidence_registry_digest": {"$ref": "#/$defs/sha256"},
+                  "evidence_inventory_digest": {"$ref": "#/$defs/sha256"},
+                  "evidence_producer_role_subdigest": {"$ref": "#/$defs/sha256"},
+                  "evidence_validator_role_subdigest": {"$ref": "#/$defs/sha256"},
+                  "evidence_projector_role_subdigest": {"$ref": "#/$defs/sha256"},
+                  "evidence_terminal_schedule_role_subdigest": {"$ref": "#/$defs/sha256"},
+                  "evidence_t5_ticket_role_subdigest": {"$ref": "#/$defs/sha256"},
+                  "complete_terminal_registry_digest": {"$ref": "#/$defs/sha256"}
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {"diagnostics_contract": {"const": "ABSENT_LEGACY_V1"}}
+          },
+          "then": {
+            "properties": {
+              "run_manifest_schema_id": {"const": "t6_ci_run_manifest_v1"},
+              "coordinator_evidence_registry": {"type": "null"},
+              "complete_terminal_registry": {"type": "null"},
+              "digests": {
+                "properties": {
+                  "coordinator_evidence_registry_digest": {"type": "null"},
+                  "evidence_inventory_digest": {"type": "null"},
+                  "evidence_producer_role_subdigest": {"type": "null"},
+                  "evidence_validator_role_subdigest": {"type": "null"},
+                  "evidence_projector_role_subdigest": {"type": "null"},
+                  "evidence_terminal_schedule_role_subdigest": {"type": "null"},
+                  "evidence_t5_ticket_role_subdigest": {"type": "null"},
+                  "complete_terminal_registry_digest": {"type": "null"}
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "gate0Attestation": {
       "type": "object",

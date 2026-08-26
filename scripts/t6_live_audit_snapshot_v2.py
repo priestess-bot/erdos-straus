@@ -36,6 +36,29 @@ LIVE_SNAPSHOT_SCRIPT_PATH = "scripts/t6_live_audit_snapshot_v2.py"
 LIVE_SNAPSHOT_SCHEMA_PATH = "schemas/t6-live-audit-snapshot-v2.schema.json"
 GATE0_PROVENANCE_SCHEMA_PATH = "schemas/t6-gate0-run-provenance-v1.schema.json"
 CI_MANIFEST_TOOL_PATH = "scripts/t6_ci_run_manifest_v1.py"
+COORDINATOR_ROLE_RESOLVER_PATH = "scripts/t6_coordinator_role_registry_v1.py"
+COORDINATOR_ROLE_REGISTRY_PATH = (
+    "data/t6-wave1/t6-coordinator-role-registry-v1.json"
+)
+COMPLETE_TERMINAL_REGISTRY_PATH = (
+    "data/t6-wave1/t6-complete-terminal-schedule-registry-v1.json"
+)
+EVIDENCE_REGISTRY_STATUS = "HEAD_BOUND_EVIDENCE_ONLY_NO_ROLE_AUTHORITY"
+COMPLETE_TERMINAL_REGISTRY_STATUS = "NO_COMPLETE_SCHEDULE_AUTHORITY"
+ROLE_SUBDIGEST_VECTOR_FIELDS = {
+    "producer_registry": "evidence_producer_role_subdigest",
+    "validator_registry": "evidence_validator_role_subdigest",
+    "projector_registry": "evidence_projector_role_subdigest",
+    "terminal_schedule_registry": "evidence_terminal_schedule_role_subdigest",
+    "t5_ticket_registry": "evidence_t5_ticket_role_subdigest",
+}
+ROLE_SUBDIGEST_ROLES = {
+    "producer_registry": "PRODUCER",
+    "validator_registry": "INDEPENDENT_VALIDATOR",
+    "projector_registry": "PROJECTOR",
+    "terminal_schedule_registry": "TERMINAL_SCHEDULE",
+    "t5_ticket_registry": "T5_TICKET",
+}
 
 TRUSTED_REPOSITORY = "priestess-bot/erdos-straus"
 TRUSTED_REPOSITORY_ID = 1_313_520_032
@@ -79,11 +102,13 @@ PRODUCER_REGISTRY_FIXED_PATHS = (
     RESIDUAL_FRONTIER_PATH,
     RUNTIME_FREEZE_PATH,
     Q1_RUNTIME_DATA_PATH,
+    COORDINATOR_ROLE_REGISTRY_PATH,
 )
 
 TERMINAL_SCHEDULE_FIXED_PATHS = (
     RUNTIME_FREEZE_PATH,
     Q1_RUNTIME_DATA_PATH,
+    COMPLETE_TERMINAL_REGISTRY_PATH,
 )
 
 T5_PATHS = (T5_PHASE_REGISTRY_PATH, T5_TAXONOMY_PATH)
@@ -107,6 +132,8 @@ MANIFEST_PATHS = {
     "selector_obligation_ledger": LEDGER_PATH,
     "f1_reachability_receipt": F1_RECEIPT_PATH,
     "readme": README_PATH,
+    "coordinator_role_registry": COORDINATOR_ROLE_REGISTRY_PATH,
+    "complete_terminal_schedule_registry": COMPLETE_TERMINAL_REGISTRY_PATH,
 }
 
 DIGEST_SCOPES = {
@@ -177,6 +204,10 @@ EXPECTED_TOP_LEVEL_KEYS = frozenset(
         "execution_binding",
         "current_digest_audit",
         "consumer_policy",
+        "complete_terminal_registry",
+        "complete_terminal_registry_digest",
+        "coordinator_evidence_registry",
+        "coordinator_evidence_registry_digest",
         "digest_algorithm",
         "claim_set_digest",
         "runtime_source_digest",
@@ -186,6 +217,12 @@ EXPECTED_TOP_LEVEL_KEYS = frozenset(
         "t5_taxonomy_digest",
         "test_manifest_digest",
         "independent_review_digest",
+        "evidence_inventory_digest",
+        "evidence_producer_role_subdigest",
+        "evidence_validator_role_subdigest",
+        "evidence_projector_role_subdigest",
+        "evidence_terminal_schedule_role_subdigest",
+        "evidence_t5_ticket_role_subdigest",
         "digest_inputs",
         "manifest_digests",
         "manifest_statuses",
@@ -200,6 +237,7 @@ CONTENT_REPLAY_KEYS = frozenset(
     {
         "schema_id",
         "run_manifest_schema_id",
+        "diagnostics_contract",
         "manifest_payload_sha256",
         "manifest_bytes_sha256",
         "head_sha",
@@ -207,11 +245,13 @@ CONTENT_REPLAY_KEYS = frozenset(
         "status",
         "content_replay",
         "producer_registry_status",
+        "coordinator_evidence_registry",
+        "complete_terminal_registry",
         "digest_domain",
         "digests",
     }
 )
-ATTESTATION_DIGEST_KEYS = frozenset(
+ATTESTATION_BASE_DIGEST_KEYS = frozenset(
     {
         "kb_claim_set_digest",
         "runtime_source_digest",
@@ -219,6 +259,21 @@ ATTESTATION_DIGEST_KEYS = frozenset(
         "grammar_hash",
         "test_manifest_digest",
     }
+)
+ATTESTATION_DIAGNOSTIC_DIGEST_KEYS = frozenset(
+    {
+        "coordinator_evidence_registry_digest",
+        "evidence_inventory_digest",
+        "evidence_producer_role_subdigest",
+        "evidence_validator_role_subdigest",
+        "evidence_projector_role_subdigest",
+        "evidence_terminal_schedule_role_subdigest",
+        "evidence_t5_ticket_role_subdigest",
+        "complete_terminal_registry_digest",
+    }
+)
+ATTESTATION_DIGEST_KEYS = frozenset(
+    ATTESTATION_BASE_DIGEST_KEYS | ATTESTATION_DIAGNOSTIC_DIGEST_KEYS
 )
 GITHUB_PROVENANCE_KEYS = frozenset(
     {
@@ -461,12 +516,19 @@ class VerifiedGate0Attestation:
     basis: Mapping[str, Any]
 
 
+def _git_safe_environment() -> dict[str, str]:
+    environment = os.environ.copy()
+    environment["GIT_NO_REPLACE_OBJECTS"] = "1"
+    return environment
+
+
 def _git(root: Path, args: Sequence[str], *, check: bool = True) -> bytes:
     completed = subprocess.run(
         ["git", *args],
         cwd=root,
         check=False,
         capture_output=True,
+        env=_git_safe_environment(),
     )
     if check and completed.returncode != 0:
         detail = completed.stderr.decode("utf-8", errors="replace").strip()
@@ -487,6 +549,7 @@ def _commit_exists(root: Path, revision: str) -> bool:
         cwd=root,
         check=False,
         capture_output=True,
+        env=_git_safe_environment(),
     )
     return completed.returncode == 0
 
@@ -497,6 +560,7 @@ def _is_ancestor(root: Path, ancestor: str, descendant: str) -> bool:
         cwd=root,
         check=False,
         capture_output=True,
+        env=_git_safe_environment(),
     )
     if completed.returncode not in (0, 1):
         detail = completed.stderr.decode("utf-8", errors="replace").strip()
@@ -595,6 +659,7 @@ def _blobs(
         stdin=subprocess.PIPE,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
+        env=_git_safe_environment(),
     )
     requests = b"".join(
         f"{entries[path][1]}\n".encode("ascii") for path in paths
@@ -659,6 +724,261 @@ def _json_blob(root: Path, revision: str, path: str) -> dict[str, Any]:
     )
 
 
+def _coordinator_evidence_registry_diagnostic(
+    root: Path, revision: str
+) -> dict[str, Any]:
+    """Resolve the exact-HEAD evidence inventory without conferring role authority."""
+
+    completed = subprocess.run(
+        [
+            sys.executable,
+            COORDINATOR_ROLE_RESOLVER_PATH,
+            "--root",
+            str(root),
+            "--head",
+            revision,
+        ],
+        cwd=root,
+        check=False,
+        capture_output=True,
+        env=_git_safe_environment(),
+    )
+    if completed.returncode != 0:
+        detail = completed.stderr.decode("utf-8", errors="replace").strip()
+        raise SnapshotError(
+            "exact-HEAD coordinator evidence registry resolution failed"
+            + (f": {detail}" if detail else "")
+        )
+    resolved = _load_json_object_bytes(
+        completed.stdout, source=f"{revision}:resolved coordinator role registry"
+    )
+    if (
+        resolved.get("schema_id") != "t6_coordinator_role_registry_resolved_v1"
+        or resolved.get("head_sha") != revision
+        or resolved.get("registry_path") != COORDINATOR_ROLE_REGISTRY_PATH
+        or resolved.get("status") != EVIDENCE_REGISTRY_STATUS
+    ):
+        raise SnapshotError("resolved coordinator evidence registry boundary is invalid")
+    resolved_unsigned = dict(resolved)
+    resolved_registry_digest = resolved_unsigned.pop("registry_digest", None)
+    if resolved_registry_digest != hashlib.sha256(
+        canonical_json_bytes(resolved_unsigned)
+    ).hexdigest():
+        raise SnapshotError("coordinator evidence registry digest does not replay")
+    inventory = resolved.get("artifact_evidence_inventory")
+    if not isinstance(inventory, dict) or (
+        inventory.get("status") != "EVIDENCE_ONLY_NOT_AUTHORIZED"
+        or inventory.get("role_authority") is not False
+        or inventory.get("head_sha") != revision
+        or not isinstance(inventory.get("digest"), str)
+        or DIGEST_RE.fullmatch(inventory["digest"]) is None
+    ):
+        raise SnapshotError("coordinator evidence inventory authority boundary is invalid")
+    inventory_unsigned = dict(inventory)
+    inventory_digest = inventory_unsigned.pop("digest", None)
+    if inventory_digest != hashlib.sha256(
+        canonical_json_bytes(inventory_unsigned)
+    ).hexdigest():
+        raise SnapshotError("coordinator evidence inventory digest does not replay")
+    subdigests = resolved.get("role_subdigests")
+    counts = resolved.get("role_grant_counts")
+    expected_roles = set(ROLE_SUBDIGEST_VECTOR_FIELDS)
+    if not isinstance(subdigests, dict) or set(subdigests) != expected_roles:
+        raise SnapshotError("coordinator role subdigests have an invalid field set")
+    if not all(
+        isinstance(value, str) and DIGEST_RE.fullmatch(value)
+        for value in subdigests.values()
+    ):
+        raise SnapshotError("coordinator role subdigests are invalid")
+    expected_role_subdigests = {
+        key: hashlib.sha256(
+            canonical_json_bytes(
+                {
+                    "schema_id": "t6_coordinator_role_subregistry_v1",
+                    "head_sha": revision,
+                    "role": role,
+                    "grants": [],
+                }
+            )
+        ).hexdigest()
+        for key, role in ROLE_SUBDIGEST_ROLES.items()
+    }
+    if subdigests != expected_role_subdigests:
+        raise SnapshotError("coordinator empty role subdigests do not replay")
+    if not isinstance(counts, dict) or set(counts) != expected_roles:
+        raise SnapshotError("coordinator role grant counts have an invalid field set")
+    if any(type(value) is not int or value != 0 for value in counts.values()):
+        raise SnapshotError("coordinator evidence registry contains a role grant")
+    for field in (
+        "active_role_grant_count",
+        "active_producer_count",
+        "complete_terminal_schedule_count",
+    ):
+        if type(resolved.get(field)) is not int or resolved[field] != 0:
+            raise SnapshotError(f"coordinator evidence registry {field} is not zero")
+    for field in (
+        "resolved_role_grants",
+        "authorized_branches",
+        "complete_terminal_schedules",
+    ):
+        if resolved.get(field) != []:
+            raise SnapshotError(f"coordinator evidence registry {field} is not empty")
+    return {
+        "schema_id": "t6_gate0_coordinator_evidence_registry_diagnostic_v1",
+        "head_sha": revision,
+        "registry_path": COORDINATOR_ROLE_REGISTRY_PATH,
+        "status": EVIDENCE_REGISTRY_STATUS,
+        "role_authority": False,
+        "registry_digest": resolved_registry_digest,
+        "evidence_inventory_digest": inventory_digest,
+        "role_subdigests": dict(sorted(subdigests.items())),
+        "role_grant_counts": dict(sorted(counts.items())),
+        "active_role_grant_count": 0,
+        "active_producer_count": 0,
+        "complete_terminal_schedule_count": 0,
+    }
+
+
+def _complete_terminal_registry_diagnostic(
+    root: Path, revision: str
+) -> dict[str, Any]:
+    """Parse the fixed terminal registry blob at revision as non-authority."""
+
+    source = _blob(root, revision, COMPLETE_TERMINAL_REGISTRY_PATH)
+    document = _load_json_object_bytes(
+        source, source=f"{revision}:{COMPLETE_TERMINAL_REGISTRY_PATH}"
+    )
+    expected_fields = {
+        "schema_id",
+        "schema_version",
+        "registry_id",
+        "registry_class",
+        "status",
+        "head_authority_status",
+        "digest_algorithm",
+        "local_schedules",
+        "complete_schedules",
+        "invariants",
+        "registry_digest",
+    }
+    if set(document) != expected_fields or (
+        document.get("schema_id") != "t6_complete_terminal_schedule_registry_v1"
+        or type(document.get("schema_version")) is not int
+        or document.get("schema_version") != 1
+        or document.get("registry_id")
+        != "t6_complete_terminal_schedule_registry_v1"
+        or document.get("registry_class") != "PRODUCTION"
+        or document.get("status") != COMPLETE_TERMINAL_REGISTRY_STATUS
+        or document.get("head_authority_status") != "HEAD_ROLE_REGISTRY_REQUIRED"
+        or document.get("digest_algorithm") != "sha256-canonical-json-v1"
+    ):
+        raise SnapshotError("complete terminal registry identity or status is invalid")
+    unsigned = dict(document)
+    recorded_digest = unsigned.pop("registry_digest", None)
+    expected_digest = hashlib.sha256(canonical_json_bytes(unsigned)).hexdigest()
+    if recorded_digest != expected_digest:
+        raise SnapshotError("complete terminal registry digest does not replay")
+    local_schedules = document.get("local_schedules")
+    complete_schedules = document.get("complete_schedules")
+    if not isinstance(local_schedules, list) or not isinstance(complete_schedules, list):
+        raise SnapshotError("terminal schedule collections are not arrays")
+    if complete_schedules:
+        raise SnapshotError("complete terminal registry grants a COMPLETE schedule")
+    local_fields = {
+        "schedule_id",
+        "classification",
+        "subject_kind",
+        "ordered_family_ids",
+        "evidence_refs",
+    }
+    schedule_ids: list[str] = []
+    for schedule in local_schedules:
+        if not isinstance(schedule, dict) or set(schedule) != local_fields:
+            raise SnapshotError("LOCAL_ONLY terminal schedule has an invalid field set")
+        schedule_id = schedule.get("schedule_id")
+        families = schedule.get("ordered_family_ids")
+        evidence = schedule.get("evidence_refs")
+        if (
+            not isinstance(schedule_id, str)
+            or not schedule_id
+            or schedule.get("classification") != "LOCAL_ONLY"
+            or schedule.get("subject_kind") not in {"SOURCE_STATE", "TARGET_PROJECTION"}
+            or not isinstance(families, list)
+            or not families
+            or families != list(dict.fromkeys(families))
+            or any(not isinstance(item, str) or not item for item in families)
+            or not isinstance(evidence, list)
+            or not evidence
+            or any(not isinstance(item, str) or not item for item in evidence)
+        ):
+            raise SnapshotError("LOCAL_ONLY terminal schedule is malformed")
+        schedule_ids.append(schedule_id)
+    if len(schedule_ids) != len(set(schedule_ids)):
+        raise SnapshotError("complete terminal registry repeats a schedule_id")
+    invariants = document.get("invariants")
+    invariant_fields = {
+        "complete_schedule_count",
+        "complete_miss_issuance_enabled",
+        "local_miss_implies_complete_miss",
+        "terminal_receipt_grants_queue_authority",
+    }
+    if not isinstance(invariants, dict) or set(invariants) != invariant_fields:
+        raise SnapshotError("complete terminal registry invariants are invalid")
+    if (
+        type(invariants.get("complete_schedule_count")) is not int
+        or invariants.get("complete_schedule_count") != 0
+        or invariants.get("complete_miss_issuance_enabled") is not False
+        or invariants.get("local_miss_implies_complete_miss") is not False
+        or invariants.get("terminal_receipt_grants_queue_authority") is not False
+    ):
+        raise SnapshotError("complete terminal registry attempts to grant authority")
+    return {
+        "schema_id": "t6_gate0_complete_terminal_registry_diagnostic_v1",
+        "head_sha": revision,
+        "registry_path": COMPLETE_TERMINAL_REGISTRY_PATH,
+        "status": COMPLETE_TERMINAL_REGISTRY_STATUS,
+        "registry_digest": recorded_digest,
+        "registry_source_sha256": hashlib.sha256(source).hexdigest(),
+        "local_schedule_count": len(local_schedules),
+        "complete_schedule_count": 0,
+        "complete_miss_issuance_enabled": False,
+        "local_miss_implies_complete_miss": False,
+        "terminal_receipt_grants_queue_authority": False,
+    }
+
+
+def _registry_digest_vector(
+    evidence: Mapping[str, Any], terminal: Mapping[str, Any]
+) -> dict[str, str]:
+    vector = {
+        "coordinator_evidence_registry_digest": str(evidence["registry_digest"]),
+        "evidence_inventory_digest": str(evidence["evidence_inventory_digest"]),
+        "complete_terminal_registry_digest": str(terminal["registry_digest"]),
+    }
+    subdigests = evidence["role_subdigests"]
+    if not isinstance(subdigests, Mapping):
+        raise SnapshotError("coordinator role subdigests are not an object")
+    vector.update(
+        {
+            output_field: str(subdigests[role])
+            for role, output_field in ROLE_SUBDIGEST_VECTOR_FIELDS.items()
+        }
+    )
+    return vector
+
+
+def _gate0_diagnostics_contract(manifest: Mapping[str, Any]) -> str:
+    version = manifest.get("schema_version")
+    if type(version) is not int:
+        raise SnapshotError("Gate-0 manifest schema_version is not an exact integer")
+    identity = (manifest.get("schema_id"), version)
+    if identity == ("t6_ci_run_manifest_v2", 2):
+        return "PRESENT_V2"
+    if identity == ("t6_ci_run_manifest_v1", 1):
+        return "ABSENT_LEGACY_V1"
+    raise SnapshotError("Gate-0 manifest contract version is unsupported")
+
+
 def _capture_execution_binding(root: Path, revision: str) -> dict[str, Any]:
     """Bind the executing verifier, both schemas and Gate-0 verifier to HEAD."""
 
@@ -676,6 +996,7 @@ def _capture_execution_binding(root: Path, revision: str) -> dict[str, Any]:
         cwd=root,
         check=False,
         capture_output=True,
+        env=_git_safe_environment(),
     )
     if status.returncode != 0:
         raise SnapshotError("cannot inspect live snapshot toolchain worktree status")
@@ -740,6 +1061,27 @@ def _materialize_immutable_manifest_copy(
     return path
 
 
+def _materialize_current_gate0_verifier_copy(directory: Path, root: Path) -> Path:
+    source = root / CI_MANIFEST_TOOL_PATH
+    if source.is_symlink() or not source.is_file():
+        raise SnapshotError("current Gate-0 verifier is not a regular file")
+    verifier_bytes = source.read_bytes()
+    current_head = resolve_head(root)
+    if verifier_bytes != _blob(root, current_head, CI_MANIFEST_TOOL_PATH):
+        raise SnapshotError("current Gate-0 verifier does not match current HEAD")
+    path = directory / "current-gate0-verifier.py"
+    try:
+        with path.open("xb") as handle:
+            handle.write(verifier_bytes)
+            handle.flush()
+            os.fsync(handle.fileno())
+    except OSError as exc:
+        raise SnapshotError(f"cannot materialize current Gate-0 verifier: {exc}") from exc
+    if path.is_symlink() or path.read_bytes() != verifier_bytes:
+        raise SnapshotError("immutable current Gate-0 verifier copy is invalid")
+    return path
+
+
 def _replay_gate0_manifest_content(
     root: Path, manifest_path: Path
 ) -> tuple[dict[str, Any], bytes, dict[str, Any]]:
@@ -761,11 +1103,12 @@ def _replay_gate0_manifest_content(
     if manifest.get("checkout_state") != "CLEAN":
         raise SnapshotError("Gate-0 run manifest checkout_state is not CLEAN")
 
-    tool_path = root / CI_MANIFEST_TOOL_PATH
     with tempfile.TemporaryDirectory(prefix="t6-gate0-replay-") as directory:
+        temporary_root = Path(directory)
         immutable_manifest = _materialize_immutable_manifest_copy(
-            Path(directory), manifest_bytes
+            temporary_root, manifest_bytes
         )
+        tool_path = _materialize_current_gate0_verifier_copy(temporary_root, root)
         checkout = Path(directory) / "checkout"
         clone = subprocess.run(
             [
@@ -779,6 +1122,7 @@ def _replay_gate0_manifest_content(
             ],
             check=False,
             capture_output=True,
+            env=_git_safe_environment(),
         )
         if clone.returncode != 0:
             detail = clone.stderr.decode("utf-8", errors="replace").strip()
@@ -788,6 +1132,7 @@ def _replay_gate0_manifest_content(
             cwd=checkout,
             check=False,
             capture_output=True,
+            env=_git_safe_environment(),
         )
         if checked_out.returncode != 0:
             detail = checked_out.stderr.decode("utf-8", errors="replace").strip()
@@ -797,6 +1142,7 @@ def _replay_gate0_manifest_content(
             for key, value in os.environ.items()
             if not key.startswith("GITHUB_")
         }
+        replay_environment["GIT_NO_REPLACE_OBJECTS"] = "1"
         replay = subprocess.run(
             [
                 sys.executable,
@@ -824,22 +1170,38 @@ def _replay_gate0_manifest_content(
         ):
             raise SnapshotError("immutable Gate-0 manifest copy changed during replay")
 
-    digest_fields = (
+    base_digest_fields = (
         "kb_claim_set_digest",
         "runtime_source_digest",
         "producer_registry_digest",
         "grammar_hash",
         "test_manifest_digest",
     )
-    digests: dict[str, str] = {}
-    for field in digest_fields:
+    digests: dict[str, str | None] = {}
+    for field in base_digest_fields:
         value = manifest.get(field)
         if not isinstance(value, str) or not DIGEST_RE.fullmatch(value):
             raise SnapshotError(f"Gate-0 {field} is not a SHA-256 digest")
         digests[field] = value
+    diagnostics_contract = _gate0_diagnostics_contract(manifest)
+    if diagnostics_contract == "PRESENT_V2":
+        coordinator_registry = manifest.get("coordinator_evidence_registry")
+        terminal_registry = manifest.get("complete_terminal_registry")
+        if not isinstance(coordinator_registry, dict) or not isinstance(
+            terminal_registry, dict
+        ):
+            raise SnapshotError("Gate-0 v2 zero-authority diagnostics are missing")
+        digests.update(_registry_digest_vector(coordinator_registry, terminal_registry))
+    else:
+        coordinator_registry = None
+        terminal_registry = None
+        digests.update(
+            {field: None for field in ATTESTATION_DIAGNOSTIC_DIGEST_KEYS}
+        )
     content_basis = {
-        "schema_id": "t6_gate0_manifest_content_replay_v1",
+        "schema_id": "t6_gate0_manifest_content_replay_v2",
         "run_manifest_schema_id": manifest.get("schema_id"),
+        "diagnostics_contract": diagnostics_contract,
         "manifest_payload_sha256": manifest.get("manifest_payload_sha256"),
         "manifest_bytes_sha256": hashlib.sha256(manifest_bytes).hexdigest(),
         "head_sha": head_sha,
@@ -847,6 +1209,12 @@ def _replay_gate0_manifest_content(
         "status": "PASS",
         "content_replay": "PASS_EXACT_HEAD_COMMANDS_AND_DIGESTS",
         "producer_registry_status": manifest.get("producer_registry_status"),
+        "coordinator_evidence_registry": (
+            None if coordinator_registry is None else dict(coordinator_registry)
+        ),
+        "complete_terminal_registry": (
+            None if terminal_registry is None else dict(terminal_registry)
+        ),
         "digest_domain": (
             "Gate-0 manifest domains are replayed independently and are not "
             "assumed equal to live snapshot digest domains."
@@ -1579,6 +1947,11 @@ def _build_expected(
         }
 
     grammar_hash = _grammar_hash(grammar)
+    coordinator_registry = _coordinator_evidence_registry_diagnostic(root, revision)
+    complete_terminal_registry = _complete_terminal_registry_diagnostic(root, revision)
+    registry_digest_vector = _registry_digest_vector(
+        coordinator_registry, complete_terminal_registry
+    )
     digest_vector = {
         "claim_set_digest": digests["claim_set"],
         "runtime_source_digest": digests["runtime_source"],
@@ -1588,6 +1961,7 @@ def _build_expected(
         "t5_taxonomy_digest": digests["t5_taxonomy"],
         "test_manifest_digest": digests["test_manifest"],
         "independent_review_digest": digests["independent_review"],
+        **registry_digest_vector,
     }
     repository_name = workpack.get("repository")
     if repository_name != TRUSTED_REPOSITORY:
@@ -1625,6 +1999,8 @@ def _build_expected(
         "execution_binding": dict(execution_binding),
         "current_digest_audit": current_digest_audit,
         "consumer_policy": consumer_policy,
+        "coordinator_evidence_registry": coordinator_registry,
+        "complete_terminal_registry": complete_terminal_registry,
         "digest_algorithm": (
             "sha256(canonical-json({schema_id:t6_ci_file_set_v1,"
             "files:sorted([{path,mode,size,sha256(raw_git_blob)}])}))"
@@ -1642,8 +2018,10 @@ def _build_expected(
         "status": status,
         "proof_boundary": (
             "A digest is evidence of exact bytes at current_observed_head_sha, "
-            "not proof of registry completeness, terminal-schedule completeness, "
-            "F1/F2/F3 closure, T6 closure, or the Erdos-Straus conjecture. "
+            "not proof of registry completeness or terminal-schedule completeness. "
+            "The evidence and terminal registry diagnostics grant no runtime authority "
+            "and do not establish F1/F2/F3 closure, T6 closure, or the Erdos-Straus "
+            "conjecture. "
             "Status upgrades additionally require an independent current-digest "
             "audit and exact README/ledger/frontier locator bindings; those remain "
             "coordinator-owned integration steps."
@@ -1718,6 +2096,117 @@ def build_snapshot(
     return snapshot
 
 
+def _validate_zero_authority_diagnostics(
+    snapshot: Mapping[str, Any], errors: list[str]
+) -> None:
+    head_sha = snapshot.get("current_observed_head_sha")
+    evidence = snapshot.get("coordinator_evidence_registry")
+    evidence_keys = {
+        "schema_id",
+        "head_sha",
+        "registry_path",
+        "status",
+        "role_authority",
+        "registry_digest",
+        "evidence_inventory_digest",
+        "role_subdigests",
+        "role_grant_counts",
+        "active_role_grant_count",
+        "active_producer_count",
+        "complete_terminal_schedule_count",
+    }
+    if not isinstance(evidence, dict) or set(evidence) != evidence_keys:
+        errors.append("coordinator_evidence_registry has unknown or missing fields")
+    else:
+        if (
+            evidence.get("schema_id")
+            != "t6_gate0_coordinator_evidence_registry_diagnostic_v1"
+            or evidence.get("head_sha") != head_sha
+            or evidence.get("registry_path") != COORDINATOR_ROLE_REGISTRY_PATH
+            or evidence.get("status") != EVIDENCE_REGISTRY_STATUS
+            or evidence.get("role_authority") is not False
+        ):
+            errors.append("coordinator_evidence_registry authority boundary is invalid")
+        subdigests = evidence.get("role_subdigests")
+        counts = evidence.get("role_grant_counts")
+        if not isinstance(subdigests, dict) or set(subdigests) != set(
+            ROLE_SUBDIGEST_VECTOR_FIELDS
+        ):
+            errors.append("coordinator evidence role subdigests are incomplete")
+        elif not all(
+            isinstance(value, str) and DIGEST_RE.fullmatch(value)
+            for value in subdigests.values()
+        ):
+            errors.append("coordinator evidence role subdigests are invalid")
+        if not isinstance(counts, dict) or set(counts) != set(
+            ROLE_SUBDIGEST_VECTOR_FIELDS
+        ):
+            errors.append("coordinator evidence role grant counts are incomplete")
+        elif any(type(value) is not int or value != 0 for value in counts.values()):
+            errors.append("coordinator evidence role grant counts are not zero")
+        for field in (
+            "active_role_grant_count",
+            "active_producer_count",
+            "complete_terminal_schedule_count",
+        ):
+            if type(evidence.get(field)) is not int or evidence[field] != 0:
+                errors.append(f"coordinator_evidence_registry.{field} is not zero")
+        for field in ("registry_digest", "evidence_inventory_digest"):
+            value = evidence.get(field)
+            if not isinstance(value, str) or DIGEST_RE.fullmatch(value) is None:
+                errors.append(f"coordinator_evidence_registry.{field} is invalid")
+
+    terminal = snapshot.get("complete_terminal_registry")
+    terminal_keys = {
+        "schema_id",
+        "head_sha",
+        "registry_path",
+        "status",
+        "registry_digest",
+        "registry_source_sha256",
+        "local_schedule_count",
+        "complete_schedule_count",
+        "complete_miss_issuance_enabled",
+        "local_miss_implies_complete_miss",
+        "terminal_receipt_grants_queue_authority",
+    }
+    if not isinstance(terminal, dict) or set(terminal) != terminal_keys:
+        errors.append("complete_terminal_registry has unknown or missing fields")
+    else:
+        if (
+            terminal.get("schema_id")
+            != "t6_gate0_complete_terminal_registry_diagnostic_v1"
+            or terminal.get("head_sha") != head_sha
+            or terminal.get("registry_path") != COMPLETE_TERMINAL_REGISTRY_PATH
+            or terminal.get("status") != COMPLETE_TERMINAL_REGISTRY_STATUS
+        ):
+            errors.append("complete_terminal_registry boundary is invalid")
+        for field in ("registry_digest", "registry_source_sha256"):
+            value = terminal.get(field)
+            if not isinstance(value, str) or DIGEST_RE.fullmatch(value) is None:
+                errors.append(f"complete_terminal_registry.{field} is invalid")
+        if (
+            type(terminal.get("local_schedule_count")) is not int
+            or terminal["local_schedule_count"] < 0
+            or type(terminal.get("complete_schedule_count")) is not int
+            or terminal["complete_schedule_count"] != 0
+            or terminal.get("complete_miss_issuance_enabled") is not False
+            or terminal.get("local_miss_implies_complete_miss") is not False
+            or terminal.get("terminal_receipt_grants_queue_authority") is not False
+        ):
+            errors.append("complete_terminal_registry grants missing authority")
+
+    if isinstance(evidence, dict) and isinstance(terminal, dict):
+        try:
+            vector = _registry_digest_vector(evidence, terminal)
+        except (KeyError, SnapshotError):
+            errors.append("zero-authority registry digest vector cannot be derived")
+        else:
+            for field, value in vector.items():
+                if snapshot.get(field) != value:
+                    errors.append(f"{field} disagrees with registry diagnostics")
+
+
 def _validate_shape(snapshot: Mapping[str, Any], errors: list[str]) -> None:
     if set(snapshot) != EXPECTED_TOP_LEVEL_KEYS:
         missing = sorted(EXPECTED_TOP_LEVEL_KEYS - set(snapshot))
@@ -1729,6 +2218,7 @@ def _validate_shape(snapshot: Mapping[str, Any], errors: list[str]) -> None:
         errors.append(f"schema_version must be {SCHEMA_VERSION}")
     if snapshot.get("artifact_policy") != "EPHEMERAL_HEAD_BOUND_NOT_TRACKED":
         errors.append("artifact_policy must preserve the ephemeral HEAD boundary")
+    _validate_zero_authority_diagnostics(snapshot, errors)
 
     for field in (
         "workpack_origin_sha",
@@ -1757,9 +2247,16 @@ def _validate_shape(snapshot: Mapping[str, Any], errors: list[str]) -> None:
             if not isinstance(content, dict) or set(content) != CONTENT_REPLAY_KEYS:
                 errors.append("last_verified content replay is incomplete")
             else:
-                if content.get("schema_id") != "t6_gate0_manifest_content_replay_v1":
+                if content.get("schema_id") != "t6_gate0_manifest_content_replay_v2":
                     errors.append("last_verified content replay schema is invalid")
-                if content.get("run_manifest_schema_id") != "t6_ci_run_manifest_v1":
+                diagnostics_contract = content.get("diagnostics_contract")
+                expected_manifest_schema = {
+                    "PRESENT_V2": "t6_ci_run_manifest_v2",
+                    "ABSENT_LEGACY_V1": "t6_ci_run_manifest_v1",
+                }.get(diagnostics_contract)
+                if expected_manifest_schema is None:
+                    errors.append("last_verified diagnostics contract is invalid")
+                elif content.get("run_manifest_schema_id") != expected_manifest_schema:
                     errors.append("last_verified run manifest schema is invalid")
                 if content.get("head_sha") != last_verified:
                     errors.append("last_verified content head SHA does not match")
@@ -1772,11 +2269,42 @@ def _validate_shape(snapshot: Mapping[str, Any], errors: list[str]) -> None:
                 digests = content.get("digests")
                 if not isinstance(digests, dict) or set(digests) != ATTESTATION_DIGEST_KEYS:
                     errors.append("last_verified content digest set is invalid")
-                elif not all(
-                    isinstance(value, str) and DIGEST_RE.fullmatch(value)
-                    for value in digests.values()
+                else:
+                    for field in ATTESTATION_BASE_DIGEST_KEYS:
+                        value = digests[field]
+                        if not isinstance(value, str) or DIGEST_RE.fullmatch(value) is None:
+                            errors.append(
+                                f"last_verified content base digest {field} is invalid"
+                            )
+                    for field in ATTESTATION_DIAGNOSTIC_DIGEST_KEYS:
+                        value = digests[field]
+                        if diagnostics_contract == "PRESENT_V2":
+                            valid = isinstance(value, str) and DIGEST_RE.fullmatch(value)
+                        else:
+                            valid = value is None
+                        if not valid:
+                            errors.append(
+                                f"last_verified diagnostic digest {field} is invalid"
+                            )
+                if isinstance(digests, dict) and diagnostics_contract == "PRESENT_V2":
+                    attested_diagnostics = {
+                        "current_observed_head_sha": last_verified,
+                        "coordinator_evidence_registry": content.get(
+                            "coordinator_evidence_registry"
+                        ),
+                        "complete_terminal_registry": content.get(
+                            "complete_terminal_registry"
+                        ),
+                        **digests,
+                    }
+                    _validate_zero_authority_diagnostics(
+                        attested_diagnostics, errors
+                    )
+                elif diagnostics_contract == "ABSENT_LEGACY_V1" and (
+                    content.get("coordinator_evidence_registry") is not None
+                    or content.get("complete_terminal_registry") is not None
                 ):
-                    errors.append("last_verified content contains invalid digests")
+                    errors.append("legacy Gate-0 content cannot carry v2 diagnostics")
             if not isinstance(provenance, dict) or set(
                 provenance
             ) != GITHUB_PROVENANCE_KEYS:
@@ -1802,6 +2330,14 @@ def _validate_shape(snapshot: Mapping[str, Any], errors: list[str]) -> None:
         "t5_taxonomy_digest",
         "test_manifest_digest",
         "independent_review_digest",
+        "coordinator_evidence_registry_digest",
+        "evidence_inventory_digest",
+        "evidence_producer_role_subdigest",
+        "evidence_validator_role_subdigest",
+        "evidence_projector_role_subdigest",
+        "evidence_terminal_schedule_role_subdigest",
+        "evidence_t5_ticket_role_subdigest",
+        "complete_terminal_registry_digest",
     ):
         value = snapshot.get(field)
         if not isinstance(value, str) or not DIGEST_RE.fullmatch(value):
@@ -2130,6 +2666,7 @@ def resolve_output_path(root: Path, path: Path) -> Path:
         cwd=root,
         check=False,
         capture_output=True,
+        env=_git_safe_environment(),
     )
     if tracked.returncode == 0:
         raise SnapshotError("live snapshot must be ephemeral, not tracked by Git")
@@ -2138,6 +2675,7 @@ def resolve_output_path(root: Path, path: Path) -> Path:
         cwd=root,
         check=False,
         capture_output=True,
+        env=_git_safe_environment(),
     )
     if ignored.returncode != 0:
         raise SnapshotError("live snapshot output must be explicitly gitignored")

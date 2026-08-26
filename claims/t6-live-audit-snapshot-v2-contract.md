@@ -10,7 +10,8 @@ statement: >-
   attempt and successful gate-zero job metadata. The snapshot separately binds
   the workpack origin, integration-audited commit, current observed HEAD, last
   verified HEAD, current claim/runtime/producer/terminal/grammar/T5/test/review
-  digest vector and the README/ledger/frontier consumer policy. A verified
+  digest vector, eight coordinator-evidence/empty-role/complete-terminal
+  diagnostic digests and the README/ledger/frontier consumer policy. A verified
   ancestor is reported as ADVANCED_UNVERIFIED at a later HEAD. HEAD verification
   alone does not authorize a theorem-status change: that additionally requires
   a current-digest independent-review basis, non-diverged integration history
@@ -104,10 +105,23 @@ Let `H` be the API-attested Gate-0 HEAD and `C` the current observed HEAD.
 | `H` is a strict ancestor of `C` | `UNVERIFIED_HEAD_ADVANCE` | blocked |
 | otherwise | `DIVERGED_FROM_VERIFIED_HEAD` | blocked |
 
-The Python verifier recomputes this relation from the Git graph. The Draft
+The Python verifier recomputes this relation from the Git graph. It dispatches
+the attested Gate-0 content by exact schema identity: a current v2 manifest has
+`diagnostics_contract=PRESENT_V2`, while a historical v1 manifest has
+`ABSENT_LEGACY_V1` and null values for all eight added diagnostic digests.
+Legacy payloads cannot acquire v2 diagnostics retroactively. This compatibility
+claim concerns historical Gate-0 manifest input; it does not claim that an old
+snapshot-v2 output satisfies the current expanded snapshot schema. The Draft
 2020-12 schema independently rejects contradictory null/basis/relation/state
 combinations and forbids an upgrade when integration diverges, consumer
 bindings are stale or the current-digest review basis is missing.
+
+At the current observed HEAD, the snapshot resolves and binds the coordinator
+evidence inventory, its five empty role-subregistry digests and the production
+complete-terminal registry. The top-level diagnostics require
+`role_authority=false`, zero role grants, zero complete schedules and disabled
+complete-miss issuance. They are content and boundary diagnostics only, not a
+role manifest, complete-schedule theorem or admission ticket.
 
 ## Current boundary
 
@@ -118,3 +132,6 @@ conjecture. The current implementation deliberately emits
 `current_digest_audit.status = MISSING` unless an independent reviewer supplies
 an exact current-HEAD digest-vector basis. Consequently the present integration
 must keep `status_upgrade_allowed = false` even when its Gate-0 HEAD is verified.
+The newly bound evidence inventory and empty registries do not change that
+conclusion and grant no producer, validator, projector, terminal-schedule or
+T5-ticket authority.

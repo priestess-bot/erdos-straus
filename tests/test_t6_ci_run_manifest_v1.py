@@ -84,6 +84,44 @@ class CIRunManifestTests(unittest.TestCase):
         )
 
     @staticmethod
+    def coordinator_registry_fixture(root: Path) -> dict[str, object]:
+        head = MANIFEST.current_revision(root)["head_sha"]
+        role_subdigests = {
+            key: MANIFEST.sha256_bytes(f"role:{key}".encode())
+            for key in sorted(MANIFEST.ROLE_SUBDIGEST_KEYS)
+        }
+        return {
+            "schema_id": "t6_gate0_coordinator_evidence_registry_diagnostic_v1",
+            "head_sha": head,
+            "registry_path": MANIFEST.COORDINATOR_ROLE_REGISTRY_PATH,
+            "status": MANIFEST.EVIDENCE_REGISTRY_STATUS,
+            "role_authority": False,
+            "registry_digest": "a" * 64,
+            "evidence_inventory_digest": "b" * 64,
+            "role_subdigests": role_subdigests,
+            "role_grant_counts": {key: 0 for key in sorted(role_subdigests)},
+            "active_role_grant_count": 0,
+            "active_producer_count": 0,
+            "complete_terminal_schedule_count": 0,
+        }
+
+    @staticmethod
+    def terminal_registry_fixture(root: Path) -> dict[str, object]:
+        return {
+            "schema_id": "t6_gate0_complete_terminal_registry_diagnostic_v1",
+            "head_sha": MANIFEST.current_revision(root)["head_sha"],
+            "registry_path": MANIFEST.COMPLETE_TERMINAL_REGISTRY_PATH,
+            "status": MANIFEST.COMPLETE_TERMINAL_REGISTRY_STATUS,
+            "registry_digest": "c" * 64,
+            "registry_source_sha256": "d" * 64,
+            "local_schedule_count": 6,
+            "complete_schedule_count": 0,
+            "complete_miss_issuance_enabled": False,
+            "local_miss_implies_complete_miss": False,
+            "terminal_receipt_grants_queue_authority": False,
+        }
+
+    @staticmethod
     def discovery_output(
         skips: list[dict[str, str]] | None = None,
         *,
@@ -132,6 +170,16 @@ class CIRunManifestTests(unittest.TestCase):
             mock.patch.object(
                 MANIFEST, "producer_registry_payload", return_value=registry
             ),
+            mock.patch.object(
+                MANIFEST,
+                "coordinator_evidence_registry_diagnostic",
+                return_value=self.coordinator_registry_fixture(root),
+            ),
+            mock.patch.object(
+                MANIFEST,
+                "complete_terminal_registry_diagnostic",
+                return_value=self.terminal_registry_fixture(root),
+            ),
             mock.patch.dict(os.environ, {"GITHUB_ACTIONS": "false"}, clear=True),
         ):
             return MANIFEST.build_manifest(
@@ -158,6 +206,16 @@ class CIRunManifestTests(unittest.TestCase):
         with (
             mock.patch.object(
                 MANIFEST, "producer_registry_payload", return_value=registry
+            ),
+            mock.patch.object(
+                MANIFEST,
+                "coordinator_evidence_registry_diagnostic",
+                return_value=self.coordinator_registry_fixture(root),
+            ),
+            mock.patch.object(
+                MANIFEST,
+                "complete_terminal_registry_diagnostic",
+                return_value=self.terminal_registry_fixture(root),
             ),
             mock.patch.dict(os.environ, {"GITHUB_ACTIONS": "false"}, clear=True),
         ):
@@ -554,6 +612,16 @@ class CIRunManifestTests(unittest.TestCase):
                 mock.patch.object(
                     MANIFEST, "producer_registry_payload", return_value=registry
                 ),
+                mock.patch.object(
+                    MANIFEST,
+                    "coordinator_evidence_registry_diagnostic",
+                    return_value=self.coordinator_registry_fixture(root),
+                ),
+                mock.patch.object(
+                    MANIFEST,
+                    "complete_terminal_registry_diagnostic",
+                    return_value=self.terminal_registry_fixture(root),
+                ),
                 mock.patch.dict(os.environ, {"GITHUB_ACTIONS": "false"}, clear=True),
             ):
                 payload = MANIFEST.build_manifest(
@@ -607,7 +675,10 @@ class CIRunManifestTests(unittest.TestCase):
                 root, wrong_implementation, registry
             )
 
-        self.assertIn("schema_version is not integer 1", schema_errors)
+        self.assertIn(
+            "manifest contract identity is neither legacy v1 nor current v2",
+            schema_errors,
+        )
         self.assertIn(
             "unittest_discovery.schema_version is not integer 1",
             discovery_schema_errors,
@@ -663,6 +734,216 @@ class CIRunManifestTests(unittest.TestCase):
             errors = self.verify_with_registry(root, payload, registry)
         self.assertIn("manifest head_sha does not match checkout HEAD", errors)
         self.assertIn("manifest head_tree_sha does not match checkout tree", errors)
+
+    def test_zero_authority_registries_resolve_from_exact_head(self) -> None:
+        revision = MANIFEST.current_revision(ROOT)
+        entries = MANIFEST.git_tree_entries(ROOT, revision["head_sha"])
+        evidence = MANIFEST.coordinator_evidence_registry_diagnostic(
+            ROOT, revision["head_sha"]
+        )
+        terminal = MANIFEST.complete_terminal_registry_diagnostic(
+            ROOT, entries, revision["head_sha"]
+        )
+
+        self.assertEqual(evidence["status"], MANIFEST.EVIDENCE_REGISTRY_STATUS)
+        self.assertFalse(evidence["role_authority"])
+        self.assertEqual(set(evidence["role_subdigests"]), MANIFEST.ROLE_SUBDIGEST_KEYS)
+        self.assertEqual(set(evidence["role_grant_counts"].values()), {0})
+        self.assertEqual(evidence["active_role_grant_count"], 0)
+        self.assertEqual(evidence["active_producer_count"], 0)
+        self.assertEqual(evidence["complete_terminal_schedule_count"], 0)
+        self.assertEqual(terminal["status"], MANIFEST.COMPLETE_TERMINAL_REGISTRY_STATUS)
+        self.assertEqual(terminal["complete_schedule_count"], 0)
+        self.assertFalse(terminal["complete_miss_issuance_enabled"])
+
+    def test_zero_authority_diagnostic_mutations_do_not_self_attest(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.initialize_manifest_repository(root)
+            registry = {"schema_id": "test_registry", "producers": []}
+            baseline = self.build_valid_manifest(root, registry)
+            mutations = []
+            for path, value in (
+                (("coordinator_evidence_registry", "registry_digest"), "0" * 64),
+                (("coordinator_evidence_registry", "evidence_inventory_digest"), "0" * 64),
+                (
+                    (
+                        "coordinator_evidence_registry",
+                        "role_subdigests",
+                        "producer_registry",
+                    ),
+                    "0" * 64,
+                ),
+                (("coordinator_evidence_registry", "active_producer_count"), 1),
+                (("complete_terminal_registry", "registry_digest"), "0" * 64),
+                (("complete_terminal_registry", "complete_schedule_count"), 1),
+                (
+                    ("complete_terminal_registry", "complete_miss_issuance_enabled"),
+                    True,
+                ),
+            ):
+                mutation = copy.deepcopy(baseline)
+                target = mutation
+                for key in path[:-1]:
+                    target = target[key]
+                target[path[-1]] = value
+                mutations.append(MANIFEST.seal_manifest(mutation))
+            for mutation in mutations:
+                errors = self.verify_with_registry(root, mutation, registry)
+                self.assertTrue(
+                    any("does not replay from HEAD" in error for error in errors),
+                    errors,
+                )
+
+    def test_resolver_reported_digests_are_independently_recomputed(self) -> None:
+        head = MANIFEST.current_revision(ROOT)["head_sha"]
+        completed = subprocess.run(
+            [
+                sys.executable,
+                MANIFEST.COORDINATOR_ROLE_RESOLVER_PATH,
+                "--root",
+                str(ROOT),
+                "--head",
+                head,
+            ],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+        )
+        baseline = json.loads(completed.stdout)
+        mutations = []
+
+        outer = copy.deepcopy(baseline)
+        outer["registry_digest"] = "0" * 64
+        mutations.append(outer)
+
+        inventory = copy.deepcopy(baseline)
+        inventory["artifact_evidence_inventory"]["digest"] = "0" * 64
+        unsigned = dict(inventory)
+        unsigned.pop("registry_digest")
+        inventory["registry_digest"] = MANIFEST.canonical_sha256(unsigned)
+        mutations.append(inventory)
+
+        role = copy.deepcopy(baseline)
+        role["role_subdigests"]["producer_registry"] = "0" * 64
+        unsigned = dict(role)
+        unsigned.pop("registry_digest")
+        role["registry_digest"] = MANIFEST.canonical_sha256(unsigned)
+        mutations.append(role)
+
+        for mutation in mutations:
+            encoded = MANIFEST.canonical_json_bytes(mutation) + b"\n"
+            forged_result = subprocess.CompletedProcess(
+                args=("resolver",), returncode=0, stdout=encoded, stderr=b""
+            )
+            with (
+                self.subTest(marker=mutation),
+                mock.patch.object(MANIFEST, "_run_bytes", return_value=forged_result),
+                self.assertRaises(MANIFEST.ManifestError),
+            ):
+                MANIFEST.coordinator_evidence_registry_diagnostic(ROOT, head)
+
+    def test_manifest_verifier_dispatches_legacy_v1_and_current_v2(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.initialize_manifest_repository(root)
+            registry = {"schema_id": "test_registry", "producers": []}
+            current = self.build_valid_manifest(root, registry)
+            self.assertEqual(current["schema_id"], "t6_ci_run_manifest_v2")
+            self.assertEqual(current["schema_version"], 2)
+            self.assertEqual(self.verify_with_registry(root, current, registry), ())
+
+            legacy = copy.deepcopy(current)
+            legacy["schema_id"] = MANIFEST.LEGACY_SCHEMA_ID
+            legacy["schema_version"] = MANIFEST.LEGACY_SCHEMA_VERSION
+            legacy["artifact_id"] = MANIFEST.LEGACY_ARTIFACT_ID
+            legacy.pop("coordinator_evidence_registry")
+            legacy.pop("complete_terminal_registry")
+            legacy = MANIFEST.seal_manifest(legacy)
+            self.assertEqual(self.verify_with_registry(root, legacy, registry), ())
+
+            legacy_with_v2_authority = copy.deepcopy(legacy)
+            legacy_with_v2_authority["coordinator_evidence_registry"] = (
+                self.coordinator_registry_fixture(root)
+            )
+            legacy_with_v2_authority = MANIFEST.seal_manifest(legacy_with_v2_authority)
+            errors = self.verify_with_registry(
+                root, legacy_with_v2_authority, registry
+            )
+            self.assertTrue(any("top-level field mismatch" in item for item in errors))
+
+            for source, version in (
+                (legacy, True),
+                (legacy, 1.0),
+                (current, 2.0),
+            ):
+                confused = copy.deepcopy(source)
+                confused["schema_version"] = version
+                confused = MANIFEST.seal_manifest(confused)
+                errors = self.verify_with_registry(root, confused, registry)
+                self.assertIn(
+                    "manifest contract identity is neither legacy v1 nor current v2",
+                    errors,
+                )
+
+    def test_manifest_git_reads_ignore_replace_refs(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.initialize_repository(root)
+            self.write(root, "claims/alpha.md", "original\n")
+            self.commit_all(root, "replace-ref control")
+            revision = MANIFEST.current_revision(root)
+            entries = MANIFEST.git_tree_entries(root, revision["head_sha"])
+            entry = next(item for item in entries if item.path == "claims/alpha.md")
+            baseline = MANIFEST.git_blob_bytes(root, entry)
+            replacement = subprocess.run(
+                ["git", "hash-object", "-w", "--stdin"],
+                cwd=root,
+                input=b"replacement\n",
+                check=True,
+                capture_output=True,
+            ).stdout.decode().strip()
+            self.git(root, "replace", entry.object_id, replacement)
+            raw = subprocess.run(
+                ["git", "cat-file", "blob", entry.object_id],
+                cwd=root,
+                check=True,
+                capture_output=True,
+                env={key: value for key, value in os.environ.items() if key != "GIT_NO_REPLACE_OBJECTS"},
+            ).stdout
+            self.assertEqual(raw, b"replacement\n")
+            self.assertEqual(MANIFEST.git_blob_bytes(root, entry), baseline)
+            self.git(root, "replace", "-d", entry.object_id)
+
+            original_head = revision["head_sha"]
+            original_tree = revision["head_tree_sha"]
+            self.write(root, "claims/alpha.md", "replacement commit\n")
+            self.commit_all(root, "replacement commit")
+            replacement_commit = self.git(root, "rev-parse", "HEAD")
+            self.git(root, "checkout", "--quiet", "--detach", original_head)
+            self.git(root, "replace", original_head, replacement_commit)
+            environment = {
+                key: value
+                for key, value in os.environ.items()
+                if key != "GIT_NO_REPLACE_OBJECTS"
+            }
+            raw_tree = subprocess.run(
+                ["git", "rev-parse", "HEAD^{tree}"],
+                cwd=root,
+                check=True,
+                capture_output=True,
+                text=True,
+                env=environment,
+            ).stdout.strip()
+            self.assertNotEqual(raw_tree, original_tree)
+            self.assertEqual(
+                MANIFEST.current_revision(root),
+                {
+                    "head_sha": original_head,
+                    "head_tree_sha": original_tree,
+                    "git_object_format": revision["git_object_format"],
+                },
+            )
 
 
 if __name__ == "__main__":

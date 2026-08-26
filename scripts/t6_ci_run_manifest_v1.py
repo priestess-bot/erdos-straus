@@ -35,15 +35,43 @@ import time
 from typing import Any
 
 
-SCHEMA_ID = "t6_ci_run_manifest_v1"
-SCHEMA_VERSION = 1
-ARTIFACT_ID = "ci_run_manifest_v1"
+SCHEMA_ID = "t6_ci_run_manifest_v2"
+SCHEMA_VERSION = 2
+ARTIFACT_ID = "ci_run_manifest_v2"
+LEGACY_SCHEMA_ID = "t6_ci_run_manifest_v1"
+LEGACY_SCHEMA_VERSION = 1
+LEGACY_ARTIFACT_ID = "ci_run_manifest_v1"
 FILE_SET_SCHEMA_ID = "t6_ci_file_set_v1"
 PRODUCER_REGISTRY_SCHEMA_ID = "t6_local_producer_registry_snapshot_v1"
 PRODUCER_REGISTRY_STATUS = "LOCAL_RUNTIME_ONLY_NO_SHARED_ALL_PRODUCER_REGISTRY"
 UNITTEST_DISCOVERY_SCHEMA_ID = "t6_unittest_discovery_receipt_v1"
 DEFAULT_OUTPUT = Path("data/t6-wave1/ci-run-manifest-v1.json")
 GRAMMAR_PATH = "data/t6-wave1/family-grammar-freeze-v1.json"
+COORDINATOR_ROLE_REGISTRY_PATH = (
+    "data/t6-wave1/t6-coordinator-role-registry-v1.json"
+)
+COORDINATOR_ROLE_RESOLVER_PATH = "scripts/t6_coordinator_role_registry_v1.py"
+COMPLETE_TERMINAL_REGISTRY_PATH = (
+    "data/t6-wave1/t6-complete-terminal-schedule-registry-v1.json"
+)
+EVIDENCE_REGISTRY_STATUS = "HEAD_BOUND_EVIDENCE_ONLY_NO_ROLE_AUTHORITY"
+COMPLETE_TERMINAL_REGISTRY_STATUS = "NO_COMPLETE_SCHEDULE_AUTHORITY"
+ROLE_SUBDIGEST_KEYS = frozenset(
+    {
+        "producer_registry",
+        "validator_registry",
+        "projector_registry",
+        "terminal_schedule_registry",
+        "t5_ticket_registry",
+    }
+)
+ROLE_SUBDIGEST_ROLES = {
+    "producer_registry": "PRODUCER",
+    "validator_registry": "INDEPENDENT_VALIDATOR",
+    "projector_registry": "PROJECTOR",
+    "terminal_schedule_registry": "TERMINAL_SCHEDULE",
+    "t5_ticket_registry": "T5_TICKET",
+}
 LOCAL_PYTHON_NAMESPACE_ROOTS = ("scripts", "reproductions")
 HEX_DIGEST_RE = re.compile(r"[0-9a-f]{64}\Z")
 UNITTEST_RAN_RE = re.compile(r"^Ran (?P<count>[0-9]+) tests? in .+$")
@@ -246,7 +274,7 @@ GATE0_COMMANDS = (
 )
 
 
-TOP_LEVEL_FIELDS = frozenset(
+V2_TOP_LEVEL_FIELDS = frozenset(
     {
         "artifact_id",
         "checkout_state",
@@ -255,6 +283,8 @@ TOP_LEVEL_FIELDS = frozenset(
         "digest_scopes",
         "dirty_paths_after",
         "dirty_paths_before",
+        "complete_terminal_registry",
+        "coordinator_evidence_registry",
         "generated_at",
         "git_object_format",
         "grammar_hash",
@@ -288,6 +318,11 @@ TOP_LEVEL_FIELDS = frozenset(
         "workflow_sha",
     }
 )
+LEGACY_TOP_LEVEL_FIELDS = frozenset(
+    V2_TOP_LEVEL_FIELDS
+    - {"coordinator_evidence_registry", "complete_terminal_registry"}
+)
+TOP_LEVEL_FIELDS = V2_TOP_LEVEL_FIELDS
 
 
 def canonical_json_bytes(value: Any) -> bytes:
@@ -327,6 +362,12 @@ def _is_git_object_id(value: Any, object_format: Any) -> bool:
     )
 
 
+def _git_safe_environment() -> dict[str, str]:
+    environment = os.environ.copy()
+    environment["GIT_NO_REPLACE_OBJECTS"] = "1"
+    return environment
+
+
 def _run_bytes(
     argv: Sequence[str],
     *,
@@ -341,6 +382,7 @@ def _run_bytes(
             input=input_bytes,
             capture_output=True,
             check=False,
+            env=_git_safe_environment(),
         )
     except OSError as exc:
         raise ManifestError(f"could not execute {argv[0]!r}: {exc}") from exc
@@ -833,6 +875,238 @@ def producer_registry_payload(root: Path) -> dict[str, Any]:
     return payload
 
 
+def _git_entry_by_path(
+    entries: Sequence[GitTreeEntry], path: str
+) -> GitTreeEntry:
+    matching = [entry for entry in entries if entry.path == path]
+    if len(matching) != 1:
+        raise ManifestError(f"HEAD must contain exactly one {path}")
+    return matching[0]
+
+
+def coordinator_evidence_registry_diagnostic(
+    root: Path, head_sha: str
+) -> dict[str, Any]:
+    """Resolve the evidence-only registry without granting any runtime role."""
+
+    completed = _run_bytes(
+        (
+            sys.executable,
+            COORDINATOR_ROLE_RESOLVER_PATH,
+            "--root",
+            str(root),
+            "--head",
+            head_sha,
+        ),
+        root=root,
+        check=False,
+    )
+    if completed.returncode != 0:
+        detail = completed.stderr.decode("utf-8", errors="replace").strip()
+        raise ManifestError(
+            "exact-HEAD coordinator evidence registry resolution failed"
+            + (f": {detail}" if detail else "")
+        )
+    resolved = load_json_bytes_reject_duplicates(completed.stdout)
+    if not isinstance(resolved, dict):
+        raise ManifestError("resolved coordinator evidence registry is not an object")
+    if resolved.get("schema_id") != "t6_coordinator_role_registry_resolved_v1":
+        raise ManifestError("resolved coordinator evidence registry schema is invalid")
+    if resolved.get("head_sha") != head_sha:
+        raise ManifestError("resolved coordinator evidence registry is not HEAD-bound")
+    if resolved.get("registry_path") != COORDINATOR_ROLE_REGISTRY_PATH:
+        raise ManifestError("coordinator evidence registry path is not fixed")
+    if resolved.get("status") != EVIDENCE_REGISTRY_STATUS:
+        raise ManifestError("coordinator evidence registry status grants authority")
+    resolved_unsigned = dict(resolved)
+    resolved_registry_digest = resolved_unsigned.pop("registry_digest", None)
+    if (
+        not _is_sha256(resolved_registry_digest)
+        or resolved_registry_digest != canonical_sha256(resolved_unsigned)
+    ):
+        raise ManifestError("coordinator evidence registry digest does not replay")
+
+    inventory = resolved.get("artifact_evidence_inventory")
+    if not isinstance(inventory, dict):
+        raise ManifestError("coordinator evidence inventory is not an object")
+    if (
+        inventory.get("status") != "EVIDENCE_ONLY_NOT_AUTHORIZED"
+        or inventory.get("role_authority") is not False
+        or inventory.get("head_sha") != head_sha
+        or not _is_sha256(inventory.get("digest"))
+    ):
+        raise ManifestError("coordinator evidence inventory authority boundary is invalid")
+    inventory_unsigned = dict(inventory)
+    inventory_digest = inventory_unsigned.pop("digest", None)
+    if inventory_digest != canonical_sha256(inventory_unsigned):
+        raise ManifestError("coordinator evidence inventory digest does not replay")
+
+    role_subdigests = resolved.get("role_subdigests")
+    role_counts = resolved.get("role_grant_counts")
+    if not isinstance(role_subdigests, dict) or set(role_subdigests) != ROLE_SUBDIGEST_KEYS:
+        raise ManifestError("coordinator role subdigests have an invalid field set")
+    if not all(_is_sha256(value) for value in role_subdigests.values()):
+        raise ManifestError("coordinator role subdigests are not SHA-256 digests")
+    expected_role_subdigests = {
+        key: canonical_sha256(
+            {
+                "schema_id": "t6_coordinator_role_subregistry_v1",
+                "head_sha": head_sha,
+                "role": role,
+                "grants": [],
+            }
+        )
+        for key, role in ROLE_SUBDIGEST_ROLES.items()
+    }
+    if role_subdigests != expected_role_subdigests:
+        raise ManifestError("coordinator empty role subdigests do not replay")
+    if not isinstance(role_counts, dict) or set(role_counts) != ROLE_SUBDIGEST_KEYS:
+        raise ManifestError("coordinator role grant counts have an invalid field set")
+    if any(type(value) is not int or value != 0 for value in role_counts.values()):
+        raise ManifestError("coordinator evidence registry contains a role grant")
+    for field in (
+        "active_role_grant_count",
+        "active_producer_count",
+        "complete_terminal_schedule_count",
+    ):
+        if type(resolved.get(field)) is not int or resolved[field] != 0:
+            raise ManifestError(f"coordinator evidence registry {field} is not zero")
+    for field in (
+        "resolved_role_grants",
+        "authorized_branches",
+        "complete_terminal_schedules",
+    ):
+        if resolved.get(field) != []:
+            raise ManifestError(f"coordinator evidence registry {field} is not empty")
+    return {
+        "schema_id": "t6_gate0_coordinator_evidence_registry_diagnostic_v1",
+        "head_sha": head_sha,
+        "registry_path": COORDINATOR_ROLE_REGISTRY_PATH,
+        "status": EVIDENCE_REGISTRY_STATUS,
+        "role_authority": False,
+        "registry_digest": resolved_registry_digest,
+        "evidence_inventory_digest": inventory_digest,
+        "role_subdigests": dict(sorted(role_subdigests.items())),
+        "role_grant_counts": dict(sorted(role_counts.items())),
+        "active_role_grant_count": 0,
+        "active_producer_count": 0,
+        "complete_terminal_schedule_count": 0,
+    }
+
+
+def complete_terminal_registry_diagnostic(
+    root: Path, entries: Sequence[GitTreeEntry], head_sha: str
+) -> dict[str, Any]:
+    """Parse the fixed terminal registry from HEAD as a no-authority diagnostic."""
+
+    source = git_blob_bytes(
+        root, _git_entry_by_path(entries, COMPLETE_TERMINAL_REGISTRY_PATH)
+    )
+    document = load_json_bytes_reject_duplicates(source)
+    expected_fields = {
+        "schema_id",
+        "schema_version",
+        "registry_id",
+        "registry_class",
+        "status",
+        "head_authority_status",
+        "digest_algorithm",
+        "local_schedules",
+        "complete_schedules",
+        "invariants",
+        "registry_digest",
+    }
+    if not isinstance(document, dict) or set(document) != expected_fields:
+        raise ManifestError("complete terminal registry has an invalid field set")
+    if (
+        document.get("schema_id") != "t6_complete_terminal_schedule_registry_v1"
+        or type(document.get("schema_version")) is not int
+        or document.get("schema_version") != 1
+        or document.get("registry_id")
+        != "t6_complete_terminal_schedule_registry_v1"
+        or document.get("registry_class") != "PRODUCTION"
+        or document.get("status") != COMPLETE_TERMINAL_REGISTRY_STATUS
+        or document.get("head_authority_status") != "HEAD_ROLE_REGISTRY_REQUIRED"
+        or document.get("digest_algorithm") != "sha256-canonical-json-v1"
+    ):
+        raise ManifestError("complete terminal registry identity or status is invalid")
+    recorded_digest = document.get("registry_digest")
+    unsigned = dict(document)
+    unsigned.pop("registry_digest", None)
+    if not _is_sha256(recorded_digest) or recorded_digest != canonical_sha256(unsigned):
+        raise ManifestError("complete terminal registry digest does not replay")
+
+    local_schedules = document.get("local_schedules")
+    complete_schedules = document.get("complete_schedules")
+    if not isinstance(local_schedules, list) or not isinstance(complete_schedules, list):
+        raise ManifestError("terminal schedule collections are not arrays")
+    if complete_schedules:
+        raise ManifestError("complete terminal registry grants a COMPLETE schedule")
+    local_fields = {
+        "schedule_id",
+        "classification",
+        "subject_kind",
+        "ordered_family_ids",
+        "evidence_refs",
+    }
+    schedule_ids: list[str] = []
+    for schedule in local_schedules:
+        if not isinstance(schedule, dict) or set(schedule) != local_fields:
+            raise ManifestError("LOCAL_ONLY terminal schedule has an invalid field set")
+        schedule_id = schedule.get("schedule_id")
+        families = schedule.get("ordered_family_ids")
+        evidence = schedule.get("evidence_refs")
+        if (
+            not isinstance(schedule_id, str)
+            or not schedule_id
+            or schedule.get("classification") != "LOCAL_ONLY"
+            or schedule.get("subject_kind") not in {"SOURCE_STATE", "TARGET_PROJECTION"}
+            or not isinstance(families, list)
+            or not families
+            or families != list(dict.fromkeys(families))
+            or any(not isinstance(item, str) or not item for item in families)
+            or not isinstance(evidence, list)
+            or not evidence
+            or any(not isinstance(item, str) or not item for item in evidence)
+        ):
+            raise ManifestError("LOCAL_ONLY terminal schedule is malformed")
+        schedule_ids.append(schedule_id)
+    if len(schedule_ids) != len(set(schedule_ids)):
+        raise ManifestError("complete terminal registry repeats a schedule_id")
+
+    invariants = document.get("invariants")
+    invariant_fields = {
+        "complete_schedule_count",
+        "complete_miss_issuance_enabled",
+        "local_miss_implies_complete_miss",
+        "terminal_receipt_grants_queue_authority",
+    }
+    if not isinstance(invariants, dict) or set(invariants) != invariant_fields:
+        raise ManifestError("complete terminal registry invariants are invalid")
+    if (
+        type(invariants.get("complete_schedule_count")) is not int
+        or invariants.get("complete_schedule_count") != 0
+        or invariants.get("complete_miss_issuance_enabled") is not False
+        or invariants.get("local_miss_implies_complete_miss") is not False
+        or invariants.get("terminal_receipt_grants_queue_authority") is not False
+    ):
+        raise ManifestError("complete terminal registry attempts to grant authority")
+
+    return {
+        "schema_id": "t6_gate0_complete_terminal_registry_diagnostic_v1",
+        "head_sha": head_sha,
+        "registry_path": COMPLETE_TERMINAL_REGISTRY_PATH,
+        "status": COMPLETE_TERMINAL_REGISTRY_STATUS,
+        "registry_digest": recorded_digest,
+        "registry_source_sha256": sha256_bytes(source),
+        "local_schedule_count": len(local_schedules),
+        "complete_schedule_count": 0,
+        "complete_miss_issuance_enabled": False,
+        "local_miss_implies_complete_miss": False,
+        "terminal_receipt_grants_queue_authority": False,
+    }
+
+
 def grammar_receipt(root: Path, entries: Sequence[GitTreeEntry]) -> dict[str, str]:
     matching = [entry for entry in entries if entry.path == GRAMMAR_PATH]
     if len(matching) != 1:
@@ -1068,6 +1342,7 @@ def _run_command_with_tee(
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
             start_new_session=os.name == "posix",
+            env=_git_safe_environment(),
         )
     except OSError as exc:
         return (
@@ -1161,6 +1436,7 @@ def run_command(
             cwd=root,
             check=False,
             timeout=spec.timeout_seconds,
+            env=_git_safe_environment(),
         )
     except subprocess.TimeoutExpired:
         return (
@@ -1284,6 +1560,12 @@ def build_manifest(
     entries = git_tree_entries(root, revision["head_sha"])
     scopes = build_digest_scopes(root, entries)
     registry = producer_registry_payload(root)
+    coordinator_registry = coordinator_evidence_registry_diagnostic(
+        root, revision["head_sha"]
+    )
+    complete_terminal_registry = complete_terminal_registry_diagnostic(
+        root, entries, revision["head_sha"]
+    )
     grammar = grammar_receipt(root, entries)
     checkout_state = (
         "CLEAN"
@@ -1333,6 +1615,8 @@ def build_manifest(
         "producer_registry": registry,
         "producer_registry_digest": canonical_sha256(registry),
         "producer_registry_status": PRODUCER_REGISTRY_STATUS,
+        "coordinator_evidence_registry": coordinator_registry,
+        "complete_terminal_registry": complete_terminal_registry,
         **grammar,
         "commands": [spec.payload() for spec in gate0_command_specs()],
         "results": [dict(result) for result in results],
@@ -1635,6 +1919,26 @@ def _validate_unittest_discovery_receipt(
         errors.append("unittest discovery receipt policy did not pass")
 
 
+def manifest_contract_version(manifest: Mapping[str, Any]) -> int | None:
+    version = manifest.get("schema_version")
+    if type(version) is not int:
+        return None
+    identity = (
+        manifest.get("schema_id"),
+        version,
+        manifest.get("artifact_id"),
+    )
+    if identity == (SCHEMA_ID, SCHEMA_VERSION, ARTIFACT_ID):
+        return 2
+    if identity == (
+        LEGACY_SCHEMA_ID,
+        LEGACY_SCHEMA_VERSION,
+        LEGACY_ARTIFACT_ID,
+    ):
+        return 1
+    return None
+
+
 def verify_manifest(
     root: Path,
     manifest: Mapping[str, Any],
@@ -1646,18 +1950,16 @@ def verify_manifest(
     """Return every verification error without trusting any stored digest."""
 
     errors: list[str] = []
-    if set(manifest) != TOP_LEVEL_FIELDS:
-        missing = sorted(TOP_LEVEL_FIELDS - set(manifest))
-        extra = sorted(set(manifest) - TOP_LEVEL_FIELDS)
+    contract_version = manifest_contract_version(manifest)
+    expected_fields = (
+        LEGACY_TOP_LEVEL_FIELDS if contract_version == 1 else V2_TOP_LEVEL_FIELDS
+    )
+    if set(manifest) != expected_fields:
+        missing = sorted(expected_fields - set(manifest))
+        extra = sorted(set(manifest) - expected_fields)
         errors.append(f"top-level field mismatch: missing={missing}, extra={extra}")
-    if manifest.get("schema_id") != SCHEMA_ID:
-        errors.append("schema_id is not t6_ci_run_manifest_v1")
-    if type(manifest.get("schema_version")) is not int or manifest.get(
-        "schema_version"
-    ) != SCHEMA_VERSION:
-        errors.append("schema_version is not integer 1")
-    if manifest.get("artifact_id") != ARTIFACT_ID:
-        errors.append("artifact_id is not ci_run_manifest_v1")
+    if contract_version is None:
+        errors.append("manifest contract identity is neither legacy v1 nor current v2")
     generated_at = manifest.get("generated_at")
     try:
         parsed_generated_at = dt.datetime.fromisoformat(
@@ -1792,6 +2094,17 @@ def verify_manifest(
             errors.append("producer_registry_digest does not replay")
         if manifest.get("producer_registry_status") != PRODUCER_REGISTRY_STATUS:
             errors.append("producer_registry_status is invalid")
+        if contract_version == 2:
+            coordinator_registry = coordinator_evidence_registry_diagnostic(
+                root, revision["head_sha"]
+            )
+            if manifest.get("coordinator_evidence_registry") != coordinator_registry:
+                errors.append("coordinator_evidence_registry does not replay from HEAD")
+            complete_terminal_registry = complete_terminal_registry_diagnostic(
+                root, entries, revision["head_sha"]
+            )
+            if manifest.get("complete_terminal_registry") != complete_terminal_registry:
+                errors.append("complete_terminal_registry does not replay from HEAD")
         grammar = grammar_receipt(root, entries)
         for field, value in grammar.items():
             if manifest.get(field) != value:

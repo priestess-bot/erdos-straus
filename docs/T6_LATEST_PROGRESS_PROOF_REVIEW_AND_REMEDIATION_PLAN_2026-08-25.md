@@ -8,6 +8,25 @@
 
 ---
 
+## 2026-08-26 执行附记
+
+Gate 0 与 Gate 1 已在 `main` 的精确提交
+`4dc68b462bd55ae337692b8a6007c41bb898a940` 上完成。GitHub Actions run
+`32901203777` 的 Gate 0 与 live snapshot job 均成功；Gate 0 manifest 记录
+1372 项测试、恰好 13 项冻结的可选大文件 skip，以及 9/9 命令通过。该 HEAD 的 live
+snapshot 为 `VERIFIED_HEAD`，但 `current_digest_audit=MISSING` 且
+`status_upgrade_allowed=false`，所以没有数学状态升级。
+
+Phase 2 目前只完成零权限基础：HEAD-bound evidence inventory、五个空 role
+subregistry、零 COMPLETE schedule 的 production terminal registry、不可签发的 complete
+terminal miss 类型边界，以及 reserved typed fields 的 acyclic V2 bundle。它们没有授权
+producer、validator、projector、terminal scheduler 或 T5 ticket，也没有接入活动 queue。
+现有 runtime 仍接受 legacy E1--E4 boolean validation，完整 terminal replay 与独立
+validator authority 仍缺失。因此下文 Gate 2 的验收项一项也不能勾选，F1/F2/F3/T6
+状态保持开放。本附记记录 8 月 26 日执行结果，不改写下文 8 月 25 日历史审计判断。
+
+---
+
 ## 0. 执行摘要
 
 当前仓库已经完成了一轮高密度的 F1/F2/F3 合并，`main` 已吸收 F1 reachability contract、F2 post-G/H4、F2 overflow/high-support、F2 c8/atomic，以及 F3 high endpoint、TR1、QC1、proper-root physicalization 等分支。数学 residual 的确比 `c851bd2` 时显著收窄，且多项新增局部定理在其**明确声明的局部量词域**内可以独立复算通过。

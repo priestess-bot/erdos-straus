@@ -19,6 +19,14 @@ GitHub 服务端来源核验的绿色 HEAD；任一摘要变化都会使旧证�
 `ADVANCED_UNVERIFIED`。即使 HEAD 已验证，没有当前摘要向量的独立复核，状态升级仍被
 阻断。当前 F1、F2、F3、T6 及猜想状态均不因这项工程收口而改变。
 
+Phase 2 当前只完成了零权限基础：精确 HEAD 的 coordinator inventory 中五类 role grant
+均为 0，production terminal registry 中 COMPLETE schedule 为 0，且
+`MISS_COMPLETE` 签发被禁用。新的 acyclic V2 bundle 仅证明其保留类型字段按 projection、
+draft、edge anchor、raw target、final bundle、admission sidecar 构成可重放 DAG；opaque
+digest 仍无 provenance，该模块也没有 issuance、admission、dispatch 或 queue 权限。现有
+活动 runtime 仍接受 legacy boolean validation，因此 Gate 2 尚未验收。权威状态保持
+F1=`OPEN_MINIMAL_GAPS`、F2=`OPEN`、F3=`OPEN_MINIMAL_GAPS`、T6=`OPEN`。
+
 ## 当前旗舰命题（合同内核核验至 2026-08-20）
 
 对核心素数 \(p\equiv1\pmod{24}\)，最终目标是下列双出口命题：

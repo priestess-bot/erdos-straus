@@ -33,9 +33,11 @@ WORKPACK_ORIGIN = "c851bd213936b3bc8b3103b469292c139d229e97"
 OBSERVED_AT = "2026-08-26T00:00:00Z"
 PROVENANCE_NOW = datetime(2026, 8, 26, tzinfo=timezone.utc)
 MANIFEST_BYTES = b'{"fixture":"content-replay-owned-elsewhere"}\n'
+LEGACY_GATE0_V1_HEAD = "b34b796ff320cb5009cdbe8b363e1525c98d2ed3"
 
 PHASE1_TRACKED_PATHS = (
     "scripts/t6_live_audit_snapshot_v2.py",
+    "scripts/t6_ci_run_manifest_v1.py",
     "schemas/t6-live-audit-snapshot-v2.schema.json",
     "schemas/t6-gate0-run-provenance-v1.schema.json",
     ".github/workflows/research-kb-ci.yml",
@@ -104,14 +106,22 @@ def content_replay_fixture(
     root: Path, head_sha: str, evidence_locator: AUDIT.Gate0RunLocatorV1
 ) -> tuple[dict[str, object], bytes, dict[str, object]]:
     tree = run_git(root, "rev-parse", f"{head_sha}^{{tree}}")
+    coordinator_registry = AUDIT._coordinator_evidence_registry_diagnostic(
+        root, head_sha
+    )
+    terminal_registry = AUDIT._complete_terminal_registry_diagnostic(root, head_sha)
     digests = {
         "kb_claim_set_digest": "1" * 64,
         "runtime_source_digest": "2" * 64,
         "producer_registry_digest": "3" * 64,
         "grammar_hash": "4" * 64,
         "test_manifest_digest": "5" * 64,
+        **AUDIT._registry_digest_vector(coordinator_registry, terminal_registry),
     }
     manifest = {
+        "schema_id": "t6_ci_run_manifest_v2",
+        "schema_version": 2,
+        "artifact_id": "ci_run_manifest_v2",
         "head_sha": head_sha,
         "workflow_repository": evidence_locator.repository,
         "workflow_run_id": str(evidence_locator.run_id),
@@ -122,8 +132,9 @@ def content_replay_fixture(
         "workflow_job": AUDIT.TRUSTED_GATE0_JOB_NAME,
     }
     basis = {
-        "schema_id": "t6_gate0_manifest_content_replay_v1",
-        "run_manifest_schema_id": "t6_ci_run_manifest_v1",
+        "schema_id": "t6_gate0_manifest_content_replay_v2",
+        "run_manifest_schema_id": "t6_ci_run_manifest_v2",
+        "diagnostics_contract": "PRESENT_V2",
         "manifest_payload_sha256": "6" * 64,
         "manifest_bytes_sha256": hashlib.sha256(MANIFEST_BYTES).hexdigest(),
         "head_sha": head_sha,
@@ -133,6 +144,8 @@ def content_replay_fixture(
         "producer_registry_status": (
             "LOCAL_RUNTIME_ONLY_NO_SHARED_ALL_PRODUCER_REGISTRY"
         ),
+        "coordinator_evidence_registry": coordinator_registry,
+        "complete_terminal_registry": terminal_registry,
         "digest_domain": "fixture domains remain separate",
         "digests": digests,
     }
@@ -294,6 +307,28 @@ class T6LiveAuditSnapshotV2Tests(unittest.TestCase):
         self.assertEqual(self.snapshot["current_digest_audit"]["status"], "MISSING")
         self.assertEqual(self.snapshot["consumer_policy"]["status"], "PASS")
         self.assertFalse(self.snapshot["status_upgrade_allowed"])
+        evidence = self.snapshot["coordinator_evidence_registry"]
+        terminal = self.snapshot["complete_terminal_registry"]
+        self.assertFalse(evidence["role_authority"])
+        self.assertEqual(set(evidence["role_grant_counts"].values()), {0})
+        self.assertEqual(evidence["active_producer_count"], 0)
+        self.assertEqual(evidence["complete_terminal_schedule_count"], 0)
+        self.assertEqual(terminal["complete_schedule_count"], 0)
+        self.assertFalse(terminal["complete_miss_issuance_enabled"])
+        self.assertIn(
+            AUDIT.COORDINATOR_ROLE_REGISTRY_PATH,
+            self.snapshot["digest_inputs"]["producer_registry"]["paths"],
+        )
+        self.assertIn(
+            AUDIT.COMPLETE_TERMINAL_REGISTRY_PATH,
+            self.snapshot["digest_inputs"]["terminal_schedule"]["paths"],
+        )
+        self.assertIn(
+            "coordinator_role_registry", self.snapshot["manifest_digests"]
+        )
+        self.assertIn(
+            "complete_terminal_schedule_registry", self.snapshot["manifest_digests"]
+        )
 
     def test_ci_workflow_uses_direct_artifacts_and_a_dependent_snapshot_job(self) -> None:
         workflow = yaml.safe_load(
@@ -733,6 +768,350 @@ class T6LiveAuditSnapshotV2Tests(unittest.TestCase):
         )
         self.assertFalse(result.ok)
         self.assertTrue(any("top-level keys differ" in item for item in result.errors))
+
+    def test_zero_authority_registry_mutations_fail_schema_and_replay(self) -> None:
+        validator = schema_validator(self.repository)
+        mutations = []
+
+        active_producer = copy.deepcopy(self.snapshot)
+        active_producer["coordinator_evidence_registry"]["active_producer_count"] = 1
+        mutations.append(active_producer)
+
+        role_grant = copy.deepcopy(self.snapshot)
+        role_grant["coordinator_evidence_registry"]["role_grant_counts"][
+            "producer_registry"
+        ] = 1
+        mutations.append(role_grant)
+
+        terminal_issuance = copy.deepcopy(self.snapshot)
+        terminal_issuance["complete_terminal_registry"][
+            "complete_miss_issuance_enabled"
+        ] = True
+        mutations.append(terminal_issuance)
+
+        role_digest = copy.deepcopy(self.snapshot)
+        role_digest["evidence_producer_role_subdigest"] = "0" * 63
+        mutations.append(role_digest)
+
+        for index, mutation in enumerate(mutations):
+            with self.subTest(index=index):
+                self.assertTrue(list(validator.iter_errors(mutation)))
+                result = AUDIT.audit_snapshot(
+                    self.repository, mutation, require_verified_head=False
+                )
+                self.assertFalse(result.ok)
+
+    def test_registry_worktree_mutation_cannot_change_head_diagnostics(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            repository = clone_repository(self.repository, Path(directory))
+            baseline = AUDIT.build_snapshot(repository, observed_at=OBSERVED_AT)
+            for relative in (
+                AUDIT.COORDINATOR_ROLE_REGISTRY_PATH,
+                AUDIT.COMPLETE_TERMINAL_REGISTRY_PATH,
+            ):
+                path = repository / relative
+                original = path.read_bytes()
+                path.write_bytes(original + b"\n")
+                try:
+                    observed = AUDIT.build_snapshot(repository, observed_at=OBSERVED_AT)
+                finally:
+                    path.write_bytes(original)
+                self.assertEqual(
+                    observed["coordinator_evidence_registry"],
+                    baseline["coordinator_evidence_registry"],
+                )
+                self.assertEqual(
+                    observed["complete_terminal_registry"],
+                    baseline["complete_terminal_registry"],
+                )
+
+    def test_snapshot_recomputes_all_resolver_reported_digests(self) -> None:
+        head = AUDIT.resolve_head(self.repository)
+        completed = subprocess.run(
+            [
+                sys.executable,
+                AUDIT.COORDINATOR_ROLE_RESOLVER_PATH,
+                "--root",
+                str(self.repository),
+                "--head",
+                head,
+            ],
+            cwd=self.repository,
+            check=True,
+            capture_output=True,
+        )
+        baseline = json.loads(completed.stdout)
+        mutations = []
+
+        outer = copy.deepcopy(baseline)
+        outer["registry_digest"] = "0" * 64
+        mutations.append(outer)
+
+        inventory = copy.deepcopy(baseline)
+        inventory["artifact_evidence_inventory"]["digest"] = "0" * 64
+        unsigned = dict(inventory)
+        unsigned.pop("registry_digest")
+        inventory["registry_digest"] = hashlib.sha256(
+            AUDIT.canonical_json_bytes(unsigned)
+        ).hexdigest()
+        mutations.append(inventory)
+
+        role = copy.deepcopy(baseline)
+        role["role_subdigests"]["producer_registry"] = "0" * 64
+        unsigned = dict(role)
+        unsigned.pop("registry_digest")
+        role["registry_digest"] = hashlib.sha256(
+            AUDIT.canonical_json_bytes(unsigned)
+        ).hexdigest()
+        mutations.append(role)
+
+        for mutation in mutations:
+            forged = subprocess.CompletedProcess(
+                args=("resolver",),
+                returncode=0,
+                stdout=AUDIT.canonical_json_bytes(mutation) + b"\n",
+                stderr=b"",
+            )
+            with (
+                self.subTest(marker=mutation),
+                mock.patch.object(AUDIT.subprocess, "run", return_value=forged),
+                self.assertRaises(AUDIT.SnapshotError),
+            ):
+                AUDIT._coordinator_evidence_registry_diagnostic(
+                    self.repository, head
+                )
+
+    def test_snapshot_git_reads_ignore_replace_refs(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            repository = clone_repository(self.repository, Path(directory))
+            head = AUDIT.resolve_head(repository)
+            baseline = AUDIT._blob(repository, head, AUDIT.PROOF_FRONTIER_PATH)
+            object_id = run_git(
+                repository, "rev-parse", f"{head}:{AUDIT.PROOF_FRONTIER_PATH}"
+            )
+            replacement = subprocess.run(
+                ["git", "hash-object", "-w", "--stdin"],
+                cwd=repository,
+                input=b'{"forged":true}\n',
+                check=True,
+                capture_output=True,
+            ).stdout.decode().strip()
+            run_git(repository, "replace", object_id, replacement)
+            environment = {
+                key: value
+                for key, value in os.environ.items()
+                if key != "GIT_NO_REPLACE_OBJECTS"
+            }
+            raw = subprocess.run(
+                ["git", "cat-file", "blob", object_id],
+                cwd=repository,
+                check=True,
+                capture_output=True,
+                env=environment,
+            ).stdout
+            self.assertEqual(raw, b'{"forged":true}\n')
+            self.assertEqual(
+                AUDIT._blob(repository, head, AUDIT.PROOF_FRONTIER_PATH), baseline
+            )
+
+    def test_snapshot_replay_dispatch_rejects_bool_and_float_versions(self) -> None:
+        for schema_id, version in (
+            ("t6_ci_run_manifest_v1", True),
+            ("t6_ci_run_manifest_v1", 1.0),
+            ("t6_ci_run_manifest_v2", 2.0),
+        ):
+            with self.subTest(schema_id=schema_id, version=version), self.assertRaises(
+                AUDIT.SnapshotError
+            ):
+                AUDIT._gate0_diagnostics_contract(
+                    {"schema_id": schema_id, "schema_version": version}
+                )
+
+    def test_actual_legacy_manifest_replay_preserves_historical_h_to_c(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            temporary = Path(directory)
+            historical = clone_repository(self.repository, temporary)
+            historical_head = LEGACY_GATE0_V1_HEAD
+            current_head = AUDIT.resolve_head(self.repository)
+            self.assertNotEqual(historical_head, current_head)
+            run_git(self.repository, "cat-file", "-e", f"{historical_head}^{{commit}}")
+            run_git(
+                self.repository,
+                "merge-base",
+                "--is-ancestor",
+                historical_head,
+                current_head,
+            )
+            run_git(historical, "checkout", "--quiet", "--detach", historical_head)
+
+            module_path = historical / AUDIT.CI_MANIFEST_TOOL_PATH
+            spec = importlib.util.spec_from_file_location(
+                "t6_ci_run_manifest_v1_historical_builder", module_path
+            )
+            if spec is None or spec.loader is None:  # pragma: no cover
+                raise RuntimeError("cannot load current Gate-0 verifier")
+            gate0 = importlib.util.module_from_spec(spec)
+            sys.modules[spec.name] = gate0
+            spec.loader.exec_module(gate0)
+            revision = gate0.current_revision(historical)
+            results = [
+                {
+                    "id": command.command_id,
+                    "status": "PASS",
+                    "exit_code": 0,
+                    "duration_ms": index,
+                    "detail": None,
+                }
+                for index, command in enumerate(gate0.gate0_command_specs())
+            ]
+            full_result = next(
+                item for item in results if item["id"] == "full_unittest_discovery"
+            )
+            skips = gate0.expected_unittest_skips_payload()
+            output_lines = [
+                f"{item['test_id'].rsplit('.', 1)[-1]} ({item['test_id']}) "
+                f"... skipped {item['reason']!r}"
+                for item in skips
+            ]
+            output_lines.extend(
+                [
+                    "----------------------------------------------------------------------",
+                    "Ran 100 tests in 1.000s",
+                    "",
+                    f"OK (skipped={len(skips)})",
+                ]
+            )
+            discovery = gate0.build_unittest_discovery_receipt(
+                ("\n".join(output_lines) + "\n").encode(), full_result
+            )
+            evidence_locator = locator()
+            github_environment = {
+                "GITHUB_ACTIONS": "true",
+                "GITHUB_RUN_ID": str(evidence_locator.run_id),
+                "GITHUB_RUN_ATTEMPT": str(evidence_locator.run_attempt),
+                "GITHUB_REPOSITORY": evidence_locator.repository,
+                "GITHUB_SHA": historical_head,
+                "GITHUB_REF": "refs/heads/main",
+                "GITHUB_EVENT_NAME": "push",
+                "GITHUB_JOB": AUDIT.TRUSTED_GATE0_JOB_NAME,
+            }
+            with mock.patch.dict(os.environ, github_environment, clear=True):
+                legacy = gate0.build_manifest(
+                    historical,
+                    revision=revision,
+                    head_sha_after=historical_head,
+                    dirty_before=(),
+                    dirty_after=(),
+                    allow_dirty=False,
+                    require_github=True,
+                    results=results,
+                    unittest_discovery=discovery,
+                    infrastructure_errors=(),
+                )
+            self.assertEqual(legacy["schema_id"], "t6_ci_run_manifest_v1")
+            self.assertEqual(legacy["schema_version"], 1)
+            manifest_path = temporary / "legacy-ci-run-manifest-v1.json"
+            manifest_bytes = (
+                json.dumps(legacy, ensure_ascii=True, indent=2, sort_keys=True) + "\n"
+            ).encode("ascii")
+            manifest_path.write_bytes(manifest_bytes)
+
+            api = MockGitHubApi(
+                head_sha=historical_head, manifest_bytes=manifest_bytes
+            )
+            snapshot = AUDIT.build_snapshot(
+                self.repository,
+                run_manifest_path=manifest_path,
+                provenance_locator=evidence_locator,
+                github_api_client=api,
+                provenance_now=PROVENANCE_NOW,
+                observed_at=OBSERVED_AT,
+            )
+
+        content = snapshot["last_verified_basis"]["content_replay"]
+        self.assertEqual(snapshot["last_verified_head_sha"], historical_head)
+        self.assertEqual(snapshot["head_relation"], "ADVANCED_UNVERIFIED")
+        self.assertEqual(content["diagnostics_contract"], "ABSENT_LEGACY_V1")
+        self.assertEqual(content["run_manifest_schema_id"], "t6_ci_run_manifest_v1")
+        self.assertIsNone(content["coordinator_evidence_registry"])
+        self.assertIsNone(content["complete_terminal_registry"])
+        self.assertTrue(
+            all(
+                content["digests"][field] is None
+                for field in AUDIT.ATTESTATION_DIAGNOSTIC_DIGEST_KEYS
+            )
+        )
+        self.assertTrue(
+            all(
+                isinstance(content["digests"][field], str)
+                for field in AUDIT.ATTESTATION_BASE_DIGEST_KEYS
+            )
+        )
+        validator = schema_validator(self.repository)
+        validator.validate(snapshot)
+        forged_legacy = copy.deepcopy(snapshot)
+        forged_legacy["last_verified_basis"]["content_replay"][
+            "coordinator_evidence_registry"
+        ] = copy.deepcopy(snapshot["coordinator_evidence_registry"])
+        self.assertTrue(list(validator.iter_errors(forged_legacy)))
+
+    def test_frozen_legacy_head_survives_later_descendant_commits(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            repository = clone_repository(self.repository, Path(directory))
+            for index in range(2):
+                run_git(
+                    repository,
+                    "commit",
+                    "--allow-empty",
+                    "-qm",
+                    f"future descendant {index}",
+                )
+            descendant = AUDIT.resolve_head(repository)
+            self.assertEqual(
+                LEGACY_GATE0_V1_HEAD,
+                "b34b796ff320cb5009cdbe8b363e1525c98d2ed3",
+            )
+            run_git(
+                repository,
+                "merge-base",
+                "--is-ancestor",
+                LEGACY_GATE0_V1_HEAD,
+                descendant,
+            )
+            self.assertNotEqual(LEGACY_GATE0_V1_HEAD, descendant)
+
+    def test_attested_registry_authority_mutation_is_rejected(self) -> None:
+        head = AUDIT.resolve_head(self.repository)
+        api = MockGitHubApi(head_sha=head)
+        replay = content_replay_fixture(self.repository, head, locator())
+        with mock.patch.object(
+            AUDIT, "_replay_gate0_manifest_content", return_value=replay
+        ):
+            snapshot = AUDIT.build_snapshot(
+                self.repository,
+                run_manifest_path=Path("unused-by-stub.json"),
+                provenance_locator=locator(),
+                github_api_client=api,
+                provenance_now=PROVENANCE_NOW,
+                observed_at=OBSERVED_AT,
+            )
+            mutation = copy.deepcopy(snapshot)
+            mutation["last_verified_basis"]["content_replay"][
+                "complete_terminal_registry"
+            ]["complete_schedule_count"] = 1
+            self.assertTrue(list(schema_validator(self.repository).iter_errors(mutation)))
+            result = AUDIT.audit_snapshot(
+                self.repository,
+                mutation,
+                run_manifest_path=Path("unused-by-stub.json"),
+                provenance_locator=locator(),
+                github_api_client=api,
+                provenance_now=PROVENANCE_NOW,
+            )
+        self.assertFalse(result.ok)
+        self.assertTrue(
+            any("last_verified_basis" in error for error in result.errors), result.errors
+        )
 
     def test_duplicate_keys_nonfinite_json_and_locator_policy_are_rejected(self) -> None:
         for payload, marker in (
