@@ -77,11 +77,55 @@ global_exhaustion                  = false
 Therefore this handoff is not yet a `verified_edge`, does not close Gate 2 or
 Gate 4, and does not change F1, F2, F3, T6 or Erdos-Straus status.
 
-## Next phase: complete one phase-root E2--E5 pilot
+## Object-layer correction
 
-The next minimal theorem should convert the accepted V4 occurrence into one
-fully replayable q=1 G to Type-I phase-root edge.  Keep the work in the
-following dependency order.
+The V4 `RawRootSourceStateV2` is an actual root occurrence, but it explicitly
+has `persistent_admission=false` and is not a V1 runtime parent.  A normal
+`ADMITTED_SUCCESSOR` issued directly from that V2 state would fail the common
+runtime with `SOURCE_NOT_ADMITTED`.
+
+The conservative migration path is therefore architecture A:
+
+```text
+V4 actual q=1 G occurrence
+  -> canonical V1 ROOT_INITIALIZER_OUTPUT materialization
+  -> independent common base admission (queue still false)
+  -> V4 E1 rebound to the new V1 source ID
+  -> ordinary phase-root successor pipeline
+```
+
+Making the Type-I target itself the initializer output would remove the G state
+from the persistent reachable domain and change the existing trace/T5/F1
+quantifiers.  That alternative is not adopted.
+
+The base gate needs two roles: a non-admitting V1 source materializer and an
+independent base-admission verifier.  Terminal schema translation,
+orchestration and post-issuance replay remain non-roles.  The new V1 state and
+owner digests must be recomputed; V4 digests are bound to a different V2 state
+ID and cannot be copied.
+
+## Next phase: source admission, then one phase-root E2--E5 pilot
+
+Only after the base gate is closed should the accepted V4 occurrence be
+converted into one fully replayable q=1 G to Type-I phase-root edge.  Keep the
+work in the following dependency order.
+
+### 0. V1 root source materialization and base admission
+
+Translate the independently replayed V3 production registered-prefix MISS into
+a scope-preserving V1 terminal receipt, construct a parentless
+`ROOT_INITIALIZER_OUTPUT` q=1 G state, and run the actual frozen V1 facts,
+owner and T5 evaluators.  Only the independent verifier may issue base
+admission; materializer, adapter and serializer outputs have no authority.
+
+The V1 state preimage must be derived from the V2 root source and V3 MISS only;
+V4 owner/scope digests are compared after the new state ID exists and may enter
+the final admission sidecar, but may not be encoded into the state before
+classification.
+
+The sidecar must preserve gaps `[3,7,11]`, `next_unchecked_gap=15` and
+`global_exhaustion=false`, and must keep successor, E1--E5 and queue authority
+false.
 
 ### 1. E2 deterministic target projection
 
@@ -101,6 +145,11 @@ mark_kind         = ROOT_SOL
 
 The E2 projector must not accept caller-provided owner, family, potential,
 authority flags or a target solution.
+
+Before E3 or admission, run a target-bound schedule that replays the
+equation-level registered gaps `[3,7,11]` and the target-local anchor-sink
+predicate in a fixed order.  The result remains scope-bound with
+`global_exhaustion=false`; p=1201 gap 23 stays outside scope.
 
 ### 2. Common target owner and E3 normal form
 
@@ -150,7 +199,8 @@ remain absent from all failed or partial paths.
 The phase-root pilot is ready for independent review only when it demonstrates:
 
 - p1201 and p2521: V3 prefix MISS, V4 scoped E1, deterministic E2 target,
-  unique target owner/E3, universal E4, strict E5 and common re-entry;
+  V1 root base admission, unique target owner/E3, universal E4, strict E5 and
+  common re-entry;
 - p73, p193 and p241441: production HIT still preempts the producer before E1;
 - gap-23 evidence cannot alter the registered-prefix scope or become global
   exhaustion;

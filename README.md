@@ -86,10 +86,17 @@ gap 23 的 Type I `d=34` 证书仍作为反 global-exhaustion 控制保留。reg
 exact-HEAD 集成共 32 项聚焦测试通过，最终独立复核结论为 `ACCEPT`。
 
 这个结果只建立 **根源 occurrence 的作用域 E1**；receipt 中的 generic/successor
-`e1_authority` 仍为 false。当前没有 common target owner、E2--E5、producer/branch、T5 admission、
-re-entry 或 queue mutation，因此 Gate 2、完整 Gate 4、Gate 5、F1/F2/F3、T6 和猜想状态均不
-升级。下一步是把这一唯一 phase-root candidate 变成带 target owner、E2--E5 和 admission
-sidecar 的完整非终止边，而不是继续扩张根前缀 MISS 的含义。
+`e1_authority` 仍为 false。后续三路证明复核确认 E2 的 closed-form target、E3 的唯一
+`type_i_full_carrier_post_g` owner、E4 的 `Sol(4,p)` 恒等 lift，以及 E5 的七元势
+`(p,3,0,0,0,0,0) -> (p,2,4,B_p,K,0,0)` 在数学上均成立；但这些仍没有 authority receipt。
+
+更早的对象门不能跳过：V4 source 是 `persistent_admission=false` 的 V2 root occurrence，
+不是公共 runtime 已接纳的 V1 parent。下一步必须先把它独立物化并核验为 V1
+`ROOT_INITIALIZER_OUTPUT`，重算新的 V1 state/owner/potential；之后才能把 V4 E1 绑定到该
+source ID 并进入 target terminal、E2--E5 和 common admission。当前仍没有 successor、
+producer、re-entry 或 queue mutation，Gate 2、完整 Gate 4、Gate 5、F1/F2/F3、T6 和猜想
+状态均不升级。详见
+[`docs/audits/T6_Q1_PHASE_ROOT_OBJECT_LAYER_AND_E2_E5_REVIEW_2026-08-26.md`](docs/audits/T6_Q1_PHASE_ROOT_OBJECT_LAYER_AND_E2_E5_REVIEW_2026-08-26.md)。
 
 ## 当前旗舰命题（合同内核核验至 2026-08-20）
 

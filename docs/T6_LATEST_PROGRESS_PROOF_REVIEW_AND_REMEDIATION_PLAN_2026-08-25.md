@@ -83,6 +83,19 @@ target owner、E2--E5、producer、admission、re-entry 或 queue 权限。新�
 target owner/E3 normal form、identity E4 与 T5 phase-drop E5，最后经共享 admission path 形成
 首条可独立重放的完整非终止边。全局 checklist 继续保持未勾选。
 
+随后对对象层的三路独立复核表明，这个顺序还缺一个必须前置的 base gate。V4 source 是
+`persistent_admission=false` 的 `RawRootSourceStateV2`；现有 V1 runtime 只允许已进入 admitted
+set 的 V1 state 作为普通 successor source。E2/E3 的 target formulas/唯一 owner、E4 恒等 lift
+和 E5 七元 phase drop 的全称数学核都可证明，但若直接从 V4 state 发 successor，运行时应以
+`SOURCE_NOT_ADMITTED` 拒绝。
+
+因此保守且不改 trace 语义的执行顺序改为：先用两个分离角色把 V4 actual root 物化为新的
+V1 `ROOT_INITIALIZER_OUTPUT` 并独立签发 base admission（queue 仍为 false）；再把 V4 E1
+适配到这个新的 V1 source ID，随后执行 E2、target-bound terminal schedule、E3、E4、E5 和
+common target admission。V4 owner digest 绑定 V2 state ID，未来 V1 owner digest 必须重算，
+二者只要求 facts/owner/precedence 语义等价，绝不能复制 digest。精确证明与边界见
+`docs/audits/T6_Q1_PHASE_ROOT_OBJECT_LAYER_AND_E2_E5_REVIEW_2026-08-26.md`。
+
 ---
 
 ## 0. 执行摘要
