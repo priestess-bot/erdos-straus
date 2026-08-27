@@ -98,7 +98,7 @@
       ],
       "existing_family_match": "type_i_a_gt_one_overflow_residual via the deterministic second-full-excess parent macro; no new family is required.",
       "new_family_required": false,
-      "atomic_arm_required": "Not an atomic arm: use the parent-anchored second-full-excess macro after terminal-first MISS and double-low miss.",
+      "atomic_arm_required": "Not an atomic arm: use the parent-anchored second-full-excess macro after terminal-first MISS, whether or not an optional double-low candidate also exists.",
       "mark_behavior": "Must remain ROOT_SOL unless an explicit T3 extension is separately requested and proved.",
       "t2_request": "No atomic T2 arm: the fallback is the canonical single-side Q=(R-1)/2 complete-excess parent macro.",
       "t3_request": "No T3 extension: ROOT_SOL is preserved and no nontrivial mark is created.",
@@ -166,7 +166,7 @@
       "source_owners": ["c8_terminal_first_surviving_parent"],
       "target_owners": ["type_i_a_gt_one_overflow_residual"],
       "queue_gate": "ADMITTED_SUCCESSOR",
-      "guard": "terminal-first MISS and no selected fully admitted C8_DOUBLE_LOW receipt; Q=(R-1)/2 parent macro; 9<=target capacity<=p-2",
+      "guard": "terminal-first MISS; Q=(R-1)/2 parent macro; 9<=target capacity<=p-2. An optional double-low route may be selected only after its complete source-bound universe and common admission are established.",
       "t2_t3": ["not atomic", "T3v1 ROOT_SOL preservation"]
     }
   ]

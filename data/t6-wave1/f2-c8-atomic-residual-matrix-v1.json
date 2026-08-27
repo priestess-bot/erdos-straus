@@ -8,8 +8,10 @@
   "partition_order": {
     "c8_outgoing": [
       "C8-O1-TERMINAL",
-      "C8-O2-DOUBLE-LOW",
       "C8-O3-OTHER"
+    ],
+    "c8_optional_refinements": [
+      "C8-O2-DOUBLE-LOW"
     ],
     "h4_atomic_target": [
       "H4-T1-TERMINAL",
@@ -45,23 +47,21 @@
       "domain": "c8_outgoing",
       "predicate": "Terminal-first MISS and the canonical actual V-side raw occurrence has direct capacity c_a in [1,7] and two-sided split capacity C in [1,7].",
       "mutually_exclusive_with": [
-        "C8-O1-TERMINAL",
-        "C8-O3-OTHER"
+        "C8-O1-TERMINAL"
       ],
-      "coverage_proof": "This is the positive double-low predicate after terminal exclusion; C8-O3 is its exact complement within the nonterminal actual-parent domain.",
-      "planned_closure": "VERIFIED_SUCCESSOR",
+      "coverage_proof": "This is an optional positive double-low refinement after terminal exclusion. It never removes the universal C8-O3 fallback, which is available on the same MISS input.",
+      "planned_closure": "OPTIONAL_ALTERNATE_VERIFIED_SUCCESSOR",
       "target_shape": "AtomicPendingTargetV1(C8_DOUBLE_LOW) -> AtomicTypedTerminalV1 | AtomicTypedFSuccessorV1 | AtomicTypedGSuccessorV1",
       "current_blocker": "A complete actual candidate universe, canonical priority and shared E1-E5/common-admission replay are missing; this track does not activate caller-supplied double-low candidates."
     },
     {
       "leaf_id": "C8-O3-OTHER",
       "domain": "c8_outgoing",
-      "predicate": "Terminal-first MISS and either no canonical actual eligible V-side raw occurrence exists or at least one double-low inequality fails for the fixed occurrence.",
+      "predicate": "Terminal-first MISS. The parent-anchored second-full-excess construction is available regardless of whether the optional C8-O2 double-low predicate holds.",
       "mutually_exclusive_with": [
-        "C8-O1-TERMINAL",
-        "C8-O2-DOUBLE-LOW"
+        "C8-O1-TERMINAL"
       ],
-      "coverage_proof": "Exact complement of C8-O2 after C8-O1 is excluded; this logical partition is not a successor construction.",
+      "coverage_proof": "Together with C8-O1 this is the complete terminal-first coverage: HIT terminalizes, while MISS has the deterministic parent-anchored arithmetic fallback. C8-O2 is only an optional alternate refinement.",
       "planned_closure": "VERIFIED_SUCCESSOR",
       "target_shape": "C8SecondFullExcessParentMacroV1 -> AtomicTypedTerminalV1 | existing type_i_a_gt_one_overflow_residual successor",
       "current_blocker": "The actual q_star=103 source domain is reduced to s=189+721v or s=704+721v with exact roughness, core-prime and ordinary-q1-G guards. No complete terminal-first MISS, admitted parent trace, shared producer, target classifier, or common admission/re-entry exists yet."
@@ -129,7 +129,7 @@
       "coverage_proof": "Definition of recomputed F after hit exclusion; C8-T3 is subgroup nonmembership.",
       "planned_closure": "VERIFIED_SUCCESSOR",
       "target_shape": "AtomicTypedFSuccessorV1",
-      "current_blocker": "Target-local closure is established conditional on an actual c8 double-low arm receipt; existence remains in C8-O2."
+      "current_blocker": "Target-local closure is established conditional on an actual source-bound C8 macro and complete target classifier; neither an optional double-low candidate nor the universal fallback currently has common admission."
     },
     {
       "leaf_id": "C8-T3-G",
@@ -142,7 +142,7 @@
       "coverage_proof": "Subgroup excluded middle after hit exclusion.",
       "planned_closure": "VERIFIED_SUCCESSOR",
       "target_shape": "AtomicTypedGSuccessorV1",
-      "current_blocker": "Target-local closure is established conditional on an actual c8 double-low arm receipt; existence remains in C8-O2."
+      "current_blocker": "Target-local closure is established conditional on an actual source-bound C8 macro and complete target classifier; neither an optional double-low candidate nor the universal fallback currently has common admission."
     }
   ],
   "least_current_residuals": [

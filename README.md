@@ -175,6 +175,18 @@ replayer 的运行时结果。它是可重放候选证据，不是 source authen
 详见
 [V6 source replay candidate](claims/t6-q-one-exact-head-source-input-replay-candidate-v1.md)。
 
+C8 分支也已校正一个会误导后续工作的覆盖语义：对真实 complete terminal-first `MISS` 的
+c8 parent，second-full-excess parent macro 总有一个确定的算术 target；`DOUBLE_LOW` 只是
+可选的较短 atomic alternative，绝不是 fallback 的先决条件。这个修正不提供 actual
+parent/path、完整 terminal receipt、common E3/admission、target totality 或 re-entry，故
+F2/T6 状态不变。见
+[C8 outgoing coverage correction](docs/audits/F2_C8_OUTGOING_COVERAGE_CORRECTION_2026-08-27.md)。
+该 fallback target 现还满足 \(p\nmid R_T(R_T-1)\)，其下一 complete-excess block
+非平凡、p-free，且与当前 carrier 的 overlap 至多为 \(124\)；但这仍不蕴涵下一
+capacity 下降，已有同一算术域的上升控制。因此后续应研究其确切 multiplier residue，
+而不是把小 overlap 当作 T5 ticket。见
+[C8 target p-free/overlap compression](claims/type-I-c8-second-full-excess-parent-anchored-target-pfree-overlap-compression.md)。
+
 ## 当前旗舰命题（合同内核核验至 2026-08-20）
 
 对核心素数 \(p\equiv1\pmod{24}\)，最终目标是下列双出口命题：

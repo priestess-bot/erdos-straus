@@ -24,7 +24,9 @@ substitutes for these fields.
 
 ## C8 OTHER Shape
 
-For a real `C8-O3` input, construct the second-full-excess endpoint
+For every real terminal-first `MISS` C8 input, construct the second-full-excess
+endpoint (including inputs for which an optional `C8-O2-DOUBLE_LOW` candidate
+also exists):
 
 \[
 H=(p,R,8M;M),\qquad Q=\frac{R-1}{2},\qquad A_T=MQ,

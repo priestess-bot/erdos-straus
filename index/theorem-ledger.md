@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 35 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 959 |
+| 数学状态 | `established` | 960 |
 | 数学状态 | `open` | 13 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 42 |
-| 证明来源 | `repository_derivation` | 793 |
+| 证明来源 | `repository_derivation` | 794 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 27 |
-| 审阅状态 | `internal_review` | 936 |
+| 审阅状态 | `internal_review` | 937 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -279,6 +279,7 @@
 | [底层汇 SCC 的完整超额 bundle 选择器与线性源 overflow 收缩](../claims/type-I-bottom-sink-scc-complete-excess-bundle-selector.md) (`type-I-bottom-sink-scc-complete-excess-bundle-selector`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-11 |
 | [底层路径字的格正规形、有限 Pareto 前沿与周期容量选择器](../claims/type-I-bottom-word-lattice-pareto-cycle-capacity-selector.md) (`type-I-bottom-word-lattice-pareto-cycle-capacity-selector`) | `established` | `mixed` | `internal_review` | - | 2026-08-01 |
 | [固定素数的有界单调支撑相位秩](../claims/type-I-bounded-monotone-support-phase-rank.md) (`type-I-bounded-monotone-support-phase-rank`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
+| [c8 second-full-excess parent target 的 p-free 与小 overlap 压缩](../claims/type-I-c8-second-full-excess-parent-anchored-target-pfree-overlap-compression.md) (`type-I-c8-second-full-excess-parent-anchored-target-pfree-overlap-compression`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-27 |
 | [c8 第二完整超额的 parent-anchored 全称 fallback 严降宏](../claims/type-I-c8-second-full-excess-parent-anchored-universal-fallback.md) (`type-I-c8-second-full-excess-parent-anchored-universal-fallback`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-24 |
 | [规范完全换支撑重图表及其普适 G 态终点](../claims/type-I-canonical-complete-support-rechart-g-obstruction.md) (`type-I-canonical-complete-support-rechart-g-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [任意 Type I 图表的最小互素素数一步锚源与 d=1 raw 门消除](../claims/type-I-chart-least-coprime-prime-anchor-source.md) (`type-I-chart-least-coprime-prime-anchor-source`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
