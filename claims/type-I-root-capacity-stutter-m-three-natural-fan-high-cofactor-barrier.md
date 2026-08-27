@@ -7,7 +7,8 @@ statement: >-
   w=(p-h-1)/3。则 gcd(u,D(p+e))=1，且 exact high-end gates 为
   u divides 3w^2+3w+1、D=6u+9w+4 divides 9w^2+10w+4、
   52 divides 3u+3w+4。其 quotient barrier 给 R_w/u>=169，并可按
-  beta=S_w/F 固定为有限 divisor-quadratic fiber，beta<75 全空。既有 primitive
+  beta=S_w/F 固定为有限 divisor-quadratic fiber；完整 primitive core 中
+  beta=lambda/3>=12503。既有 primitive
   scale bounds further force C>=1993、w>=20779、p-h>=62338；在 even-z
   subbranch C>=11824、w>=127301、p-h>=381904。结论显著缩小 actual
   Diophantine residual，但不证明 high-C core 为空、fan hit、terminal、E1--E5 或 T6 closure。
@@ -436,6 +437,51 @@ Neither set contains the required \(u\equiv11\pmod {13}\). Therefore
 \]
 
 This quotient clearance is still only a necessary arithmetic sieve.
+
+In the full primitive core, \(\beta\) is not an independent quotient. The
+identities \(u=2A+3\rho+1\), \(w=2\rho+\lambda/3\), and
+\(A\lambda=9\rho^2+5\rho+1\) give directly
+
+\[
+\lambda F=3S_w.
+\tag{35}
+\]
+
+Since \(S_w=F\beta\),
+
+\[
+\boxed{\lambda=3\beta.}
+\tag{36}
+\]
+
+Write \(\theta=\lambda-39\tau\) and \(\phi=\theta/3\). The primitive
+identities consequently become
+
+\[
+\boxed{
+\beta=13\tau+\phi,
+\qquad
+A\tau=\sigma\rho-K,
+\qquad
+A\phi=\frac{26\sigma+1}{9}+13K.}
+\tag{37}
+\]
+
+Thus the previous quotient fiber is exactly the \(-11\)-norm quotient
+written in high-end coordinates. In particular, the same actual bounds used
+in (20) give
+
+\[
+\boxed{
+z\text{ odd}\Longrightarrow\beta\ge12503,
+\qquad
+z\text{ even}\Longrightarrow\beta\ge76437.}
+\tag{38}
+\]
+
+The finite \(\beta<75\) clearance above is therefore useful as a
+primitive-free fiber control, but (38) is the effective bound on the complete
+actual core.
 
 ## 5. Boundary
 

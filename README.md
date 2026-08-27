@@ -212,7 +212,8 @@ support transfer；剩余关键变量是 \(-11\) quotient。见
 [F3 high-cofactor barrier](claims/type-I-root-capacity-stutter-m-three-natural-fan-high-cofactor-barrier.md)。
 该 barrier 现已用完整 primitive 参数强化到 \(w\ge20779\)、\(p-h\ge62338\)
 （偶 \(z\) 支分别为 \(127301\)、\(381904\)）；同时 high-end quotient
-\(R_w/u\) 至少为 \(169\)，首个 \(S_w/F<75\) band 已空。
+\(R_w/u\) 至少为 \(169\)，而 \(S_w/F=\lambda/3\ge12503\)
+（偶支 \(\ge76437\)）；首个独立 fiber 的 \(S_w/F<75\) band 也已空。
 
 ## 当前旗舰命题（合同内核核验至 2026-08-20）
 
