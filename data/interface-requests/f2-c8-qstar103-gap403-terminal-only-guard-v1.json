@@ -1,0 +1,78 @@
+{
+  "request_id": "f2_c8_qstar103_gap403_terminal_only_guard_v1",
+  "request_version": 1,
+  "date": "2026-08-27",
+  "track_id": "F2-C8-ATOMIC",
+  "status": "REQUESTED_NOT_REGISTERED",
+  "producer_id": "f2_c8_qstar103_gap403_terminal_only_guard_v1",
+  "branch_id": "c8_qstar103_gap403_terminal_guard",
+  "scope": {
+    "source_class": "ACTUAL_PERSISTENT",
+    "owner": "c8_terminal_first_surviving_parent",
+    "required_source_envelope": [
+      "parent_state_id",
+      "parent_owner_digest",
+      "admission_id",
+      "source_tree_scope",
+      "q_star_103_relay_receipt",
+      "q_star_103_roughness_receipt",
+      "parent_to_checkpoint_path",
+      "terminal_first_digest"
+    ],
+    "derived_integer_fields": ["p", "s", "u", "h=6u+5", "w=12u+11"],
+    "excluded": [
+      "bare s=86 mod103 congruence",
+      "bare c=8 chart",
+      "caller-supplied terminal MISS",
+      "C8_DOUBLE_LOW occurrence",
+      "C8 second-full-excess macro target",
+      "CandidateTransitionV1",
+      "queue mutation or recursive re-entry"
+    ]
+  },
+  "registration": {
+    "schema": "TerminalOnlyProducerRegistrationV1",
+    "source_owners": ["c8_terminal_first_surviving_parent"],
+    "target_owners": [],
+    "queue_mutation": false,
+    "allowed_outputs": ["TerminalDraftV1", "GuardMissV1"],
+    "candidate_output": "must fail with TERMINAL_ONLY_CANDIDATE"
+  },
+  "terminal_hit_order": [
+    {
+      "id": "gap403_type_ii_qstar_layer",
+      "guard": "u=-1 mod403",
+      "certificate_gap": 403,
+      "certificate_divisor": 103,
+      "certificate_kind": "TYPEII"
+    },
+    {
+      "id": "gap403_type_i_qstar_layer",
+      "guard": "u=14 mod179",
+      "certificate_gap": 403,
+      "certificate_complement_e": "103*179",
+      "certificate_kind": "TYPEI"
+    }
+  ],
+  "verifier_requirements": [
+    "bind p,s,u,h,w and the q_star_103 relay/roughness receipts to the admitted parent",
+    "recompute x=(p+403)/4=103w",
+    "for the Type II hit, verify d=103 divides x^2, d<=x and 403 divides x+d",
+    "for the Type I hit, verify e=103*179 divides x^2 and e=-4^{-1} mod403 before reconstructing the Bradford divisor",
+    "reconstruct and verify the exact Fraction identity independently",
+    "on non-hit, emit only GuardMissV1 with hit-only/nonexhaustive scope"
+  ],
+  "activation_blockers": [
+    "no admitted c8_terminal_first_surviving_parent producer or parent-path receipt exists",
+    "no C8 terminal scheduler/issuer is registered",
+    "C8 source terminal policy is not complete",
+    "universal second-full-excess macro still lacks common E3/admission/re-entry",
+    "lambda=56 strict ray belongs only after an admitted fallback target T0"
+  ],
+  "evidence": [
+    "claims/type-I-c8-qstar103-gap403-divisor-layer.md",
+    "claims/type-I-c8-second-full-excess-parent-anchored-universal-fallback.md",
+    "concepts/denominator-escape-state-contract.md",
+    "scripts/t6_persistent_selector_runtime_v1.py:TerminalOnlyProducerRegistrationV1"
+  ]
+}
