@@ -164,6 +164,13 @@ seal，且外部 source binding 明确为 NOT_E1。该实现仍不是 E2、E3、
 source、admission 或 queue。详见
 [Prestate V2 claim](claims/t6-q-one-phase-root-prestate-v2-nonauthorizing-construction.md)。
 
+V6 现可在隔离 exact-HEAD fixture 中把 V3/V4/V5/V6 链重放为 source-input
+candidate，并由独立 replayer 重建相同 wire；但这次实现经过权限复核后明确降级：
+所有 serializable source evidence marker 均为 false，authority_verified=true 只存在于
+replayer 的运行时结果。它是可重放候选证据，不是 source authentication、E1 或 admission。
+详见
+[V6 source replay candidate](claims/t6-q-one-exact-head-source-input-replay-candidate-v1.md)。
+
 ## 当前旗舰命题（合同内核核验至 2026-08-20）
 
 对核心素数 \(p\equiv1\pmod{24}\)，最终目标是下列双出口命题：

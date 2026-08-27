@@ -2,11 +2,11 @@
   "request_id": "q1_exact_head_source_input_v1",
   "request_version": 1,
   "created": "2026-08-27",
-  "track_id": "T6-Q1-SOURCE-AUTHENTICATION",
+  "track_id": "T6-Q1-SOURCE-REPLAY-CANDIDATE",
   "base_sha": "1429846c113ac0091f5a0563c6c252d336a5ba35",
-  "status": "PROPOSAL_ONLY_V6_EXACT_AUTHORITY_REQUIRED",
+  "status": "PROPOSAL_ONLY_V6_EXACT_REPLAY_CANDIDATE_REQUIRED",
   "scope_freeze": {
-    "exact_quantifier": "For one raw ordinary q=1 G input and one reviewed repository-selected exact HEAD, replay V3/V4/V5/V6 and emit only a scoped exact-HEAD source-input wrapper.",
+    "exact_quantifier": "For one raw ordinary q=1 G input and one reviewed repository-selected exact HEAD, replay V3/V4/V5/V6 and emit only a scoped exact-HEAD source-input replay candidate.",
     "included_leaves": [
       "V3 registered-prefix MISS",
       "V4 root-source-scoped occurrence",
@@ -38,10 +38,10 @@
   "residual_matrix": [
     {
       "leaf_id": "Q1_V6_EXACT_HEAD_SOURCE_AUTHENTICATION",
-      "predicate": "V6 source rebind currently has only hardcoded V4/V5 pins and no exact-HEAD registry/orchestrator/replayer.",
+      "predicate": "A serializable V6 source-input wire must remain a replay candidate; only an independent exact-HEAD replayer run may report verification.",
       "coverage_proof": "Current V6 claim and audit record the conditional/internal-review boundary.",
-      "current_fact": "V5 supplies a no-queue V1 base state and V6 supplies a deterministic pointwise rebind, but no exact V6 authority wrapper exists.",
-      "planned_closure": "EXACT_HEAD_SOURCE_INPUT_ONLY",
+      "current_fact": "V5 supplies a no-queue V1 base state and V6 supplies a deterministic pointwise rebind; neither fact makes a serialized wrapper source authority.",
+      "planned_closure": "EXACT_HEAD_REPLAY_CANDIDATE_ONLY",
       "missing_E": [
         "actual source authentication",
         "generic E1",
@@ -52,12 +52,12 @@
         "admission",
         "re-entry"
       ],
-      "target_shape": "ExactHeadQOneActualSourceInputV1"
+      "target_shape": "ExactHeadQOneActualSourceInputReplayCandidateV1"
     }
   ],
   "target_shape_proposal": {
-    "shape_id": "exact_head_q_one_actual_source_input_v1",
-    "binding_scope": "EXACT_HEAD_Q1_ROOT_SOURCE_INPUT_SCOPED_NOT_GENERIC_E1",
+    "shape_id": "exact_head_q_one_source_input_replay_candidate_v1",
+    "binding_scope": "EXACT_HEAD_Q1_ROOT_SOURCE_INPUT_REPLAY_CANDIDATE_NOT_E1",
     "source_identity": [
       "V2 source state ID/digest",
       "V1 source state ID suffix digest",
@@ -77,12 +77,11 @@
       "V3/V4/V5/V6 role-manifest digests",
       "V3/V4/V5/V6 receipt digests"
     ],
-    "allowed_true_markers": [
+    "allowed_true_markers": [],
+    "required_false_markers": [
       "source_actualness_input",
       "v1_base_admission_evidence",
-      "v6_rebind_evidence"
-    ],
-    "required_false_markers": [
+      "v6_rebind_evidence",
       "generic_e1",
       "successor_e1",
       "e1_authority",
@@ -104,8 +103,9 @@
     "V4 exact-HEAD replay",
     "V5 exact-HEAD replay",
     "V6 exact-HEAD replay",
-    "ExactHeadQOneActualSourceInputV1",
+    "ExactHeadQOneActualSourceInputReplayCandidateV1",
     "ExternalQOneSourceBindingV2",
+    "Independent exact-HEAD replayer runtime result",
     "PhaseRootTargetPrestateV2"
   ],
   "handoff": "docs/handoffs/T6_Q1_EXACT_HEAD_SOURCE_INPUT_V6_BOUNDARY_2026-08-27.md"

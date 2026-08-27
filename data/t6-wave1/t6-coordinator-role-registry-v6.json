@@ -1,0 +1,152 @@
+{
+  "schema_id": "t6_coordinator_role_registry_v6",
+  "schema_version": 6,
+  "registry_id": "t6_coordinator_role_registry_v6",
+  "status": "HEAD_BOUND_Q1_EXACT_SOURCE_INPUT_CANDIDATE_REPLAY_ONLY",
+  "activation_status": "ACTIVE",
+  "authority_policy": {
+    "source": "TRACKED_GIT_OBJECTS_AT_EXACT_REQUESTED_HEAD",
+    "caller_override_authority": false,
+    "worktree_authority": false,
+    "external_review_condition": "REPOSITORY_SELECTED_EXACT_HEAD_REQUIRED",
+    "candidate_scope": "EXACT_HEAD_Q1_ROOT_SOURCE_INPUT_REPLAY_CANDIDATE_NOT_E1",
+    "new_roles": [
+      "EXACT_HEAD_Q1_ACTUAL_SOURCE_INPUT_BINDER",
+      "INDEPENDENT_Q1_ROOT_SOURCE_SCOPED_E1_REBINDER"
+    ],
+    "static_artifact_pin_policy": "EXACT_HEAD_GIT_OBJECT_AND_WORKTREE_BINDING_ONLY"
+  },
+  "orchestration_policy": {
+    "caller_inputs": [
+      "repository_locator",
+      "requested_head",
+      "raw_q_one_g",
+      "production_miss_receipt"
+    ],
+    "caller_supplied_grants": false,
+    "caller_supplied_v4_v5_v6_receipts": false,
+    "required_replay_order": [
+      "V3",
+      "V4",
+      "V5",
+      "V6",
+      "SOURCE_INPUT_CANDIDATE",
+      "EXTERNAL_BINDING_V2"
+    ]
+  },
+  "post_issuance_replay_policy": {
+    "orchestrator_import_allowed": false,
+    "issuer_import_allowed": false,
+    "independent_wire_reconstruction": true,
+    "replay_order": [
+      "V3",
+      "V4",
+      "V5",
+      "V6",
+      "SOURCE_INPUT_CANDIDATE",
+      "EXTERNAL_BINDING_V2"
+    ]
+  },
+  "cross_registry_policy": {
+    "v3": {
+      "registry_id": "t6_coordinator_role_registry_v3",
+      "status": "HEAD_BOUND_Q1_ROOT_TERMINAL_DECISION_AUTHORITY_NO_RECURSION"
+    },
+    "v4": {
+      "registry_id": "t6_coordinator_role_registry_v4",
+      "status": "HEAD_BOUND_Q1_ROOT_PREFIX_SCOPED_E1_AUTHORITY_NO_SUCCESSOR_OR_RECURSION"
+    },
+    "v5": {
+      "registry_id": "t6_coordinator_role_registry_v5",
+      "status": "HEAD_BOUND_Q1_ROOT_V1_BASE_ADMISSION_AUTHORITY_NO_QUEUE_OR_SUCCESSOR"
+    }
+  },
+  "authority_denials": {
+    "generic_e1": false,
+    "successor_e1": false,
+    "e1_authority": false,
+    "producer_authority": false,
+    "branch_authority": false,
+    "admission_authority": false,
+    "queue_authority": false,
+    "enqueue_authority": false,
+    "e2_authority": false,
+    "e3_authority": false,
+    "e4_authority": false,
+    "e5_authority": false,
+    "t5_authority": false,
+    "reentry_authority": false,
+    "global_exhaustion": false
+  },
+  "artifacts": [
+    {
+      "artifact_id": "q1_exact_head_source_input_binder_v1",
+      "artifact_class": "ROLE_ARTIFACT",
+      "path": "scripts/t6_q_one_exact_head_source_input_v1.py",
+      "symbols": [
+        "bind_exact_head_q_one_actual_source_input_v1",
+        "exact_head_q_one_actual_source_input_to_mapping_v1"
+      ],
+      "pin_status": "EXACT_HEAD_RESOLVED"
+    },
+    {
+      "artifact_id": "q1_exact_head_source_input_orchestrator_v1",
+      "artifact_class": "CONTROLLED_LOADER_ORCHESTRATOR_ONLY",
+      "path": "scripts/t6_q_one_exact_head_source_input_orchestrator_v1.py",
+      "symbols": [
+        "assemble_exact_head_q_one_actual_source_input_v1"
+      ],
+      "pin_status": "EXACT_HEAD_RESOLVED"
+    },
+    {
+      "artifact_id": "q1_phase_root_prestate_v2_projection_dependency",
+      "artifact_class": "EXTERNAL_BINDING_PROJECTION_ONLY",
+      "path": "scripts/t6_q_one_phase_root_prestate_v2.py",
+      "symbols": [
+        "make_external_q_one_source_binding_v2",
+        "artifact_to_mapping_v2"
+      ],
+      "pin_status": "EXACT_HEAD_RESOLVED"
+    },
+    {
+      "artifact_id": "q1_root_source_scoped_e1_rebind_v1",
+      "artifact_class": "ROLE_ARTIFACT",
+      "path": "scripts/t6_q_one_root_source_scoped_e1_rebind_v1.py",
+      "symbols": [
+        "rebind_q_one_root_source_scoped_e1_v1",
+        "root_source_scoped_e1_rebind_receipt_to_mapping_v1"
+      ],
+      "pin_status": "EXACT_HEAD_RESOLVED"
+    },
+    {
+      "artifact_id": "q1_exact_head_source_input_receipt_replayer_v1",
+      "artifact_class": "POST_ISSUANCE_REPLAY_DEPENDENCY_ONLY",
+      "path": "scripts/t6_q_one_exact_head_source_input_receipt_replayer_v1.py",
+      "symbols": [
+        "verify_exact_head_q_one_actual_source_input_v1"
+      ],
+      "pin_status": "EXACT_HEAD_RESOLVED"
+    }
+  ],
+  "role_grants": [
+    {
+      "grant_id": "q1_exact_head_q_one_source_input_binder_grant_v1",
+      "role": "EXACT_HEAD_Q1_ACTUAL_SOURCE_INPUT_BINDER",
+      "artifact_id": "q1_exact_head_source_input_binder_v1",
+      "capabilities": [
+        "BUILD_EXACT_HEAD_Q1_SOURCE_INPUT_REPLAY_CANDIDATE"
+      ],
+      "authority_class": "HEAD_BOUND_EXECUTABLE_CAPABILITY_V6_CANDIDATE_ONLY"
+    },
+    {
+      "grant_id": "q1_root_source_scoped_e1_rebind_grant_v1",
+      "role": "INDEPENDENT_Q1_ROOT_SOURCE_SCOPED_E1_REBINDER",
+      "artifact_id": "q1_root_source_scoped_e1_rebind_v1",
+      "capabilities": [
+        "REBIND_ROOT_SOURCE_SCOPED_E1_TO_V1_BASE_SOURCE"
+      ],
+      "authority_class": "HEAD_BOUND_EXECUTABLE_CAPABILITY_V6"
+    }
+  ],
+  "proof_boundary": "REPLAY_CANDIDATE_ONLY_NO_SERIALIZED_SOURCE_AUTHORITY"
+}

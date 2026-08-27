@@ -30,16 +30,17 @@ potential, V3 prefix scope, and the V4/V5 source map. Its output remains
 DERIVED_WITNESS_NOT_V1_STATE_PATH and all generic/successor E1 authority
 bits are false.
 
-V6 still lacks an exact-HEAD registry, resolver, controlled orchestrator,
-independent post-issuance replayer, and an external trust binding for its role.
+The exact-HEAD registry, controlled orchestrator, and independent post-issuance
+replayer may bind this chain only as candidate data. They do not make any
+serialized source-input field an external trust binding.
 
 ## Required Wrapper
 
-The proposed wrapper is:
+The proposed wrapper is a replay candidate:
 
 ~~~text
 ExactHeadQOneActualSourceInputV1
-scope = EXACT_HEAD_Q1_ROOT_SOURCE_INPUT_SCOPED_NOT_GENERIC_E1
+scope = EXACT_HEAD_Q1_ROOT_SOURCE_INPUT_REPLAY_CANDIDATE_NOT_E1
 ~~~
 
 It contains all of the following:
@@ -85,8 +86,9 @@ V3 exact-HEAD replay
 -> V4 exact-HEAD replay
 -> V5 exact-HEAD replay
 -> V6 exact-HEAD replay
--> ExactHeadQOneActualSourceInputV1
+-> ExactHeadQOneActualSourceInputV1 candidate
 -> zero-authority ExternalQOneSourceBindingV2 projection
+-> independent exact-HEAD replay result
 -> P/C/L/D/A/Q prestate
 ~~~
 
@@ -95,16 +97,17 @@ raw q=1 input, and the V3 production result. It must fresh-load all
 V3/V4/V5/V6 resolvers from the same Git tree. It must reject caller grants,
 registry pins, V4/V5 receipts, state wires, and authority booleans. An
 independent replayer must rebuild the exact source-input wire without calling
-the orchestrator or issuer.
+the orchestrator or issuer. Any future consumer must call that replayer itself;
+it must not trust a candidate wire or its serialized fields.
 
-## Authority Boundary
+## Candidate Boundary
 
-An accepted exact source-input wrapper may establish only:
+Every serializable exact source-input wrapper must keep these false:
 
 ~~~text
-source_actualness_input=true
-v1_base_admission_evidence=true
-v6_rebind_evidence=true
+source_actualness_input=false
+v1_base_admission_evidence=false
+v6_rebind_evidence=false
 ~~~
 
 It must keep all of these false:
@@ -117,9 +120,12 @@ global_exhaustion
 ~~~
 
 The reason is structural: V3/V4/V5/V6 establish only the finite registered
-prefix MISS, while the generic structured E1 contract requires
-MISS_COMPLETE. The wrapper authenticates source input for a future
-phase-root-specific path; it does not create a normal successor transition.
+prefix MISS, while the generic structured E1 contract requires MISS_COMPLETE.
+The wrapper is replay candidate data for a future phase-root-specific path; it
+does not authenticate source input by itself or create a normal successor
+transition. Only a successful independent replayer invocation may report
+``authority_verified=true`` in its runtime result, and that result is not a
+serialized grant.
 
 ## Exact Next Claim
 
@@ -128,9 +134,10 @@ The next implementation claim must prove:
 \[
 \operatorname{Valid}_{H}(\mathrm{V3,V4,V5,V6})
 \Longrightarrow
-\exists!\,\mathrm{ExactHeadQOneActualSourceInputV1},
+\exists!\,\mathrm{ExactHeadQOneActualSourceInputV1}_{\rm candidate},
 \]
 
-subject to the existing reviewed selected-commit trust condition. It must
-state explicitly that the conclusion is source authentication only and not
-generic E1.
+subject to the existing reviewed selected-commit trust condition. It must state
+explicitly that the conclusion is a non-authority replay candidate, not source
+authentication, generic E1, or a successor transition. Exact-HEAD verification
+is a property of a fresh independent replayer run, not of the wire.

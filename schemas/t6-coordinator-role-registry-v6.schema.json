@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "t6-coordinator-role-registry-v6.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_id",
+    "schema_version",
+    "registry_id",
+    "status",
+    "activation_status",
+    "authority_policy",
+    "orchestration_policy",
+    "post_issuance_replay_policy",
+    "cross_registry_policy",
+    "authority_denials",
+    "artifacts",
+    "role_grants",
+    "proof_boundary"
+  ],
+  "properties": {
+    "schema_id": { "const": "t6_coordinator_role_registry_v6" },
+    "schema_version": { "const": 6 },
+    "registry_id": { "const": "t6_coordinator_role_registry_v6" },
+    "status": { "const": "HEAD_BOUND_Q1_EXACT_SOURCE_INPUT_CANDIDATE_REPLAY_ONLY" },
+    "activation_status": { "const": "ACTIVE" },
+    "authority_policy": { "type": "object" },
+    "orchestration_policy": { "type": "object" },
+    "post_issuance_replay_policy": { "type": "object" },
+    "cross_registry_policy": { "type": "object" },
+    "authority_denials": {
+      "type": "object",
+      "additionalProperties": { "const": false }
+    },
+    "artifacts": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["artifact_id", "artifact_class", "path", "symbols", "pin_status"],
+        "properties": {
+          "artifact_id": { "type": "string" },
+          "artifact_class": { "type": "string" },
+          "path": { "type": "string", "pattern": "^[A-Za-z0-9._/-]+$" },
+          "symbols": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          "pin_status": { "const": "EXACT_HEAD_RESOLVED" }
+        }
+      }
+    },
+    "role_grants": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["grant_id", "role", "artifact_id", "capabilities", "authority_class"],
+        "properties": {
+          "grant_id": { "type": "string" },
+          "role": { "type": "string" },
+          "artifact_id": { "type": "string" },
+          "capabilities": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          "authority_class": { "type": "string" }
+        }
+      }
+    },
+    "proof_boundary": { "const": "REPLAY_CANDIDATE_ONLY_NO_SERIALIZED_SOURCE_AUTHORITY" }
+  }
+}
