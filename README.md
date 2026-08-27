@@ -148,6 +148,10 @@ MISS 压缩为两个四元残余盒，同时给出 q=1 G 控制
 向 G/gap-7/gap-11 迁移的路线；它不关闭剩余 \(\ell\equiv5,14\pmod {23}\)
 子域。见
 [跨线性支撑分离](claims/type-II-q-one-gap23-residual-cross-linear-separation.md)。
+对同一 residual 的可变 gap \(m_a=23+4\ell a\)，已得到完整 Type I/II
+正规形与 Type-II 整数递降门槛 \(6+\ell a\mid6u+a\)；绝大多数合法 \(a\)
+因此不可能给出该递降。它缩小了可行搜索窗口，但不保证 terminal。见
+[可变 gap 正规形](claims/type-II-q-one-gap23-residual-variable-gap-normal-form.md)。
 
 同一轮复核还发现了 E2 对象层的精确阻断：当前 V1 successor 的 state ID 已哈希
 声称 E1--E5 为真的 source receipt，而独立 bundle 又必须在 target state ID 与最终
