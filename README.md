@@ -197,6 +197,10 @@ fixed-\(C\) 有限因子化。它证明 fan cofactor \(C\) 与 height carrier \(
 的因子方向均为 \(1\bmod3\)。所以 natural fan 是否命中不能再靠既有 carrier 的
 support transfer；剩余关键变量是 \(-11\) quotient。见
 [F3 natural-fan cofactor support separation](claims/type-I-root-capacity-stutter-m-three-natural-fan-cofactor-support-separation.md)。
+其中旧的 \(C=91\) formal envelope control 已被 fixed-\(C\) divisor fiber 排除；
+\(-11\) quotient 对每个 \(C\) 素因子还施加高幂平方与 common-support residue gate，
+但尚未形成全称 terminal。见
+[F3 lambda r-adic gates](claims/type-I-root-capacity-stutter-m-three-natural-fan-cofactor-lambda-adic-gates.md)。
 
 ## 当前旗舰命题（合同内核核验至 2026-08-20）
 

@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 35 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 962 |
+| 数学状态 | `established` | 963 |
 | 数学状态 | `open` | 13 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 42 |
-| 证明来源 | `repository_derivation` | 796 |
+| 证明来源 | `repository_derivation` | 797 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 27 |
-| 审阅状态 | `internal_review` | 939 |
+| 审阅状态 | `internal_review` | 940 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -872,6 +872,7 @@
 | [actual proper-root stutter 的 k=3 primitive Pell fiber 约化](../claims/type-I-root-capacity-stutter-k-three-primitive-fiber-reduction.md) (`type-I-root-capacity-stutter-k-three-primitive-fiber-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-18 |
 | [actual proper-root k=3 的同-M Vieta companion 第二整数门障碍](../claims/type-I-root-capacity-stutter-k-three-vieta-companion-obstruction.md) (`type-I-root-capacity-stutter-k-three-vieta-companion-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-18 |
 | [actual proper-root stutter 的 m=3 双二次范数约化](../claims/type-I-root-capacity-stutter-m-three-biquadratic-norm-reduction.md) (`type-I-root-capacity-stutter-m-three-biquadratic-norm-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-19 |
+| [proper-root m=3 natural-fan cofactor 的 -11 quotient r-adic gates](../claims/type-I-root-capacity-stutter-m-three-natural-fan-cofactor-lambda-adic-gates.md) (`type-I-root-capacity-stutter-m-three-natural-fan-cofactor-lambda-adic-gates`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-27 |
 | [proper-root m=3 natural-fan cofactor 的 double-norm support 分离](../claims/type-I-root-capacity-stutter-m-three-natural-fan-cofactor-support-separation.md) (`type-I-root-capacity-stutter-m-three-natural-fan-cofactor-support-separation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-27 |
 | [根容量 stutter 的参数对 root-divisor gate 与 actual 边界](../claims/type-I-root-capacity-stutter-pair-root-divisor-gate.md) (`type-I-root-capacity-stutter-pair-root-divisor-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [proper-root stutter 的正定范数与平方根菜单界](../claims/type-I-root-capacity-stutter-positive-definite-norm-bound.md) (`type-I-root-capacity-stutter-positive-definite-norm-bound`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |

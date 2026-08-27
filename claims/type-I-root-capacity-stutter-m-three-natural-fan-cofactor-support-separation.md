@@ -238,6 +238,133 @@ before the residual integrality, primitive-kernel, and actual-receipt gates
 are checked. This is a genuine finite Diophantine reduction for fixed \(C\),
 not a scan over primes.
 
+Writing
+
+\[
+N_C=8112C^2-884C+25=3p^2+p+1,
+\qquad
+H=A+p+u,
+\]
+
+the factorization (11) is equivalently
+
+\[
+F H=N_C,
+\qquad F=156C-8-3u.
+\tag{12}
+\]
+
+The actual core imposes the exact finite-fiber filters
+
+\[
+104C-5<F<156C-8,
+\qquad F\equiv1\pmod3,
+\tag{13}
+\]
+
+\[
+3H+F+20\equiv0\pmod{156},
+\qquad
+F+2H\equiv260C-495\pmod{702}.
+\tag{14}
+\]
+
+Conversely, a divisor pair satisfying (13)--(14) reconstructs
+
+\[
+u=\frac{156C-8-F}{3},
+\qquad
+A=H-104C+\frac{F+17}{3},
+\]
+
+\[
+\rho=\frac{260C-15-F-2H}{3}.
+\tag{15}
+\]
+
+The remaining \(\lambda,K,\tau,q\), norm, and primitive conditions are then
+deterministic checks on this finite list. Thus no continuous parameter remains
+once \(C\) is fixed.
+
+The factorization itself cannot donate an external terminal prime to \(C\):
+
+\[
+N_C\equiv25\pmod C,
+\qquad
+\gcd(C,N_C)=\gcd(C,25).
+\tag{16}
+\]
+
+On the fan-miss subdomain every prime factor of \(C\) is \(1\pmod3\), so
+\(5\nmid C\) and \((C,N_C)=1\). Any \(2\pmod3\) factor forced by a divisor
+pair of \(N_C\) is therefore external to \(C\), not a fan hit.
+
+### 5.1 The old envelope control \(C=91\) is empty in the actual core
+
+The previously useful formal \(\Phi_6/\Phi_3\) envelope control has
+
+\[
+C=91,\qquad p=4729,
+\]
+
+and
+
+\[
+N_{91}=67095053=89\cdot191\cdot3947.
+\tag{17}
+\]
+
+Every nontrivial prime factor in (17) is \(2\pmod3\). The range in (13) is
+
+\[
+9459<F<14188.
+\]
+
+The only divisors of \(N_{91}\) below \(14188\) are
+\(1,89,191,3947\), none of which lies in this range. Therefore
+
+\[
+\boxed{C=91\text{ has no actual }m=3,d=13,s_d=3\text{ core packet}.}
+\tag{18}
+\]
+
+This does not prove that all fan-miss cofactors are empty, but it shows that
+the old envelope countermodel cannot survive the actual double-norm core.
+
+### 5.2 Why the second norm and primitive gates remain essential
+
+The fixed-fiber, first-\(-11\)-gate, primality, and fan-miss conditions alone
+still do not close the branch. The following exact formal control has
+
+\[
+C=22537=31\cdot727,\qquad p=1171921\text{ prime},
+\]
+
+\[
+t=2737,\quad z=83,\quad A=142323,\quad\rho=19582,
+\quad\lambda=24249,\quad u=343393.
+\]
+
+It satisfies (2)--(3) and (12), with
+
+\[
+F=2485585=5\cdot497117,
+\qquad
+H=1657637=37\cdot71\cdot631.
+\]
+
+But it fails the still-unconsumed second norm gate:
+
+\[
+7\rho^2+4\rho+1=7816u+301709,
+\]
+
+so \(u\nmid7\rho^2+4\rho+1\), and it also fails
+\(13u\mid A^2+A\rho+\rho^2\). It is therefore not an actual receipt or a
+counterexample. It proves only that any universal argument must use the
+second norm and primitive equations, rather than fixed-factor, \(-11\),
+congruence, and primality data alone.
+
 Under the fan-miss-compatible congruence \(C\equiv1\pmod3\), the first
 factor in (11) is \(1\pmod3\), while
 
