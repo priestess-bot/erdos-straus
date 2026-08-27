@@ -1,0 +1,112 @@
+{
+  "request_id": "q1_exact_head_source_input_v1",
+  "request_version": 1,
+  "created": "2026-08-27",
+  "track_id": "T6-Q1-SOURCE-AUTHENTICATION",
+  "base_sha": "1429846c113ac0091f5a0563c6c252d336a5ba35",
+  "status": "PROPOSAL_ONLY_V6_EXACT_AUTHORITY_REQUIRED",
+  "scope_freeze": {
+    "exact_quantifier": "For one raw ordinary q=1 G input and one reviewed repository-selected exact HEAD, replay V3/V4/V5/V6 and emit only a scoped exact-HEAD source-input wrapper.",
+    "included_leaves": [
+      "V3 registered-prefix MISS",
+      "V4 root-source-scoped occurrence",
+      "V5 V1 base admission without queue",
+      "V6 V2-to-V1 source rebind",
+      "ExternalQOneSourceBindingV2 projection"
+    ],
+    "excluded_leaves": [
+      "MISS_COMPLETE",
+      "generic or successor E1",
+      "producer or branch registration",
+      "target owner/E3",
+      "E2/E4/E5 receipt",
+      "admission, queue, re-entry",
+      "F1/F2/F3/T6 status promotion"
+    ],
+    "allowed_claims": [
+      "t6-coordinator-q1-root-v1-base-admission-authority-v5",
+      "t6-coordinator-q1-root-source-scoped-e1-rebind-v1",
+      "t6-q-one-phase-root-prestate-v2-nonauthorizing-construction"
+    ],
+    "forbidden_inferences": [
+      "V6 derived witness is a generic E1 receipt",
+      "registered prefix MISS is MISS_COMPLETE",
+      "V1 base admission means queue membership",
+      "ExternalQOneSourceBindingV2 is actual E1 by itself"
+    ]
+  },
+  "residual_matrix": [
+    {
+      "leaf_id": "Q1_V6_EXACT_HEAD_SOURCE_AUTHENTICATION",
+      "predicate": "V6 source rebind currently has only hardcoded V4/V5 pins and no exact-HEAD registry/orchestrator/replayer.",
+      "coverage_proof": "Current V6 claim and audit record the conditional/internal-review boundary.",
+      "current_fact": "V5 supplies a no-queue V1 base state and V6 supplies a deterministic pointwise rebind, but no exact V6 authority wrapper exists.",
+      "planned_closure": "EXACT_HEAD_SOURCE_INPUT_ONLY",
+      "missing_E": [
+        "actual source authentication",
+        "generic E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5",
+        "admission",
+        "re-entry"
+      ],
+      "target_shape": "ExactHeadQOneActualSourceInputV1"
+    }
+  ],
+  "target_shape_proposal": {
+    "shape_id": "exact_head_q_one_actual_source_input_v1",
+    "binding_scope": "EXACT_HEAD_Q1_ROOT_SOURCE_INPUT_SCOPED_NOT_GENERIC_E1",
+    "source_identity": [
+      "V2 source state ID/digest",
+      "V1 source state ID suffix digest",
+      "V1 full state-wire digest",
+      "V1 owner/facts digest",
+      "V6 source-rebind map and semantic-origin exclusion digest"
+    ],
+    "terminal_scope": {
+      "coverage_semantics": "REGISTERED_PRIORITY_ONLY",
+      "ordered_gaps": [3, 7, 11],
+      "next_unchecked_gap": 15,
+      "global_exhaustion": false
+    },
+    "required_pins": [
+      "head SHA/tree",
+      "V3/V4/V5/V6 registry resolved digests",
+      "V3/V4/V5/V6 role-manifest digests",
+      "V3/V4/V5/V6 receipt digests"
+    ],
+    "allowed_true_markers": [
+      "source_actualness_input",
+      "v1_base_admission_evidence",
+      "v6_rebind_evidence"
+    ],
+    "required_false_markers": [
+      "generic_e1",
+      "successor_e1",
+      "e1_authority",
+      "producer",
+      "branch",
+      "admission",
+      "queue",
+      "E2",
+      "E3",
+      "E4",
+      "E5",
+      "T5",
+      "re-entry",
+      "global_exhaustion"
+    ]
+  },
+  "required_order": [
+    "V3 exact-HEAD replay",
+    "V4 exact-HEAD replay",
+    "V5 exact-HEAD replay",
+    "V6 exact-HEAD replay",
+    "ExactHeadQOneActualSourceInputV1",
+    "ExternalQOneSourceBindingV2",
+    "PhaseRootTargetPrestateV2"
+  ],
+  "handoff": "docs/handoffs/T6_Q1_EXACT_HEAD_SOURCE_INPUT_V6_BOUNDARY_2026-08-27.md"
+}
