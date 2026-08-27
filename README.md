@@ -116,11 +116,11 @@ namespaced rebind bit 为真。旧 structured-E1 parser 要求 `MISS_COMPLETE`�
 generic/successor E1、producer、admission、queue/enqueue、E2--E5、T5、re-entry、global
 均为 false。
 
-V6 目前没有 exact-HEAD registry、orchestrator 或 independent replayer，且 V5 的 selected-commit
-trust condition 原样保留；它不能被称为 generic E1 或 production successor authority。下一步应
-先建立 V6 的 exact authority，或转向独立的 target terminal/E2 研究，但不能把该 rebind 直接当作
-通用 E1。它仍不产生 successor、producer、queue mutation 或全局 selector 结论；Gate 2、完整
-Gate 4、Gate 5、F1/F2/F3、T6 和猜想状态全部保持开放。详见
+上述条件性 rebind 本身没有 exact-HEAD registry、orchestrator 或 independent replayer，且 V5 的
+selected-commit trust condition 原样保留。其后加入的 V6 exact-HEAD candidate pipeline 虽已具备这些
+重放组件，却明确保持所有 serialized authority bit 为 false；两者都不能被称为 generic E1 或
+production successor authority。它们仍不产生 successor、producer、queue mutation 或全局 selector
+结论；Gate 2、完整 Gate 4、Gate 5、F1/F2/F3、T6 和猜想状态全部保持开放。详见
 [`docs/audits/T6_Q1_ROOT_V1_BASE_ADMISSION_CONDITIONAL_REVIEW_2026-08-27.md`](docs/audits/T6_Q1_ROOT_V1_BASE_ADMISSION_CONDITIONAL_REVIEW_2026-08-27.md)。
 V6 的条件性复核记录见
 [`docs/audits/T6_Q1_ROOT_SOURCE_SCOPED_E1_REBIND_CONDITIONAL_REVIEW_2026-08-27.md`](docs/audits/T6_Q1_ROOT_SOURCE_SCOPED_E1_REBIND_CONDITIONAL_REVIEW_2026-08-27.md)。
@@ -174,6 +174,9 @@ candidate，并由独立 replayer 重建相同 wire；但这次实现经过权�
 replayer 的运行时结果。它是可重放候选证据，不是 source authentication、E1 或 admission。
 详见
 [V6 source replay candidate](claims/t6-q-one-exact-head-source-input-replay-candidate-v1.md)。
+首个 branch-scoped E1 仍硬性依赖 complete source terminal schedule 与 repository 外 trust
+anchor；在此之前 V7 只能认证 prefix source 而保持非 E1。见
+[V7 actual-source bridge boundary](docs/handoffs/T6_Q1_ACTUAL_SOURCE_BRIDGE_V7_BOUNDARY_2026-08-27.md)。
 
 C8 分支也已校正一个会误导后续工作的覆盖语义：对真实 complete terminal-first `MISS` 的
 c8 parent，second-full-excess parent macro 总有一个确定的算术 target；`DOUBLE_LOW` 只是
@@ -218,7 +221,7 @@ support transfer；剩余关键变量是 \(-11\) quotient。见
 \(t\ge199\)，即 \(A\ge10347\)、\(u\ge21175\)；primitive quotient 与
 \(\lambda/3\) 也被证明互素。见
 [F3 inverse dual-norm fiber](claims/type-I-root-capacity-stutter-m-three-dual-norm-inverse-divisor-fiber.md)。
-terminal-first 还新增两条直接扇：\(p+4\) 或 \((p+1)/2\) 的 \(3\bmod4\) 因子
+terminal-first 还新增两条直接扇：\(p+4\) 或 \((p+1)/2\) 的任一 \(3\bmod4\) 素因子
 立即给 terminal；两条近-cofactor Type II gaps \(4C+3\)、\(4C-1\) 则在此高
 core 中完全空。见
 [F3 high-cofactor terminal screen](claims/type-I-root-capacity-stutter-m-three-high-cofactor-terminal-screen-boundary.md)。

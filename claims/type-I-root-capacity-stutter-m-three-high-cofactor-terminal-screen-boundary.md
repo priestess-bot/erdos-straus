@@ -6,7 +6,7 @@ statement: >-
   在 actual proper-root m=3,d=13,s_d=3 natural-fan miss core 中，p=52C-3
   且 C>=1993。若 p+4=52C+1 或 (p+1)/2=26C-1 含有任一 3 mod4 因子 m，
   则分别由 d=1 Type II 或 e=x Type I 给出直接 terminal。因此 survivor 的这两数
-  皆为 two-squares 型。另一方面合法 gaps m=4C+3 与 m=4C-1 的完整 Type-II
+  均不得有 3 mod4 素因子。另一方面合法 gaps m=4C+3 与 m=4C-1 的完整 Type-II
   divisor screen 全空。这些结论提供 terminal-first 的必要屏蔽，不证明其余 gap、
   E1--E5 或 T6 closure。
 claim_status: established
@@ -72,17 +72,17 @@ then the Type-I normal form with \(e=x\mid x^2\) applies, because
 \(m\mid x(p+1)\). Both gaps are proper and legal: a divisor as in (2) or
 (3) is smaller than \(p\) and is \(3\pmod4\).
 
-Thus a terminal-first survivor must satisfy
+Thus a terminal-first survivor must satisfy the stronger prime-support
+exclusion
 
 \[
 \boxed{
 52C+1\text{ and }26C-1
-\text{ have every }3\pmod4\text{ prime factor to even exponent}.}
+\text{ have no prime factor }3\pmod4.}
 \tag{4}
 \]
 
-This is a necessary two-squares-type condition, not a claim that it is
-impossible.
+This is a necessary support condition, not a claim that it is impossible.
 
 ## 2. The gap 4C+3 has no Type-II divisor
 
