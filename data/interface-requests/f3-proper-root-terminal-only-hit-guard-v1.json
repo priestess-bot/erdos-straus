@@ -1,0 +1,82 @@
+{
+  "request_id": "f3_proper_root_terminal_only_hit_guard_v1",
+  "request_version": 1,
+  "date": "2026-08-27",
+  "track_id": "F3-PROPER-ROOT",
+  "status": "REQUESTED_NOT_REGISTERED",
+  "producer_id": "f3_proper_root_terminal_only_hit_guard_v1",
+  "branch_id": "proper_root_terminal_only_hit_guard",
+  "scope": {
+    "source_class": "ACTUAL_PERSISTENT",
+    "owner": "proper_root_stutter_k_gt_one",
+    "required_source_envelope": [
+      "state_id",
+      "owner_digest",
+      "producer_id",
+      "admission_id",
+      "source_path_digest",
+      "terminal_first_digest",
+      "maximal_receipt_digest"
+    ],
+    "branch_labels": [
+      "core_d=13 is a branch narrowing label only",
+      "stutter_m=3 is a branch narrowing label only",
+      "certificate_gap and certificate_divisor are independently reconstructed"
+    ],
+    "excluded": [
+      "bare prime or arithmetic tuple",
+      "unadmitted proper-root fixture",
+      "GuardMiss treated as an exhaustive family MISS",
+      "CandidateTransitionV1",
+      "queue mutation or recursive re-entry"
+    ]
+  },
+  "registration": {
+    "schema": "TerminalOnlyProducerRegistrationV1",
+    "source_owners": ["proper_root_stutter_k_gt_one"],
+    "target_owners": [],
+    "queue_mutation": false,
+    "allowed_outputs": ["TerminalDraftV1", "GuardMissV1"],
+    "candidate_output": "must fail with TERMINAL_ONLY_CANDIDATE"
+  },
+  "terminal_hit_order": [
+    {
+      "id": "gap3_type_ii_factor",
+      "witness": "X=(p+3)/4; certificate_gap=3; certificate_divisor=tau divides X with tau=2 mod3",
+      "certificate_kind": "TYPEII"
+    },
+    {
+      "id": "p_plus_four_type_ii",
+      "witness": "certificate_gap=m divides p+4 with m=3 mod4; certificate_divisor=1",
+      "certificate_kind": "TYPEII"
+    },
+    {
+      "id": "p_plus_one_half_type_i",
+      "witness": "certificate_gap=m divides (p+1)/2 with m=3 mod4; certificate_complement_e=x=(p+m)/4",
+      "certificate_kind": "TYPEI"
+    }
+  ],
+  "verifier_requirements": [
+    "bind source_state_id, owner_digest, admitted source envelope and terminal guard scope",
+    "recompute the shared core prime p from the admitted source, never from a caller-supplied prime",
+    "recompute each positive witness and verify its gap, divisor, positivity and exact Fraction identity",
+    "record core_d=13 separately from every Bradford certificate_divisor",
+    "record stutter_m=3 separately from every Bradford certificate_gap",
+    "return GuardMissV1 only as a hit-only nonexhaustive result"
+  ],
+  "activation_blockers": [
+    "f3-proper-root-endpoint-path-receipt-v1 remains REQUESTED_NOT_REGISTERED",
+    "no active producer emits an admitted proper_root_stutter_k_gt_one source",
+    "no F3 source terminal schedule or issuer is registered",
+    "the nonterminal QC1/TR1 physicalization residual remains open"
+  ],
+  "evidence": [
+    "claims/short-certificate-equivalence.md",
+    "claims/p-plus-four-sqrt-certificate.md",
+    "claims/p-plus-one-sqrt-certificate.md",
+    "claims/type-I-root-capacity-stutter-m-three-high-cofactor-terminal-screen-boundary.md",
+    "concepts/t6-f3-proper-root-domain-v1.md",
+    "data/interface-requests/f3-proper-root-endpoint-path-receipt-v1.json",
+    "scripts/t6_persistent_selector_runtime_v1.py:TerminalOnlyProducerRegistrationV1"
+  ]
+}
