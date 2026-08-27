@@ -218,6 +218,10 @@ support transfer；剩余关键变量是 \(-11\) quotient。见
 \(t\ge199\)，即 \(A\ge10347\)、\(u\ge21175\)；primitive quotient 与
 \(\lambda/3\) 也被证明互素。见
 [F3 inverse dual-norm fiber](claims/type-I-root-capacity-stutter-m-three-dual-norm-inverse-divisor-fiber.md)。
+terminal-first 还新增两条直接扇：\(p+4\) 或 \((p+1)/2\) 的 \(3\bmod4\) 因子
+立即给 terminal；两条近-cofactor Type II gaps \(4C+3\)、\(4C-1\) 则在此高
+core 中完全空。见
+[F3 high-cofactor terminal screen](claims/type-I-root-capacity-stutter-m-three-high-cofactor-terminal-screen-boundary.md)。
 
 ## 当前旗舰命题（合同内核核验至 2026-08-20）
 
