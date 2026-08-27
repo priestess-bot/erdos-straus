@@ -3,10 +3,30 @@
   "request_version": 1,
   "created": "2026-08-27",
   "track_id": "T6-Q1-PHASE-ROOT-E2",
-  "base_sha": "a86adb193d55f4b88a5ffe337a1524d268b16472",
-  "status": "PRESTATE_REQUIRED_NO_SUCCESSOR_AUTHORITY",
+  "base_sha": "0e7eec972d592515931a07e948adb993684ebb78",
+  "mathematical_input_sha": "a86adb193d55f4b88a5ffe337a1524d268b16472",
+  "status": "PRESTATE_IMPLEMENTED_NO_SUCCESSOR_AUTHORITY",
+  "implementation": {
+    "module": "scripts/t6_q_one_phase_root_prestate_v2.py",
+    "test": "tests/test_t6_q_one_phase_root_prestate_v2.py",
+    "scope": "P/C/L/D/A/Q only; all artifacts remain nonauthorizing",
+    "source_binding": "ExternalQOneSourceBindingV2 with EXTERNAL_Q1_SOURCE_PREIMAGE_NOT_E1 scope",
+    "controls": [
+      "p=73 finite HIT preempts A and Q",
+      "p=1201 and p=2521 finite MISS construct Q",
+      "p=97 is rejected as non-q1-G",
+      "type-confused and resealed semantic wires are rejected"
+    ],
+    "remaining": [
+      "actual E1 source authentication",
+      "final owner/E3",
+      "E2/E4/E5 receipts",
+      "common V2 admission",
+      "queue mutation and recursive re-entry"
+    ]
+  },
   "scope_freeze": {
-    "exact_quantifier": "For an externally supplied q=1 phase-root source preimage satisfying the existing narrow V3/V4/V5/V6 conditions, construct only a target prestate and finite target-scope evidence.",
+    "exact_quantifier": "For an externally supplied ExternalQOneSourceBindingV2 and a core q=1 G prime, construct only a target prestate and finite target-scope evidence.",
     "included_leaves": [
       "ordinary q=1 G source preimage",
       "canonical full-carrier target",
@@ -40,7 +60,7 @@
       "leaf_id": "Q1_PHASE_ROOT_V1_SUCCESSOR_PREIMAGE_CYCLE",
       "predicate": "A V1 ADMITTED_SUCCESSOR state must seal source_receipt E1..E5=true before state_id and owner_digest exist.",
       "coverage_proof": "scripts/t6_persistent_selector_state_v1.py validates source_receipt before build_state_id_v1 and computes owner_digest_v1 from state_id.",
-      "current_fact": "A raw V1 successor cannot be the pre-bundle Q object without an unproved boolean assertion or a content-ID cycle.",
+      "current_fact": "A raw V1 successor cannot be the pre-bundle Q object without an unproved boolean assertion or a content-ID cycle; the implemented Q is a distinct nonpersistent V2 prestate.",
       "planned_closure": "DETERMINISTIC_PRESTATE_ONLY",
       "missing_E": [
         "E1",

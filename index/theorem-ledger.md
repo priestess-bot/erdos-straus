@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 35 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 955 |
+| 数学状态 | `established` | 956 |
 | 数学状态 | `open` | 13 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 42 |
-| 证明来源 | `repository_derivation` | 789 |
+| 证明来源 | `repository_derivation` | 790 |
 | 证明来源 | `unspecified` | 427 |
-| 审阅状态 | `independent_review` | 25 |
+| 审阅状态 | `independent_review` | 26 |
 | 审阅状态 | `internal_review` | 934 |
 | 审阅状态 | `unspecified` | 427 |
 
@@ -221,6 +221,7 @@
 | [T6 persistent selector runtime V2 零授权拒绝截面](../claims/t6-persistent-selector-runtime-v2-zero-authority-cut.md) (`t6-persistent-selector-runtime-v2-zero-authority-cut`) | `established` | `repository_derivation` | `internal_review` | `scripts/t6_acyclic_transition_bundle_v2.py` | 2026-08-26 |
 | [q=1 exact-HEAD non-authorizing terminal decision assembler V2](../claims/t6-q-one-exact-head-terminal-decision-assembler-v2.md) (`t6-q-one-exact-head-terminal-decision-assembler-v2`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-26 |
 | [q=1 G 到 full-carrier phase-root 的独立非授权数学重放](../claims/t6-q-one-phase-root-independent-math-replay-v1.md) (`t6-q-one-phase-root-independent-math-replay-v1`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-26 |
+| [q=1 phase-root 的零权限 V2 prestate 构造](../claims/t6-q-one-phase-root-prestate-v2-nonauthorizing-construction.md) (`t6-q-one-phase-root-prestate-v2-nonauthorizing-construction`) | `established` | `repository_derivation` | `independent_review` | - | 2026-08-27 |
 | [q=1 phase-root 的有限 terminal predicate transport 与 anchor-sink 恒 MISS](../claims/t6-q-one-phase-root-target-terminal-transport-anchor-miss-v1.md) (`t6-q-one-phase-root-target-terminal-transport-anchor-miss-v1`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-27 |
 | [q=1 root terminal 与注册前缀 MISS 的 production issuer/replay V1](../claims/t6-q-one-production-terminal-issuer-v1.md) (`t6-q-one-production-terminal-issuer-v1`) | `established` | `repository_derivation` | `independent_review` | `schemas/t6-q-one-production-terminal-receipts-v1.schema.json`, `docs/audits/T6_Q1_PRODUCTION_TERMINAL_FINAL_INDEPENDENT_REVIEW_2026-08-26.md` | 2026-08-26 |
 | [q=1 注册优先前缀 gaps 3/7/11 的独立数学证据层](../claims/t6-q-one-registered-priority-prefix-independent-math-evidence-v1.md) (`t6-q-one-registered-priority-prefix-independent-math-evidence-v1`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-26 |

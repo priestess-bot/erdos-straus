@@ -153,6 +153,13 @@ PhaseRootTargetPrestateV2，随后才是 owner、bundle 与 admission。该修�
 [Prestate V2 边界](docs/handoffs/T6_Q1_PHASE_ROOT_PRESTATE_V2_BOUNDARY_2026-08-27.md)和
 [接口请求](data/interface-requests/q1-phase-root-prestate-v2-v1.json)。
 
+该边界现已有零权限实现：它严格构造 P/C/L/D/A/Q，重放 q=1 G 因式、V1 predicate
+预分类、有限 target scope 与 target N7 草稿；p=73 的 gap-7 HIT 在 A/Q 前抢占，
+p=1201,2521 的有限 MISS 才生成非 persistent Q。所有 wire 使用类型敏感 content
+seal，且外部 source binding 明确为 NOT_E1。该实现仍不是 E2、E3、E4、E5、actual
+source、admission 或 queue。详见
+[Prestate V2 claim](claims/t6-q-one-phase-root-prestate-v2-nonauthorizing-construction.md)。
+
 ## 当前旗舰命题（合同内核核验至 2026-08-20）
 
 对核心素数 \(p\equiv1\pmod{24}\)，最终目标是下列双出口命题：

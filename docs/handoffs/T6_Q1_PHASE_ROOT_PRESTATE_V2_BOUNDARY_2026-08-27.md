@@ -132,6 +132,33 @@ The alternative bridge through a provisional V2 object and a later V1
 successor produces two state IDs and requires a separate equivalence theorem.
 It is not the minimal path.
 
+## Implemented Zero-Authority Shape
+
+The recommended prefix now has a strict implementation in
+scripts/t6_q_one_phase_root_prestate_v2.py, with focused checks in
+tests/test_t6_q_one_phase_root_prestate_v2.py.
+
+The implementation takes an ExternalQOneSourceBindingV2, whose explicit
+scope is EXTERNAL_Q1_SOURCE_PREIMAGE_NOT_E1. It records a V1 source state
+ID, source-wire digest, registered-prefix digest, and phase-root preimage
+digest without treating any of them as actual E1. All parsed wires recompute
+their canonical SHA-256 and content ID before dependency replay; the public
+serializer also rejects locally resealed semantic forgeries.
+
+It implements P/C/L/D/A/Q only:
+
+~~~text
+P validates the q=1 G factorization and canonical target facts.
+C fresh-loads and pins V1 predicate bytes, then recomputes index 14.
+L replays [3,7,11,anchor] with global_exhaustion=false.
+D records target N7 coordinates only.
+A and Q exist only after L is a finite MISS.
+~~~
+
+The controls are p=73 (gap-7 HIT, so no A/Q), p=1201 and p=2521
+(finite MISS and Q), and p=97 (rejected as non-G). The implementation has
+no owner, E1--E5, ticket, producer, admission, queue, or re-entry API.
+
 ## Controls and Boundary
 
 The target finite schedule must terminal-preempt p=1201 and p=2521 if it adds
