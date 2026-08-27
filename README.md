@@ -144,6 +144,10 @@ MISS 压缩为两个四元残余盒，同时给出 q=1 G 控制
 控制 \(p=53089\) 表明该因子型可与 q=1 G 及完整 3/7/11 prefix miss 共存，
 因此不能以矛盾清空；下一步必须寻找更强的跨线性出口。详见
 [gap 23 两盒分类](claims/type-I-type-II-gap-23-two-box-classification.md)。
+进一步的支撑分离定理关闭其中残余因子 \(\ell=5\) 的空子叶，并排除用共同因子
+向 G/gap-7/gap-11 迁移的路线；它不关闭剩余 \(\ell\equiv5,14\pmod {23}\)
+子域。见
+[跨线性支撑分离](claims/type-II-q-one-gap23-residual-cross-linear-separation.md)。
 
 同一轮复核还发现了 E2 对象层的精确阻断：当前 V1 successor 的 state ID 已哈希
 声称 E1--E5 为真的 source receipt，而独立 bundle 又必须在 target state ID 与最终

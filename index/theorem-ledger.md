@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 35 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 956 |
+| 数学状态 | `established` | 957 |
 | 数学状态 | `open` | 13 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 42 |
-| 证明来源 | `repository_derivation` | 790 |
+| 证明来源 | `repository_derivation` | 791 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 26 |
-| 审阅状态 | `internal_review` | 934 |
+| 审阅状态 | `internal_review` | 935 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -1274,6 +1274,7 @@
 | [q=1 initial G 到第二-anchor final target 的 runtime slice](../claims/type-II-q-one-full-carrier-runtime-slice.md) (`type-II-q-one-full-carrier-runtime-slice`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [q=1 full-carrier 第二 anchor overflow 的固定-n 严格宏出口](../claims/type-II-q-one-full-carrier-second-anchor-fixed-n-macro.md) (`type-II-q-one-full-carrier-second-anchor-fixed-n-macro`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 full-carrier 首 child 的第二 anchor 低重图表严格 no-go](../claims/type-II-q-one-full-carrier-second-anchor-overflow.md) (`type-II-q-one-full-carrier-second-anchor-overflow`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
+| [q=1 G 与 gap-23 残余的跨线性支撑分离](../claims/type-II-q-one-gap23-residual-cross-linear-separation.md) (`type-II-q-one-gap23-residual-cross-linear-separation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-27 |
 | [q=1 H3 掩码的 p+1 商上半区桥容量与单项式边界](../claims/type-II-q-one-mask-p-plus-one-upper-bridge-boundary.md) (`type-II-q-one-mask-p-plus-one-upper-bridge-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 odd second-anchor low final 的模 336 分类与 gap-7 预占](../claims/type-II-q-one-odd-low-final-gap-seven-preemption.md) (`type-II-q-one-odd-low-final-gap-seven-preemption`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
 | [q=1 odd low-final p=25 mod336 的第三-anchor C=9 contraction](../claims/type-II-q-one-odd-low-final-third-anchor-contraction.md) (`type-II-q-one-odd-low-final-third-anchor-contraction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-25 |
