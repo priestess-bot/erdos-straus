@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 35 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 960 |
+| 数学状态 | `established` | 962 |
 | 数学状态 | `open` | 13 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 42 |
-| 证明来源 | `repository_derivation` | 794 |
+| 证明来源 | `repository_derivation` | 796 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 27 |
-| 审阅状态 | `internal_review` | 937 |
+| 审阅状态 | `internal_review` | 939 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -279,6 +279,7 @@
 | [底层汇 SCC 的完整超额 bundle 选择器与线性源 overflow 收缩](../claims/type-I-bottom-sink-scc-complete-excess-bundle-selector.md) (`type-I-bottom-sink-scc-complete-excess-bundle-selector`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-11 |
 | [底层路径字的格正规形、有限 Pareto 前沿与周期容量选择器](../claims/type-I-bottom-word-lattice-pareto-cycle-capacity-selector.md) (`type-I-bottom-word-lattice-pareto-cycle-capacity-selector`) | `established` | `mixed` | `internal_review` | - | 2026-08-01 |
 | [固定素数的有界单调支撑相位秩](../claims/type-I-bounded-monotone-support-phase-rank.md) (`type-I-bounded-monotone-support-phase-rank`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
+| [c8 second-full-excess parent target 的下一容量 residue 公式与 no-stutter 边界](../claims/type-I-c8-second-full-excess-parent-anchored-next-capacity-residue-boundary.md) (`type-I-c8-second-full-excess-parent-anchored-next-capacity-residue-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-27 |
 | [c8 second-full-excess parent target 的 p-free 与小 overlap 压缩](../claims/type-I-c8-second-full-excess-parent-anchored-target-pfree-overlap-compression.md) (`type-I-c8-second-full-excess-parent-anchored-target-pfree-overlap-compression`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-27 |
 | [c8 第二完整超额的 parent-anchored 全称 fallback 严降宏](../claims/type-I-c8-second-full-excess-parent-anchored-universal-fallback.md) (`type-I-c8-second-full-excess-parent-anchored-universal-fallback`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-24 |
 | [规范完全换支撑重图表及其普适 G 态终点](../claims/type-I-canonical-complete-support-rechart-g-obstruction.md) (`type-I-canonical-complete-support-rechart-g-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
@@ -871,6 +872,7 @@
 | [actual proper-root stutter 的 k=3 primitive Pell fiber 约化](../claims/type-I-root-capacity-stutter-k-three-primitive-fiber-reduction.md) (`type-I-root-capacity-stutter-k-three-primitive-fiber-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-18 |
 | [actual proper-root k=3 的同-M Vieta companion 第二整数门障碍](../claims/type-I-root-capacity-stutter-k-three-vieta-companion-obstruction.md) (`type-I-root-capacity-stutter-k-three-vieta-companion-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-18 |
 | [actual proper-root stutter 的 m=3 双二次范数约化](../claims/type-I-root-capacity-stutter-m-three-biquadratic-norm-reduction.md) (`type-I-root-capacity-stutter-m-three-biquadratic-norm-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-19 |
+| [proper-root m=3 natural-fan cofactor 的 double-norm support 分离](../claims/type-I-root-capacity-stutter-m-three-natural-fan-cofactor-support-separation.md) (`type-I-root-capacity-stutter-m-three-natural-fan-cofactor-support-separation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-27 |
 | [根容量 stutter 的参数对 root-divisor gate 与 actual 边界](../claims/type-I-root-capacity-stutter-pair-root-divisor-gate.md) (`type-I-root-capacity-stutter-pair-root-divisor-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [proper-root stutter 的正定范数与平方根菜单界](../claims/type-I-root-capacity-stutter-positive-definite-norm-bound.md) (`type-I-root-capacity-stutter-positive-definite-norm-bound`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [proper-root stutter 的 primitive quotient 正规化与 cyclotomic 饱和](../claims/type-I-root-capacity-stutter-primitive-quotient-normalization.md) (`type-I-root-capacity-stutter-primitive-quotient-normalization`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-18 |

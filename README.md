@@ -186,6 +186,17 @@ F2/T6 状态不变。见
 capacity 下降，已有同一算术域的上升控制。因此后续应研究其确切 multiplier residue，
 而不是把小 overlap 当作 T5 ticket。见
 [C8 target p-free/overlap compression](claims/type-I-c8-second-full-excess-parent-anchored-target-pfree-overlap-compression.md)。
+进一步地，C8 下一 full-excess capacity 已压缩为
+\(\langle4096\beta(94544+75\lambda)^{-1}\rangle_p\)：它没有 fixed point，
+但同一 \((\lambda,\beta)\) 可出现上升或下降，故仍不能取代实际 E5。见
+[C8 next-capacity residue boundary](claims/type-I-c8-second-full-excess-parent-anchored-next-capacity-residue-boundary.md)。
+
+F3 的 actual \(m=3,s_d=3\) natural-fan core 也得到一条新的 exact bridge 与
+fixed-\(C\) 有限因子化。它证明 fan cofactor \(C\) 与 height carrier \(u\) 仅可能
+共享 \(7\)，与 \(\Phi_6(p)\) 仅可能共享 \(13\)，而这些及已知 primitive quotient
+的因子方向均为 \(1\bmod3\)。所以 natural fan 是否命中不能再靠既有 carrier 的
+support transfer；剩余关键变量是 \(-11\) quotient。见
+[F3 natural-fan cofactor support separation](claims/type-I-root-capacity-stutter-m-three-natural-fan-cofactor-support-separation.md)。
 
 ## 当前旗舰命题（合同内核核验至 2026-08-20）
 
