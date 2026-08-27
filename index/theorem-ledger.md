@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 35 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 970 |
+| 数学状态 | `established` | 971 |
 | 数学状态 | `open` | 13 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 42 |
-| 证明来源 | `repository_derivation` | 804 |
+| 证明来源 | `repository_derivation` | 805 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 27 |
-| 审阅状态 | `internal_review` | 947 |
+| 审阅状态 | `internal_review` | 948 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -875,6 +875,7 @@
 | [actual proper-root k=3 的同-M Vieta companion 第二整数门障碍](../claims/type-I-root-capacity-stutter-k-three-vieta-companion-obstruction.md) (`type-I-root-capacity-stutter-k-three-vieta-companion-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-18 |
 | [actual proper-root stutter 的 m=3 双二次范数约化](../claims/type-I-root-capacity-stutter-m-three-biquadratic-norm-reduction.md) (`type-I-root-capacity-stutter-m-three-biquadratic-norm-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-19 |
 | [proper-root m=3 dual-norm 的 inverse divisor fiber 与低 A 清除](../claims/type-I-root-capacity-stutter-m-three-dual-norm-inverse-divisor-fiber.md) (`type-I-root-capacity-stutter-m-three-dual-norm-inverse-divisor-fiber`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-27 |
+| [proper-root m=3 high-cofactor 两条近 gap 的完整 Bradford MISS](../claims/type-I-root-capacity-stutter-m-three-high-cofactor-near-gap-complete-miss.md) (`type-I-root-capacity-stutter-m-three-high-cofactor-near-gap-complete-miss`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-27 |
 | [proper-root m=3 high-cofactor 的直接 terminal 扇与近 cofactor Type-II 屏蔽](../claims/type-I-root-capacity-stutter-m-three-high-cofactor-terminal-screen-boundary.md) (`type-I-root-capacity-stutter-m-three-high-cofactor-terminal-screen-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-27 |
 | [proper-root m=3 natural-fan cofactor 的 -11 quotient r-adic gates](../claims/type-I-root-capacity-stutter-m-three-natural-fan-cofactor-lambda-adic-gates.md) (`type-I-root-capacity-stutter-m-three-natural-fan-cofactor-lambda-adic-gates`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-27 |
 | [proper-root m=3 natural-fan cofactor 的 double-norm support 分离](../claims/type-I-root-capacity-stutter-m-three-natural-fan-cofactor-support-separation.md) (`type-I-root-capacity-stutter-m-three-natural-fan-cofactor-support-separation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-27 |

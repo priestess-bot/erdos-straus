@@ -222,9 +222,10 @@ support transfer；剩余关键变量是 \(-11\) quotient。见
 \(\lambda/3\) 也被证明互素。见
 [F3 inverse dual-norm fiber](claims/type-I-root-capacity-stutter-m-three-dual-norm-inverse-divisor-fiber.md)。
 terminal-first 还新增两条直接扇：\(p+4\) 或 \((p+1)/2\) 的任一 \(3\bmod4\) 素因子
-立即给 terminal；两条近-cofactor Type II gaps \(4C+3\)、\(4C-1\) 则在此高
-core 中完全空。见
-[F3 high-cofactor terminal screen](claims/type-I-root-capacity-stutter-m-three-high-cofactor-terminal-screen-boundary.md)。
+立即给 terminal；两条近-cofactor gaps \(4C+3\)、\(4C-1\) 的完整 Bradford Type I/II
+screen 则在此高 core 中均空。见
+[F3 high-cofactor terminal screen](claims/type-I-root-capacity-stutter-m-three-high-cofactor-terminal-screen-boundary.md)
+和 [F3 complete near-gap MISS](claims/type-I-root-capacity-stutter-m-three-high-cofactor-near-gap-complete-miss.md)。
 C8 的 \(q_\star=103\) 相位现有一个精确 gap \(403\) divisor terminal layer：
 \(u\equiv-1\pmod{403}\) 给 Type II，\(u\equiv14\pmod{179}\) 给 Type I；
 而 two obvious large-divisor routes 被核心素性排除。其 fallback target 另有

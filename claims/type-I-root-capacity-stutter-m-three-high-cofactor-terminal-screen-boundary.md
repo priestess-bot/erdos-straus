@@ -225,9 +225,14 @@ lift to all \(\ell\)-powers by Hensel. At \(\ell=7\), the root
 or emptiness proof must use the global coupling of \(u\) to \(A,\rho,\lambda\)
 and the primitive equations, not just the \(1\pmod3\) support direction.
 
+The companion
+[complete near-gap MISS](type-I-root-capacity-stutter-m-three-high-cofactor-near-gap-complete-miss.md)
+also proves the Type-I screens empty. Thus the two named gaps have complete
+Bradford Type-I/II MISS in this actual high-cofactor domain.
+
 ## 5. Boundary
 
 The claim covers two direct terminal fans and two specified near-cofactor
-Type-II screens only. It does not classify all Type-I certificates at these
-gaps, all higher gap families, the natural fan itself, or any source/admission
-obligation. It supplies no E1--E5 edge or global T6 conclusion.
+complete Type-I/II screens only. It does not classify higher gap families,
+the natural fan itself, or any source/admission obligation. It supplies no
+E1--E5 edge or global T6 conclusion.
