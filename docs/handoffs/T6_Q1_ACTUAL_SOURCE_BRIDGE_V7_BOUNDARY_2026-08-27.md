@@ -63,33 +63,43 @@ its own trust root.
 
 ## First E1 Prerequisites
 
-Only after a coordinator-owned complete source terminal schedule exists may a
-second, branch-scoped issuer be considered:
+V1 remains blocked by its global `MISS_COMPLETE` constant. A separate,
+zero-authority V2 foundation can study policy-relative branch clearance after
+the coordinator freezes a total decision order and independently clears every
+action before the selected phase-root branch:
 
 ```text
 AuthenticatedQ1RootSourcePrefixV1
-  -> complete source terminal replayer
-       -> HIT: Terminal
-       -> MISS_COMPLETE: Q1_PHASE_ROOT_BRANCH_SCOPED_E1_ISSUER
+  -> coordinator prior-decision replayer
+       -> prior HIT: Terminal
+       -> prior producer selected: follow that branch
+       -> ALL_PRIOR_ROUTES_MISS:
+            Q1_PHASE_ROOT_BRANCH_SCOPED_E1_ISSUER_V2
 ```
 
 The branch-scoped issuer must independently:
 
 1. Invoke the V6 replayer itself.
-2. Replay the complete terminal schedule.
-3. Terminal-preempt every hit.
+2. Replay the complete ordered list of terminal and producer actions before
+   the selected branch.
+3. Terminal-preempt every prior hit and honor every prior matching producer.
 4. Bind an explicit `facts.relation_q=1` integer occurrence path.
-5. Obtain all policy pins from its coordinator registry.
+5. Obtain all policy pins and the branch index from its coordinator registry.
 6. Use an independent E1 verifier that does not reuse the producer result.
 
-It must still not be promoted to generic E1 without a separate scope and
-coverage proof.
+It emits `MISS_HIGHER_PRIORITY_POLICY_COMPLETE` with
+`global_exhaustion=false`; it must not be promoted to generic E1 or a terminal
+universe miss. This does not amend the current Goal: Gate 4/5 still require
+terminal-over-producer preemption and a complete source terminal schedule. A
+Goal-compatible activation must place every overlapping registered terminal
+before the producer, or prove its guard disjoint, and then replay that complete
+schedule. See `t6-branch-scoped-priority-clearance-soundness-v2`.
 
 ## Downstream DAG
 
 ```text
-authenticated V1 source + COMPLETE source MISS
-  -> branch-scoped E1
+authenticated V1 source + Goal-compatible complete terminal clearance
+  -> branch-scoped E1 candidate
   -> P -> {C, L, D} -> A -> Q
   -> persistent target V2 state
   -> final owner / common E3

@@ -178,9 +178,31 @@ candidate，并由独立 replayer 重建相同 wire；但这次实现经过权�
 replayer 的运行时结果。它是可重放候选证据，不是 source authentication、E1 或 admission。
 详见
 [V6 source replay candidate](claims/t6-q-one-exact-head-source-input-replay-candidate-v1.md)。
-首个 branch-scoped E1 仍硬性依赖 complete source terminal schedule 与 repository 外 trust
-anchor；在此之前 V7 只能认证 prefix source 而保持非 E1。见
+V1 E1 仍被其 `MISS_COMPLETE` 常量阻断；新的 branch-scoped V2 基础层证明了较弱的
+policy-relative 结论：实际 occurrence 加所选 branch 之前的完整 registered-action clearance，
+足以支持一条算术上 sound 的递降候选，而不声称终端宇宙穷尽。它不修改当前 Goal：
+Gate 4/5 仍要求 terminal-over-producer preemption 与 complete source terminal schedule；
+common admission 和 recursive re-entry 也仍是 verified edge 的必要条件。在这些义务与
+authority 到位前，V7 仍只认证 prefix source 而保持非 E1。见
 [V7 actual-source bridge boundary](docs/handoffs/T6_Q1_ACTUAL_SOURCE_BRIDGE_V7_BOUNDARY_2026-08-27.md)。
+相应 soundness 证明与合同见
+[branch-scoped priority clearance](claims/t6-branch-scoped-priority-clearance-soundness-v2.md)和
+[V2 E1 boundary](docs/handoffs/T6_BRANCH_SCOPED_E1_V2_BOUNDARY_2026-08-27.md)；
+对应零权限 receipt 实现及对抗边界见
+[V2 receipt foundation](claims/t6-branch-scoped-e1-receipt-foundation-v2.md)。
+
+对 Goal-compatible q=1 source schedule 的进一步证明把覆盖到 gap 23 的最小连续
+Bradford 前缀固定为
+\(M_{23}=\{3,7,11,15,19,23\}\)：加入 gap 23 时不能跳过 15、19，
+\(p=12721\) 正是在 gap 19 由 Type II \(d=7\) 抢先。\(p=1201,2521\)
+分别在 gap 23 终止，不再是该 producer 的正控；\(p=21169\) 六层全 MISS，
+给出 \(\mathcal D_{23}\) 的非空算术 guard（actual source membership 仍待 V7
+认证），但其 gap-31 Type II \(d=1\) 证书同时证明
+该结果只能是 versioned registered-prefix completeness，始终保持
+global_exhaustion=false。一般有限前缀的全 divisor earliest-hit 分割已证明，但
+schedule registry、独立 authority、target schedule 和 Gate 4/5 仍未闭合。见
+[finite Bradford prefix partition](claims/t6-q-one-finite-bradford-prefix-through-23-partition-v1.md)和
+[next plan](docs/handoffs/T6_Q1_REGISTERED_TERMINAL_PREFIX_23_NEXT_PLAN_2026-08-27.md)。
 
 当前冻结 q1 local runtime 的 registered route 相对排除 proper-root family；该结论只对
 固定 blobs 和 `Reach_local` 成立，不能外推为全局 actual-reachable 空域，F3/O1 仍开放。见

@@ -1,0 +1,187 @@
+{
+  "request_id": "t6_branch_scoped_e1_receipts_v2_v1",
+  "request_version": 1,
+  "date": "2026-08-27",
+  "status": "FOUNDATION_IMPLEMENTED_ZERO_AUTHORITY_NOT_REGISTERED",
+  "scope": "POLICY_RELATIVE_BRANCH_CLEARANCE_NOT_GLOBAL_TERMINAL_MISS",
+  "goal_compatibility": {
+    "current_goal_amended": false,
+    "gate_4_complete": false,
+    "gate_5_complete": false,
+    "complete_source_terminal_schedule_still_required": true,
+    "terminal_over_producer_preemption_still_required": true
+  },
+  "receipt_types": {
+    "selection": "BranchSelectionReceiptV2",
+    "e1_occurrence_foundation": "E1OccurrenceReceiptV2",
+    "independent_replay_foundation": "E1IndependentReplayReceiptV2",
+    "verified_transition_bundle": "FUTURE_NOT_IMPLEMENTED"
+  },
+  "selection_semantic_constants": {
+    "clearance_outcome": "MISS_HIGHER_PRIORITY_POLICY_COMPLETE",
+    "coverage_semantics": "REGISTERED_HIGHER_PRIORITY_ONLY",
+    "completeness_scope": "BEFORE_SELECTED_BRANCH_ONLY",
+    "terminal_universe_status": "NOT_ASSERTED_NOT_REQUIRED",
+    "global_exhaustion": false,
+    "branch_scoped_e1": true,
+    "generic_e1": false,
+    "transferable": false,
+    "universe_miss_authority": false,
+    "admission_authority": false,
+    "queue_authority": false
+  },
+  "decision_outcome_algebra": {
+    "prior_terminal": "TERMINAL_MISS_ONLY",
+    "prior_producer": "GUARD_FALSE_ONLY",
+    "selected_decision": "PRODUCER_WITH_GUARD_TRUE",
+    "forbidden_prior_terminal": "TERMINAL_HIT",
+    "forbidden_prior_producer": "GUARD_TRUE_OR_SELECTED"
+  },
+  "selection_required_groups": {
+    "policy": [
+      "head_sha/head_tree_sha",
+      "source_state_id/digest",
+      "source_owner_id/digest",
+      "owner_domain_id/digest",
+      "coordinator_route_registry_id/version/digest",
+      "policy_id/version/digest",
+      "global_exhaustion=false"
+    ],
+    "decision_row": [
+      "continuous decision_index",
+      "independent decision_id/contract_digest",
+      "decision_kind",
+      "producer_id/digest for producer rows",
+      "branch_id/contract_digest for producer rows",
+      "expected occurrence path/digest for producer rows",
+      "null producer/branch/occurrence fields for terminal rows",
+      "no duplicate producer/branch/contract/occurrence action key"
+    ],
+    "prior_replay": [
+      "same source and policy",
+      "same decision slot/kind/contracts",
+      "one sealed replay per index strictly before selected index",
+      "TERMINAL implies TERMINAL_MISS",
+      "PRODUCER implies GUARD_FALSE"
+    ],
+    "selected_guard": [
+      "same source and policy",
+      "same route decision, producer and branch",
+      "selected branch guard replay=true",
+      "selected index equals prior replay count"
+    ]
+  },
+  "e1_required_groups": {
+    "authority_pins_without_current_authority": [
+      "head_sha/head_tree_sha",
+      "signed_gate0_manifest_digest",
+      "external_trust_anchor_digest",
+      "authority_policy_digest",
+      "coordinator registry id/version/digest",
+      "role grant id/digest",
+      "issuer id/digest and issuer grant id/digest",
+      "independent verifier id/digest"
+    ],
+    "proof_artifacts": [
+      "claim id/version/digest",
+      "reproduction id/digest"
+    ],
+    "source_lineage": [
+      "source schema id/version",
+      "source state id/wire digest",
+      "source owner id/digest",
+      "source base admission receipt id/digest",
+      "parent kind/id/digest/replay digest",
+      "source lineage replayer id/digest/result digest"
+    ],
+    "branch_scope": [
+      "e1_scope_kind=BRANCH_SCOPED",
+      "e1_scope_id/digest",
+      "route decision id/index/contract digest",
+      "producer id/digest",
+      "branch id/contract digest",
+      "source domain id/digest and membership replay digest",
+      "branch guard id/digest/result digest"
+    ],
+    "actual_occurrence": [
+      "occurrence_namespace=PERSISTENT_SOURCE_STATE_WIRE",
+      "explicit source-state occurrence path",
+      "exact integer occurrence value/digest",
+      "consumed occurrence path/value/digest",
+      "provenance digest"
+    ]
+  },
+  "independent_replay_cross_bindings": [
+    "selection receipt id/digest",
+    "E1 occurrence receipt id/digest",
+    "same HEAD/tree",
+    "same source state and owner/domain",
+    "same policy and route decision",
+    "same producer and branch",
+    "same occurrence digest",
+    "external authority-policy digest remains distinct from the route-policy digest and inert",
+    "independent replayer differs from issuer, producer, lineage replayer, prior decision replayers and selected guard replayer",
+    "all embedded upstream receipts are reparsed and resealed",
+    "PASS is evidence-only and grants no authority"
+  ],
+  "upstream_q1_prefix_adapter": {
+    "required_by_core_v2": false,
+    "result": "MISS_REGISTERED_PRIORITY_COMPLETE",
+    "coverage_semantics": "REGISTERED_PRIORITY_ONLY",
+    "next_unchecked_gap": 15,
+    "global_exhaustion": false,
+    "boundary": "This is a separate V3 prefix object, not a BranchSelectionReceiptV2 constant."
+  },
+  "v1_compatibility": [
+    "the V1 MISS_COMPLETE parser remains unchanged",
+    "V1 receipts are not implicitly accepted by V2",
+    "V2 branch-scoped receipts cannot be downcast to V1",
+    "a future verified V1 global-complete receipt may only be weakened through a registered adapter"
+  ],
+  "required_negative_controls": [
+    "PREFIX_MISS_RELABELED_GLOBAL",
+    "GLOBAL_EXHAUSTION_TRUE_WITH_PREFIX",
+    "SCOPE_ROUTE_PRODUCER_OR_BRANCH_SWAP",
+    "PRECEDENCE_SLOT_SWAP",
+    "PRIOR_DECISION_OMISSION",
+    "PRIOR_PRODUCER_MATCH_BYPASS",
+    "ACTION_KIND_OUTCOME_SWAP",
+    "POLICY_SOURCE_OWNER_OR_DOMAIN_SWAP",
+    "SELECTION_E1_SWAP",
+    "CROSS_HEAD_OR_CROSS_POLICY",
+    "V6_CANDIDATE_AUTHORITY_INJECTION",
+    "V6_REPLAYER_NOT_INVOKED",
+    "V1_SOURCE_WIRE_SWAP",
+    "DERIVED_WITNESS_USED_AS_OCCURRENCE",
+    "NONINTEGER_OR_BOOL_OCCURRENCE",
+    "V1_TO_V2_IMPLICIT_UPCAST",
+    "V2_TO_V1_DOWNCAST",
+    "SELF_REGISTERED_ISSUER_OR_VERIFIER",
+    "UNDECLARED_AUTHORITY_FIELD"
+  ],
+  "q1_current_substrate": {
+    "v3": "exact-HEAD root actualness and registered gaps 3/7/11 priority result",
+    "v4": "common owner and source-scoped occurrence",
+    "v5": "V1 base source containing facts.relation_q=1",
+    "v6": "deterministic V4-to-V5 replay relation, candidate only",
+    "current_authoritative_e1": false
+  },
+  "activation_blockers": [
+    "the current Goal still requires a complete owner/domain terminal schedule",
+    "no registered coordinator theorem freezes the six-gap source schedule as the complete prior terminal family set",
+    "V7 external policy/trust-anchor verification is not active",
+    "no authority registry pins every action evaluator and replay implementation",
+    "no production BranchSelectionReceiptV2 issuer or independent verifier is registered",
+    "the V2 foundation validates caller-supplied sealed structure only",
+    "E2--E5, final cross-bound bundle, target terminal policy, common admission and re-entry remain open"
+  ],
+  "evidence": [
+    "claims/t6-branch-scoped-priority-clearance-soundness-v2.md",
+    "claims/t6-terminal-miss-scope-taxonomy-v2.md",
+    "docs/handoffs/T6_BRANCH_SCOPED_E1_V2_BOUNDARY_2026-08-27.md",
+    "docs/handoffs/T6_Q1_ACTUAL_SOURCE_BRIDGE_V7_BOUNDARY_2026-08-27.md",
+    "scripts/t6_branch_scoped_e1_receipts_v2.py",
+    "schemas/t6-branch-scoped-e1-receipts-v2.schema.json",
+    "schemas/t6-structured-transition-receipts-v1.schema.json"
+  ]
+}

@@ -63,16 +63,17 @@
     "global_exhaustion"
   ],
   "e1_activation_preconditions": [
-    "coordinator-owned complete source terminal schedule",
-    "complete source MISS independently replayed after terminal preemption",
-    "branch-scoped Q1 phase-root E1 issuer",
+    "Goal-compatible complete owner/domain source terminal schedule",
+    "coordinator-owned total route order in which every overlapping registered terminal precedes the phase-root branch or has a disjoint guard",
+    "all actions before the phase-root branch independently replayed as terminal MISS or producer guard-false",
+    "branch-scoped Q1 phase-root E1OccurrenceReceiptV2 issuer",
     "explicit facts.relation_q=1 integer occurrence path",
     "independent E1 verifier not reusing producer result"
   ],
   "downstream_order": [
     "authenticated prefix source",
-    "complete source terminal replayer",
-    "branch-scoped E1",
+    "complete source terminal and prior-route selection replayer",
+    "branch-scoped E1OccurrenceReceiptV2",
     "P/C/L/D/A/Q PhaseRootTargetPrestateV2",
     "persistent target V2 state",
     "owner/common E3",
@@ -83,13 +84,19 @@
   ],
   "activation_blockers": [
     "t6-complete-terminal-schedule-registry-v1 has complete_schedules=[]",
-    "current V3 result is registered-prefix MISS only",
+    "no coordinator total decision order freezes the phase-root branch after the registered prefix",
+    "the six-gap mathematical partition exists, but no coordinator theorem registers it as the complete prior terminal family set",
+    "no BranchSelectionReceiptV2 issuer or independent verifier is registered",
     "the attested manifest still needs an independently approved policy/workflow digest",
     "no branch-scoped E1 issuer is registered"
   ],
   "evidence": [
     "docs/handoffs/T6_Q1_ACTUAL_SOURCE_BRIDGE_V7_BOUNDARY_2026-08-27.md",
     "docs/handoffs/T6_GATE0_SIGNED_MANIFEST_ATTESTATION_BOUNDARY_2026-08-27.md",
+    "docs/handoffs/T6_BRANCH_SCOPED_E1_V2_BOUNDARY_2026-08-27.md",
+    "claims/t6-branch-scoped-priority-clearance-soundness-v2.md",
+    "claims/t6-q-one-finite-bradford-prefix-through-23-partition-v1.md",
+    "data/interface-requests/q1-complete-registered-terminal-prefix-through-23-v1.json",
     "claims/t6-q-one-exact-head-source-input-replay-candidate-v1.md",
     "scripts/t6_q_one_exact_head_source_input_receipt_replayer_v1.py",
     "scripts/t6_structured_transition_receipts_v1.py",

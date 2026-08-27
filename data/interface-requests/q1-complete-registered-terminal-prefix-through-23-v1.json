@@ -1,0 +1,158 @@
+{
+  "request_id": "q1_complete_registered_terminal_prefix_through_23_v1",
+  "request_version": 1,
+  "date": "2026-08-27",
+  "track_id": "T6-Q1-REGISTERED-TERMINAL-PREFIX-23",
+  "status": "REQUESTED_NOT_REGISTERED",
+  "scope": "Q1_ACTUAL_ROOT_REGISTERED_NATURAL_BRADFORD_PREFIX_THROUGH_23_NOT_TERMINAL_UNIVERSE",
+  "proposed_schedule": {
+    "schedule_id": "q1_root_full_divisor_natural_prefix_through_23_v1",
+    "subject_kind": "PERSISTENT_SOURCE_STATE",
+    "owner": "type_ii_relation_g_endpoint",
+    "owner_domain_id": "actual_parentless_ordinary_q1_g_root_v1",
+    "ordered_gaps": [3, 7, 11, 15, 19, 23],
+    "ordered_family_ids": [
+      "bradford_full_divisor_gap3_v1",
+      "bradford_full_divisor_gap7_v1",
+      "bradford_full_divisor_gap11_v1",
+      "bradford_full_divisor_gap15_v1",
+      "bradford_full_divisor_gap19_v1",
+      "bradford_full_divisor_gap23_v1"
+    ],
+    "candidate_order": "gap_ascending_then_divisor_ascending_then_type_I_before_type_II",
+    "miss_outcome": "MISS_REGISTERED_PRIORITY_COMPLETE",
+    "coverage_semantics": "REGISTERED_PRIORITY_ONLY",
+    "next_unchecked_gap": 27,
+    "global_exhaustion": false
+  },
+  "owner_domain_requirements": [
+    "source is reconstructed from the exact V5/V6 parentless root chain",
+    "source is a PersistentSelectorStateV1 ROOT_INITIALIZER_OUTPUT",
+    "source parent_state_id is null",
+    "common owner is type_ii_relation_g_endpoint with a replayed owner digest",
+    "facts.major_phase is TYPEII_G_HANDOFF",
+    "facts.endpoint_fiber is G",
+    "facts.relation_q is the exact integer 1",
+    "facts.provenance_kind is ORDINARY_ENDPOINT",
+    "positive-q G, descendant Type-I and marked-state sources are outside this owner-domain"
+  ],
+  "coverage_obligations": [
+    "prove FiniteBradfordPrefix(B) for every fixed natural prefix B",
+    "for each registered gap factor x_m completely and enumerate every divisor of x_m squared",
+    "check both exact Bradford Type I and Type II conditions at every divisor",
+    "reconstruct and verify every selected denominator triple against 4/p",
+    "prove the supplied source domain is the disjoint union of canonical earliest-hit leaves and the all-six-miss residual D_23",
+    "bind all six family-definition digests and all six local replay digests into one schedule digest",
+    "independently replay gaps 15, 19 and 23 rather than treating V3 gaps 3, 7 and 11 as sufficient",
+    "retain next_unchecked_gap=27 and global_exhaustion=false"
+  ],
+  "precedence_obligations": [
+    "all six registered terminal families execute before the q1 phase-root producer",
+    "gaps are ordered 3,7,11,15,19,23 without omissions",
+    "within one gap divisors are ascending and Type I precedes Type II only at the same divisor",
+    "the earliest hit is the unique terminal output",
+    "terminal hit prevents producer selection",
+    "the p=12721 gap-19 control rejects calling 3,7,11,23 a complete natural prefix through 23",
+    "schedule insertion, deletion, reorder or family-digest drift invalidates old receipts"
+  ],
+  "authority_obligations": [
+    "register the schedule only in a coordinator-owned exact-HEAD role registry",
+    "bind the signed Gate-0 manifest and an external policy approval",
+    "grant distinct scheduler, production issuer and independent semantic verifier roles",
+    "forbid scheduler, issuer, verifier or producer self-registration",
+    "require the independent verifier to reconstruct factorization, divisor lattices, hit lists, precedence and certificate equations",
+    "bind the production prefix receipt to the authenticated V7 source context",
+    "allow only prefix-scoped E1 consumption after a verified all-six MISS",
+    "keep generic E1, terminal-universe miss, producer, admission, queue and re-entry authority false at the schedule layer"
+  ],
+  "source_partition": {
+    "input_domain": "D_G = actual parentless ordinary q=1 G root owner-domain",
+    "terminal_side": "one canonical earliest-hit leaf for the six registered gaps",
+    "producer_side": "D_23 = D_G intersect all six complete Type I/II screen misses",
+    "quantifier_rule": "no D_G source may be removed; every source outside D_23 must exit through its verified earliest terminal leaf"
+  },
+  "target_schedule_obligations": [
+    "source and target terminal schedules use different subject bindings",
+    "independently transport the p-only six-gap result to the phase-root target projection",
+    "run the phase-root anchor-sink family after deterministic target projection and before persistent admission",
+    "terminal-preempt an anchor-sink hit",
+    "bind an anchor-sink MISS and transported prefix MISS to the exact target projection before E3 admission",
+    "keep target terminal coverage distinct from source terminal coverage"
+  ],
+  "controls": [
+    {
+      "p": 241441,
+      "expected": "TERMINAL",
+      "gap": 11,
+      "certificate_type": "TYPE_II",
+      "x": 60363,
+      "divisor": 27
+    },
+    {
+      "p": 12721,
+      "expected": "TERMINAL",
+      "gap": 19,
+      "certificate_type": "TYPE_II",
+      "x": 3185,
+      "divisor": 7
+    },
+    {
+      "p": 1201,
+      "expected": "TERMINAL",
+      "gap": 23,
+      "certificate_type": "TYPE_I",
+      "x": 306,
+      "divisor": 34
+    },
+    {
+      "p": 2521,
+      "expected": "TERMINAL",
+      "gap": 23,
+      "certificate_type": "TYPE_II",
+      "x": 636,
+      "divisor": 8
+    },
+    {
+      "p": 21169,
+      "expected": "MISS_REGISTERED_PRIORITY_COMPLETE",
+      "ordered_gaps": [3, 7, 11, 15, 19, 23],
+      "phase_root_anchor_sink": "MISS",
+      "source_membership_status": "ARITHMETIC_GUARD_ONLY_V7_AUTHENTICATED_D_G_SOURCE_NOT_SUPPLIED",
+      "global_exhaustion": false
+    },
+    {
+      "p": 21169,
+      "expected": "ANTI_GLOBAL_LATER_TERMINAL",
+      "gap": 31,
+      "certificate_type": "TYPE_II",
+      "x": 5300,
+      "divisor": 1,
+      "denominators": [5300, 3619899, 19185464700]
+    }
+  ],
+  "activation_blockers": [
+    "the production complete-schedule registry still has zero COMPLETE schedules",
+    "V3 authority covers only gaps 3, 7 and 11",
+    "no exact-HEAD six-gap scheduler, issuer or independent verifier is registered",
+    "the authenticated V7 source bridge is not active",
+    "no coordinator theorem freezes these six families as the complete registered-priority set for the pilot",
+    "the target transported-prefix plus anchor-sink schedule is not registered",
+    "structured E1-E5, admission and recursive re-entry remain open"
+  ],
+  "non_claims": [
+    "not a complete natural terminal universe",
+    "not MISS_COMPLETE in the legacy global sense",
+    "not a certified counterexample when the prefix misses",
+    "not Gate 4 closure",
+    "not Gate 5 closure",
+    "not F1, F2, F3 or T6 closure"
+  ],
+  "evidence": [
+    "claims/t6-q-one-finite-bradford-prefix-through-23-partition-v1.md",
+    "claims/short-certificate-equivalence.md",
+    "claims/type-I-type-II-gap-23-two-box-classification.md",
+    "docs/audits/T6_Q1_GAP23_TWO_BOX_INDEPENDENT_REVIEW_2026-08-27.md",
+    "docs/handoffs/T6_Q1_PHASE_ROOT_E2_PREPROJECTION_2026-08-27.md",
+    "reproductions/short-certificate-results.json"
+  ]
+}

@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 35 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 972 |
+| 数学状态 | `established` | 975 |
 | 数学状态 | `open` | 13 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 42 |
-| 证明来源 | `repository_derivation` | 806 |
+| 证明来源 | `repository_derivation` | 809 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 27 |
-| 审阅状态 | `internal_review` | 949 |
+| 审阅状态 | `internal_review` | 952 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -208,6 +208,8 @@
 | [两条无条件标准大尾递降的有限覆盖审计](../claims/standard-tail-descent-finite-audit.md) (`standard-tail-descent-finite-audit`) | `computationally_reproduced` | `unspecified` | `unspecified` | `elsholtz_tao2013` | 2026-07-24 |
 | [标准大尾提升恰为 Type I 证书的第二分母窗口](../claims/standard-tail-type-I-coordinate-equivalence.md) (`standard-tail-type-I-coordinate-equivalence`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-24 |
 | [T6 non-authorizing acyclic transition bundle V2 contract](../claims/t6-acyclic-transition-bundle-v2-contract.md) (`t6-acyclic-transition-bundle-v2-contract`) | `established` | `repository_derivation` | `internal_review` | `schemas/t6-acyclic-transition-bundle-v2.schema.json` | 2026-08-26 |
+| [T6 branch-scoped E1 V2 zero-authority receipt foundation](../claims/t6-branch-scoped-e1-receipt-foundation-v2.md) (`t6-branch-scoped-e1-receipt-foundation-v2`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-27 |
+| [T6 branch-scoped priority clearance 对 policy-relative 递降的充分性 v2](../claims/t6-branch-scoped-priority-clearance-soundness-v2.md) (`t6-branch-scoped-priority-clearance-soundness-v2`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-27 |
 | [T6 非授权终端 miss 回执类型边界 v1](../claims/t6-complete-terminal-miss-receipt-contract-v1.md) (`t6-complete-terminal-miss-receipt-contract-v1`) | `established` | `repository_derivation` | `internal_review` | `schemas/t6-complete-terminal-miss-receipt-v1.schema.json` | 2026-08-26 |
 | [T6 HEAD-bound evidence-only role inventory Slice 1](../claims/t6-coordinator-head-bound-role-registry-v1.md) (`t6-coordinator-head-bound-role-registry-v1`) | `established` | `repository_derivation` | `internal_review` | `data/t6-wave1/t6-coordinator-role-registry-v1.json`, `schemas/t6-coordinator-role-registry-v1.schema.json` | 2026-08-26 |
 | [T6 q=1 注册终端前缀的 HEAD-bound 双角色授权 v2](../claims/t6-coordinator-head-bound-terminal-prefix-role-registry-v2.md) (`t6-coordinator-head-bound-terminal-prefix-role-registry-v2`) | `established` | `repository_derivation` | `internal_review` | `schemas/t6-coordinator-role-registry-v2.schema.json`, `scripts/t6_q_one_priority_prefix_scheduler_v1.py`, `scripts/t6_q_one_priority_prefix_coverage_verifier_v1.py` | 2026-08-26 |
@@ -222,6 +224,7 @@
 | [T6 persistent selector runtime V2 零授权拒绝截面](../claims/t6-persistent-selector-runtime-v2-zero-authority-cut.md) (`t6-persistent-selector-runtime-v2-zero-authority-cut`) | `established` | `repository_derivation` | `internal_review` | `scripts/t6_acyclic_transition_bundle_v2.py` | 2026-08-26 |
 | [q=1 source-input 的 exact-HEAD replay candidate V1](../claims/t6-q-one-exact-head-source-input-replay-candidate-v1.md) (`t6-q-one-exact-head-source-input-replay-candidate-v1`) | `established` | `repository_derivation` | `independent_review` | `data/t6-wave1/t6-coordinator-role-registry-v6.json`, `schemas/t6-q-one-exact-head-source-input-v1.schema.json`, `scripts/t6_coordinator_role_registry_v6.py`, `scripts/t6_q_one_exact_head_source_input_orchestrator_v1.py`, `scripts/t6_q_one_exact_head_source_input_receipt_replayer_v1.py` | 2026-08-27 |
 | [q=1 exact-HEAD non-authorizing terminal decision assembler V2](../claims/t6-q-one-exact-head-terminal-decision-assembler-v2.md) (`t6-q-one-exact-head-terminal-decision-assembler-v2`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-26 |
+| [q=1 根的有限 Bradford 自然前缀全除子分割定理 v1](../claims/t6-q-one-finite-bradford-prefix-through-23-partition-v1.md) (`t6-q-one-finite-bradford-prefix-through-23-partition-v1`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-27 |
 | [q=1 G 到 full-carrier phase-root 的独立非授权数学重放](../claims/t6-q-one-phase-root-independent-math-replay-v1.md) (`t6-q-one-phase-root-independent-math-replay-v1`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-26 |
 | [q=1 phase-root 的零权限 V2 prestate 构造](../claims/t6-q-one-phase-root-prestate-v2-nonauthorizing-construction.md) (`t6-q-one-phase-root-prestate-v2-nonauthorizing-construction`) | `established` | `repository_derivation` | `independent_review` | - | 2026-08-27 |
 | [q=1 phase-root 的有限 terminal predicate transport 与 anchor-sink 恒 MISS](../claims/t6-q-one-phase-root-target-terminal-transport-anchor-miss-v1.md) (`t6-q-one-phase-root-target-terminal-transport-anchor-miss-v1`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-27 |
