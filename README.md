@@ -205,6 +205,11 @@ support transfer；剩余关键变量是 \(-11\) quotient。见
 并清除了所有 \(40\le C<223\) 的 actual fan-miss core；余项必须满足 \(C\ge223\)。见
 [F3 fixed-cofactor second-norm gate](claims/type-I-root-capacity-stutter-m-three-natural-fan-fixed-cofactor-second-norm-gate.md)
 和 [F3 small-cofactor clearance](claims/type-I-root-capacity-stutter-m-three-natural-fan-small-cofactor-clearance.md)。
+把该 fiber 改写为高端差 \(w=(p-h-1)/3\) 后，second norm 与 first norm 分别成为两条
+小二次整除门；现有 primitive scale 进一步给出全域 \(C\ge1993\)、\(p-h\ge457\)，
+偶 \(z\) 支为 \(C\ge11824\)、\(p-h\ge1111\)。这仍是必要核心的高端 barrier，
+不是 terminal 或递归边。见
+[F3 high-cofactor barrier](claims/type-I-root-capacity-stutter-m-three-natural-fan-high-cofactor-barrier.md)。
 
 ## 当前旗舰命题（合同内核核验至 2026-08-20）
 
