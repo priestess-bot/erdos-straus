@@ -28,6 +28,7 @@
   },
   "required_replay": [
     "verify external anchor binds requested head, tree and reviewed policy manifest",
+    "verify the Gate 0 manifest GitHub/Sigstore attestation against the repository and signer workflow",
     "fresh-load V3/V4/V5/V6 resolvers from the requested Git tree",
     "invoke the independent V6 replayer in the consumer process",
     "retain only process-local reconstructed V1 source context",
@@ -36,6 +37,7 @@
   "positive_facts": [
     "exact_head_tree_matched",
     "external_commit_anchor_verified",
+    "signed_gate0_manifest_attestation_verified",
     "v3_v4_v5_v6_independently_replayed",
     "v1_source_state_reconstructed",
     "parent_kind=ROOT_INITIALIZER",
@@ -82,11 +84,12 @@
   "activation_blockers": [
     "t6-complete-terminal-schedule-registry-v1 has complete_schedules=[]",
     "current V3 result is registered-prefix MISS only",
-    "external immutable or signed trust anchor has not been fixed",
+    "the attested manifest still needs an independently approved policy/workflow digest",
     "no branch-scoped E1 issuer is registered"
   ],
   "evidence": [
     "docs/handoffs/T6_Q1_ACTUAL_SOURCE_BRIDGE_V7_BOUNDARY_2026-08-27.md",
+    "docs/handoffs/T6_GATE0_SIGNED_MANIFEST_ATTESTATION_BOUNDARY_2026-08-27.md",
     "claims/t6-q-one-exact-head-source-input-replay-candidate-v1.md",
     "scripts/t6_q_one_exact_head_source_input_receipt_replayer_v1.py",
     "scripts/t6_structured_transition_receipts_v1.py",

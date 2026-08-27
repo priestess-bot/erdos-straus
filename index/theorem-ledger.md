@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 35 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 971 |
+| 数学状态 | `established` | 972 |
 | 数学状态 | `open` | 13 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 42 |
-| 证明来源 | `repository_derivation` | 805 |
+| 证明来源 | `repository_derivation` | 806 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 27 |
-| 审阅状态 | `internal_review` | 948 |
+| 审阅状态 | `internal_review` | 949 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -216,6 +216,7 @@
 | [q=1 根终端 decision 的四角色 HEAD-bound authority registry v3](../claims/t6-coordinator-q1-root-terminal-authority-v3.md) (`t6-coordinator-q1-root-terminal-authority-v3`) | `established` | `repository_derivation` | `independent_review` | `schemas/t6-coordinator-role-registry-v3.schema.json`, `scripts/t6_q_one_terminal_issuer_v1.py`, `scripts/t6_q_one_terminal_receipt_verifier_v1.py`, `docs/audits/T6_Q1_PRODUCTION_TERMINAL_FINAL_INDEPENDENT_REVIEW_2026-08-26.md` | 2026-08-26 |
 | [q=1 root 的 V1 base admission exact-HEAD authority v5](../claims/t6-coordinator-q1-root-v1-base-admission-authority-v5.md) (`t6-coordinator-q1-root-v1-base-admission-authority-v5`) | `conditional` | `repository_derivation` | `internal_review` | `schemas/t6-coordinator-role-registry-v5.schema.json`, `schemas/t6-q-one-root-v1-base-admission-v1.schema.json`, `scripts/t6_q_one_root_v1_base_materializer_v1.py`, `scripts/t6_q_one_root_v1_base_admission_verifier_v1.py` | 2026-08-27 |
 | [T6-F1 可达持久状态闭世界的条件引理与当前最小断点](../claims/t6-f1-reachable-state-closed-world-v1.md) (`t6-f1-reachable-state-closed-world-v1`) | `open` | `repository_derivation` | `internal_review` | - | 2026-08-23 |
+| [冻结 q=1 局部 runtime 的 proper-root 相对不可达](../claims/t6-frozen-q-one-local-runtime-proper-root-relative-exclusion.md) (`t6-frozen-q-one-local-runtime-proper-root-relative-exclusion`) | `established` | `repository_derivation` | `internal_review` | `scripts/t6_q_one_full_carrier_runtime_slice_v1.py`, `scripts/t6_persistent_selector_state_v1.py` | 2026-08-27 |
 | [T6 Gate 0 HEAD-bound CI manifest integrity contract](../claims/t6-gate-zero-head-bound-ci-manifest-contract.md) (`t6-gate-zero-head-bound-ci-manifest-contract`) | `established` | `repository_derivation` | `internal_review` | `.github/workflows/research-kb-ci.yml`, `data/t6-wave1/t6-coordinator-role-registry-v1.json`, `data/t6-wave1/t6-complete-terminal-schedule-registry-v1.json` | 2026-08-26 |
 | [T6 live audit snapshot v2 provenance and state contract](../claims/t6-live-audit-snapshot-v2-contract.md) (`t6-live-audit-snapshot-v2-contract`) | `established` | `repository_derivation` | `internal_review` | `schemas/t6-live-audit-snapshot-v2.schema.json`, `schemas/t6-gate0-run-provenance-v1.schema.json`, `.github/workflows/research-kb-ci.yml` | 2026-08-26 |
 | [T6 persistent selector runtime V2 零授权拒绝截面](../claims/t6-persistent-selector-runtime-v2-zero-authority-cut.md) (`t6-persistent-selector-runtime-v2-zero-authority-cut`) | `established` | `repository_derivation` | `internal_review` | `scripts/t6_acyclic_transition_bundle_v2.py` | 2026-08-26 |

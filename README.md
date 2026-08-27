@@ -18,6 +18,10 @@ HEAD 的 Gate 0 完成后生成、验证并以不可变 artifact 保存，避免
 GitHub 服务端来源核验的绿色 HEAD；任一摘要变化都会使旧证据变成
 `ADVANCED_UNVERIFIED`。即使 HEAD 已验证，没有当前摘要向量的独立复核，状态升级仍被
 阻断。当前 F1、F2、F3、T6 及猜想状态均不因这项工程收口而改变。
+Gate 0 workflow 现还会在 `main` 的成功 push 上为 raw manifest 生成
+GitHub/Sigstore provenance attestation；它补强外部来源认证，但不替代独立 policy 审批、
+complete terminal schedule 或 E1。见
+[signed manifest boundary](docs/handoffs/T6_GATE0_SIGNED_MANIFEST_ATTESTATION_BOUNDARY_2026-08-27.md)。
 
 Phase 2 的 v1 基础保持零权限：精确 HEAD 的 v1 coordinator inventory 中五类 role grant
 均为 0，production terminal registry 中 COMPLETE schedule 为 0，且
@@ -177,6 +181,10 @@ replayer 的运行时结果。它是可重放候选证据，不是 source authen
 首个 branch-scoped E1 仍硬性依赖 complete source terminal schedule 与 repository 外 trust
 anchor；在此之前 V7 只能认证 prefix source 而保持非 E1。见
 [V7 actual-source bridge boundary](docs/handoffs/T6_Q1_ACTUAL_SOURCE_BRIDGE_V7_BOUNDARY_2026-08-27.md)。
+
+当前冻结 q1 local runtime 的 registered route 相对排除 proper-root family；该结论只对
+固定 blobs 和 `Reach_local` 成立，不能外推为全局 actual-reachable 空域，F3/O1 仍开放。见
+[frozen q1 proper-root exclusion](claims/t6-frozen-q-one-local-runtime-proper-root-relative-exclusion.md)。
 
 C8 分支也已校正一个会误导后续工作的覆盖语义：对真实 complete terminal-first `MISS` 的
 c8 parent，second-full-excess parent macro 总有一个确定的算术 target；`DOUBLE_LOW` 只是
