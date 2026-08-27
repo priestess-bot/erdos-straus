@@ -201,6 +201,10 @@ support transfer；剩余关键变量是 \(-11\) quotient。见
 \(-11\) quotient 对每个 \(C\) 素因子还施加高幂平方与 common-support residue gate，
 但尚未形成全称 terminal。见
 [F3 lambda r-adic gates](claims/type-I-root-capacity-stutter-m-three-natural-fan-cofactor-lambda-adic-gates.md)。
+现在 second norm 已等价收缩为该 fiber 上的一条整数 divisor gate（其 \(13\)-部分自动），
+并清除了所有 \(40\le C<223\) 的 actual fan-miss core；余项必须满足 \(C\ge223\)。见
+[F3 fixed-cofactor second-norm gate](claims/type-I-root-capacity-stutter-m-three-natural-fan-fixed-cofactor-second-norm-gate.md)
+和 [F3 small-cofactor clearance](claims/type-I-root-capacity-stutter-m-three-natural-fan-small-cofactor-clearance.md)。
 
 ## 当前旗舰命题（合同内核核验至 2026-08-20）
 
