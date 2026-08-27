@@ -1,0 +1,95 @@
+{
+  "request_id": "q1_authenticated_source_prefix_v7_v1",
+  "request_version": 1,
+  "date": "2026-08-27",
+  "track_id": "T6-Q1-ACTUAL-SOURCE",
+  "status": "REQUESTED_NOT_REGISTERED",
+  "schema_id": "AuthenticatedQ1RootSourcePrefixV1",
+  "scope": "EXACT_HEAD_AUTHENTICATED_PREFIX_NOT_E1",
+  "inputs": {
+    "allowed": [
+      "repository_locator",
+      "requested_full_head_sha",
+      "external_trust_anchor",
+      "raw_ordinary_q_one_g_input",
+      "production_v3_prefix_receipt",
+      "untrusted_v6_candidate_locator"
+    ],
+    "forbidden_caller_inputs": [
+      "v4_receipt",
+      "v5_receipt",
+      "v6_receipt",
+      "v1_state_wire",
+      "role_grant",
+      "artifact_manifest",
+      "authority_verified",
+      "e1_authority"
+    ]
+  },
+  "required_replay": [
+    "verify external anchor binds requested head, tree and reviewed policy manifest",
+    "fresh-load V3/V4/V5/V6 resolvers from the requested Git tree",
+    "invoke the independent V6 replayer in the consumer process",
+    "retain only process-local reconstructed V1 source context",
+    "reject any candidate-wire field that differs from the reconstruction"
+  ],
+  "positive_facts": [
+    "exact_head_tree_matched",
+    "external_commit_anchor_verified",
+    "v3_v4_v5_v6_independently_replayed",
+    "v1_source_state_reconstructed",
+    "parent_kind=ROOT_INITIALIZER",
+    "terminal_scope=REGISTERED_PRIORITY_ONLY"
+  ],
+  "mandatory_false_facts": [
+    "source_terminal_complete",
+    "generic_e1",
+    "successor_e1",
+    "e1_authority",
+    "producer_authority",
+    "branch_authority",
+    "projector_authority",
+    "e2_authority",
+    "e3_authority",
+    "e4_authority",
+    "e5_authority",
+    "t5_authority",
+    "admission_authority",
+    "queue_authority",
+    "enqueue_authority",
+    "reentry_authority",
+    "global_exhaustion"
+  ],
+  "e1_activation_preconditions": [
+    "coordinator-owned complete source terminal schedule",
+    "complete source MISS independently replayed after terminal preemption",
+    "branch-scoped Q1 phase-root E1 issuer",
+    "explicit facts.relation_q=1 integer occurrence path",
+    "independent E1 verifier not reusing producer result"
+  ],
+  "downstream_order": [
+    "authenticated prefix source",
+    "complete source terminal replayer",
+    "branch-scoped E1",
+    "P/C/L/D/A/Q PhaseRootTargetPrestateV2",
+    "persistent target V2 state",
+    "owner/common E3",
+    "E2/E4/E5 receipts",
+    "final bundle",
+    "admission sidecar",
+    "re-entry"
+  ],
+  "activation_blockers": [
+    "t6-complete-terminal-schedule-registry-v1 has complete_schedules=[]",
+    "current V3 result is registered-prefix MISS only",
+    "external immutable or signed trust anchor has not been fixed",
+    "no branch-scoped E1 issuer is registered"
+  ],
+  "evidence": [
+    "docs/handoffs/T6_Q1_ACTUAL_SOURCE_BRIDGE_V7_BOUNDARY_2026-08-27.md",
+    "claims/t6-q-one-exact-head-source-input-replay-candidate-v1.md",
+    "scripts/t6_q_one_exact_head_source_input_receipt_replayer_v1.py",
+    "scripts/t6_structured_transition_receipts_v1.py",
+    "data/t6-wave1/t6-complete-terminal-schedule-registry-v1.json"
+  ]
+}
