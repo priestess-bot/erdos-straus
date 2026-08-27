@@ -210,6 +210,9 @@ support transfer；剩余关键变量是 \(-11\) quotient。见
 偶 \(z\) 支为 \(C\ge11824\)、\(p-h\ge1111\)。这仍是必要核心的高端 barrier，
 不是 terminal 或递归边。见
 [F3 high-cofactor barrier](claims/type-I-root-capacity-stutter-m-three-natural-fan-high-cofactor-barrier.md)。
+该 barrier 现已用完整 primitive 参数强化到 \(w\ge20779\)、\(p-h\ge62338\)
+（偶 \(z\) 支分别为 \(127301\)、\(381904\)）；同时 high-end quotient
+\(R_w/u\) 至少为 \(169\)，首个 \(S_w/F<75\) band 已空。
 
 ## 当前旗舰命题（合同内核核验至 2026-08-20）
 
