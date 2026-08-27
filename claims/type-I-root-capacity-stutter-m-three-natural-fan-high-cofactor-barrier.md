@@ -483,6 +483,40 @@ The finite \(\beta<75\) clearance above is therefore useful as a
 primitive-free fiber control, but (38) is the effective bound on the complete
 actual core.
 
+The primitive quotient is also support-separated from this \(-11\) quotient:
+
+\[
+\boxed{(q,\beta)=1,\qquad(q,\lambda)=1.}
+\tag{39}
+\]
+
+Indeed, let a prime \(r\) divide both \(q\) and \(\beta\). Since
+\(q\equiv1\pmod {12}\), \(r\ne3\). The identities
+
+\[
+\delta=6\rho+1+3\beta,
+\qquad
+\delta^2+\delta+1=39qu,
+\]
+
+and \(A\beta=(9\rho^2+5\rho+1)/3\) give, modulo \(r\),
+
+\[
+12\rho^2+6\rho+1\equiv0,
+\qquad
+9\rho^2+5\rho+1\equiv0.
+\]
+
+Three times the first relation minus four times the second yields
+\(2\rho+1\equiv0\). But then
+
+\[
+4(9\rho^2+5\rho+1)-9(2\rho+1)^2+8(2\rho+1)=3
+\]
+
+would make \(r=3\), a contradiction. Since \(3\nmid q\), the equality
+\(\lambda=3\beta\) gives the second assertion in (39).
+
 ## 5. Boundary
 
 This is a necessary-core high-cofactor barrier. It does not prove that a

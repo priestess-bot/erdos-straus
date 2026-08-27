@@ -214,6 +214,10 @@ support transfer；剩余关键变量是 \(-11\) quotient。见
 （偶 \(z\) 支分别为 \(127301\)、\(381904\)）；同时 high-end quotient
 \(R_w/u\) 至少为 \(169\)，而 \(S_w/F=\lambda/3\ge12503\)
 （偶支 \(\ge76437\)）；首个独立 fiber 的 \(S_w/F<75\) band 也已空。
+同一 actual core 的 fixed-\(A\) dual-norm fiber 现已严格清除至
+\(t\ge199\)，即 \(A\ge10347\)、\(u\ge21175\)；primitive quotient 与
+\(\lambda/3\) 也被证明互素。见
+[F3 inverse dual-norm fiber](claims/type-I-root-capacity-stutter-m-three-dual-norm-inverse-divisor-fiber.md)。
 
 ## 当前旗舰命题（合同内核核验至 2026-08-20）
 
