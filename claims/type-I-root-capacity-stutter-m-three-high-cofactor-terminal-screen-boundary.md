@@ -147,7 +147,85 @@ can therefore divide \(x_-^2\), because each exceeds \(25\). Hence
 \tag{8}
 \]
 
-## 4. Boundary
+## 4. Why the two fans are not a cover
+
+The two direct terminal fans are compatible with the fan-miss cofactor support
+and with core primality. An arithmetic control is
+
+\[
+C=401077,\qquad p=20856001.
+\tag{9}
+\]
+
+Both \(C\) and \(p\) are prime and \(1\pmod6\) and \(1\pmod{24}\),
+respectively. Moreover
+
+\[
+p+4=20856005=5\cdot4171201,
+\]
+
+and both displayed factors are \(1\pmod4\), while
+
+\[
+\frac{p+1}{2}=10428001
+\]
+
+is prime and \(1\pmod4\). Thus neither direct fan in Section 1 fires.
+All listed primalities are finite trial-division checks.
+
+This control also passes the fixed-fiber and first \(-11\)-norm identities:
+
+\[
+F=47628865,\quad H=27397637,\quad u=4979713,
+\]
+
+\[
+A=1561923,\quad\rho=618622,\quad\lambda=2205129,
+\]
+
+with
+
+\[
+FH=3p^2+p+1,\qquad AF=3u^2-u+1,
+\]
+
+\[
+A\lambda=9\rho^2+5\rho+1,\qquad
+52C=6A+15\rho+7+\lambda.
+\tag{10}
+
+\]
+
+It is deliberately not an actual core receipt: the unconsumed second norm
+fails,
+
+\[
+7\rho^2+4\rho+1\equiv3179188\not\equiv0\pmod {4979713}.
+\tag{11}
+
+\]
+
+Therefore neither the direct fans, nor core support, primality, the fixed
+fiber, and the first norm jointly prove a contradiction. This is an arithmetic
+negative control only, not a terminal-first survivor or a counterexample.
+
+There is no local support obstruction to the second norm either. If every
+prime factor of an odd \(U\) is \(1\pmod3\), then
+
+\[
+7r^2+4r+1\equiv0\pmod U
+\tag{12}
+
+\]
+
+has a solution. For each prime \(\ell\ne7\) dividing \(U\), the discriminant
+is \(-12\), and \(\left(\frac{-3}{\ell}\right)=1\); its roots are simple and
+lift to all \(\ell\)-powers by Hensel. At \(\ell=7\), the root
+\(r\equiv5\pmod7\) is simple as well. CRT then gives (12). Hence a terminal
+or emptiness proof must use the global coupling of \(u\) to \(A,\rho,\lambda\)
+and the primitive equations, not just the \(1\pmod3\) support direction.
+
+## 5. Boundary
 
 The claim covers two direct terminal fans and two specified near-cofactor
 Type-II screens only. It does not classify all Type-I certificates at these

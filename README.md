@@ -222,6 +222,12 @@ terminal-first 还新增两条直接扇：\(p+4\) 或 \((p+1)/2\) 的 \(3\bmod4\
 立即给 terminal；两条近-cofactor Type II gaps \(4C+3\)、\(4C-1\) 则在此高
 core 中完全空。见
 [F3 high-cofactor terminal screen](claims/type-I-root-capacity-stutter-m-three-high-cofactor-terminal-screen-boundary.md)。
+C8 的 \(q_\star=103\) 相位现有一个精确 gap \(403\) divisor terminal layer：
+\(u\equiv-1\pmod{403}\) 给 Type II，\(u\equiv14\pmod{179}\) 给 Type I；
+而 two obvious large-divisor routes 被核心素性排除。其 fallback target 另有
+\(\lambda=56\) strict-capacity ray，可在未来 actual rechart 上支付 arithmetic E5。见
+[C8 gap-403 layer](claims/type-I-c8-qstar103-gap403-divisor-layer.md)
+和 [C8 lambda=56 strict ray](claims/type-I-c8-second-full-excess-lambda56-strict-capacity-ray.md)。
 
 ## 当前旗舰命题（合同内核核验至 2026-08-20）
 
