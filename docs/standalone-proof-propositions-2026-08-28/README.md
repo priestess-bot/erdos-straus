@@ -1,0 +1,95 @@
+# Erdős–Straus 未闭合证明命题包
+
+本目录把尚未闭合的证明缺口拆成可独立交给数学家、形式化验证器或软件审计者处理的命题。
+它不把任何外部文件、代码、状态标签或实验结果当作命题前提。
+
+## 阅读规则
+
+每个 SP-*.md 都是一个自包含 dossier。命题文件必须独立给出：
+
+1. 对象、符号和背景定义；
+2. 精确量词和假设；
+3. 待证明的结论；
+4. 可以使用的基础事实；
+5. 不能偷用的结论；
+6. 允许的三种闭合结果：FAMILY_EMPTY、TERMINAL、VERIFIED_SUCCESSOR；
+7. 证明完成时必须提交的证据。
+
+目录中的导航标签只说明命题之间的工作分工，不是证明前提。任何外部文件名、
+代码、版本记录、测试、证书或状态，均只可作为动机标签，不能替代命题正文里的定义和证明。
+
+对于本质上是构造问题的 dossier，例如有限 transition family、四步整数 word 或
+regeneration map，待构造的映射本身进入该文件的存在量词。证明者必须在同一 dossier
+中给出公式、定义域、终端分支、target 公式和验证证据；不得以某个未给出的项目函数
+作为隐含前提。
+
+## 全局问题
+
+研究对象是 Erdős–Straus 猜想：
+
+\[
+\forall\text{ prime }p\ge2,\quad
+\exists x,y,z\in\mathbb N_{>0}:
+\frac4p=\frac1x+\frac1y+\frac1z.
+\]
+
+本目录中的“递降”命题使用以下完全重新定义的抽象语言。一个状态 \(S\) 包含一个方程接口
+\(\mathsf{Eq}(S)\)、一个有限整数编码和一个解集 \(\mathsf{Sol}(S)\)。一条可递归使用的边
+\(S\to T\) 必须同时具备：
+
+~~~text
+E1  actual source occurrence and lineage
+E2  deterministic target projection
+E3  common legal persistent typing/admission
+E4  universal solution-set lift Sol(T) -> Sol(S)
+E5  strict decrease in one fixed well-founded N^7 potential
+R   target re-enters the same selector domain
+~~~
+
+只证明一个整数恒等式、有限样本、局部 rank 下降、候选 divisor 或布尔字段为真，都不满足这
+个定义。
+
+## 命题目录
+
+| ID | 独立命题 | 导航标签（非前提） | 目标闭合 |
+|---|---|---|---|
+| SP-01 | 结构化 E1--E5 边的抽象良基归纳 | 共享证明合同 | 为活动边提供逻辑基线 |
+| SP-02 | 全 constructor/source 信号的穷尽分类 | F1 U-A0-01 | unknown = 0 |
+| SP-03 | 唯一准入、无绕过和全 target re-entry | F1 U-A0-02/03/08 | F1 共享基础 |
+| SP-04 | q=1 根的 \(M_{23}\) 全除子 terminal schedule | Gate 4 | 一个可注册的 complete registered-prefix schedule |
+| SP-05 | q=1 phase-root 首条完整活动边 | Gate 5 / F2 post-G | 一个 VERIFIED_SUCCESSOR |
+| SP-06 | post-G/C9 连续路径总分派 | F2-POSTG | terminal/empty/successor 分割 |
+| SP-07 | C8/H4 actual atomic closure | F2-C8 | atomic leaves 全闭合 |
+| SP-08 | high-support \(C=1\) 的 \(R=3\)-G 分支 | F2-HIGH-SUPPORT-C1 | 无 upward ABSORB |
+| SP-09 | high-support \(C>1\) empty-improvement 二分 | F2-HIGH-SUPPORT-CGT1 | terminal/empty/lower protocol |
+| SP-10 | high-support noncanonical incoming grammar | F2-HIGH-SUPPORT-NONCANONICAL | source-bound normalizer |
+| SP-11 | F3 high strict-carry | F3-HIGH-STRICT-CARRY | high successor 或 terminal |
+| SP-12 | F3 high \(k=1\) Pell residual | F3-HIGH-STUTTER-K1 | nonrecurrence 或闭合出口 |
+| SP-13 | F3 high odd \(k\ge3\) residual | F3-HIGH-STUTTER-ODD-KGE3 | high-only closure |
+| SP-14 | QC1 \(q_\perp\) integer occurrence and deflation | F3-QC1 | occurrence/terminal dichotomy |
+| SP-15 | TR1 \(D^\ast\) fresh occurrence | F3-TR1 | least fresh factor and final rank |
+| SP-16 | \(m=3,q=5\) R1 source-path binding | F3-M3Q5-R1 | active source receipt |
+| SP-17 | \(m=3,q=5\) nonminimal \(q=5\) | F3-M3Q5-NONMINIMAL | \(5\mid E\) / \(5\nmid E\) closure |
+| SP-18 | \(m=3,q=5\) regeneration p-free failure | F3-M3Q5-REGENERATION | terminal or paid macro |
+| SP-19 | \(p^2\) one-sided factor-pair leaf | F3-M3Q5-P2-ONE-SIDED | terminal/contradiction/successor |
+| SP-20 | \(p^2\) genuine two-sided leaf | F3-M3Q5-P2-TWO-SIDED | strict source-forward final macro |
+
+## 证明者交付格式
+
+证明者只需阅读该命题文件。对任一命题，最终交付应包含：
+
+~~~text
+statement.md       完整证明或明确反证
+definitions.md     若正文有扩展定义，必须再次自包含
+verification.md    符号/整数/形式化核验说明
+counterexamples.md 所有边界控制和失败尝试
+~~~
+
+本目录的 SP-*.md 已将这四部分压缩在一个自包含文件中；若证明过程中产生长篇材料，可在同一
+命题目录下追加文件，但不得把另一个 SP-*.md 当作未声明的前提。
+
+## 状态纪律
+
+截至目录创建日，20 个命题均是 OPEN_PROPOSITION。这表示“缺口被精确定义”，不表示命题已证。
+任何命题只有在其文件末尾的验收条件全部满足后，才能改写为 ESTABLISHED；任何外部工作流的
+状态不得仅因本目录建立而改变。

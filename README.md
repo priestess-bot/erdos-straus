@@ -9,6 +9,17 @@
 `index/theorem-ledger.md` 为准，不在入口文档手工复制。其中被撤回论文和存在关键证明
 缺口的预印本仍会收录，但用独立状态标出。
 
+### 独立待证明命题包（2026-08-28）
+
+当前尚未闭合的 F1、q=1 pilot、F2 和 F3 缺口已拆成 20 个自包含的
+OPEN_PROPOSITION dossier。每个文件重复给出自己的背景、定义、量词、证明义务、
+反例控制和完成证据，不把本仓库的代码、commit、测试或状态当作证明前提。目录索引和
+机器清单见
+[standalone proof propositions](docs/standalone-proof-propositions-2026-08-28/README.md)；
+自包含性核对见
+[SELF-CONTAINED-AUDIT](docs/standalone-proof-propositions-2026-08-28/SELF-CONTAINED-AUDIT.md)。
+这些文件只精确定义缺口，不改变 F1、F2、F3 或 T6 状态。
+
 ### T6 实时审计权威（2026-08-27）
 
 T6 工程与证明状态的机器可读入口固定为

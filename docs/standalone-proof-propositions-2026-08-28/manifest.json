@@ -1,0 +1,43 @@
+{
+  "schema": "standalone_proposition_manifest_v1",
+  "created": "2026-08-28",
+  "purpose": "Self-contained statements for currently unclosed Erdos-Straus selector proof obligations.",
+  "external_document_dependencies": [],
+  "allowed_external_prerequisites": [
+    "standard integer arithmetic and divisibility",
+    "elementary finite set theory",
+    "well-founded induction on N^7 when a dossier explicitly defines the potential",
+    "the Erdős–Straus equation as restated in the directory README and each arithmetic dossier"
+  ],
+  "status_semantics": {
+    "OPEN_PROPOSITION": "The obligation is precisely stated but not proved here.",
+    "ESTABLISHED": "A complete proof and the listed independent verification evidence exist in the same dossier."
+  },
+  "accepted_dispositions": [
+    "FAMILY_EMPTY",
+    "TERMINAL",
+    "VERIFIED_SUCCESSOR"
+  ],
+  "propositions": [
+    {"id": "SP-01", "file": "SP-01-structured-edge-induction.md", "area": "shared", "status": "OPEN_PROPOSITION"},
+    {"id": "SP-02", "file": "SP-02-constructor-source-completeness.md", "area": "F1", "status": "OPEN_PROPOSITION"},
+    {"id": "SP-03", "file": "SP-03-exclusive-admission-reentry.md", "area": "F1", "status": "OPEN_PROPOSITION"},
+    {"id": "SP-04", "file": "SP-04-q1-m23-terminal-schedule.md", "area": "Gate-4", "status": "OPEN_PROPOSITION"},
+    {"id": "SP-05", "file": "SP-05-q1-pilot-complete-edge.md", "area": "Gate-5/F2", "status": "OPEN_PROPOSITION"},
+    {"id": "SP-06", "file": "SP-06-postg-c9-total-dispatch.md", "area": "F2", "status": "OPEN_PROPOSITION"},
+    {"id": "SP-07", "file": "SP-07-c8-h4-atomic-closure.md", "area": "F2", "status": "OPEN_PROPOSITION"},
+    {"id": "SP-08", "file": "SP-08-high-support-c1-r3g.md", "area": "F2", "status": "OPEN_PROPOSITION"},
+    {"id": "SP-09", "file": "SP-09-high-support-cgt1.md", "area": "F2", "status": "OPEN_PROPOSITION"},
+    {"id": "SP-10", "file": "SP-10-high-support-noncanonical.md", "area": "F2", "status": "OPEN_PROPOSITION"},
+    {"id": "SP-11", "file": "SP-11-high-strict-carry.md", "area": "F3", "status": "OPEN_PROPOSITION"},
+    {"id": "SP-12", "file": "SP-12-high-stutter-k1.md", "area": "F3", "status": "OPEN_PROPOSITION"},
+    {"id": "SP-13", "file": "SP-13-high-stutter-odd-k.md", "area": "F3", "status": "OPEN_PROPOSITION"},
+    {"id": "SP-14", "file": "SP-14-qc1-integer-occurrence.md", "area": "F3", "status": "OPEN_PROPOSITION"},
+    {"id": "SP-15", "file": "SP-15-tr1-fresh-occurrence.md", "area": "F3", "status": "OPEN_PROPOSITION"},
+    {"id": "SP-16", "file": "SP-16-m3q5-r1-binding.md", "area": "F3", "status": "OPEN_PROPOSITION"},
+    {"id": "SP-17", "file": "SP-17-m3q5-nonminimal.md", "area": "F3", "status": "OPEN_PROPOSITION"},
+    {"id": "SP-18", "file": "SP-18-m3q5-regeneration.md", "area": "F3", "status": "OPEN_PROPOSITION"},
+    {"id": "SP-19", "file": "SP-19-m3q5-p2-one-sided.md", "area": "F3", "status": "OPEN_PROPOSITION"},
+    {"id": "SP-20", "file": "SP-20-m3q5-p2-two-sided.md", "area": "F3", "status": "OPEN_PROPOSITION"}
+  ]
+}
