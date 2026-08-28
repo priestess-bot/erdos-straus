@@ -21,11 +21,11 @@
 
 | 检查项 | 结果 |
 |---|---|
-| 命题文件数 | 20 |
-| manifest 条目数 | 20 |
-| 独立性声明 | 20/20 |
-| 命题定义/证明义务段落 | 20/20 |
-| 完成证据段落 | 20/20 |
+| 命题文件数 | 22 |
+| manifest 条目数 | 22 |
+| 独立性声明 | 22/22 |
+| 命题定义/证明义务段落 | 22/22 |
+| 完成证据段落 | 22/22 |
 | 外部路径作为前提 | 0 |
 | proposition-to-proposition 隐式引用 | 0 |
 | F1/F2/F3/T6/R1--R6/QC1/TR1 等项目标签作为命题前提 | 0 |
@@ -35,7 +35,8 @@
 | SP-02 状态 | ESTABLISHED（条件有限模型） |
 | SP-04 状态 | ESTABLISHED（六层 registered-prefix） |
 | SP-05 状态 | OPEN_PROPOSITION（complete-terminal boundary 已复验） |
-| 其余 SP 命题 | 18 OPEN_PROPOSITION |
+| SP-21 / SP-22 状态 | OPEN_PROPOSITION（P0 scope policy / P1 actual pilot） |
+| OPEN_PROPOSITION 总数 | 20 |
 
 SP-02 的状态已更新为 ESTABLISHED，因为其 dossier 现包含完整的条件证明、
 形式化 tie-break/StateChangeRegistry 修订、独立标准库 verifier

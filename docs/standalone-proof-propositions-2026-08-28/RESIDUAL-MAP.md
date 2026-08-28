@@ -16,8 +16,10 @@
 
 | 缺口 | 命题 | 需要的最终结果 |
 |---|---|---|
+| scope-bound terminal priority | SP-21 | 每个 selected branch 完整清空所有 earlier policy actions；不把 scope MISS 升格为 global MISS |
+| actual scoped q=1 phase-root pilot | SP-22 | actual source、policy clearance、E1--E5、common admission 与 re-entry |
 | registered natural Bradford prefix | SP-04（六层条件定理已证） | \(M_{23}\) 全 divisor schedule 与独立重放已完成；production authority/全局 terminal schedule 仍未注册 |
-| 首条 q=1 nonterminal edge | SP-05（complete-terminal 边界已证） | 数学上的 complete MISS 等价于 Erdős--Straus 反例；没有 actual complete-miss source 时不得签发 VERIFIED_SUCCESSOR |
+| complete-terminal nonterminal edge | SP-05（反例边界已证） | complete MISS 等价于 Erdős--Straus 反例；不再作为当前 producer 主攻目标 |
 | 共享边逻辑合同 | SP-01 | 固定势上的良基归纳 |
 
 ## F2
@@ -50,3 +52,4 @@
 该映射本身不声称任何 residual 已关闭。命题完成仍必须满足各文件的
 FAMILY_EMPTY、TERMINAL 或 VERIFIED_SUCCESSOR 证据条件，并额外通过实际 source、
 E1--E5、common admission、fixed E5、re-entry 和独立 replay。
+当前 P0/P1/P2 排序见 CURRENT-PROOF-PORTFOLIO-2026-08-29.md。

@@ -11,9 +11,9 @@
 
 ### 独立待证明命题包（2026-08-28）
 
-当前尚未闭合的 F1、q=1 pilot、F2 和 F3 缺口已拆成 20 个自包含 dossier。其中
+当前尚未闭合的 F1、q=1 pilot、F2 和 F3 缺口已拆成 22 个自包含 dossier。其中
 SP-02 已补入条件有限模型的完整证明与独立 verifier，SP-04 已补入六层 registered-prefix
-schedule 的完整证明与独立重放；二者标记为精确作用域内的 ESTABLISHED，其余 18 个仍为
+schedule 的完整证明与独立重放；二者标记为精确作用域内的 ESTABLISHED，其余 20 个仍为
 OPEN_PROPOSITION。每个文件重复给出自己的背景、定义、
 量词、证明义务、反例控制和完成证据，不把本仓库的代码、commit、测试或状态当作证明
 前提。目录索引和机器清单见
@@ -47,6 +47,8 @@ authority。SP-05 本身仍为 OPEN，不产生 production edge、queue 或 T6 c
 [proof-package review](docs/standalone-proof-propositions-2026-08-28/SP-05-complete-terminal-package-review-2026-08-29.md)
 和
 [reproduction](reproductions/sp05_complete_terminal_decision/SP-05-complete-proof.md)。
+当前重整后的 P0/P1/P2 研究组合与执行顺序见
+[proof portfolio](docs/standalone-proof-propositions-2026-08-28/CURRENT-PROOF-PORTFOLIO-2026-08-29.md)。
 
 ### T6 实时审计权威（2026-08-27）
 

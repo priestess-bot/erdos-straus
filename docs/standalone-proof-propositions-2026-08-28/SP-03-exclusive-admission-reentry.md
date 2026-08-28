@@ -3,6 +3,8 @@
 **状态：** OPEN_PROPOSITION
 **研究任务：** 证明递归证明程序只有一个持久准入路径，且每个非终止 target 都回到同一状态宇宙。
 **独立性：** 本文件自定义全部对象和证明义务；前提只限本文明确给出的对象与假设。
+**当前定位：** 本文件保留 all-producer 的全局量词；selected branch 的 scope-bound terminal
+priority clearance 已拆至 SP-21，应该先在一个 actual pilot 上建立后再推广。
 
 ## 背景与独立对象
 

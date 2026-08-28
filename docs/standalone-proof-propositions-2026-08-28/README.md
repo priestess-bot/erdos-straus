@@ -73,6 +73,8 @@ R   target re-enters the same selector domain
 | SP-18 | \(m=3,q=5\) regeneration p-free failure | F3-M3Q5-REGENERATION | terminal or paid macro |
 | SP-19 | \(p^2\) one-sided factor-pair leaf | F3-M3Q5-P2-ONE-SIDED | terminal/contradiction/successor |
 | SP-20 | \(p^2\) genuine two-sided leaf | F3-M3Q5-P2-TWO-SIDED | strict source-forward final macro |
+| SP-21 | scope-bound terminal-first 准入健全性 | 共享 P0 | 冻结 prior policy 的完整 clearance，不要求 global terminal MISS |
+| SP-22 | actual q=1,G scoped phase-root pilot | P1 q=1 | 第一条 policy-relative actual E1--E5/R pilot |
 
 ## 证明者交付格式
 
@@ -94,12 +96,15 @@ reproductions/sp04_q1_m23/，并通过 tests/test_t6_sp04_q1_m23_package.py 验�
 SP-05 的 complete-terminal decision 包位于 reproductions/sp05_complete_terminal_decision/；
 它严格保持 SP-05 的 actual nonterminal-edge 命题为开放，因为 complete MISS 正是
 Erdős--Straus 反例条件，而包本身不签发 actualness、admission 或 queue authority。
+当前所有 dossier 的已解决部分、P0/P1/P2 分层和推荐执行链见
+CURRENT-PROOF-PORTFOLIO-2026-08-29.md。
 
 ## 状态纪律
 
-截至目录创建日，18 个命题仍是 OPEN_PROPOSITION；SP-02 已补入条件有限模型的完整证明，
+截至本次整理，20 个命题仍是 OPEN_PROPOSITION；SP-02 已补入条件有限模型的完整证明，
 SP-04 已补入六层 registered-prefix schedule 的完整证明、两套独立实现和控制，二者状态均
 为 ESTABLISHED。这里的 ESTABLISHED 只表示各自精确作用域内的命题成立，不表示当前仓库
 的 concrete constructor/source、production terminal authority 或 F1/F2/F3/T6 已闭合。
 SP-05 已有完整 terminal-decision 与条件 phase-root branch 的边界证明，但这不提供一条
-实际 complete-miss source，因此仍属于上述 18 个 OPEN_PROPOSITION。
+实际 complete-miss source，因此仍属于上述 20 个 OPEN_PROPOSITION。SP-21、SP-22 是该边界
+之后新增的 P0/P1 问题，均未证明。
