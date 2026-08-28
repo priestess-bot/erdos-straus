@@ -1,0 +1,335 @@
+{
+  "authority_boundary": "REFERENCE_SOURCE_SHAPE_ONLY_NOT_REPOSITORY_ACTUALNESS",
+  "conclusion": "TERMINAL_PREEMPTS_SUCCESSOR",
+  "head_sha": "7dff8a9e7338814e83ab839c33b8b58c28f4ea0d",
+  "source_independent_replay": {
+    "accepted": true,
+    "digest": "287609c971e41cbe6657eee41a63318e9652757b65e9e3de87c8d8c0bcaa82cc",
+    "outcome": "HIT"
+  },
+  "source_state": {
+    "artifact_class": "persistent_state",
+    "branch_id": "q1_g_registered_prefix_miss_base_v1",
+    "consumer": "t6_selector",
+    "equation_rank": 21169,
+    "facts": {
+      "absorb_m": null,
+      "absorb_r_epsilon": 0,
+      "atomic_arm": "NONE",
+      "carrier_M": null,
+      "chart_K": null,
+      "chart_R": null,
+      "dispatch_status": "NONE",
+      "endpoint_fiber": "G",
+      "full_carrier_scope": false,
+      "is_overflow": false,
+      "major_phase": "TYPEII_G_HANDOFF",
+      "overflow_d": null,
+      "pre_a": null,
+      "proper_root_height": null,
+      "proper_root_height_class": "NONE",
+      "proper_root_k": null,
+      "proper_root_r": null,
+      "provenance_kind": "ORDINARY_ENDPOINT",
+      "relation_q": 1,
+      "reset_carrier": null,
+      "same_chart_promotion_receipt": false,
+      "sink_scc_receipt": false,
+      "support_A": null,
+      "t5_eta_p": 0,
+      "type_i_protocol": null
+    },
+    "mark": {
+      "digest": "277f64848fce770b589c63911b61bfb2dc563e83fca9e93987daf2338ca13796",
+      "equation_rank": 21169,
+      "kind": "ROOT_SOL",
+      "receipt_id": "sp05-reference-root-mark:43181d97f1e21f7ae7df671fad37b14d3296e96a079f750ba3bd6c3a77f90b7c",
+      "root_context": 21169,
+      "schema_id": "selector_mark_receipt_v1",
+      "schema_version": 1
+    },
+    "parent_state_id": null,
+    "producer_id": "q1_root_v1_base_materializer_v1",
+    "queue_gate": "ROOT_INITIALIZER_OUTPUT",
+    "root_context": 21169,
+    "schema_id": "persistent_selector_state_v1",
+    "schema_version": 1,
+    "source_receipt": {
+      "branch_id": "q1_g_registered_prefix_miss_base_v1",
+      "digest": "3e7bcfd4625069c6032262a14fd1e4d08c01fce3811e28423242c7a4713b94d8",
+      "equation_rank": 21169,
+      "producer_id": "q1_root_v1_base_materializer_v1",
+      "receipt_id": "sp05-reference-root-initializer:43181d97f1e21f7ae7df671fad37b14d3296e96a079f750ba3bd6c3a77f90b7c",
+      "root_context": 21169,
+      "schema_id": "t6_initializer_nonterminal_receipt_v1",
+      "schema_version": 1,
+      "status": "NONTERMINAL_INITIALIZER_OUTPUT",
+      "target_facts_digest": "f523cb9fe2ede6d6a97f4276a6f6749c946d7390b3f1ecfc65b26b4462858ac5",
+      "terminal_first_digest": "2bf0cbdec0757d99a10567b03aed5a6bc94a2653fdd3de9a3fc49cce33433610"
+    },
+    "state_id": "state:db44e09e7676233e53717d7c93eac5763864b1565a980985bb29a6e683725101",
+    "terminal_first": {
+      "digest": "2bf0cbdec0757d99a10567b03aed5a6bc94a2653fdd3de9a3fc49cce33433610",
+      "outcome": "MISS",
+      "receipt_id": "sp05-reference-registered-prefix-miss:43181d97f1e21f7ae7df671fad37b14d3296e96a079f750ba3bd6c3a77f90b7c",
+      "schema_id": "terminal_first_receipt_v1",
+      "schema_version": 1,
+      "scope": "REGISTERED_PREFIX_M23_REFERENCE_FIXTURE"
+    }
+  },
+  "source_terminal_decision": {
+    "anchor_result": null,
+    "certificate": {
+      "certificate_kind": "GLOBAL_FACTOR_PAIR",
+      "denominators": [
+        5300,
+        3619899,
+        19185464700
+      ],
+      "equation_interface": {
+        "denominator": 21169,
+        "numerator": 4
+      },
+      "factor_pair": [
+        21169,
+        594637210000
+      ],
+      "reduced_residual": {
+        "a": 31,
+        "b": 112195700
+      },
+      "x": 5300
+    },
+    "constructor_id": "sp05_complete_scheduler_constructor_v1",
+    "coverage_theorem_id": "sp05_sorted_solution_factor_pair_bijection_v1",
+    "digest": "287609c971e41cbe6657eee41a63318e9652757b65e9e3de87c8d8c0bcaa82cc",
+    "global_result": {
+      "certificate": {
+        "certificate_kind": "GLOBAL_FACTOR_PAIR",
+        "denominators": [
+          5300,
+          3619899,
+          19185464700
+        ],
+        "equation_interface": {
+          "denominator": 21169,
+          "numerator": 4
+        },
+        "factor_pair": [
+          21169,
+          594637210000
+        ],
+        "reduced_residual": {
+          "a": 31,
+          "b": 112195700
+        },
+        "x": 5300
+      },
+      "factor_pairs_checked": 1,
+      "outcome": "HIT",
+      "stage": "GLOBAL_FACTOR_PAIR",
+      "x_bounds": [
+        5293,
+        15876
+      ],
+      "x_index": 7,
+      "x_positions_seen": 8
+    },
+    "head_sha": "7dff8a9e7338814e83ab839c33b8b58c28f4ea0d",
+    "ordinary_q1_g": {
+      "X": 5293,
+      "X_factorization": [
+        [
+          67,
+          1
+        ],
+        [
+          79,
+          1
+        ]
+      ],
+      "p": 21169,
+      "t": 882
+    },
+    "outcome": "HIT",
+    "p": 21169,
+    "prefix_result": {
+      "checks": 204,
+      "divisor_positions": 102,
+      "global_exhaustion": false,
+      "ordered_gaps": [
+        3,
+        7,
+        11,
+        15,
+        19,
+        23
+      ],
+      "outcome": "MISS_REGISTERED_PRIORITY_COMPLETE",
+      "stage": "M23_PREFIX"
+    },
+    "projection_digest": null,
+    "projection_id": null,
+    "receipt_type": "SP05CompleteTerminalDecisionV1",
+    "schedule_id": "q1_complete_terminal_m23_then_factor_pairs_v1",
+    "schedule_semantics": "M23_PREFIX_THEN_GLOBAL_SORTED_FACTOR_PAIR_EXHAUSTION",
+    "schema_version": 1,
+    "source_state_digest": "1fa32505531a712bf0cbc46436fa6842339b9d586888e92516d67100fb446efe",
+    "source_state_id": "state:db44e09e7676233e53717d7c93eac5763864b1565a980985bb29a6e683725101",
+    "subject_digest": "1fa32505531a712bf0cbc46436fa6842339b9d586888e92516d67100fb446efe",
+    "subject_id": "state:db44e09e7676233e53717d7c93eac5763864b1565a980985bb29a6e683725101",
+    "subject_kind": "SOURCE_STATE"
+  },
+  "target_independent_replay": {
+    "accepted": true,
+    "digest": "dfb5baa63d5f210fec3568c2e3936d6ab916d3e51f76be8f3c151f2298cd0986",
+    "outcome": "HIT"
+  },
+  "target_projection": {
+    "K": 74700109,
+    "R": 14115,
+    "artifact_type": "CanonicalPhaseRootProjectionV2",
+    "equation_rank": 21169,
+    "facts": {
+      "absorb_m": null,
+      "absorb_r_epsilon": 0,
+      "atomic_arm": "NONE",
+      "carrier_M": null,
+      "chart_K": 74700109,
+      "chart_R": 14115,
+      "dispatch_status": "NONE",
+      "endpoint_fiber": "NONE",
+      "full_carrier_scope": true,
+      "is_overflow": false,
+      "major_phase": "TYPEI",
+      "overflow_d": null,
+      "pre_a": null,
+      "proper_root_height": null,
+      "proper_root_height_class": "NONE",
+      "proper_root_k": null,
+      "proper_root_r": null,
+      "provenance_kind": "FULL_CARRIER_POST_G",
+      "relation_q": null,
+      "reset_carrier": null,
+      "same_chart_promotion_receipt": false,
+      "sink_scc_receipt": false,
+      "support_A": 1,
+      "t5_eta_p": 0,
+      "type_i_protocol": "CHARGED"
+    },
+    "mark_kind": "ROOT_SOL",
+    "projection_id": "phase-root-projection:ccee257f8140c2a5f2bdeffe3d86ae7f8d58d78d82c7aee483650a0d8e63fc65",
+    "root_context": 21169,
+    "schema_version": 1,
+    "t": 882,
+    "tie_break_rule_id": "q1_phase_root_closed_form_no_caller_tie_break_v1",
+    "x": 5293
+  },
+  "target_terminal_decision": {
+    "anchor_result": {
+      "outcome": "NOT_REACHED",
+      "reason": "p-only complete HIT preempted target continuation"
+    },
+    "certificate": {
+      "certificate_kind": "GLOBAL_FACTOR_PAIR",
+      "denominators": [
+        5300,
+        3619899,
+        19185464700
+      ],
+      "equation_interface": {
+        "denominator": 21169,
+        "numerator": 4
+      },
+      "factor_pair": [
+        21169,
+        594637210000
+      ],
+      "reduced_residual": {
+        "a": 31,
+        "b": 112195700
+      },
+      "x": 5300
+    },
+    "constructor_id": "sp05_complete_scheduler_constructor_v1",
+    "coverage_theorem_id": "sp05_sorted_solution_factor_pair_bijection_v1",
+    "digest": "dfb5baa63d5f210fec3568c2e3936d6ab916d3e51f76be8f3c151f2298cd0986",
+    "global_result": {
+      "certificate": {
+        "certificate_kind": "GLOBAL_FACTOR_PAIR",
+        "denominators": [
+          5300,
+          3619899,
+          19185464700
+        ],
+        "equation_interface": {
+          "denominator": 21169,
+          "numerator": 4
+        },
+        "factor_pair": [
+          21169,
+          594637210000
+        ],
+        "reduced_residual": {
+          "a": 31,
+          "b": 112195700
+        },
+        "x": 5300
+      },
+      "factor_pairs_checked": 1,
+      "outcome": "HIT",
+      "stage": "GLOBAL_FACTOR_PAIR",
+      "x_bounds": [
+        5293,
+        15876
+      ],
+      "x_index": 7,
+      "x_positions_seen": 8
+    },
+    "head_sha": "7dff8a9e7338814e83ab839c33b8b58c28f4ea0d",
+    "hit_family": "P_ONLY_COMPLETE_SCHEDULE",
+    "ordinary_q1_g": {
+      "X": 5293,
+      "X_factorization": [
+        [
+          67,
+          1
+        ],
+        [
+          79,
+          1
+        ]
+      ],
+      "p": 21169,
+      "t": 882
+    },
+    "outcome": "HIT",
+    "p": 21169,
+    "prefix_result": {
+      "checks": 204,
+      "divisor_positions": 102,
+      "global_exhaustion": false,
+      "ordered_gaps": [
+        3,
+        7,
+        11,
+        15,
+        19,
+        23
+      ],
+      "outcome": "MISS_REGISTERED_PRIORITY_COMPLETE",
+      "stage": "M23_PREFIX"
+    },
+    "projection_digest": "21e92b714036acb50dac006a696af38f433eea6300222ee3f2a66e7da9476d3c",
+    "projection_id": "phase-root-projection:ccee257f8140c2a5f2bdeffe3d86ae7f8d58d78d82c7aee483650a0d8e63fc65",
+    "receipt_type": "SP05CompleteTerminalDecisionV1",
+    "schedule_id": "q1_phase_root_complete_terminal_then_anchor_v1",
+    "schedule_semantics": "INDEPENDENT_P_ONLY_COMPLETE_REPLAY_THEN_PHASE_ROOT_ANCHOR",
+    "schema_version": 1,
+    "source_state_digest": "1fa32505531a712bf0cbc46436fa6842339b9d586888e92516d67100fb446efe",
+    "source_state_id": "state:db44e09e7676233e53717d7c93eac5763864b1565a980985bb29a6e683725101",
+    "subject_digest": "21e92b714036acb50dac006a696af38f433eea6300222ee3f2a66e7da9476d3c",
+    "subject_id": "phase-root-projection:ccee257f8140c2a5f2bdeffe3d86ae7f8d58d78d82c7aee483650a0d8e63fc65",
+    "subject_kind": "TARGET_PROJECTION"
+  }
+}

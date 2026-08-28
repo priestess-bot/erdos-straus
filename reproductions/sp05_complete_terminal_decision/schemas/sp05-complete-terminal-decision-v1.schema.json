@@ -1,0 +1,306 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/sp05-complete-terminal-decision-v1.schema.json",
+  "title": "SP05CompleteTerminalDecisionV1",
+  "oneOf": [
+    {"$ref": "#/$defs/sourceDecision"},
+    {"$ref": "#/$defs/targetDecision"}
+  ],
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "headSha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "identifier": {"type": "string", "minLength": 1},
+    "plainPositiveInteger": {"type": "integer", "minimum": 1},
+    "plainNonnegativeInteger": {"type": "integer", "minimum": 0},
+    "triple": {
+      "type": "array",
+      "prefixItems": [
+        {"$ref": "#/$defs/plainPositiveInteger"},
+        {"$ref": "#/$defs/plainPositiveInteger"},
+        {"$ref": "#/$defs/plainPositiveInteger"}
+      ],
+      "items": false,
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "equationInterface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"const": 4},
+        "denominator": {"$ref": "#/$defs/plainPositiveInteger"}
+      }
+    },
+    "bradfordCertificate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["certificate_kind", "gap", "divisor", "denominators", "equation_interface"],
+      "properties": {
+        "certificate_kind": {"enum": ["TYPEI", "TYPEII"]},
+        "gap": {"$ref": "#/$defs/plainPositiveInteger"},
+        "divisor": {"$ref": "#/$defs/plainPositiveInteger"},
+        "denominators": {"$ref": "#/$defs/triple"},
+        "equation_interface": {"$ref": "#/$defs/equationInterface"}
+      }
+    },
+    "globalCertificate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["certificate_kind", "x", "reduced_residual", "factor_pair", "denominators", "equation_interface"],
+      "properties": {
+        "certificate_kind": {"const": "GLOBAL_FACTOR_PAIR"},
+        "x": {"$ref": "#/$defs/plainPositiveInteger"},
+        "reduced_residual": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["a", "b"],
+          "properties": {
+            "a": {"$ref": "#/$defs/plainPositiveInteger"},
+            "b": {"$ref": "#/$defs/plainPositiveInteger"}
+          }
+        },
+        "factor_pair": {
+          "type": "array",
+          "prefixItems": [
+            {"$ref": "#/$defs/plainPositiveInteger"},
+            {"$ref": "#/$defs/plainPositiveInteger"}
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "denominators": {"$ref": "#/$defs/triple"},
+        "equation_interface": {"$ref": "#/$defs/equationInterface"}
+      }
+    },
+    "anchorCertificate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["certificate_kind", "denominators", "equation_interface"],
+      "properties": {
+        "certificate_kind": {"const": "PHASE_ROOT_ANCHOR_SINK"},
+        "denominators": {"$ref": "#/$defs/triple"},
+        "equation_interface": {"$ref": "#/$defs/equationInterface"}
+      }
+    },
+    "certificate": {
+      "oneOf": [
+        {"$ref": "#/$defs/bradfordCertificate"},
+        {"$ref": "#/$defs/globalCertificate"},
+        {"$ref": "#/$defs/anchorCertificate"}
+      ]
+    },
+    "prefixHit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["outcome", "stage", "gap_index", "divisor_index", "kind_index", "checks_before_hit", "divisor_positions_seen", "certificate"],
+      "properties": {
+        "outcome": {"const": "HIT"},
+        "stage": {"const": "M23_PREFIX"},
+        "gap_index": {"$ref": "#/$defs/plainNonnegativeInteger"},
+        "divisor_index": {"$ref": "#/$defs/plainNonnegativeInteger"},
+        "kind_index": {"enum": [0, 1]},
+        "checks_before_hit": {"$ref": "#/$defs/plainNonnegativeInteger"},
+        "divisor_positions_seen": {"$ref": "#/$defs/plainPositiveInteger"},
+        "certificate": {"$ref": "#/$defs/bradfordCertificate"}
+      }
+    },
+    "prefixMiss": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["outcome", "stage", "ordered_gaps", "checks", "divisor_positions", "global_exhaustion"],
+      "properties": {
+        "outcome": {"const": "MISS_REGISTERED_PRIORITY_COMPLETE"},
+        "stage": {"const": "M23_PREFIX"},
+        "ordered_gaps": {"const": [3, 7, 11, 15, 19, 23]},
+        "checks": {"$ref": "#/$defs/plainNonnegativeInteger"},
+        "divisor_positions": {"$ref": "#/$defs/plainNonnegativeInteger"},
+        "global_exhaustion": {"const": false}
+      }
+    },
+    "prefixResult": {
+      "oneOf": [
+        {"$ref": "#/$defs/prefixHit"},
+        {"$ref": "#/$defs/prefixMiss"}
+      ]
+    },
+    "xBounds": {
+      "type": "array",
+      "prefixItems": [
+        {"$ref": "#/$defs/plainPositiveInteger"},
+        {"$ref": "#/$defs/plainPositiveInteger"}
+      ],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "globalHit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["outcome", "stage", "x_index", "x_bounds", "x_positions_seen", "factor_pairs_checked", "certificate"],
+      "properties": {
+        "outcome": {"const": "HIT"},
+        "stage": {"const": "GLOBAL_FACTOR_PAIR"},
+        "x_index": {"$ref": "#/$defs/plainNonnegativeInteger"},
+        "x_bounds": {"$ref": "#/$defs/xBounds"},
+        "x_positions_seen": {"$ref": "#/$defs/plainPositiveInteger"},
+        "factor_pairs_checked": {"$ref": "#/$defs/plainPositiveInteger"},
+        "certificate": {"$ref": "#/$defs/globalCertificate"}
+      }
+    },
+    "globalMiss": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["outcome", "stage", "x_bounds", "x_positions", "factor_pairs_checked", "coverage_identity", "global_exhaustion"],
+      "properties": {
+        "outcome": {"const": "MISS_COMPLETE"},
+        "stage": {"const": "GLOBAL_FACTOR_PAIR"},
+        "x_bounds": {"$ref": "#/$defs/xBounds"},
+        "x_positions": {"$ref": "#/$defs/plainNonnegativeInteger"},
+        "factor_pairs_checked": {"$ref": "#/$defs/plainNonnegativeInteger"},
+        "coverage_identity": {"const": "(a*y-b)*(a*z-b)=b^2"},
+        "global_exhaustion": {"const": true}
+      }
+    },
+    "globalResult": {
+      "oneOf": [
+        {"type": "null"},
+        {"$ref": "#/$defs/globalHit"},
+        {"$ref": "#/$defs/globalMiss"}
+      ]
+    },
+    "anchorNotReached": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["outcome", "reason"],
+      "properties": {
+        "outcome": {"const": "NOT_REACHED"},
+        "reason": {"type": "string", "minLength": 1}
+      }
+    },
+    "anchorMiss": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["outcome", "gcd", "anchor", "reason"],
+      "properties": {
+        "outcome": {"const": "MISS"},
+        "gcd": {"$ref": "#/$defs/plainPositiveInteger"},
+        "anchor": {"$ref": "#/$defs/plainPositiveInteger"},
+        "reason": {"type": "string", "minLength": 1}
+      }
+    },
+    "anchorHit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["outcome", "gcd", "anchor", "certificate"],
+      "properties": {
+        "outcome": {"const": "HIT"},
+        "gcd": {"$ref": "#/$defs/plainPositiveInteger"},
+        "anchor": {"$ref": "#/$defs/plainPositiveInteger"},
+        "certificate": {"$ref": "#/$defs/anchorCertificate"}
+      }
+    },
+    "anchorResult": {
+      "oneOf": [
+        {"type": "null"},
+        {"$ref": "#/$defs/anchorNotReached"},
+        {"$ref": "#/$defs/anchorMiss"},
+        {"$ref": "#/$defs/anchorHit"}
+      ]
+    },
+    "factorizationEntry": {
+      "type": "array",
+      "prefixItems": [
+        {"$ref": "#/$defs/plainPositiveInteger"},
+        {"$ref": "#/$defs/plainPositiveInteger"}
+      ],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "ordinaryQ1G": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["p", "t", "X", "X_factorization"],
+      "properties": {
+        "p": {"$ref": "#/$defs/plainPositiveInteger"},
+        "t": {"$ref": "#/$defs/plainPositiveInteger"},
+        "X": {"$ref": "#/$defs/plainPositiveInteger"},
+        "X_factorization": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/factorizationEntry"}
+        }
+      }
+    },
+    "sourceDecision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "receipt_type", "schema_version", "head_sha", "schedule_id", "schedule_semantics",
+        "subject_kind", "subject_id", "subject_digest", "source_state_id", "source_state_digest",
+        "projection_id", "projection_digest", "p", "ordinary_q1_g", "prefix_result", "global_result",
+        "anchor_result", "outcome", "certificate", "coverage_theorem_id", "constructor_id", "digest"
+      ],
+      "properties": {
+        "receipt_type": {"const": "SP05CompleteTerminalDecisionV1"},
+        "schema_version": {"const": 1},
+        "head_sha": {"$ref": "#/$defs/headSha"},
+        "schedule_id": {"const": "q1_complete_terminal_m23_then_factor_pairs_v1"},
+        "schedule_semantics": {"const": "M23_PREFIX_THEN_GLOBAL_SORTED_FACTOR_PAIR_EXHAUSTION"},
+        "subject_kind": {"const": "SOURCE_STATE"},
+        "subject_id": {"$ref": "#/$defs/identifier"},
+        "subject_digest": {"$ref": "#/$defs/digest"},
+        "source_state_id": {"$ref": "#/$defs/identifier"},
+        "source_state_digest": {"$ref": "#/$defs/digest"},
+        "projection_id": {"type": "null"},
+        "projection_digest": {"type": "null"},
+        "p": {"$ref": "#/$defs/plainPositiveInteger"},
+        "ordinary_q1_g": {"$ref": "#/$defs/ordinaryQ1G"},
+        "prefix_result": {"$ref": "#/$defs/prefixResult"},
+        "global_result": {"$ref": "#/$defs/globalResult"},
+        "anchor_result": {"type": "null"},
+        "outcome": {"enum": ["HIT", "MISS_COMPLETE"]},
+        "certificate": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/certificate"}]},
+        "coverage_theorem_id": {"const": "sp05_sorted_solution_factor_pair_bijection_v1"},
+        "constructor_id": {"const": "sp05_complete_scheduler_constructor_v1"},
+        "digest": {"$ref": "#/$defs/digest"}
+      }
+    },
+    "targetDecision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "receipt_type", "schema_version", "head_sha", "schedule_id", "schedule_semantics",
+        "subject_kind", "subject_id", "subject_digest", "source_state_id", "source_state_digest",
+        "projection_id", "projection_digest", "p", "ordinary_q1_g", "prefix_result", "global_result",
+        "anchor_result", "outcome", "hit_family", "certificate", "coverage_theorem_id", "constructor_id", "digest"
+      ],
+      "properties": {
+        "receipt_type": {"const": "SP05CompleteTerminalDecisionV1"},
+        "schema_version": {"const": 1},
+        "head_sha": {"$ref": "#/$defs/headSha"},
+        "schedule_id": {"const": "q1_phase_root_complete_terminal_then_anchor_v1"},
+        "schedule_semantics": {"const": "INDEPENDENT_P_ONLY_COMPLETE_REPLAY_THEN_PHASE_ROOT_ANCHOR"},
+        "subject_kind": {"const": "TARGET_PROJECTION"},
+        "subject_id": {"$ref": "#/$defs/identifier"},
+        "subject_digest": {"$ref": "#/$defs/digest"},
+        "source_state_id": {"$ref": "#/$defs/identifier"},
+        "source_state_digest": {"$ref": "#/$defs/digest"},
+        "projection_id": {"$ref": "#/$defs/identifier"},
+        "projection_digest": {"$ref": "#/$defs/digest"},
+        "p": {"$ref": "#/$defs/plainPositiveInteger"},
+        "ordinary_q1_g": {"$ref": "#/$defs/ordinaryQ1G"},
+        "prefix_result": {"$ref": "#/$defs/prefixResult"},
+        "global_result": {"$ref": "#/$defs/globalResult"},
+        "anchor_result": {"$ref": "#/$defs/anchorResult"},
+        "outcome": {"enum": ["HIT", "MISS_COMPLETE"]},
+        "hit_family": {"type": ["string", "null"]},
+        "certificate": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/certificate"}]},
+        "coverage_theorem_id": {"const": "sp05_sorted_solution_factor_pair_bijection_v1"},
+        "constructor_id": {"const": "sp05_complete_scheduler_constructor_v1"},
+        "digest": {"$ref": "#/$defs/digest"}
+      }
+    }
+  }
+}

@@ -34,6 +34,7 @@
 | 外部状态修改 | 0 |
 | SP-02 状态 | ESTABLISHED（条件有限模型） |
 | SP-04 状态 | ESTABLISHED（六层 registered-prefix） |
+| SP-05 状态 | OPEN_PROPOSITION（complete-terminal boundary 已复验） |
 | 其余 SP 命题 | 18 OPEN_PROPOSITION |
 
 SP-02 的状态已更新为 ESTABLISHED，因为其 dossier 现包含完整的条件证明、
@@ -45,6 +46,8 @@ source fidelity，因此不改变 U-A0-01/U-A0-02/U-A0-03/U-A0-08、F1 或 T6 �
 实际命令输出与控制码见 SP-02-VERIFICATION.md。
 SP-04 的完整包复验、transcript 对比和 precedence 变异结果见
 reproductions/sp04_q1_m23/verification_report.txt。
+SP-05 的完整 terminal 决策、完整 MISS 与反例的等价边界，以及对 actual edge 仍未闭合的
+原因，见 reproductions/sp05_complete_terminal_decision/SP-05-complete-proof.md。
 
 ## 重要解释
 

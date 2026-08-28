@@ -152,3 +152,36 @@ source terminal certificate 不能直接改名成 target terminal certificate。
 
 若只完成代数 \(R,K\) 或一个未完成中间对象，命题仍未完成。只有满足全部条件的
 后继构造才能称为活动、已验证 producer。
+
+## 6. 完整 terminal 边界包（2026-08-29）
+
+已合并的 standalone package 给出一项对本命题至关重要、但不构成其闭合的结果：对每个
+固定 \(p\)，先执行本文件的 \(M_{23}\) registered prefix，再枚举
+
+\[
+\left\lfloor p/4\right\rfloor+1\le x\le\left\lfloor3p/4\right\rfloor
+\]
+
+中的排序首分母，并对约分 residual \(a/b\) 穷尽
+
+\[
+(ay-b)(az-b)=b^2
+\]
+
+的正因子对。这是一个有限 complete terminal decision：其 `MISS_COMPLETE` 当且仅当
+\(\mathsf{Sol}(4,p)=\varnothing\)。因此，对于 complete-terminal-first 语义，任何现实的
+ordinary \(q=1,G\) nonterminal phase-root edge 都要求一个 Erdős--Straus 反例；再加上
+actualness、admission、E1--E5 receipt 和 re-entry authority 后，才有条件性的唯一 edge。
+
+这排除了把 six-gap registered MISS 重命名为 `MISS_COMPLETE` 的做法。特别地，
+\(p=21169\) 是 ordinary \(q=1,G\) 且 \(M_{23}\) 全 MISS，但全局 fallback 在
+
+\[
+\frac4{21169}=\frac1{5300}+\frac1{3619899}+\frac1{19185464700}
+\]
+
+处 terminal-preempt。因此本命题仍是 OPEN_PROPOSITION；当前没有 actual complete-miss
+source，也没有 production successor authority。完整证明、两套独立实现和控制位于
+`reproductions/sp05_complete_terminal_decision/`，合并复查记录见
+`SP-05-complete-terminal-package-review-2026-08-29.md`。这些文件是结果的证据与解释，
+不是本 dossier 的隐藏前提。

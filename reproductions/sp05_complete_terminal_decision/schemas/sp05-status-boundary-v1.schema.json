@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/sp05-status-boundary-v1.schema.json",
+  "title": "SP05StatusBoundaryV1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["head_sha", "proved", "not_issued", "status", "reason"],
+  "properties": {
+    "head_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "proved": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "not_issued": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "status": {"const": "OPEN_PROPOSITION_FOR_FIRST_ACTUAL_NONTERMINAL_EDGE"},
+    "reason": {"type": "string", "minLength": 1}
+  }
+}

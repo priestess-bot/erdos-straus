@@ -4,7 +4,7 @@
 可核查数学主张和计算复现。`研究进展综述.md` 是阅读入口；`papers/`、
 `claims/`、`concepts/` 中的 Markdown/YAML 文件是知识库的事实源。
 
-当前文献快照审计至 2026-07-31；当前证明前沿和本轮旗舰命题核验至 2026-08-28。论文卡、
+当前文献快照审计至 2026-07-31；当前证明前沿和本轮旗舰命题核验至 2026-08-29。论文卡、
 主张卡、概念卡及各状态的实时数量以 `python scripts/kb.py status` 和自动生成的
 `index/theorem-ledger.md` 为准，不在入口文档手工复制。其中被撤回论文和存在关键证明
 缺口的预印本仍会收录，但用独立状态标出。
@@ -36,6 +36,17 @@ global_exhaustion=false。该结果不等于 production COMPLETE schedule、actu
 [SP-04 dossier](docs/standalone-proof-propositions-2026-08-28/SP-04-q1-m23-terminal-schedule.md)
 和
 [SP-04 evidence](reproductions/sp04_q1_m23/verification_report.txt)。
+
+SP-05 的完整 terminal-decision 包已复验并合并。它给出对每个固定 \(p\) 的有限排序
+factor-pair 穷尽：先执行 \(M_{23}\) prefix，随后穷尽所有排序三分母解，故
+`MISS_COMPLETE` 当且仅当 \(4/p\) 没有正整数三分母解。该结果同时澄清了 SP-05 的真正
+边界：一条现实的 complete-terminal-first ordinary \(q=1,G\) nonterminal phase-root edge
+需要这样的 complete MISS，因而等价地需要一个 Erdős--Straus 反例及另行签发的 actual/admission
+authority。SP-05 本身仍为 OPEN，不产生 production edge、queue 或 T6 closure。见
+[SP-05 boundary claim](claims/t6-sp05-complete-terminal-decision-boundary.md)、
+[proof-package review](docs/standalone-proof-propositions-2026-08-28/SP-05-complete-terminal-package-review-2026-08-29.md)
+和
+[reproduction](reproductions/sp05_complete_terminal_decision/SP-05-complete-proof.md)。
 
 ### T6 实时审计权威（2026-08-27）
 

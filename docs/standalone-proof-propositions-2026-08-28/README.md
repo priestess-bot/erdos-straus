@@ -57,7 +57,7 @@ R   target re-enters the same selector domain
 | SP-02 | 全 constructor/source 信号的穷尽分类（抽象条件模型） | F1 U-A0-01 | 给定良构有限表时 unknown = 0 |
 | SP-03 | 唯一准入、无绕过和全 target re-entry | F1 U-A0-02/03/08 | F1 共享基础 |
 | SP-04 | q=1 根的 \(M_{23}\) 全除子 terminal schedule | Gate 4 | 六层 registered-prefix schedule（已证明；尚未注册 production authority） |
-| SP-05 | q=1 phase-root 首条完整活动边 | Gate 5 / F2 post-G | 一个 VERIFIED_SUCCESSOR |
+| SP-05 | q=1 phase-root 首条完整活动边 | Gate 5 / F2 post-G | complete-terminal branch theorem 已证；现实 VERIFIED_SUCCESSOR 仍开放 |
 | SP-06 | post-G/C9 连续路径总分派 | F2-POSTG | terminal/empty/successor 分割 |
 | SP-07 | C8/H4 actual atomic closure | F2-C8 | atomic leaves 全闭合 |
 | SP-08 | high-support \(C=1\) 的 \(R=3\)-G 分支 | F2-HIGH-SUPPORT-C1 | 无 upward ABSORB |
@@ -91,6 +91,9 @@ counterexamples.md 所有边界控制和失败尝试
 SP-02 的独立运行记录见 SP-02-VERIFICATION.md；该记录验证抽象有限模型和负控，不替代
 具体仓库的 constructor/source 完备性证明。SP-04 的解包证据和独立重放记录位于
 reproductions/sp04_q1_m23/，并通过 tests/test_t6_sp04_q1_m23_package.py 验证。
+SP-05 的 complete-terminal decision 包位于 reproductions/sp05_complete_terminal_decision/；
+它严格保持 SP-05 的 actual nonterminal-edge 命题为开放，因为 complete MISS 正是
+Erdős--Straus 反例条件，而包本身不签发 actualness、admission 或 queue authority。
 
 ## 状态纪律
 
@@ -98,3 +101,5 @@ reproductions/sp04_q1_m23/，并通过 tests/test_t6_sp04_q1_m23_package.py 验�
 SP-04 已补入六层 registered-prefix schedule 的完整证明、两套独立实现和控制，二者状态均
 为 ESTABLISHED。这里的 ESTABLISHED 只表示各自精确作用域内的命题成立，不表示当前仓库
 的 concrete constructor/source、production terminal authority 或 F1/F2/F3/T6 已闭合。
+SP-05 已有完整 terminal-decision 与条件 phase-root branch 的边界证明，但这不提供一条
+实际 complete-miss source，因此仍属于上述 18 个 OPEN_PROPOSITION。

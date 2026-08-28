@@ -17,7 +17,7 @@
 | 缺口 | 命题 | 需要的最终结果 |
 |---|---|---|
 | registered natural Bradford prefix | SP-04（六层条件定理已证） | \(M_{23}\) 全 divisor schedule 与独立重放已完成；production authority/全局 terminal schedule 仍未注册 |
-| 首条 q=1 nonterminal edge | SP-05 | 完整 E1--E5 + re-entry |
+| 首条 q=1 nonterminal edge | SP-05（complete-terminal 边界已证） | 数学上的 complete MISS 等价于 Erdős--Straus 反例；没有 actual complete-miss source 时不得签发 VERIFIED_SUCCESSOR |
 | 共享边逻辑合同 | SP-01 | 固定势上的良基归纳 |
 
 ## F2
