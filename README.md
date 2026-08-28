@@ -4,7 +4,7 @@
 可核查数学主张和计算复现。`研究进展综述.md` 是阅读入口；`papers/`、
 `claims/`、`concepts/` 中的 Markdown/YAML 文件是知识库的事实源。
 
-当前文献快照审计至 2026-07-31；当前证明前沿和本轮旗舰命题核验至 2026-08-27。论文卡、
+当前文献快照审计至 2026-07-31；当前证明前沿和本轮旗舰命题核验至 2026-08-28。论文卡、
 主张卡、概念卡及各状态的实时数量以 `python scripts/kb.py status` 和自动生成的
 `index/theorem-ledger.md` 为准，不在入口文档手工复制。其中被撤回论文和存在关键证明
 缺口的预印本仍会收录，但用独立状态标出。
@@ -12,8 +12,9 @@
 ### 独立待证明命题包（2026-08-28）
 
 当前尚未闭合的 F1、q=1 pilot、F2 和 F3 缺口已拆成 20 个自包含 dossier。其中
-SP-02 已补入条件有限模型的完整证明与独立 verifier，标记为抽象定理
-ESTABLISHED；其余 19 个仍为 OPEN_PROPOSITION。每个文件重复给出自己的背景、定义、
+SP-02 已补入条件有限模型的完整证明与独立 verifier，SP-04 已补入六层 registered-prefix
+schedule 的完整证明与独立重放；二者标记为精确作用域内的 ESTABLISHED，其余 18 个仍为
+OPEN_PROPOSITION。每个文件重复给出自己的背景、定义、
 量词、证明义务、反例控制和完成证据，不把本仓库的代码、commit、测试或状态当作证明
 前提。目录索引和机器清单见
 [standalone proof propositions](docs/standalone-proof-propositions-2026-08-28/README.md)；
@@ -24,6 +25,17 @@ SP-02 的结论仅适用于显式、有限、良构且已提供 selector-totalit
 F1、F2、F3 或 T6 状态。完整证明与边界见
 [SP-02 claim](claims/t6-sp02-finite-constructor-source-completeness.md)和
 [SP-02 dossier](docs/standalone-proof-propositions-2026-08-28/SP-02-constructor-source-completeness.md)。
+
+SP-04 现已完成六层 \(M_{23}=\{3,7,11,15,19,23\}\) registered-prefix schedule 的
+完整证明与独立重放：constructor 使用因子指数笛卡尔积，independent verifier 使用互补
+除子扫描；42 个注册 gap replay、831 行 divisor transcript、884 行素性 transcript 和
+七个控制均通过。\(p=21169\) 的六层 MISS 与 gap 31、\(d=1\) Type-II 证书共同固定
+global_exhaustion=false。该结果不等于 production COMPLETE schedule、actual source/E1
+或 Gate 4/5 closure。见
+[SP-04 claim](claims/t6-sp04-q1-m23-registered-prefix-terminal-schedule.md)、
+[SP-04 dossier](docs/standalone-proof-propositions-2026-08-28/SP-04-q1-m23-terminal-schedule.md)
+和
+[SP-04 evidence](reproductions/sp04_q1_m23/verification_report.txt)。
 
 ### T6 实时审计权威（2026-08-27）
 

@@ -16,7 +16,7 @@
 
 | 缺口 | 命题 | 需要的最终结果 |
 |---|---|---|
-| registered natural Bradford prefix | SP-04 | \(M_{23}\) 六层全 divisor schedule |
+| registered natural Bradford prefix | SP-04（六层条件定理已证） | \(M_{23}\) 全 divisor schedule 与独立重放已完成；production authority/全局 terminal schedule 仍未注册 |
 | 首条 q=1 nonterminal edge | SP-05 | 完整 E1--E5 + re-entry |
 | 共享边逻辑合同 | SP-01 | 固定势上的良基归纳 |
 

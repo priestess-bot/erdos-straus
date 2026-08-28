@@ -33,7 +33,8 @@
 | 未定义的 specialized 路线名称 | 0；构造型 dossier 均把映射纳入存在量词 |
 | 外部状态修改 | 0 |
 | SP-02 状态 | ESTABLISHED（条件有限模型） |
-| 其余 SP 命题 | 19 OPEN_PROPOSITION |
+| SP-04 状态 | ESTABLISHED（六层 registered-prefix） |
+| 其余 SP 命题 | 18 OPEN_PROPOSITION |
 
 SP-02 的状态已更新为 ESTABLISHED，因为其 dossier 现包含完整的条件证明、
 形式化 tie-break/StateChangeRegistry 修订、独立标准库 verifier
@@ -42,6 +43,8 @@ SP-02 的状态已更新为 ESTABLISHED，因为其 dossier 现包含完整的�
 抽象模型；它不证明当前仓库 concrete constructor census 的闭世界、selector totality 或
 source fidelity，因此不改变 U-A0-01/U-A0-02/U-A0-03/U-A0-08、F1 或 T6 的状态。
 实际命令输出与控制码见 SP-02-VERIFICATION.md。
+SP-04 的完整包复验、transcript 对比和 precedence 变异结果见
+reproductions/sp04_q1_m23/verification_report.txt。
 
 ## 重要解释
 

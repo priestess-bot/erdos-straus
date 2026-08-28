@@ -1,41 +1,5 @@
 # SP-04：$q=1$ 根的 $M_{23}$ 全除子 terminal schedule
 
-**状态：** ESTABLISHED（六层 registered-prefix 条件定理与 evidence；不等于 production Gate 4）
-**复验：** 解包后的 constructor/verifier、逐行 transcript 和 7 个控制均已复验通过。
-
-## 0. 背景、假设与术语
-
-设 \(p\) 是素数，满足 \(p\equiv1\pmod4\)。固定整数 \(B\) 满足
-
-\[
-B\equiv3\pmod4,\qquad 3\le B\le p-2,
-\]
-
-并令
-
-\[
-\mathcal M_B=\{3,7,11,\ldots,B\}
-\]
-
-（即所有不超过 \(B\) 且同余 \(3\pmod4\) 的正 gap）。对每个
-\(m\in\mathcal M_B\)，\(x_m=(p+m)/4\) 是正整数，且 \(m<p\)。
-
-对正整数 \(d\)，定义 Bradford 两类候选集合
-
-\[
-\mathcal I_m(p)=\{d:d\mid x_m^2,\ m\mid px_m+d\},
-\]
-
-\[
-\mathcal{II}_m(p)=\{d:d\mid x_m^2,\ d\le x_m,\ m\mid x_m+d\}.
-\]
-
-`terminal certificate` 指直接满足
-\(4/p=1/x+1/y+1/z\) 的正整数三元组。`registered-prefix` 只量化
-\(\mathcal M_B\) 中明列的有限 gap；它不暗含对其他自然 gap 的断言。
-`producer` 只能在全部已注册候选均 MISS 后调用，且不属于本节的 terminal
-扫描。以下证明只使用标准整数算术、素因数分解唯一性和有限集基本事实。
-
 ## 完成结论
 
 下述命题成立。对任意满足题面条件的 $p,B$，由全部 $x_m^2$ 正除子形成的 registered-prefix schedule 是有限、确定、可重放且 terminal-first 的；它返回且只返回按 $(m,d,\tau)$ 字典序（$\mathrm I<\mathrm{II}$）的最早命中。若没有命中，则其结论严格等价于所有**已注册** gap 的两类集合均为空。
@@ -539,24 +503,3 @@ SP-04 INDEPENDENT VERIFICATION: PASS
 ```
 
 `sp04_constructor.py` 与 `sp04_verifier.py` 仅使用 Python 标准库。constructor transcript 与独立 verifier transcript、素性 transcript、分离的 definition/replay/source-binding 编码、变异负控结果和最终报告均随证据包提供。
-
-## 14. 仓库集成边界
-
-本 dossier 的完整证据目录为 reproductions/sp04_q1_m23/；其中
-sp04_constructor.py 使用因子分解和指数笛卡尔积生成除子，sp04_verifier.py
-使用不依赖前者的互补除子扫描重建全部结果。原始压缩包已移至
-docs/archive/proof-packages/standalone-proof-propositions-2026-08-28/，
-SHA-256 为
-
-~~~text
-55219cd1f34a35046119573f7c90d2a24177565d340c860e77ae95abe257924c
-~~~
-
-七个 binding 文件只绑定 p-only control payload 和六层 replay digest，不提供实际
-递归 source 谱系、E1、producer、queue 或 admission 权限。六层 MISS 的唯一合法语义仍是
-MISS_REGISTERED_PRIORITY_COMPLETE、REGISTERED_PRIORITY_ONLY、
-next_unchecked_gap=27、global_exhaustion=false。
-
-因此本命题完成的是六层 registered-prefix schedule 的数学覆盖、确定性优先序和独立
-复现；它不填充 legacy production registry 的 COMPLETE schedule，不改变
-U-A0-01、F1、F2、F3 或 T6 状态，也不声称 Erdős–Straus 猜想已经证明。

@@ -1,0 +1,34 @@
+SP-04 INDEPENDENT VERIFICATION: PASS
+- definition bytes recomputed; sha256=5f30a27886ab95f30c8adad094e19d70c6ea021e9251cc33b2468bdb2bcbca93
+- p=73: prime by all trial divisors 2..8; p mod 4=1
+- p=73: earliest=(7,1,II); triple=(20,219,4380); cross_product=76737600
+- p=241441: prime by all trial divisors 2..491; p mod 4=1
+- p=241441: earliest=(11,27,II); triple=(60363,1325511090,2963400960210); cross_product=948428487105143400350362800
+- p=2689: prime by all trial divisors 2..51; p mod 4=1
+- p=2689: earliest=(15,26,I); triple=(676,121186,8472598004); cross_product=2776359747671259776
+- p=12721: prime by all trial divisors 2..112; p mod 4=1
+- p=12721: earliest=(19,7,II); triple=(3185,2137128,972393240); cross_product=26475361169535532800
+- p=1201: prime by all trial divisors 2..34; p mod 4=1
+- p=1201: earliest=(23,34,I); triple=(306,15980,172727820); cross_product=3378473249846400
+- p=2521: prime by all trial divisors 2..50; p mod 4=1
+- p=2521: earliest=(23,8,II); triple=(636,70588,5611746); cross_product=1007734181392512
+- p=21169: prime by all trial divisors 2..145; p mod 4=1
+- p=21169: all six registered Type-I/Type-II hit sets are empty
+- p=21169,m=31,d=1,Type-II verified: (x,y,z)=(5300,3619899,19185464700); cross_product=1472328223019784360000
+- constructor and independent divisor transcripts matched exactly: 831 rows
+- constructor and independent primality transcripts matched exactly: 884 rows
+- outcome and replay indexes reconstructed from source integers, not accepted from digests
+- p=73: correct schedule terminal precedes producer; producer_calls=0
+- p=73: producer-first and local-miss-as-complete mutants rejected
+- p=241441: correct schedule terminal precedes producer; producer_calls=0
+- p=241441: producer-first and local-miss-as-complete mutants rejected
+- p=2689: correct schedule terminal precedes producer; producer_calls=0
+- p=2689: producer-first and local-miss-as-complete mutants rejected
+- p=12721: correct schedule terminal precedes producer; producer_calls=0
+- p=12721: producer-first and local-miss-as-complete mutants rejected
+- p=1201: correct schedule terminal precedes producer; producer_calls=0
+- p=1201: producer-first and local-miss-as-complete mutants rejected
+- p=2521: correct schedule terminal precedes producer; producer_calls=0
+- p=2521: producer-first and local-miss-as-complete mutants rejected
+- p=21169: correct schedule calls producer exactly after all six gap misses
+- global_exhaustion=false witnessed by registered MISS at p=21169 plus unregistered m=31 terminal hit
