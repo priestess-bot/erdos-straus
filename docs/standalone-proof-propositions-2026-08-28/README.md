@@ -54,7 +54,7 @@ R   target re-enters the same selector domain
 | ID | 独立命题 | 导航标签（非前提） | 目标闭合 |
 |---|---|---|---|
 | SP-01 | 结构化 E1--E5 边的抽象良基归纳 | 共享证明合同 | 为活动边提供逻辑基线 |
-| SP-02 | 全 constructor/source 信号的穷尽分类 | F1 U-A0-01 | unknown = 0 |
+| SP-02 | 全 constructor/source 信号的穷尽分类（抽象条件模型） | F1 U-A0-01 | 给定良构有限表时 unknown = 0 |
 | SP-03 | 唯一准入、无绕过和全 target re-entry | F1 U-A0-02/03/08 | F1 共享基础 |
 | SP-04 | q=1 根的 \(M_{23}\) 全除子 terminal schedule | Gate 4 | 一个可注册的 complete registered-prefix schedule |
 | SP-05 | q=1 phase-root 首条完整活动边 | Gate 5 / F2 post-G | 一个 VERIFIED_SUCCESSOR |
@@ -88,8 +88,12 @@ counterexamples.md 所有边界控制和失败尝试
 本目录的 SP-*.md 已将这四部分压缩在一个自包含文件中；若证明过程中产生长篇材料，可在同一
 命题目录下追加文件，但不得把另一个 SP-*.md 当作未声明的前提。
 
+SP-02 的独立运行记录见 SP-02-VERIFICATION.md；该记录验证抽象有限模型和负控，不替代
+具体仓库的 constructor/source 完备性证明。
+
 ## 状态纪律
 
-截至目录创建日，20 个命题均是 OPEN_PROPOSITION。这表示“缺口被精确定义”，不表示命题已证。
-任何命题只有在其文件末尾的验收条件全部满足后，才能改写为 ESTABLISHED；任何外部工作流的
-状态不得仅因本目录建立而改变。
+截至目录创建日，19 个命题仍是 OPEN_PROPOSITION；SP-02 已在同一 dossier 中补入条件
+有限模型的完整证明、形式边界、独立 verifier 和七个负控，状态改为 ESTABLISHED。
+这里的 ESTABLISHED 只表示抽象条件定理成立，不表示当前仓库的 concrete constructor/source
+关系已经完整实例化；F1、F2、F3 和 T6 的状态仍由各自机器收据决定。

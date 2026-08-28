@@ -11,14 +11,19 @@
 
 ### 独立待证明命题包（2026-08-28）
 
-当前尚未闭合的 F1、q=1 pilot、F2 和 F3 缺口已拆成 20 个自包含的
-OPEN_PROPOSITION dossier。每个文件重复给出自己的背景、定义、量词、证明义务、
-反例控制和完成证据，不把本仓库的代码、commit、测试或状态当作证明前提。目录索引和
-机器清单见
+当前尚未闭合的 F1、q=1 pilot、F2 和 F3 缺口已拆成 20 个自包含 dossier。其中
+SP-02 已补入条件有限模型的完整证明与独立 verifier，标记为抽象定理
+ESTABLISHED；其余 19 个仍为 OPEN_PROPOSITION。每个文件重复给出自己的背景、定义、
+量词、证明义务、反例控制和完成证据，不把本仓库的代码、commit、测试或状态当作证明
+前提。目录索引和机器清单见
 [standalone proof propositions](docs/standalone-proof-propositions-2026-08-28/README.md)；
 自包含性核对见
 [SELF-CONTAINED-AUDIT](docs/standalone-proof-propositions-2026-08-28/SELF-CONTAINED-AUDIT.md)。
-这些文件只精确定义缺口，不改变 F1、F2、F3 或 T6 状态。
+SP-02 的结论仅适用于显式、有限、良构且已提供 selector-totality 与 state-change
+闭世界证书的抽象关系表；它不证明当前 concrete constructor/source 表完整，因此不改变
+F1、F2、F3 或 T6 状态。完整证明与边界见
+[SP-02 claim](claims/t6-sp02-finite-constructor-source-completeness.md)和
+[SP-02 dossier](docs/standalone-proof-propositions-2026-08-28/SP-02-constructor-source-completeness.md)。
 
 ### T6 实时审计权威（2026-08-27）
 

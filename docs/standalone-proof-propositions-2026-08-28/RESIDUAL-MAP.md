@@ -7,7 +7,7 @@
 
 | 缺口 | 命题 | 需要的最终结果 |
 |---|---|---|
-| U-A0-01 全 constructor/source completeness | SP-02 | UNKNOWN = 0，所有 signal 有唯一处置 |
+| U-A0-01 全 constructor/source completeness | SP-02（抽象条件引理已证） | 在给定 finite well-formed model 上 UNKNOWN = 0；concrete source/constructor completeness 仍待实例化 |
 | U-A0-02 全 queue/no-bypass | SP-03 | 唯一持久写入路径 |
 | U-A0-03 全 target re-entry | SP-03 | 所有 target 回到同一 classifier |
 | U-A0-08 共享 E3 schema | SP-03 | 公共 schema/owner/grammar/admission |

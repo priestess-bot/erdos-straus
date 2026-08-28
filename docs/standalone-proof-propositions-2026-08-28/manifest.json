@@ -11,7 +11,7 @@
   ],
   "status_semantics": {
     "OPEN_PROPOSITION": "The obligation is precisely stated but not proved here.",
-    "ESTABLISHED": "A complete proof and the listed independent verification evidence exist in the same dossier."
+    "ESTABLISHED": "A complete proof exists in the dossier and every listed independent verification artifact is linked to an immutable repository path or included in the dossier."
   },
   "accepted_dispositions": [
     "FAMILY_EMPTY",
@@ -20,7 +20,7 @@
   ],
   "propositions": [
     {"id": "SP-01", "file": "SP-01-structured-edge-induction.md", "area": "shared", "status": "OPEN_PROPOSITION"},
-    {"id": "SP-02", "file": "SP-02-constructor-source-completeness.md", "area": "F1", "status": "OPEN_PROPOSITION"},
+    {"id": "SP-02", "file": "SP-02-constructor-source-completeness.md", "area": "F1", "status": "ESTABLISHED", "verification": "SP-02-VERIFICATION.md", "verifier": "reproductions/sp02_constructor_source_completeness.py", "tests": "tests/test_sp02_constructor_source_completeness.py"},
     {"id": "SP-03", "file": "SP-03-exclusive-admission-reentry.md", "area": "F1", "status": "OPEN_PROPOSITION"},
     {"id": "SP-04", "file": "SP-04-q1-m23-terminal-schedule.md", "area": "Gate-4", "status": "OPEN_PROPOSITION"},
     {"id": "SP-05", "file": "SP-05-q1-pilot-complete-edge.md", "area": "Gate-5/F2", "status": "OPEN_PROPOSITION"},

@@ -24,7 +24,7 @@
 | 命题文件数 | 20 |
 | manifest 条目数 | 20 |
 | 独立性声明 | 20/20 |
-| 待证明命题段落 | 20/20 |
+| 命题定义/证明义务段落 | 20/20 |
 | 完成证据段落 | 20/20 |
 | 外部路径作为前提 | 0 |
 | proposition-to-proposition 隐式引用 | 0 |
@@ -32,6 +32,16 @@
 | 未定义的 constructor/runtime 依赖 | 0 |
 | 未定义的 specialized 路线名称 | 0；构造型 dossier 均把映射纳入存在量词 |
 | 外部状态修改 | 0 |
+| SP-02 状态 | ESTABLISHED（条件有限模型） |
+| 其余 SP 命题 | 19 OPEN_PROPOSITION |
+
+SP-02 的状态已更新为 ESTABLISHED，因为其 dossier 现包含完整的条件证明、
+形式化 tie-break/StateChangeRegistry 修订、独立标准库 verifier
+(reproductions/sp02_constructor_source_completeness.py) 和聚焦测试
+(tests/test_sp02_constructor_source_completeness.py)。该状态仅适用于显式有限且良构的
+抽象模型；它不证明当前仓库 concrete constructor census 的闭世界、selector totality 或
+source fidelity，因此不改变 U-A0-01/U-A0-02/U-A0-03/U-A0-08、F1 或 T6 的状态。
+实际命令输出与控制码见 SP-02-VERIFICATION.md。
 
 ## 重要解释
 
