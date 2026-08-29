@@ -33,7 +33,7 @@ policy 中位于 selected branch 之前的 actions，不需要先证明所有可
 | SP-02 | ESTABLISHED：有限良构模型中 constructor 分类与 UNKNOWN 不可达 | 只解决抽象 A0，不解决 concrete inventory |
 | SP-04 | ESTABLISHED：M23 全除子 registered-prefix schedule | 可作为有限 policy action，不是 global terminal universe |
 | SP-05 | complete-terminal decision 与条件 phase-root branch 已证；实际 edge 仍 OPEN | 明确排除 complete-MISS 作为 pilot 前提 |
-| SP-21 | ESTABLISHED：abstract scope-bound safety；concrete policy instance 仍 OPEN | P0 从抽象安全证明转为实际 policy/authority 实例化 |
+| SP-21 | ESTABLISHED：abstract scope-bound safety；submitted prototype 已复现但 current-runtime concrete instance 仍 OPEN | P0 从抽象安全证明转为实际 policy/authority 实例化 |
 | T5 | 合同层 N7 良基势已闭合 | 为新 edge 提供 ticket grammar，不提供 edge existence |
 
 当前仍有 20 个 OPEN_PROPOSITION：旧 SP-01/03/05--20 共 18 个，加上新的
@@ -58,6 +58,9 @@ policy instance。它必须建立：
 global terminal-universe MISS，因而把任何真实 nonterminal branch 绑成反例搜索。
 SP-21 的已建立抽象结论仍要求所有 prior registered terminal/producer actions 的完整有序重放、
 actual source、E1--E5 和 R；concrete registry/authority/replayer 缺失，故这不是降低证明标准。
+2026-08-29 submitted C1 package 已把这套对象实现为可复现的 isolated pilot；它没有 external
+trust provenance、当前 Git/tree binding 或 production runtime adapter，故 P0 的剩余工作现在
+明确是把该设计接入现有合同，而不是再写一个平行 state machine。
 
 ### P0.2 SP-03 的 scoped 子目标：policy/no-bypass
 
@@ -84,6 +87,8 @@ policy-relative prior clearance。目标是把以下已知数学核接入真实�
 
 完成 SP-22 可首次验证“policy-relative terminal-first 与 actual E1--E5 edge 能共存”。
 它仍不等于 post-G totality 或 T6 closure。
+submitted v1 的 \(p=21169\) trace 可作为 adapter regression control，但目前不能作为
+actual pilot receipt：其 target/E5/queue/re-entry 均由私有 `PersistentPilotRuntime` 发出。
 
 ### P1.2 SP-15：TR1 \(D^\ast\) fresh occurrence
 

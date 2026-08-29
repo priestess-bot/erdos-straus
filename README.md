@@ -51,6 +51,11 @@ authority。SP-05 本身仍为 OPEN，不产生 production edge、queue 或 T6 c
 [proof portfolio](docs/standalone-proof-propositions-2026-08-28/CURRENT-PROOF-PORTFOLIO-2026-08-29.md)。
 其中 SP-21 的 abstract scope-bound safety theorem 已建立，但它尚未提供 concrete policy、
 actual source 或 producer authority，因此 F1/F2/F3/T6 状态不变。
+2026-08-29 收到的 SP-21/SP-22 concrete closure v1 已解压归档并在声明的历史基线复现：
+其 M23-priority pilot、独立 replay 和 \(p=21169\) trace 可作为后续 adapter 的回归材料。
+但签名 key 没有外部 provenance，`base_head_sha` 未在运行时与当前 checkout 比对，且 queue/
+re-entry 是独立 pilot runtime；因此 SP-21、SP-22、F1/F2/F3/T6 和猜想均不升级。完整复核见
+[concrete closure review](docs/standalone-proof-propositions-2026-08-28/SP-21-SP-22-concrete-closure-v1-review-2026-08-29.md)。
 
 ### T6 实时审计权威（2026-08-27）
 

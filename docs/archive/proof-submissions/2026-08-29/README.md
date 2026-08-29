@@ -21,3 +21,14 @@ passes repository formatting checks. Its mathematical content is unchanged.
 The reviewed, typeset canonical theorem is
 docs/standalone-proof-propositions-2026-08-28/SP-21-ABSTRACT-SAFETY-PROOF-2026-08-29.md.
 The abstract theorem is established; the concrete policy instance remains open.
+
+## SP-21/SP-22 Concrete Closure V1
+
+The extracted package is preserved at
+`sp21-sp22-concrete-closure-v1/`. Its received ZIP had SHA-256
+`5db5a12c2b91e80037b4949a856e68398de9877a72e1b678c56a1812ba9e81fa`, and its
+internal 25-file manifest was verified. The package is an archived,
+computationally reproduced scoped prototype, not an accepted closure of the
+active SP-21/SP-22 dossiers. See
+`SP-21-SP-22-concrete-closure-v1-ARCHIVAL-NOTE.md` and
+`docs/standalone-proof-propositions-2026-08-28/SP-21-SP-22-concrete-closure-v1-review-2026-08-29.md`.

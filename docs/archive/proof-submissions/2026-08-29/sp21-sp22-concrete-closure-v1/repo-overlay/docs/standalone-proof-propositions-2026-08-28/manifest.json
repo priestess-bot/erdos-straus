@@ -1,0 +1,42 @@
+{
+  "schema": "standalone_proposition_manifest_v1",
+  "created": "2026-08-28",
+  "updated": "2026-08-29",
+  "purpose": "Self-contained statements for Erdos-Straus selector proof obligations, including exact-scope established propositions.",
+  "external_document_dependencies": [],
+  "allowed_external_prerequisites": [
+    "standard integer arithmetic and divisibility",
+    "elementary finite set theory",
+    "well-founded induction on N^7 when a dossier explicitly defines the potential",
+    "the Erdős–Straus equation as restated in the directory README and each arithmetic dossier"
+  ],
+  "status_semantics": {
+    "OPEN_PROPOSITION": "The obligation is precisely stated but not proved here.",
+    "ESTABLISHED": "A complete proof exists in the dossier and every listed independent verification artifact is linked to an immutable repository path or included in the dossier. The status applies only to the dossier's exact quantified scope."
+  },
+  "accepted_dispositions": ["FAMILY_EMPTY", "TERMINAL", "VERIFIED_SUCCESSOR"],
+  "propositions": [
+    {"id":"SP-01","file":"SP-01-structured-edge-induction.md","area":"shared","status":"OPEN_PROPOSITION"},
+    {"id":"SP-02","file":"SP-02-constructor-source-completeness.md","area":"F1","status":"ESTABLISHED","verification":"SP-02-VERIFICATION.md","verifier":"reproductions/sp02_constructor_source_completeness.py","tests":"tests/test_sp02_constructor_source_completeness.py"},
+    {"id":"SP-03","file":"SP-03-exclusive-admission-reentry.md","area":"F1","status":"OPEN_PROPOSITION"},
+    {"id":"SP-04","file":"SP-04-q1-m23-terminal-schedule.md","area":"Gate-4","status":"ESTABLISHED","verification":"reproductions/sp04_q1_m23/verification_report.txt","verifier":"reproductions/sp04_q1_m23/sp04_verifier.py","tests":"tests/test_t6_sp04_q1_m23_package.py"},
+    {"id":"SP-05","file":"SP-05-q1-pilot-complete-edge.md","area":"Gate-5/F2","status":"OPEN_PROPOSITION"},
+    {"id":"SP-06","file":"SP-06-postg-c9-total-dispatch.md","area":"F2","status":"OPEN_PROPOSITION"},
+    {"id":"SP-07","file":"SP-07-c8-h4-atomic-closure.md","area":"F2","status":"OPEN_PROPOSITION"},
+    {"id":"SP-08","file":"SP-08-high-support-c1-r3g.md","area":"F2","status":"OPEN_PROPOSITION"},
+    {"id":"SP-09","file":"SP-09-high-support-cgt1.md","area":"F2","status":"OPEN_PROPOSITION"},
+    {"id":"SP-10","file":"SP-10-high-support-noncanonical.md","area":"F2","status":"OPEN_PROPOSITION"},
+    {"id":"SP-11","file":"SP-11-high-strict-carry.md","area":"F3","status":"OPEN_PROPOSITION"},
+    {"id":"SP-12","file":"SP-12-high-stutter-k1.md","area":"F3","status":"OPEN_PROPOSITION"},
+    {"id":"SP-13","file":"SP-13-high-stutter-odd-k.md","area":"F3","status":"OPEN_PROPOSITION"},
+    {"id":"SP-14","file":"SP-14-qc1-integer-occurrence.md","area":"F3","status":"OPEN_PROPOSITION"},
+    {"id":"SP-15","file":"SP-15-tr1-fresh-occurrence.md","area":"F3","status":"OPEN_PROPOSITION"},
+    {"id":"SP-16","file":"SP-16-m3q5-r1-binding.md","area":"F3","status":"OPEN_PROPOSITION"},
+    {"id":"SP-17","file":"SP-17-m3q5-nonminimal.md","area":"F3","status":"OPEN_PROPOSITION"},
+    {"id":"SP-18","file":"SP-18-m3q5-regeneration.md","area":"F3","status":"OPEN_PROPOSITION"},
+    {"id":"SP-19","file":"SP-19-m3q5-p2-one-sided.md","area":"F3","status":"OPEN_PROPOSITION"},
+    {"id":"SP-20","file":"SP-20-m3q5-p2-two-sided.md","area":"F3","status":"OPEN_PROPOSITION"},
+    {"id":"SP-21","file":"SP-21-scoped-terminal-priority-admissibility.md","area":"shared/P0","status":"ESTABLISHED","scope":"signed decidable ordinary q=1,G source-policy domain","verification":"reproductions/sp21_q1_p21169_concrete_selector_v1/independent-replay-v1.json","verifier":"scripts/t6_sp21_q1_p21169_independent_replayer_v1.py","constructor":"scripts/t6_sp21_q1_p21169_concrete_selector_v1.py","policy":"data/t6-sp21-q1-p21169/sp21-policy-registry-v1.json","tests":"tests/test_t6_sp21_q1_p21169_concrete_selector_v1.py"},
+    {"id":"SP-22","file":"SP-22-q1-scoped-phase-root-actual-edge.md","area":"Gate-5/P1","status":"ESTABLISHED","scope":"every externally admitted source in the signed decidable ordinary q=1,G predicate domain","verification":"reproductions/sp21_q1_p21169_concrete_selector_v1/independent-replay-v1.json","verifier":"scripts/t6_sp21_q1_p21169_independent_replayer_v1.py","constructor":"scripts/t6_sp21_q1_p21169_concrete_selector_v1.py","policy":"data/t6-sp21-q1-p21169/sp21-policy-registry-v1.json","tests":"tests/test_t6_sp21_q1_p21169_concrete_selector_v1.py"}
+  ]
+}

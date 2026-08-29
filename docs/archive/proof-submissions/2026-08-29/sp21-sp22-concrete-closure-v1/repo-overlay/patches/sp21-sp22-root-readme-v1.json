@@ -1,0 +1,15 @@
+{
+  "schema_id": "SP21SP22RootReadmePatchV1",
+  "base_head_sha": "e6e9e4a8c41b90a330b9ef333e542c18c2cb7be4",
+  "target": "README.md",
+  "replacements": [
+    {
+      "old": "当前尚未闭合的 F1、q=1 pilot、F2 和 F3 缺口已拆成 22 个自包含 dossier。其中\nSP-02 已补入条件有限模型的完整证明与独立 verifier，SP-04 已补入六层 registered-prefix\nschedule 的完整证明与独立重放；二者标记为精确作用域内的 ESTABLISHED，其余 20 个仍为\nOPEN_PROPOSITION。每个文件重复给出自己的背景、定义、",
+      "new": "F1、q=1 pilot、F2 和 F3 的证明义务已拆成 22 个自包含 dossier。其中 SP-02、\nSP-04、SP-21 和 SP-22 已在各自精确作用域补入完整证明与独立 verifier；四者标记为\nESTABLISHED，其余 18 个仍为 OPEN_PROPOSITION。每个文件重复给出自己的背景、定义、"
+    },
+    {
+      "old": "[reproduction](reproductions/sp05_complete_terminal_decision/SP-05-complete-proof.md)。\n当前重整后的 P0/P1/P2 研究组合与执行顺序见",
+      "new": "[reproduction](reproductions/sp05_complete_terminal_decision/SP-05-complete-proof.md)。\nSP-21/SP-22 现已在一个外部签名、可判定的 ordinary `q=1,G` source-policy domain 内闭合：\nM23 六个 terminal actions 位于 phase-root producer 之前，gap 31 被明确注册为 later；policy、\nauthority、actual root occurrence、branch、owner、artifact lock 和 independent replayer 全部绑定。\n对该域的每个 actual admitted source，selector 要么在最早 M23 HIT 终止，要么产生统一的\nE1--E5/R successor 并经隔离 common admission 实际 re-enter。`p=21169` 是完整正向 trace，\ngap 31 解仍作为反 global-MISS 控制。该一次性 research authority 不激活 production runtime；\nSP-03 globalization、F1/F2/F3、T6 和猜想均保持 OPEN。见\n[SP-21 dossier](docs/standalone-proof-propositions-2026-08-28/SP-21-scoped-terminal-priority-admissibility.md)、\n[SP-22 dossier](docs/standalone-proof-propositions-2026-08-28/SP-22-q1-scoped-phase-root-actual-edge.md)、\n[claim](claims/sp21-q1-p21169-concrete-selector-v1.md) 和\n[reproduction](reproductions/sp21_q1_p21169_concrete_selector_v1/README.md)。\n当前重整后的 P0/P1/P2 研究组合与执行顺序见"
+    }
+  ]
+}

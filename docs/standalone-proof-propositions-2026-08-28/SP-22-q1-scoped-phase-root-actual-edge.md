@@ -5,6 +5,9 @@
 **研究任务：** 在已冻结的 policy-relative terminal clearance 下，将一个 actual、
 admitted ordinary \(q=1,G\) source 连接到 canonical full-carrier Type-I phase root，
 并给出 current T5 contract 所需的 E1--E5 和 recursive re-entry。
+**Concrete candidate v1：** 一个 M23-priority pilot 已在其历史基线中计算复现，但它使用
+私有 `PersistentPilotRuntime`，且没有可验证的外部 authority/current-HEAD binding，故不构成
+本命题要求的 actual current-state edge；见 SP-21-SP-22-concrete-closure-v1-review-2026-08-29.md。
 **独立性：** 本文件重新定义 source、policy clearance、target、证书和验收量词；既有
 receipt、实现或历史 q=1 控制只能作为待独立重放的候选，不能作为逻辑前提。
 
@@ -159,6 +162,11 @@ self-report 写入 owner 均必须拒绝。
 * 无环 state/owner/bundle/admission serialization；
 * independent end-to-end replayer 与上述负控；
 * 一个真实 admitted source 的 terminal 或 verified-edge execution trace。
+
+2026-08-29 的 submitted v1 package 贡献了所需对象的可执行设计、\(p=21169\) positive trace
+和 scoped negative controls，但其 source/owner/T5/queue 均在独立 pilot runtime 中构造。
+在它被改接到当前 persistent selector、并由可外部验证的 authority 和当前 Git/tree binding
+固定前，不能把该 trace 记作本节的真实 admitted source。
 
 本命题不要求 global terminal-universe MISS；它也不证明 post-G Type-I body totality、
 F1 global constructor coverage、F2/F3 residual closure、T6 或 Erdős--Straus 猜想。

@@ -35,7 +35,7 @@
 | SP-02 状态 | ESTABLISHED（条件有限模型） |
 | SP-04 状态 | ESTABLISHED（六层 registered-prefix） |
 | SP-05 状态 | OPEN_PROPOSITION（complete-terminal boundary 已复验） |
-| SP-21 / SP-22 状态 | SP-21 abstract theorem ESTABLISHED、concrete instance OPEN；SP-22 OPEN |
+| SP-21 / SP-22 状态 | SP-21 abstract theorem ESTABLISHED、concrete current-runtime instance OPEN；SP-22 OPEN；submitted isolated prototype 仅 computationally reproduced |
 | OPEN_PROPOSITION 总数 | 20 |
 
 SP-02 的状态已更新为 ESTABLISHED，因为其 dossier 现包含完整的条件证明、
@@ -52,6 +52,9 @@ SP-05 的完整 terminal 决策、完整 MISS 与反例的等价边界，以及�
 SP-21 的 canonical abstract safety proof 与原始提交归档分别见
 SP-21-ABSTRACT-SAFETY-PROOF-2026-08-29.md 和
 docs/archive/proof-submissions/2026-08-29/。
+2026-08-29 submitted SP-21/SP-22 concrete closure v1 已完整解压归档并在其声明基线复现；
+独立 review 发现 authority provenance、current-HEAD binding 和 production runtime adapter
+均未闭合，故它不改变上述状态或 OPEN_PROPOSITION 总数。
 
 ## 重要解释
 

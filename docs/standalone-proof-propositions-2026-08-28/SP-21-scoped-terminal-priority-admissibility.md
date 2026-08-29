@@ -7,6 +7,9 @@
 independent executable replayer。
 **Canonical proof：** SP-21-ABSTRACT-SAFETY-PROOF-2026-08-29.md。
 **原始提交归档：** docs/archive/proof-submissions/2026-08-29/SP-21-submitted-proof-2026-08-29.md。
+**Concrete candidate v1：** 已复现并归档一个 M23-priority q=1,G pilot，但其 authority 和
+base-HEAD binding 未能接入当前 runtime，故不改变本 dossier 的 OPEN 状态；见
+SP-21-SP-22-concrete-closure-v1-review-2026-08-29.md。
 **独立性：** 本文件完整定义状态、动作策略、scope MISS、terminal、verified successor
 和剩余证明目标；不以仓库的现有 schema、代码或其他 SP 文件作为逻辑前提。
 
@@ -189,6 +192,11 @@ actual source 或 successor authority。
 * common admission、queue/re-entry 与 selected producer 的完整 E1--E5 receipts；
 * policy mutation、action reorder、earlier reject、earlier true producer、later-terminal
   global-miss relabel、source swap、queue bypass 的可重放负控。
+
+2026-08-29 的 submitted concrete closure v1 已提供上述证据的一个自建 pilot 版本，并在
+其声明基线中复现；但其 RSA key 没有外部 provenance，`base_head_sha` 没有和运行 checkout
+比对，且 admission/re-entry 属于私有 runtime。因此它只能作为下一版 concrete instance 的
+设计与回归材料，不能替代本节的 external authority 与 common admission 要求。
 
 本文件不证明某个 concrete producer guard 非空，不证明 SP-22、F1/F2/F3/T6 totality，
 也不改变 Erdős--Straus 猜想的状态。

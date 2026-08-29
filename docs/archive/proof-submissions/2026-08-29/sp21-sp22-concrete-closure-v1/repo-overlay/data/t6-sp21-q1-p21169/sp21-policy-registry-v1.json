@@ -1,0 +1,467 @@
+{
+  "payload": {
+    "admission_contract": {
+      "admission_gate_id": "common_successor_admission_gate_sp21_v1",
+      "allowed_queue_ingress_writer_ids": [
+        "unique_persistent_queue_ingress_sp21_v1"
+      ],
+      "classifier_id": "common_target_owner_classifier_v1",
+      "projector_id": "q1_phase_root_projector_v1",
+      "raw_target_persistence_forbidden": true,
+      "reentry_required": true,
+      "selector_runtime_id": "t6_sp21_q1_p21169_concrete_selector_v1",
+      "unique_queue_writer_id": "unique_persistent_queue_ingress_sp21_v1"
+    },
+    "authority_contract": {
+      "authority_id": "sp21_external_coordinator_one_shot_v1",
+      "authority_role": "EXTERNAL_POLICY_COORDINATOR",
+      "caller_boolean_is_authority": false,
+      "producer_may_issue_or_mutate_policy": false,
+      "signature_algorithm": "RSA_PKCS1_V1_5_SHA256",
+      "trusted_public_key_sha256": "e03c0a9f1fd62668f5f89742aea49c16e68648e2e471480c3d9907d50346da65"
+    },
+    "base_head_sha": "e6e9e4a8c41b90a330b9ef333e542c18c2cb7be4",
+    "non_claims": [
+      "NO_GLOBAL_TERMINAL_UNIVERSE_EXHAUSTION",
+      "NO_POST_G_TYPE_I_BODY_TOTALITY",
+      "NO_F1_GLOBAL_COVERAGE",
+      "NO_F2_OR_F3_CLOSURE",
+      "NO_T6_CLOSURE",
+      "NO_ERDOS_STRAUS_CLOSURE"
+    ],
+    "owner_registry": {
+      "classifier_id": "common_target_owner_classifier_v1",
+      "registry_id": "sp22_phase_root_owner_registry_v1",
+      "route_registered": true,
+      "target_body_id": "body_type_i_full_carrier_post_g_v1",
+      "target_domain_id": "phase_root_full_carrier_post_g_v1",
+      "target_owner_id": "type_i_full_carrier_post_g",
+      "target_owner_precedence_index": 14,
+      "target_route_id": "route_type_i_full_carrier_post_g_v1"
+    },
+    "priority_overlap_proof": {
+      "coordinator_id": "sp21_external_coordinator_one_shot_v1",
+      "exhaustive_over_registered_source_terminals": true,
+      "registered_terminal_action_count": 7,
+      "rows": [
+        {
+          "coordinator_relation": "PRIOR",
+          "guard_overlap": true,
+          "order_proof": "0 < 6",
+          "overlap_reason": "both predicates are evaluated on the same signed q=1,G source p; the fixed-gap terminal predicate is p-only",
+          "terminal_action_id": "q1_bradford_gap_3_terminal_v1",
+          "terminal_action_index": 0
+        },
+        {
+          "coordinator_relation": "PRIOR",
+          "guard_overlap": true,
+          "order_proof": "1 < 6",
+          "overlap_reason": "both predicates are evaluated on the same signed q=1,G source p; the fixed-gap terminal predicate is p-only",
+          "terminal_action_id": "q1_bradford_gap_7_terminal_v1",
+          "terminal_action_index": 1
+        },
+        {
+          "coordinator_relation": "PRIOR",
+          "guard_overlap": true,
+          "order_proof": "2 < 6",
+          "overlap_reason": "both predicates are evaluated on the same signed q=1,G source p; the fixed-gap terminal predicate is p-only",
+          "terminal_action_id": "q1_bradford_gap_11_terminal_v1",
+          "terminal_action_index": 2
+        },
+        {
+          "coordinator_relation": "PRIOR",
+          "guard_overlap": true,
+          "order_proof": "3 < 6",
+          "overlap_reason": "both predicates are evaluated on the same signed q=1,G source p; the fixed-gap terminal predicate is p-only",
+          "terminal_action_id": "q1_bradford_gap_15_terminal_v1",
+          "terminal_action_index": 3
+        },
+        {
+          "coordinator_relation": "PRIOR",
+          "guard_overlap": true,
+          "order_proof": "4 < 6",
+          "overlap_reason": "both predicates are evaluated on the same signed q=1,G source p; the fixed-gap terminal predicate is p-only",
+          "terminal_action_id": "q1_bradford_gap_19_terminal_v1",
+          "terminal_action_index": 4
+        },
+        {
+          "coordinator_relation": "PRIOR",
+          "guard_overlap": true,
+          "order_proof": "5 < 6",
+          "overlap_reason": "both predicates are evaluated on the same signed q=1,G source p; the fixed-gap terminal predicate is p-only",
+          "terminal_action_id": "q1_bradford_gap_23_terminal_v1",
+          "terminal_action_index": 5
+        },
+        {
+          "coordinator_relation": "LATER",
+          "guard_overlap": true,
+          "order_proof": "7 > 6",
+          "overlap_reason": "both predicates are evaluated on the same signed q=1,G source p; the fixed-gap terminal predicate is p-only",
+          "terminal_action_id": "q1_bradford_gap_31_terminal_v1",
+          "terminal_action_index": 7
+        }
+      ],
+      "selected_action_id": "q1_phase_root_producer_v1",
+      "selected_action_index": 6,
+      "unclassified_registered_terminal_count": 0
+    },
+    "receipt_semantics": {
+      "coverage": "REGISTERED_HIGHER_PRIORITY_ONLY",
+      "global_exhaustion": false,
+      "miss_complete_serialization_forbidden": true,
+      "scope_clearance": "MISS_HIGHER_PRIORITY_POLICY_COMPLETE"
+    },
+    "registry_id": "t6_sp21_q1_scoped_phase_root_policy_registry_v1",
+    "registry_version": 1,
+    "source_domain": {
+      "closed_world_kind": "DECIDABLE_PREDICATE_CLOSED_WORLD",
+      "domain_id": "q1_g_sp21_predicate_domain_v1",
+      "domain_predicate": {
+        "X_equals_6t_plus_1": true,
+        "every_prime_factor_of_X_is_1_mod_3": true,
+        "p_equals_24t_plus_1": true,
+        "p_is_prime": true,
+        "q_equals_1": true
+      },
+      "initializer_id": "t6_sp21_q1_root_initializer_v1",
+      "membership_decider_id": "t6_sp21_q1_root_domain_membership_v1",
+      "owner_id": "ordinary_q1_g_root_v1",
+      "root_admission_contract_id": "sp21_external_coordinator_root_admission_v1"
+    },
+    "source_policy": {
+      "action_order_is_semantic": true,
+      "actions": [
+        {
+          "action_id": "q1_bradford_gap_3_terminal_v1",
+          "action_version": 1,
+          "algorithm": "BRADFORD_TYPE_I_II_EXHAUSTIVE_V1",
+          "domain_id": "q1_g_sp21_predicate_domain_v1",
+          "gap": 3,
+          "implementation_id": "t6_sp21_q1_p21169_concrete_selector_v1.replay_bradford_action@v1",
+          "index": 0,
+          "kind": "TERMINAL",
+          "owner_id": "ordinary_q1_g_root_v1",
+          "predicate": {
+            "gap": 3,
+            "kind": "P_ONLY_FIXED_GAP_DIVISOR_SCREEN",
+            "requires_p_congruent_1_mod_4": true,
+            "total_on_domain": true
+          },
+          "priority_relation_to_selected": "PRIOR",
+          "proof_id": "SP04_BRADFORD_REGISTERED_PREFIX_SCREEN_V1",
+          "subject_binding_rule": "SOURCE_STATE_ID+POLICY_PAYLOAD_SHA256+ACTION_INDEX+ACTION_ID"
+        },
+        {
+          "action_id": "q1_bradford_gap_7_terminal_v1",
+          "action_version": 1,
+          "algorithm": "BRADFORD_TYPE_I_II_EXHAUSTIVE_V1",
+          "domain_id": "q1_g_sp21_predicate_domain_v1",
+          "gap": 7,
+          "implementation_id": "t6_sp21_q1_p21169_concrete_selector_v1.replay_bradford_action@v1",
+          "index": 1,
+          "kind": "TERMINAL",
+          "owner_id": "ordinary_q1_g_root_v1",
+          "predicate": {
+            "gap": 7,
+            "kind": "P_ONLY_FIXED_GAP_DIVISOR_SCREEN",
+            "requires_p_congruent_1_mod_4": true,
+            "total_on_domain": true
+          },
+          "priority_relation_to_selected": "PRIOR",
+          "proof_id": "SP04_BRADFORD_REGISTERED_PREFIX_SCREEN_V1",
+          "subject_binding_rule": "SOURCE_STATE_ID+POLICY_PAYLOAD_SHA256+ACTION_INDEX+ACTION_ID"
+        },
+        {
+          "action_id": "q1_bradford_gap_11_terminal_v1",
+          "action_version": 1,
+          "algorithm": "BRADFORD_TYPE_I_II_EXHAUSTIVE_V1",
+          "domain_id": "q1_g_sp21_predicate_domain_v1",
+          "gap": 11,
+          "implementation_id": "t6_sp21_q1_p21169_concrete_selector_v1.replay_bradford_action@v1",
+          "index": 2,
+          "kind": "TERMINAL",
+          "owner_id": "ordinary_q1_g_root_v1",
+          "predicate": {
+            "gap": 11,
+            "kind": "P_ONLY_FIXED_GAP_DIVISOR_SCREEN",
+            "requires_p_congruent_1_mod_4": true,
+            "total_on_domain": true
+          },
+          "priority_relation_to_selected": "PRIOR",
+          "proof_id": "SP04_BRADFORD_REGISTERED_PREFIX_SCREEN_V1",
+          "subject_binding_rule": "SOURCE_STATE_ID+POLICY_PAYLOAD_SHA256+ACTION_INDEX+ACTION_ID"
+        },
+        {
+          "action_id": "q1_bradford_gap_15_terminal_v1",
+          "action_version": 1,
+          "algorithm": "BRADFORD_TYPE_I_II_EXHAUSTIVE_V1",
+          "domain_id": "q1_g_sp21_predicate_domain_v1",
+          "gap": 15,
+          "implementation_id": "t6_sp21_q1_p21169_concrete_selector_v1.replay_bradford_action@v1",
+          "index": 3,
+          "kind": "TERMINAL",
+          "owner_id": "ordinary_q1_g_root_v1",
+          "predicate": {
+            "gap": 15,
+            "kind": "P_ONLY_FIXED_GAP_DIVISOR_SCREEN",
+            "requires_p_congruent_1_mod_4": true,
+            "total_on_domain": true
+          },
+          "priority_relation_to_selected": "PRIOR",
+          "proof_id": "SP04_BRADFORD_REGISTERED_PREFIX_SCREEN_V1",
+          "subject_binding_rule": "SOURCE_STATE_ID+POLICY_PAYLOAD_SHA256+ACTION_INDEX+ACTION_ID"
+        },
+        {
+          "action_id": "q1_bradford_gap_19_terminal_v1",
+          "action_version": 1,
+          "algorithm": "BRADFORD_TYPE_I_II_EXHAUSTIVE_V1",
+          "domain_id": "q1_g_sp21_predicate_domain_v1",
+          "gap": 19,
+          "implementation_id": "t6_sp21_q1_p21169_concrete_selector_v1.replay_bradford_action@v1",
+          "index": 4,
+          "kind": "TERMINAL",
+          "owner_id": "ordinary_q1_g_root_v1",
+          "predicate": {
+            "gap": 19,
+            "kind": "P_ONLY_FIXED_GAP_DIVISOR_SCREEN",
+            "requires_p_congruent_1_mod_4": true,
+            "total_on_domain": true
+          },
+          "priority_relation_to_selected": "PRIOR",
+          "proof_id": "SP04_BRADFORD_REGISTERED_PREFIX_SCREEN_V1",
+          "subject_binding_rule": "SOURCE_STATE_ID+POLICY_PAYLOAD_SHA256+ACTION_INDEX+ACTION_ID"
+        },
+        {
+          "action_id": "q1_bradford_gap_23_terminal_v1",
+          "action_version": 1,
+          "algorithm": "BRADFORD_TYPE_I_II_EXHAUSTIVE_V1",
+          "domain_id": "q1_g_sp21_predicate_domain_v1",
+          "gap": 23,
+          "implementation_id": "t6_sp21_q1_p21169_concrete_selector_v1.replay_bradford_action@v1",
+          "index": 5,
+          "kind": "TERMINAL",
+          "owner_id": "ordinary_q1_g_root_v1",
+          "predicate": {
+            "gap": 23,
+            "kind": "P_ONLY_FIXED_GAP_DIVISOR_SCREEN",
+            "requires_p_congruent_1_mod_4": true,
+            "total_on_domain": true
+          },
+          "priority_relation_to_selected": "PRIOR",
+          "proof_id": "SP04_BRADFORD_REGISTERED_PREFIX_SCREEN_V1",
+          "subject_binding_rule": "SOURCE_STATE_ID+POLICY_PAYLOAD_SHA256+ACTION_INDEX+ACTION_ID"
+        },
+        {
+          "action_id": "q1_phase_root_producer_v1",
+          "action_version": 1,
+          "algorithm": "Q1_CANONICAL_PHASE_ROOT_PROJECTION_V1",
+          "domain_id": "q1_g_sp21_predicate_domain_v1",
+          "implementation_id": "t6_sp21_q1_p21169_concrete_selector_v1.build_verified_edge@v1",
+          "index": 6,
+          "kind": "PRODUCER",
+          "owner_id": "ordinary_q1_g_root_v1",
+          "predicate": {
+            "kind": "ORDINARY_Q1_G_AND_COMPLETE_REGISTERED_PRIOR_CLEARANCE",
+            "q_occurrence_path": [
+              "arithmetic",
+              "q"
+            ],
+            "q_occurrence_value": 1,
+            "requires_actual_source": true,
+            "requires_admitted_source": true,
+            "requires_global_exhaustion": false,
+            "requires_prior_indices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "total_after_prior_miss_on_domain": true
+          },
+          "priority_relation_to_selected": "SELECTED",
+          "proof_id": "SP22_Q1_SCOPED_PHASE_ROOT_EDGE_UNIVERSAL_V1",
+          "subject_binding_rule": "ACTUAL_ADMITTED_SOURCE_RECEIPT+SOURCE_STATE_ID+POLICY_PAYLOAD_SHA256+COMPLETE_PRIOR_TRACE+BRANCH_INDEX"
+        },
+        {
+          "action_id": "q1_bradford_gap_31_terminal_v1",
+          "action_version": 1,
+          "algorithm": "BRADFORD_TYPE_I_II_EXHAUSTIVE_V1",
+          "domain_id": "q1_g_sp21_predicate_domain_v1",
+          "gap": 31,
+          "implementation_id": "t6_sp21_q1_p21169_concrete_selector_v1.replay_bradford_action@v1",
+          "index": 7,
+          "kind": "TERMINAL",
+          "owner_id": "ordinary_q1_g_root_v1",
+          "predicate": {
+            "gap": 31,
+            "kind": "P_ONLY_FIXED_GAP_DIVISOR_SCREEN",
+            "requires_p_congruent_1_mod_4": true,
+            "total_on_domain": true
+          },
+          "priority_relation_to_selected": "LATER",
+          "proof_id": "SP21_GAP31_LATER_NEGATIVE_CONTROL_V1",
+          "subject_binding_rule": "SOURCE_STATE_ID+POLICY_PAYLOAD_SHA256+ACTION_INDEX+ACTION_ID"
+        }
+      ],
+      "local_totality_contract": {
+        "allowed_results": [
+          "TERMINAL",
+          "VERIFIED_SUCCESSOR"
+        ],
+        "domain": "source_domain.domain_predicate",
+        "fallthrough_allowed": false,
+        "producer_total_after_complete_prior_miss": true,
+        "proof_method": "STRUCTURAL_FIRST_HIT_OR_TOTAL_PRODUCER_CASE_SPLIT",
+        "reject_allowed_for_valid_domain_member": false
+      },
+      "policy_id": "q1_g_root_m23_then_phase_root_then_gap31_v1",
+      "policy_mutable_by_actions": false,
+      "policy_version": 1,
+      "selected_producer_index": 6
+    },
+    "target_terminal_policy": {
+      "actions": [
+        {
+          "action_id": "target_q1_bradford_gap_3_terminal_v1",
+          "action_version": 1,
+          "algorithm": "BRADFORD_TYPE_I_II_EXHAUSTIVE_V1",
+          "domain_id": "phase_root_full_carrier_post_g_v1",
+          "gap": 3,
+          "implementation_id": "t6_sp21_q1_p21169_concrete_selector_v1.replay_bradford_action@v1",
+          "index": 0,
+          "kind": "TERMINAL",
+          "owner_id": "type_i_full_carrier_post_g",
+          "predicate": {
+            "gap": 3,
+            "kind": "P_ONLY_FIXED_GAP_DIVISOR_SCREEN",
+            "total_on_domain": true
+          },
+          "priority_relation_to_admission": "PRIOR",
+          "proof_id": "SP04_BRADFORD_REGISTERED_PREFIX_SCREEN_V1",
+          "subject_binding_rule": "TARGET_PROJECTION_ID+POLICY_PAYLOAD_SHA256+ACTION_INDEX+ACTION_ID"
+        },
+        {
+          "action_id": "target_q1_bradford_gap_7_terminal_v1",
+          "action_version": 1,
+          "algorithm": "BRADFORD_TYPE_I_II_EXHAUSTIVE_V1",
+          "domain_id": "phase_root_full_carrier_post_g_v1",
+          "gap": 7,
+          "implementation_id": "t6_sp21_q1_p21169_concrete_selector_v1.replay_bradford_action@v1",
+          "index": 1,
+          "kind": "TERMINAL",
+          "owner_id": "type_i_full_carrier_post_g",
+          "predicate": {
+            "gap": 7,
+            "kind": "P_ONLY_FIXED_GAP_DIVISOR_SCREEN",
+            "total_on_domain": true
+          },
+          "priority_relation_to_admission": "PRIOR",
+          "proof_id": "SP04_BRADFORD_REGISTERED_PREFIX_SCREEN_V1",
+          "subject_binding_rule": "TARGET_PROJECTION_ID+POLICY_PAYLOAD_SHA256+ACTION_INDEX+ACTION_ID"
+        },
+        {
+          "action_id": "target_q1_bradford_gap_11_terminal_v1",
+          "action_version": 1,
+          "algorithm": "BRADFORD_TYPE_I_II_EXHAUSTIVE_V1",
+          "domain_id": "phase_root_full_carrier_post_g_v1",
+          "gap": 11,
+          "implementation_id": "t6_sp21_q1_p21169_concrete_selector_v1.replay_bradford_action@v1",
+          "index": 2,
+          "kind": "TERMINAL",
+          "owner_id": "type_i_full_carrier_post_g",
+          "predicate": {
+            "gap": 11,
+            "kind": "P_ONLY_FIXED_GAP_DIVISOR_SCREEN",
+            "total_on_domain": true
+          },
+          "priority_relation_to_admission": "PRIOR",
+          "proof_id": "SP04_BRADFORD_REGISTERED_PREFIX_SCREEN_V1",
+          "subject_binding_rule": "TARGET_PROJECTION_ID+POLICY_PAYLOAD_SHA256+ACTION_INDEX+ACTION_ID"
+        },
+        {
+          "action_id": "target_q1_bradford_gap_15_terminal_v1",
+          "action_version": 1,
+          "algorithm": "BRADFORD_TYPE_I_II_EXHAUSTIVE_V1",
+          "domain_id": "phase_root_full_carrier_post_g_v1",
+          "gap": 15,
+          "implementation_id": "t6_sp21_q1_p21169_concrete_selector_v1.replay_bradford_action@v1",
+          "index": 3,
+          "kind": "TERMINAL",
+          "owner_id": "type_i_full_carrier_post_g",
+          "predicate": {
+            "gap": 15,
+            "kind": "P_ONLY_FIXED_GAP_DIVISOR_SCREEN",
+            "total_on_domain": true
+          },
+          "priority_relation_to_admission": "PRIOR",
+          "proof_id": "SP04_BRADFORD_REGISTERED_PREFIX_SCREEN_V1",
+          "subject_binding_rule": "TARGET_PROJECTION_ID+POLICY_PAYLOAD_SHA256+ACTION_INDEX+ACTION_ID"
+        },
+        {
+          "action_id": "target_q1_bradford_gap_19_terminal_v1",
+          "action_version": 1,
+          "algorithm": "BRADFORD_TYPE_I_II_EXHAUSTIVE_V1",
+          "domain_id": "phase_root_full_carrier_post_g_v1",
+          "gap": 19,
+          "implementation_id": "t6_sp21_q1_p21169_concrete_selector_v1.replay_bradford_action@v1",
+          "index": 4,
+          "kind": "TERMINAL",
+          "owner_id": "type_i_full_carrier_post_g",
+          "predicate": {
+            "gap": 19,
+            "kind": "P_ONLY_FIXED_GAP_DIVISOR_SCREEN",
+            "total_on_domain": true
+          },
+          "priority_relation_to_admission": "PRIOR",
+          "proof_id": "SP04_BRADFORD_REGISTERED_PREFIX_SCREEN_V1",
+          "subject_binding_rule": "TARGET_PROJECTION_ID+POLICY_PAYLOAD_SHA256+ACTION_INDEX+ACTION_ID"
+        },
+        {
+          "action_id": "target_q1_bradford_gap_23_terminal_v1",
+          "action_version": 1,
+          "algorithm": "BRADFORD_TYPE_I_II_EXHAUSTIVE_V1",
+          "domain_id": "phase_root_full_carrier_post_g_v1",
+          "gap": 23,
+          "implementation_id": "t6_sp21_q1_p21169_concrete_selector_v1.replay_bradford_action@v1",
+          "index": 5,
+          "kind": "TERMINAL",
+          "owner_id": "type_i_full_carrier_post_g",
+          "predicate": {
+            "gap": 23,
+            "kind": "P_ONLY_FIXED_GAP_DIVISOR_SCREEN",
+            "total_on_domain": true
+          },
+          "priority_relation_to_admission": "PRIOR",
+          "proof_id": "SP04_BRADFORD_REGISTERED_PREFIX_SCREEN_V1",
+          "subject_binding_rule": "TARGET_PROJECTION_ID+POLICY_PAYLOAD_SHA256+ACTION_INDEX+ACTION_ID"
+        },
+        {
+          "action_id": "target_phase_root_anchor_sink_terminal_v1",
+          "action_version": 1,
+          "algorithm": "PHASE_ROOT_ANCHOR_SINK_V1",
+          "domain_id": "phase_root_full_carrier_post_g_v1",
+          "implementation_id": "t6_sp21_q1_p21169_concrete_selector_v1.replay_anchor_sink_action@v1",
+          "index": 6,
+          "kind": "TERMINAL",
+          "owner_id": "type_i_full_carrier_post_g",
+          "predicate": {
+            "kind": "R_MINUS_1_DIVIDES_K",
+            "total_on_domain": true
+          },
+          "priority_relation_to_admission": "PRIOR",
+          "proof_id": "SP22_GCD_R_MINUS_1_K_EQUALS_1_V1",
+          "subject_binding_rule": "TARGET_PROJECTION_ID+POLICY_PAYLOAD_SHA256+ACTION_INDEX+ACTION_ID"
+        }
+      ],
+      "global_exhaustion": false,
+      "policy_id": "q1_phase_root_m23_plus_anchor_sink_v1",
+      "policy_version": 1,
+      "subject_binding": "TARGET_PROJECTION_NOT_SOURCE_TRANSCRIPT"
+    }
+  },
+  "payload_sha256": "470b9d787eab4af3ecb05fd32764cf09937cb52f4837d5a2cde9b0a8be5945f8",
+  "schema_id": "SP21ConcretePolicyRegistryV1",
+  "schema_version": 1
+}

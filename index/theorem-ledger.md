@@ -11,18 +11,18 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 373 |
+| 数学状态 | `computationally_reproduced` | 374 |
 | 数学状态 | `conditional` | 35 |
 | 数学状态 | `contradicted` | 2 |
 | 数学状态 | `established` | 979 |
 | 数学状态 | `open` | 13 |
 | 数学状态 | `retracted` | 1 |
-| 证明来源 | `computational_reproduction` | 128 |
+| 证明来源 | `computational_reproduction` | 129 |
 | 证明来源 | `mixed` | 44 |
 | 证明来源 | `repository_derivation` | 811 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 27 |
-| 审阅状态 | `internal_review` | 956 |
+| 审阅状态 | `internal_review` | 957 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -205,6 +205,7 @@
 | [短证书或可闭合递降在自然范围内等价于原猜想](../claims/short-certificate-descent-completeness-boundary.md) (`short-certificate-descent-completeness-boundary`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-24 |
 | [首分母缺口除子证书与素数实例等价](../claims/short-certificate-equivalence.md) (`short-certificate-equivalence`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013`, `bello2026` | 2026-08-26 |
 | [六条显式因子证书分支的共同残余有 4 维筛界](../claims/six-branch-sieve-residual.md) (`six-branch-sieve-residual`) | `established` | `unspecified` | `unspecified` | `elsholtz_tao2013`, `ventas2026` | 2026-07-23 |
+| [SP-21/SP-22 q=1,G scoped selector prototype reproduction](../claims/sp21-sp22-q1-g-scoped-prototype-reproduction-v1.md) (`sp21-sp22-q1-g-scoped-prototype-reproduction-v1`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-08-29 |
 | [两条无条件标准大尾递降的有限覆盖审计](../claims/standard-tail-descent-finite-audit.md) (`standard-tail-descent-finite-audit`) | `computationally_reproduced` | `unspecified` | `unspecified` | `elsholtz_tao2013` | 2026-07-24 |
 | [标准大尾提升恰为 Type I 证书的第二分母窗口](../claims/standard-tail-type-I-coordinate-equivalence.md) (`standard-tail-type-I-coordinate-equivalence`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-24 |
 | [T6 non-authorizing acyclic transition bundle V2 contract](../claims/t6-acyclic-transition-bundle-v2-contract.md) (`t6-acyclic-transition-bundle-v2-contract`) | `established` | `repository_derivation` | `internal_review` | `schemas/t6-acyclic-transition-bundle-v2.schema.json` | 2026-08-26 |

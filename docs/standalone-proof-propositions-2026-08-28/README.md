@@ -73,8 +73,8 @@ R   target re-enters the same selector domain
 | SP-18 | \(m=3,q=5\) regeneration p-free failure | F3-M3Q5-REGENERATION | terminal or paid macro |
 | SP-19 | \(p^2\) one-sided factor-pair leaf | F3-M3Q5-P2-ONE-SIDED | terminal/contradiction/successor |
 | SP-20 | \(p^2\) genuine two-sided leaf | F3-M3Q5-P2-TWO-SIDED | strict source-forward final macro |
-| SP-21 | scope-bound terminal-first 准入健全性 | 共享 P0 | abstract safety theorem 已证；concrete policy/authority instance 仍开放 |
-| SP-22 | actual q=1,G scoped phase-root pilot | P1 q=1 | 第一条 policy-relative actual E1--E5/R pilot |
+| SP-21 | scope-bound terminal-first 准入健全性 | 共享 P0 | abstract safety theorem 已证；submitted prototype 已复现，但 current-runtime instance 仍开放 |
+| SP-22 | actual q=1,G scoped phase-root pilot | P1 q=1 | submitted pilot 已复现；第一条 current-selector actual E1--E5/R edge 仍开放 |
 
 ## 证明者交付格式
 
@@ -99,6 +99,9 @@ Erdős--Straus 反例条件，而包本身不签发 actualness、admission 或 q
 SP-21 的 abstract safety theorem 已在 SP-21-ABSTRACT-SAFETY-PROOF-2026-08-29.md 中
 成立；其 concrete coordinator policy、authority、actual source 与 executable replayer
 仍未交付，因此 SP-21 dossier 本身继续开放。
+2026-08-29 submitted concrete closure v1 的 package/archive/review 已归档；它在声明的历史
+基线可重放，但只形成 isolated pilot，因为内嵌签名 key 没有外部 provenance，base commit
+也没有在运行时与 current checkout 比对。它不改变 SP-21、SP-22 或 20 个开放 dossier 的状态。
 当前所有 dossier 的已解决部分、P0/P1/P2 分层和推荐执行链见
 CURRENT-PROOF-PORTFOLIO-2026-08-29.md。
 
@@ -111,4 +114,4 @@ SP-04 已补入六层 registered-prefix schedule 的完整证明、两套独立�
 SP-05 已有完整 terminal-decision 与条件 phase-root branch 的边界证明，但这不提供一条
 实际 complete-miss source，因此仍属于上述 20 个 OPEN_PROPOSITION。SP-21、SP-22 是该边界
 之后新增的 P0/P1 问题；SP-21 的抽象 safety theorem 已证，但 concrete instance 仍未证明，
-SP-22 仍未证明。
+SP-22 仍未证明。已归档的 scoped prototype 不能替代这些义务。
