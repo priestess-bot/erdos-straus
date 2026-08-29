@@ -49,6 +49,8 @@ authority。SP-05 本身仍为 OPEN，不产生 production edge、queue 或 T6 c
 [reproduction](reproductions/sp05_complete_terminal_decision/SP-05-complete-proof.md)。
 当前重整后的 P0/P1/P2 研究组合与执行顺序见
 [proof portfolio](docs/standalone-proof-propositions-2026-08-28/CURRENT-PROOF-PORTFOLIO-2026-08-29.md)。
+其中 SP-21 的 abstract scope-bound safety theorem 已建立，但它尚未提供 concrete policy、
+actual source 或 producer authority，因此 F1/F2/F3/T6 状态不变。
 
 ### T6 实时审计权威（2026-08-27）
 

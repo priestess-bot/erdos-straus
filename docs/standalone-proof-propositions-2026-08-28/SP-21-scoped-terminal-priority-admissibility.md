@@ -2,177 +2,193 @@
 
 **状态：** OPEN_PROPOSITION
 **优先级：** P0，共享合同阻塞。
-**研究任务：** 证明一个可递归 selector 只需完整重放其固定优先级中位于 selected
-producer 之前的 terminal/producer actions；它不需要证明所有可能的三分母 terminal
-公式都不存在。
+**已建立子结论：** 有限冻结 policy 的抽象 successor safety theorem 已建立。
+**仍开放：** concrete policy registry、外部 authority、actual source、common admission 与
+independent executable replayer。
+**Canonical proof：** SP-21-ABSTRACT-SAFETY-PROOF-2026-08-29.md。
+**原始提交归档：** docs/archive/proof-submissions/2026-08-29/SP-21-submitted-proof-2026-08-29.md。
 **独立性：** 本文件完整定义状态、动作策略、scope MISS、terminal、verified successor
-和证明目标；不以仓库的现有 schema、代码或 SP 文件作为逻辑前提。
+和剩余证明目标；不以仓库的现有 schema、代码或其他 SP 文件作为逻辑前提。
 
 ## 1. 对象与策略
 
 令 \(\mathscr S\) 是有限编码状态的集合。每个 \(S\in\mathscr S\) 带有一个方程接口
-\(\mathsf{Eq}(S)\) 和解集 \(\mathsf{Sol}(S)\)。固定一个 selector policy
+\(\mathsf{Eq}(S)\) 和解集 \(\mathsf{Sol}(S)\)。固定有限有序 selector policy
 
 \[
-\mathcal P=(A_0,A_1,\ldots,A_N),
+\mathcal P=(A_0,A_1,\ldots,A_N).
 \]
 
-其中每个 \(A_i\) 都是一个有版本、规范编码、可独立重放的动作，且类型恰为以下之一：
-
-1. terminal action：返回 HIT certificate 或 MISS；
-2. producer action：返回 guard true 并给出一个候选 target，或 guard false；
-3. reject action：返回一个不入队的稳定拒绝。
-
-策略是有限有序表。其规范编码必须包含动作顺序、每个动作的谓词、实现/证明标识、
-适用 owner/domain、以及 subject binding 规则。动作本身不得修改策略。
-
-对一个固定 state \(S\)，令
+每个 action \(A_i\) 都有固定 kind：
 
 \[
-\operatorname{Replay}(A_i,S)
+K_i\in\{\mathsf{terminal},\mathsf{producer},\mathsf{reject}\},
 \]
 
-表示从 \(S\) 的规范编码重新计算的唯一输出。若 terminal action 返回 HIT certificate
-\(c\)，必须有
+固定 subject 的 replay 是确定且终止的，输出分别属于：
 
 \[
+r_i(S)\in
+\begin{cases}
+\{\mathsf{MISS},\mathsf{HIT}(c)\},&K_i=\mathsf{terminal},\\
+\{\mathsf{FALSE},\mathsf{TRUE}(T)\},&K_i=\mathsf{producer},\\
+\{\mathsf{REJECT}(\rho)\},&K_i=\mathsf{reject}.
+\end{cases}
+\]
+
+terminal hit 的 certificate 必须可靠：
+
+\[
+r_i(S)=\mathsf{HIT}(c)
+\Longrightarrow
 c\in\mathsf{Sol}(S).
 \]
 
-若 producer action 被选择并返回 target \(T\)，则它必须另行通过 E1、E2、E3、E4、E5
-和 R；本文件不把 policy replay 当作这些义务的替代。
+policy 的规范编码必须包含动作顺序、每个谓词、实现/证明标识、owner/domain、
+branch index 与 subject binding。producer 本身不能修改该编码。
 
-## 2. policy-relative clearance
+## 2. Reach 与 Scope Clearance
 
-设 \(A_j\) 是一个 producer action。定义其前缀 clearance：
+定义 action 的唯一继续条件：
 
 \[
-\operatorname{PriorClear}_{\mathcal P,j}(S)
+\operatorname{Pass}_i(S)
+\Longleftrightarrow
+\begin{cases}
+r_i(S)=\mathsf{MISS},&K_i=\mathsf{terminal},\\
+r_i(S)=\mathsf{FALSE},&K_i=\mathsf{producer},\\
+\bot,&K_i=\mathsf{reject}.
+\end{cases}
 \]
 
-当且仅当：
+selected action \(A_j\) 的实际可达性是
 
-1. 对每个 \(i<j\) 的 terminal action，\(\operatorname{Replay}(A_i,S)\) 返回 MISS；
-2. 对每个 \(i<j\) 的 producer action，\(\operatorname{Replay}(A_i,S)\) 返回 guard false；
-3. 每个 replay record 与同一个 \(S\)、同一个 policy digest 和同一个动作索引绑定；
-4. 任一 earlier terminal HIT 都立即终止，不再计算 \(A_j\)。
+\[
+\operatorname{Reach}_{\mathcal P,j}(S)
+\Longleftrightarrow
+\forall i<j,\ \operatorname{Pass}_i(S).
+\tag{1}
+\]
 
-clearance receipt 的唯一合法语义是
+令 \(\operatorname{PriorClear}_{\mathcal P,j}(S)\) 表示所有 earlier terminal 输出
+MISS、所有 earlier producer 输出 FALSE，且相应 record 完整、有序并绑定同一个
+source/policy/action index。还要定义：
+
+\[
+\operatorname{NoRejectBefore}_{\mathcal P,j}
+\Longleftrightarrow
+\forall i<j,\ K_i\ne\mathsf{reject}.
+\]
+
+于是 canonical relation 是
+
+\[
+\boxed{
+\operatorname{Reach}_{\mathcal P,j}(S)
+\Longleftrightarrow
+\operatorname{PriorClear}_{\mathcal P,j}(S)
+\land
+\operatorname{NoRejectBefore}_{\mathcal P,j}.}
+\tag{2}
+\]
+
+此前只写 PriorClear 的版本不够：earlier reject 会停止 selector，即使此前没有
+terminal 或 producer action。
+
+合法 clearance 的类型固定为
 
 \[
 \mathsf{MISS\_HIGHER\_PRIORITY\_POLICY\_COMPLETE},
-\]
-
-并附带
-
-\[
+\qquad
 \mathsf{coverage}=
 \mathsf{REGISTERED\_HIGHER\_PRIORITY\_ONLY},
 \qquad
 \mathsf{global\_exhaustion}=\mathrm{false}.
+\tag{3}
 \]
 
-它不等价于 \(\mathsf{Sol}(S)=\varnothing\)，也不等价于所有未注册 terminal
-family 都 MISS。
+它不等价于 \(\mathsf{Sol}(S)=\varnothing\)，也不等价于所有未注册 terminal family
+都 MISS。
 
-## 3. 待证明命题
+## 3. 已建立的抽象安全定理
 
-设 policy \(\mathcal P\) 满足：
-
-1. 所有早于 \(A_j\) 的动作都可终止地、确定地重放；
-2. 每个 earlier terminal HIT 都有可靠 certificate；
-3. \(A_j\) 的 guard、source occurrence、target projection、typing、lift、T5 ticket
-   和 re-entry 已由独立 verifier 建立；
-4. \(A_j\) 的 target \(T\) 满足
+若 selected producer \(A_j\) 对 \((S,T,\Lambda)\) 已独立满足 E1--E5、R 和
 
 \[
-\forall u\in\mathsf{Sol}(T),\qquad
-\Lambda(u)\in\mathsf{Sol}(S).
+\forall u\in\mathsf{Sol}(T),\quad
+\Lambda(u)\in\mathsf{Sol}(S),
+\tag{4}
 \]
 
-则对每个 actual source \(S\)，选择器的前缀行为是互斥且可靠的：
+则：
 
 \[
 \boxed{
 \begin{aligned}
-&\exists i<j:\operatorname{Replay}(A_i,S)=\mathsf{HIT}(c)
-&&\Longrightarrow \mathsf{Terminal}(S,c),\\
-&\operatorname{PriorClear}_{\mathcal P,j}(S)
-\land \operatorname{Guard}_{A_j}(S)
-&&\Longrightarrow \mathsf{VerifiedSuccessor}(S,T).
+\operatorname{Reach}_{\mathcal P,i}(S)
+\land r_i(S)=\mathsf{HIT}(c)
+&\Longrightarrow \mathsf{SelectorTerminal}_{\mathcal P}(S,c),\\
+\operatorname{Reach}_{\mathcal P,j}(S)
+\land r_j(S)=\mathsf{TRUE}(T)
+\land\mathsf{EdgeOK}_j(S,T,\Lambda)
+\land\mathsf{LiftOK}(S,T,\Lambda)
+&\Longrightarrow
+\mathsf{VerifiedSuccessor}^{\mathrm{safe}}_{\mathcal P,j}(S,T).
 \end{aligned}}
+\tag{5}
 \]
 
-特别地，第二行不需要假设
+有限前缀归纳证明其选定 index 唯一。第一行使用 terminal certificate 的可靠性；第二行
+使用 Reach、producer 的 TRUE 输出和独立 edge/lift 义务。完整证明见 canonical proof。
+
+未注册或明确 later 的 terminal certificate 即使存在，也不改变前缀 replay、selected
+edge 或 (4)。这只证明 safety，不证明全局 solver completeness；后者仍需要各 family
+totality 与 T5 良基归纳。
+
+## 4. 具体 policy 必须证明的内容
+
+为使 abstract theorem 成为 T6-compatible concrete instance，仍必须证明：
+
+1. 每个与 selected producer guard 重叠、且 coordinator 声明为 prior 的 terminal action，
+   都在 \(A_j\) 之前；
+2. 每个不在 \(A_j\) 前的 registered terminal action，要么与 producer guard 不交，
+   要么是显式 later action；
+3. policy digest、action identities、owner/domain、branch index 与 replayer 由 producer
+   外部 authority 固定；
+4. selected target 只能经 common admission 和 re-entry 进入 persistent selector；
+5. scope clearance 与 MISS_COMPLETE 是不相交的 serialized types；
+6. independent prefix replayer 不执行 selected producer，也不接受 producer 自报的
+   prior-MISS 断言。
+
+## 5. q=1 负控
 
 \[
-\mathsf{Sol}(S)=\varnothing
+p=21169,\qquad
+X=\frac{p+3}{4}=5293=67\cdot79
 \]
 
-或所有 terminal formulas 均已枚举。未被当前 policy 注册的 terminal 解，即使存在，
-也不会破坏 successor 的 E4 lift 或 selector 的正确性。
-
-## 4. 必须补出的 Goal-compatible 部分
-
-仅有上述抽象定理还不足以接入 T6。对于一个具体 producer，必须额外证明：
-
-1. 所有能与该 producer guard 重叠、且 coordinator 声明为 prior 的 terminal actions，
-   均位于 \(A_j\) 之前；
-2. 任一未位于 \(A_j\) 前的 registered terminal action，要么 guard 与 \(A_j\) 不交，
-   要么属于之后的明确策略位置；
-3. policy digest、动作实现、owner scope、branch index 和 replay verifier 都由
-   外部于 producer 的 authority 固定；
-4. selected producer 的 target 仍走同一 common admission/re-entry path；
-5. scope MISS 永远不得序列化为 MISS_COMPLETE。
-
-这不是降低 terminal-first 要求。它把 terminal-first 的正确对象从“不可能穷尽的
-terminal universe”改为“冻结 selector policy 中的全部 prior actions”。
-
-## 5. q=1 必须保留的负控
-
-令
-
-\[
-p=21169,\qquad X=(p+3)/4=5293=67\cdot79.
-\]
-
-该点是 ordinary \(q=1,G\)。对
-
-\[
-M_{23}=\{3,7,11,15,19,23\}
-\]
-
-的完整 Bradford divisor priority screen 可以得到 scope MISS；但 gap \(31\)、\(d=1\)
-给出
+是 ordinary \(q=1,G\)。M23 的完整有限 factor-pair terminal actions均 MISS，但 gap 31
+存在
 
 \[
 \frac4{21169}
-=\frac1{5300}
-+\frac1{3619899}
-+\frac1{19185464700}.
+=\frac1{5300}+\frac1{3619899}+\frac1{19185464700}.
 \]
 
-因此以下两种错误都必须拒绝：
-
-1. 将 M23 scope MISS 改名为 MISS_COMPLETE；
-2. 仅因 gap 31 在当前 policy 外，就声称该 certificate 不存在。
-
-相反，若一个冻结 policy 确实把 phase-root producer 放在 M23 后、gap 31 前，则
-scope-bound clearance 可以允许该 producer；其 successor 正确性来自独立 E1--E5，
-不是来自“没有解”的断言。
+所以 M23 scope clearance 不能写成 MISS_COMPLETE；gap 31 未被列入 M23 也不能否定
+其 terminal certificate。这个控制只证明 scope/global 区分的必要性，不授予任何
+actual source 或 successor authority。
 
 ## 6. 完成证据
 
-本命题从 OPEN_PROPOSITION 改为 ESTABLISHED 前，需要：
+本 dossier 从 OPEN_PROPOSITION 改为 ESTABLISHED 前，必须交付：
 
-* policy 的完整有限规范和动作顺序；
-* prefix replay 的终止性、确定性和 subject/policy binding 证明；
-* terminal HIT 的可靠性证明；
-* scope-clearance 与 selected producer 的互斥/前序证明；
-* scope-bound successor soundness 的形式证明；
-* policy mutation、动作重排、later-terminal 伪 global miss、source swap、
-  guard overlap 和 queue bypass 的负控；
-* 一个 independent replayer，不导入 selected producer 的边验证结论。
+* concrete coordinator-owned finite policy 与 priority/overlap theorem；
+* external authority binding、actual source occurrence 和 source-bound clearance；
+* independent executable prefix replayer；
+* common admission、queue/re-entry 与 selected producer 的完整 E1--E5 receipts；
+* policy mutation、action reorder、earlier reject、earlier true producer、later-terminal
+  global-miss relabel、source swap、queue bypass 的可重放负控。
 
-本命题不证明某个具体 producer guard 非空，不证明 common admission，不证明任何 F2/F3
-family totality，也不改变 T6 或 Erdős--Straus 猜想的状态。
+本文件不证明某个 concrete producer guard 非空，不证明 SP-22、F1/F2/F3/T6 totality，
+也不改变 Erdős--Straus 猜想的状态。

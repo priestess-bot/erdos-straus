@@ -33,6 +33,7 @@ policy 中位于 selected branch 之前的 actions，不需要先证明所有可
 | SP-02 | ESTABLISHED：有限良构模型中 constructor 分类与 UNKNOWN 不可达 | 只解决抽象 A0，不解决 concrete inventory |
 | SP-04 | ESTABLISHED：M23 全除子 registered-prefix schedule | 可作为有限 policy action，不是 global terminal universe |
 | SP-05 | complete-terminal decision 与条件 phase-root branch 已证；实际 edge 仍 OPEN | 明确排除 complete-MISS 作为 pilot 前提 |
+| SP-21 | ESTABLISHED：abstract scope-bound safety；concrete policy instance 仍 OPEN | P0 从抽象安全证明转为实际 policy/authority 实例化 |
 | T5 | 合同层 N7 良基势已闭合 | 为新 edge 提供 ticket grammar，不提供 edge existence |
 
 当前仍有 20 个 OPEN_PROPOSITION：旧 SP-01/03/05--20 共 18 个，加上新的
@@ -40,9 +41,10 @@ SP-21、SP-22。它们的价值并不相同。
 
 ## 3. P0：必须先解决的合同问题
 
-### P0.1 SP-21：scope-bound terminal-first admissibility
+### P0.1 SP-21：concrete scope-bound terminal policy instance
 
-这是当前最高优先级。它必须证明：
+抽象 safety theorem 已闭合；当前最高优先级是为一个实际 producer 证明其 concrete
+policy instance。它必须建立：
 
 \[
 \text{all actions before a selected producer replayed}
@@ -54,8 +56,8 @@ SP-21、SP-22。它们的价值并不相同。
 
 它直接解除当前 V1 structured receipt 的错误瓶颈：现有 schema 把 generic E1 绑定到
 global terminal-universe MISS，因而把任何真实 nonterminal branch 绑成反例搜索。
-SP-21 的结论必须仍要求所有 prior registered terminal/producer actions 的完整有序重放、
-actual source、E1--E5 和 R；它不是降低证明标准。
+SP-21 的已建立抽象结论仍要求所有 prior registered terminal/producer actions 的完整有序重放、
+actual source、E1--E5 和 R；concrete registry/authority/replayer 缺失，故这不是降低证明标准。
 
 ### P0.2 SP-03 的 scoped 子目标：policy/no-bypass
 
@@ -133,7 +135,7 @@ SP-20 尤其不能提前主攻：已知 direct canonical \(p^2\) rechart 的 cof
 
 \[
 \boxed{
-\text{SP-21}
+\text{SP-21 concrete policy instance}
 \to
 \text{SP-03 scoped policy/no-bypass}
 \to

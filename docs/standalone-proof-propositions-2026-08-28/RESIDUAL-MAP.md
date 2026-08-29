@@ -16,7 +16,7 @@
 
 | 缺口 | 命题 | 需要的最终结果 |
 |---|---|---|
-| scope-bound terminal priority | SP-21 | 每个 selected branch 完整清空所有 earlier policy actions；不把 scope MISS 升格为 global MISS |
+| scope-bound terminal priority | SP-21（abstract safety theorem 已证） | 具体 policy registry、authority、prior-action replayer 与 common admission 仍待实例化 |
 | actual scoped q=1 phase-root pilot | SP-22 | actual source、policy clearance、E1--E5、common admission 与 re-entry |
 | registered natural Bradford prefix | SP-04（六层条件定理已证） | \(M_{23}\) 全 divisor schedule 与独立重放已完成；production authority/全局 terminal schedule 仍未注册 |
 | complete-terminal nonterminal edge | SP-05（反例边界已证） | complete MISS 等价于 Erdős--Straus 反例；不再作为当前 producer 主攻目标 |

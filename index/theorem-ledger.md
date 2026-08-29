@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 35 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 978 |
+| 数学状态 | `established` | 979 |
 | 数学状态 | `open` | 13 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 44 |
-| 证明来源 | `repository_derivation` | 810 |
+| 证明来源 | `repository_derivation` | 811 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 27 |
-| 审阅状态 | `internal_review` | 955 |
+| 审阅状态 | `internal_review` | 956 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -235,6 +235,7 @@
 | [SP-02 有限良构模型中的 constructor 穷尽分类与 UNKNOWN 不可达](../claims/t6-sp02-finite-constructor-source-completeness.md) (`t6-sp02-finite-constructor-source-completeness`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-28 |
 | [SP-04 q=1 根的 M23 全除子 registered-prefix terminal schedule](../claims/t6-sp04-q1-m23-registered-prefix-terminal-schedule.md) (`t6-sp04-q1-m23-registered-prefix-terminal-schedule`) | `established` | `mixed` | `internal_review` | - | 2026-08-28 |
 | [SP-05 完整 terminal 判定与现实非终止边的反例边界](../claims/t6-sp05-complete-terminal-decision-boundary.md) (`t6-sp05-complete-terminal-decision-boundary`) | `established` | `mixed` | `internal_review` | - | 2026-08-29 |
+| [SP-21 冻结优先级策略下的 scope-bound successor safety](../claims/t6-sp21-scoped-terminal-priority-safety.md) (`t6-sp21-scoped-terminal-priority-safety`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-29 |
 | [T6 注册优先前缀 miss 与全终端宇宙 miss 的不可混淆类型边界 v2](../claims/t6-terminal-miss-scope-taxonomy-v2.md) (`t6-terminal-miss-scope-taxonomy-v2`) | `established` | `repository_derivation` | `internal_review` | `schemas/t6-terminal-miss-scope-taxonomy-v2.schema.json` | 2026-08-26 |
 | [3 的倍数标准源解不能保留两项提升到核心素数](../claims/three-divisible-standard-source-lift-obstruction.md) (`three-divisible-standard-source-lift-obstruction`) | `established` | `unspecified` | `unspecified` | `elsholtz_tao2013` | 2026-07-23 |
 | [三倍数标准源保留大尾并重组两项的完整递降族](../claims/three-divisible-standard-two-tail-descent.md) (`three-divisible-standard-two-tail-descent`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-24 |
